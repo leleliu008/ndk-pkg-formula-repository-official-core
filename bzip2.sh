@@ -14,7 +14,8 @@ build() {
     fi
     
     eval "$MAKE CC=\'$CC\' CFLAGS='-v' AR=\'$AR\' RANLIB=\'$RANLIB\'" &&
-    mkdir -p "$DIR_INSTALL_PREFIX"/{bin,lib} &&
+    mkdir -p "$DIR_INSTALL_PREFIX/bin" &&
+    mkdir -p "$DIR_INSTALL_PREFIX/lib" &&
     cp libbz2.so.*.*.* "$DIR_INSTALL_PREFIX/lib" &&
     cp bzip2-shared "$DIR_INSTALL_PREFIX/bin/bzip2"
 }
