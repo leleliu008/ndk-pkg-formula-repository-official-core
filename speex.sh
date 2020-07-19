@@ -17,7 +17,7 @@ build() {
         OGG_CFLAGS="-I$libogg_DIR_INCLUDE" \
         OGG_LIBS="-L$libogg_DIR_LIB -logg" \
         SPEEXDSP_CFLAGS="-I$speexdsp_DIR_INCLUDE" \
-        SPEEXDSP_LIBS="-L$speex_DIR_LIB -lspeexdsp" &&
+        SPEEXDSP_LIBS="-L$speexdsp_DIR_LIB -lspeexdsp" &&
     make clean &&
     make install
 }
