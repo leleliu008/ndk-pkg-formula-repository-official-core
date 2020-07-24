@@ -17,9 +17,14 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 ## the variable can be used in a formula
 |variable|overview|
 |-|-|
-|`VERSION`|the version of ndk-pkg.|
-|`TIMESTAMP`|the timestamp of this installation.|
-|`NDK_PKG_HOME`|the home directory of ndk-pkg.|
+|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
+|||
+|`NDK_PKG_VERSION`|the version of `ndk-pkg`.|
+|`NDK_PKG_HOME`|the home directory of `ndk-pkg`.|
+|||
+|`ANDROID_NDK_VERSION`|the version of `Android NDK`.|
+|`ANDROID_NDK_HOME`|the home directory of `Android NDK`.|
+|||
 |`DIR_DOWNLOAD`|the downloads directory of ndk-pkg.|
 |`DIR_PKG`|the pkg directory of ndk-pkg.|
 |`DIR_SRC`|the source code directory of this package.|
@@ -29,8 +34,6 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`x_DIR_INSTALL_PREFIX`|the installation directory of x abi.|
 |`x_DIR_INCLUDE`|the include directory of x abi.|
 |`x_DIR_LIB`|the lib directory of x abi.|
-|`ANDROID_NDK_HOME`|the home directory of `Android NDK`.|
-|`ANDROID_NDK_VERSION`|the version of `Android NDK`.|
 |`TARGET_ABIS`|the supported target abis.|
 |`TARGET_ABI`|build for `TARGET_ABI`. it's value may be one of `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`|
 |`TARGET_API`|build for `TARGET_API`.|
@@ -54,17 +57,19 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 ## the function can be declared in a formula
 |function|required?|overview|
 |-|-|-|
+|`prepare`|optional|this function only run once.|
 |`build`|required|this function will run 4 times. each time build for one abi.|
-|`build_first`|optional|this function only run once.|
 
 ## the function can be used in a formula
 |function|example|
 |-|-|
-|`msg`|`msg 'your message\n'`|
-|`info`|`info 'your infomation\n'`|
-|`warn`|`warn "TARGET_API is not set. use default value 21.\n"`|
-|`error`|`error 'error message\n'`|
-|`error_exit`|`error_exit "please provide a pkg name.\n"`|
-|`success`|`success "build success.\n"`|
-|`nproc`|`make --directory="$DIR_BUILD" install -j$(nproc)`|
+|`msg`|`msg 'your message.'`|
+|`echo`|`echo 'your message.'`|
+|`info`|`info 'your infomation.'`|
+|`warn`|`warn "--target-api=VALUE argument is not specified. so, use the default value [21]."`|
+|`error`|`error 'error message.'`|
+|`die`|`die "please specify a package name."`|
+|`success`|`success "build success."`|
+|`nproc`|`make --directory="$DIR_BUILD" -j$(nproc) install`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
+|`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|

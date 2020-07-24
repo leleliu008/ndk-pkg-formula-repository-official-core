@@ -7,7 +7,7 @@ dependencies="libogg libiconv"
 #NDK内置了libiconv，但是要求TARGET_API >= 28，要支持低版本的话，只能依赖自己编译的libiconv
 #https://github.com/android/ndk/issues/702
 
-build_first() {
+prepare() {
     sed_in_place 's/printf(usage)/printf("%s", usage)/g' src/utils/flacdiff/main.cpp &&
     sed_in_place 's/fprintf(stderr, usage)/fprintf(stderr, "%s", usage)/g' src/utils/flacdiff/main.cpp
 }
