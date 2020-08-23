@@ -58,7 +58,7 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |function|required?|overview|
 |-|-|-|
 |`prepare`|optional|this function only run once.|
-|`build`|required|this function will run 4 times. each time build for one abi.|
+|`build`|required|this function will run 4 times. each time build for one abi ( armeabi-v7a, arm64-v8a, x86, x86_64 ).|
 
 ## the function can be used in a formula
 |function|example|
@@ -73,3 +73,8 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`nproc`|`make --directory="$DIR_BUILD" -j$(nproc) install`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
+|`getvalue`|`VALUE=$(getvalue --target-abi=armv7a)`|
+|`is_sha256sum_match`|`is_sha256sum_match FILE SHA256SUM`|
+|`fetch`|`fetch URL [--output-dir=DIR --output-name=NAME --sha256=SHA256]`|
+|`fetch_config_sub`|`fetch_config_sub     [DIR]`|
+|`fetch_config_guess`|`fetch_config_guess [DIR]`|

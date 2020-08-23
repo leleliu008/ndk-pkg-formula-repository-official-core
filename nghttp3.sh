@@ -1,7 +1,8 @@
-summary="General-purpose lossless data-compression library"
-homepage="https://zlib.net"
-url="https://zlib.net/zlib-1.2.11.tar.gz"
-sha256="c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1"
+summary="HTTP/3 library written in C"
+homepage="https://github.com/ngtcp2/nghttp3"
+url="https://github.com/ngtcp2/nghttp3.git"
+version=""
+sha256="xx"
 
 build() {
     cmake \
@@ -9,6 +10,10 @@ build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$DIR_INSTALL_PREFIX" \
     -DBUILD_SHARED_LIBS=ON \
+    -DENABLE_WERROR=OFF \
+    -DENABLE_DEBUG=OFF \
+    -DENABLE_ASAN=ON \
+    -DENABLE_LIB_ONLY=OFF \
     -DANDROID_TOOLCHAIN=clang \
     -DANDROID_ABI="$TARGET_ABI" \
     -DANDROID_PLATFORM="$TARGET_API" \
