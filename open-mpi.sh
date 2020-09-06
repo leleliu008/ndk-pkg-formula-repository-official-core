@@ -4,6 +4,7 @@ url="https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.4.tar.bz2"
 sha256="47e24eb2223fe5d24438658958a313b6b7a55bb281563542e1afc9dec4a31ac4"
 dependencies="libevent"
 
+# int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
 prepare() {
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&
     sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c &&
@@ -21,6 +22,9 @@ build() {
         --disable-coverage \
         --disable-mpi-fortran \
         --disable-oshmem-fortran \
+        --disable-builtin-atomics \
+        --enable-sysv-shmem=no \
+        --enable-sysv-sshmem=no \
         --enable-static \
         --enable-shared \
         --enable-binaries \

@@ -26,6 +26,6 @@ build() {
         RANLIB="$RANLIB" \
         PKG_CONFIG='' && \
     make clean &&
-    make install-includeHEADERS &&
+    make install-includeHEADERS install-pkgconfigDATA &&
     make -C src install
 }

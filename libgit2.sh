@@ -9,6 +9,9 @@ build() {
     -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$DIR_INSTALL_PREFIX" \
+    -DCMAKE_PREFIX_PATH="$DIR_PKG" \
+    -DCMAKE_FIND_ROOT_PATH="$DIR_PKG" \
+    -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=True \
     -DBUILD_CLAR=OFF \
     -DBUILD_FUZZERS=OFF \
     -DBUILD_EXAMPLES=OFF \
@@ -23,12 +26,9 @@ build() {
     -DOPENSSL_INCLUDE_DIR="$openssl_DIR_INCLUDE" \
     -DOPENSSL_SSL_LIBRARY="$openssl_DIR_LIB/libssl.so" \
     -DOPENSSL_CRYPTO_LIBRARY="$openssl_DIR_LIB/libcrypto.so" \
-    -Dlibssh2_INCLUDE_DIRS="$libssh2_DIR_INCLUDE" \
-    -Dlibssh2_LIBRARIES="$libssh2_DIR_LIB/libssh2.so" \
-    -DCMAKE_PREFIX_PATH="$libssh2_DIR_INSTALL_PREFIX" \
     -DREGEX_BACKEND=pcre2 \
     -DPCRE2_INCLUDE_DIR="$pcre2_DIR_INCLUDE" \
-    -DPCRE2_LIBRARY="$pcre2_DIR_LIB/libpcre2-16.so" \
+    -DPCRE2_LIBRARY="$pcre2_DIR_LIB/libpcre2-8.so" \
     -DPCRE2_POSIX_LIBRARY="$pcre2_DIR_LIB/libpcre2-posix.so" \
     -DANDROID_TOOLCHAIN=clang \
     -DANDROID_ABI="$TARGET_ABI" \
