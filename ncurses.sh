@@ -18,6 +18,7 @@ build() {
         --with-shared \
         --enable-largefile \
         --enable-warnings \
+        --enable-pc-files \
         --enable-stripping \
         --disable-assertions \
         --disable-gnat-projects \
@@ -27,6 +28,7 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \ 
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \

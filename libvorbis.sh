@@ -26,18 +26,6 @@ build() {
 
 build2() {
     cmake \
-    -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX="$DIR_INSTALL_PREFIX" \
     -DOGG_INCLUDE_DIRS="$libogg_DIR_INCLUDE" \
-    -DOGG_LIBRARIES="$libogg_DIR_LIB/libogg.so" \
-    -DBUILD_SHARED_LIBS=ON \
-    -DANDROID_TOOLCHAIN=clang \
-    -DANDROID_ABI="$TARGET_ABI" \
-    -G "Unix Makefiles" \
-    -Wno-dev \
-    -S . \
-    -B "$DIR_BUILD" && \
-    make --directory="$DIR_BUILD" -j$(nproc) && \
-    make --directory="$DIR_BUILD" install
+    -DOGG_LIBRARIES="$libogg_DIR_LIB/libogg.so"
 }

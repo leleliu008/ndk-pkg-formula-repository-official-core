@@ -6,12 +6,6 @@ dependencies="openssl pcre2 libssh2"
 
 build() {
     cmake \
-    -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX="$DIR_INSTALL_PREFIX" \
-    -DCMAKE_PREFIX_PATH="$DIR_PKG" \
-    -DCMAKE_FIND_ROOT_PATH="$DIR_PKG" \
-    -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=True \
     -DBUILD_CLAR=OFF \
     -DBUILD_FUZZERS=OFF \
     -DBUILD_EXAMPLES=OFF \
@@ -21,21 +15,9 @@ build() {
     -DDEPRECATE_HARD=OFF \
     -DPROFILE=OFF \
     -DTHREADSAFE=ON \
-    -DUSE_HTTPS=OpenSSL \
     -DUSE_SSH=ON \
-    -DOPENSSL_INCLUDE_DIR="$openssl_DIR_INCLUDE" \
-    -DOPENSSL_SSL_LIBRARY="$openssl_DIR_LIB/libssl.so" \
-    -DOPENSSL_CRYPTO_LIBRARY="$openssl_DIR_LIB/libcrypto.so" \
+    -DUSE_HTTPS=OpenSSL \
     -DREGEX_BACKEND=pcre2 \
     -DPCRE2_INCLUDE_DIR="$pcre2_DIR_INCLUDE" \
-    -DPCRE2_LIBRARY="$pcre2_DIR_LIB/libpcre2-8.so" \
-    -DPCRE2_POSIX_LIBRARY="$pcre2_DIR_LIB/libpcre2-posix.so" \
-    -DANDROID_TOOLCHAIN=clang \
-    -DANDROID_ABI="$TARGET_ABI" \
-    -DANDROID_PLATFORM="$TARGET_API" \
-    -G "Unix Makefiles" \
-    -Wno-dev \
-    -S . \
-    -B "$DIR_BUILD" &&
-    make --directory="$DIR_BUILD" -j$(nproc) install
+    -DPCRE2_LIBRARY="$pcre2_DIR_LIB/libpcre2-8.so"
 }

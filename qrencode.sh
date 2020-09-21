@@ -6,22 +6,11 @@ dependencies="libpng"
 
 build() {
     cmake \
-    -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX="$DIR_INSTALL_PREFIX" \
-    -DBUILD_SHARED_LIBS=ON \
-    -DANDROID_TOOLCHAIN=clang \
-    -DANDROID_ABI="$TARGET_ABI" \
-    -DANDROID_PLATFORM="$TARGET_API" \
+    -DWITH_TOOLS=ON \
+    -DWITH_TESTS=OFF \
+    -DWITHOUT_PNG=OFF \
     -DPNG_PNG_INCLUDE_DIR="$libpng_DIR_INCLUDE" \
-    -DPNG_LIBRARY_RELEASE="$libpng_DIR_LIB/libpng.so" \
-    -DZLIB_LIBRARY_RELEASE="$FILE_PATH_LIBZ_SO" \
-    -G "Unix Makefiles" \
-    -Wno-dev \
-    -S . \
-    -B "$DIR_BUILD" && \
-    make --directory="$DIR_BUILD" -j$(nproc) && \
-    make --directory="$DIR_BUILD" install
+    -DPNG_LIBRARY_RELEASE="$libpng_DIR_LIB/libpng.so"
 }
 
 build2() {

@@ -40,7 +40,6 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`TARGET_HOST`|it's value may be one of `armv7a-linux-androideabi`, `aarch64-linux-android`, `i686-linux-android`, `x86_64-linux-android`|
 |`TARGET_ARCH`|it's value may be one of `arm`, `arm64`, `x86`, `x86_64`|
 |`TOOLCHAIN_PREFIX`||
-|`CMAKE_TOOLCHAIN_FILE`||
 |`SYSROOT`||
 |`CC`|the C Compiler for `TARGET_ABI`.|
 |`CXX`|the C++ Compiler for `TARGET_ABI`.|
