@@ -9,15 +9,15 @@ build() {
         --prefix="$DIR_INSTALL_PREFIX" \
         --with-sysroot="$SYSROOT" \
         --disable-debug \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

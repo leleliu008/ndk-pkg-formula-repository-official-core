@@ -13,13 +13,14 @@ build() {
         --disable-valgrind-tests \
         --disable-code-coverage \
         --disable-gtk-doc \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-gcc-warnings \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \

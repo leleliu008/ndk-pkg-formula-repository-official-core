@@ -34,12 +34,12 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS -DPOSIX_MADV_DONTNEED=MADV_DONTNEED -include android-stub.c" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
         RANLIB="$RANLIB" \
-        FC='' \
-        PKG_CONFIG='' && \
+        FC='' &&
     make clean &&
     make install
 }

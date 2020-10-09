@@ -19,11 +19,11 @@ build() {
         --without-dmalloc \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG_PATH='' &&
+        RANLIB="$RANLIB" &&
     sed_in_place '/HAVE_SIGSETMASK/d' src/config.h &&
     make clean &&
     make install

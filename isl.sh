@@ -11,17 +11,17 @@ build() {
         --with-int=gmp \
         --with-gmp=system \
         --with-gmp-prefix="$gmp_DIR_INSTALL_PREFIX" \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS -lgmp" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

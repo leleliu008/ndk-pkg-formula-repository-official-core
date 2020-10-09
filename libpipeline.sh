@@ -9,18 +9,18 @@ build() {
         --prefix="$DIR_INSTALL_PREFIX" \
         --with-sysroot="$SYSROOT" \
         --disable-rpath \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-largefile \
         --enable-threads=posix \
         --enable-socketpair-pipe \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

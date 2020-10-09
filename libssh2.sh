@@ -20,11 +20,11 @@ build() {
         --with-libz
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install-includeHEADERS install-pkgconfigDATA &&
     make -C src install

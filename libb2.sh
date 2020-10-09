@@ -15,19 +15,19 @@ build() {
         --host="$TARGET_HOST" \
         --prefix="$DIR_INSTALL_PREFIX" \
         --with-sysroot="$SYSROOT" \
-        --disable-debug \
         --disable-openmp \
+        --disable-debug \
         --disable-fat \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-native \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

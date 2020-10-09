@@ -19,6 +19,7 @@ build() {
         --enable-largefile \
         --enable-warnings \
         --enable-pc-files \
+        --with-pkg-config-libdir="$DIR_INSTALL_PREFIX/lib/pkgconfig" \
         --enable-stripping \
         --disable-assertions \
         --disable-gnat-projects \
@@ -34,5 +35,14 @@ build() {
         AR="$AR" \
         RANLIB="$RANLIB" \
     make clean &&
-    make install
+    make install &&
+    (install_links)
+}
+
+install_links() {
+    cd "$DIR_INSTALL_PREFIX/include" || return 1
+    for item in curses.h form.h ncurses.h panel.h term.h termcap.h
+    do
+        ln -s "ncurses/$item" "$item" || return 1
+    done
 }

@@ -10,17 +10,17 @@ build() {
         --prefix="$DIR_INSTALL_PREFIX" \
         --with-gmp="$gmp_DIR_INSTALL_PREFIX" \
         --with-mpfr="$mpfr_DIR_INSTALL_PREFIX" \
-        --disable-logging \
         --disable-valgrind-tests \
-        --disable-static \
+        --disable-logging \
+        --enable-static \
         --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

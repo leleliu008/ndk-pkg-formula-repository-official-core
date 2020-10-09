@@ -16,18 +16,18 @@ build() {
         --prefix="$DIR_INSTALL_PREFIX" \
         --with-sysroot="$SYSROOT" \
         --disable-gssapi \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-ipv6 \
         --enable-symvers \
         --enable-authdes \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS -Dquad_t=int64_t -Du_quad_t=uint64_t -DNGROUPS=20" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

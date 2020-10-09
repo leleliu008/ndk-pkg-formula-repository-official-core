@@ -7,7 +7,6 @@ prepare() {
     sed_in_place 's/-lpthread/-lc/g' configure &&
     sed_in_place 's@linux-private/@@g' lib/mpls.c &&
     sed_in_place 's@linux-private/@@g' lib/route/link/vrf.c &&
-    #rm -rf include/linux-private
     sed_in_place '/linux-private/d' Makefile.in &&
     sed_in_place '/linux-private/d' Makefile.am
 }
@@ -24,11 +23,11 @@ build() {
         --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS -D__kernel_sockaddr_storage=sockaddr_storage" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

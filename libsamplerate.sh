@@ -23,11 +23,11 @@ build() {
         CFLAGS="$CFLAGS -lsndfile -logg -lm -lvorbis -lvorbisenc -lFLAC -lsqlite3 -lfftw3" \
         CXX="$CXX" \
         CXXFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG="" &&
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

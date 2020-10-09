@@ -11,7 +11,7 @@ build() {
         --with-sysroot="$SYSROOT" \
         --with-libiconv-prefix="$libiconv_DIR_INSTALL_PREFIX" \
         --disable-rpath \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-threads=posix \
         --enable-relocatable \
@@ -20,11 +20,11 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

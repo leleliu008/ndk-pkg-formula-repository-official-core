@@ -5,6 +5,8 @@ sha256="dbb82cb7e116a5f8025d35ef5b4f7d4a3cdd0a3909a146a39112095a2d229071"
 dependencies="ncurses"
 
 build() {
+    export CPPFLAGS="$CPPFLAGS -D__STDC_ISO_10646__ -DNBBY=1"
+    
     ./configure \
         --host="$TARGET_HOST" \
         --prefix="$DIR_INSTALL_PREFIX" \
@@ -13,12 +15,12 @@ build() {
         --enable-shared \
         --disable-examples \
         CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS -I$ncurses_DIR_INCLUDE/ncurses -D__STDC_ISO_10646__ -DNBBY=1" \
-        LDFLAGS="$LDFLAGS -L$ncurses_DIR_LIB/ncurses" \
+        CFLAGS="$CFLAGS $CPPFLAGS" \
+        CPP="$CPP" \
+        CPPFLAGS="$CPPFLAG" \
+        LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

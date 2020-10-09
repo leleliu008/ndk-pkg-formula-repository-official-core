@@ -17,21 +17,21 @@ build() {
         --with-sysroot="$SYSROOT" \
         --disable-build-timestamp \
         --disable-languages \
+        --disable-werror \
         --disable-tests \
         --disable-nls \
+        --enable-doc \
         --enable-static \
         --enable-shared \
         --enable-largefile \
-        --enable-doc \
         --enable-threads=posix \
-        --enable-werror \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

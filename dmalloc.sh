@@ -11,18 +11,18 @@ build() {
     ./configure \
         --host="$TARGET_HOST" \
         --prefix="$DIR_INSTALL_PREFIX" \
+        --enable-cxx \
         --enable-shlib \
         --enable-threads \
-        --enable-cxx \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

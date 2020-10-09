@@ -9,23 +9,5 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --with-ogg="$libogg_DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
-}
-
-build2() {
-    cmake \
-    -DOGG_INCLUDE_DIRS="$libogg_DIR_INCLUDE" \
-    -DOGG_LIBRARIES="$libogg_DIR_LIB/libogg.so"
+    configure
 }

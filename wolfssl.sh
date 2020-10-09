@@ -20,7 +20,7 @@ build() {
         --disable-md5 \
         --disable-sniffer \
         --disable-webserver \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-aesccm \
         --enable-aesgcm \
@@ -65,11 +65,11 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

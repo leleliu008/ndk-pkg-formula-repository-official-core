@@ -13,19 +13,19 @@ build() {
         --disable-profiling \
         --disable-assert \
         --disable-cxx \
-        --disable-static \
+        --enable-fft \
+        --enable-static \
         --enable-shared \
         --enable-assembly \
-        --enable-fft \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

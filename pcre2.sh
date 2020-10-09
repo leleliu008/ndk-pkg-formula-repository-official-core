@@ -10,7 +10,7 @@ build() {
         --disable-debug \
         --disable-valgrind \
         --disable-coverage \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-unicode \
         --enable-pcre2-8 \
@@ -18,11 +18,11 @@ build() {
         --enable-pcre2-32 \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

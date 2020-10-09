@@ -12,10 +12,10 @@ build() {
     ./configure \
         --host="$TARGET_HOST" \
         --prefix="$DIR_INSTALL_PREFIX" \
-        --disable-debug \
         --disable-profile \
+        --disable-debug \
         --disable-tests \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-batch \
         --enable-pthread \
@@ -24,11 +24,11 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

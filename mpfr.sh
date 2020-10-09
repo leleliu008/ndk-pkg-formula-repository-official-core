@@ -5,7 +5,6 @@ sha256="0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f"
 dependencies="gmp"
 
 build() {
-    #[ -f Makefile ] && make distclean
     ./configure \
         --host="$TARGET_HOST" \
         --prefix="$DIR_INSTALL_PREFIX" \
@@ -13,16 +12,16 @@ build() {
         --with-gmp="$gmp_DIR_INSTALL_PREFIX" \
         --disable-logging \
         --disable-assert \
-        --disable-static \
-        --enable-shared \
         --enable-warnings \
+        --enable-static \
+        --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

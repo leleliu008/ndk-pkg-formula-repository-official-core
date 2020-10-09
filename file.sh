@@ -10,28 +10,14 @@ prepare() {
     ./configure --prefix="$PREFIX" &&
     make clean &&
     make install &&
+    make distclean &&
     export PATH=$PREFIX/bin:$PATH &&
     export FILE_COMPILE=$PREFIX/bin/file
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --disable-static \
-        --enable-shared \
-        --enable-largefile \
+    configure \
         --enable-zlib \
         --disable-bzlib \
-        --disable-xzlib \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
-    make clean &&
-    make install
+        --disable-xzlib
 }

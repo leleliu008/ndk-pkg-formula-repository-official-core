@@ -13,17 +13,17 @@ build() {
         --disable-nls \
         --disable-valgrind-tests \
         --disable-code-coverage \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-doc \
         --enable-gcc-warnings \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS -liconv" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

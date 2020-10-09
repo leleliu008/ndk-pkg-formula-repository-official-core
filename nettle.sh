@@ -15,7 +15,7 @@ build() {
         --disable-gcov \
         --disable-openssl \
         --disable-mini-gmp \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         --enable-assembler \
         --enable-documentation \
@@ -23,11 +23,11 @@ build() {
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

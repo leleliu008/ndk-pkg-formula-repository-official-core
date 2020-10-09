@@ -12,24 +12,9 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --enable-largefile \
-        --enable-static \
-        --enable-shared \
+    configure \
         --enable-xattr \
         --enable-zlib \
         --disable-libacl \
-        --disable-debug \
-        --disable-verbose-debug \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --disable-verbose-debug
 }

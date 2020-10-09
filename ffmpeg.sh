@@ -23,12 +23,12 @@ build() {
         --arch="$TARGET_ARCH" \
         --target-os=android \
         --enable-cross-compile \
+        --enable-static \
         --enable-shared \
         --enable-pic \
-        --disable-static \
-        --disable-debug \
         --disable-asm \
         --disable-doc \
+        --disable-debug \
         --extra-cflags='-DANDROID' &&
     sed_in_place 's/LDEXEFLAGS= -fPIE -pie/LDEXEFLAGS= -shared/g' ffbuild/config.mak &&
     change_config_h &&

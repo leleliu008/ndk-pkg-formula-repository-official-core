@@ -16,20 +16,20 @@ build() {
         --disable-rpath \
         --disable-nls \
         --disable-debug \
-        --disable-coverage \
         --disable-strict \
+        --disable-coverage \
         --disable-doc \
-        --disable-static \
+        --enable-static \
         --enable-shared \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG='' && \
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }

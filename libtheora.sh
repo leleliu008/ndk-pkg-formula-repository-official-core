@@ -20,11 +20,11 @@ build() {
         --with-sdl-prefix="$sdl2_DIR_INSTALL_PREFIX" \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
+        CPP="$CPP" \
         CPPFLAGS="$CPPFLAGS" \
         LDFLAGS="$LDFLAGS" \
         AR="$AR" \
-        RANLIB="$RANLIB" \
-        PKG_CONFIG="" &&
+        RANLIB="$RANLIB" &&
     make clean &&
     make install
 }
