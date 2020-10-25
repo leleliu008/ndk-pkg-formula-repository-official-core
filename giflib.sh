@@ -8,7 +8,7 @@ prepare() {
 }
 
 build() {
-    unset TARGET_ARCH
+    cd "$SOURCE_DIR" &&
     make clean &&
-    make install PREFIX="$DIR_INSTALL_PREFIX" CC="$CC" AR="$AR" CFLAGS="$CFLAGS"
+    make install PREFIX="$ABI_INSTALL_DIR" CC="$CC" AR="$AR" CFLAGS="$CFLAGS"
 }

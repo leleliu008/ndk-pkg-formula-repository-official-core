@@ -5,23 +5,9 @@ sha256="28658ce0f0bdb95b51fd2eb15df24211c53284f6ca2ac5e897acc3169e55b60f"
 dependencies="gmp"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    export LDFLAGS="$LDFLAGS -lgmp"
+    configure \
         --with-int=gmp \
         --with-gmp=system \
-        --with-gmp-prefix="$gmp_DIR_INSTALL_PREFIX" \
-        --enable-static \
-        --enable-shared \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS -lgmp" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --with-gmp-prefix="$gmp_INSTALL_DIR"
 }

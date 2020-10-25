@@ -5,22 +5,8 @@ sha256="e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461"
 dependencies="ncurses"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-curses="$ncurses_DIR_INSTALL_PREFIX" \
-        --enable-static \
-        --enable-shared \
+    configure \
+        --with-curses="$ncurses_INSTALL_DIR" \
         --enable-multibyte \
-        --enable-largefile \
-        --enable-install-examples \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-install-examples
 }

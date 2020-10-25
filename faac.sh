@@ -4,15 +4,5 @@ url="https://downloads.sourceforge.net/project/faac/faac-src/faac-1.29/faac-1.29
 sha256="d45f209d837c49dae6deebcdd87b8cc3b04ea290880358faecf5e7737740c771"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+    configure
 }

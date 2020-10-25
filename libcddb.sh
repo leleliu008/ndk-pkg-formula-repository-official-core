@@ -10,22 +10,8 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-libiconv-prefix="$libiconv_DIR_INSTALL_PREFIX" \
-        --enable-static \
-        --enable-shared \
-        --disable-rpath \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    sed_in_place '/#define malloc rpl_malloc/d'   config.h &&
-    sed_in_place '/#define realloc rpl_realloc/d' config.h &&
-    make clean &&
-    make install
+    configure \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
+        ac_cv_func_malloc_0_nonnull=yes \
+        ac_cv_func_realloc_0_nonnull=yes
 }

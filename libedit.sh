@@ -6,21 +6,6 @@ dependencies="ncurses"
 
 build() {
     export CPPFLAGS="$CPPFLAGS -D__STDC_ISO_10646__ -DNBBY=1"
-    
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --enable-static \
-        --enable-shared \
-        --disable-examples \
-        CC="$CC" \
-        CFLAGS="$CFLAGS $CPPFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAG" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+
+    configure --disable-examples
 }

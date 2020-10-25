@@ -19,7 +19,7 @@ modify_code()    {
 build() {
     ./configure \
         --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        --prefix="$ABI_INSTALL_DIR" \
         --disable-debug \
         --disable-prof \
         --enable-libdl \

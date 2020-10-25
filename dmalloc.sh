@@ -8,21 +8,8 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    configure \
         --enable-cxx \
         --enable-shlib \
-        --enable-threads \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-threads
 }

@@ -11,20 +11,9 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    configure \
         --disable-examples \
-        --with-ogg="$libogg_DIR_INSTALL_PREFIX" \
-        --with-vorbis="$libvorbis_DIR_INSTALL_PREFIX" \
-        --with-sdl-prefix="$sdl2_DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --with-ogg="$libogg_INSTALL_DIR" \
+        --with-vorbis="$libvorbis_INSTALL_DIR" \
+        --with-sdl-prefix="$sdl2_INSTALL_DIR"
 }

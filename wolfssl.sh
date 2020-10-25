@@ -1,18 +1,15 @@
 summary="Embedded SSL Library written in C"
 homepage="https://www.wolfssl.com"
-url="https://github.com/wolfSSL/wolfssl/archive/v4.4.0-stable.tar.gz"
-sha256="7f854804c8ae0ca49cc77809e38e9a3b5a8c91ba7855ea928e6d6651b0d35f18"
 version="4.4.0"
+url="https://github.com/wolfSSL/wolfssl/archive/v$version-stable.tar.gz"
+sha256="7f854804c8ae0ca49cc77809e38e9a3b5a8c91ba7855ea928e6d6651b0d35f18"
 
 prepare() {
     ./autogen.sh
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
+    configure \
         --disable-asm \
         --disable-bump \
         --disable-examples \
@@ -60,16 +57,5 @@ build() {
         --enable-tls13 \
         --enable-sp \
         --enable-fastmath \
-        --enable-fasthugemath \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-fasthugemath
 }

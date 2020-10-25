@@ -10,27 +10,12 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    configure \
         --enable-threads=posix \
-        --enable-largefile \
         --enable-c++ \
         --enable-changeword \
-        --disable-rpath \
-        --disable-nls \
         --disable-assert \
         --disable-gcc-warnings \
         --without-dmalloc \
-        --with-included-regex \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --with-included-regex
 }

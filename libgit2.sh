@@ -18,6 +18,6 @@ build() {
     -DUSE_SSH=ON \
     -DUSE_HTTPS=OpenSSL \
     -DREGEX_BACKEND=pcre2 \
-    -DPCRE2_INCLUDE_DIR="$pcre2_DIR_INCLUDE" \
-    -DPCRE2_LIBRARY="$pcre2_DIR_LIB/libpcre2-8.so"
+    -DPCRE2_INCLUDE_DIR="$pcre2_INCLUDE_DIR" \
+    -DPCRE2_LIBRARY="$pcre2_LIBRARY_DIR/libpcre2-8.so"
 }

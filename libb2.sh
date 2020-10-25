@@ -11,23 +11,8 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
+    configure \
         --disable-openmp \
-        --disable-debug \
         --disable-fat \
-        --enable-static \
-        --enable-shared \
-        --enable-native \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-native
 }

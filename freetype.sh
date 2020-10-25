@@ -11,10 +11,10 @@ build() {
     -DFT_WITH_ZLIB=ON \
     -DFT_WITH_PNG=ON \
     -DFT_WITH_HARFBUZZ=OFF \
-    -DBROTLIDEC_INCLUDE_DIRS="$brotli_DIR_INCLUDE" \
-    -DBROTLIDEC_LIBRARIES="$brotli_DIR_LIB/libbrotlidec.so" \
-    -DBZIP2_INCLUDE_DIR="$bzip2_DIR_INCLUDE" \
-    -DBZIP2_LIBRARY_RELEASE="$bzip2_DIR_LIB/libbz2.so" \
-    -DPNG_PNG_INCLUDE_DIR="$libpng_DIR_INCLUDE" \
-    -DPNG_LIBRARY_RELEASE="$libpng_DIR_LIB/libpng.so"
+    -DBROTLIDEC_INCLUDE_DIRS="$brotli_INCLUDE_DIR" \
+    -DBROTLIDEC_LIBRARIES="$brotli_LIBRARY_DIR/libbrotlidec.so" \
+    -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
+    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \
+    -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
+    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so"
 }

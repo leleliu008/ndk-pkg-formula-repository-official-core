@@ -11,7 +11,7 @@ prepare() {
 }
 
 build() {
-    unset TARGET_ARCH
+    cd "$SOURCE_DIR" &&
     perl Configure \
         shared \
         no-ssl2 \
@@ -20,15 +20,15 @@ build() {
         no-hw \
         no-engine \
         no-asm \
-        -D__ANDROID_API__="$TARGET_API" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        -D__ANDROID_API__="$MIN_SDK_API_LEVEL" \
+        --prefix="$ABI_INSTALL_DIR" \
         "$(get_os_compiler)" &&
     make clean &&
     make install
 }
 
 get_os_compiler() {
-    case "$TARGET_ABI" in
+    case "$BUILD_FOR_ABI" in
         armeabi-v7a) msg "android-armv7";;
         arm64-v8a)   msg "android64-aarch64";;
         x86)         msg "android-x86";;

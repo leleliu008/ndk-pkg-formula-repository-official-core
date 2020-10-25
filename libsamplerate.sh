@@ -7,27 +7,11 @@ dependencies="libsndfile fftw"
 prepare() {
     autoreconf -ivf &&
     sed_in_place '$d' autogen.sh &&
-    ./autogen.sh
+    ./autogen.sh &&
+    sed_in_place 's|sys/soundcard.h|linux/soundcard.h|' examples/audio_out.c
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --disable-option-checking \
-        --enable-static \
-        --enable-shared \
-        --enable-sndfile \
-        --enable-fftw \
-        CC="$CC" \
-        CFLAGS="$CFLAGS -lsndfile -logg -lm -lvorbis -lvorbisenc -lFLAC -lsqlite3 -lfftw3" \
-        CXX="$CXX" \
-        CXXFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+    export CFLAGS="$CFLAGS -logg -lm -lvorbis -lvorbisenc -lFLAC -lsqlite3"
+    configure
 }

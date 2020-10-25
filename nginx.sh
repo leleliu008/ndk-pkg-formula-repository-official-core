@@ -38,11 +38,13 @@ prepare() {
 }
 
 build() {
+    cd "$SOURCE_DIR" || return 1
+
     export NGX_SYSTEM=Linux
     export NGX_RELEASE=unkown
-    export NGX_MACHINE=$TARGET_ARCH
+    export NGX_MACHINE=$BUILD_FOR_ARCH
 
-    case $TARGET_ABI in
+    case $BUILD_FOR_ABI in
         armeabi-v7a|x86)
             sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
             ;;
@@ -54,11 +56,11 @@ build() {
     [ -f Makefile ] && make clean
     
     ./configure \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --crossbuild=Linux:unkown:$TARGET_ARCH \
+        --prefix="$ABI_INSTALL_DIR" \
+        --crossbuild=Linux:unkown:$BUILD_FOR_ARCH \
         --with-cc="$CC" \
-        --with-cc-opt="$CFLAGS $CPPFLAGS --sysroot=$SYSROOT -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU" \
-        --with-ld-opt="$LDFLAGS --sysroot=$SYSROOT -lcrypto" \
+        --with-cc-opt="$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU" \
+        --with-ld-opt="$LDFLAGS -lcrypto" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
     make install

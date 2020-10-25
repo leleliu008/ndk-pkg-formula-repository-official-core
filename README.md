@@ -27,13 +27,13 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |||
 |`DIR_DOWNLOAD`|the downloads directory of ndk-pkg.|
 |`DIR_PKG`|the pkg directory of ndk-pkg.|
-|`DIR_SRC`|the source code directory of this package.|
-|`DIR_BUILD`|the build directory of this abi.|
+|`SOURCE_DIR`|the source code directory of this package.|
+|`BUILD_DIR`|the build directory of this abi.|
 |`DIR_INSTALL_PACKAGE`|the installation directory of this package.|
-|`DIR_INSTALL_PREFIX`|the installation directory of this abi.|
-|`x_DIR_INSTALL_PREFIX`|the installation directory of x abi.|
-|`x_DIR_INCLUDE`|the include directory of x abi.|
-|`x_DIR_LIB`|the lib directory of x abi.|
+|`ABI_INSTALL_DIR`|the installation directory of this abi.|
+|`x_ABI_INSTALL_DIR`|the installation directory of x abi.|
+|`x_INCLUDE_DIR`|the include directory of x abi.|
+|`x_LIBRARY_DIR`|the lib directory of x abi.|
 |`TARGET_ABIS`|the supported target abis.|
 |`TARGET_ABI`|build for `TARGET_ABI`. it's value may be one of `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`|
 |`TARGET_API`|build for `TARGET_API`.|
@@ -69,7 +69,7 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`error`|`error 'error message.'`|
 |`die`|`die "please specify a package name."`|
 |`success`|`success "build success."`|
-|`nproc`|`make --directory="$DIR_BUILD" -j$(nproc) install`|
+|`nproc`|`make --directory="$BUILD_DIR" -j$(nproc) install`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
 |`getvalue`|`VALUE=$(getvalue --target-abi=armv7a)`|

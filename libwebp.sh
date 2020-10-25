@@ -6,15 +6,15 @@ dependencies="libpng libtiff libjpeg-turbo giflib"
 
 build() {
     cmake \
-    -DZLIB_LIBRARY="$FILE_PATH_LIBZ_SO" \
-    -DPNG_PNG_INCLUDE_DIR="$libpng_DIR_INCLUDE" \
-    -DPNG_LIBRARY="$libpng_DIR_LIB/libpng.so" \
-    -DJPEG_INCLUDE_DIR="$libjpeg_turbo_DIR_INCLUDE" \
-    -DJPEG_LIBRARY="$libjpeg_turbo_DIR_LIB/libjpeg.so"\
-    -DTIFF_INCLUDE_DIR="$libtiff_DIR_INCLUDE" \
-    -DTIFF_LIBRARY="$libtiff_DIR_LIB/libtiff.so" \
-    -DGIF_INCLUDE_DIR="$giflib_DIR_INCLUDE" \
-    -DGIF_LIBRARY="$giflib_DIR_LIB/libgif.so"
+    -DZLIB_LIBRARY="$SYSTEM_LIBRARY_DIR/libz.so" \
+    -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
+    -DPNG_LIBRARY="$libpng_LIBRARY_DIR/libpng.so" \
+    -DJPEG_INCLUDE_DIR="$libjpeg_turbo_INCLUDE_DIR" \
+    -DJPEG_LIBRARY="$libjpeg_turbo_LIBRARY_DIR/libjpeg.so"\
+    -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
+    -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.a" \
+    -DGIF_INCLUDE_DIR="$giflib_INCLUDE_DIR" \
+    -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so"
 }
 
 build2() {
@@ -22,6 +22,6 @@ build2() {
         eval build$TIMESTAP='true'
         ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-21 ENABLE_SHARED=1 V=1
     }
-    mkdir -p "$DIR_INSTALL_PREFIX" &&
-    cp -r "libs/$TARGET_ABI" "$DIR_INSTALL_PREFIX/lib"
+    mkdir -p "$ABI_INSTALL_DIR" &&
+    cp -r "libs/$BUILD_FOR_ABI" "$ABI_INSTALL_DIR/lib"
 }

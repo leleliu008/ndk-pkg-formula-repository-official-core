@@ -11,27 +11,11 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
+    configure \
         --disable-build-timestamp \
         --disable-languages \
         --disable-werror \
         --disable-tests \
-        --disable-nls \
         --enable-doc \
-        --enable-static \
-        --enable-shared \
-        --enable-largefile \
-        --enable-threads=posix \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-threads=posix
 }

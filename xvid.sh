@@ -5,35 +5,24 @@ sha256="aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7"
 license="GPL-2.0"
 
 prepare() {
-    cd build/generic
+    SOURCE_DIR="$SOURCE_DIR/build/generic"
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    cd "$SOURCE_DIR" &&
+    configure \
         --disable-idebug \
         --disable-iprofile \
         --disable-gnuprofile \
         --enable-assembly \
-        --enable-pthread \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make &&
-    make install && 
+        --enable-pthread &&
     gen_pc_files
 }
 
 gen_pc_files() {
-    mkdir "$DIR_INSTALL_PREFIX/lib/pkgconfig" &&
-    cat > "$DIR_INSTALL_PREFIX/lib/pkgconfig/xvidcore.pc" <<EOF
-prefix=$DIR_INSTALL_PREFIX
+    mkdir "$ABI_INSTALL_DIR/lib/pkgconfig" &&
+    cat > "$ABI_INSTALL_DIR/lib/pkgconfig/xvidcore.pc" <<EOF
+prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include

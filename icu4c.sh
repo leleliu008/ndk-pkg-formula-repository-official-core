@@ -7,35 +7,20 @@ license="ICU"
 
 # https://www.talkwithdevices.com/archives/260
 prepare() {
-    mkdir -p build.d.tmp build.d.final &&
-    (cd build.d.tmp && ../source/runConfigureICU Linux && make)
+    SOURCE_DIR="$SOURCE_DIR/source"
+
+    mkdir "$SOURCE_DIR/build.d.tmp" &&
+    cd    "$SOURCE_DIR/build.d.tmp" &&
+    CC=cc CXX=c++ "$SOURCE_DIR/runConfigureICU" Linux &&
+    make
 }
 
 build() {
-    (cd build.d.final &&
-    ../source/configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-cross-build="$DIR_SRC/build.d.tmp" \
+    configure \
+        --with-cross-build="$SOURCE_DIR/build.d.tmp" \
         --enable-release \
-        --enable-static \
-        --enable-shared \
         --enable-tools \
         --enable-fuzzer \
         --disable-tests \
-        --disable-samples \
-        --disable-debug \
-        --disable-rpath \
-        CC="$CC" \
-        CFLAGS="$CFLAGS $CPPFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS $CPPFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAG" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make &&
-    make install)
+        --disable-samples
 }

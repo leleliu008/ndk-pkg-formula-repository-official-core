@@ -9,41 +9,11 @@ build() {
     -DWITH_TOOLS=ON \
     -DWITH_TESTS=OFF \
     -DWITHOUT_PNG=OFF \
-    -DPNG_PNG_INCLUDE_DIR="$libpng_DIR_INCLUDE" \
-    -DPNG_LIBRARY_RELEASE="$libpng_DIR_LIB/libpng.so"
+    -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
+    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so" \
+    -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.so"
 }
 
 build2() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
-}
-
-build3() {
-    cat > Android.mk <<EOF
-LOCAL_PATH      := \$(call my-dir)
-
-include \$(CLEAR_VARS)
-
-LOCAL_MODULE    := qrencode
-LOCAL_SRC_FILES := \$(shell ls *.c | awk '{gsub("qrenc.c", "");print}')
-
-LOCAL_LDFLAGS   += -L$libpng_DIR_INSTALL_PREFIX/\$(TARGET_ABI)/lib
-LOCAL_LDLIBS    += -lpng
-
-LOCAL_C_INCLUDES += $libpng_DIR_INSTALL_PREFIX/\$(TARGET_ABI)/include
-LOCAL_CFLAGS     += -Os -v -DHAVE_CONFIG_H
-
-include \$(BUILD_SHARED_LIBRARY)
-EOF
-    [ -f config.h ] || ./configure
-    ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_PLATFORM=android-21 APP_ABI=armeabi-v7a
+    configure
 }

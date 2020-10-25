@@ -26,13 +26,13 @@ build_with_cmake() {
     -DBUILD_CXXLIBS=ON \
     -DWITH_ASM=OFF \
     -DWITH_OGG=ON \
-    -DOGG_INCLUDE_DIR="$libogg_DIR_INCLUDE" \
-    -DOGG_LIBRARY="$libogg_DIR_LIB/libogg.so"
+    -DOGG_INCLUDE_DIR="$libogg_INCLUDE_DIR" \
+    -DOGG_LIBRARY="$libogg_LIBRARY_DIR/libogg.so"
 }
 
 build_with_configure() {
     configure \
-        --with-ogg="$libogg_DIR_INSTALL_PREFIX" \
+        --with-ogg="$libogg_INSTALL_DIR" \
         --disable-oggtest \
         --disable-valgrind-testing \
         --disable-thorough-tests \

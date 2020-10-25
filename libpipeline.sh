@@ -4,23 +4,7 @@ url="http://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.2.
 sha256="fd59c649c1ae9d67604d1644f116ad4d297eaa66f838e3dfab96b41e85b059fb"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --disable-rpath \
-        --enable-static \
-        --enable-shared \
-        --enable-largefile \
+    configure \
         --enable-threads=posix \
-        --enable-socketpair-pipe \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-socketpair-pipe
 }

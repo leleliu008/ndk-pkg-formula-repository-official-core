@@ -7,9 +7,10 @@ dependencies="xz bzip2 libtiff libjpeg-turbo openssl"
 
 # configure [options] [host]
 build() {
+    cd "$SOURCE_DIR" &&
     ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        --host="$BUILD_FOR_HOST" \
+        --prefix="$ABI_INSTALL_DIR" \
         --enable-ipv6 \
         --enable-utf8 \
         --disable-graphics \
@@ -19,9 +20,9 @@ build() {
         --with-bzip2 \
         --with-libtiff \
         --with-libjpeg \
-        --with-ssl="$openssl_DIR_INSTALL_PREFIX" &&
-    make clean &&
-    make &&
-    make install &&
-    make distclean
+        --with-ssl="$openssl_INSTALL_DIR" &&
+    $MAKE clean &&
+    $MAKE &&
+    $MAKE install &&
+    $MAKE distclean
 }

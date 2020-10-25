@@ -8,7 +8,7 @@ prepare() {
 }
 
 build() {
-    mkdir -p "$DIR_INSTALL_PREFIX" &&
-    cp -r "include" "$DIR_INSTALL_PREFIX" &&
-    cp -r "libs/$TARGET_ABI" "$DIR_INSTALL_PREFIX/lib"
+    mkdir -p "$ABI_INSTALL_DIR" &&
+    cp -r "$SOURCE_DIR/include" "$ABI_INSTALL_DIR" &&
+    cp -r "$SOURCE_DIR/libs/$BUILD_FOR_ABI" "$ABI_INSTALL_DIR/lib"
 }

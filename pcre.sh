@@ -16,24 +16,22 @@ build() {
     -DPCRE_SUPPORT_VALGRIND=OFF \
     -DPCRE_SUPPORT_LIBZ=ON \
     -DPCRE_SUPPORT_LIBBZ2=ON \
-    -DBZIP2_INCLUDE_DIR="$bzip2_DIR_INCLUDE" \
-    -DBZIP2_LIBRARY_RELEASE="$bzip2_DIR_LIB/libbz2.so" \
-    -DZLIB_LIBRARY_RELEASE="$FILE_PATH_LIBZ_SO" &&
+    -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
+    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \
+    -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.so" &&
     gen_pc_files
 }
 
 gen_pc_files() {
-    eval $(grep 'PACKAGE_VERSION=' configure)
-    
     for item in pcre pcre16 pcre32 pcreposix
     do
-        DIR_PC_FILE_PCRE="$DIR_INSTALL_PREFIX/lib/pkgconfig"
+        DIR_PC_FILE_PCRE="$ABI_INSTALL_DIR/lib/pkgconfig"
         
         [ -d "$DIR_PC_FILE_PCRE" ] || mkdir -p "$DIR_PC_FILE_PCRE"
         [ -f "$DIR_PC_FILE_PCRE/lib$item.pc" ] && continue
 
         cat > "$DIR_PC_FILE_PCRE/lib$item.pc" <<EOF
-prefix=$DIR_INSTALL_PREFIX
+prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
@@ -41,7 +39,7 @@ includedir=\${prefix}/include
 Name: lib$item
 URL: http://www.pcre.org/
 Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
-Version: $PACKAGE_VERSION
+Version: $version
 Libs: -L\${libdir} -l$item
 Libs.private: -D_THREAD_SAFE
 Cflags: -I\${includedir}

@@ -10,9 +10,10 @@ prepare() {
 }
 
 build() {
+    cd "$SOURCE_DIR" &&
     ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        --host="$BUILD_FOR_HOST" \
+        --prefix="$ABI_INSTALL_DIR" \
         --with-included-regex \
         --with-xattrs \
         --without-posix-acls \

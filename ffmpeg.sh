@@ -9,8 +9,9 @@ prepare() {
 }
 
 build() {
+    cd "$SOURCE_DIR" &&
     ./configure \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
         --ar="$AR" \
         --as="$AS" \
@@ -20,7 +21,7 @@ build() {
         --nm="$NM" \
         --ranlib="$RANLIB" \
         --strip="$STRIP" \
-        --arch="$TARGET_ARCH" \
+        --arch="$BUILD_FOR_ARCH" \
         --target-os=android \
         --enable-cross-compile \
         --enable-static \

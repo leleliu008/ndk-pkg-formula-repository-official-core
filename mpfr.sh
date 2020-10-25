@@ -5,23 +5,9 @@ sha256="0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f"
 dependencies="gmp"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --with-gmp="$gmp_DIR_INSTALL_PREFIX" \
+    configure \
+        --with-gmp="$gmp_INSTALL_DIR" \
         --disable-logging \
         --disable-assert \
-        --enable-warnings \
-        --enable-static \
-        --enable-shared \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-warnings
 }

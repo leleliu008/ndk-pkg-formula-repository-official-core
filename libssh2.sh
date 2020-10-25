@@ -5,27 +5,11 @@ sha256="d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd"
 dependencies="libgcrypt"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --disable-debug \
+    export LDFLAGS="$LDFLAGS -lz -lgpg-error -lgcrypt"
+    configure \
         --disable-examples-build \
         --disable-werror \
-        --disable-rpath \
-        --enable-static \
-        --enable-shared \
-        --enable-largefile \
         --with-crypto=libgcrypt \
-        --with-libgcrypt-prefix="$libgcrypt_DIR_INSTALL_PREFIX" \
+        --with-libgcrypt-prefix="$libgcrypt_INSTALL_DIR" \
         --with-libz
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install-includeHEADERS install-pkgconfigDATA &&
-    make -C src install
 }

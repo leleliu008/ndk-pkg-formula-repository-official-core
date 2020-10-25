@@ -5,21 +5,12 @@ sha256="840133aa9412153894af03b27b03dde1188772442c316a4ce2a24ed70093f271"
 
 prepare() {
     mkdir -p libSBRdec/include/log &&
-    printf "%b" "#include<android/log.h>\n#define android_errorWriteLog(x,...) __android_log_print(ANDROID_LOG_FATAL, \"TAG\", __VA_ARGS__)" > libSBRdec/include/log/log.h
+    cat    > libSBRdec/include/log/log.h <<EOF
+#include<android/log.h>
+#define android_errorWriteLog(x,...) __android_log_print(ANDROID_LOG_FATAL, "TAG", __VA_ARGS__)
+EOF
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+    configure
 }

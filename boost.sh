@@ -8,11 +8,36 @@ dependencies="xz bzip2 zstd icu4c libiconv"
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android
+# https://www.boost.org/doc/libs/1_73_0/libs/context/doc/html/context/architectures/crosscompiling.html
+# https://www.boost.org/doc/libs/1_65_1/libs/context/doc/html/context/architectures.html
 prepare() {
-    ./bootstrap.sh
+    CXX=c++ ./bootstrap.sh
 }
 
 build() {
+    case $BUILD_FOR_ABI in
+        armeabi-v7a)
+            address_model=32
+            architecture=arm
+            abi=aapcs
+            ;;
+        arm64-v8a)
+            address_model=64
+            architecture=arm
+            abi=aapcs
+            ;;
+        x86)
+            address_model=32
+            architecture=x86
+            abi=sysv
+            ;;
+        x86_64)
+            address_model=64
+            architecture=x86
+            abi=sysv
+    esac
+
+    cd "$SOURCE_DIR" &&
     gen_project_config &&
     ./b2 install \
         -q \
@@ -20,18 +45,22 @@ build() {
         -j$(nproc) \
         --reconfigure \
         --without-python \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        -sICU_PATH="$icu4c_DIR_INSTALL_PREFIX" \
-        -sICONV_PATH="$libiconv_DIR_INSTALL_PREFIX" \
-        target-os=android \
-        toolset=clang-$TARGET_ARCH \
+        --prefix="$ABI_INSTALL_DIR" \
+        -sICU_PATH="$icu4c_INSTALL_DIR" \
+        -sICONV_PATH="$libiconv_INSTALL_DIR" \
+        toolset=clang-$BUILD_FOR_ABI \
         link=static,shared \
         variant=release \
-        threading=multi
+        threading=multi \
+        target-os=android \
+        binary-format=elf \
+        address-model="$address_model" \
+        architecture="$architecture" \
+        abi="$abi"
 }
 
 gen_project_config() {
     cat > project-config.jam <<EOF
-using clang : $TARGET_ARCH : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" ;
+using clang : $BUILD_FOR_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
 EOF
 }

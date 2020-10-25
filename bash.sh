@@ -8,29 +8,12 @@ license="GPL-3.0-or-later"
 dependencies="ncurses"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    configure \
         --with-curses \
         --without-bash-malloc \
         --disable-profiling \
-        --disable-rpath \
-        --disable-nls \
         --enable-readline \
         --enable-select \
         --enable-history \
-        --enable-largefile \
-        --enable-static-link \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" \
-        CC_FOR_BUILD=/usr/bin/cc &&
-    make clean &&
-    make install
+        --enable-static-link
 }

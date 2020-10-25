@@ -18,7 +18,7 @@ build() {
     -DZSTD_ZLIB_SUPPORT=ON \
     -DZSTD_LZMA_SUPPORT=ON \
     -DZSTD_LZ4_SUPPORT=OFF \
-    -DLIBLZMA_INCLUDE_DIR="$xz_DIR_INCLUDE" \
-    -DLIBLZMA_LIBRARY="$xz_DIR_LIB/liblzma.so" \
-    -S build/cmake
+    -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
+    -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.so" \
+    -S "$SOURCE_DIR/build/cmake"
 }

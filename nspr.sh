@@ -5,6 +5,7 @@ sha256="22286bdb8059d74632cc7c2865c139e63953ecfb33bf4362ab58827e86e92582"
 license="MPL-2.0"
 
 build() {
+    cd "$SOURCE_DIR" &&
     sed_in_place "/AS=\"\$android_toolchain\"/c AS=\"$AS\"" nspr/configure &&
     sed_in_place "/CC=\"\$android_toolchain\"/c CC=\"$CC\"" nspr/configure &&
     sed_in_place "/CXX=\"\$android_toolchain\"/c CXX=\"$CXX\"" nspr/configure &&
@@ -19,8 +20,8 @@ build() {
     sed_in_place "/LDFLAGS=\"-mandroid/c LDFLAGS=\"$LDFLAGS\"" nspr/configure &&
     sed_in_place '/os_Linux_x86.s/d' nspr/configure &&
     nspr/configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+        --host="$BUILD_FOR_HOST" \
+        --prefix="$ABI_INSTALL_DIR" \
         --enable-strip \
         --enable-ipv6 \
         --disable-cplus \

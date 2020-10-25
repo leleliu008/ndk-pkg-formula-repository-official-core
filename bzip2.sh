@@ -8,9 +8,9 @@ prepare() {
 }
 
 build() {
-    make clean &&
-    make install \
-        PREFIX="$DIR_INSTALL_PREFIX" \
+    make -C "$SOURCE_DIR" clean &&
+    make -C "$SOURCE_DIR" install \
+        PREFIX="$ABI_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         LDFLAGS="$LDFLAGS" \
@@ -19,9 +19,9 @@ build() {
 }
 
 gen_pc_files() {
-    mkdir -p "$DIR_INSTALL_PREFIX/lib/pkgconfig"
-    cat >    "$DIR_INSTALL_PREFIX/lib/pkgconfig/libbz2.pc" <<EOF
-prefix=$DIR_INSTALL_PREFIX
+    mkdir -p "$ABI_INSTALL_DIR/lib/pkgconfig"
+    cat >    "$ABI_INSTALL_DIR/lib/pkgconfig/libbz2.pc" <<EOF
+prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include

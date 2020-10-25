@@ -6,10 +6,7 @@ license="GPL-3.0"
 dependencies="pcre"
 
 build() {
-    unset TARGET_ARCH
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    configure \
         --enable-ccache \
         --enable-cpp11-testing \
         --with-popen \
@@ -32,17 +29,5 @@ build() {
         --without-lua \
         --without-r \
         --without-d \
-        --without-go \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make &&
-    make install 
+        --without-go
 }

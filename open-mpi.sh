@@ -9,43 +9,27 @@ prepare() {
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&
     sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c &&
     sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c &&
-    sed_in_place 's/bcmp(/memcmp(/g' ompi/mca/topo/treematch/treematch/tm_malloc.c
+    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c
     write_android_stub
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --disable-debug \
+    export CPPFLAGS="$CPPFLAGS -DPOSIX_MADV_DONTNEED=MADV_DONTNEED -include $SOURCE_DIR/android-stub.c"
+    configure \
         --disable-coverage \
         --disable-mpi-fortran \
         --disable-oshmem-fortran \
         --disable-builtin-atomics \
         --enable-sysv-shmem=no \
         --enable-sysv-sshmem=no \
-        --enable-static \
-        --enable-shared \
         --enable-binaries \
         --enable-mpi-java \
-        --with-libevent="$libevent_DIR_INSTALL_PREFIX" \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS -DPOSIX_MADV_DONTNEED=MADV_DONTNEED -include android-stub.c" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" \
-        FC='' &&
-    make clean &&
-    make install
+        --with-libevent="$libevent_INSTALL_DIR" \
+        FC=''
 }
 
 write_android_stub() {
-    cat > android-stub.c <<EOF
+    cat > "$SOURCE_DIR/android-stub.c" <<EOF
 #ifndef ANDROID_STUB_H
 #define ANDROID_STUB_H
 

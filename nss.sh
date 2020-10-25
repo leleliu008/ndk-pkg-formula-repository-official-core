@@ -6,10 +6,29 @@ license="MPL-2.0"
 dependencies="nspr"
 
 prepare() {
-    cd nss
+    cd nss &&
+    SOURCE_DIR="$PWD" &&
+    sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
+    unset XCFLAGS &&
+    prepare_includes "$PWD/lib" 
+}
+
+prepare_includes() {
+    for item in $1/*
+    do
+        if [ -d "$item" ] ; then
+            case $item in
+                */mozpkix);;
+                *)
+                    XCFLAGS="$XCFLAGS -I$item"
+                    prepare_includes $item
+            esac
+        fi
+    done
 }
 
 build() {
+    cd "$SOURCE_DIR" &&
     make clean &&
     make \
         -C coreconf/nsinstall \
@@ -21,8 +40,7 @@ build() {
     make \
         OBJDIR_NAME=build \
         OS_TARGET=Linux \
-        CC="$CC" \
-        CFLAGS="$CFLAGS -I$nspr_DIR_INCLUDE/nspr -L$nspr_DIR_LIB -l nspr4 -I$PWD/lib/util" \
+        CC="$CC $CFLAGS $XCFLAGS -I$nspr_INCLUDE_DIR/nspr -L$nspr_LIBRARY_DIR -l nspr4 -D__EMX__=1 -DMAXNAMLEN=50 -DMAXPATHLEN=200" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
         CPP="$CPP" \
@@ -35,27 +53,27 @@ build() {
         USE_64=1 \
         USE_SYSTEM_ZLIB=1 \
         NSS_USE_SYSTEM_SQLITE=0 \
-        NSPR_INCLUDE_DIR="$nspr_DIR_INCLUDE/nspr" \
-        NSPR_LIB_DIR="$nspr_DIR_LIB" &&
+        NSPR_INCLUDE_DIR="$nspr_INCLUDE_DIR/nspr" \
+        NSPR_LIB_DIR="$nspr_LIBRARY_DIR" &&
         install_files &&
         install_pc_file
 }
 
 install_files() {
-    mkdir -p $DIR_INSTALL_PREFIX/{bin,lib/pkgconfig,include/nss}                    || return 1
+    mkdir -p $ABI_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}                    || return 1
     
-    install -v -m755 Linux*/lib/*.so              $DIR_INSTALL_PREFIX/lib           || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $DIR_INSTALL_PREFIX/lib           || return 1
+    install -v -m755 Linux*/lib/*.so              $ABI_INSTALL_DIR/lib           || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $ABI_INSTALL_DIR/lib           || return 1
     
-    cp -v -RL {public,private}/nss/*              $DIR_INSTALL_PREFIX/include/nss   || return 1
-    chmod -v 644                                  $DIR_INSTALL_PREFIX/include/nss/* || return 1
+    cp -v -RL {public,private}/nss/*              $ABI_INSTALL_DIR/include/nss   || return 1
+    chmod -v 644                                  $ABI_INSTALL_DIR/include/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $DIR_INSTALL_PREFIX/bin         || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_INSTALL_DIR/bin         || return 1
 }
 
 install_pc_file() {
-    cat > $nspr_DIR_LIB/pkgconfig/nss.pc <<EOF
-prefix=${PREFIX}
+    cat > "$nspr_LIBRARY_DIR/pkgconfig/nss.pc" <<EOF
+prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss

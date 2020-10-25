@@ -11,11 +11,11 @@ build() {
 }
 
 gen_pc_files() {
-    mkdir "$DIR_INSTALL_PREFIX/lib/pkgconfig/" || return 1
+    mkdir "$ABI_INSTALL_DIR/lib/pkgconfig/" || return 1
     for item in iconv charset
     do
-        cat > "$DIR_INSTALL_PREFIX/lib/pkgconfig/lib$item.pc" <<EOF
-prefix=$DIR_INSTALL_PREFIX
+        cat > "$ABI_INSTALL_DIR/lib/pkgconfig/lib$item.pc" <<EOF
+prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include

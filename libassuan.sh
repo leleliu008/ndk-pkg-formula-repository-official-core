@@ -6,22 +6,5 @@ license="GPL-3.0"
 dependencies="libgpg-error"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --with-libgpg-error-prefix="$libgpg_error_DIR_INSTALL_PREFIX" \
-        --enable-static \
-        --enable-shared \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" \
-        CC_FOR_BUILD=/usr/bin/cc &&
-    make clean &&
-    make install
+    configure --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR"
 }

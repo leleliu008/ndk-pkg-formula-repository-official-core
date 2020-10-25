@@ -6,24 +6,5 @@ license="GPL-3.0"
 dependencies="libiconv"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --enable-static \
-        --enable-shared \
-        --enable-largefile \
-        --disable-rpath \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    sed_in_place '/HAVE_GLOB_H/d' config.h &&
-    make clean &&
-    make install
+    configure ac_cv_header_glob_h=no
 }

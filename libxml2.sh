@@ -14,7 +14,7 @@ prepare() {
 
 build() {
     configure \
-        --with-iconv="$libiconv_DIR_INSTALL_PREFIX" \
+        --with-iconv="$libiconv_INSTALL_DIR" \
         --with-zlib \
         --without-lzma \
         --without-python \

@@ -6,32 +6,15 @@ license="GPL-2.0"
 dependencies="isl gmp libmpc mpfr"
 
 build() {
-    [ -f Makefile ] && make distclean
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-sysroot="$SYSROOT" \
-        --with-isl="$isl_DIR_INSTALL_PREFIX" \
-        --with-gmp="$gmp_DIR_INSTALL_PREFIX" \
-        --with-mpc="$libmpc_DIR_INSTALL_PREFIX" \
-        --with-mpfr="$mpfr_DIR_INSTALL_PREFIX" \
+    export LDFLAGS="$LDFLAGS -lm"
+    configure \
+        --with-isl="$isl_INSTALL_DIR" \
+        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-mpc="$libmpc_INSTALL_DIR" \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
         --with-system-zlib \
         --disable-werror \
-        --enable-static \
-        --enable-shared \
         --enable-interwork \
         --enable-multilib \
-        --enable-targets=all \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make &&
-    make install
+        --enable-targets=all
 }

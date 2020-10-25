@@ -9,22 +9,8 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --enable-largefile \
-        --disable-rpath \
-        --disable-nls \
+    configure \
         --without-guile \
         --without-dmalloc \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    sed_in_place '/HAVE_SIGSETMASK/d' src/config.h &&
-    make clean &&
-    make install
+        ac_cv_func_sigsetmask=no
 }

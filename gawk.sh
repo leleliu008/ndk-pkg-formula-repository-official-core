@@ -5,26 +5,27 @@ sha256="cf5fea4ac5665fd5171af4716baab2effc76306a9572988d5ba1078f196382bd"
 license="GPL-3.0"
 dependencies="readline mpfr"
 
-#char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
+# struct passwd* getpwent(void) __INTRODUCED_IN(26);
+#           void setpwent(void) __INTRODUCED_IN(26);
+#           void endpwent(void) __INTRODUCED_IN(26);
+
+prepare() {
+    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
+    if [ "$MIN_SDK_API_LEVEL" -lt 26 ] ; then
+        sed_in_place 's/nl_langinfo (CODESET)/"UTF-8"/g' support/regcomp.c
+        am_cv_langinfo_codeset=no
+    else
+        am_cv_langinfo_codeset=yes
+    fi
+}
+
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-readline="$readline_DIR_INSTALL_PREFIX" \
-        --with-mpfr="$mpfr_DIR_INSTALL_PREFIX" \
+    configure \
+        --with-readline="$readline_INSTALL_DIR" \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
         --enable-extensions \
         --enable-lint \
         --enable-mpfr \
-        --enable-largefile \
-        --disable-nls \
-        --disable-rpath \
         --disable-builtin-intdiv0 \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        "am_cv_langinfo_codeset=$am_cv_langinfo_codeset"
 }

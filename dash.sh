@@ -11,24 +11,13 @@ prepare() {
 
 # char* strchrnul(char* __s, int __ch) __RENAME(strchrnul) __attribute_pure__ __INTRODUCED_IN(24);
 # int glob(const char* __pattern, int __flags, int (*__error_callback)(const char* __failure_path, int __failure_errno), glob_t* __result_ptr) __INTRODUCED_IN(28);
+
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-libedit="$libedit_DIR_INSTALL_PREFIX" \
+    configure \
+        --with-libedit="$libedit_INSTALL_DIR" \
         --enable-glob=no \
         --enable-test-workaround=no \
         --enable-fnmatch \
         --enable-lineno \
-        --enable-static \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    sed_in_place '/HAVE_FACCESSAT/d' config.h &&
-    make clean &&
-    make install
+        ac_cv_func_faccessat=no
 }

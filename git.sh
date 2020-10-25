@@ -17,23 +17,12 @@ prepare() {
 }
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --with-iconv="$libiconv_DIR_INSTALL_PREFIX" \
-        --with-expat="$expat_DIR_INSTALL_PREFIX" \
-        --with-curl="$curl_DIR_INSTALL_PREFIX" \
-        --with-openssl="$openssl_DIR_INSTALL_PREFIX" \
-        --with-libpcre2="$pcre2_DIR_INSTALL_PREFIX" \
+    configure \
+        --with-iconv="$libiconv_INSTALL_DIR" \
+        --with-expat="$expat_INSTALL_DIR" \
+        --with-curl="$curl_INSTALL_DIR" \
+        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-libpcre2="$pcre2_INSTALL_DIR" \
         --with-zlib \
-        --disable-pthreads \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --disable-pthreads
 }

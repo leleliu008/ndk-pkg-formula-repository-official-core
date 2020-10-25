@@ -14,7 +14,7 @@ prepare() {
 build() {
     make clean &&
     make all3 \
-        DEST_HOME="$DIR_INSTALL_PREFIX" \
+        DEST_HOME="$ABI_INSTALL_DIR" \
         LOCAL_FLAGS="$CFLAGS -include stdlib.h" \
         CC="$CC" \
         CXX="$CXX"

@@ -6,37 +6,21 @@ license="GPL-3.0"
 dependencies="ncurses libiconv"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
+    export LDFLAGS="$LDFLAGS -L$BUILD_DIR/gettext-tools/gnulib-lib/.libs/"
+    configure \
         --with-included-regex \
         --with-included-gettext \
         --with-included-libxml \
         --with-included-libunistring \
-        --with-libncurses-prefix="$ncurses_DIR_INSTALL_PREFIX" \
-        --with-libiconv-prefix="$libiconv_DIR_INSTALL_PREFIX" \
+        --with-libncurses-prefix="$ncurses_INSTALL_DIR" \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
         --disable-acl \
-        --disable-rpath \
         --disable-openmp \
         --disable-csharp \
         --disable-java \
         --enable-c++ \
-        --enable-static \
-        --enable-shared \
-        --enable-largefile \
         --enable-curses \
         --enable-threads=posix \
         --enable-libasprintf \
-        --enable-namespacing \
-        CC="$CC" \
-        CFLAGS="$CFLAGS" \
-        CXX="$CXX" \
-        CXXFLAGS="$CXXFLAGS" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAGS" \
-        LDFLAGS="$LDFLAGS -L$DIR_SRC/gettext-tools/gnulib-lib/.libs/" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-namespacing
 }

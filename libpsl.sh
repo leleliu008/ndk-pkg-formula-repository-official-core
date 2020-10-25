@@ -6,23 +6,10 @@ license="MIT"
 dependencies="libidn2"
 
 build() {
-    ./configure \
-        --host="$TARGET_HOST" \
-        --prefix="$DIR_INSTALL_PREFIX" \
-        --enable-static \
-        --enable-shared \
-        --disable-rpath \
-        --disable-nls\
+    export LDFLAGS="$LDFLAGS -lunistring -liconv"
+
+    configure \
         --disable-valgrind-tests \
         --enable-runtime=libidn2 \
-        --enable-builtin=libidn2 \
-        CC="$CC" \
-        CFLAGS="$CFLAGS $CPPFLAGS -Du8_tolower=libunistring_u8_tolower -Du8_strlen=libunistring_u8_strlen -Duninorm_nfkc=libunistring_uninorm_nfkc" \
-        CPP="$CPP" \
-        CPPFLAGS="$CPPFLAG" \
-        LDFLAGS="$LDFLAGS -lunistring -liconv" \
-        AR="$AR" \
-        RANLIB="$RANLIB" &&
-    make clean &&
-    make install
+        --enable-builtin=libidn2
 }
