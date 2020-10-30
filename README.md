@@ -40,9 +40,9 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`x_INCLUDE_DIR`|the include directory of x package of this abi.|
 |`x_LIBRARY_DIR`|the lib directory of x package of this abi.|
 |||
-|`BUILD_FOR_ABI`|build for `TARGET_ABI`. it's value may be one of `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`|
-|`BUILD_FOR_HOST`|it's value may be one of `armv7a-linux-androideabi`, `aarch64-linux-android`, `i686-linux-android`, `x86_64-linux-android`|
-|`BUILD_FOR_ARCH`|it's value may be one of `arm`, `arm64`, `x86`, `x86_64`|
+|`BUILD_FOR_ABI`|it's value may be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
+|`BUILD_FOR_ARCH`|it's value may be one of `arm` `arm64` `x86` `x86_64`|
+|`BUILD_FOR_HOST`|it's value may be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
 |||
 |`SYSROOT`||
 |`SYSTEM_INCLUDE_DIR`||
