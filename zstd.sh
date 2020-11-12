@@ -3,7 +3,6 @@ homepage="https://facebook.github.io/zstd"
 url="https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
 sha256="98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
 dependencies="xz"
-#dependencies="lz4"
 
 #https://stackoverflow.com/questions/4610086/pthread-cancel-alternatives-in-android-ndk
 build() {

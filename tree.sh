@@ -15,10 +15,10 @@ prepare() {
 }
 
 build() {
-    make -C "$SOURCE_DIR" clean &&
-    make -C "$SOURCE_DIR" install \
+    $MAKE -C "$SOURCE_DIR" clean &&
+    $MAKE -C "$SOURCE_DIR" install \
         prefix="$ABI_INSTALL_DIR" \
         CC="$CC" \
-        CFLAGS="$CFLAGS -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" \
+        CFLAGS="$CFLAGS $CPPFLAGS -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" \
         LDFLAGS="$LDFLAGS"
 }

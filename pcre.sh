@@ -41,7 +41,6 @@ URL: http://www.pcre.org/
 Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
 Version: $version
 Libs: -L\${libdir} -l$item
-Libs.private: -D_THREAD_SAFE
 Cflags: -I\${includedir}
 EOF
     done

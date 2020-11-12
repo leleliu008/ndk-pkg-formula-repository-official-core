@@ -1,11 +1,14 @@
 summary="Multi-platform support library with a focus on asynchronous I/O"
 homepage="https://libuv.org"
-url="https://dist.libuv.org/dist/v1.38.1/libuv-v1.38.1.tar.gz"
-sha256="0ece7d279e480fa386b066130a562ad1a622079d43d1c30731f2f66cd3f5c647"
+version="1.40.0"
+url="https://github.com/libuv/libuv/archive/v$version.tar.gz"
+sha256="70fe1c9ba4f2c509e8166c0ca2351000237da573bb6c82092339207a9715ba6b"
+license="MIT"
 
 build() {
     cmake \
     -DLIBUV_BUILD_TESTS=OFF \
     -DLIBUV_BUILD_BENCH=OFF \
-    -DQEMU=OFF
+    -DQEMU=OFF &&
+    mv "$ABI_INSTALL_DIR/lib/libuv_a.a" "$ABI_INSTALL_DIR/lib/libuv.a"
 }

@@ -12,8 +12,8 @@ prepare() {
 
 build() {
     configure \
-        --disable-examples \
         --with-ogg="$libogg_INSTALL_DIR" \
         --with-vorbis="$libvorbis_INSTALL_DIR" \
         --with-sdl-prefix="$sdl2_INSTALL_DIR"
+        --disable-examples
 }

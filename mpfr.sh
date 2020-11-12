@@ -9,5 +9,6 @@ build() {
         --with-gmp="$gmp_INSTALL_DIR" \
         --disable-logging \
         --disable-assert \
+        --enable-lto \
         --enable-warnings
 }
