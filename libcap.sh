@@ -20,7 +20,7 @@ build() {
         lib=lib \
         PAM_CAP=no \
         GOLANG=no \
-        BUILD_CC='/usr/bin/cc' \
+        BUILD_CC="$CC_FOR_BUILD" \
         BUILD_CFLAGS='' \
         CC="$CC" \
         CFLAGS="$CFLAGS $CPPFLAGS" \

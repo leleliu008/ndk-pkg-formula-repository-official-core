@@ -1,8 +1,8 @@
 summary="Collection of portable C++ source libraries"
 homepage="https://www.boost.org"
-url="https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2"
-sha256="4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 version="1.73.0"
+url="https://dl.bintray.com/boostorg/release/$version/source/boost_$(echo $version | tr . _).tar.bz2"
+sha256="4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 license="BSL-1.0"
 dependencies="xz bzip2 zstd icu4c libiconv"
 
@@ -11,7 +11,7 @@ dependencies="xz bzip2 zstd icu4c libiconv"
 # https://www.boost.org/doc/libs/1_73_0/libs/context/doc/html/context/architectures/crosscompiling.html
 # https://www.boost.org/doc/libs/1_65_1/libs/context/doc/html/context/architectures.html
 prepare() {
-    CXX=c++ ./bootstrap.sh
+    ./bootstrap.sh
 }
 
 build() {

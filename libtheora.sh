@@ -5,8 +5,6 @@ sha256="b6ae1ee2fa3d42ac489287d3ec34c5885730b1296f0801ae577a35193d3affbc"
 dependencies="libogg libvorbis sdl2"
 
 prepare() {
-    fetch_config_sub &&
-    fetch_config_guess &&
     sed_in_place '$d' autogen.sh && ./autogen.sh
 }
 
@@ -14,6 +12,6 @@ build() {
     configure \
         --with-ogg="$libogg_INSTALL_DIR" \
         --with-vorbis="$libvorbis_INSTALL_DIR" \
-        --with-sdl-prefix="$sdl2_INSTALL_DIR"
+        --with-sdl-prefix="$sdl2_INSTALL_DIR" \
         --disable-examples
 }

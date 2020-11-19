@@ -34,7 +34,7 @@ build() {
         -C coreconf/nsinstall \
         USE_64=1 \
         OBJDIR_NAME=build \
-        CC='/usr/bin/cc' \
+        CC="$CC_FOR_BUILD" \
         CFLAGS='-v' \
         LDFLAGS='-v' &&
     make \

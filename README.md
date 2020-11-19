@@ -83,8 +83,6 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`sha256sum`|`VALUE=$(sha256sum FILEPATH)`|
 |`is_sha256sum_match`|`is_sha256sum_match FILEPATH SHA256SUM`|
 |`fetch`|`fetch URL [--output-dir=DIR --output-name=NAME --sha256=SHA256]`|
-|`fetch_config_sub`|`fetch_config_sub     [DIR]`|
-|`fetch_config_guess`|`fetch_config_guess [DIR]`|
 |`configure`|`configure --enable-pic`|
 |`cmake`|`cmake -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
 |`meson`|`meson -Dneon=disabled -Darm-simd=disabled`|

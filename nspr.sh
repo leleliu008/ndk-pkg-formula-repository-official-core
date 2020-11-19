@@ -30,8 +30,8 @@ build() {
         --with-android-ndk=xx \
         --with-android-toolchain=xx \
         --with-android-platform=xx \
-        HOST_CC='/usr/bin/cc' \
-        HOST_CXX='/usr/bin/c++' \
+        HOST_CC="$CC_FOR_BUILD" \
+        HOST_CXX="$CXX_FOR_BUILD" \
         HOST_CFLAGS='' \
         HOST_CXXFLAGS='' \
         HOST_LDFLAGS=''

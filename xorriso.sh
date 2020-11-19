@@ -14,9 +14,7 @@ prepare() {
         fi
     } &&
     sed_in_place '/THREAD_LIBS=-lpthread/d' configure &&
-    sed_in_place 's/wait3(NULL,WNOHANG,NULL)/waitpid(-1,NULL,WNOHANG)/' xorriso/parse_exec.c &&
-    fetch_config_sub &&
-    fetch_config_guess
+    sed_in_place 's/wait3(NULL,WNOHANG,NULL)/waitpid(-1,NULL,WNOHANG)/' xorriso/parse_exec.c
 }
 
 build() {

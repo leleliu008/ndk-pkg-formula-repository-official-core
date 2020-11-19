@@ -5,6 +5,10 @@ sha256="98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
 dependencies="libpng libtiff libjpeg-turbo giflib"
 
 build() {
+    build_with_cmake
+}
+
+build_with_cmake() {
     cmake \
     -DZLIB_LIBRARY="$SYSTEM_LIBRARY_DIR/libz.so" \
     -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
@@ -17,11 +21,10 @@ build() {
     -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so"
 }
 
-build2() {
-    eval test -z "$"build$TIMESTAP && {
-        eval build$TIMESTAP='true'
-        ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-21 ENABLE_SHARED=1 V=1
-    }
+build_with_ndk_build() {
+    if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
+        ndk-build NDK_PROJECT_PATH="$SOURCE_DIR" APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-21 ENABLE_SHARED=1 V=1
+    fi 
     mkdir -p "$ABI_INSTALL_DIR" &&
-    cp -r "libs/$BUILD_FOR_ABI" "$ABI_INSTALL_DIR/lib"
+    cp -r "$SOURCE_DIR/libs/$BUILD_FOR_ABI" "$ABI_INSTALL_DIR/lib"
 }

@@ -5,14 +5,11 @@ sha256="2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
 dependencies="libiconv"
 
 prepare() {
-    sed_in_place 's/iomanip.h/iomanip/g' configure && {
-        for item in $(grep -l "unsigned int argc" examples/*)
-        do
-            sed_in_place 's/int main( unsigned int argc,/int main(int argc,/g' $item || return 1
-        done
-    } &&
-    fetch_config_sub &&
-    fetch_config_guess
+    sed_in_place 's/iomanip.h/iomanip/g' configure || return 1
+    for item in $(grep -l "unsigned int argc" examples/*)
+    do
+        sed_in_place 's/int main( unsigned int argc,/int main(int argc,/g' $item || return 1
+    done
 }
 
 build() {
