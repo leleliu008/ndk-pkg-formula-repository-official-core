@@ -9,6 +9,10 @@ prepare() {
     cd nss &&
     SOURCE_DIR="$PWD" &&
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
+    sed_in_place 's/-lpthread//g'        coreconf/Linux.mk &&
+    sed_in_place 's/-lpthread//g'        lib/softoken/config.mk &&
+    sed_in_place 's/-lpthreads//g'       lib/sqlite/config.mk &&
+    sed_in_place 's/-lpthread//g'        gtests/google_test/gtest/m4/acx_pthread.m4 &&
     unset XCFLAGS &&
     prepare_includes "$PWD/lib" 
 }

@@ -15,6 +15,7 @@ build() {
         --disable-host-tool \
         --with-internal-glib \
         --cache-file="$CACHE_FILE"
+    # https://www.gnu.org/software/autoconf/manual/autoconf-2.67/html_node/Cache-Files.html
 }
 
 gen_glib_configure_cache_file() {
