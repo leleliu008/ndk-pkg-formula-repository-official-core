@@ -4,6 +4,10 @@ url="https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz
 sha256="98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
 dependencies="xz"
 
+prepare() {
+    SOURCE_DIR="$WORKING_DIR/build/cmake"
+}
+
 #https://stackoverflow.com/questions/4610086/pthread-cancel-alternatives-in-android-ndk
 build() {
     cmake \
@@ -17,7 +21,7 @@ build() {
     -DZSTD_ZLIB_SUPPORT=ON \
     -DZSTD_LZMA_SUPPORT=ON \
     -DZSTD_LZ4_SUPPORT=OFF \
+    -DZLIB_LIBRARY="$SYSTEM_LIBRARY_DIR/libz.a" \
     -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
-    -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.so" \
-    -S "$SOURCE_DIR/build/cmake"
+    -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.a"
 }
