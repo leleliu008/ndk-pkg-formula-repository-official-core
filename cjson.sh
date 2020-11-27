@@ -1,9 +1,8 @@
-summary="Ultralightweight JSON parser in ANSI C"
-homepage="https://github.com/DaveGamble/cJSON"
-version="1.7.14"
-url="https://github.com/DaveGamble/cJSON/archive/v$version.tar.gz"
-sha256="fb50a663eefdc76bafa80c82bc045af13b1363e8f45cec8b442007aef6a41343"
-license="MIT"
+summary  "Ultralightweight JSON parser in ANSI C"
+homepage "https://github.com/DaveGamble/cJSON"
+url      "https://github.com/DaveGamble/cJSON/archive/v1.7.14.tar.gz"
+sha256   "fb50a663eefdc76bafa80c82bc045af13b1363e8f45cec8b442007aef6a41343"
+license  "MIT"
 
 build() {
     cmake \

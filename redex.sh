@@ -1,8 +1,8 @@
-summary="Bytecode optimizer for Android apps"
-homepage="https://fbredex.com"
-url="https://github.com/facebook/redex.git"
-license="MIT"
-dependencies="boost jsoncpp libexecinfo"
+summary  "Bytecode optimizer for Android apps"
+homepage "https://fbredex.com"
+url      "https://github.com/facebook/redex.git"
+license  "MIT"
+dependencies "boost jsoncpp libexecinfo"
 
 prepare() {
     sed_in_place 's/-lpthread/-lc/g'           Makefile.am &&

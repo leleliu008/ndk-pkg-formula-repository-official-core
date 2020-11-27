@@ -1,7 +1,7 @@
-summary="Port of Sun's Transport-Independent RPC library to Linux"
-homepage="https://sourceforge.net/projects/libtirpc"
-url="https://nchc.dl.sourceforge.net/project/libtirpc/libtirpc/1.2.6/libtirpc-1.2.6.tar.bz2"
-sha256="4278e9a5181d5af9cd7885322fdecebc444f9a3da87c526e7d47f7a12a37d1cc"
+summary  "Port of Sun's Transport-Independent RPC library to Linux"
+homepage "https://sourceforge.net/projects/libtirpc"
+url      "https://nchc.dl.sourceforge.net/project/libtirpc/libtirpc/1.2.6/libtirpc-1.2.6.tar.bz2"
+sha256   "4278e9a5181d5af9cd7885322fdecebc444f9a3da87c526e7d47f7a12a37d1cc"
 
 prepare() {
     sed_in_place 's/LIBS="-lpthread\s*$LIBS"//g' configure &&

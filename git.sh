@@ -1,8 +1,8 @@
-summary="Distributed revision control system"
-homepage="https://git-scm.com"
-url="https://www.kernel.org/pub/software/scm/git/git-2.27.0.tar.xz"
-sha256="73ca9774d7fa226e1d87c1909401623f96dca6a044e583b9a762e84d7d1a73f9"
-dependencies="libiconv expat curl openssl pcre2"
+summary  "Distributed revision control system"
+homepage "https://git-scm.com"
+url      "https://www.kernel.org/pub/software/scm/git/git-2.27.0.tar.xz"
+sha256   "73ca9774d7fa226e1d87c1909401623f96dca6a044e583b9a762e84d7d1a73f9"
+dependencies "libiconv expat curl openssl pcre2"
 
 prepare() {
     {

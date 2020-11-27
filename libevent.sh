@@ -1,9 +1,9 @@
-summary="Asynchronous event library"
-homepage="https://libevent.org"
-version="2.1.12"
-url="https://github.com/libevent/libevent/releases/download/release-$version-stable/libevent-$version-stable.tar.gz"
-sha256="92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
-dependencies="openssl"
+summary  "Asynchronous event library"
+homepage "https://libevent.org"
+version  "2.1.12"
+url      "https://github.com/libevent/libevent/releases/download/release-$(version)-stable/libevent-$(version)-stable.tar.gz"
+sha256   "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
+dependencies "openssl"
 
 build() {
     cmake \

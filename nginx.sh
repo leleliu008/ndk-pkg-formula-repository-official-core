@@ -1,8 +1,8 @@
-summary="HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
-homepage="https://nginx.org"
-url="https://nginx.org/download/nginx-1.19.1.tar.gz"
-sha256="a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
-dependencies="openssl pcre"
+summary  "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
+homepage "https://nginx.org"
+url      "https://nginx.org/download/nginx-1.19.1.tar.gz"
+sha256   "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
+dependencies "openssl pcre"
 
 trace_configure() {
     for item in $(ls $1)

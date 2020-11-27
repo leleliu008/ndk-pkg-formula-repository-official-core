@@ -1,8 +1,7 @@
-summary="High quality, portable, open source libm implementation"
-homepage="https://openlibm.org"
-version="0.7.3"
-url="https://github.com/JuliaMath/openlibm/archive/v$version.tar.gz"
-sha256="d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
+summary  "High quality, portable, open source libm implementation"
+homepage "https://openlibm.org"
+url      "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
+sha256   "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc

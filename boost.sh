@@ -1,10 +1,10 @@
-summary="Collection of portable C++ source libraries"
-homepage="https://www.boost.org"
-version="1.73.0"
-url="https://dl.bintray.com/boostorg/release/$version/source/boost_$(echo $version | tr . _).tar.bz2"
-sha256="4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
-license="BSL-1.0"
-dependencies="xz bzip2 zstd icu4c libiconv"
+summary  "Collection of portable C++ source libraries"
+homepage "https://www.boost.org"
+version  "1.73.0"
+url      "https://dl.bintray.com/boostorg/release/$(version)/source/boost_$(echo $(version) | tr . _).tar.bz2"
+sha256   "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+license  "BSL-1.0"
+dependencies "xz bzip2 zstd icu4c libiconv"
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android
@@ -36,7 +36,7 @@ build() {
             architecture=x86
             abi=sysv
     esac
-
+    set -x 
     cd "$SOURCE_DIR" &&
     gen_project_config &&
     ./b2 install \
@@ -48,7 +48,7 @@ build() {
         --prefix="$ABI_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$BUILD_FOR_ABI \
+        toolset=clang-$BUILD_ROUND_NUM \
         link=static,shared \
         variant=release \
         threading=multi \
@@ -61,6 +61,6 @@ build() {
 
 gen_project_config() {
     cat > project-config.jam <<EOF
-using clang : $BUILD_FOR_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+using clang : $BUILD_ROUND_NUM : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
 EOF
 }

@@ -1,9 +1,9 @@
-summary="POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)"
-homepage="http://gondor.apana.org.au/~herbert/dash"
-url="http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.2.tar.gz"
-sha256="00fb7d68b7599cc41ab151051c06c01e9500540183d8aa72116cb9c742bd6d5f"
-license="BSD-3-Clause"
-dependencies="libedit"
+summary  "POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)"
+homepage "http://gondor.apana.org.au/~herbert/dash"
+url      "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.2.tar.gz"
+sha256   "00fb7d68b7599cc41ab151051c06c01e9500540183d8aa72116cb9c742bd6d5f"
+license  "BSD-3-Clause"
+dependencies "libedit"
 
 prepare() {
     sed_in_place 's/wait3(status, flags, NULL)/waitpid(-1, flags, NULL)/' src/jobs.c

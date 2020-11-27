@@ -1,8 +1,8 @@
-summary="Perl compatible regular expressions library"
-homepage="https://www.pcre.org"
-url="https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
-sha256="19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
-dependencies="bzip2"
+summary  "Perl compatible regular expressions library"
+homepage "https://www.pcre.org"
+url      "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
+sha256   "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
+dependencies "bzip2"
 
 #https://github.com/android/ndk/issues/1179
 build() {
@@ -23,14 +23,12 @@ build() {
 }
 
 gen_pc_files() {
+    install -d "$ABI_PKG_CONFIG_DIR"
     for item in pcre pcre16 pcre32 pcreposix
     do
-        DIR_PC_FILE_PCRE="$ABI_INSTALL_DIR/lib/pkgconfig"
-        
-        [ -d "$DIR_PC_FILE_PCRE" ] || mkdir -p "$DIR_PC_FILE_PCRE"
-        [ -f "$DIR_PC_FILE_PCRE/lib$item.pc" ] && continue
+        [ -f  "$ABI_PKG_CONFIG_DIR/lib$item.pc" ] && continue
 
-        cat > "$DIR_PC_FILE_PCRE/lib$item.pc" <<EOF
+        cat > "$ABI_PKG_CONFIG_DIR/lib$item.pc" <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
@@ -39,7 +37,7 @@ includedir=\${prefix}/include
 Name: lib$item
 URL: http://www.pcre.org/
 Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
-Version: $version
+Version: $(version)
 Libs: -L\${libdir} -l$item
 Cflags: -I\${includedir}
 EOF

@@ -1,7 +1,7 @@
-summary="C test project"
-homepage="https://github.com/leleliu008/C"
-#url="https://github.com/leleliu008/C.git"
-url="dir:///Users/leleliu008/git/C"
+summary  "C test project"
+homepage "https://github.com/leleliu008/C"
+#url      "https://github.com/leleliu008/C.git"
+url      "dir:///Users/leleliu008/git/C"
 
 build() {
     #WHICH=standard/posix/sys/stat.h

@@ -1,8 +1,8 @@
-summary="Image format providing lossless and lossy compression for web images"
-homepage="https://developers.google.com/speed/webp"
-url="http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz"
-sha256="98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
-dependencies="libpng libtiff libjpeg-turbo giflib"
+summary  "Image format providing lossless and lossy compression for web images"
+homepage "https://developers.google.com/speed/webp"
+url      "http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz"
+sha256   "98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
+dependencies "libpng libtiff libjpeg-turbo giflib"
 
 build() {
     build_with_cmake
@@ -23,8 +23,8 @@ build_with_cmake() {
 
 build_with_ndk_build() {
     if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
-        ndk-build NDK_PROJECT_PATH="$SOURCE_DIR" APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-21 ENABLE_SHARED=1 V=1
+        ndk-build NDK_PROJECT_PATH="$SOURCE_DIR" APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-$MIN_SDK_API_LEVEL ENABLE_SHARED=1 V=1
     fi 
-    mkdir -p "$ABI_INSTALL_DIR" &&
-    cp -r "$SOURCE_DIR/libs/$BUILD_FOR_ABI" "$ABI_INSTALL_DIR/lib"
+    install -d                               "$ABI_INSTALL_DIR" &&
+    cp -rv "$SOURCE_DIR/libs/$BUILD_FOR_ABI" "$ABI_LIBRARY_DIR"
 }

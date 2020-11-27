@@ -1,11 +1,10 @@
-summary="C++ Phone Number library by Google"
-homepage="https://github.com/google/libphonenumber"
-version="8.12.13"
-url="https://github.com/google/libphonenumber/archive/v$version.tar.gz"
-sha256="4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
-license="Apache-2.0"
-requirements="protoc"
-dependencies="boost icu4c re2 protobuf google-test"
+summary  "C++ Phone Number library by Google"
+homepage "https://github.com/google/libphonenumber"
+url      "https://github.com/google/libphonenumber/archive/v8.12.13.tar.gz"
+sha256   "4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
+license  "Apache-2.0"
+requirements "protoc"
+dependencies "boost icu4c re2 protobuf google-test"
 
 prepare() {
     SOURCE_DIR="$WORKING_DIR/cpp"

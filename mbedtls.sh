@@ -1,7 +1,7 @@
-summary="Cryptographic & SSL/TLS library"
-homepage="https://tls.mbed.org"
-url="https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
-sha256="5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
+summary  "Cryptographic & SSL/TLS library"
+homepage "https://tls.mbed.org"
+url      "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
+sha256   "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
 
 build() {
     cmake \

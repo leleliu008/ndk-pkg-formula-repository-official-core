@@ -1,9 +1,9 @@
-summary="Libraries for security-enabled client and server applications"
-homepage="https://developer.mozilla.org/docs/NSS"
-url="https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
-sha256="55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
-license="MPL-2.0"
-dependencies="nspr"
+summary  "Libraries for security-enabled client and server applications"
+homepage "https://developer.mozilla.org/docs/NSS"
+url      "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
+sha256   "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
+license  "MPL-2.0"
+dependencies "nspr"
 
 prepare() {
     cd nss &&
@@ -65,19 +65,19 @@ build() {
 }
 
 install_files() {
-    mkdir -p $ABI_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}                    || return 1
+    mkdir -p $ABI_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
     
-    install -v -m755 Linux*/lib/*.so              $ABI_INSTALL_DIR/lib           || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $ABI_INSTALL_DIR/lib           || return 1
+    install -v -m755 Linux*/lib/*.so              $ABI_LIBRARY_DIR       || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $ABI_LIBRARY_DIR       || return 1
     
-    cp -v -RL {public,private}/nss/*              $ABI_INSTALL_DIR/include/nss   || return 1
-    chmod -v 644                                  $ABI_INSTALL_DIR/include/nss/* || return 1
+    cp -v -RL {public,private}/nss/*              $ABI_INCLUDE_DIR/nss   || return 1
+    chmod -v 644                                  $ABI_INCLUDE_DIR/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_INSTALL_DIR/bin         || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_INSTALL_DIR/bin || return 1
 }
 
 install_pc_file() {
-    cat > "$nspr_LIBRARY_DIR/pkgconfig/nss.pc" <<EOF
+    cat > "$ABI_PKG_CONFIG_DIR/nss.pc" <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
