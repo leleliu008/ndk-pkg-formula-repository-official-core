@@ -27,7 +27,6 @@ gen_pc_files() {
     for item in pcre pcre16 pcre32 pcreposix
     do
         [ -f  "$ABI_PKG_CONFIG_DIR/lib$item.pc" ] && continue
-
         cat > "$ABI_PKG_CONFIG_DIR/lib$item.pc" <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
@@ -39,6 +38,7 @@ URL: http://www.pcre.org/
 Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
 Version: $(version)
 Libs: -L\${libdir} -l$item
+Libs.private: -D_THREAD_SAFE -pthread
 Cflags: -I\${includedir}
 EOF
     done

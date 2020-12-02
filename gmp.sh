@@ -9,6 +9,6 @@ build() {
         --disable-profiling \
         --disable-assert \
         --disable-cxx \
-        --enable-fft \
-        --enable-assembly
+        --enable-assembly \
+        --enable-fft
 }

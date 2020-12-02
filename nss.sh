@@ -73,7 +73,7 @@ install_files() {
     cp -v -RL {public,private}/nss/*              $ABI_INCLUDE_DIR/nss   || return 1
     chmod -v 644                                  $ABI_INCLUDE_DIR/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_INSTALL_DIR/bin || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_BINARY_DIR      || return 1
 }
 
 install_pc_file() {

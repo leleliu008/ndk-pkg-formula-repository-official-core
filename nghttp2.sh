@@ -18,7 +18,6 @@ build() {
         --disable-asio-lib \
         --disable-python-bindings \
         --disable-lib-only \
-        --disable-debug \
         --disable-werror \
         --disable-assert \
         --without-systemd \
