@@ -36,7 +36,6 @@ build() {
             architecture=x86
             abi=sysv
     esac
-    set -x 
     cd "$SOURCE_DIR" &&
     gen_project_config &&
     ./b2 install \

@@ -9,11 +9,11 @@ build() {
     export LDFLAGS="$LDFLAGS -L$BUILD_DIR/gettext-tools/gnulib-lib/.libs/"
     configure \
         --with-included-regex \
-        --with-included-gettext \
         --with-included-libxml \
+        --with-included-gettext \
         --with-included-libunistring \
-        --with-libncurses-prefix="$ncurses_INSTALL_DIR" \
         --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
+        --with-libncurses-prefix="$ncurses_INSTALL_DIR" \
         --disable-acl \
         --disable-openmp \
         --disable-csharp \

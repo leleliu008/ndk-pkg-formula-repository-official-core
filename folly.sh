@@ -7,7 +7,6 @@ requirements "cmake make pkg-config"
 dependencies "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
 
 build() {
-    set -x
     export CPPFLAGS="$CPPFLAGS -D__GLIBCXX__=1"
     export LDFLAGS="$LDFLAGS $SYSTEM_LIBRARY_DIR/libstdc++.a"
     cmake \

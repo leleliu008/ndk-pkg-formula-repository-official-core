@@ -18,9 +18,19 @@ build() {
         no-asm \
         -D__ANDROID_API__="$MIN_SDK_API_LEVEL" \
         --prefix="$ABI_INSTALL_DIR" \
-        "android-$BUILD_FOR_ARCH" &&
+        "$(os_compiler)" &&
     $MAKE clean &&
     ln -sf "$SYSTEM_LIBRARY_DIR"/*.o . &&
     $MAKE &&
     $MAKE install
+}
+
+os_compiler() {
+    # ./configure LIST | grep android
+    case $BUILD_FOR_ABI in
+        armeabi-v7a) echo "android-arm"    ;;
+        arm64-v8a)   echo "android-arm64"  ;;
+        x86)         echo "android-x86"    ;;
+        x86_64)      echo "android-x86_64" ;;
+    esac
 }
