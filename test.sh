@@ -3,6 +3,10 @@ homepage "https://github.com/leleliu008/C"
 #url      "https://github.com/leleliu008/C.git"
 url      "dir:///Users/leleliu008/git/C"
 
+prepare() {
+    :
+}
+
 build() {
     #WHICH=standard/posix/sys/stat.h
     #WHICH=standard/iso/variable/__thread

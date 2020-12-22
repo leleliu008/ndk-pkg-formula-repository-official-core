@@ -12,5 +12,7 @@ build() {
         --without-systemd \
         --with-ncursesw=no \
         --with-ncurses \
-        --enable-widechar=no
+        --enable-widechar=no \
+        --disable-all-programs \
+        --enable-libuuid
 }

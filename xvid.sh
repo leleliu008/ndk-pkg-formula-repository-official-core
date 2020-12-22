@@ -16,20 +16,15 @@ build() {
         --disable-gnuprofile \
         --enable-assembly \
         --enable-pthread &&
-    gen_pc_files
-}
-
-gen_pc_files() {
-    mkdir "$ABI_PKG_CONFIG_DIR" &&
-    cat > "$ABI_PKG_CONFIG_DIR/xvidcore.pc" <<EOF
+    install_pc_file 'xvidcore' <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: xvidcore
-URL: https://www.xvid.com/
-Description: High-performance, high-quality MPEG-4 video library
+URL: $(homepage)
+Description: $(summary)
 Version: $(version)
 Libs: -L\${libdir} -lxvidcore
 Cflags: -I\${includedir}

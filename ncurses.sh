@@ -13,7 +13,7 @@ build() {
         --with-shared \
         --enable-warnings \
         --enable-pc-files \
-        --with-pkg-config-libdir="$ABI_PKG_CONFIG_DIR" \
+        --with-pkg-config-libdir="$ABI_PKGCONF_DIR" \
         --enable-stripping \
         --disable-assertions \
         --disable-gnat-projects \
@@ -23,7 +23,7 @@ build() {
 
 install_links() {
     cd "$ABI_INCLUDE_DIR" || return 1
-    for item in curses.h form.h ncurses.h panel.h term.h termcap.h
+    for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
         ln -s "ncurses/$item" "$item" || return 1
     done

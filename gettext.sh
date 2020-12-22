@@ -22,5 +22,6 @@ build() {
         --enable-curses \
         --enable-threads=posix \
         --enable-libasprintf \
-        --enable-namespacing
+        --enable-namespacing \
+        --enable-nls
 }

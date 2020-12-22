@@ -19,23 +19,21 @@ build() {
     -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
     -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \
     -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.so" &&
-    gen_pc_files
+    install_pc_files
 }
 
-gen_pc_files() {
-    install -d "$ABI_PKG_CONFIG_DIR"
+install_pc_files() {
     for item in pcre pcre16 pcre32 pcreposix
     do
-        [ -f  "$ABI_PKG_CONFIG_DIR/lib$item.pc" ] && continue
-        cat > "$ABI_PKG_CONFIG_DIR/lib$item.pc" <<EOF
+        install_pc_file "lib$item" <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: lib$item
-URL: http://www.pcre.org/
-Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
+URL: $(homepage)
+Description: $(summary)
 Version: $(version)
 Libs: -L\${libdir} -l$item
 Libs.private: -D_THREAD_SAFE -pthread

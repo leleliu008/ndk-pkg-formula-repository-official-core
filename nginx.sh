@@ -3,7 +3,7 @@ homepage "https://nginx.org"
 url      "https://nginx.org/download/nginx-1.19.1.tar.gz"
 sha256   "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
 requirements "make"
-dependencies "openssl pcre"
+dependencies "openssl pcre libcrypt libglob"
 
 trace_configure() {
     for item in $(ls $1)
@@ -27,14 +27,6 @@ prepare() {
 
     sed_in_place 's/#if (NGX_READ_EVENT != EPOLLIN|EPOLLRDHUP)/#if 1/' src/event/modules/ngx_epoll_module.c &&
     sed_in_place 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c &&
-    
-    fetch https://raw.githubusercontent.com/muojie/nginx-android/master/glob/glob.h --output-dir=src/os/unix &&
-    fetch https://raw.githubusercontent.com/muojie/nginx-android/master/glob/glob.c --output-dir=src/os/unix &&
-    sed_in_place '/src\/os\/unix\/ngx_user.c/a src/os/unix/glob.c \\' auto/sources &&
-    sed_in_place 's/#include <glob.h>/#include "glob.h"/' src/os/unix/ngx_linux_config.h &&
-    sed_in_place 's/#include <crypt.h>//g'                src/os/unix/ngx_linux_config.h &&
-    sed_in_place '1a #include <openssl/des.h>' src/os/unix/ngx_user.c &&
-    sed_in_place 's/crypt((/DES_crypt((/g'     src/os/unix/ngx_user.c &&
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 }
 
@@ -46,12 +38,8 @@ build() {
     export NGX_MACHINE=$BUILD_FOR_ARCH
 
     case $BUILD_FOR_ABI in
-        armeabi-v7a|x86)
-            sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
-            ;;
-        arm64-v8a|x86_64)
-            sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
-            ;;
+        armeabi-v7a|x86)  sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof ;;
+        arm64-v8a|x86_64) sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof ;;
     esac
     
     [ -f Makefile ] && make clean
@@ -61,7 +49,7 @@ build() {
         --crossbuild=Linux:unkown:$BUILD_FOR_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU" \
-        --with-ld-opt="$LDFLAGS -lcrypto" \
+        --with-ld-opt="$LDFLAGS -lcrypto -lcrypt -lglob" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
     make install

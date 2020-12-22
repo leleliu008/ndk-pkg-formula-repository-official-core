@@ -1,4 +1,4 @@
-summary  "Freely available high-quality data compressor"
+summary  "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
 homepage "https://sourceware.org/bzip2"
 url      "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
 sha256   "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
@@ -14,25 +14,21 @@ build() {
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         LDFLAGS="$LDFLAGS" \
-        AR="$AR" &&
-    gen_pc_files
-}
-
-gen_pc_files() {
-    mkdir -p "$ABI_PKG_CONFIG_DIR"
-    cat >    "$ABI_PKG_CONFIG_DIR/libbz2.pc" <<EOF
+        AR="$AR" && {
+        install_pc_file 'libbz2' <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: libbz2
-URL: https://sourceware.org/bzip2
-Description: Burrows–Wheeler-based data compression library and utilities with high compression ratio.
+URL: $(homepage)
+Description: $(summary)
 Version: $(version)
 Libs: -L\${libdir} -lbz2
 Cflags: -I\${includedir}
 EOF
+    } && (cd "$ABI_PKGCONF_DIR" && ln -s libbz2.pc bzip2.pc)
 }
 
 repair_makefile() {

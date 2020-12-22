@@ -1,4 +1,4 @@
-summary  "Libraries for security-enabled client and server applications"
+summary  "Mozilla Network Security Services"
 homepage "https://developer.mozilla.org/docs/NSS"
 url      "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_RTM/src/nss-3.58.tar.gz"
 sha256   "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
@@ -35,15 +35,15 @@ install_files() {
     install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_INSTALL_DIR/bin || return 1
 }
 
-install_pc_file() {
-    cat > "$ABI_PKG_CONFIG_DIR/nss.pc" <<EOF
+install_pc_files() {
+    install_pc_file 'nss' <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss
 
 Name: NSS
-Description: Mozilla Network Security Services
+Description: $(summary)
 Version: $(version)
 Requires: nspr >= 4.12
 Libs: -L\${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3

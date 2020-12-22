@@ -3,18 +3,21 @@ homepage "https://github.com/harfbuzz/harfbuzz"
 url      "https://github.com/harfbuzz/harfbuzz/archive/2.7.2.tar.gz"
 sha256   "8ec112ee108642477478b75fc7906422abed404d7530e47ba0a4875f553f1b59"
 license  "MIT"
+requirements "meson"
+dependencies "icu4c glib freetype"
 
 build() {
+    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng"
     meson \
-        -Dicu=enable \
-        -Dglib=enable \
-        -Dfreetype=enable \
-        -Dgobject=disable \
-        -Dcairo=disable \
-        -Dfontconfig=disable \
-        -Dgraphite=disable \
-        -Dintrospection=disable \
-        -Dtests=disable \
-        -Ddocs=disable \
-        -Dbenchmark=disable
+        -Dicu=enabled \
+        -Dglib=enabled \
+        -Dfreetype=enabled \
+        -Dgobject=disabled \
+        -Dcairo=disabled \
+        -Dfontconfig=disabled \
+        -Dgraphite=disabled \
+        -Dintrospection=disabled \
+        -Dtests=disabled \
+        -Ddocs=disabled \
+        -Dbenchmark=disabled
 }

@@ -6,9 +6,5 @@ license  "Apache-2.0"
 requirements "cargo"
 
 build() {
-    cargo &&
-    install -d "$ABI_BINARY_DIR" &&
-    install -d "$ABI_INSTALL_DIR/share/man/man1" &&
-    install -m 755 "$SOURCE_DIR/target/$BUILD_FOR_TARGET_TRIPLE/release/bat" "$ABI_BINARY_DIR" &&
-    find "$SOURCE_DIR/target/$BUILD_FOR_TARGET_TRIPLE/release/build" -name 'bat.1' -exec install -m 644 {} \;
+    cargo bat $(find "$SOURCE_DIR/target/$BUILD_FOR_TARGET/release/build" -name 'bat.1') 
 }
