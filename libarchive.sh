@@ -1,8 +1,8 @@
-summary  "Multi-format archive and compression library"
-homepage "https://www.libarchive.org"
-url      "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
-sha256   "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
-dependencies "libiconv expat openssl xz bzip2 lz4 lzo zstd"
+summary "Multi-format archive and compression library"
+webpage "https://www.libarchive.org"
+src_url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
+src_sum "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
+depends "libiconv expat openssl xz bzip2 lz4 lzo zstd"
 
 build() {
     export CPPFLAGS="$CPPFLAGS -I$SOURCE_DIR/contrib/android/include"

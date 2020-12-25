@@ -8,13 +8,15 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |function|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`homepage`|required|the homepage of this package.|
-|`url`|required|the source code download url of this package. the argument of `url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.bz2` `.tar.tgz` `.tar.txz`|
-|`sha256`|optional|the `sha256sum` of source code. If the argument of `url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
-|`version`|optional|the version of this package. If this function is not invoked, it will be calculated from `url`.|
+|`webpage`|required|the home webpage of this package.|
+|`src_git`|optional|the source code git repository.|
+|`src_url`|required|the source code download url of this package. the argument of `src_url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.bz2` `.tar.tgz` `.tar.txz` `.c` `.cc` `.cxx` `.cpp`|
+|`src_sum`|optional|the `sha256sum` of source code. If the argument of `src_url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
+|`version`|optional|the version of this package. If this function is not invoked, it will be calculated from `src_url`.|
 |`license`|optional|the license of this package.|
-|`requirements`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
-|`dependencies`|optional|the packages will be used when installing. If specify multiple values, separate them with spaces.|
+|`require`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
+|`depends`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/unzip.sh#L8-L9)|
 
 ## the function can be declared in a formula
 |function|required?|overview|
@@ -38,7 +40,7 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`getvalue`|`VALUE=$(getvalue --min-sdk-api-level=21)`|
 |`sha256sum`|`VALUE=$(sha256sum FILEPATH)`|
 |`is_sha256sum_match`|`is_sha256sum_match FILEPATH SHA256SUM`|
-|`fetch`|`fetch URL [--output-dir=DIR --output-name=NAME --sha256=SHA256]`|
+|`fetch`|`fetch URL [--sha256=SHA256] --output-path=PATH`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`fetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
 
 ## the function can be invoked in build function only
 |function|example|

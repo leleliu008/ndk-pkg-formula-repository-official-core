@@ -1,8 +1,8 @@
-summary  "Palette quantization library extracted from pnquant2"
-homepage "https://pngquant.org/lib"
-url      "https://github.com/ImageOptim/libimagequant/archive/2.12.6.tar.gz"
-sha256   "b34964512c0dbe550c5f1b394c246c42a988cd73b71a76c5838aa2b4a96e43a0"
-license  "GPL-3.0"
+summary "Palette quantization library extracted from pnquant2"
+webpage "https://pngquant.org/lib"
+src_url "https://github.com/ImageOptim/libimagequant/archive/2.12.6.tar.gz"
+src_sum "b34964512c0dbe550c5f1b394c246c42a988cd73b71a76c5838aa2b4a96e43a0"
+license "GPL-3.0"
 
 build() {
     export OSTYPE=Linux

@@ -1,7 +1,7 @@
-summary  "PNG encoder and decoder in C and C++"
-homepage "https://github.com/lvandeve/lodepng"
-url      "https://github.com/lvandeve/lodepng.git"
-license  "Zlib"
+summary "PNG encoder and decoder in C and C++"
+webpage "https://github.com/lvandeve/lodepng"
+src_url "https://github.com/lvandeve/lodepng.git"
+license "Zlib"
 
 prepare() {
     override_makefile

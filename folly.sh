@@ -1,10 +1,10 @@
-summary  "Collection of reusable C++ library artifacts developed at Facebook"
-homepage "https://github.com/facebook/folly"
-url      "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
-sha256   "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
-license  "Apache-2.0"
-requirements "cmake make pkg-config"
-dependencies "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
+summary "Collection of reusable C++ library artifacts developed at Facebook"
+webpage "https://github.com/facebook/folly"
+src_url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
+src_sum "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
+license "Apache-2.0"
+require "cmake make pkg-config"
+depends "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
 
 build() {
     export CPPFLAGS="$CPPFLAGS -D__GLIBCXX__=1"

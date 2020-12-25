@@ -1,11 +1,11 @@
-summary  "Utility to list open files"
-homepage "https://people.freebsd.org/~abe"
-repo     "https://github.com/lsof-org/lsof"
-url      "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
-sha256   "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
-license  "Zlib"
-requirements "make"
-dependencies "libtirpc"
+summary "Utility to list open files"
+webpage "https://people.freebsd.org/~abe"
+src_git "https://github.com/lsof-org/lsof"
+src_url "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
+src_sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
+license "Zlib"
+require "make"
+depends "libtirpc"
 
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 

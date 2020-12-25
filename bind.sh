@@ -1,10 +1,10 @@
-summary  "Implementation of the DNS protocols"
-homepage "https://www.isc.org/downloads/bind"
-url      "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
-sha256   "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
-license  "MPL-2.0"
-requirements "base64 patch"
-dependencies "json-c libxml2 libidn2 libuv openssl"
+summary "Implementation of the DNS protocols"
+webpage "https://www.isc.org/downloads/bind"
+src_url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
+src_sum "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
+license "MPL-2.0"
+require "base64 patch"
+depends "json-c libxml2 libidn2 libuv openssl"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

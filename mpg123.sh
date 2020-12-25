@@ -1,9 +1,9 @@
-summary  "MP3 player"
-homepage "https://www.mpg123.de"
-url      "https://www.mpg123.de/download/mpg123-1.26.3.tar.bz2"
-sha256   "30c998785a898f2846deefc4d17d6e4683a5a550b7eacf6ea506e30a7a736c6e"
-requirements "pkg-config"
-dependencies "sdl2"
+summary "MP3 player"
+webpage "https://www.mpg123.de"
+src_url "https://www.mpg123.de/download/mpg123-1.26.3.tar.bz2"
+src_sum "30c998785a898f2846deefc4d17d6e4683a5a550b7eacf6ea506e30a7a736c6e"
+require "pkg-config"
+depends "sdl2"
 
 build() {
     configure \

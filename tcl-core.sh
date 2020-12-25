@@ -1,9 +1,9 @@
-summary  "Tool Command Language"
-homepage "https://www.tcl-lang.org"
-version  "8.6.10"
-url      "https://downloads.sourceforge.net/project/tcl/Tcl/$(version)/tcl$(version)-src.tar.gz"
-sha256   "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
-license  "TCL"
+summary "Tool Command Language"
+webpage "https://www.tcl-lang.org"
+version "8.6.10"
+src_url "https://downloads.sourceforge.net/project/tcl/Tcl/$(version)/tcl$(version)-src.tar.gz"
+src_sum "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
+license "TCL"
 
 prepare() {
     cd unix &&

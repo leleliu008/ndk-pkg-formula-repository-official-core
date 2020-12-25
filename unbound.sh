@@ -1,10 +1,10 @@
-summary  "Validating, recursive, caching DNS resolver"
-homepage "https://www.unbound.net"
-repo     "https://github.com/NLnetLabs/unbound.git"
-url      "https://nlnetlabs.nl/downloads/unbound/unbound-1.12.0.tar.gz"
-sha256   "5b9253a97812f24419bf2e6b3ad28c69287261cf8c8fa79e3e9f6d3bf7ef5835"
-license  "BSD-3-Clause"
-dependencies "openssl libmnl libevent expat nghttp2"
+summary "Validating, recursive, caching DNS resolver"
+webpage "https://www.unbound.net"
+src_git "https://github.com/NLnetLabs/unbound.git"
+src_url "https://nlnetlabs.nl/downloads/unbound/unbound-1.12.0.tar.gz"
+src_sum "5b9253a97812f24419bf2e6b3ad28c69287261cf8c8fa79e3e9f6d3bf7ef5835"
+license "BSD-3-Clause"
+depends "openssl libmnl libevent expat nghttp2"
 
 build() {
     configure \

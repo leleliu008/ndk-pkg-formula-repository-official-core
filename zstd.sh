@@ -1,8 +1,8 @@
-summary  "Zstandard is a real-time compression algorithm"
-homepage "https://facebook.github.io/zstd"
-url      "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
-sha256   "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
-dependencies "xz"
+summary "Zstandard is a real-time compression algorithm"
+webpage "https://facebook.github.io/zstd"
+src_url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
+src_sum "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
+depends "xz"
 
 prepare() {
     SOURCE_DIR="$WORKING_DIR/build/cmake"

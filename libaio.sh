@@ -1,8 +1,8 @@
-summary  "Linux-native asynchronous I/O access library"
-homepage "https://pagure.io/libaio"
-url      "https://pagure.io/libaio/archive/libaio-0.3.111/libaio-libaio-0.3.111.tar.gz"
-sha256   "e6bc17cba66e59085e670fea238ad095766b412561f90b354eb4012d851730ba"
-license  "LGPL-2.1-or-later"
+summary "Linux-native asynchronous I/O access library"
+webpage "https://pagure.io/libaio"
+src_url "https://pagure.io/libaio/archive/libaio-0.3.111/libaio-libaio-0.3.111.tar.gz"
+src_sum "e6bc17cba66e59085e670fea238ad095766b412561f90b354eb4012d851730ba"
+license "LGPL-2.1-or-later"
 
 prepare() {
     # on macOS, some fs is non-case-sensitive. In this case, make install will always say make: 'install' is up to date.

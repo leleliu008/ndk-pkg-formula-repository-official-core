@@ -1,8 +1,8 @@
-summary  "C++ microbenchmark support library"
-homepage "https://github.com/google/benchmark"
-url      "https://github.com/google/benchmark/archive/v1.5.2.tar.gz"
-sha256   "dccbdab796baa1043f04982147e67bb6e118fe610da2c65f88912d73987e700c"
-license  "Apache-2.0"
+summary "C++ microbenchmark support library"
+webpage "https://github.com/google/benchmark"
+src_url "https://github.com/google/benchmark/archive/v1.5.2.tar.gz"
+src_sum "dccbdab796baa1043f04982147e67bb6e118fe610da2c65f88912d73987e700c"
+license "Apache-2.0"
 
 build() {
     cmake \

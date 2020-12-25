@@ -1,10 +1,10 @@
-summary  "Interpreted, interactive, object-oriented programming language"
-homepage "https://www.python.org"
-url      "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
-sha256   "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
-license  "Python-2.0"
-requirements "make"
-dependencies "expat libffi openssl readline sqlite bzip2 xz"
+summary "Interpreted, interactive, object-oriented programming language"
+webpage "https://www.python.org"
+src_url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
+src_sum "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
+license "Python-2.0"
+require "make"
+depends "expat libffi openssl readline sqlite bzip2 xz"
 
 prepare() {
     sed_in_place 's|@echo|echo|g' Makefile.pre.in &&

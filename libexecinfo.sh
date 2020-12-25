@@ -1,6 +1,6 @@
-summary  "a quick-n-dirty BSD licensed clone of backtrace facility found in the GNU libc"
-homepage "https://github.com/resslinux/libexecinfo"
-url      "https://github.com/leleliu008/libexecinfo.git"
+summary "a quick-n-dirty BSD licensed clone of backtrace facility found in the GNU libc"
+webpage "https://github.com/resslinux/libexecinfo"
+src_url "https://github.com/leleliu008/libexecinfo.git"
 
 build() {
     $MAKE -C "$SOURCE_DIR" clean &&

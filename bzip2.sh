@@ -1,7 +1,7 @@
-summary  "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
-homepage "https://sourceware.org/bzip2"
-url      "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
-sha256   "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
+webpage "https://sourceware.org/bzip2"
+src_url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+src_sum "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
 
 prepare() {
     repair_makefile
@@ -22,7 +22,7 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: libbz2
-URL: $(homepage)
+URL: $(webpage)
 Description: $(summary)
 Version: $(version)
 Libs: -L\${libdir} -lbz2

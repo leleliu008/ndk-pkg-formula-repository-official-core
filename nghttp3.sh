@@ -1,6 +1,6 @@
-summary  "HTTP/3 library written in C"
-homepage "https://github.com/ngtcp2/nghttp3"
-url      "https://github.com/ngtcp2/nghttp3.git"
+summary "HTTP/3 library written in C"
+webpage "https://github.com/ngtcp2/nghttp3"
+src_url "https://github.com/ngtcp2/nghttp3.git"
 
 build() {
     cmake \

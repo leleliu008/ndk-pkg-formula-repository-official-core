@@ -1,7 +1,7 @@
-summary  "Rust and C implementations of the BLAKE3 cryptographic hash function"
-homepage "https://github.com/BLAKE3-team/BLAKE3"
-url      "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
-sha256   "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
+summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
+webpage "https://github.com/BLAKE3-team/BLAKE3"
+src_url "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
+src_sum "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
 
 prepare() {
     SOURCE_DIR="$WORKING_DIR/c"

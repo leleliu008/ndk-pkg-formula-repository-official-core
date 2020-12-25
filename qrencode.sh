@@ -1,8 +1,8 @@
-summary  "QR Code generation"
-homepage "https://fukuchi.org/works/qrencode"
-url      "https://fukuchi.org/works/qrencode/qrencode-4.0.2.tar.gz"
-sha256   "dbabe79c07614625d1f74d8c0ae2ee5358c4e27eab8fd8fe31f9365f821a3b1d"
-dependencies "libpng"
+summary "QR Code generation"
+webpage "https://fukuchi.org/works/qrencode"
+src_url "https://fukuchi.org/works/qrencode/qrencode-4.0.2.tar.gz"
+src_sum "dbabe79c07614625d1f74d8c0ae2ee5358c4e27eab8fd8fe31f9365f821a3b1d"
+depends "libpng"
 
 build() {
     cmake \

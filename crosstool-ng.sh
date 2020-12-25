@@ -1,9 +1,9 @@
-summary  "Tool for building toolchains"
-homepage "https://crosstool-ng.github.io"
-url      "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
-sha256   "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
-license  "LGPL-2.1"
-dependencies "ncurses libiconv gettext"
+summary "Tool for building toolchains"
+webpage "https://crosstool-ng.github.io"
+src_url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
+src_sum "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
+license "LGPL-2.1"
+depends "ncurses libiconv gettext"
 
 build() {
     export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.a $libiconv_LIBRARY_DIR/libiconv.a"

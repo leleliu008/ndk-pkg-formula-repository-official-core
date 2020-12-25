@@ -1,8 +1,8 @@
-summary  "Perl compatible regular expressions library"
-homepage "https://www.pcre.org"
-url      "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
-sha256   "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
-dependencies "bzip2"
+summary "Perl compatible regular expressions library"
+webpage "https://www.pcre.org"
+src_url "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
+src_sum "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
+depends "bzip2"
 
 #https://github.com/android/ndk/issues/1179
 build() {
@@ -32,7 +32,7 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: lib$item
-URL: $(homepage)
+URL: $(webpage)
 Description: $(summary)
 Version: $(version)
 Libs: -L\${libdir} -l$item

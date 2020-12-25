@@ -1,7 +1,7 @@
-summary  "QUIC library written in C"
-homepage "https://github.com/ngtcp2/ngtcp2"
-url      "https://github.com/ngtcp2/ngtcp2.git"
-dependencies "libev nghttp3"
+summary "QUIC library written in C"
+webpage "https://github.com/ngtcp2/ngtcp2"
+src_url "https://github.com/ngtcp2/ngtcp2.git"
+depends "libev nghttp3"
 
 build() {
     cmake \
