@@ -5,10 +5,9 @@ src_sum "0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975"
 depends "libgpg-error"
 
 build() {
-    case $BUILD_FOR_ABI in
-        x86|x86_64)
-            EXTRA_OPT='--disable-asm';;
-        *)  EXTRA_OPT='--enable-asm'
+    case $BUILD_FOR_ARCH in
+        *86*) EXTRA_OPT='--disable-asm' ;;
+        *)    EXTRA_OPT='--enable-asm'  ;;
     esac
     
     configure \

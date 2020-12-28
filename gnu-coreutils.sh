@@ -12,7 +12,7 @@ license "GPL-3.0"
 build() {
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
     {
-        if [ "$BUILD_FOR_ABI" = 'arm64-v8a' ] ; then
+        if [ "$BUILD_FOR_ARCH" = 'aarch64' ] ; then
             export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
         fi
     } &&

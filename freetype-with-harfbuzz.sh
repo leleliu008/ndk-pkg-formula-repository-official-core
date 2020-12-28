@@ -12,11 +12,13 @@ build() {
     -DFT_WITH_PNG=ON \
     -DFT_WITH_HARFBUZZ=ON \
     -DBROTLIDEC_INCLUDE_DIRS="$brotli_INCLUDE_DIR" \
-    -DBROTLIDEC_LIBRARIES="$brotli_LIBRARY_DIR/libbrotlidec.so" \
+    -DBROTLIDEC_LIBRARIES="$brotli_LIBRARY_DIR/libbrotlidec.a" \
     -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \
+    -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.a" \
+    -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
+    -DZLIB_LIBRARY_RELEASE="$zlib_INCLUDE_DIR/libz.a" \
     -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
-    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so" \
+    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.a" \
     -DHARFBUZZ_INCLUDE_DIRS="$harfbuzz_INCLUDE_DIR/harfbuzz" \
-    -DHARFBUZZ_LIBRARIES="$harfbuzz_LIBRARY_DIR/libharfbuzz.so"
+    -DHARFBUZZ_LIBRARIES="$harfbuzz_LIBRARY_DIR/libharfbuzz.a"
 }

@@ -14,11 +14,11 @@ build() {
 }
 
 cpu() {
-    case $BUILD_FOR_ABI in
-        armeabi-v7a) echo neon   ;;
-        arm64-v8a)   echo neon64 ;;
-        x86)         echo x86    ;;
-        x86_64)      echo x86-64 ;;
-        *)           echo "$BUILD_FOR_ABI"
+    case $BUILD_FOR_ARCH in
+        armv7a)  echo neon   ;;
+        aarch64) echo neon64 ;;
+        i686)    echo x86    ;;
+        x86_64)  echo x86-64 ;;
+        *)       echo "$BUILD_FOR_ARCH"
     esac
 }

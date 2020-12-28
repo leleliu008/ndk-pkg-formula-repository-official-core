@@ -10,16 +10,12 @@ prepare() {
 build() {
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'
     
-    case $BUILD_FOR_ABI in
-        armeabi-v7a)
+    case $BUILD_FOR_ARCH in
+        armv7a|aarch64)
             CPPFLAGS="$CPPFLAGS -DBLAKE3_USE_NEON"
             SRCS="$SRCS blake3_neon.c"
             ;;
-        arm64-v8a)
-            CPPFLAGS="$CPPFLAGS -DBLAKE3_USE_NEON"
-            SRCS="$SRCS blake3_neon.c"
-            ;;
-        x86)
+        i686)
             SRCS="$SRCS blake3_sse2.c blake3_sse41.c blake3_avx2.c blake3_avx512.c" ;;
         x86_64)
             SRCS="$SRCS blake3_sse2_x86-64_unix.S blake3_sse41_x86-64_unix.S blake3_avx2_x86-64_unix.S blake3_avx512_x86-64_unix.S" ;;

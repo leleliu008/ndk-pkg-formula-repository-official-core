@@ -21,11 +21,11 @@ build() {
         EXTRA_CONFIGURE_FLAGS="tcl_cv_langinfo_h=yes"
     fi
     
-    case $BUILD_FOR_ABI in
-        arm64-v8a|x86_64)
-            EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --enable-64bit";;
-        *)  EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --disable-64bit"
-    esac
+    if echo "$BUILD_FOR_ARCH" | grep -q '64' ; then
+        EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --enable-64bit"
+    else
+        EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --disable-64bit"
+    fi
 
     configure \
         --enable-dtrace \

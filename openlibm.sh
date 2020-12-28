@@ -8,7 +8,7 @@ prepare() {
 }
 
 build() {
-    if [ "$BUILD_FOR_ABI" = 'x86_64' ] ; then
+    if [ "$BUILD_FOR_ARCH" = 'x86_64' ] ; then
         LONG_DOUBLE_NOT_DOUBLE=1
     else
         LONG_DOUBLE_NOT_DOUBLE=0

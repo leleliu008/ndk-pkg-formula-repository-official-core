@@ -15,18 +15,18 @@ prepare() {
 }
 
 build() {
-    case $BUILD_FOR_ABI in
-        armeabi-v7a)
+    case $BUILD_FOR_ARCH in
+        armv7a)
             address_model=32
             architecture=arm
             abi=aapcs
             ;;
-        arm64-v8a)
+        aarch64)
             address_model=64
             architecture=arm
             abi=aapcs
             ;;
-        x86)
+        i686)
             address_model=32
             architecture=x86
             abi=sysv

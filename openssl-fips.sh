@@ -28,10 +28,10 @@ build() {
 }
 
 get_os_compiler() {
-    case "$BUILD_FOR_ABI" in
-        armeabi-v7a) msg "android-armv7";;
-        arm64-v8a)   msg "android64-aarch64";;
-        x86)         msg "android-x86";;
-        *)           msg "android";;
+    case $BUILD_FOR_ARCH in
+        armv7a)  echo "android-armv7"     ;;
+        aarch64) echo "android64-aarch64" ;;
+        i686)    echo "android-x86"       ;;
+        *)       echo "android"           ;;
     esac
 }

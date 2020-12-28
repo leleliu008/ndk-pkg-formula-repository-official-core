@@ -7,5 +7,7 @@ license "MIT"
 build() {
     cmake \
         -DUTF8PROC_INSTALL=ON \
-        -DUTF8PROC_ENABLE_TESTING=OFF
+        -DUTF8PROC_ENABLE_TESTING=OFF &&
+    make -C "$SOURCE_DIR" libutf8proc.pc &&
+    install_pcfs "$SOURCE_DIR/libutf8proc.pc"
 }

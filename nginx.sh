@@ -37,10 +37,11 @@ build() {
     export NGX_RELEASE=unkown
     export NGX_MACHINE=$BUILD_FOR_ARCH
 
-    case $BUILD_FOR_ABI in
-        armeabi-v7a|x86)  sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof ;;
-        arm64-v8a|x86_64) sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof ;;
-    esac
+    if echo "$BUILD_FOR_ARCH" | grep -q '64' ; then
+        sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
+    else
+        sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
+    fi
     
     [ -f Makefile ] && make clean
     

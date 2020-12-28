@@ -27,10 +27,10 @@ build() {
 
 os_compiler() {
     # ./configure LIST | grep android
-    case $BUILD_FOR_ABI in
-        armeabi-v7a) echo "android-arm"    ;;
-        arm64-v8a)   echo "android-arm64"  ;;
-        x86)         echo "android-x86"    ;;
-        x86_64)      echo "android-x86_64" ;;
+    case $BUILD_FOR_ARCH in
+        armv7a)  echo "android-arm"    ;;
+        aarch64) echo "android-arm64"  ;;
+        i686)    echo "android-x86"    ;;
+        x86_64)  echo "android-x86_64" ;;
     esac
 }
