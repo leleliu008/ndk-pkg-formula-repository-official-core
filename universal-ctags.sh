@@ -5,8 +5,7 @@ require "autoreconf autoconf automake autoheader pkg-config cc"
 depends "jansson libyaml libxml2"
 
 prepare() {
-    ./autogen.sh &&
-    sed_in_place 's|@echo|echo|g' Makefile.in
+    ./autogen.sh
 }
 
 build() {

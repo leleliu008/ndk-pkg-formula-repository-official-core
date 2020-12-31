@@ -5,7 +5,7 @@ src_url "https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-
 src_sum "f99d1c13aa5fa296898a181dff9b82fb25f6cc0933dbaa7a475d8109bd54209d"
 license "LGPL-2.1"
 require "cmake"
-depends "freetype"
+depends "freetype2"
 
 build() {
     cmake
