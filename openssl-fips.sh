@@ -10,8 +10,9 @@ prepare() {
     sed_in_place 's|./fips_standalone_sha1$(EXE_EXT) fipscanister.o > fipscanister.o.sha1||g' fips/Makefile
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     perl Configure \
         shared \
         no-ssl2 \

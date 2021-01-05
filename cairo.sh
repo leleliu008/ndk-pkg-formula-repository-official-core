@@ -5,6 +5,7 @@ src_sum "5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331"
 license "LGPL-2.1"
 require "patch pkg-config"
 depends "libxml2 libpng pixman lzo glib fontconfig"
+ldflags "-llog"
 patches "https://raw.githubusercontent.com/termux/termux-packages/master/packages/libcairo/android-shmem.patch" \
         "f12491f7411e7c5ba6bf178c3e8c420f5de45d93818f0c0b857eb020bc3b98ef"
 
@@ -19,7 +20,6 @@ prepare() {
 
 build() {
     export CPPFLAGS="$CPPFLAGS -include string.h"
-    export LDFLAGS="$LDFLAGS -llog"
     configure \
         --without-x \
         --disable-valgrind \

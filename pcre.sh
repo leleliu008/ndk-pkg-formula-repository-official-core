@@ -2,9 +2,8 @@ summary "Perl compatible regular expressions library"
 webpage "https://www.pcre.org"
 src_url "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
 src_sum "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
-depends "bzip2"
+depends "zlib bzip2"
 
-#https://github.com/android/ndk/issues/1179
 build() {
     cmake \
     -DPCRE_BUILD_PCRE8=ON \
@@ -16,9 +15,10 @@ build() {
     -DPCRE_SUPPORT_VALGRIND=OFF \
     -DPCRE_SUPPORT_LIBZ=ON \
     -DPCRE_SUPPORT_LIBBZ2=ON \
+    -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
+    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
     -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \
-    -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.so" &&
+    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.a" &&
     install_pc_files
 }
 

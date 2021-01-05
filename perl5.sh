@@ -1,5 +1,6 @@
 summary "Highly capable, feature-rich programming language"
 webpage "https://www.perl.org"
+src_git "https://github.com/perl/perl5.git"
 src_url "https://www.cpan.org/src/5.0/perl-5.32.0.tar.xz"
 src_sum "6f436b447cf56d22464f980fac1916e707a040e96d52172984c5d184c09b859b"
 license "GPL-1.0-or-later"
@@ -10,8 +11,9 @@ prepare() {
     gsed -i 's|sed -r|gsed -r|g' $(grep 'sed -r' -rl .)
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --target="$BUILD_FOR_TARGET" \

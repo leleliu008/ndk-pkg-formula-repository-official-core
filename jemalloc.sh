@@ -16,10 +16,11 @@ modify_code()    {
     done
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     ./configure \
-        --host="$BUILD_FOR_HOST" \
+        --host="$BUILD_FOR_TARGET" \
         --prefix="$ABI_INSTALL_DIR" \
         --disable-debug \
         --disable-prof \

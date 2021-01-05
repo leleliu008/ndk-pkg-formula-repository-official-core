@@ -5,14 +5,14 @@ src_sum "4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
 license "Apache-2.0"
 require "protoc"
 depends "boost icu4c re2 protobuf google-test"
+ldflags "-llog"
+sourced "cpp"
 
 prepare() {
-    SOURCE_DIR="$WORKING_DIR/cpp"
-    sed_in_place '/pthread/d' "$SOURCE_DIR/CMakeLists.txt"
+    sed_in_place '/pthread/d' CMakeLists.txt
 }
 
 build() {
-    export LDFLAGS="$LDFLAGS -llog"
     cmake \
         -DBUILD_GEOCODER=OFF \
         -DBUILD_STATIC_LIB=ON \

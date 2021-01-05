@@ -3,8 +3,9 @@ webpage "http://stlport.org"
 src_url "https://jaist.dl.sourceforge.net/project/stlport/STLport/STLport-5.2.1/STLport-5.2.1.tar.bz2"
 src_sum "755b007b982c4545086c43affc8ed32c0acd577ee206eb1f6967e250c3546fc9"
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --without-debug \

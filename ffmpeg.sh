@@ -8,8 +8,9 @@ prepare() {
     sed_in_place 's/Wl,-soname,/o /g' configure
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \

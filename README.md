@@ -7,22 +7,25 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 ## the function must be invoked on top of the formula
 |function|required?|overview|
 |-|-|-|
-|`summary`|required|the summary of this package.|
-|`webpage`|required|the home webpage of this package.|
-|`src_git`|optional|the source code git repository.|
-|`src_url`|required|the source code download url of this package. the argument of `src_url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.bz2` `.tar.tgz` `.tar.txz` `.c` `.cc` `.cxx` `.cpp`|
-|`src_sum`|optional|the `sha256sum` of source code. If the argument of `src_url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
-|`version`|optional|the version of this package. If this function is not invoked, it will be calculated from `src_url`.|
-|`license`|optional|the license of this package.|
-|`require`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
-|`depends`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
-|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/unzip.sh#L8-L9)|
+|`summary VALUE`|required|the summary of this package.|
+|`webpage VALUE`|required|the home webpage of this package.|
+|`src_git VALUE`|optional|the source code git repository.|
+|`src_url VALUE`|required|the source code download url of this package. the argument of `src_url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`. `src_url` also support format like `dir://DIR`|
+|`src_sum VALUE`|optional|the `sha256sum` of source code. If the argument of `src_url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
+|`version VALUE`|optional|the version of this package. If this function is not invoked, it will be calculated from `src_url`.|
+|`license VALUE`|optional|the license of this package.|
+|`require VALUE`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
+|`depends LIST`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+|`patches LIST`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/unzip.sh#L8-L9)|
+|`ldflags LIST`|optional|`LDFLAGS`|
+|`sourced VALUE`|optional|the source directory, relative to `WORKING_DIR`, which contains `configure`, `CMakeLists.txt`, etc.|
+|`build_in_sourced`|optional|build in source directory, otherwise build out-of source directory.|
 
 ## the function can be declared in a formula
 |function|required?|overview|
 |-|-|-|
-|`prepare`|optional|this function only run once.|
-|`build`|required|this function will run 4 times. each time build for one abi ( `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` ).|
+|`prepare(){}`|optional|this function only run once.|
+|`build(){}`|required|this function will run 4 times. each time build for one abi ( `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` ).|
 
 ## the function can be invoked in a formula at anywhere
 |function|example|

@@ -4,10 +4,9 @@ src_url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-
 src_sum "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
 license "MPL-2.0"
 depends "nspr"
+sourced "nss"
 
 prepare() {
-    cd nss &&
-    SOURCE_DIR="$PWD" &&
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
     sed_in_place 's/-lpthread//g'        coreconf/Linux.mk &&
     sed_in_place 's/-lpthread//g'        lib/softoken/config.mk &&
@@ -31,8 +30,9 @@ prepare_includes() {
     done
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     make clean &&
     make \
         -C coreconf/nsinstall \

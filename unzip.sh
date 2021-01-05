@@ -7,19 +7,19 @@ require "patch tar"
 depends "zip bzip2"
 patches "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/u/unzip/unzip_$(version).debian.tar.xz" \
         "0783e4d11d755cb43904e3f59a60dbb92ee9c6b08ac54d86bc61f9848216f37b"
-
 # https://packages.debian.org/buster/unzip
 
 prepare() {
-    tar xf $(patches) -C "$WORKING_DIR" || return 1
+    tar xf $(patches) -C "$SOURCE_DIR" || return 1
     while read patch
     do
         patch -p1 < "debian/patches/$patch" || return 1
     done < debian/patches/series
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     $MAKE -f unix/Makefile clean &&
     $MAKE -f unix/Makefile generic \
         CC="$CC" \

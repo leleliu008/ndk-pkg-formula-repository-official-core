@@ -6,11 +6,10 @@ version "3.0-11"
 require "patch tar"
 patches "https://deb.debian.org/debian/pool/main/z/zip/zip_$(version).debian.tar.xz" \
         "c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed"
-
 # https://packages.debian.org/sid/zip
 
 prepare() {
-    tar xf $(patches) -C "$WORKING_DIR" || return 1
+    tar xf $(patches) -C "$SOURCE_DIR" || return 1
     while read patch
     do
         patch -p1 < "debian/patches/$patch" || return 1
@@ -19,8 +18,9 @@ prepare() {
     sed_in_place 's|$(AS) _crc_i386.s|$(AS) -o _crc_i386.o _crc_i386.s|' unix/Makefile
 }
 
+build_in_sourced
+
 build() {
-    cd "$SOURCE_DIR" &&
     $MAKE -f unix/Makefile clean &&
     $MAKE -f unix/Makefile generic \
         CC="$CC" \

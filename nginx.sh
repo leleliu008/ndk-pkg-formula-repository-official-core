@@ -30,9 +30,9 @@ prepare() {
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 }
 
-build() {
-    cd "$SOURCE_DIR" || return 1
+build_in_sourced
 
+build() {
     export NGX_SYSTEM=Linux
     export NGX_RELEASE=unkown
     export NGX_MACHINE=$BUILD_FOR_ARCH

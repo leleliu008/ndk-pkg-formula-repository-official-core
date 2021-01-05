@@ -4,10 +4,10 @@ src_url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_RTM/src/nss-
 src_sum "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
 license "MPL-2.0"
 depends "nspr"
+sourced "nss"
 
 prepare() {
-    cd nss &&
-    SOURCE_DIR="$PWD"
+    :
     #sed_in_place '1a set -x' build.sh
 }
 

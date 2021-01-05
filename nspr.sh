@@ -3,22 +3,22 @@ webpage "https://developer.mozilla.org/docs/Mozilla/Projects/NSPR"
 src_url "https://archive.mozilla.org/pub/nspr/releases/v4.29/src/nspr-4.29.tar.gz"
 src_sum "22286bdb8059d74632cc7c2865c139e63953ecfb33bf4362ab58827e86e92582"
 license "MPL-2.0"
+sourced "nspr"
 
 prepare() {
-    SOURCE_DIR="$WORKING_DIR/nspr" &&
-    sed_in_place '/AS="$android_toolchain"/d'    "$SOURCE_DIR/configure" &&
-    sed_in_place '/CC="$android_toolchain"/d'    "$SOURCE_DIR/configure" &&
-    sed_in_place '/CXX="$android_toolchain"/d'   "$SOURCE_DIR/configure" &&
-    sed_in_place '/CPP="$android_toolchain"/d'   "$SOURCE_DIR/configure" &&
-    sed_in_place '/LD="$android_toolchain"/d'    "$SOURCE_DIR/configure" &&
-    sed_in_place '/AR="$android_toolchain"/d'    "$SOURCE_DIR/configure" &&
-    sed_in_place '/RANLIB="$android_toolchain"/d'   "$SOURCE_DIR/configure" &&
-    sed_in_place '/STRIP="$android_toolchain"/d'    "$SOURCE_DIR/configure" &&
-    sed_in_place '/CPPFLAGS="-I$android_platform/d' "$SOURCE_DIR/configure" &&
-    sed_in_place '/CFLAGS="-mandroid/d'   "$SOURCE_DIR/configure" &&
-    sed_in_place '/CXXFLAGS="-mandroid/d' "$SOURCE_DIR/configure" &&
-    sed_in_place '/LDFLAGS="-mandroid/d'  "$SOURCE_DIR/configure" &&
-    sed_in_place '/os_Linux_x86.s/d'      "$SOURCE_DIR/configure"
+    sed_in_place '/AS="$android_toolchain"/d'       configure &&
+    sed_in_place '/CC="$android_toolchain"/d'       configure &&
+    sed_in_place '/CXX="$android_toolchain"/d'      configure &&
+    sed_in_place '/CPP="$android_toolchain"/d'      configure &&
+    sed_in_place '/LD="$android_toolchain"/d'       configure &&
+    sed_in_place '/AR="$android_toolchain"/d'       configure &&
+    sed_in_place '/RANLIB="$android_toolchain"/d'   configure &&
+    sed_in_place '/STRIP="$android_toolchain"/d'    configure &&
+    sed_in_place '/CPPFLAGS="-I$android_platform/d' configure &&
+    sed_in_place '/CFLAGS="-mandroid/d'             configure &&
+    sed_in_place '/CXXFLAGS="-mandroid/d'           configure &&
+    sed_in_place '/LDFLAGS="-mandroid/d'            configure &&
+    sed_in_place '/os_Linux_x86.s/d'                configure
 }
 
 build() {
