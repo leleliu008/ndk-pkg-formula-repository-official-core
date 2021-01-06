@@ -8,6 +8,7 @@ require "make"
 depends "libtirpc"
 
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
+sdk_api 26
 
 build_in_sourced
 

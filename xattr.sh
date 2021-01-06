@@ -6,6 +6,7 @@ src_sum "5ead72b358ec709ed00bbf7a9eaef1654baad937c001c044fe8b74c57f5324e7"
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);
+sdk_api 23
 
 build() {
     configure

@@ -4,6 +4,7 @@ src_url "https://github.com/libimobiledevice/ideviceinstaller/releases/download/
 src_sum "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
 license "GPL-2.0"
 depends "libimobiledevice libzip"
+sdk_api 24
 
 build() {
     configure \

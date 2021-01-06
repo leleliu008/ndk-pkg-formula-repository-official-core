@@ -5,6 +5,7 @@ src_sum "47e24eb2223fe5d24438658958a313b6b7a55bb281563542e1afc9dec4a31ac4"
 depends "libevent"
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
+sdk_api 26
 
 prepare() {
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&

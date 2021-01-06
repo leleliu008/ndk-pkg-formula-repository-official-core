@@ -7,6 +7,7 @@ depends "openssl libusbmuxd"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+sdk_api 24
 
 prepare() {
     sed_in_place 's/@echo/echo/g' common/Makefile.in &&

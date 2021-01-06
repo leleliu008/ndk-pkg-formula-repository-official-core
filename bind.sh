@@ -9,6 +9,7 @@ depends "json-c libxml2 libidn2 libuv openssl zlib"
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
 # void endpwent(void) __INTRODUCED_IN(26);
+sdk_api 26
 
 prepare() {
 #--- configure	2020-10-13 16:41:40.000000000 +0800

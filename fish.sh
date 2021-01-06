@@ -6,6 +6,7 @@ license "GPL-2.0"
 depends "pcre2 bzip2 ncurses readline"
 
 # int posix_spawn(pid_t* __pid, const char* __path, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
+sdk_api 28
 
 build() {
     cmake \
