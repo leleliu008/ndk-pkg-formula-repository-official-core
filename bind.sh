@@ -3,8 +3,8 @@ webpage "https://www.isc.org/downloads/bind"
 src_url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
 src_sum "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
 license "MPL-2.0"
-require "base64 patch"
-depends "json-c libxml2 libidn2 libuv openssl"
+require "base64 patch pkg-config"
+depends "json-c libxml2 libidn2 libuv openssl zlib"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
@@ -26,7 +26,7 @@ prepare() {
 #   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 # /* end confdefs.h.  */
 
-    echo "LS0tIGNvbmZpZ3VyZQkyMDIwLTEwLTEzIDE2OjQxOjQwLjAwMDAwMDAwMCArMDgwMAorKysgY29uZmlndXJlMgkyMDIwLTExLTEzIDE2OjU3OjQ4LjAwMDAwMDAwMCArMDgwMApAQCAtMjIwNDgsMTAgKzIyMDQ4LDcgQEAKIAogTERGTEFHUz0iLVdsLC0td3JhcCxleGl0IgogaWYgdGVzdCAiJGNyb3NzX2NvbXBpbGluZyIgPSB5ZXM7IHRoZW4gOgotICB7IHsgJGFzX2VjaG8gIiRhc19tZToke2FzX2xpbmVuby0kTElORU5PfTogZXJyb3I6IGluIFxgJGFjX3B3ZCc6IiA+JjUKLSRhc19lY2hvICIkYXNfbWU6IGVycm9yOiBpbiBcYCRhY19wd2QnOiIgPiYyO30KLWFzX2ZuX2Vycm9yICQ/ICJjYW5ub3QgcnVuIHRlc3QgcHJvZ3JhbSB3aGlsZSBjcm9zcyBjb21waWxpbmcKLVNlZSBcYGNvbmZpZy5sb2cnIGZvciBtb3JlIGRldGFpbHMiICIkTElORU5PIiA1OyB9CisgICAgOgogZWxzZQogICBjYXQgY29uZmRlZnMuaCAtIDw8X0FDRU9GID5jb25mdGVzdC4kYWNfZXh0CiAvKiBlbmQgY29uZmRlZnMuaC4gICovCg==" | base64 -D | patch &&
+    echo "LS0tIGNvbmZpZ3VyZQkyMDIwLTEwLTEzIDE2OjQxOjQwLjAwMDAwMDAwMCArMDgwMAorKysgY29uZmlndXJlMgkyMDIwLTExLTEzIDE2OjU3OjQ4LjAwMDAwMDAwMCArMDgwMApAQCAtMjIwNDgsMTAgKzIyMDQ4LDcgQEAKIAogTERGTEFHUz0iLVdsLC0td3JhcCxleGl0IgogaWYgdGVzdCAiJGNyb3NzX2NvbXBpbGluZyIgPSB5ZXM7IHRoZW4gOgotICB7IHsgJGFzX2VjaG8gIiRhc19tZToke2FzX2xpbmVuby0kTElORU5PfTogZXJyb3I6IGluIFxgJGFjX3B3ZCc6IiA+JjUKLSRhc19lY2hvICIkYXNfbWU6IGVycm9yOiBpbiBcYCRhY19wd2QnOiIgPiYyO30KLWFzX2ZuX2Vycm9yICQ/ICJjYW5ub3QgcnVuIHRlc3QgcHJvZ3JhbSB3aGlsZSBjcm9zcyBjb21waWxpbmcKLVNlZSBcYGNvbmZpZy5sb2cnIGZvciBtb3JlIGRldGFpbHMiICIkTElORU5PIiA1OyB9CisgICAgOgogZWxzZQogICBjYXQgY29uZmRlZnMuaCAtIDw8X0FDRU9GID5jb25mdGVzdC4kYWNfZXh0CiAvKiBlbmQgY29uZmRlZnMuaC4gICovCg==" | base64 -d | patch &&
     sed_in_place 's|#ifdef __NetBSD__|#if 1|' lib/isc/pthreads/thread.c
 }
 
@@ -39,7 +39,5 @@ build() {
         --with-libxml2 \
         --with-libidn2=yes \
         --with-openssl="$openssl_INSTALL_DIR" \
-        ZLIB_CFLAGS='-lz' \
-        ZLIB_LIBS='-lz' \
         BUILD_CC="$CC_FOR_BUILD"
 }

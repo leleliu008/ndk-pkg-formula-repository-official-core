@@ -2,6 +2,7 @@ summary "High quality, portable, open source libm implementation"
 webpage "https://openlibm.org"
 src_url "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
 src_sum "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
+require "make"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc
