@@ -6,5 +6,5 @@ require "make"
 depends "zlib"
 
 build() {
-    configure --with-zlib-prefix="$zlib_INSTALL_DIR"
+    configure
 }

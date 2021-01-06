@@ -11,7 +11,7 @@ build() {
     export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lglib-2.0 -liconv -lintl"
     configure \
         --enable-iconv \
-        --enable-docs \
+        --disable-docs \
         --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
         --with-libintl-prefix="$gettext_INSTALL_DIR" \
         --with-expat="$expat_INSTALL_DIR"
