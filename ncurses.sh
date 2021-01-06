@@ -49,6 +49,6 @@ install_links() {
     cd "$ABI_INCLUDE_DIR" || return 1
     for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
-        ln -s "ncurses/$item" "$item" || return 1
+        ln -s "ncursesw/$item" "$item" || return 1
     done
 }
