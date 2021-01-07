@@ -12,30 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: update linuxbrew
-      run: brew update
+    - name: brew update
+      run:  brew update
 
-    - name: install build tools via linuxbrew
-      run: brew install automake autoconf libtool pkg-config make cmake meson
+    - name: brew install 
+      run:  brew install automake autoconf libtool pkg-config make cmake meson
 
     - name: install ndk-pkg
       run: |
         curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
         chmod u+x ndk-pkg
         echo "$PWD" >> $GITHUB_PATH
-        cat $GITHUB_PATH
-        echo "------------"
-        realpath .
-        echo "------------"
-        ls $ANDROID_HOME
-        echo "------------"
-        ls $ANDROID_HOME/ndk-bundle
-        echo "------------"
-        ls $ANDROID_HOME/cmake
-        echo "------------"
-        echo "PWD=$PWD"
-        echo "------------"
-        ls
+        echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle" >> $GITHUB_ENV
         echo "------------"
         env
         echo "------------"
