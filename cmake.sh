@@ -18,7 +18,7 @@ build() {
         -DCMake_BUILD_LTO=OFF \
         -DCMAKE_USE_SYSTEM_LIBUV=ON \
         -DCURSES_INCLUDE_PATH="$ncurses_INCLUDE_DIR" \
-        -DCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" \
+        -DCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.so" \
         -DLibUV_INCLUDE_DIR="$libuv_INCLUDE_DIR" \
-        -DLibUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.a"
+        -DLibUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.so"
 }

@@ -17,7 +17,7 @@ build() {
         -DZSTD_LZMA_SUPPORT=ON \
         -DZSTD_LZ4_SUPPORT=OFF \
         -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY="$zlib_LIBRARY_DIR/libz.a" \
+        -DZLIB_LIBRARY="$zlib_LIBRARY_DIR/libz.so" \
         -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
-        -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.a"
+        -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.so"
 }

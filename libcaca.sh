@@ -9,7 +9,7 @@ depends "imlib2"
 
 build() {
     export CPPFLAGS="$CPPFLAGS -DX_DISPLAY_MISSING"
-    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng"
+    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype"
     configure \
         --disable-csharp \
         --disable-python \

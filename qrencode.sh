@@ -10,8 +10,8 @@ build() {
     -DWITH_TESTS=OFF \
     -DWITHOUT_PNG=OFF \
     -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
-    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.a" \
-    -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.a"
+    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so" \
+    -DZLIB_LIBRARY_RELEASE="$SYSTEM_LIBRARY_DIR/libz.so"
 }
 
 build2() {

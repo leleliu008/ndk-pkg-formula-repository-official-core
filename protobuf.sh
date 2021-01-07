@@ -13,5 +13,5 @@ build() {
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF \
         -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a"
+        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
 }
