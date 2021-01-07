@@ -27,8 +27,6 @@ jobs:
         echo "------------"
         realpath .
         echo "------------"
-        command -v sdkmanager
-        echo "------------"
         ls $ANDROID_HOME
         echo "------------"
         ls $ANDROID_HOME/ndk
