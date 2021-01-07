@@ -7,7 +7,11 @@ require "sed grep make"
 need_native_build() {
     # https://github.com/termux/termux-packages/issues/4487
     if command -v tic > /dev/null ; then
+        echo "$(tic -V)"
         [ '6.2.20200212' != "$(list 6.2.20200212 $(tic -V | cut -d' ' -f2) | sort -V | head -n 1)" ]
+    else
+        echo 'tic command not found.'
+        true
     fi
 }
 
