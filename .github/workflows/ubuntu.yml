@@ -29,7 +29,9 @@ jobs:
         echo "------------"
         ls $ANDROID_HOME
         echo "------------"
-        ls $ANDROID_HOME/ndk
+        ls $ANDROID_HOME/ndk-bundle
+        echo "------------"
+        ls $ANDROID_HOME/cmake
         echo "------------"
         echo "PWD=$PWD"
         echo "------------"
