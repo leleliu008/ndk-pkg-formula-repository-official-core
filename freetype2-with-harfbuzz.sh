@@ -16,7 +16,7 @@ build() {
     -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
     -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.so" \
     -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_INCLUDE_DIR/libz.so" \
+    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
     -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
     -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so" \
     -DHARFBUZZ_INCLUDE_DIRS="$harfbuzz_INCLUDE_DIR/harfbuzz" \
