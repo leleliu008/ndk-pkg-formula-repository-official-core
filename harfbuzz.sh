@@ -7,7 +7,7 @@ require "meson"
 depends "icu4c glib freetype2"
 
 build() {
-    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng"
+    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lpcre"
     meson \
         -Dicu=enabled \
         -Dglib=enabled \

@@ -7,6 +7,6 @@ require "pkg-config meson"
 depends "fontconfig fribidi glib harfbuzz"
 
 build() {
-    export LDFLAGS="$LDFLAGS -lffi -lbz2 -lz -lbrotlicommon -lbrotlidec -lfontconfig -lpng16 -luuid -lgmodule-2.0 -lgio-2.0"
+    export LDFLAGS="$LDFLAGS -lffi -lbz2 -lz -lbrotlicommon -lbrotlidec -lfontconfig -lpng16 -luuid -lgmodule-2.0 -lgio-2.0 -lpcre"
     meson
 }
