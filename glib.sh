@@ -6,7 +6,7 @@ license "LGPL-2.1-or-later"
 depends "libiconv gettext libffi pcre zlib"
 
 build() {
-    export LDFLAGS="$LDFLAGS -liconv -lm -lz"
+    export LDFLAGS="$LDFLAGS -lpcre -liconv -lm -lz"
     meson \
     -Dnls=disabled \
     -Dman=false \
