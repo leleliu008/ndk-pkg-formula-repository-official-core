@@ -8,7 +8,7 @@ require "make pkg-config gperf"
 depends "gettext libiconv util-linux json-c expat freetype2-with-harfbuzz"
 
 build() {
-    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lglib-2.0 -liconv -lintl -lpcre"
+    export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lglib-2.0 -liconv -lintl -lpcre -lfreetype"
     configure \
         --enable-iconv \
         --disable-docs \
