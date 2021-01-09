@@ -12,5 +12,8 @@ prepare() {
 }
 
 build() {
-    configure
+    export CPPFLAGS="$CPPFLAGS -Drindex=strrchr"
+    export UDEV_CFLAGS=' '
+    export UDEV_LIBS=' '
+    configure 
 }
