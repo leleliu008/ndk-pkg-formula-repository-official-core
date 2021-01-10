@@ -8,8 +8,13 @@ require "pkg-config"
 depends "imlib2"
 
 build() {
+    if [ "$BUILD_FOR_ARCH" = 'x86_64' ] ; then
+        sed_in_place '/HAVE_FLDLN2/d' "$SOURCE_DIR/configure" || return 1
+    fi
+
     export CPPFLAGS="$CPPFLAGS -DX_DISPLAY_MISSING"
     export LDFLAGS="$LDFLAGS -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype"
+
     configure \
         --disable-csharp \
         --disable-python \
