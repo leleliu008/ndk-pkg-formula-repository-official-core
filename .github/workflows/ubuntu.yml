@@ -16,7 +16,7 @@ jobs:
       run:  brew update
 
     - name: brew install 
-      run:  brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree
+      run:  brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm doxygen protobuf
 
     - name: install ndk-pkg
       run: |
