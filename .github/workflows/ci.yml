@@ -1,4 +1,4 @@
-name: workflow on ubuntu
+name: ci workflow
 
 on:
   push:
@@ -8,12 +8,19 @@ on:
 
 jobs:
   build:
+    # https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-runners-and-hardware-resources
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
 
-    runs-on: ubuntu-latest
-    
+    runs-on: ${{ matrix.os }}
+
+    env:
+      HOMEBREW_NO_INSTALL_CLEANUP: set
+
     steps:
-    - name: brew update
-      run:  brew update
+    - name: export -p
+      run:  export -p
 
     - name: brew install 
       run:  brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm doxygen protobuf xmlto
@@ -33,5 +40,5 @@ jobs:
     - name: ndk-pkg update
       run:  ndk-pkg update
 
-    - name: ndk-pkg install all
-      run:  ndk-pkg install all
+    - name: ndk-pkg install redex libphonenumber
+      run:  ndk-pkg install redex libphonenumber
