@@ -23,9 +23,9 @@ jobs:
     - name: export -p
       run:  export -p
 
-    - name: brew install coreutils
-      if:   matrix.os == 'macos-11.0' || matrix.os == 'macos-10.15'
-      run:  brew install coreutils
+    - name: brew install gnu-sed
+      if:   matrix.os == 'macos-11.0'
+      run:  brew install gnu-sed
 
     - name: brew install 
       run:  brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm doxygen protobuf xmlto
@@ -45,5 +45,5 @@ jobs:
     - name: ndk-pkg update
       run:  ndk-pkg update
 
-    - name: ndk-pkg install redex
-      run:  ndk-pkg install redex
+    - name: ndk-pkg install boost
+      run:  ndk-pkg install boost
