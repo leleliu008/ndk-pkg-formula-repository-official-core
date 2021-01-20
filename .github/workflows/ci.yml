@@ -34,13 +34,13 @@ jobs:
       run: |
         curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
         chmod u+x ndk-pkg
-        echo "$PWD" >> $GITHUB_PATH
+        mv ndk-pkg $(brew --prefix)/bin
 
     - name: set ANDROID_NDK_HOME environment variable
       run:  echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle" >> $GITHUB_ENV
 
-    - name: ndk-pkg --version
-      run:  ndk-pkg --version
+    - name: ndk-pkg version
+      run:  ndk-pkg version
 
     - name: ndk-pkg update
       run:  ndk-pkg update
