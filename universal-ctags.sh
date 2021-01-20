@@ -9,7 +9,5 @@ prepare() {
 }
 
 build() {
-    ln -s "$SOURCE_DIR/Units" "$BUILD_DIR/Units" &&
-    ln -s "$SOURCE_DIR/Tmain" "$BUILD_DIR/Tmain" &&
     configure --disable-seccomp
 }
