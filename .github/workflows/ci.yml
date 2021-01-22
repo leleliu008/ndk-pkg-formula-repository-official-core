@@ -46,6 +46,7 @@ jobs:
         ls
         install -d ~/.ndk-pkg/formula
         ln -s *.sh ~/.ndk-pkg/formula
+        ls ~/.ndk-pkg/formula
 
     - name: ndk-pkg install boost
       run:  ndk-pkg install boost
