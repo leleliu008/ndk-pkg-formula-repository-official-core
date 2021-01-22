@@ -42,6 +42,8 @@ jobs:
 
     - name: ln -s *.sh ~/.ndk-pkg/formula
       run: |
+        pwd
+        ls
         install -d ~/.ndk-pkg/formula
         ln -s *.sh ~/.ndk-pkg/formula
 
