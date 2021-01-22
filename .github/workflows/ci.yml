@@ -43,10 +43,12 @@ jobs:
     - name: ln -s *.sh ~/.ndk-pkg/formula
       run: |
         pwd
+        echo '---------'
         ls
-        install -d ~/.ndk-pkg/formula
-        ln -s *.sh ~/.ndk-pkg/formula
-        ls ~/.ndk-pkg/formula
+        install -d $HOME/.ndk-pkg/formula
+        ln -s *.sh $HOME/.ndk-pkg/formula
+        echo '---------'
+        ls $HOME/.ndk-pkg/formula
 
     - name: ndk-pkg install boost
       run:  ndk-pkg install boost
