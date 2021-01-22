@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-    # https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-runners-and-hardware-resources
     strategy:
       fail-fast: false
       matrix:
@@ -36,14 +35,13 @@ jobs:
         chmod u+x ndk-pkg
         mv ndk-pkg $(brew --prefix)/bin
 
-    - name: set ANDROID_NDK_HOME environment variable
-      run:  echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle" >> $GITHUB_ENV
-
     - name: ndk-pkg version
       run:  ndk-pkg version
 
-    - name: ndk-pkg update
-      run:  ndk-pkg update
+    - uses: actions/checkout@v2
+
+    - name: ln -s "$PWD" ~/.ndk-pkg/formula 
+      run:  ln -s "$PWD" ~/.ndk-pkg/formula
 
     - name: ndk-pkg install boost
       run:  ndk-pkg install boost
