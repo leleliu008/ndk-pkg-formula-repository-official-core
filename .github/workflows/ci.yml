@@ -40,10 +40,10 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: ln -s "$PWD" ~/.ndk-pkg 
+    - name: ln -s *.sh ~/.ndk-pkg/formula
       run: |
-        install -d   ~/.ndk-pkg
-        ln -s "$PWD" ~/.ndk-pkg
+        install -d ~/.ndk-pkg/formula
+        ln -s *.sh ~/.ndk-pkg/formula
 
     - name: ndk-pkg install boost
       run:  ndk-pkg install boost
