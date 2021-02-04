@@ -1,4 +1,4 @@
-name: ci workflow
+name: workflow3
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
-        pkg: [patch,pkg-config,pkgconf,pngquant,putty,qrencode,quiche,redex,rhash,rsync,suricata,swig,tcpdump,texinfo,tmux,tree,unbound,universal-ctags,unrar,unzip,vala,wolfssl,xorriso,xvid,yasm,zsh]
+        pkg: [patch,pkg-config,pkgconf,pngquant,putty,qrencode,quiche,jsoncpp,libexecinfo,rhash,rsync,suricata,swig,tcpdump,texinfo,tmux,tree,unbound,universal-ctags,unrar,unzip,vala,wolfssl,xorriso,xvid,yasm,zsh]
 
     runs-on: ${{ matrix.os }}
 
