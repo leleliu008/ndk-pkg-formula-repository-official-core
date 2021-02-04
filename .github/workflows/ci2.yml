@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
-        pkg: [acl,bash,bat,bc,bcrypt,bind,binutils,bison,cairo,ccache,cdrtools,check,cjson,cmake,cpio,cpu_features,crosstool-ng,dash,diffutils,dmalloc,e2fsprogs,elfutils,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,folly,gawk,git,gnu-coreutils,gnu-sed,gnu-tar,gnu-which,gnupg,gnutls,gobject-introspection,google-benchmark,gperf,graphite2,grep,gzip,htop,hwloc,id3lib,ideviceinstaller,jemalloc,json-glib]
+        pkg: [krb5,less,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap,libcddb,libcdio,libcroco,libexif,libgit2,libical,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libphonenumber,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libtool,libxslt,links,lodepng,lsof,lynx,lzip,m4,make,mbedtls,mesalink,mpg123,mpir,nasm,nginx,ngtcp2,ntbtls,numactl,openlibm,openmpi,openssl-fips,packcc,pango]
 
     runs-on: ${{ matrix.os }}
 
