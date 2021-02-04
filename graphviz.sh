@@ -3,7 +3,7 @@ webpage "https://www.graphviz.org"
 src_url "https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.1.tar.gz"
 src_sum "8e1b34763254935243ccdb83c6ce108f531876d7a5dfd443f255e6418b8ea313"
 license "EPL-1.0"
-require "pkg-config groff"
+require "pkg-config groff ps2pdf"
 depends "fontconfig libpng expat libglob"
 ldflags "-lglob"
 
