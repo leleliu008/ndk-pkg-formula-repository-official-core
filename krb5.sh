@@ -22,7 +22,7 @@ build() {
     else
         ac_cv_header_ifaddrs_h=yes
     fi
-    export LDFLAGS="$LDFLAGS -lncurses -lglob"
+    export LDFLAGS="$LDFLAGS -lncursesw -lglob"
     configure \
         --disable-static \
         --enable-dns-for-realm \
