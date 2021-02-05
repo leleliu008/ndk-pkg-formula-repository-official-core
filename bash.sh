@@ -7,10 +7,6 @@ version "5.0.18"
 license "GPL-3.0-or-later"
 depends "readline ncurses"
 
-prepare() {
-    sed_in_place 's|TERMCAP_LIB=-lcurses|TERMCAP_LIB=-lncursesw|g' configure
-}
-
 build() {
     configure \
         --with-curses \

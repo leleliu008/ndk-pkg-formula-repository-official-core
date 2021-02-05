@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
-        pkg: [acl,bash,bat,bc,bcrypt,bind,binutils,bison,cairo,ccache,cdrtools,check,cjson,cmake,cpio,cpu_features,crosstool-ng,dash,diffutils,dmalloc,e2fsprogs,elfutils,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,folly,gawk,git,gnu-coreutils,gnu-sed,gnu-tar,gnu-which,gnupg,gnutls,gobject-introspection,google-benchmark,gperf,graphite2,grep,gzip,htop,hwloc,id3lib,ideviceinstaller,jemalloc,json-glib]
+        pkg: [acl,bash,bc,bcrypt,bind,binutils,bison,ccache,cdrtools,check,cjson,cmake,cpu_features,crosstool-ng,curl,dash,diffutils,double-conversion,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,fmt,gawk,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,google-benchmark,gperf,graphite2,grep,gzip,htop,hwloc,id3lib,ideviceinstaller,jemalloc,json-glib,krb5,less,libaio,libao,libarchive]
 
     runs-on: ${{ matrix.os }}
 
@@ -25,7 +25,7 @@ jobs:
     - run: brew install gnu-sed
       if:  matrix.os == 'macos-11.0'
 
-    - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm doxygen protobuf xmlto ghostscript
+    - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
 
     - name: install ndk-pkg
       run: |

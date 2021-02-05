@@ -55,4 +55,12 @@ install_links() {
     do
         ln -s "ncursesw/$item" "$item" || return 1
     done
+    
+    cd "$ABI_LIBRARY_DIR" || return 1
+    for item in libncurses libpanel libmenu libform
+    do
+        ln -s "${item}w.a"  "${item}.a"  || return 1
+        ln -s "${item}w.so" "${item}.so" || return 1
+    done
+    ln -s libncurses++w.a libncurses++.a || return 1
 }

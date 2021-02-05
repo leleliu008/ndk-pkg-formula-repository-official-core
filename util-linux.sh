@@ -10,9 +10,8 @@ build() {
     configure \
         --without-python \
         --without-systemd \
-        --with-ncursesw=no \
-        --with-ncurses \
-        --enable-widechar=no \
+        --with-ncursesw \
+        --enable-widechar \
         --disable-all-programs \
         --enable-libuuid
 }

@@ -5,6 +5,7 @@ src_sum "e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719"
 sourced "src"
 require "make"
 depends "readline openssl berkeley-db libglob"
+ldflags "-lglob"
 
 prepare() {
     sed_in_place '/search_paths_first"/d' configure && {
@@ -22,7 +23,6 @@ build() {
     else
         ac_cv_header_ifaddrs_h=yes
     fi
-    export LDFLAGS="$LDFLAGS -lncursesw -lglob"
     configure \
         --disable-static \
         --enable-dns-for-realm \

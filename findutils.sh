@@ -4,6 +4,8 @@ src_url "https://ftp.gnu.org/gnu/findutils/findutils-4.7.0.tar.xz"
 src_sum "c5fefbdf9858f7e4feb86f036e1247a54c79fc2d8e4b7064d5aaa1f47dfa789a"
 license "GPL-3.0"
 
+sdk_api 26
+
 # void endgrent(void) __INTRODUCED_IN(26);
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
