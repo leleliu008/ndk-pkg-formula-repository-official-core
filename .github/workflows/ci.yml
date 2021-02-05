@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
-        pkg: [acl,bash,bc,bcrypt,bind,binutils,bison,ccache,cdrtools,check,cjson,cmake,cpu_features,crosstool-ng,curl,dash,diffutils,double-conversion,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,fmt,gawk,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,google-benchmark,gperf,graphite2,grep,gzip,htop,hwloc,id3lib,ideviceinstaller,jemalloc,json-glib,krb5,less,libaio,libao,libarchive]
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
+        pkg: [acl,bash,bc,bcrypt,bind,binutils,bison,boost,ccache,cdrtools,check,cjson,cmake,cpu_features,crosstool-ng,curl,dash,diffutils,double-conversion,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,fmt,gawk,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,google-benchmark,google-test,gperf,graphite2,grep,gzip,htop,hwloc,id3lib,ideviceinstaller,json-glib,jsoncpp,krb5,less,libaio,libao]
 
     runs-on: ${{ matrix.os }}
 

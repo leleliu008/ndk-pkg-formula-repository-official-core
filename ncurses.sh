@@ -17,6 +17,22 @@ need_native_build() {
 
 prepare() {
     if need_native_build ; then
+
+        # /usr/bin/cc -DHAVE_CONFIG_H -I../ncurses -I. -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses -I../include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/../include -D_DARWIN_C_SOURCE -DNDEBUG -Qunused-arguments -no-cpp-precomp -c /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c -o ../objects/lib_getch.o
+        # /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c:312:12: error: implicit declaration of function 'read' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        # n = (int) read(sp->_ifd, &c2, (size_t) 1);
+        #           ^
+        # /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c:312:12: note: did you mean 'fread'?
+        # /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:158:9: note: 'fread' declared here
+        # size_t   fread(void * __restrict __ptr, size_t __size, size_t __nitems, FILE * __restrict __stream);
+        #          ^
+        # 1 error generated.
+        # gmake[1]: *** [Makefile:1004: ../objects/lib_getch.o] Error 1
+        # gmake[1]: Leaving directory '/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/1612536982/native/ncurses'
+        # gmake: *** [Makefile:120: all] Error 2
+
+        sed_in_place '1i #include<unistd.h>' ncurses/base/lib_getch.c
+
         echo "Native building..." &&
         cd $BUILD_DIR &&
         $SOURCE_DIR/configure --prefix=$PWD/output &&

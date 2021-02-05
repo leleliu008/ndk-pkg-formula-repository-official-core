@@ -11,5 +11,6 @@ prepare() {
 }
 
 build() {
-    configure --disable-unicode
+    # error: undefined reference to 'nl_langinfo'
+    configure --disable-unicode ac_cv_lib_ncursesw_addnwstr=yes
 }

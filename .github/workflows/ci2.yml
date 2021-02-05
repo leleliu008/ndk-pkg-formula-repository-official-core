@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-11.0, macos-10.15]
-        pkg: [libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap,libcddb,libcdio,libcroco,libexif,libgit2,libical,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libphonenumber,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libtool,libxslt,links,lodepng,lsof,lynx,lzip,m4,make,mbedtls,mesalink,mpg123,mpir,nasm,nginx,ngtcp2,ntbtls,numactl,openlibm,openmpi,openssl-fips,packcc,pango,patch,pixman,pkg-config]
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
+        pkg: [libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap,libcddb,libcdio,libcroco,libexecinfo,libexif,libgit2,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libtirpc,libtool,libxslt,links,lodepng,lynx,lzip,make,mbedtls,mesalink,mpg123,mpir,nasm,nginx,ngtcp2,ntbtls,numactl,openlibm,openmpi,openssl-fips,packcc,pango,patch,pixman,pkg-config,pkgconf]
 
     runs-on: ${{ matrix.os }}
 

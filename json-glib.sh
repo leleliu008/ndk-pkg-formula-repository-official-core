@@ -5,9 +5,9 @@ src_sum "0d7c67602c4161ea7070fab6c5823afd9bd7f7bc955f652a50d3753b08494e73"
 license "LGPL-2.1-or-later"
 require "meson ninja pkg-config"
 depends "glib"
+ldflags "-lgmodule-2.0 -lffi -lpcre -lz"
 
 build() {
-    export LDFLAGS="$LDFLAGS -lgmodule-2.0 -lffi -lz"
     meson \
         -Dtests=false \
         -Dman=false \
