@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [pngquant,protobuf,putty,python,qrencode,quiche,re2,rhash,rsync,snappy,suricata,swig,tcl-core,tcpdump,texinfo,tmux,tree,unbound,universal-ctags,unrar,unzip,vala,wolfssl,xorriso,xvid,yasm,zsh]
+        pkg: [htop,hwloc,id3lib,ideviceinstaller,json-glib,jsoncpp,krb5,less,libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap,libcddb,libcdio]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,8 +22,16 @@ jobs:
     steps:
     - run: export -p
 
+    - run: apt install -y lsb_release
+      if:  matrix.os == 'ubuntu-18.04'
+
     - run: brew install gnu-sed
       if:  matrix.os == 'macos-11.0'
+
+    - run: |
+        brew install ncurses
+        echo "$(brew --prefix ncurses)/bin" > "$GITHUB_PATH"
+      if:  matrix.os == 'macos-10.15'
 
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
 

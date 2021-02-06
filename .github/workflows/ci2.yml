@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap,libcddb,libcdio,libcroco,libexecinfo,libexif,libgit2,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libtirpc,libtool,libxslt,links,lodepng,lynx,lzip,make,mbedtls,mesalink,mpg123,mpir,nasm,nginx,ngtcp2,ntbtls,numactl,openlibm,openmpi,openssl-fips,packcc,pango,patch,pixman,pkg-config,pkgconf]
+        pkg: [faad2,fdk-aac,ffmpeg,findutils,fish,flex,fmt,gawk,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,google-benchmark,google-test,gperf,graphite2,grep,gzip]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,8 +22,16 @@ jobs:
     steps:
     - run: export -p
 
+    - run: apt install -y lsb_release
+      if:  matrix.os == 'ubuntu-18.04'
+
     - run: brew install gnu-sed
       if:  matrix.os == 'macos-11.0'
+
+    - run: |
+        brew install ncurses
+        echo "$(brew --prefix ncurses)/bin" > "$GITHUB_PATH"
+      if:  matrix.os == 'macos-10.15'
 
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
  
