@@ -22,16 +22,16 @@ jobs:
     steps:
     - run: export -p
 
-    - run: apt install -y lsb_release
-      if:  matrix.os == 'ubuntu-18.04'
+    - run: sudo apt-get install -y lsb_release
+      if:  matrix.os == 'ubuntu-18.04' && matrix.pkg == 'python'
 
     - run: brew install gnu-sed
-      if:  matrix.os == 'macos-11.0'
+      if:  matrix.os == 'macos-10.15'
 
     - run: |
         brew install ncurses
         echo "$(brew --prefix ncurses)/bin" > "$GITHUB_PATH"
-      if:  matrix.os == 'macos-10.15'
+      if:  matrix.os == 'macos-10.15' && matrix.pkg == 'ncurses'
 
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
  
