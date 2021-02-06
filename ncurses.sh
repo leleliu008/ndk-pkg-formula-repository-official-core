@@ -31,12 +31,9 @@ prepare() {
         # gmake[1]: Leaving directory '/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/1612536982/native/ncurses'
         # gmake: *** [Makefile:120: all] Error 2
 
-        sed_in_place '1i #include<unistd.h>' ncurses/base/lib_getch.c
-        sed_in_place '1i #include<unistd.h>' ncurses/base/lib_mouse.c
-
         echo "Native building..." &&
         cd $BUILD_DIR &&
-        $SOURCE_DIR/configure --prefix=$PWD/output &&
+        $SOURCE_DIR/configure --prefix=$PWD/output ac_cv_header_unistd_h=yes &&
         $MAKE clean &&
         $MAKE &&
         $MAKE install &&
