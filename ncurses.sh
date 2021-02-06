@@ -32,6 +32,7 @@ prepare() {
         # gmake: *** [Makefile:120: all] Error 2
 
         sed_in_place '1i #include<unistd.h>' ncurses/base/lib_getch.c
+        sed_in_place '1i #include<unistd.h>' ncurses/base/lib_mouse.c
 
         echo "Native building..." &&
         cd $BUILD_DIR &&

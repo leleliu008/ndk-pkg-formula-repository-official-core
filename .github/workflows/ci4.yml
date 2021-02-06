@@ -26,12 +26,7 @@ jobs:
       if:  matrix.os == 'ubuntu-18.04' && matrix.pkg == 'python'
 
     - run: brew install gnu-sed
-      if:  matrix.os == 'macos-10.15'
-
-    - run: |
-        brew install ncurses
-        echo "$(brew --prefix ncurses)/bin" > "$GITHUB_PATH"
-      if:  matrix.os == 'macos-10.15' && matrix.pkg == 'ncurses'
+      if:  matrix.os == 'macos-10.15'    
 
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
 

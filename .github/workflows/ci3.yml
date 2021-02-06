@@ -28,11 +28,6 @@ jobs:
     - run: brew install gnu-sed
       if:  matrix.os == 'macos-10.15'
 
-    - run: |
-        brew install ncurses
-        echo "$(brew --prefix ncurses)/bin" > "$GITHUB_PATH"
-      if:  matrix.os == 'macos-10.15' && matrix.pkg == 'ncurses'
-
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
 
     - name: install ndk-pkg
