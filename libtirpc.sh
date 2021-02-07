@@ -15,7 +15,7 @@ prepare() {
 build() {
     # https://github.com/openbsd/src/commit/9a4976752c76d2a34f38575c4ce09dd50f5f80b7
     export CPPFLAGS="$CPPFLAGS -Dquad_t=int64_t -Du_quad_t=uint64_t -DNGROUPS=20"
-
+    include_stub_getdtablesize &&
     configure \
         --disable-gssapi \
         --enable-ipv6 \

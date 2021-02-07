@@ -33,7 +33,7 @@ prepare() {
 
         echo "Native building..." &&
         cd $BUILD_DIR &&
-        $SOURCE_DIR/configure --prefix=$PWD/output ac_cv_header_unistd_h=yes &&
+        $SOURCE_DIR/configure --prefix=$PWD/output ac_cv_header_unistd_h=yes ac_cv_header_sys_time_h=yes &&
         $MAKE clean &&
         $MAKE &&
         $MAKE install &&
