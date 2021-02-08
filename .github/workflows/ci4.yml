@@ -22,11 +22,13 @@ jobs:
     steps:
     - run: export -p
 
-    - run: sudo apt-get -y update && sudo apt-get -y install lsb_release
+    - run: sudo apt-get -y update && sudo apt-get -y install lsb-release
       if:  matrix.os == 'ubuntu-18.04' && matrix.pkg == 'python'
 
-    - run: brew install gnu-sed
-      if:  matrix.os == 'macos-10.15'    
+    - run: |
+        brew install gnu-sed gawk binutils bison
+        echo "$(brew --prefix bison)/bin" >> "$GITHUB_PATH"
+      if:  matrix.os == 'macos-10.15'
 
     - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
 

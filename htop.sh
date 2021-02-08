@@ -14,6 +14,7 @@ build() {
     # error: undefined reference to 'nl_langinfo'
     configure \
         --disable-unicode \
+        ac_cv_search_keypad=no \
         ac_cv_lib_ncurses_refresh=yes \
         ac_cv_lib_ncurses_addnwstr=yes
 }
