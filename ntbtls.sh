@@ -9,5 +9,6 @@ build() {
         --with-zlib="$zlib_INSTALL_DIR" \
         --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR" \
         --with-libgcrypt-prefix="$libgcrypt_INSTALL_DIR" \
-        --with-libksba-prefix="$libksba_INSTALL_DIR"
+        --with-libksba-prefix="$libksba_INSTALL_DIR" \
+        ac_cv_path_KSBA_CONFIG="$libksba_INSTALL_DIR/bin/ksba-config"
 }

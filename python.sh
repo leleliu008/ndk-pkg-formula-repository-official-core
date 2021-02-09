@@ -23,7 +23,7 @@ build() {
         --with-system-expat \
         --with-system-ffi \
         --with-openssl="$openssl_INSTALL_DIR" \
-        --with-ensurepip=yes \
+        --with-ensurepip=no \
         --with-lto \
         --enable-ipv6 \
         --enable-loadable-sqlite-extensions \
