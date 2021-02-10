@@ -15,10 +15,38 @@ prepare() {
 build() {
     # https://github.com/openbsd/src/commit/9a4976752c76d2a34f38575c4ce09dd50f5f80b7
     export CPPFLAGS="$CPPFLAGS -Dquad_t=int64_t -Du_quad_t=uint64_t -DNGROUPS=20"
+    check_if_ffsl_exists &&
     include_stub_getdtablesize &&
     configure \
         --disable-gssapi \
         --enable-ipv6 \
         --enable-symvers \
         --enable-authdes
+}
+
+check_if_ffsl_exists() {
+    if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
+        cat > $BUILD_DIR/test.c <<'EOF'
+        #include<strings.h>
+        int main() {
+            ffsl(1);
+            return 0;
+        }
+EOF
+        $CC $CPPFLAGS $CFLAGS $LDFLAGS $BUILD_DIR/test.c 2>/dev/null || {
+            sed_in_place '1i static int ffsl(long value);' "$SOURCE_DIR/src/svc.c" &&
+            cat >> "$SOURCE_DIR/src/svc.c" <<'EOF'
+            // https://linux.die.net/man/3/ffsll
+            static int ffsl(long value) {
+                if (0 == value) return 0;
+
+                int pos;
+                for (pos = 1; !(value & 1); ++pos) {
+                    value >>= 1;
+                }
+                return pos;
+            }
+EOF
+        }
+    fi
 }
