@@ -1,7 +1,7 @@
 summary "Convert pixel information into colored ASCII art"
 webpage "http://caca.zoy.org/wiki/libcaca"
 src_git "https://github.com/cacalabs/libcaca.git"
-src_url "http://caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz"
+src_url "https://fossies.org/linux/privat/libcaca-0.99.beta19.tar.gz"
 src_sum "128b467c4ed03264c187405172a4e83049342cc8cc2f655f53a2d0ee9d3772f4"
 license "WTFPL"
 require "pkg-config"
