@@ -81,4 +81,7 @@ install_links() {
         ln -s "${item}w.so" "${item}.so" || return 1
     done
     ln -s libncurses++w.a libncurses++.a || return 1
+
+    cd "$ABI_PKGCONF_DIR" &&
+    ln -s ncursesw.pc ncurses.pc
 }
