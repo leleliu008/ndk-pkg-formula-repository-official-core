@@ -7,6 +7,7 @@ license "GPL-2.0-or-later"
 depends "ncurses"
 
 prepare() {
+    sed_in_place '/keypad/d' configure.ac &&
     ./autogen.sh
 }
 
