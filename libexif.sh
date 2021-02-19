@@ -4,6 +4,10 @@ src_url "https://github.com/libexif/libexif/releases/download/libexif-0_6_22-rel
 src_sum "5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56"
 require "make"
 
+prepare() {
+    autoreconf -ivf
+}
+
 build() {
     configure --enable-docs
 }
