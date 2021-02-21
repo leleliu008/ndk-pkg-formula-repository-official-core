@@ -1,15 +1,13 @@
 summary "OpenType text shaping engine"
 webpage "https://github.com/harfbuzz/harfbuzz"
-src_url "https://github.com/harfbuzz/harfbuzz/archive/2.7.2.tar.gz"
-src_sum "8ec112ee108642477478b75fc7906422abed404d7530e47ba0a4875f553f1b59"
+src_url "https://github.com/harfbuzz/harfbuzz/archive/2.7.4.tar.gz"
+src_sum "daff8a4003ac420a8550760ed303ce33b310c8ea17b7f15b307d1969cabcebcb"
 license "MIT"
 require "meson ninja"
 depends "icu4c glib freetype2"
 ldflags "-lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lpcre"
 
 build() {
-    rm -f src/hb-version.h &&
-    rm -f src/harfbuzz.cc  &&
     meson \
         -Dicu=enabled \
         -Dglib=enabled \
