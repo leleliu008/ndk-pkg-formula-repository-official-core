@@ -6,5 +6,6 @@ license "Apache-2.0"
 require "cargo"
 
 build() {
-    cargo bat $(find "$SOURCE_DIR/target/$BUILD_FOR_TARGET/release/build" -name 'bat.1') 
+    cargo bat 
+    #$(find "$SOURCE_DIR/target/$BUILD_FOR_TARGET/release/build" -name 'bat.1') 
 }
