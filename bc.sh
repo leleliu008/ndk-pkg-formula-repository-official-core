@@ -12,8 +12,8 @@ prepare() {
     (
         cd "$NATIVE_BUILD_DIR" &&
         $SOURCE_DIR/configure --without-readline --without-libedit &&
-        $MAKE clean &&
-        $MAKE
+        make $MAKEFLAGS clean &&
+        make $MAKEFLAGS
     ) 
 }
 

@@ -14,8 +14,8 @@ prepare() {
 }
 
 build() {
-    $MAKE -C "$SOURCE_DIR/libcap" clean &&
-    $MAKE -C "$SOURCE_DIR/libcap" install \
+    make $MAKEFLAGS -C "$SOURCE_DIR/libcap" clean &&
+    make $MAKEFLAGS -C "$SOURCE_DIR/libcap" install \
         prefix="$ABI_INSTALL_DIR" \
         lib=lib \
         PAM_CAP=no \

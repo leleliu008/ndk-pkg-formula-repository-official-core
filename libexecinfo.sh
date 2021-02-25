@@ -4,8 +4,8 @@ src_url "https://github.com/leleliu008/libexecinfo.git"
 require "make"
 
 build() {
-    $MAKE -C "$SOURCE_DIR" clean &&
-    $MAKE -C "$SOURCE_DIR" install \
+    make $MAKEFLAGS -C "$SOURCE_DIR" clean &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" install \
         CC="$CC" \
         CFLAGS="$CFLAGS" \
         CPPFLAGS="$CPPFLAGS" \

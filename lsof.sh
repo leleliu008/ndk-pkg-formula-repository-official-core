@@ -15,7 +15,7 @@ build_in_sourced
 build() {
     include_stub_getdtablesize
 
-    export LSOF_MAKE="$MAKE"
+    export LSOF_MAKE="make"
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rs"
     export LSOF_RANLIB="$RANLIB"
@@ -26,6 +26,6 @@ build() {
     
     ./Configure -clean &&
     ./Configure -n linux &&
-    $MAKE &&
+    make $MAKEFLAGS &&
     install_files lsof Lsof.8
 }

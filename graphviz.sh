@@ -13,6 +13,6 @@ prepare() {
 }
 
 build() {
-    MAKE="$MAKE HOSTCC=$CC_FOR_BUILD"
+    MAKEFLAGS="$MAKEFLAGS HOSTCC=$CC_FOR_BUILD"
     configure --enable-swig=no
 }

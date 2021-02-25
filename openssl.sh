@@ -21,10 +21,10 @@ build() {
         -D__ANDROID_API__="$MIN_SDK_API_LEVEL" \
         --prefix="$ABI_INSTALL_DIR" \
         "$(os_compiler)" &&
-    $MAKE clean &&
+    make $MAKEFLAGS clean &&
     ln -sf "$SYSTEM_LIBRARY_DIR"/*.o . &&
-    $MAKE &&
-    $MAKE install
+    make $MAKEFLAGS &&
+    make $MAKEFLAGS install
 }
 
 os_compiler() {

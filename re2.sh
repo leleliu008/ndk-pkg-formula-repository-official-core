@@ -7,5 +7,5 @@ license "BSD-3-Clause"
 
 build() {
     cmake -DRE2_BUILD_TESTING=OFF &&
-    $MAKE -C "$SOURCE_DIR" common-install prefix="$ABI_INSTALL_DIR"
+    make $MAKEFLAGS -C "$SOURCE_DIR" common-install prefix="$ABI_INSTALL_DIR"
 }

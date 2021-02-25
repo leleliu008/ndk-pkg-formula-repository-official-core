@@ -14,8 +14,8 @@ build() {
     else
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
-    $MAKE -C "$SOURCE_DIR" clean &&
-    $MAKE -C "$SOURCE_DIR" install \
+    make $MAKEFLAGS -C "$SOURCE_DIR" clean &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" install \
         prefix="$ABI_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="$CFLAGS" \

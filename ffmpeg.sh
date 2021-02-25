@@ -34,8 +34,8 @@ build() {
         --extra-cflags='-DANDROID' &&
     sed_in_place 's/LDEXEFLAGS= -fPIE -pie/LDEXEFLAGS= -shared/g' ffbuild/config.mak &&
     change_config_h &&
-    $MAKE clean &&
-    $MAKE install &&
+    make $MAKEFLAGS clean &&
+    make $MAKEFLAGS install &&
     cp ffbuild/config.log "$BUILD_DIR"
 }
 

@@ -3,6 +3,7 @@ webpage "https://pagure.io/libaio"
 src_url "https://pagure.io/libaio/archive/libaio-0.3.111/libaio-libaio-0.3.111.tar.gz"
 src_sum "e6bc17cba66e59085e670fea238ad095766b412561f90b354eb4012d851730ba"
 license "LGPL-2.1-or-later"
+require "make"
 
 prepare() {
     # on macOS, some fs is non-case-sensitive. In this case, make install will always say make: 'install' is up to date.
@@ -11,9 +12,9 @@ prepare() {
 }
 
 build() {
-    $MAKE -C "$SOURCE_DIR" clean &&
-    $MAKE -C "$SOURCE_DIR" default CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS -I$SOURCE_DIR/src" AR="$AR" RANLIB="$RANLIB" &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" clean &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" default CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS -I$SOURCE_DIR/src" AR="$AR" RANLIB="$RANLIB" &&
     install -d "$ABI_INCLUDE_DIR" &&
     install -d "$ABI_LIBRARY_DIR" &&
-    $MAKE -C "$SOURCE_DIR" install prefix="$ABI_INSTALL_DIR"
+    make $MAKEFLAGS -C "$SOURCE_DIR" install prefix="$ABI_INSTALL_DIR"
 }

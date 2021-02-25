@@ -38,9 +38,9 @@ prepare() {
                 ac_cv_header_fcntl_h=yes \
                 ac_cv_header_unistd_h=yes \
                 ac_cv_header_sys_time_h=yes &&
-        $MAKE clean &&
-        $MAKE &&
-        $MAKE install &&
+        make $MAKEFLAGS clean &&
+        make $MAKEFLAGS &&
+        make $MAKEFLAGS install &&
         export PATH=$PWD/output/bin:$PATH
     fi
 }

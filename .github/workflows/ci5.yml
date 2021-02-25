@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [libsmi,libtool,libxslt,links,lmdb,lodepng,lsof,lynx,lzip,make,mbedtls,mediainfo,mesalink,mpg123,mpir,nasm,neofetch,nginx,ngtcp2,ninja]
+        pkg: [libsigsegv,libsmi,libtool,libtorrent-rasterbar,libxslt,links,lmdb,lodepng,lsof,lynx,lzip,make,mbedtls,mediainfo,mesalink,mpg123,mpir,nasm,neofetch,nginx]
 
     runs-on: ${{ matrix.os }}
 

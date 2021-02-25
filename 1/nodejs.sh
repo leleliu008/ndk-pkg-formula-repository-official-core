@@ -4,7 +4,7 @@ src_git "https://github.com/nodejs/node.git"
 src_url "https://nodejs.org/dist/v15.8.0/node-v15.8.0.tar.xz"
 src_sum "e23ae2f6181444066cf74e03c3e30e650fbc63764c2b89829928cddf3e4230a9"
 license "MIT"
-require "pkg-config"
+require "make pkg-config"
 sdk_api 23
 
 prepare() {
@@ -24,8 +24,8 @@ build() {
         --dest-os=android \
         --cross-compiling \
         --verbose &&
-    $MAKE -C "$SOURCE_DIR" &&
-    $MAKE -C "$SOURCE_DIR" install
+    make $MAKEFLAGS -C "$SOURCE_DIR" &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" install
 }
 
 dest_cpu() {

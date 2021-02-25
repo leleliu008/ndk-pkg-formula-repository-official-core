@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-    $MAKE clean &&
-    $MAKE CC="$CC" CFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS" LIBS="-lssl -lcrypto -lcrypt -lcap" &&
+    make $MAKEFLAGS clean &&
+    make $MAKEFLAGS CC="$CC" CFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS" LIBS="-lssl -lcrypto -lcrypt -lcap" &&
     install_bins vsftpd
 }

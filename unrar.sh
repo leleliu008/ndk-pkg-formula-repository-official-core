@@ -15,10 +15,10 @@ prepare() {
 build_in_sourced
 
 build() {
-    $MAKE -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" LDFLAGS="$LDFLAGS" &&
+    make $MAKEFLAGS -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" LDFLAGS="$LDFLAGS" &&
     install -d "$ABI_BINARY__DIR" &&
-    $MAKE -f makefile install-unrar DESTDIR="$ABI_INSTALL_DIR" &&
-    $MAKE -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" LDFLAGS="$LDFLAGS" &&
+    make $MAKEFLAGS -f makefile install-unrar DESTDIR="$ABI_INSTALL_DIR" &&
+    make $MAKEFLAGS -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" LDFLAGS="$LDFLAGS" &&
     install -d "$ABI_LIBRARY_DIR"
-    $MAKE -f makefile install-lib   DESTDIR="$ABI_INSTALL_DIR"
+    make $MAKEFLAGS -f makefile install-lib   DESTDIR="$ABI_INSTALL_DIR"
 }

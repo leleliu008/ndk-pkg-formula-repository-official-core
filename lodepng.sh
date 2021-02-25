@@ -2,14 +2,15 @@ summary "PNG encoder and decoder in C and C++"
 webpage "https://github.com/lvandeve/lodepng"
 src_url "https://github.com/lvandeve/lodepng.git"
 license "Zlib"
+require "make"
 
 prepare() {
     override_makefile
 }
 
 build() {
-    $MAKE -C "$SOURCE_DIR" clean &&
-    $MAKE -C "$SOURCE_DIR" install \
+    make $MAKEFLAGS -C "$SOURCE_DIR" clean &&
+    make $MAKEFLAGS -C "$SOURCE_DIR" install \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \
         CPPFLAGS="$CPPFLAGS" \

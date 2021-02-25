@@ -11,7 +11,7 @@ sourced "libraries/liblmdb"
 build_in_sourced
 
 build() {
-    $MAKE clean &&
-    $MAKE CC="$CC" XCFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS" AR="$AR" &&
-    $MAKE install prefix="$ABI_INSTALL_DIR"
+    make $MAKEFLAGS clean &&
+    make $MAKEFLAGS CC="$CC" XCFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS" AR="$AR" &&
+    make $MAKEFLAGS install prefix="$ABI_INSTALL_DIR"
 }

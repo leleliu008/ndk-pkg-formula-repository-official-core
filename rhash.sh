@@ -18,7 +18,7 @@ build() {
         --enable-static \
         --enable-lib-static \
         --enable-lib-shared &&
-    $MAKE clean &&
-    $MAKE &&
-    $MAKE install
+    make $MAKEFLAGS clean &&
+    make $MAKEFLAGS &&
+    make $MAKEFLAGS install
 }

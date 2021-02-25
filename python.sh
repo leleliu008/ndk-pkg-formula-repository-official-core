@@ -12,8 +12,8 @@ prepare() {
     mkdir -p "$NATIVE_BUILD_DIR" &&
     cd "$NATIVE_BUILD_DIR" &&
     "$SOURCE_DIR/configure" --prefix=$PWD/output &&
-    $MAKE &&
-    $MAKE install &&
+    make $MAKEFLAGS &&
+    make $MAKEFLAGS install &&
     export PATH="$NATIVE_BUILD_DIR/output/bin:$PATH"
 }
 

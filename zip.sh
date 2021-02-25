@@ -21,14 +21,14 @@ prepare() {
 build_in_sourced
 
 build() {
-    $MAKE -f unix/Makefile clean &&
-    $MAKE -f unix/Makefile generic \
+    make $MAKEFLAGS -f unix/Makefile clean &&
+    make $MAKEFLAGS -f unix/Makefile generic \
         CC="$CC" \
         CPP="$CPP" \
         AS="$AS" \
         AR="$AR" \
         CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS" &&
-    $MAKE -f unix/Makefile install \
+    make $MAKEFLAGS -f unix/Makefile install \
         prefix="$ABI_INSTALL_DIR" \
         MANDIR="$ABI_INSTALL_DIR/share/man/man1"
 }

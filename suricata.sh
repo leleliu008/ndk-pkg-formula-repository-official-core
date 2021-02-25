@@ -15,9 +15,7 @@ prepare() {
 }
 
 build() {
-    RUST_TARGET=$(echo "$BUILD_FOR_TARGET" | sed 's/armv7a/armv7/')
-    rustup target add "$RUST_TARGET" &&
-    sed_in_place "/host_triplet = /c host_triplet = $RUST_TARGET" "$SOURCE_DIR/rust/Makefile.in" &&
+    sed_in_place "/host_triplet = /c host_triplet = $CARGO_TARGET" "$SOURCE_DIR/rust/Makefile.in" &&
     sed_in_place '/RUST_LDADD="${RUST_SURICATA_LIB}/i RUST_SURICATA_LIB=$(echo "$RUST_SURICATA_LIB" | sed "s/armv7a/armv7/")' "$SOURCE_DIR/configure" &&
     sed_in_place '/RUST_LDADD="${RUST_SURICATA_LIB}/a RUST_LDADD=$(echo "$RUST_LDADD" | sed "s/-lrt//")' "$SOURCE_DIR/configure" &&
     configure \
