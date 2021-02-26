@@ -3,10 +3,10 @@ webpage "https://www.pango.org"
 src_url "https://download.gnome.org/sources/pango/1.48/pango-1.48.0.tar.xz"
 src_sum "391f26f3341c2d7053e0fb26a956bd42360dadd825efe7088b1e9340a65e74e6"
 license "LGPL-2.0-or-later"
-require "pkg-config meson"
+require "pkg-config meson ninja"
 depends "fontconfig fribidi glib harfbuzz"
+ldflags "-lffi -lbz2 -lz -lbrotlicommon -lbrotlidec -lfontconfig -lpng16 -luuid -lgmodule-2.0 -lgio-2.0 -lpcre"
 
 build() {
-    export LDFLAGS="$LDFLAGS -lffi -lbz2 -lz -lbrotlicommon -lbrotlidec -lfontconfig -lpng16 -luuid -lgmodule-2.0 -lgio-2.0 -lpcre"
     meson
 }
