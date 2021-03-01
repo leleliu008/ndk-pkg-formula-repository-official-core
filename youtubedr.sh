@@ -8,6 +8,6 @@ require "go"
 build_in_sourced
 
 build() {
-    go build -v -trimpath -ldflags "-s -w -X main.version=$(version) -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" -o youtubedr ./cmd/youtubedr &&
+    run go build -v -x -trimpath -ldflags "\"-s -w -X main.version=$(version) -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"" -o youtubedr ./cmd/youtubedr &&
     install_bins youtubedr
 }

@@ -9,6 +9,6 @@ require "go"
 build_in_sourced
 
 build() {
-    go build -v -trimpath -o hugo &&
+    run go build -v -trimpath -o hugo &&
     install_bins hugo
 }

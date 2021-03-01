@@ -8,6 +8,6 @@ require "go"
 build_in_sourced
 
 build() {
-    go build -v -trimpath -ldflags "-X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) -X github.com/cli/cli/internal/build.Version=$(version)" -o gh ./cmd/gh &&
+    run go build -v -trimpath -ldflags "\"-X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) -X github.com/cli/cli/internal/build.Version=$(version)\"" -o gh ./cmd/gh &&
     install_bins gh
 }
