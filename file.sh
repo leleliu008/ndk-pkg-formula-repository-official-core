@@ -3,6 +3,7 @@ webpage "https://www.darwinsys.com/file"
 src_git "https://github.com/file/file"
 src_url "https://astron.com/pub/file/file-5.39.tar.gz"
 src_sum "f05d286a76d9556243d0cb05814929c2ecf3a5ba07963f8f70bfaaa70517fad1"
+require "make"
 
 prepare() {
     info "install file local."
