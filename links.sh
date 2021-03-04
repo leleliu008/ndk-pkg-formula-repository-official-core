@@ -10,7 +10,7 @@ build_in_sourced
 
 build() {
     # configure [options] [host]
-    ./configure \
+    run ./configure \
         --host="$BUILD_FOR_TARGET" \
         --prefix="$ABI_INSTALL_DIR" \
         --enable-ipv6 \

@@ -8,11 +8,11 @@ require "make"
 build_in_sourced
 
 build() {
-    ./configure \
+    run ./configure \
         --cc="$CC" \
         --ar="$AR" \
-        --extra-cflags="$CFLAGS $CPPFLAGS" \
-        --extra-ldflags="$LDFLAGS" \
+        --extra-cflags="\"$CFLAGS $CPPFLAGS\"" \
+        --extra-ldflags="\"$LDFLAGS\"" \
         --target="$BUILD_FOR_TARGET" \
         --prefix="$ABI_INSTALL_DIR" \
         --enable-static \

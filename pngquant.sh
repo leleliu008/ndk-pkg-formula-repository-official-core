@@ -11,13 +11,13 @@ build_in_sourced
 build() {
     export OSTYPE=Linux
     
-    ./configure \
+    run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --disable-sse \
         --with-libpng="$libpng_INSTALL_DIR" \
         CC="$CC" \
-        CFLAGS="$CFLAGS $CPPFLAGS -static" \
-        LDFLAGS="$LDFLAGS" &&
+        CFLAGS="\"$CFLAGS $CPPFLAGS -static\"" \
+        LDFLAGS="\"$LDFLAGS\"" &&
     make $MAKEFLAGS clean &&
     make $MAKEFLAGS install
 }

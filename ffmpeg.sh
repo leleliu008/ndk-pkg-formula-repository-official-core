@@ -11,7 +11,7 @@ prepare() {
 build_in_sourced
 
 build() {
-    ./configure \
+    run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
         --ar="$AR" \

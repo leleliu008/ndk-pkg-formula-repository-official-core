@@ -2,6 +2,7 @@ summary "Cryptography and SSL/TLS Toolkit"
 webpage "https://openssl.org"
 src_url "https://dl.bintray.com/homebrew/mirror/openssl-1.1.1g.tar.gz"
 src_sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
+require "make"
 
 build_in_sourced
 
@@ -10,7 +11,7 @@ build_in_sourced
 build() {
     export LDFLAGS="$LDFLAGS -L$SYSTEM_LIBRARY_DIR"
     
-    ./Configure \
+    run ./Configure \
         shared \
         no-ssl2 \
         no-ssl3 \

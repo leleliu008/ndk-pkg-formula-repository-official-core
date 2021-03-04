@@ -45,12 +45,12 @@ build() {
     
     [ -f Makefile ] && make clean
     
-    ./configure \
+    run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --crossbuild=Linux:unkown:$BUILD_FOR_ARCH \
         --with-cc="$CC" \
-        --with-cc-opt="$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU" \
-        --with-ld-opt="$LDFLAGS -lcrypto -lcrypt -lglob" \
+        --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
+        --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt -lglob\"" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
     make install

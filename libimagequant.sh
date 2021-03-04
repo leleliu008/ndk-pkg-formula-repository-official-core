@@ -10,12 +10,12 @@ build_in_sourced
 build() {
     export OSTYPE=Linux
  
-    ./configure \
+    run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --disable-sse \
         CC="$CC" \
-        CFLAGS="$CFLAGS $CPPFLAGS" \
-        LDFLAGS="$LDFLAGS" &&
+        CFLAGS="\"$CFLAGS $CPPFLAGS\"" \
+        LDFLAGS="\"$LDFLAGS\"" &&
     make $MAKEFLAGS clean &&
     make $MAKEFLAGS install
 }

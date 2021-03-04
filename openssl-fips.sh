@@ -2,6 +2,7 @@ summary "Cryptography and SSL/TLS Toolkit"
 webpage "https://openssl.org"
 src_url "https://www.openssl.org/source/openssl-fips-2.0.16.tar.gz"
 src_sum "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4"
+require "make"
 
 prepare() {
     export LC_COLLATE='C'
@@ -13,7 +14,7 @@ prepare() {
 build_in_sourced
 
 build() {
-    perl Configure \
+    run perl Configure \
         shared \
         no-ssl2 \
         no-ssl3 \
