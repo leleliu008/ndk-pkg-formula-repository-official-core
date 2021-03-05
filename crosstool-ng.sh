@@ -3,7 +3,8 @@ webpage "https://crosstool-ng.github.io"
 src_url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
 src_sum "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
 license "LGPL-2.1"
-require "make help2man"
+bsystem "configure"
+require "help2man"
 depends "ncurses libiconv gettext"
 
 build() {

@@ -2,7 +2,7 @@ summary "High performance message passing library"
 webpage "https://www.open-mpi.org"
 src_url "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.4.tar.bz2"
 src_sum "47e24eb2223fe5d24438658958a313b6b7a55bb281563542e1afc9dec4a31ac4"
-require "make"
+bsystem "configure"
 depends "libevent"
 cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
 

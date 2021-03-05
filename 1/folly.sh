@@ -3,7 +3,8 @@ webpage "https://github.com/facebook/folly"
 src_url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
 src_sum "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
 license "Apache-2.0"
-require "cmake make pkg-config"
+bsystem "cmake"
+require "pkg-config"
 depends "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
 
 build() {
@@ -41,5 +42,4 @@ build() {
         -DFOLLY_HAVE_WCHAR_SUPPORT_EXITCODE=0 \
         -DFOLLY_HAVE_LINUX_VDSO_EXITCODE=0 \
         -DFOLLY_HAVE_UNALIGNED_ACCESS_EXITCODE=0
-    set +x
 }

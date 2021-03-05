@@ -2,6 +2,7 @@ summary "Cryptographic library based on the code from GnuPG"
 webpage "https://gnupg.org/related_software/libgcrypt"
 src_url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.6.tar.bz2"
 src_sum "0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975"
+bsystem "configure"
 depends "libgpg-error"
 
 build() {

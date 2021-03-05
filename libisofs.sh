@@ -3,6 +3,7 @@ webpage "https://www.libburnia-project.org"
 src_url "http://files.libburnia-project.org/releases/libisofs-1.5.2.tar.gz"
 src_sum "ef5a139600b3e688357450e52381e40ec26a447d35eb8d21524598c7b1675500"
 depends "libiconv"
+bsystem "configure"
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26)

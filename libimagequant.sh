@@ -16,6 +16,6 @@ build() {
         CC="$CC" \
         CFLAGS="\"$CFLAGS $CPPFLAGS\"" \
         LDFLAGS="\"$LDFLAGS\"" &&
-    make $MAKEFLAGS clean &&
-    make $MAKEFLAGS install
+    make clean &&
+    make install
 }

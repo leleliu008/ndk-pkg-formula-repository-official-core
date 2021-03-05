@@ -4,6 +4,7 @@ version "2.8.9rel.1"
 src_url "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/l/lynx/lynx_$(version).orig.tar.bz2"
 src_sum "387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595"
 license "GPL-2.0"
+bsystem "configure"
 depends "ncurses bzip2 openssl"
 
 prepare() {

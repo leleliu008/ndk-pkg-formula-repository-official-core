@@ -3,7 +3,8 @@ webpage "https://www.gnu.org/software/bc"
 src_url "https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz"
 src_sum "62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a"
 license "GPL-3.0"
-require "bison flex make"
+bsystem "configure"
+require "bison flex"
 depends "readline"
 
 prepare() {
@@ -12,8 +13,8 @@ prepare() {
     (
         cd "$NATIVE_BUILD_DIR" &&
         $SOURCE_DIR/configure --without-readline --without-libedit &&
-        make $MAKEFLAGS clean &&
-        make $MAKEFLAGS
+        make clean &&
+        make
     ) 
 }
 

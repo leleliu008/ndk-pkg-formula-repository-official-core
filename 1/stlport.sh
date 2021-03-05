@@ -15,7 +15,7 @@ build() {
         --with-extra-cflags="$CFLAGS $CPPFLAGS" \
         --with-extra-cxxflags="$CXXFLAGS $CPPFLAGS" \
         --with-extra-ldflags="$LDFLAGS" &&
-    make $MAKEFLAGS clean &&
-    make $MAKEFLAGS &&
-    make $MAKEFLAGS install
+    make clean &&
+    make &&
+    make install
 }

@@ -3,6 +3,7 @@ webpage "https://gflags.github.io/gflags"
 src_url "https://github.com/gflags/gflags/archive/v2.2.2.tar.gz"
 src_sum "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf"
 license "BSD-3-Clause"
+bsystem "cmake"
 
 build() {
     cmake \

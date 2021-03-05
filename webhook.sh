@@ -3,7 +3,7 @@ webpage "https://github.com/adnanh/webhook"
 src_git "https://github.com/adnanh/webhook.git"
 src_url "https://github.com/adnanh/webhook.git"
 license "MIT"
-require "go"
+bsystem "go"
 
 build_in_sourced
 

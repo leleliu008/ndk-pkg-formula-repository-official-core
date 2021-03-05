@@ -3,7 +3,7 @@ webpage "http://libtorrent.org"
 src_git "https://github.com/arvidn/libtorrent.git"
 src_url "https://github.com/arvidn/libtorrent/releases/download/v2.0.2/libtorrent-rasterbar-2.0.2.tar.gz"
 src_sum "3af22ea1b60e04a7cf357a3d770470ea5df15e968501782bd1414634a2b42cb7"
-require "cmake"
+bsystem "cmake"
 depends "openssl boost"
 
 build() {

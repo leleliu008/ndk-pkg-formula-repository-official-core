@@ -23,8 +23,8 @@ build() {
         --with-libtiff \
         --with-libjpeg \
         --with-ssl="$openssl_INSTALL_DIR" &&
-    make $MAKEFLAGS clean &&
-    make $MAKEFLAGS &&
-    make $MAKEFLAGS install &&
-    make $MAKEFLAGS distclean
+    make clean &&
+    make &&
+    make install &&
+    make distclean
 }

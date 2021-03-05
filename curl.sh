@@ -2,7 +2,8 @@ summary "Get a file from an HTTP, HTTPS or FTP server"
 webpage "https://curl.haxx.se"
 src_url "https://curl.haxx.se/download/curl-7.70.0.tar.xz"
 src_sum "032f43f2674008c761af19bf536374128c16241fb234699a55f9fb603fcfbae7"
-require "pkg-config make"
+bsystem "configure"
+require "pkg-config"
 depends "openssl"
 
 build() {

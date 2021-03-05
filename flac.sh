@@ -2,6 +2,7 @@ summary "Free lossless audio codec"
 webpage "https://xiph.org/flac"
 src_url "https://github.com/xiph/flac/archive/1.3.3.tar.gz"
 src_sum "668cdeab898a7dd43cf84739f7e1f3ed6b35ece2ef9968a5c7079fe9adfe1689"
+bsystem "configure"
 depends "libogg libiconv"
 
 # https://github.com/android/ndk/issues/702

@@ -3,7 +3,8 @@ webpage "https://cunit.sourceforge.io"
 src_url "https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2"
 src_sum "f5b29137f845bb08b77ec60584fdb728b4e58f1023e6f249a464efa49a40f214"
 version "2.1.3"
-require "autoreconf make"
+bsystem "configure"
+require "autoreconf"
 
 prepare() {
     rm config.status &&

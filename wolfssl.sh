@@ -3,7 +3,7 @@ webpage "https://www.wolfssl.com"
 version "4.4.0"
 src_url "https://github.com/wolfSSL/wolfssl/archive/v$(version)-stable.tar.gz"
 src_sum "7f854804c8ae0ca49cc77809e38e9a3b5a8c91ba7855ea928e6d6651b0d35f18"
-require "make"
+bsystem "configure"
 ldflags "-lm"
 
 prepare() {

@@ -2,6 +2,7 @@ summary "ID3 tag manipulation library"
 webpage "https://id3lib.sourceforge.io"
 src_url "https://downloads.sourceforge.net/project/id3lib/id3lib/3.8.3/id3lib-3.8.3.tar.gz"
 src_sum "2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
+bsystem "configure"
 depends "libiconv"
 
 prepare() {

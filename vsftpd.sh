@@ -3,7 +3,7 @@ webpage "https://security.appspot.com/vsftpd.html"
 src_url "https://security.appspot.com/downloads/vsftpd-3.0.3.tar.gz"
 src_sum "9d4d2bf6e6e2884852ba4e69e157a2cecd68c5a7635d66a3a8cf8d898c955ef7"
 license "GPL-2.0-only"
-require "make"
+bsystem "make"
 depends "openssl libcap libcrypt"
 
 build_in_sourced
@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-    make $MAKEFLAGS clean &&
-    make $MAKEFLAGS CC="$CC" CFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS" LIBS="-lssl -lcrypto -lcrypt -lcap" &&
+    make clean &&
+    make CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS="'-lssl -lcrypto -lcrypt -lcap'" &&
     install_bins vsftpd
 }

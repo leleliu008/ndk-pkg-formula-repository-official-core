@@ -3,7 +3,7 @@ webpage "https://www.python.org"
 src_url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
 src_sum "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
 license "Python-2.0"
-require "make"
+bsystem "configure"
 depends "expat libffi openssl readline sqlite bzip2 xz"
 
 prepare() {
@@ -12,8 +12,8 @@ prepare() {
     mkdir -p "$NATIVE_BUILD_DIR" &&
     cd "$NATIVE_BUILD_DIR" &&
     "$SOURCE_DIR/configure" --prefix=$PWD/output &&
-    make $MAKEFLAGS &&
-    make $MAKEFLAGS install &&
+    make &&
+    make install &&
     export PATH="$NATIVE_BUILD_DIR/output/bin:$PATH"
 }
 

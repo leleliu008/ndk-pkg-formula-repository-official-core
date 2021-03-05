@@ -3,6 +3,7 @@ webpage "https://www.xvid.com"
 src_url "https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.bz2"
 src_sum "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7"
 license "GPL-2.0"
+bsystem "configure"
 sourced "build/generic"
 
 build_in_sourced

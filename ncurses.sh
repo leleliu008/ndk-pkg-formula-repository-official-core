@@ -2,7 +2,9 @@ summary "Text-based UI library"
 webpage "https://www.gnu.org/software/ncurses"
 src_url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz"
 src_sum "30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d"
-require "sed grep make"
+license "MIT"
+bsystem "configure"
+require "sed grep"
 
 need_native_build() {
     # https://github.com/termux/termux-packages/issues/4487
@@ -38,9 +40,9 @@ prepare() {
                 ac_cv_header_fcntl_h=yes \
                 ac_cv_header_unistd_h=yes \
                 ac_cv_header_sys_time_h=yes &&
-        make $MAKEFLAGS clean &&
-        make $MAKEFLAGS &&
-        make $MAKEFLAGS install &&
+        make clean &&
+        make &&
+        make install &&
         export PATH=$PWD/output/bin:$PATH
     fi
 }

@@ -2,6 +2,7 @@ summary "Multi-format archive and compression library"
 webpage "https://www.libarchive.org"
 src_url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
 src_sum "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
+bsystem "configure"
 depends "libiconv expat openssl xz bzip2 lz4 lzo zstd"
 
 build() {

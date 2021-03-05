@@ -2,6 +2,7 @@ summary "Perl compatible regular expressions library"
 webpage "https://www.pcre.org"
 src_url "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
 src_sum "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
+bsystem "cmake"
 depends "zlib bzip2"
 
 build() {

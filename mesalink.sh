@@ -1,7 +1,7 @@
 summary "memory-safe and OpenSSL-compatible TLS library"
 webpage "https://mesalink.io"
 src_url "https://github.com/mesalock-linux/mesalink.git"
-require "cargo rustup"
+bsystem "cargo"
 
 build_in_sourced
 

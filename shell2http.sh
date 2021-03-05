@@ -3,7 +3,7 @@ webpage "https://github.com/msoap/shell2http"
 src_git "https://github.com/msoap/shell2http.git"
 src_url "https://github.com/msoap/shell2http.git"
 license "MIT"
-require "go"
+bsystem "go"
 
 build_in_sourced
 

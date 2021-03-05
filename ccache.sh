@@ -3,6 +3,7 @@ webpage "https://ccache.dev"
 src_url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
 src_sum "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
 license "GPL-3.0-or-later"
+bsystem "cmake"
 depends "zstd blake3"
 
 prepare() {

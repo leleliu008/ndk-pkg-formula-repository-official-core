@@ -3,6 +3,7 @@ webpage "https://www.cmake.org"
 src_url "https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4.tar.gz"
 src_sum "597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77"
 license "BSD-3-Clause"
+bsystem "cmake"
 depends "libuv ncurses"
 
 prepare() {

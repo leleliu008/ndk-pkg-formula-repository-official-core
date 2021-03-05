@@ -3,7 +3,7 @@ webpage "https://web.mit.edu/kerberos"
 src_url "https://kerberos.org/dist/krb5/1.18/krb5-1.18.3.tar.gz"
 src_sum "e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719"
 sourced "src"
-require "make"
+bsystem "configure"
 depends "readline openssl berkeley-db libglob"
 ldflags "-lglob -lncurses"
 

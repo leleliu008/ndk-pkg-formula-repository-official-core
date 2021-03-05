@@ -2,6 +2,7 @@ summary "Cryptographic & SSL/TLS library"
 webpage "https://tls.mbed.org"
 src_url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
 src_sum "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
+bsystem "cmake"
 
 build() {
     cmake \

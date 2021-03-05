@@ -6,5 +6,6 @@ build() {
     run $CC $CFLAGS $CPPFLAGS -D__USE_GNU -c -o wordexp.o $SOURCE_DIR/wordexp.c &&
     run $CC $LDFLAGS -shared -o libwordexp.so wordexp.o &&
     run $AR rs libwordexp.a wordexp.o &&
-    install_files "$SOURCE_DIR/wordexp.h" libwordexp.a libwordexp.so
+    run install_incs "$SOURCE_DIR/wordexp.h" &&
+    run install_libs libwordexp.a libwordexp.so
 }

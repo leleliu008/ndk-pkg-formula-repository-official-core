@@ -24,8 +24,9 @@ build() {
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS -L$SOURCE_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"
     
-    ./Configure -clean &&
-    ./Configure -n linux &&
-    make $MAKEFLAGS &&
-    install_files lsof Lsof.8
+    run ./Configure -clean &&
+    run ./Configure -n linux &&
+    make &&
+    install_bins lsof &&
+    install_mans Lsof.8
 }

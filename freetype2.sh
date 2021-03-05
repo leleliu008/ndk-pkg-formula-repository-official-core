@@ -2,6 +2,7 @@ summary "Software library to render fonts"
 webpage "https://www.freetype.org"
 src_url "https://downloads.sourceforge.net/project/freetype/freetype2/2.10.2/freetype-2.10.2.tar.xz"
 src_sum "1543d61025d2e6312e0a1c563652555f17378a204a61e99928c9fcef030a2d8b"
+bsystem "cmake"
 depends "brotli bzip2 libpng"
 
 build() {

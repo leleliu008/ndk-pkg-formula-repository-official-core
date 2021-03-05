@@ -1,7 +1,7 @@
 summary "Savoury implementation of the QUIC transport protocol and HTTP/3"
 webpage "https://github.com/cloudflare/quiche"
 src_url "https://github.com/cloudflare/quiche.git"
-require "cargo rustup"
+bsystem "cargo"
 
 build_in_sourced
 

@@ -3,6 +3,7 @@ webpage "https://www.gnu.org/software/findutils"
 src_url "https://ftp.gnu.org/gnu/findutils/findutils-4.7.0.tar.xz"
 src_sum "c5fefbdf9858f7e4feb86f036e1247a54c79fc2d8e4b7064d5aaa1f47dfa789a"
 license "GPL-3.0"
+bsystem "configure"
 
 sdk_api 26
 

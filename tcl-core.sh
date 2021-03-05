@@ -4,6 +4,7 @@ version "8.6.10"
 src_url "https://downloads.sourceforge.net/project/tcl/Tcl/$(version)/tcl$(version)-src.tar.gz"
 src_sum "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
 license "TCL"
+bsystem "configure"
 sourced "unix"
 
 prepare() {

@@ -12,6 +12,6 @@ build() {
     #WHICH=standard/iso/variable/__thread
     WHICH=standard/iso/header/stdio.h/fprintf
     
-    make $MAKEFLAGS -C $SOURCE_DIR/$WHICH clean
-    make $MAKEFLAGS -C $SOURCE_DIR/$WHICH
+    make -C $SOURCE_DIR/$WHICH clean
+    make -C $SOURCE_DIR/$WHICH
 }

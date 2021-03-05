@@ -24,8 +24,8 @@ build() {
         --dest-os=android \
         --cross-compiling \
         --verbose &&
-    make $MAKEFLAGS -C "$SOURCE_DIR" &&
-    make $MAKEFLAGS -C "$SOURCE_DIR" install
+    make -C "$SOURCE_DIR" &&
+    make -C "$SOURCE_DIR" install
 }
 
 dest_cpu() {
