@@ -35,7 +35,7 @@ build() {
     done
     
     run $CC $LDFLAGS -shared -o libblake3.so $OBJS &&
-    run $AR $ARFLAGS libblake3.a $OBJS &&
+    run $AR rsc libblake3.a $OBJS &&
     run install_incs "$SOURCE_DIR/blake3.h" &&
-    run install_bins libblake3.a libblake3.so
+    run install_libs libblake3.a libblake3.so
 }

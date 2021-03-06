@@ -7,8 +7,8 @@ version "1"
 build() {
     run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $SOURCE_DIR/libcrypt-$(version).c &&
     run $CC $LDFLAGS -shared -o libcrypt.so crypt.o &&
-    run $AR $ARFLAGS libcrypt.a crypt.o &&
+    run $AR rsc libcrypt.a crypt.o &&
     echo "char* crypt(char* key, char* salt);" > crypt.h &&
-    install_incs crypt.h &&
-    install_bins libcrypt.a libcrypt.so
+    run install_incs crypt.h &&
+    run install_libs libcrypt.a libcrypt.so
 }

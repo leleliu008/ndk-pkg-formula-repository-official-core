@@ -17,7 +17,7 @@ build() {
 
     export LSOF_MAKE="make"
     export LSOF_CC="$CC"
-    export LSOF_AR="$AR $ARFLAGS"
+    export LSOF_AR="$AR rsc"
     export LSOF_RANLIB="$RANLIB"
     export LSOF_ARCH="$BUILD_FOR_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"

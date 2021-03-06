@@ -5,7 +5,7 @@ src_git "https://github.com/leleliu008/libglob.git"
 build() {
     run $CC $CFLAGS $CPPFLAGS -c -o glob.o $SOURCE_DIR/glob.c &&
     run $CC $LDFLAGS -shared -o libglob.so glob.o &&
-    run $AR $ARFLAGS libglob.a glob.o &&
+    run $AR rsc libglob.a glob.o &&
     run install_incs "$SOURCE_DIR/glob.h" &&
-    run install_bins libglob.a libglob.so
+    run install_libs libglob.a libglob.so
 }
