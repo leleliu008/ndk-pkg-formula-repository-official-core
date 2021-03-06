@@ -17,7 +17,7 @@ build() {
 
     export LSOF_MAKE="make"
     export LSOF_CC="$CC"
-    export LSOF_AR="$AR rs"
+    export LSOF_AR="$AR $ARFLAGS"
     export LSOF_RANLIB="$RANLIB"
     export LSOF_ARCH="$BUILD_FOR_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
@@ -27,6 +27,6 @@ build() {
     run ./Configure -clean &&
     run ./Configure -n linux &&
     make &&
-    install_bins lsof &&
-    install_mans Lsof.8
+    run install_bins lsof &&
+    run install_mans Lsof.8
 }

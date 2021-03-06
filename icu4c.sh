@@ -7,17 +7,14 @@ license "ICU"
 bsystem "configure"
 sourced "source"
 
-prepare() {
+build0() {
     # https://www.talkwithdevices.com/archives/260
-    mkdir "$SOURCE_DIR/build.d.tmp" &&
-    cd    "$SOURCE_DIR/build.d.tmp" &&
-    "$SOURCE_DIR/runConfigureICU" Linux &&
-    make
+    run "$SOURCE_DIR/runConfigureICU" Linux && make
 }
 
 build() {
     configure \
-        --with-cross-build="$SOURCE_DIR/build.d.tmp" \
+        --with-cross-build="$NATIVE_BUILD_DIR" \
         --enable-release \
         --enable-tools \
         --enable-fuzzer \

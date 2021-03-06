@@ -6,15 +6,8 @@ license "Python-2.0"
 bsystem "configure"
 depends "expat libffi openssl readline sqlite bzip2 xz"
 
-prepare() {
-    sed_in_place 's|@echo|echo|g' Makefile.pre.in &&
-    NATIVE_BUILD_DIR="$WORKING_DIR/$TIMESTAMP_UNIX/native" &&
-    mkdir -p "$NATIVE_BUILD_DIR" &&
-    cd "$NATIVE_BUILD_DIR" &&
-    "$SOURCE_DIR/configure" --prefix=$PWD/output &&
-    make &&
-    make install &&
-    export PATH="$NATIVE_BUILD_DIR/output/bin:$PATH"
+build0() {
+    configure
 }
 
 build() {

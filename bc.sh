@@ -7,21 +7,14 @@ bsystem "configure"
 require "bison flex"
 depends "readline"
 
-prepare() {
-    NATIVE_BUILD_DIR="$SOURCE_DIR/$TIMESTAMP_UNIX/native"
-    mkdir -p "$NATIVE_BUILD_DIR" &&
-    (
-        cd "$NATIVE_BUILD_DIR" &&
-        $SOURCE_DIR/configure --without-readline --without-libedit &&
-        make clean &&
-        make
-    ) 
+build0() {
+    configure --without-readline --without-libedit
 }
 
 build() {
-    install -d "$BUILD_DIR/bc" &&
-    cp "$NATIVE_BUILD_DIR/bc/libmath.h" "$BUILD_DIR/bc"
-    touch -t 190001010000 $BUILD_DIR/bc/libmath.h &&
+    run install -d "$BUILD_DIR/bc" &&
+    run install "$NATIVE_BUILD_DIR/bc/libmath.h" "$BUILD_DIR/bc"
+    run touch -t 190001010000 $BUILD_DIR/bc/libmath.h &&
     configure \
         --without-libedit \
         --with-readline="$readline_INSTALL_DIR"

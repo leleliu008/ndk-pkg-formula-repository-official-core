@@ -1,6 +1,6 @@
 summary "Bytecode optimizer for Android apps"
 webpage "https://fbredex.com"
-src_url "https://github.com/facebook/redex.git"
+src_git "https://github.com/facebook/redex.git"
 license "MIT"
 depends "boost jsoncpp libexecinfo"
 

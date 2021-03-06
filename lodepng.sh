@@ -1,6 +1,6 @@
 summary "PNG encoder and decoder in C and C++"
 webpage "https://github.com/lvandeve/lodepng"
-src_url "https://github.com/lvandeve/lodepng.git"
+src_git "https://github.com/lvandeve/lodepng.git"
 license "Zlib"
 bsystem "make"
 

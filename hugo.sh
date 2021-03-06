@@ -10,5 +10,5 @@ build_in_sourced
 
 build() {
     run go build -v -trimpath -o hugo &&
-    install_bins hugo
+    run install_bins hugo
 }

@@ -10,5 +10,5 @@ build_in_sourced
 
 build() {
     run go build -v -trimpath -o gogs &&
-    install_bins gogs
+    run install_bins gogs
 }

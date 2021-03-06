@@ -9,5 +9,5 @@ build_in_sourced
 
 build() {
     run go build -v -trimpath -ldflags "\"-X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) -X github.com/cli/cli/internal/build.Version=$(version)\"" -o gh ./cmd/gh &&
-    install_bins gh
+    run install_bins gh
 }
