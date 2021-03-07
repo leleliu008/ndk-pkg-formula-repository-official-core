@@ -9,10 +9,6 @@ bsystem "autogen"
 # stdio_ext.h: int __fsetlocking(FILE* __fp, int __type) __INTRODUCED_IN(23);
 sdk_api 23
 
-prepare() {
-	./autogen.sh
-}
-
 build() {
     configure \
         --with-warn \

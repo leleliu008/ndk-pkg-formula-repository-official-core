@@ -1,5 +1,5 @@
 summary "Unified display of technical and tag data for audio/video"
-webpage "https://mediaarea.net/"
+webpage "https://mediaarea.net"
 version "20.09"
 src_url "https://mediaarea.net/download/source/libmediainfo/20.09/libmediainfo_$(version).tar.bz2"
 src_sum "ad2b8fa11a756f1e318921d77240bc1ec454f7ba9ab5bf9a88b9f72e552058bb"

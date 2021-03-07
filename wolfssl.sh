@@ -6,10 +6,6 @@ src_sum "7f854804c8ae0ca49cc77809e38e9a3b5a8c91ba7855ea928e6d6651b0d35f18"
 bsystem "autogen"
 ldflags "-lm"
 
-prepare() {
-    ./autogen.sh
-}
-
 build() {
     configure \
         --disable-asm \

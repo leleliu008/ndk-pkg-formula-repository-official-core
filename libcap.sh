@@ -3,6 +3,7 @@ webpage "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
 src_url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.45.tar.gz"
 src_sum "bf0496f7af816f20ccbad6a3e5e9714aa5da658fcb0804209137e4920417e33f"
 bsystem "make"
+require "gperf"
 
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 

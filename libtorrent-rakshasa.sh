@@ -7,10 +7,6 @@ bsystem "autogen"
 require "pkg-config"
 depends "zlib openssl"
 
-prepare() {
-    ./autogen.sh
-}
-
 build() {
     configure \
         --disable-largefile \
