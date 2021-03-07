@@ -27,8 +27,6 @@ jobs:
         echo "$(brew --prefix bison)/bin" >> "$GITHUB_PATH"
       if:  matrix.os == 'macos-10.15'
 
-    - run: brew install automake autoconf libtool pkg-config make cmake meson gperf itstool tree lzip nasm help2man doxygen protobuf xmlto ghostscript
- 
     - name: install ndk-pkg
       run: |
         curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
@@ -39,9 +37,7 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: mv *.sh ~/.ndk-pkg/formula
-      run: |
-        install -d $HOME/.ndk-pkg/formula
-        mv *.sh    $HOME/.ndk-pkg/formula
+    - run: install -d ~/.ndk-pkg/formula
+    - run: mv *.sh    ~/.ndk-pkg/formula
 
     - run: ndk-pkg install ${{ matrix.pkg }}
