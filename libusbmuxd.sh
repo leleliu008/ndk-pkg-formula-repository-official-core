@@ -6,6 +6,7 @@ license "LGPL-2.1"
 bsystem "autogen"
 require "libtoolize"
 depends "libplist"
+ldflags "-lplist"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

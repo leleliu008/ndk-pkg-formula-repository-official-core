@@ -6,7 +6,7 @@ license "EPL-1.0"
 bsystem "autotools"
 require "pkg-config groff ps2pdf"
 depends "fontconfig libpng expat libglob"
-ldflags "-lglob"
+ldflags "-lglob -lexpat -lz -lm"
 
 prepare() {
     sed_in_place 's|install-exec-hook|xxxxxxxxxxxx|' cmd/dot/Makefile.am &&
