@@ -14,6 +14,7 @@ prepare() {
 }
 
 build() {
+    export LDFLAGS="$LDFLAGS -L$ABI_LIBRARY_DIR"
     MAKEFLAGS="$MAKEFLAGS HOSTCC=$CC_FOR_BUILD"
     configure --enable-swig=no
 }

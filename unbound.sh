@@ -5,6 +5,7 @@ src_url "https://nlnetlabs.nl/downloads/unbound/unbound-1.12.0.tar.gz"
 src_sum "5b9253a97812f24419bf2e6b3ad28c69287261cf8c8fa79e3e9f6d3bf7ef5835"
 license "BSD-3-Clause"
 bsystem "configure"
+require "libtoolize"
 depends "openssl libmnl libevent expat nghttp2"
 
 build() {
