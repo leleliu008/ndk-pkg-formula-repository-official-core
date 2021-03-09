@@ -5,6 +5,7 @@ src_url "https://mediaarea.net/download/source/libzen/0.4.38/libzen_$(version).t
 src_sum "594e07bb4a0472cd9da258b3c4e050e9a37a39cccd85e3d8b5bf597d027b7eda"
 license "BSD-2-Clause"
 bsystem "autogen"
+require "libtoolize libtool"
 sourced "Project/GNU/Library"
 build_in_sourced
 
