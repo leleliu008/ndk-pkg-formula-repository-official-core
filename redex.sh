@@ -3,6 +3,7 @@ webpage "https://fbredex.com"
 src_git "https://github.com/facebook/redex.git"
 license "MIT"
 depends "boost jsoncpp libexecinfo"
+bsystem "autotools"
 
 prepare() {
     sed_in_place 's/-lpthread/-lc/g'           Makefile.am &&
@@ -42,5 +43,5 @@ build_with_cmake() {
         -DJsonCpp_INCLUDE_DIR="$jsoncpp_INCLUDE_DIR" \
         -DJsonCpp_LIBRARY="$jsoncpp_LIBRARY_DIR/libjsoncpp.so" \
         -DZLIB_INCLUDE_DIR="$SYSTEM_INCLUDE_DIR" \
-        -DZLIB_LIBRARIES="$SYSTEM_LIBRARY_DIR/libz.so"
+        -DZLIB_LIBRARIES="$zlib_LIBRARY_DIR/libz.so"
 }

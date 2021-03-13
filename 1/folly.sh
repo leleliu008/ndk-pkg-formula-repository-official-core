@@ -27,7 +27,7 @@ build() {
         -DLIBEVENT_LIB="$libevent_LIBRARY_DIR/libevent.so" \
         -DLIBAIO_INCLUDE_DIR="$libaio_INCLUDE_DIR" \
         -DLIBAIO_LIBRARY="$libaio_LIBRARY_DIR/libaio.so" \
-        -DZLIB_LIBRARY="$SYSTEM_LIBRARY_DIR/libz.so" \
+        -DZLIB_LIBRARY="$zlib_LIBRARY_DIR/libz.so" \
         -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
         -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.so" \
         -DLZ4_INCLUDE_DIR="$lz4_INCLUDE_DIR" \

@@ -9,3 +9,8 @@ require "pkg-config libtoolize libtool"
 depends "libmediainfo"
 sourced "Project/GNU/CLI"
 build_in_sourced
+
+build() {
+    export LDFLAGS="$LDFLAGS $SYSTEM_LIBRARY_DIR/libstdc++.so"
+    configure
+}
