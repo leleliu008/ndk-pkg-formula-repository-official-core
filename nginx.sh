@@ -2,7 +2,7 @@ summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
 webpage "https://nginx.org"
 src_url "https://nginx.org/download/nginx-1.19.1.tar.gz"
 src_sum "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
-require "make"
+bsystem "make"
 depends "openssl pcre libcrypt libglob"
 
 trace_configure() {

@@ -3,7 +3,7 @@ webpage "http://links.twibright.com"
 src_url "http://links.twibright.com/download/links-2.21.tar.bz2"
 src_sum "285eed8591c7781ec26213df82786665aaa1b9286782e8a7a1a7e2a6e1630d63"
 license "GPL-2.0"
-require "make"
+bsystem "make"
 depends "xz bzip2 libtiff libjpeg-turbo openssl"
 
 build_in_sourced

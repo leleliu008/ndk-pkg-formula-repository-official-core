@@ -3,7 +3,8 @@ webpage "https://pngquant.org"
 version "2.12.5"
 src_url "https://pngquant.org/pngquant-$(version)-src.tar.gz"
 src_sum "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b140808"
-require "pkg-config make"
+bsystem "make"
+require "pkg-config"
 depends "libpng lcms2"
 
 build_in_sourced

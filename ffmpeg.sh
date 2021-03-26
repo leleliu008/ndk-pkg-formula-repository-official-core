@@ -2,7 +2,7 @@ summary "Play, record, convert, and stream audio and video"
 webpage "https://ffmpeg.org"
 src_url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
 src_sum "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
-require "make"
+bsystem "make"
 depends "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
 
 prepare() {

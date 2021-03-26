@@ -8,14 +8,14 @@ require "bison flex"
 depends "readline"
 
 build0() {
-    configure --without-readline --without-libedit
+    configure --without-readline --without-libedit &&
+    install -d           "$NATIVE_INSTALL_DIR/include" &&
+    install bc/libmath.h "$NATIVE_INSTALL_DIR/include"
 }
 
 build() {
     run install -d "$BUILD_DIR/bc" &&
-    run install "$NATIVE_BUILD_DIR/bc/libmath.h" "$BUILD_DIR/bc"
+    run cp "$NATIVE_INSTALL_DIR/include/libmath.h" "$BUILD_DIR/bc"
     run touch -t 190001010000 $BUILD_DIR/bc/libmath.h &&
-    configure \
-        --without-libedit \
-        --with-readline="$readline_INSTALL_DIR"
+    configure --without-libedit --with-readline="$readline_INSTALL_DIR"
 }

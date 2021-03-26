@@ -1,6 +1,6 @@
 summary "Utility to determine file types"
 webpage "https://www.darwinsys.com/file"
-src_git "https://github.com/file/file"
+src_git "https://github.com/file/file.git"
 src_url "https://astron.com/pub/file/file-5.39.tar.gz"
 src_sum "f05d286a76d9556243d0cb05814929c2ecf3a5ba07963f8f70bfaaa70517fad1"
 license "BSD-2-Clause"
@@ -11,7 +11,7 @@ build0() {
 }
 
 build() {
-    export FILE_COMPILE=$NATIVE_BUILD_DIR/output/bin/file
+    export FILE_COMPILE=$NATIVE_INSTALL_DIR/bin/file
     configure \
         --enable-zlib \
         --disable-bzlib \

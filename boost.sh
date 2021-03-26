@@ -6,15 +6,17 @@ src_sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 license "BSL-1.0"
 depends "xz bzip2 zstd icu4c libiconv"
 
+build_in_sourced
+
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android
 # https://www.boost.org/doc/libs/1_73_0/libs/context/doc/html/context/architectures/crosscompiling.html
 # https://www.boost.org/doc/libs/1_65_1/libs/context/doc/html/context/architectures.html
-prepare() {
-    ./bootstrap.sh
+build0() {
+    sed_in_place '1a set -x' bootstrap.sh &&
+    sed_in_place '1a set -x' tools/build/src/engine/build.sh &&
+    run ./bootstrap.sh
 }
-
-build_in_sourced
 
 build() {
     case $BUILD_FOR_ARCH in
@@ -40,7 +42,7 @@ build() {
     esac
  
     gen_project_config &&
-    ./b2 install \
+    run ./b2 install \
         -q \
         -d+2 \
         -j$(nproc) \

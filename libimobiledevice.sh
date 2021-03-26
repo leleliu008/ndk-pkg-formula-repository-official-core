@@ -4,6 +4,7 @@ src_url "https://github.com/libimobiledevice/libimobiledevice/releases/download/
 src_sum "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
 license "LGPL-2.1"
 bsystem "configure"
+require "pkg-config"
 depends "openssl libusbmuxd"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);

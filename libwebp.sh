@@ -8,16 +8,16 @@ ldflags "-llzma -lzstd"
 
 build() {
     cmake \
-    -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-    -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
-    -DPNG_LIBRARY="$libpng_LIBRARY_DIR/libpng.so" \
-    -DJPEG_INCLUDE_DIR="$libjpeg_turbo_INCLUDE_DIR" \
-    -DJPEG_LIBRARY="$libjpeg_turbo_LIBRARY_DIR/libjpeg.so"\
-    -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
-    -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.so" \
-    -DGIF_INCLUDE_DIR="$giflib_INCLUDE_DIR" \
-    -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so"
+        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
+        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
+        -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
+        -DPNG_LIBRARY="$libpng_LIBRARY_DIR/libpng.so" \
+        -DJPEG_INCLUDE_DIR="$libjpeg_turbo_INCLUDE_DIR" \
+        -DJPEG_LIBRARY="$libjpeg_turbo_LIBRARY_DIR/libjpeg.so"\
+        -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
+        -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.so" \
+        -DGIF_INCLUDE_DIR="$giflib_INCLUDE_DIR" \
+        -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so"
 }
 
 build2() {

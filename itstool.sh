@@ -1,0 +1,8 @@
+summary "Make XML documents translatable through PO files"
+webpage "http://itstool.org"
+src_git "https://github.com/itstool/itstool.git"
+src_url "https://github.com/itstool/itstool/archive/2.0.6.tar.gz"
+src_sum "bda0b08e9a1db885c9d7d1545535e9814dd8931d5b8dd5ab4a47bd769d0130c6"
+license "GPL-3.0"
+bsystem "autogen"
+require "python3 pip3"
