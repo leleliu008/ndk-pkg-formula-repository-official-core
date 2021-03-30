@@ -71,7 +71,7 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |||
 |`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
 |||
-|`MIN_SDK_API_LEVEL`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
+|`TARGET_OS_VERS`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
 |||
 |`WORKING_DIR`|the direcotory where the source code tarball uncompressed to or copy to.|
 |`SOURCE_DIR`|the source code directory of this installation. `the source code direcotory` is the direcotory who contains `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`|
@@ -104,9 +104,9 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`x_INCLUDE_DIR`|the `include` directory of x package of this abi.|
 |`x_LIBRARY_DIR`|the `lib` directory of x package of this abi.|
 |||
-|`BUILD_FOR_ABI`|it's value may be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
-|`BUILD_FOR_ARCH`|it's value may be one of `armv7a` `aarch64` `i686` `x86_64`|
-|`BUILD_FOR_TARGET`|it's value may be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
+|`TARGET_OS_ABI`|it's value may be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
+|`TARGET_OS_ARCH`|it's value may be one of `armv7a` `aarch64` `i686` `x86_64`|
+|`TARGET_TRIPLE`|it's value may be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
 |||
 |`SYSROOT`||
 |`SYSTEM_INCLUDE_DIR`||

@@ -6,11 +6,11 @@ license "Zlib"
 bsystem "ndk-build"
 
 prepare() {
-    ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-$MIN_SDK_API_LEVEL V=1
+    ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-$TARGET_OS_VERS V=1
 }
 
 build() {
     install -d                               "$ABI_INSTALL_DIR" &&
     cp -rv "$SOURCE_DIR/include"             "$ABI_INSTALL_DIR" &&
-    cp -rv "$SOURCE_DIR/libs/$BUILD_FOR_ABI" "$ABI_LIBRARY_DIR"
+    cp -rv "$SOURCE_DIR/libs/$TARGET_OS_ABI" "$ABI_LIBRARY_DIR"
 }

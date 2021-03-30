@@ -35,9 +35,9 @@ build_in_sourced
 build() {
     export NGX_SYSTEM=Linux
     export NGX_RELEASE=unkown
-    export NGX_MACHINE=$BUILD_FOR_ARCH
+    export NGX_MACHINE=$TARGET_OS_ARCH
 
-    if echo "$BUILD_FOR_ARCH" | grep -q '64' ; then
+    if echo "$TARGET_OS_ARCH" | grep -q '64' ; then
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
     else
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
@@ -47,7 +47,7 @@ build() {
     
     run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
-        --crossbuild=Linux:unkown:$BUILD_FOR_ARCH \
+        --crossbuild=Linux:unkown:$TARGET_OS_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt -lglob\"" \

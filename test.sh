@@ -1,5 +1,4 @@
 summary "C test project"
-webpage "https://github.com/leleliu008/C"
 src_git "https://github.com/leleliu008/C.git"
 #src_url "dir:///Users/leleliu008/git/C"
 bsystem "make"

@@ -1,5 +1,5 @@
 summary "JSON parser for C"
-webpage "https://github.com/json-c/json-c/wiki"
+src_git "https://github.com/json-c/json-c.git"
 src_url "https://github.com/json-c/json-c/archive/json-c-0.15.tar.gz"
 src_sum "74985882e39467b34722e584ab836ed2abd47061888f318125fd4b167002afd5"
 license "MIT"

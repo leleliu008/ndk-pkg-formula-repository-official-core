@@ -7,7 +7,7 @@ depends "libiconv"
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26)
-    if [ "$MIN_SDK_API_LEVEL" -lt 26 ] ; then
+    if [ "$TARGET_OS_VERS" -lt 26 ] ; then
         sed_in_place 's/nl_langinfo(CODESET)/"UTF-8"/' libisofs/util.c || return 1
     fi
     sed_in_place 's/-lpthread//g' configure

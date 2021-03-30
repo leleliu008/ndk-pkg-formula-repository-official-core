@@ -12,7 +12,7 @@ build_in_sourced
 build() {
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
 
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         armv7a)  CONFIGURE_EXTRA_FLAGS=--arm ;;
         aarch64) CONFIGURE_EXTRA_FLAGS=--arm ;;
         i686)    CONFIGURE_EXTRA_FLAGS=--x86-64  ;;

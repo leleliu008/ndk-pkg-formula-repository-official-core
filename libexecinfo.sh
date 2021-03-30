@@ -1,5 +1,4 @@
 summary "a quick-n-dirty BSD licensed clone of backtrace facility found in the GNU libc"
-webpage "https://github.com/resslinux/libexecinfo"
 src_git "https://github.com/leleliu008/libexecinfo.git"
 bsystem "make"
 

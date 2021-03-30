@@ -9,7 +9,7 @@ prepare() {
 }
 
 build() {
-    if [ "$BUILD_FOR_ARCH" = 'x86_64' ] ; then
+    if [ "$TARGET_OS_ARCH" = 'x86_64' ] ; then
         LONG_DOUBLE_NOT_DOUBLE=1
     else
         LONG_DOUBLE_NOT_DOUBLE=0
@@ -23,6 +23,6 @@ build() {
         LDFLAGS="\"$LDFLAGS\"" \
         AR="$AR" \
         OS=Linux \
-        ARCH="$BUILD_FOR_ARCH" \
+        ARCH="$TARGET_OS_ARCH" \
         LONG_DOUBLE_NOT_DOUBLE="$LONG_DOUBLE_NOT_DOUBLE"
 }

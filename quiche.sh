@@ -1,5 +1,4 @@
 summary "Savoury implementation of the QUIC transport protocol and HTTP/3"
-webpage "https://github.com/cloudflare/quiche"
 src_git "https://github.com/cloudflare/quiche.git"
 bsystem "cargo"
 

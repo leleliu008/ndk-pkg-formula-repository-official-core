@@ -1,5 +1,4 @@
 summary "7-Zip (high compression file archiver) implementation"
-webpage "https://github.com/jinfeihan57/p7zip"
 src_git "https://github.com/jinfeihan57/p7zip.git"
 src_url "https://github.com/jinfeihan57/p7zip/archive/v17.03.tar.gz"
 src_sum "bb4b9b21584c0e076e0b4b2705af0dbe7ac19d378aa7f09a79da33a5b3293187"

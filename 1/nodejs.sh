@@ -16,7 +16,7 @@ build() {
     export CC_host="$CC_FOR_BUILD"
     export CXX_host="$CXX_FOR_BUILD"
 
-    export GYP_DEFINES="target_arch=$HOST_MACHINE_CPU_FAMILY v8_target_arch=$HOST_MACHINE_CPU_FAMILY android_target_arch=$HOST_MACHINE_CPU_FAMILY host_os=$BUILD_MACHINE_OS_TYPE OS=android"
+    export GYP_DEFINES="target_arch=$HOST_CPU_FAMILY v8_target_arch=$HOST_CPU_FAMILY android_target_arch=$HOST_CPU_FAMILY host_os=$BUILD_OS_TYPE OS=android"
     
     "$SOURCE_DIR/configure" \
         --prefix="$ABI_INSTALL_DIR" \
@@ -29,11 +29,11 @@ build() {
 }
 
 dest_cpu() {
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         armv7a)  echo arm  ;;
         i686)    echo ia32 ;;
         x86_64)  echo x64  ;;
         aarch64) echo arm64 ;;
-        *) die "$BUILD_FOR_ARCH: not support."
+        *) die "$TARGET_OS_ARCH: not support."
     esac
 }

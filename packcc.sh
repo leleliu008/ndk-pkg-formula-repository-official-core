@@ -1,5 +1,4 @@
 summary "a packrat parser generator for C"
-webpage "https://github.com/enechaev/packcc"
 src_git "https://github.com/enechaev/packcc.git"
 
 build() {

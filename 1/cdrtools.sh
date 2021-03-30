@@ -12,6 +12,6 @@ build() {
     export CONFIG_RMTCALL=""
     export CONFIG_RMTHOST=NONE
     
-    smake ARCH="$BUILD_FOR_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
+    smake ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
     smake install INS_BASE="$ABI_INSTALL_DIR"
 }

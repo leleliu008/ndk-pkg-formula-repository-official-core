@@ -6,7 +6,7 @@ bsystem "configure"
 depends "libgpg-error"
 
 build() {
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         *86*) EXTRA_OPT='--disable-asm' ;;
         *)    EXTRA_OPT='--enable-asm'  ;;
     esac

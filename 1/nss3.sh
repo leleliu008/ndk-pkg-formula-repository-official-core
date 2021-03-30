@@ -18,7 +18,7 @@ build() {
         -c \
         -v \
         --opt \
-        --target="$BUILD_FOR_ARCH" \
+        --target="$TARGET_OS_ARCH" \
         --disable-tests \
         --with-nspr="$nspr_INCLUDE_DIR/nspr:$nspr_LIBRARY_DIR"
 }

@@ -1,5 +1,4 @@
 summary "Collection of reusable C++ library artifacts developed at Facebook"
-webpage "https://github.com/facebook/folly"
 src_git "https://github.com/facebook/folly.git"
 src_url "https://github.com/facebook/folly/archive/v2021.02.15.00.tar.gz"
 src_sum "0e40e7fd536700ef149ddffb72fa17f92f139738d057c2a6d0a6e5736fa76de0"

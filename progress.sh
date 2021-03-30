@@ -1,5 +1,4 @@
 summary "Coreutils progress viewer"
-webpage "https://github.com/Xfennec/progress"
 src_git "https://github.com/Xfennec/progress.git"
 src_url "https://github.com/Xfennec/progress/archive/v0.15.tar.gz"
 src_sum "1ed0ac65a912ef1aa605d524eaddaacae92079cf71182096a7c65cbc61687d1b"

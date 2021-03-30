@@ -18,7 +18,7 @@ prepare() {
 
 build() {
     # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
-    if [ "$MIN_SDK_API_LEVEL" -lt 24 ] ; then
+    if [ "$TARGET_OS_VERS" -lt 24 ] ; then
         ac_cv_header_ifaddrs_h=no
     else
         ac_cv_header_ifaddrs_h=yes

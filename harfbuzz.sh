@@ -1,5 +1,5 @@
 summary "OpenType text shaping engine"
-webpage "https://github.com/harfbuzz/harfbuzz"
+src_git "https://github.com/harfbuzz/harfbuzz.git"
 src_url "https://github.com/harfbuzz/harfbuzz/archive/2.7.4.tar.gz"
 src_sum "daff8a4003ac420a8550760ed303ce33b310c8ea17b7f15b307d1969cabcebcb"
 license "MIT"

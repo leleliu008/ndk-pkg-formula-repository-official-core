@@ -20,7 +20,7 @@ build_in_sourced
 
 build() {
     ./configure \
-        --target="$BUILD_FOR_TARGET" \
+        --target="$TARGET_TRIPLE" \
         -Dosname=android \
 		-Dsysroot=$SYSROOT \
 		-Dprefix=$ABI_INSTALL_DIR \

@@ -28,7 +28,7 @@ build() {
         no-hw \
         no-engine \
         no-asm \
-        -D__ANDROID_API__="$MIN_SDK_API_LEVEL" \
+        -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$ABI_INSTALL_DIR" \
         "$(os_compiler)" &&
     make clean &&
@@ -38,7 +38,7 @@ build() {
 
 os_compiler() {
     # ./configure LIST | grep android
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         armv7a)  echo "android-arm"    ;;
         aarch64) echo "android-arm64"  ;;
         i686)    echo "android-x86"    ;;

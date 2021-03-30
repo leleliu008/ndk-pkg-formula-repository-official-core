@@ -19,7 +19,7 @@ build0() {
 }
 
 build() {
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         armv7a)
             address_model=32
             architecture=arm

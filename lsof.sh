@@ -19,7 +19,7 @@ build() {
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
     export LSOF_RANLIB="$RANLIB"
-    export LSOF_ARCH="$BUILD_FOR_ARCH"
+    export LSOF_ARCH="$TARGET_OS_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS -L$SOURCE_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"

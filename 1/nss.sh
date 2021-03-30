@@ -44,7 +44,7 @@ build() {
     make \
         OBJDIR_NAME=build \
         OS_TARGET=Linux \
-        CPU_ARCH="$BUILD_FOR_ARCH" \
+        CPU_ARCH="$TARGET_OS_ARCH" \
         CC="$CC $CFLAGS $XCFLAGS -I$nspr_INCLUDE_DIR/nspr -L$nspr_LIBRARY_DIR -l nspr4 -D__EMX__=1 -DMAXNAMLEN=50 -DMAXPATHLEN=200" \
         CXX="$CXX" \
         CXXFLAGS="$CXXFLAGS" \

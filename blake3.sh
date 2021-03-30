@@ -1,5 +1,5 @@
 summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
-webpage "https://github.com/BLAKE3-team/BLAKE3"
+src_git "https://github.com/BLAKE3-team/BLAKE3.git"
 src_url "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
 src_sum "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
 sourced "c"
@@ -7,7 +7,7 @@ sourced "c"
 build() {
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'
     
-    case $BUILD_FOR_ARCH in
+    case $TARGET_OS_ARCH in
         armv7a|aarch64)
             CPPFLAGS="$CPPFLAGS -DBLAKE3_USE_NEON"
             SRCS="$SRCS blake3_neon.c"

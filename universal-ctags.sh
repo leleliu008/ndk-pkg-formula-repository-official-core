@@ -1,5 +1,4 @@
 summary "Maintained ctags implementation"
-webpage "https://github.com/universal-ctags/ctags"
 src_git "https://github.com/universal-ctags/ctags.git"
 bsystem "autogen"
 require "pkg-config"

@@ -7,7 +7,7 @@ bsystem "configure"
 build() {
     # int glob(const char* __pattern, int __flags, int (*__error_callback)(const char* __failure_path, int __failure_errno), glob_t* __result_ptr) __INTRODUCED_IN(28);
     # void globfree(glob_t* __result_ptr) __INTRODUCED_IN(28);
-    if [ "$MIN_SDK_API_LEVEL" -lt 28 ] ; then
+    if [ "$TARGET_OS_VERS" -lt 28 ] ; then
         ac_cv_header_glob_h=no
     else
         ac_cv_header_glob_h=yes

@@ -14,7 +14,7 @@ sdk_api 23
 build() {
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
     {
-        if [ "$BUILD_FOR_ARCH" = 'aarch64' ] ; then
+        if [ "$TARGET_OS_ARCH" = 'aarch64' ] ; then
             export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
         fi
     } &&

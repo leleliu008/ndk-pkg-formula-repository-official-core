@@ -23,7 +23,7 @@ build() {
         --nm="$NM" \
         --ranlib="$RANLIB" \
         --strip="$STRIP" \
-        --arch="$BUILD_FOR_ARCH" \
+        --arch="$TARGET_OS_ARCH" \
         --target-os=android \
         --enable-cross-compile \
         --enable-static \

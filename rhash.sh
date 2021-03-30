@@ -13,7 +13,7 @@ build() {
         --ar="$AR" \
         --extra-cflags="\"$CFLAGS $CPPFLAGS\"" \
         --extra-ldflags="\"$LDFLAGS\"" \
-        --target="$BUILD_FOR_TARGET" \
+        --target="$TARGET_TRIPLE" \
         --prefix="$ABI_INSTALL_DIR" \
         --enable-static \
         --enable-lib-static \
