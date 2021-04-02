@@ -1,8 +1,8 @@
 summary "Optimized BLAS library"
 webpage "https://www.openblas.net"
 src_git "https://github.com/xianyi/OpenBLAS.git"
-src_url "https://github.com/xianyi/OpenBLAS/archive/v0.3.13.tar.gz"
-src_sum "79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e"
+src_url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
+src_sum "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
 license "BSD-3-Clause"
 bsystem "make"
 

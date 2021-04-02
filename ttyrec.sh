@@ -7,8 +7,6 @@ bsystem "make"
 build_in_sourced
 
 prepare() {
-    sed_in_place 's|wait3(|waitpid(-1, |' ttyrec.c &&
-    sed_in_place 's|WNOHANG, 0|WNOHANG|'  ttyrec.c &&
     sed_in_place 's|union wait status|int status|' ttyrec.c
 }
 

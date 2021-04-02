@@ -8,7 +8,6 @@ depends "ncurses libevent utf8proc libglob"
 ldflags "-lglob"
 
 # pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
-# char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
 sdk_api 26
 
 build() {

@@ -11,16 +11,6 @@ depends "readline mpfr"
 #           void endpwent(void) __INTRODUCED_IN(26);
 sdk_api 26
 
-prepare() {
-    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
-    if [ "$TARGET_OS_VERS" -lt 26 ] ; then
-        sed_in_place 's/nl_langinfo (CODESET)/"UTF-8"/g' support/regcomp.c
-        am_cv_langinfo_codeset=no
-    else
-        am_cv_langinfo_codeset=yes
-    fi
-}
-
 build() {
     configure \
         --with-readline="$readline_INSTALL_DIR" \
@@ -28,6 +18,5 @@ build() {
         --enable-extensions \
         --enable-lint \
         --enable-mpfr \
-        --disable-builtin-intdiv0 \
-        "am_cv_langinfo_codeset=$am_cv_langinfo_codeset"
+        --disable-builtin-intdiv0
 }
