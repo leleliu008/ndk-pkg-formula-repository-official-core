@@ -8,6 +8,12 @@ bsystem "autogen"
 depends "ncurses"
 
 prepare() {
+    {
+        # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26)
+        if [ "$TARGET_OS_VERS" -lt 26 ] ; then
+            sed_in_place 's/nl_langinfo(CODESET)/"UTF-8"/' CRT.c
+        fi
+    } &&
     sed_in_place '/keypad/d' configure.ac &&
     ./autogen.sh
 }

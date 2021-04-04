@@ -7,7 +7,12 @@ license "GPL-2.0"
 bsystem "make"
 
 prepare() {
-    sed_in_place '/OBJS=/a OBJS+=strverscmp.o' Makefile
+    sed_in_place '/OBJS=/a OBJS+=strverscmp.o' Makefile && {
+        # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
+        if [ "$TARGET_OS_VERS" -lt 26 ] ; then
+            sed_in_place 's/&& strcmp(nl_langinfo(CODESET), "UTF-8") == 0//' tree.c
+        fi
+    }
 }
 
 build() {
