@@ -7,5 +7,5 @@ bsystem "configure"
 depends "xz zlib"
 
 build() {
-    configure --disable-tests
+    configure --disable-tests --disable-coredump
 }

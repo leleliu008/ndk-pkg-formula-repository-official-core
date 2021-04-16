@@ -1,7 +1,7 @@
 summary "Linux-native asynchronous I/O access library"
 webpage "https://pagure.io/libaio"
-src_url "https://pagure.io/libaio/archive/libaio-0.3.111/libaio-libaio-0.3.111.tar.gz"
-src_sum "e6bc17cba66e59085e670fea238ad095766b412561f90b354eb4012d851730ba"
+src_url "https://pagure.io/libaio/archive/libaio-0.3.112/libaio-libaio-0.3.112.tar.gz"
+src_sum "b7cf93b29bbfb354213a0e8c0e82dfcf4e776157940d894750528714a0af2272"
 license "LGPL-2.1-or-later"
 bsystem "make"
 
