@@ -1,4 +1,4 @@
-summary "a simple wrapper providing a convenient reentrant interface for the bcrypt password hashing algorithm implementation as provided by Solar Designer at http://www.openwall.com/crypt"
+summary "a password hashing method based on the Blowfish block cipher, provided via the crypt(3) and a reentrant interface."
 webpage "https://www.openwall.com/crypt"
 src_git "https://github.com/leleliu008/libbcrypt.git"
 bsystem "cmake"

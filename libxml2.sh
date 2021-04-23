@@ -3,7 +3,7 @@ webpage "http://xmlsoft.org"
 src_url "ftp://xmlsoft.org/libxml2/libxml2-2.9.10.tar.gz"
 src_sum "aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f"
 bsystem "configure"
-depends "libiconv"
+depends "libiconv zlib"
 
 build() {
     configure \
