@@ -1,13 +1,13 @@
-summary "Asynchronous event library"
-webpage "https://libevent.org"
-version "2.1.12"
-src_url "https://github.com/libevent/libevent/releases/download/release-$(version)-stable/libevent-$(version)-stable.tar.gz"
-src_sum "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
-bsystem "cmake"
-depends "openssl"
+package set summary "Asynchronous event library"
+package set webpage "https://libevent.org"
+package set version "2.1.12"
+package set src.url "https://github.com/libevent/libevent/releases/download/release-${PACKAGE_VERSION}-stable/libevent-$(version)-stable.tar.gz"
+package set src.sum "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
+package set bsystem "cmake"
+package set dep.pkg "openssl"
 
 build() {
-    cmake \
+    cmakew \
         -DEVENT__DISABLE_DEBUG_MODE=ON \
         -DEVENT__DISABLE_TESTS=ON \
         -DEVENT__DISABLE_REGRESS=ON \

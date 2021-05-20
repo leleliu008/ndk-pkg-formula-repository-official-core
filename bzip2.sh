@@ -1,17 +1,17 @@
-summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
-webpage "https://sourceware.org/bzip2"
-src_url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
-src_sum "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
-license "bzip2-1.0.6"
-bsystem "make"
+package set summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
+package set webpage "https://sourceware.org/bzip2"
+package set src.url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+package set src.sum "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+package set license "bzip2-1.0.6"
+package set bsystem "make"
 
 prepare() {
     repair_makefile
 }
 
 build() {
-    make -C "$SOURCE_DIR" clean &&
-    make -C "$SOURCE_DIR" install \
+    makew -C "$SOURCE_DIR" clean &&
+    makew -C "$SOURCE_DIR" install \
         PREFIX="$ABI_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="\"$CFLAGS\"" \
@@ -24,9 +24,9 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: libbz2
-URL: $(webpage)
-Description: $(summary)
-Version: $(version)
+URL: ${PACKAGE_WEBPAGE}
+Description: ${PACKAGE_SUMMARY}
+Version: ${PACKAGE_VERSION}
 Libs: -L\${libdir} -lbz2
 Cflags: -I\${includedir}
 EOF

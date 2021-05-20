@@ -1,11 +1,11 @@
-summary "Cryptography and SSL/TLS Toolkit"
-webpage "https://openssl.org"
-src_url "https://dl.bintray.com/homebrew/mirror/openssl-1.1.1g.tar.gz"
-src_sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
-bsystem "make"
-require "perl"
+package set summary "Cryptography and SSL/TLS Toolkit"
+package set webpage "https://openssl.org"
+package set src.url "https://dl.bintray.com/homebrew/mirror/openssl-1.1.1g.tar.gz"
+package set src.sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
+package set bsystem "make"
+package set dep.cmd "perl"
 
-build_in_sourced
+package set binsrcd true
 
 prepare() {
     sed_in_place '/ndk is invalid/d'      Configurations/15-android.conf &&
@@ -31,9 +31,9 @@ build() {
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$ABI_INSTALL_DIR" \
         "$(os_compiler)" &&
-    make clean &&
-    make &&
-    make install
+    makew clean &&
+    makew &&
+    makew install
 }
 
 os_compiler() {

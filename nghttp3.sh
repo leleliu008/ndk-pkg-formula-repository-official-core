@@ -1,9 +1,9 @@
-summary "HTTP/3 library written in C"
-src_git "https://github.com/ngtcp2/nghttp3.git"
-bsystem "cmake"
+package set summary "HTTP/3 library written in C"
+package set src.git "https://github.com/ngtcp2/nghttp3.git"
+package set bsystem "cmake"
 
 build() {
-    cmake \
+    cmakew \
         -DENABLE_WERROR=OFF \
         -DENABLE_DEBUG=OFF \
         -DENABLE_ASAN=ON \

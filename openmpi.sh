@@ -1,13 +1,13 @@
-summary "High performance message passing library"
-webpage "https://www.open-mpi.org"
-src_url "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.4.tar.bz2"
-src_sum "47e24eb2223fe5d24438658958a313b6b7a55bb281563542e1afc9dec4a31ac4"
-bsystem "configure"
-depends "libevent"
-cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
+package set summary "High performance message passing library"
+package set webpage "https://www.open-mpi.org"
+package set src.url "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.4.tar.bz2"
+package set src.sum "47e24eb2223fe5d24438658958a313b6b7a55bb281563542e1afc9dec4a31ac4"
+package set bsystem "configure"
+package set dep.pkg "libevent"
+package set cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
-sdk_api 26
+package set sdk.api 26
 
 prepare() {
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&

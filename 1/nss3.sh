@@ -1,10 +1,10 @@
-summary "Mozilla Network Security Services"
-webpage "https://developer.mozilla.org/docs/NSS"
-src_url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_RTM/src/nss-3.58.tar.gz"
-src_sum "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
-license "MPL-2.0"
-depends "nspr"
-sourced "nss"
+package set summary "Mozilla Network Security Services"
+package set webpage "https://developer.mozilla.org/docs/NSS"
+package set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_RTM/src/nss-3.58.tar.gz"
+package set src.sum "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
+package set license "MPL-2.0"
+package set dep.pkg "nspr"
+package set sourced "nss"
 
 prepare() {
     :
@@ -43,8 +43,8 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss
 
 Name: NSS
-Description: $(summary)
-Version: $(version)
+Description: ${PACKAGE_SUMMARY}
+Version: ${PACKAGE_VERSION}
 Requires: nspr >= 4.12
 Libs: -L\${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3
 Cflags: -I\${includedir}

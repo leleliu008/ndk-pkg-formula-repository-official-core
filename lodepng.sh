@@ -1,15 +1,15 @@
-summary "PNG encoder and decoder in C and C++"
-src_git "https://github.com/lvandeve/lodepng.git"
-license "Zlib"
-bsystem "make"
+package set summary "PNG encoder and decoder in C and C++"
+package set src.git "https://github.com/lvandeve/lodepng.git"
+package set license "Zlib"
+package set bsystem "make"
 
 prepare() {
     override_makefile
 }
 
 build() {
-    make -C "$SOURCE_DIR" clean &&
-    make -C "$SOURCE_DIR" install \
+    makew -C "$SOURCE_DIR" clean &&
+    makew -C "$SOURCE_DIR" install \
         CXX="$CXX" \
         CXXFLAGS="'$CXXFLAGS'" \
         CPPFLAGS="'$CPPFLAGS'" \

@@ -1,11 +1,11 @@
-summary "GNU binary tools for native development"
-webpage "https://www.gnu.org/software/binutils/binutils.html"
-src_url "https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz"
-src_sum "1b11659fb49e20e18db460d44485f09442c8c56d5df165de9461eb09c8302f85"
-license "GPL-2.0"
-bsystem "configure"
-depends "isl gmp libmpc mpfr"
-ldflags "-lm"
+package set summary "GNU binary tools for native development"
+package set webpage "https://www.gnu.org/software/binutils/binutils.html"
+package set src.url "https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz"
+package set src.sum "1b11659fb49e20e18db460d44485f09442c8c56d5df165de9461eb09c8302f85"
+package set license "GPL-2.0"
+package set bsystem "configure"
+package set dep.pkg "isl gmp libmpc mpfr"
+package set ldflags "-lm"
 
 build() {
     configure \

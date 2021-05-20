@@ -1,16 +1,16 @@
-summary "Implementation of the DNS protocols"
-webpage "https://www.isc.org/downloads/bind"
-src_url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
-src_sum "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
-license "MPL-2.0"
-bsystem "configure"
-require "base64 patch pkg-config"
-depends "json-c libxml2 libidn2 libuv openssl zlib"
+package set summary "Implementation of the DNS protocols"
+package set webpage "https://www.isc.org/downloads/bind"
+package set src.url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
+package set src.sum "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
+package set license "MPL-2.0"
+package set bsystem "configure"
+package set dep.cmd "base64 patch pkg-config"
+package set dep.pkg "json-c libxml2 libidn2 libuv openssl zlib"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
 # void endpwent(void) __INTRODUCED_IN(26);
-sdk_api 26
+package set sdk.api 26
 
 prepare() {
 #--- configure	2020-10-13 16:41:40.000000000 +0800

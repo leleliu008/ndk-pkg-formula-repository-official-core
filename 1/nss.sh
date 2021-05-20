@@ -1,10 +1,10 @@
-summary "Mozilla Network Security Services"
-webpage "https://developer.mozilla.org/docs/NSS"
-src_url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
-src_sum "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
-license "MPL-2.0"
-depends "nspr"
-sourced "nss"
+package set summary "Mozilla Network Security Services"
+package set webpage "https://developer.mozilla.org/docs/NSS"
+package set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
+package set src.sum "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
+package set license "MPL-2.0"
+package set dep.pkg "nspr"
+package set sourced "nss"
 
 prepare() {
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
@@ -30,18 +30,18 @@ prepare_includes() {
     done
 }
 
-build_in_sourced
+package set binsrcd true
 
 build() {
-    make clean &&
-    make \
+    makew clean &&
+    makew \
         -C coreconf/nsinstall \
         USE_64=1 \
         OBJDIR_NAME=build \
         CC="$CC_FOR_BUILD" \
         CFLAGS='-v' \
         LDFLAGS='-v' &&
-    make \
+    makew \
         OBJDIR_NAME=build \
         OS_TARGET=Linux \
         CPU_ARCH="$TARGET_OS_ARCH" \
@@ -84,8 +84,8 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss
 
 Name: NSS
-Description: $(summary)
-Version: $(version)
+Description: ${PACKAGE_SUMMARY}
+Version: ${PACKAGE_VERSION}
 Requires: nspr >= 4.12
 Libs: -L\${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3
 Cflags: -I\${includedir}

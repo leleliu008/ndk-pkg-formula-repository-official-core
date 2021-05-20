@@ -1,12 +1,12 @@
-summary "JSON parser for C"
-src_git "https://github.com/json-c/json-c.git"
-src_url "https://github.com/json-c/json-c/archive/json-c-0.15.tar.gz"
-src_sum "74985882e39467b34722e584ab836ed2abd47061888f318125fd4b167002afd5"
-license "MIT"
-bsystem "cmake"
+package set summary "JSON parser for C"
+package set src.git "https://github.com/json-c/json-c.git"
+package set src.url "https://github.com/json-c/json-c/archive/json-c-0.15.tar.gz"
+package set src.sum "74985882e39467b34722e584ab836ed2abd47061888f318125fd4b167002afd5"
+package set license "MIT"
+package set bsystem "cmake"
 
 build() {
-    cmake \
+    cmakew \
         -DBUILD_SHARED_LIBS=ON \
         -DBUILD_STATIC_LIBS=ON \
         -DBUILD_TESTING=OFF \

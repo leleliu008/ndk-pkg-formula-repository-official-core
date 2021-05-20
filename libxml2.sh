@@ -1,9 +1,9 @@
-summary "GNOME XML library"
-webpage "http://xmlsoft.org"
-src_url "ftp://xmlsoft.org/libxml2/libxml2-2.9.10.tar.gz"
-src_sum "aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f"
-bsystem "configure"
-depends "libiconv zlib"
+package set summary "GNOME XML library"
+package set webpage "http://xmlsoft.org"
+package set src.url "ftp://xmlsoft.org/libxml2/libxml2-2.9.10.tar.gz"
+package set src.sum "aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f"
+package set bsystem "configure"
+package set dep.pkg "libiconv zlib"
 
 build() {
     configure \

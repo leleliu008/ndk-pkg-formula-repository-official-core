@@ -1,10 +1,10 @@
-summary "Interpreted, interactive, object-oriented programming language"
-webpage "https://www.python.org"
-src_url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
-src_sum "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
-license "Python-2.0"
-bsystem "configure"
-depends "expat libffi openssl readline sqlite bzip2 xz"
+package set summary "Interpreted, interactive, object-oriented programming language"
+package set webpage "https://www.python.org"
+package set src.url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
+package set src.sum "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
+package set license "Python-2.0"
+package set bsystem "configure"
+package set dep.pkg "expat libffi openssl readline sqlite bzip2 xz"
 
 build0() {
     configure

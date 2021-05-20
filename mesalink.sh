@@ -1,9 +1,9 @@
-summary "memory-safe and OpenSSL-compatible TLS library"
-webpage "https://mesalink.io"
-src_git "https://github.com/mesalock-linux/mesalink.git"
-bsystem "cargo"
+package set summary "memory-safe and OpenSSL-compatible TLS library"
+package set webpage "https://mesalink.io"
+package set src.git "https://github.com/mesalock-linux/mesalink.git"
+package set bsystem "cargo"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     run cargo clean &&

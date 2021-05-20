@@ -1,16 +1,16 @@
-summary "Utility to list open files"
-webpage "https://people.freebsd.org/~abe"
-src_git "https://github.com/lsof-org/lsof.git"
-src_url "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
-src_sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
-license "Zlib"
-bsystem "make"
-depends "libtirpc"
+package set summary "Utility to list open files"
+package set webpage "https://people.freebsd.org/~abe"
+package set src.git "https://github.com/lsof-org/lsof.git"
+package set src.url "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
+package set src.sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
+package set license "Zlib"
+package set bsystem "make"
+package set dep.pkg "libtirpc"
 
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
-sdk_api 26
+package set sdk.api 26
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     include_stub_getdtablesize
@@ -26,7 +26,7 @@ build() {
     
     run ./Configure -clean &&
     run ./Configure -n linux &&
-    make &&
+    makew &&
     run install_bins lsof &&
     run install_mans Lsof.8
 }

@@ -1,8 +1,8 @@
-summary "Distributed revision control system"
-webpage "https://git-scm.com"
-src_url "https://www.kernel.org/pub/software/scm/git/git-2.27.0.tar.xz"
-src_sum "73ca9774d7fa226e1d87c1909401623f96dca6a044e583b9a762e84d7d1a73f9"
-depends "libiconv expat curl openssl pcre2"
+package set summary "Distributed revision control system"
+package set webpage "https://git-scm.com"
+package set src.url "https://www.kernel.org/pub/software/scm/git/git-2.27.0.tar.xz"
+package set src.sum "73ca9774d7fa226e1d87c1909401623f96dca6a044e583b9a762e84d7d1a73f9"
+package set dep.pkg "libiconv expat curl openssl pcre2"
 
 prepare() {
     {

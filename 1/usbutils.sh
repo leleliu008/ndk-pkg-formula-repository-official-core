@@ -1,10 +1,10 @@
-summary "utilities used to display information about USB buses in the system and the devices connected to them"
-webpage "http://www.linux-usb.org"
-src_git "https://github.com/gregkh/usbutils.git"
-src_url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-012.tar.xz"
-src_sum "88634625f91840bc1993d2731cc081ee8d3b13d56069a95bdd6ac6ef0e063e46"
-require "autoreconf"
-depends "libusb"
+package set summary "utilities used to display information about USB buses in the system and the devices connected to them"
+package set webpage "http://www.linux-usb.org"
+package set src.git "https://github.com/gregkh/usbutils.git"
+package set src.url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-012.tar.xz"
+package set src.sum "88634625f91840bc1993d2731cc081ee8d3b13d56069a95bdd6ac6ef0e063e46"
+package set dep.cmd "autoreconf"
+package set dep.pkg "libusb"
 
 prepare() {
     (cd usbhid-dump && autoreconf -ivf) &&

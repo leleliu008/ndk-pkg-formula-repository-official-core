@@ -1,10 +1,10 @@
-summary "QUIC library written in C"
-src_git "https://github.com/ngtcp2/ngtcp2.git"
-bsystem "cmake"
-depends "libev nghttp3"
+package set summary "QUIC library written in C"
+package set src.git "https://github.com/ngtcp2/ngtcp2.git"
+package set bsystem "cmake"
+package set dep.pkg "libev nghttp3"
 
 build() {
-    cmake \
+    cmakew \
         -DENABLE_ASAN=ON \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \

@@ -1,14 +1,14 @@
-summary "Collection of reusable C++ library artifacts developed at Facebook"
-src_git "https://github.com/facebook/folly.git"
-src_url "https://github.com/facebook/folly/archive/v2021.02.15.00.tar.gz"
-src_sum "0e40e7fd536700ef149ddffb72fa17f92f139738d057c2a6d0a6e5736fa76de0"
-license "Apache-2.0"
-bsystem "cmake"
-require "pkg-config"
-depends "boost double-conversion fmt glog libevent openssl bzip2 lz4 xz zstd snappy libsodium"
+package set summary "Collection of reusable C++ library artifacts developed at Facebook"
+package set src.git "https://github.com/facebook/folly.git"
+package set src.url "https://github.com/facebook/folly/archive/v2021.02.15.00.tar.gz"
+package set src.sum "0e40e7fd536700ef149ddffb72fa17f92f139738d057c2a6d0a6e5736fa76de0"
+package set license "Apache-2.0"
+package set bsystem "cmake"
+package set dep.cmd "pkg-config"
+package set dep.pkg "boost double-conpackage set version fmt glog libevent openssl bzip2 lz4 xz zstd snappy libsodium"
 
 build() {
-    cmake \
+    cmakew \
         -DBoost_DIR="$boost_LIBRARY_DIR/cmake/Boost-1.73.0" \
         -DBOOST_LINK_STATIC=ON \
         -DDOUBLE_CONVERSION_INCLUDE_DIR="$double_conversion_INCLUDE_DIR" \

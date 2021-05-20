@@ -1,15 +1,15 @@
-summary "Play, record, convert, and stream audio and video"
-webpage "https://ffmpeg.org"
-src_url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
-src_sum "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
-bsystem "make"
-depends "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
+package set summary "Play, record, convert, and stream audio and video"
+package set webpage "https://ffmpeg.org"
+package set src.url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
+package set src.sum "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
+package set bsystem "make"
+package set dep.pkg "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
 
 prepare() {
     sed_in_place 's/Wl,-soname,/o /g' configure
 }
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     run ./configure \
@@ -35,8 +35,8 @@ build() {
         --extra-cflags='-DANDROID' &&
     sed_in_place 's/LDEXEFLAGS= -fPIE -pie/LDEXEFLAGS= -shared/g' ffbuild/config.mak &&
     change_config_h &&
-    make clean &&
-    make install &&
+    makew clean &&
+    makew install &&
     cp ffbuild/config.log "$BUILD_DIR"
 }
 

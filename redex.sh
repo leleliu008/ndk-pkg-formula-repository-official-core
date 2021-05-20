@@ -1,9 +1,9 @@
-summary "Bytecode optimizer for Android apps"
-webpage "https://fbredex.com"
-src_git "https://github.com/facebook/redex.git"
-license "MIT"
-depends "boost jsoncpp libexecinfo"
-bsystem "autotools"
+package set summary "Bytecode optimizer for Android apps"
+package set webpage "https://fbredex.com"
+package set src.git "https://github.com/facebook/redex.git"
+package set license "MIT"
+package set dep.pkg "boost jsoncpp libexecinfo"
+package set bsystem "autotools"
 
 prepare() {
     sed_in_place 's/-lpthread/-lc/g'           Makefile.am &&
@@ -37,7 +37,7 @@ build_with_configure() {
 
 build_with_cmake() {
     export LDFLAGS="$LDFLAGS -lexecinfo"
-    cmake \
+    cmakew \
         -DBUILD_TYPE=Static \
         -DBoost_INCLUDE_DIR="$boost_INCLUDE_DIR" \
         -DJsonCpp_INCLUDE_DIR="$jsoncpp_INCLUDE_DIR" \

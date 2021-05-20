@@ -1,13 +1,13 @@
-summary "Image format providing lossless and lossy compression for web images"
-webpage "https://developers.google.com/speed/webp"
-src_url "http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz"
-src_sum "98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
-bsystem "cmake"
-depends "libpng libtiff libjpeg-turbo giflib"
-ldflags "-llzma -lzstd"
+package set summary "Image format providing lossless and lossy compression for web images"
+package set webpage "https://developers.google.com/speed/webp"
+package set src.url "http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz"
+package set src.sum "98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
+package set bsystem "cmake"
+package set dep.pkg "libpng libtiff libjpeg-turbo giflib"
+package set ldflags "-llzma -lzstd"
 
 build() {
-    cmake \
+    cmakew \
         -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
         -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
         -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \

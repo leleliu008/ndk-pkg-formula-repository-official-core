@@ -1,0 +1,14 @@
+package set summary "Dynamic analysis tools (memory, debug, profiling)"
+package set webpage "https://www.valgrind.org"
+package set src.url "https://sourceware.org/pub/valgrind/valgrind-3.17.0.tar.bz2"
+package set src.sum "ad3aec668e813e40f238995f60796d9590eee64a16dff88421430630e69285a2"
+package set license "GPL-2.0"
+
+prepare() {
+    # https://www.mail-archive.com/kde-bugs-dist@kde.org/msg495433.html
+    echo "LS0tIGNvcmVncmluZC9tX2NvcmVkdW1wL2NvcmVkdW1wLWVsZi5jCTIwMjEtMDMtMTQgMDM6MDI6NTUuMDAwMDAwMDAwICswODAwCisrKyBjb3JlZ3JpbmQvbV9jb3JlZHVtcC9jb3JlZHVtcC1lbGYuYzIJMjAyMS0wNS0xMCAyMjozMzo0MC4wMDAwMDAwMDAgKzA4MDAKQEAgLTEzNywxNyArMTM3LDYgQEAgc3RhdGljIHZvaWQgZmlsbF9waGRyKEVTWihQaGRyKSAqcGhkciwgYwogICAgcGhkci0+cF9hbGlnbiA9IFZLSV9QQUdFX1NJWkU7CiB9CiAKLSNpZiBkZWZpbmVkKFZHUFZfYXJtX2xpbnV4X2FuZHJvaWQpIHx8IGRlZmluZWQoVkdQVl94ODZfbGludXhfYW5kcm9pZCkgXAotICAgIHx8IGRlZmluZWQoVkdQVl9taXBzMzJfbGludXhfYW5kcm9pZCkKLS8qIEFuZHJvaWQncyBsaWJjIGRvZXNuJ3QgcHJvdmlkZSBhIGRlZmluaXRpb24gZm9yIHRoaXMuICBIZW5jZTogKi8KLXR5cGVkZWYKLSAgIHN0cnVjdCB7Ci0gICAgICBFbGYzMl9Xb3JkIG5fbmFtZXN6OwotICAgICAgRWxmMzJfV29yZCBuX2Rlc2NzejsKLSAgICAgIEVsZjMyX1dvcmQgbl90eXBlOwotICAgfQotICAgRWxmMzJfTmhkcjsKLSNlbmRpZgogCiBzdHJ1Y3Qgbm90ZSB7CiAgICBzdHJ1Y3Qgbm90ZSAqbmV4dDsK" | base64 -d | patch -p0
+}
+
+build() {
+    configure --enable-lto --enable-tls
+}

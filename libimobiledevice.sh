@@ -1,16 +1,16 @@
-summary "Library to communicate with iOS devices natively"
-webpage "https://www.libimobiledevice.org"
-src_git "https://github.com/libimobiledevice/libimobiledevice.git"
-src_url "https://github.com/libimobiledevice/libimobiledevice/releases/download/1.3.0/libimobiledevice-1.3.0.tar.bz2"
-src_sum "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
-license "LGPL-2.1"
-bsystem "configure"
-require "pkg-config"
-depends "openssl libusbmuxd"
+package set summary "Library to communicate with iOS devices natively"
+package set webpage "https://www.libimobiledevice.org"
+package set src.git "https://github.com/libimobiledevice/libimobiledevice.git"
+package set src.url "https://github.com/libimobiledevice/libimobiledevice/releases/download/1.3.0/libimobiledevice-1.3.0.tar.bz2"
+package set src.sum "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
+package set license "LGPL-2.1"
+package set bsystem "configure"
+package set dep.cmd "pkg-config"
+package set dep.pkg "openssl libusbmuxd"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
-sdk_api 24
+package set sdk.api 24
 
 prepare() {
     sed_in_place 's/@echo/echo/g' common/Makefile.in &&

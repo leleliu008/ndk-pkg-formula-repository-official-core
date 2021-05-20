@@ -1,12 +1,12 @@
-summary "Lynx-like WWW browser that supports tables, menus, etc."
-webpage "http://links.twibright.com"
-src_url "http://links.twibright.com/download/links-2.21.tar.bz2"
-src_sum "285eed8591c7781ec26213df82786665aaa1b9286782e8a7a1a7e2a6e1630d63"
-license "GPL-2.0"
-bsystem "make"
-depends "xz bzip2 libtiff libjpeg-turbo openssl"
+package set summary "Lynx-like WWW browser that supports tables, menus, etc."
+package set webpage "http://links.twibright.com"
+package set src.url "http://links.twibright.com/download/links-2.21.tar.bz2"
+package set src.sum "285eed8591c7781ec26213df82786665aaa1b9286782e8a7a1a7e2a6e1630d63"
+package set license "GPL-2.0"
+package set bsystem "make"
+package set dep.pkg "xz bzip2 libtiff libjpeg-turbo openssl"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     # configure [options] [host]
@@ -23,8 +23,8 @@ build() {
         --with-libtiff \
         --with-libjpeg \
         --with-ssl="$openssl_INSTALL_DIR" &&
-    make clean &&
-    make &&
-    make install &&
-    make distclean
+    makew clean &&
+    makew &&
+    makew install &&
+    makew distclean
 }

@@ -1,10 +1,10 @@
-summary "CD/DVD/Blu-ray premastering and recording software"
-webpage "http://cdrecord.org/"
-src_url "https://downloads.sourceforge.net/project/cdrtools/alpha/cdrtools-3.02a09.tar.gz"
-src_sum "c7e4f732fb299e9b5d836629dadf5512aa5e6a5624ff438ceb1d056f4dcb07c2"
-require "smake"
+package set summary "CD/DVD/Blu-ray premastering and recording software"
+package set webpage "http://cdrecord.org/"
+package set src.url "https://downloads.sourceforge.net/project/cdrtools/alpha/cdrtools-3.02a09.tar.gz"
+package set src.sum "c7e4f732fb299e9b5d836629dadf5512aa5e6a5624ff438ceb1d056f4dcb07c2"
+package set dep.cmd "smake"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     export SYSROOT
@@ -12,6 +12,6 @@ build() {
     export CONFIG_RMTCALL=""
     export CONFIG_RMTHOST=NONE
     
-    smake ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
-    smake install INS_BASE="$ABI_INSTALL_DIR"
+    smakew ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
+    smakew install INS_BASE="$ABI_INSTALL_DIR"
 }

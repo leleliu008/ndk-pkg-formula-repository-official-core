@@ -1,11 +1,11 @@
-summary "Cryptographic & SSL/TLS library"
-webpage "https://tls.mbed.org"
-src_url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
-src_sum "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
-bsystem "cmake"
+package set summary "Cryptographic & SSL/TLS library"
+package set webpage "https://tls.mbed.org"
+package set src.url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
+package set src.sum "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
+package set bsystem "cmake"
 
 build() {
-    cmake \
+    cmakew \
     -DUSE_STATIC_MBEDTLS_LIBRARY=OFF \
     -DUSE_SHARED_MBEDTLS_LIBRARY=ON \
     -DUSE_PKCS11_HELPER_LIBRARY=OFF \

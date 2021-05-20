@@ -1,13 +1,13 @@
-summary "Zstandard is a real-time compression algorithm"
-webpage "https://facebook.github.io/zstd"
-src_url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
-src_sum "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
-bsystem "cmake"
-depends "xz zlib"
-sourced "build/cmake"
+package set summary "Zstandard is a real-time compression algorithm"
+package set webpage "https://facebook.github.io/zstd"
+package set src.url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
+package set src.sum "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
+package set bsystem "cmake"
+package set dep.pkg "xz zlib"
+package set sourced "build/cmake"
 
 build() {
-    cmake \
+    cmakew \
         -DZSTD_MULTITHREAD_SUPPORT=ON \
         -DZSTD_BUILD_TESTS=OFF \
         -DZSTD_BUILD_CONTRIB=OFF \

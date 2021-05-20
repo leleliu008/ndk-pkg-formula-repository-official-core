@@ -1,12 +1,12 @@
-summary "Collection of portable C++ source libraries"
-webpage "https://www.boost.org"
-version "1.73.0"
-src_url "https://dl.bintray.com/boostorg/release/$(version)/source/boost_$(echo $(version) | tr . _).tar.bz2"
-src_sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
-license "BSL-1.0"
-depends "xz bzip2 zstd icu4c libiconv"
+package set summary "Collection of portable C++ source libraries"
+package set webpage "https://www.boost.org"
+package set version "1.73.0"
+package set src.url "https://dl.bintray.com/boostorg/release/${PACKAGE_VERSION}/source/boost_$(echo $(version) | tr . _).tar.bz2"
+package set src.sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+package set license "BSL-1.0"
+package set dep.pkg "xz bzip2 zstd icu4c libiconv"
 
-build_in_sourced
+package set binsrcd true
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android

@@ -1,12 +1,12 @@
-summary "Optimized BLAS library"
-webpage "https://www.openblas.net"
-src_git "https://github.com/xianyi/OpenBLAS.git"
-src_url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
-src_sum "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
-license "BSD-3-Clause"
-bsystem "make"
+package set summary "Optimized BLAS library"
+package set webpage "https://www.openblas.net"
+package set src.git "https://github.com/xianyi/OpenBLAS.git"
+package set src.url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
+package set src.sum "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
+package set license "BSD-3-Clause"
+package set bsystem "make"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android
@@ -16,7 +16,7 @@ build() {
         i686)    ARCH=x86   ; TARGET='ATOM'  ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;
         x86_64)  ARCH=x86_64; TARGET='ATOM'  ; BINARY=64 ; ARM_SOFTFP_ABI=1 ;;
     esac
-    make clean OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD" &&
-    make       OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD" ONLY_CBLAS=1 ARM_SOFTFP_ABI=$ARM_SOFTFP_ABI CC="$CC" AR="$AR" &&
-    make install PREFIX="$ABI_INSTALL_DIR"
+    makew clean OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD" &&
+    makew       OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD" ONLY_CBLAS=1 ARM_SOFTFP_ABI=$ARM_SOFTFP_ABI CC="$CC" AR="$AR" &&
+    makew install PREFIX="$ABI_INSTALL_DIR"
 }

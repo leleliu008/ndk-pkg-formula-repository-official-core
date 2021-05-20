@@ -1,10 +1,10 @@
-summary "Manage compile and link flags for libraries"
-webpage "https://freedesktop.org/wiki/Software/pkg-config"
-src_url "https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz"
-src_sum "6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591"
-license "GPL-2.0-or-later"
-bsystem "configure"
-depends "libiconv"
+package set summary "Manage compile and link flags for libraries"
+package set webpage "https://freedesktop.org/wiki/Software/pkg-config"
+package set src.url "https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz"
+package set src.sum "6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591"
+package set license "GPL-2.0-or-later"
+package set bsystem "configure"
+package set dep.pkg "libiconv"
 
 prepare() {
     CACHE_FILE="$SOURCE_DIR/glib/configure.cache"

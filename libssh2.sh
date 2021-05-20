@@ -1,10 +1,10 @@
-summary "C library implementing the SSH2 protocol"
-webpage "https://libssh2.org"
-src_url "https://libssh2.org/download/libssh2-1.9.0.tar.gz"
-src_sum "d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd"
-bsystem "configure"
-depends "zlib openssl"
-ldflags "-lz -lssl -lcrypto"
+package set summary "C library implementing the SSH2 protocol"
+package set webpage "https://libssh2.org"
+package set src.url "https://libssh2.org/download/libssh2-1.9.0.tar.gz"
+package set src.sum "d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd"
+package set bsystem "configure"
+package set dep.pkg "zlib openssl"
+package set ldflags "-lz -lssl -lcrypto"
 
 build() {
     configure \

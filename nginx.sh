@@ -1,9 +1,9 @@
-summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
-webpage "https://nginx.org"
-src_url "https://nginx.org/download/nginx-1.19.1.tar.gz"
-src_sum "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
-bsystem "make"
-depends "openssl pcre libcrypt libglob"
+package set summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
+package set webpage "https://nginx.org"
+package set src.url "https://nginx.org/download/nginx-1.19.1.tar.gz"
+package set src.sum "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
+package set bsystem "make"
+package set dep.pkg "openssl pcre libcrypt libglob"
 
 trace_configure() {
     for item in $(ls $1)
@@ -30,7 +30,7 @@ prepare() {
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 }
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     export NGX_SYSTEM=Linux
@@ -43,7 +43,7 @@ build() {
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
     fi
     
-    [ -f Makefile ] && make clean
+    [ -f Makefile ] && makew clean
     
     run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
@@ -53,7 +53,7 @@ build() {
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt -lglob\"" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
-    make install
+    makew install
 }
 
 write_NGX_SYS_NERR() {

@@ -1,8 +1,8 @@
-summary "Savoury implementation of the QUIC transport protocol and HTTP/3"
-src_git "https://github.com/cloudflare/quiche.git"
-bsystem "cargo"
+package set summary "Savoury implementation of the QUIC transport protocol and HTTP/3"
+package set src.git "https://github.com/cloudflare/quiche.git"
+package set bsystem "cargo"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     run cargo clean &&

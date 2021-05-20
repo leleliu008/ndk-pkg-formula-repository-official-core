@@ -1,11 +1,11 @@
-summary "Improved top (interactive process viewer)"
-webpage "https://htop.dev"
-src_git "https://github.com/htop-dev/htop.git"
-src_url "https://github.com/htop-dev/htop/archive/3.0.4.tar.gz"
-src_sum "d8a0536ce95e3d59f8e292e73ee037033a74a8cc118fd10d22048bd4aeb61324"
-license "GPL-2.0-or-later"
-bsystem "autogen"
-depends "ncurses"
+package set summary "Improved top (interactive process viewer)"
+package set webpage "https://htop.dev"
+package set src.git "https://github.com/htop-dev/htop.git"
+package set src.url "https://github.com/htop-dev/htop/archive/3.0.4.tar.gz"
+package set src.sum "d8a0536ce95e3d59f8e292e73ee037033a74a8cc118fd10d22048bd4aeb61324"
+package set license "GPL-2.0-or-later"
+package set bsystem "autogen"
+package set dep.pkg "ncurses"
 
 prepare() {
     {

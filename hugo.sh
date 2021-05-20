@@ -1,12 +1,10 @@
-summary "Configurable static site generator"
-webpage "https://gohugo.io"
-src_git "https://github.com/gohugoio/hugo.git"
-src_url "https://github.com/gohugoio/hugo/archive/v0.80.0.tar.gz"
-src_sum "4ddcd6ebea21e5fd4067db4a481ab7810e34496d5991a3520169c8f5ee1d38bb"
-license "Apache-2.0"
-bsystem "go"
-
-build_in_sourced
+package set summary "Configurable static site generator"
+package set webpage "https://gohugo.io"
+package set src.git "https://github.com/gohugoio/hugo.git"
+package set src.url "https://github.com/gohugoio/hugo/archive/v0.80.0.tar.gz"
+package set src.sum "4ddcd6ebea21e5fd4067db4a481ab7810e34496d5991a3520169c8f5ee1d38bb"
+package set license "Apache-2.0"
+package set bsystem "go"
 
 build() {
     run go build -v -trimpath -o hugo &&

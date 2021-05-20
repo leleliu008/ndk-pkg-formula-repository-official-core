@@ -1,13 +1,13 @@
-summary "Netlink Library based Linux kernel interfaces"
-src_git "https://github.com/thom311/libnl.git"
-src_url "https://github.com/thom311/libnl/releases/download/libnl3_5_0/libnl-3.5.0.tar.gz"
-src_sum "352133ec9545da76f77e70ccb48c9d7e5324d67f6474744647a7ed382b5e05fa"
-bsystem "autotools"
-require "bison"
-cdefine "__kernel_sockaddr_storage=sockaddr_storage"
+package set summary "Netlink Library based Linux kernel interfaces"
+package set src.git "https://github.com/thom311/libnl.git"
+package set src.url "https://github.com/thom311/libnl/releases/download/libnl3_5_0/libnl-3.5.0.tar.gz"
+package set src.sum "352133ec9545da76f77e70ccb48c9d7e5324d67f6474744647a7ed382b5e05fa"
+package set bsystem "autotools"
+package set dep.cmd "bison"
+package set cdefine "__kernel_sockaddr_storage=sockaddr_storage"
 
 # int getsubopt(char** __option, char* const* __tokens, char** __value_ptr) __INTRODUCED_IN(26);
-sdk_api 26
+package set sdk.api 26
 
 prepare() {
     autoreconf -ivf &&

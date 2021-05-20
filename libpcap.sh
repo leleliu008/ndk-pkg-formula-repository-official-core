@@ -1,12 +1,12 @@
-summary "Packet(TCP/IP) Capture libray"
-webpage "https://www.tcpdump.org"
-src_url "https://www.tcpdump.org/release/libpcap-1.9.1.tar.gz"
-src_sum "635237637c5b619bcceba91900666b64d56ecb7be63f298f601ec786ce087094"
-bsystem "cmake"
-require "flex bison"
+package set summary "Packet(TCP/IP) Capture libray"
+package set webpage "https://www.tcpdump.org"
+package set src.url "https://www.tcpdump.org/release/libpcap-1.9.1.tar.gz"
+package set src.sum "635237637c5b619bcceba91900666b64d56ecb7be63f298f601ec786ce087094"
+package set bsystem "cmake"
+package set dep.cmd "flex bison"
 
 build() {
-    cmake \
+    cmakew \
     -DINET6=ON \
     -DENABLE_REMOTE=ON \
     -DBDEBUG=OFF \

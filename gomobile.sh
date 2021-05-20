@@ -1,8 +1,6 @@
-summary "a tool for building and running mobile apps written in Go"
-src_git "https://github.com/golang/mobile.git"
-bsystem "go"
-
-build_in_sourced
+package set summary "a tool for building and running mobile apps written in Go"
+package set src.git "https://github.com/golang/mobile.git"
+package set bsystem "go"
 
 build() {
     run go build -v -trimpath -o gobind ./cmd/gobind &&

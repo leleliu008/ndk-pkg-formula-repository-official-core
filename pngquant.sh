@@ -1,13 +1,13 @@
-summary "PNG image optimizing utility"
-webpage "https://pngquant.org"
-version "2.12.5"
-src_url "https://pngquant.org/pngquant-$(version)-src.tar.gz"
-src_sum "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b140808"
-bsystem "make"
-require "pkg-config"
-depends "libpng lcms2"
+package set summary "PNG image optimizing utility"
+package set webpage "https://pngquant.org"
+package set version "2.12.5"
+package set src.url "https://pngquant.org/pngquant-${PACKAGE_VERSION}-src.tar.gz"
+package set src.sum "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b140808"
+package set bsystem "make"
+package set dep.cmd "pkg-config"
+package set dep.pkg "libpng lcms2"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     export OSTYPE=Linux
@@ -19,6 +19,6 @@ build() {
         CC="$CC" \
         CFLAGS="\"$CFLAGS $CPPFLAGS -static\"" \
         LDFLAGS="\"$LDFLAGS\"" &&
-    make clean &&
-    make install
+    makew clean &&
+    makew install
 }

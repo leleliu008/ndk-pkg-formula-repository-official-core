@@ -1,11 +1,11 @@
-summary "Utility for computing and verifying hash sums of files"
-webpage "http://rhash.sourceforge.net"
-src_url "https://github.com/rhash/RHash/archive/v1.4.0.tar.gz"
-src_sum "2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861"
-license "0BSD"
-bsystem "make"
+package set summary "Utility for computing and verifying hash sums of files"
+package set webpage "http://rhash.sourceforge.net"
+package set src.url "https://github.com/rhash/RHash/archive/v1.4.0.tar.gz"
+package set src.sum "2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861"
+package set license "0BSD"
+package set bsystem "make"
 
-build_in_sourced
+package set binsrcd true
 
 build() {
     run ./configure \
@@ -18,7 +18,7 @@ build() {
         --enable-static \
         --enable-lib-static \
         --enable-lib-shared &&
-    make clean &&
-    make &&
-    make install
+    makew clean &&
+    makew &&
+    makew install
 }

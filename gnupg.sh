@@ -1,9 +1,9 @@
-summary "GNU Pretty Good Privacy (PGP) package"
-webpage "https://gnupg.org"
-src_url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.23.tar.bz2"
-src_sum "10b55e49d78b3e49f1edb58d7541ecbdad92ddaeeb885b6f486ed23d1cd1da5c"
-depends "libgpg-error libgcrypt libassuan libksba npth libiconv bzip2 readline"
-bsystem "configure"
+package set summary "GNU Pretty Good Privacy (PGP) package"
+package set webpage "https://gnupg.org"
+package set src.url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.23.tar.bz2"
+package set src.sum "10b55e49d78b3e49f1edb58d7541ecbdad92ddaeeb885b6f486ed23d1cd1da5c"
+package set dep.pkg "libgpg-error libgcrypt libassuan libksba npth libiconv bzip2 readline"
+package set bsystem "configure"
 
 build() {
     configure \

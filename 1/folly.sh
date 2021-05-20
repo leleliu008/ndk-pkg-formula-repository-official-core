@@ -1,16 +1,16 @@
-summary "Collection of reusable C++ library artifacts developed at Facebook"
-src_git "https://github.com/facebook/folly.git"
-src_url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
-src_sum "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
-license "Apache-2.0"
-bsystem "cmake"
-require "pkg-config"
-depends "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
+package set summary "Collection of reusable C++ library artifacts developed at Facebook"
+package set src.git "https://github.com/facebook/folly.git"
+package set src.url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
+package set src.sum "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
+package set license "Apache-2.0"
+package set bsystem "cmake"
+package set dep.cmd "pkg-config"
+package set dep.pkg "boost double-conpackage set version fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
 
 build() {
     export CPPFLAGS="$CPPFLAGS -D__GLIBCXX__=1"
     export LDFLAGS="$LDFLAGS $SYSTEM_LIBRARY_DIR/libstdc++.so"
-    cmake \
+    cmakew \
         -DBoost_DIR="$boost_LIBRARY_DIR/cmake/Boost-1.73.0" \
         -DDOUBLE_CONVERSION_INCLUDE_DIR="$double_conversion_INCLUDE_DIR" \
         -DDOUBLE_CONVERSION_LIBRARY="$double_conversion_LIBRARY_DIR/libdouble-conversion.so" \

@@ -1,13 +1,13 @@
-summary "Simple Realtime Server"
-webpage "https://ossrs.net"
-src_git "https://github.com/ossrs/srs.git"
-version "3.0-r3"
-src_url "https://github.com/ossrs/srs/archive/v$(version).tar.gz"
-src_sum "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724"
-license "MIT"
-bsystem "make"
-sourced "trunk"
-build_in_sourced
+package set summary "Simple Realtime Server"
+package set webpage "https://ossrs.net"
+package set src.git "https://github.com/ossrs/srs.git"
+package set version "3.0-r3"
+package set src.url "https://github.com/ossrs/srs/archive/v${PACKAGE_VERSION}.tar.gz"
+package set src.sum "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724"
+package set license "MIT"
+package set bsystem "make"
+package set sourced "trunk"
+package set binsrcd true
 
 build() {
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
@@ -28,7 +28,7 @@ build() {
         --ar=$AR \
         --ld=$LD \
         --randlib=$RANLIB &&
-    make clean &&
-    make &&
-    make install
+    makew clean &&
+    makew &&
+    makew install
 }
