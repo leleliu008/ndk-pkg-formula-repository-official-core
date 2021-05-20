@@ -6,9 +6,8 @@ package set license "ISC"
 package set bsystem "configure"
 package set dep.pkg "ncurses libevent utf8proc libglob"
 package set ldflags "-lglob"
-
-# pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
 package set sdk.api 26
+# pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
 
 build() {
     include_stub_getdtablesize &&

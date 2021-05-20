@@ -6,6 +6,6 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -package set ldflags "\"-X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) -X github.com/cli/cli/internal/build.Version=${PACKAGE_VERSION}\"" -o gh ./cmd/gh &&
+    run go build -v -trimpath -ldflags "\"-X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) -X github.com/cli/cli/internal/build.Version=${PACKAGE_VERSION}\"" -o gh ./cmd/gh &&
     run install_bins gh
 }

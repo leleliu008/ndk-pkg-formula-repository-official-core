@@ -6,11 +6,10 @@ package set src.sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8
 package set license "Zlib"
 package set bsystem "make"
 package set dep.pkg "libtirpc"
-
-# int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
-package set sdk.api 26
-
 package set binsrcd true
+package set sdk.api 26
+# int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
+
 
 build() {
     include_stub_getdtablesize

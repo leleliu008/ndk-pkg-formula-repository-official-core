@@ -7,10 +7,10 @@ package set dep.cmd "patch pkg-config"
 package set dep.pkg "libxml2 libpng pixman lzo glib fontconfig"
 package set ldflags "-llog"
 package set patches "https://raw.githubusercontent.com/termux/termux-packages/master/packages/libcairo/android-shmem.patch" \
-        "f12491f7411e7c5ba6bf178c3e8c420f5de45d93818f0c0b857eb020bc3b98ef"
+                    "f12491f7411e7c5ba6bf178c3e8c420f5de45d93818f0c0b857eb020bc3b98ef"
 
 prepare() {
-    patch -p1 < $(patches) &&
+    patch -p1 < $PACKAGE_PATCHES &&
     sed_in_place 's|_PATH_TMP||'          src/android-shmem.c &&
     sed_in_place '12a #include<string.h>' src/android-shmem.c &&
     sed_in_place '12a #include<fcntl.h>'  src/android-shmem.c &&
