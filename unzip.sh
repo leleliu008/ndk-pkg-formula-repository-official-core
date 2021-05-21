@@ -6,7 +6,7 @@ package set version "6.0-26"
 package set bsystem "make"
 package set dep.pkg "zip bzip2"
 package set binsrcd 'true'
-package set patches "https://dl.bintray.com/fpliu/ndk-pkg-src/unzip_${PACKAGE_VERSION}.debian.tar.xz" \
+package set patches "https://deb.debian.org/debian/pool/main/u/unzip/unzip_${PACKAGE_VERSION}.debian.tar.xz" \
                     "88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599"
 # https://packages.debian.org/buster/unzip
 
