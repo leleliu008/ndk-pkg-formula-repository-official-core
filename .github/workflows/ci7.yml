@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [quiche,re2,rhash,rsync,rtorrent,snappy,suricata,swig,tcl-core,tcpdump,texinfo,tmux,tree,unbound,universal-ctags,unrar,unzip,vala,vsftpd,wget]
+        pkg: [quiche,re2,rh   ,rsync,rtorrent,snappy,suricata,swig,tcl-core,tcpdump,texinfo,tmux,tree,unbound,universal-ctags,unrar,unzip,vala,vsftpd,wget]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,22 +22,17 @@ jobs:
     steps:
     - run: export -p
 
-    - run: |
-        brew install gnu-sed gawk binutils bison
-        echo "$(brew --prefix bison)/bin" >> "$GITHUB_PATH"
-      if:  matrix.os == 'macos-10.15'
-
     - name: install ndk-pkg
       run: |
         curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
         chmod u+x ndk-pkg
         mv ndk-pkg $(brew --prefix)/bin
 
-    - run: ndk-pkg version
+    - run: ndk-pkg --version
 
     - uses: actions/checkout@v2
 
-    - run: install -d ~/.ndk-pkg/formula
-    - run: mv *.sh    ~/.ndk-pkg/formula
+    - run: install -d ~/.ndk-pkg/repos.d/offical
+    - run: mv *       ~/.ndk-pkg/repos.d/offical
 
     - run: ndk-pkg install ${{ matrix.pkg }}
