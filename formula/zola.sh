@@ -8,5 +8,5 @@ package set bsystem "cargo"
 
 build() {
     run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --locked --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
+    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
 }

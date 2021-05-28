@@ -2,8 +2,8 @@ package set summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy serve
 package set webpage "https://nginx.org"
 package set src.url "https://nginx.org/download/nginx-1.19.1.tar.gz"
 package set src.sum "a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492"
-package set bsystem "make"
 package set dep.pkg "openssl pcre libcrypt libglob"
+package set bsystem "make"
 
 trace_configure() {
     for item in $(ls $1)

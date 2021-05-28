@@ -3,9 +3,10 @@ package set webpage "https://www.isc.org/downloads/bind"
 package set src.url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
 package set src.sum "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
 package set license "MPL-2.0"
-package set bsystem "configure"
 package set dep.cmd "base64 patch pkg-config"
 package set dep.pkg "json-c libxml2 libidn2 libuv openssl zlib"
+package set ldflags "-lm -liconv"
+package set bsystem "configure"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
