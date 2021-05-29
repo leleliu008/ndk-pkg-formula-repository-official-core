@@ -7,6 +7,10 @@ package set dep.pkg "ncurses libiconv gettext"
 package set dep.cmd "libtoolize libtool help2man objcopy"
 package set bsystem "configure"
 
+if [ "$NATIVE_OS_KIND" = 'darwin' ] ; then
+    package add dep.cmd gawk
+fi
+
 build() {
     export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.so $libiconv_LIBRARY_DIR/libiconv.so"
     configure \
