@@ -1,0 +1,6 @@
+package set summary "library provides message digest functions found on BSD systems"
+package set webpage "https://www.hadrons.org/software/libmd"
+package set src.git "https://git.hadrons.org/git/libmd.git"
+package set src.url "https://libbsd.freedesktop.org/releases/libmd-1.0.3.tar.xz"
+package set src.sum "5a02097f95cc250a3f1001865e4dbba5f1d15554120f95693c0541923c52af4a"
+package set bsystem "configure"
