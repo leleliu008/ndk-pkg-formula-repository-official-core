@@ -6,9 +6,8 @@ package set src.sum "d8f4dc9bd266f2a5c34926d361c62fdddb61cd7da4acadba5f9c175eb07
 package set license "ISC"
 package set bsystem "cargo"
 package set cdefine "index(str,ch)=strchr(str,ch)"
-
-# sys/sysinfo.h: int get_nprocs_conf(void) __INTRODUCED_IN(23);
 package set sdk.api 23
+# sys/sysinfo.h: int get_nprocs_conf(void) __INTRODUCED_IN(23);
 
 build() {
     run cargo clean &&

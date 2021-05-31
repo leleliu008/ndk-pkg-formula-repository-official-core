@@ -5,26 +5,34 @@ the formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
 formula is a POSIX sh script used to describe how to compile a package for [ndk-pkg](https://github.com/leleliu008/ndk-pkg).
 
 ## the function must be invoked on top of the formula
-|function|required?|overview|
+```
+package set <KEY> <VALUE>
+```
+|KEY|required?|overview|
 |-|-|-|
-|`summary VALUE`|required|the summary of this package.|
-|`webpage VALUE`|required|the home webpage of this package.|
-|`src_git VALUE`|optional|the source code git repository.|
-|`src_url VALUE`|required|the source code download url of this package. the argument of `src_url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`. `src_url` also support format like `dir://DIR`|
-|`src_sum VALUE`|optional|the `sha256sum` of source code. If the argument of `src_url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
-|`version VALUE`|optional|the version of this package. If this function is not invoked, it will be calculated from `src_url`.|
-|`license VALUE`|optional|the license of this package.|
-|`require VALUE`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
-|`depends LIST`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
-|`patches LIST`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/unzip.sh#L8-L9)|
-|`ldflags LIST`|optional|`LDFLAGS`|
-|`sourced VALUE`|optional|the source directory, relative to `WORKING_DIR`, which contains `configure`, `CMakeLists.txt`, etc.|
-|`build_in_sourced`|optional|build in source directory, otherwise build out-of source directory.|
+|`summary`|required|the summary of this package.|
+|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `src.git` must be present.|
+|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
+|`license`|optional|the license of this package.|
+|`src.git`|optional|the source code git repository.<br>must end with `.git`|
+|`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+|`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
+|`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/formula/unzip.sh#L9-L10)|
+|`cdefine`|optional|append to `CPPFLAGS`|
+|`ccflags`|optional|`CFLAGS`|
+|`xxflags`|optional|`CXXFLAGS`|
+|`ldflags`|optional|`LDFLAGS`|
+|`sourced`|optional|the source directory, relative to `WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`binsrcd`|optional|build in source directory, otherwise build out-of source directory.|
+|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `make` `ninja` `cargo` `go` `ndk-build`|
 
 ## the function can be declared in a formula
 |function|required?|overview|
 |-|-|-|
 |`prepare(){}`|optional|this function only run once.|
+|`build0(){}`|optional|this function only run once. build for native.|
 |`build(){}`|required|this function will run 4 times. each time build for one abi ( `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` ).|
 
 ## the function can be invoked in a formula at anywhere
@@ -49,8 +57,9 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |function|example|
 |-|-|
 |`configure`|`configure --enable-pic`|
-|`cmake`|`cmake -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
-|`meson`|`meson -Dneon=disabled -Darm-simd=disabled`|
+|`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
+|`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
+|`makew`|`makew`|
 |`cargo`|`cargo`|
 
 ## the variable can be used in a formula at anywhere
@@ -61,7 +70,6 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 |`MY_HOME_PAGE`|the home webpage of `ndk-pkg`.|
 |`MY_CACHED_DIR`|the downloads directory of `ndk-pkg`.|
 |`MY_INSTALL_DIR`|the installed directory of `ndk-pkg`.|
-|`MY_FORMULA_REPO_URL`|the formula repository of `ndk-pkg`. default is `https://github.com/leleliu008/ndk-pkg-formula.git`. this value can be overrided by `NDK_PKG_FORMULA_REPO_URL` enviroment variable.|
 
 ## the variable can be used in prepare and build function
 |variable|overview|

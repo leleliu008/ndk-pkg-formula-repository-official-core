@@ -1,0 +1,7 @@
+package set summary "Implementation of the MPI Message Passing Interface standard"
+package set webpage "https://www.mpich.org"
+package set src.git "https://github.com/pmodels/mpich.git"
+package set src.url "https://www.mpich.org/static/downloads/3.4.1/mpich-3.4.1.tar.gz"
+package set src.sum "8836939804ef6d492bcee7d54abafd6477d2beca247157d92688654d13779727"
+package set license "mpich2"
+package set bsystem "configure"
