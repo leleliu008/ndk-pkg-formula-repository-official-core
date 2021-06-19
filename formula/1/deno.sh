@@ -1,9 +1,9 @@
 package set summary "Secure runtime for JavaScript and TypeScript"
 package set webpage "https://deno.land"
 package set src.git "https://github.com/denoland/deno.git"
-package set version "1.8.0"
+package set version "1.11.1"
 package set src.url "https://github.com/denoland/deno/releases/download/v${PACKAGE_VERSION}/deno_src.tar.gz"
-package set src.sum "5cd695ef8f16e947d5155e53b159a147e538405310f892028fe5e2d21eddc3f9"
+package set src.sum "cfe4fa8e97bb3ea5f4df2f08516e8f9bc1e5ba25e31c8790d625a1e7c633bed3"
 package set license "MIT"
 package set bsystem "cargo"
 

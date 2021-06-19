@@ -1,4 +1,4 @@
-package set summary "Static analysis of C and C++ code"
+package set summary "Static analysis tool for C and C++ code"
 package set webpage "https://sourceforge.net/projects/cppcheck"
 package set src.git "https://github.com/danmar/cppcheck.git"
 package set src.url "https://github.com/danmar/cppcheck/archive/2.4.1.tar.gz"

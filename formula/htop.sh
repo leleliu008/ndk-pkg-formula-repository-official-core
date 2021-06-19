@@ -1,11 +1,11 @@
 package set summary "Improved top (interactive process viewer)"
 package set webpage "https://htop.dev"
 package set src.git "https://github.com/htop-dev/htop.git"
-package set src.url "https://github.com/htop-dev/htop/archive/3.0.4.tar.gz"
-package set src.sum "d8a0536ce95e3d59f8e292e73ee037033a74a8cc118fd10d22048bd4aeb61324"
+package set src.url "https://github.com/htop-dev/htop/archive/3.0.5.tar.gz"
+package set src.sum "4c2629bd50895bd24082ba2f81f8c972348aa2298cc6edc6a21a7fa18b73990c"
 package set license "GPL-2.0-or-later"
-package set bsystem "autogen"
 package set dep.pkg "ncurses"
+package set bsystem "autogen"
 
 prepare() {
     {
