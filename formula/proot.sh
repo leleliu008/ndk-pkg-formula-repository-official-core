@@ -28,8 +28,47 @@ EOF
 }
 
 build() {
+    if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
+        insert_1 || return 1
+        insert_2 || return 1
+    fi
     makew -C $SOURCE_DIR/src clean &&
     create_build_h &&
     makew -C $SOURCE_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
     makew -C $SOURCE_DIR/src install PREFIX=$ABI_INSTALL_DIR DESTDIR=
+}
+
+insert_1() {
+    sed_in_place '1i static char* get_current_dir_name();' "$SOURCE_DIR/src/path/temp.c" &&
+    cat >> "$SOURCE_DIR/src/path/temp.c" <<'EOF'
+        char* get_current_dir_name() {
+	        struct stat a, b;
+	        char *res = getenv("PWD");
+	        if (res && *res && !stat(res, &a) && !stat(".", &b)
+	            && (a.st_dev == b.st_dev) && (a.st_ino == b.st_ino))
+		        return strdup(res);
+	        return getcwd(0, 0);
+        }
+EOF
+}
+
+insert_2() {
+    sed_in_place '1i static char* get_current_dir_name();' "$SOURCE_DIR/src/syscall/rlimit.c" &&
+    cat >> "$SOURCE_DIR/src/syscall/rlimit.c" <<'EOF'
+        //prlimit(2)
+        //Return Value
+        //On success, these system calls return 0.
+        //Only for root users, or for users with a capability the syscall doesn't have a kernel defconfig option to disable it, always on
+        #define RET_VAL 0
+        //#DEFINE ERRNO_OVERRIDE
+        
+        int prlimit(pid_t pid, int resource, const struct rlimit *new_limit, struct rlimit *old_limit) {
+            #ifdef ERRNO_OVERRIDE
+                errno = ERRNO_OVERRIDE;
+                #undef ERRNO_OVERRIDE
+            #endif
+            return RET_VAL;
+        }
+        #undef RET_VAL
+EOF
 }

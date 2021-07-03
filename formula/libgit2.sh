@@ -25,5 +25,7 @@ build() {
     -DPCRE2_INCLUDE_DIR="$pcre2_INCLUDE_DIR" \
     -DPCRE2_LIBRARY="$pcre2_LIBRARY_DIR/libpcre2-8.so" \
     -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
+    -DOPENSSL_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
+    -DOPENSSL_CRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.so"
 }
