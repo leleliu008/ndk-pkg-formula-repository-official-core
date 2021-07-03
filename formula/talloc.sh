@@ -45,7 +45,7 @@ build() {
     ./configure install \
         --prefix="$ABI_INSTALL_DIR" \
         --disable-rpath \
-		--disable-python \
-		--cross-compile \
-		--cross-answers=cross-answers.txt
+        --disable-python \
+        --cross-compile \
+        --cross-answers=cross-answers.txt
 }
