@@ -16,5 +16,7 @@ build() {
         -DEVENT__DISABLE_OPENSSL=OFF \
         -DEVENT__DOXYGEN=OFF \
         -DEVENT__COVERAGE=OFF \
-        -DEVENT__LIBRARY_TYPE=BOTH
+        -DEVENT__LIBRARY_TYPE=BOTH \
+        -DOPENSSL_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
+        -DOPENSSL_CRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.so"
 }

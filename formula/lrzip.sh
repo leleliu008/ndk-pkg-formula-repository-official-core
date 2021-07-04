@@ -1,22 +1,26 @@
 package set summary "Compression program with a very high compression ratio"
 package set webpage "http://lrzip.kolivas.org"
 package set src.git "https://github.com/ckolivas/lrzip.git"
-package set src.url "http://ck.kolivas.org/apps/lrzip/lrzip-0.631.tar.bz2"
-package set src.sum "0d11e268d0d72310d6d73a8ce6bb3d85e26de3f34d8a713055f3f25a77226455"
+package set src.url "http://ck.kolivas.org/apps/lrzip/lrzip-0.641.tar.xz"
+package set src.sum "2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e"
 package set license "GPL-2.0"
-package set dep.pkg "zlib bzip2 lzo"
+package set dep.pkg "zlib bzip2 lz4 lzo"
 package set dep.cmd "pkg-config"
 package set bsystem "configure"
+package set ldflags "-lc++_shared"
+
+# stdio.h:326:FILE* fmemopen(void* __buf, size_t __size, const char* __mode) __INTRODUCED_IN(23);
+package set sdk.api 23
 
 prepare() {
     sed_in_place '/-lpthread /d' configure
 }
 
 build() {
-    check_if_ffsl_exists &&
+    #check_if_ffsl_exists &&
     configure \
-        --enable-static-bin \
-        --enable-asm \
+        --enable-static-bin=yes \
+        --disable-asm \
         ac_cv_lib_pthread_pthread_create=yes
 }
 

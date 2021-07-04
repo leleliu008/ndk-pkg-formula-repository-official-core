@@ -47,5 +47,7 @@ build() {
         --disable-rpath \
         --disable-python \
         --cross-compile \
-        --cross-answers=cross-answers.txt
+        --cross-answers=cross-answers.txt &&
+    $AR rcu libtalloc.a bin/default/talloc*.o &&
+    install_libs libtalloc.a
 }
