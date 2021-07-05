@@ -1,13 +1,15 @@
 package set summary "Cryptography and SSL/TLS Toolkit"
 package set webpage "https://openssl.org"
-package set src.url "https://dl.bintray.com/homebrew/mirror/openssl-1.1.1g.tar.gz"
+package set src.git "https://github.com/openssl/openssl.git"
+package set src.url "https://www.openssl.org/source/openssl-1.1.1g.tar.gz"
 package set src.sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
-package set bsystem "make"
+package set license "OpenSSL"
 package set dep.cmd "perl"
-
-package set binsrcd true
+package set bsystem "make"
+package set binsrcd 'true'
 
 prepare() {
+    sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&
     sed_in_place '/ndk is invalid/d'      Configurations/15-android.conf &&
     sed_in_place '/no NDK $triarch-gcc/d' Configurations/15-android.conf &&
     sed_in_place '/-target/d'             Configurations/15-android.conf &&
@@ -22,6 +24,7 @@ build() {
     
     run ./Configure \
         shared \
+        no-makedepend \
         no-ssl2 \
         no-ssl3 \
         no-comp \
@@ -32,8 +35,8 @@ build() {
         --prefix="$ABI_INSTALL_DIR" \
         "$(os_compiler)" &&
     makew clean &&
-    makew &&
-    makew install
+    makew CROSS_COMPILE= &&
+    makew CROSS_COMPILE= install
 }
 
 os_compiler() {
