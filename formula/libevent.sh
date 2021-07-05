@@ -18,5 +18,6 @@ build() {
         -DEVENT__COVERAGE=OFF \
         -DEVENT__LIBRARY_TYPE=BOTH \
         -DOPENSSL_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
+        -DOPENSSL_SSL_LIBRARY="$openssl_LIBRARY_DIR/libssl.so" \
         -DOPENSSL_CRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.so"
 }
