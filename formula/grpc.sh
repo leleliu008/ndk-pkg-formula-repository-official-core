@@ -5,7 +5,7 @@ package set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.38.1.tar.
 package set src.sum "f60e5b112913bf776a22c16a3053cc02cf55e60bf27a959fd54d7aaf8e2da6e8"
 package set license "Apache-2.0"
 package set dep.pkg "abseil c-ares openssl protobuf re2 zlib"
-package set dep.cmd "pkg-config"
+package set dep.cmd "pkg-config grpc_cpp_plugin"
 package set bsystem "cmake"
 package set ldflags "-llog -lz"
 

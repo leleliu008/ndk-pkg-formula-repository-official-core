@@ -8,6 +8,13 @@ package set dep.pkg "json-c libwebsockets"
 package set dep.cmd "pkg-config"
 package set bsystem "cmake"
 
+# int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
+package set sdk.api 23
+
+prepare() {
+    sed_in_place '/LINK_LIBS util/d' CMakeLists.txt
+}
+
 build() {
     cmakew \
         -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
