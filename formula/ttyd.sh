@@ -22,5 +22,7 @@ build() {
         -DLIBUV_INCLUDE_DIR="$libuv_INCLUDE_DIR" \
         -DLIBUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.a" \
         -DJSON-C_INCLUDE_DIR="$json_c_INCLUDE_DIR/json-c" \
-        -DJSON-C_LIBRARY="$json_c_LIBRARY_DIR/libjson-c.a"
+        -DJSON-C_LIBRARY="$json_c_LIBRARY_DIR/libjson-c.a" \
+        -DLIBWEBSOCKETS_INCLUDE_DIR="$libwebsockets_INCLUDE_DIR" \
+        -DLIBWEBSOCKETS_LIBRARY="$libwebsockets_LIBRARY_DIR/libwebsockets.a"
 }

@@ -13,6 +13,10 @@ package set cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
 package set sdk.api 26
 
 prepare() {
+    sed_in_place 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c &&
+    sed_in_place 's/#define HAS_SHMAT/#define YYYYYYYYY/' opal/mca/memory/patcher/memory_patcher_component.c &&
+    sed_in_place 's/HAS_SHMDT/(defined(SYS_shmdt) || (defined(IPCOP_shmdt) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c &&
+    sed_in_place 's/HAS_SHMAT/(defined(SYS_shmat) || (defined(IPCOP_shmat) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c &&
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&
     sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c &&
     sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c &&

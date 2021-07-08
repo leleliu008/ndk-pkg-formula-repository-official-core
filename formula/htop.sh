@@ -20,7 +20,10 @@ prepare() {
 
 build() {
     configure \
+        --enable-unicode \
         ac_cv_search_keypad=no \
-        ac_cv_lib_ncurses_refresh=yes \
-        ac_cv_lib_ncurses_addnwstr=yes
+        ac_cv_lib_ncursesw6_addnwstr=no \
+        ac_cv_lib_ncursesw_addnwstr=yes \
+        ac_cv_lib_ncurses6_refresh=no \
+        ac_cv_lib_ncurses_refresh=yes
 }

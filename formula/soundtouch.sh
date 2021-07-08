@@ -1,0 +1,7 @@
+package set summary "Audio processing library"
+package set webpage "https://www.surina.net/soundtouch/"
+package set src.git "https://gitlab.com/soundtouch/soundtouch.git"
+package set src.url "https://gitlab.com/soundtouch/soundtouch/-/archive/2.2/soundtouch-2.2.tar.gz"
+package set src.sum "525478c745a51dadaf7adb8e5386ec1f903d47196fab5947dc37414344684560"
+package set license "LGPL-2.1"
+package set bsystem "autotools"
