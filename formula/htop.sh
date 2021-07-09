@@ -14,16 +14,13 @@ prepare() {
             sed_in_place 's/nl_langinfo(CODESET)/"UTF-8"/' CRT.c
         fi
     } &&
-    sed_in_place '/keypad/d' configure.ac &&
+    sed_in_place '/addnwstr/d'    configure.ac &&
+    sed_in_place '/libncursesw/d' configure.ac &&
+    sed_in_place '/)))))))/d'     configure.ac &&
+    sed_in_place '/keypad/d'      configure.ac &&
     ./autogen.sh
 }
 
 build() {
-    configure \
-        --enable-unicode \
-        ac_cv_search_keypad=no \
-        ac_cv_lib_ncursesw6_addnwstr=no \
-        ac_cv_lib_ncursesw_addnwstr=yes \
-        ac_cv_lib_ncurses6_refresh=no \
-        ac_cv_lib_ncurses_refresh=yes
+    configure --enable-unicode LIBS=$ncurses_LIBRARY_DIR/libncursesw.a
 }

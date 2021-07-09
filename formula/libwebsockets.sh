@@ -18,6 +18,7 @@ build() {
         -DLWS_WITH_LIBUV=ON \
         -DLWS_WITH_PLUGINS=ON \
         -DLWS_WITHOUT_TESTAPPS=ON \
+        -DLWS_OPENSSL_SUPPORT=OFF \
         -DLWS_BUILD_HASH=no_hash \
         -DLWS_MBEDTLS_INCLUDE_DIRS="$mbedtls_INCLUDE_DIR" \
         -DLWS_MBEDTLS_LIBRARIES="'$mbedtls_LIBRARY_DIR/libmbedcrypto.so;$mbedtls_LIBRARY_DIR/libmbedtls.so;;$mbedtls_LIBRARY_DIR/libmbedx509.so'" \

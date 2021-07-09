@@ -20,12 +20,23 @@ prepare() {
     sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&
     sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c &&
     sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c &&
-    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c
+    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c &&
+    sed_in_place '1i static int getdtablesize(void);' orte/mca/state/base/state_base_fns.c &&
+    cat >> orte/mca/state/base/state_base_fns.c <<EOF
+#include <sys/cdefs.h>
+#include <sys/resource.h>
+#include <linux/kernel.h>
+static int getdtablesize(void) {
+    struct rlimit r;
+    if (getrlimit(RLIMIT_NOFILE, &r) < 0) {
+        return sysconf(_SC_OPEN_MAX);
+    }
+    return r.rlim_cur;
+}
+EOF
 }
 
 build() {
-    #export CPPFLAGS="$CPPFLAGS -include stdlib.h"
-    include_stub_getdtablesize
     configure \
         --disable-coverage \
         --disable-mpi-fortran \
