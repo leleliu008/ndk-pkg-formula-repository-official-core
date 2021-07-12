@@ -1,5 +1,5 @@
 # ndk-pkg-formula
-the formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
+the offical formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
 
 ## what's formula
 formula is a POSIX sh script used to describe how to compile a package for [ndk-pkg](https://github.com/leleliu008/ndk-pkg).
@@ -21,9 +21,9 @@ package set <KEY> <VALUE>
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
 |`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ndk-pkg-formula/blob/master/formula/unzip.sh#L9-L10)|
 |`cdefine`|optional|append to `CPPFLAGS`|
-|`ccflags`|optional|`CFLAGS`|
-|`xxflags`|optional|`CXXFLAGS`|
-|`ldflags`|optional|`LDFLAGS`|
+|`ccflags`|optional|append to `CFLAGS`|
+|`xxflags`|optional|append to `CXXFLAGS`|
+|`ldflags`|optional|append to `LDFLAGS`|
 |`sourced`|optional|the source directory, relative to `WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binsrcd`|optional|build in source directory, otherwise build out-of source directory.|
 |`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `make` `ninja` `cargo` `go` `ndk-build`|
