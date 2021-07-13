@@ -1,4 +1,4 @@
-# ndk-pkg-formula
+# ndk-pkg-formula-repository
 the offical formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
 
 ## what's formula

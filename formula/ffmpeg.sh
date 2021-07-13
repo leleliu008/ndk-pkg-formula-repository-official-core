@@ -36,7 +36,7 @@ build() {
     change_config_h &&
     makew clean &&
     makew install &&
-    cp ffbuild/config.log "$BUILD_DIR"
+    run cp ffbuild/config.log .
 }
 
 change_config_h() {
