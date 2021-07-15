@@ -7,9 +7,3 @@ package set license "EUPL-1.2"
 package set dep.cmd "pkg-config"
 package set dep.pkg "openssl"
 package set bsystem "cargo"
-
-build() {
-    export OPENSSL_DIR="$openssl_INSTALL_DIR"
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
-}

@@ -8,6 +8,5 @@ package set bsystem "cargo"
 package set binsrcd 'true'
 
 build() {
-    run cargo clean &&
-    run cargo install --target $CARGO_TARGET -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR" --features cranelift
+    cargow install --features cranelift
 }

@@ -6,8 +6,3 @@ package set src.sum "ff0fa0bfc4edef8bdbbb3cabe6fdbd5481a71abbbcc2159f402dea51535
 package set license "MIT"
 package set dep.pkg "zlib libgit2"
 package set bsystem "cargo"
-
-build() {
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
-}

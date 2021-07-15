@@ -10,6 +10,5 @@ package set bsystem "cargo"
 build() {
     export CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS"
     export CXXFLAGS="$CFLAGS"
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --locked --path "$SOURCE_DIR/cli" --root="$ABI_INSTALL_DIR"
+    cargow install --locked --path "$SOURCE_DIR/cli"
 }

@@ -6,7 +6,6 @@ package set license "Apache-2.0"
 package set bsystem "cargo"
 
 build() {
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR" &&
+    cargow install &&
     install_mans $(find "$SOURCE_DIR/target/$CARGO_TARGET/release/build" -name 'bat.1') 
 }

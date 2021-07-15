@@ -4,8 +4,7 @@ package set bsystem "cargo"
 package set binsrcd 'true'
 
 build() {
-    run cargo clean &&
-    run cargo build --target $CARGO_TARGET --release -vv &&
+    cargow build &&
     install_incs include/quiche.h &&
     install_libs target/$CARGO_TARGET/release/libquiche.a &&
     install_libs target/$CARGO_TARGET/release/libquiche.so

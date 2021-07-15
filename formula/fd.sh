@@ -8,8 +8,3 @@ package set bsystem "cargo"
 # error: undefined reference to 'getgrnam_r'
 # https://github.com/sharkdp/fd/issues/642
 package set sdk.api 24
-
-build() {
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
-}

@@ -5,8 +5,7 @@ package set bsystem "cargo"
 package set binsrcd 'true'
 
 build() {
-    run cargo clean &&
-    run cargo build --target $CARGO_TARGET --release -vv &&
+    cargow build &&
     run install_incs mesalink/*.h &&
     run install_incs mesalink/openssl/*.h:openssl &&
     run install_libs target/$CARGO_TARGET/release/libmesalink.a &&

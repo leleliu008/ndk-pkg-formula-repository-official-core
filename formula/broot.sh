@@ -6,8 +6,3 @@ package set src.sum "5f97d876aa554be4c67bfd161ef762425f6083da583775c13cc75bf9882
 package set dep.pkg "libgit2"
 package set license "MIT"
 package set bsystem "cargo"
-
-build() {
-    run cargo clean &&
-    run cargo install --target "$CARGO_TARGET" -vv --path "$SOURCE_DIR" --root="$ABI_INSTALL_DIR"
-}
