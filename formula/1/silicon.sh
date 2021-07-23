@@ -1,0 +1,28 @@
+package set summary "Create beautiful image of your source code"
+package set src.git "https://github.com/Aloxaf/silicon.git"
+package set src.url "https://github.com/Aloxaf/silicon/archive/v0.4.3.tar.gz"
+package set src.sum "68d64ade34ac571cf2d092f9a6f124e2c7d0441a91e3ba00ca1c8edcdd008630"
+package set license "MIT"
+package set bsystem "cargo"
+
+package set res
+
+prepare() {
+    for item in font-kit/0.10.1 libfontconfig/5.1.0
+    do
+        unset RES_NAME
+        unset RES_VERS
+
+        RES_NAME=$(echo $item | cut -d/ -f1)
+        RES_VERS=$(echo $item | cut -d/ -f2)
+
+        unset RES_UNPACK_DIR
+        RES_UNPACK_DIR="$RES_NAME-$RES_VERS"
+
+        fetch "https://github.com/servo/$RES_NAME/archive/refs/tags/v$RES_VERS.tar.gz" --output-dir "$MY_CACHED_SOURCE_DIR" --output-name "font-kit-0.10.1.tar.gz" &&
+        run mkdir -p $RES_UNPACK_DIR &&
+        run tar xf -C $RES_UNPACK_DIR --strip-components 1 &&
+        sed_in_place "/dependencies.servo-fontconfig/a " $RES_UNPACK_DIR/Cargo.toml &&
+        sed_in_place "/dependencies.servo-fontconfig/a " $RES_UNPACK_DIR/Cargo.toml
+    done
+}
