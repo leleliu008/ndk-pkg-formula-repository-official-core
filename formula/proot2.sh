@@ -5,7 +5,7 @@ package set version "5.1.107"
 package set src.url "https://github.com/termux/proot/archive/8f67d6c7fadb445b7a528020d05e72dba717c5b9.zip"
 package set src.sum "a5d248d307766bb807a35ee88d90456c0d1e0791cecffe5fb5d40d203be663ac"
 package set license "GPL-2.0"
-package set dep.cmd "git base64 patch"
+package set dep.cmd "git base64 patch python3:python3.9:python3.8:python3.7:python3.6:python>=3.6"
 package set dep.pkg "talloc"
 package set bsystem "make"
 package set binsrcd 'true'

@@ -26,6 +26,7 @@ build() {
         -DgRPC_SSL_PROVIDER=package \
         -DgRPC_ZLIB_PROVIDER=package \
         -DgRPC_RE2_PROVIDER=package \
+        -Dabsl_DIR="$abseil_LIBRARY_DIR/cmake/absl" \
         -Dc-ares_INCLUDE_DIR="$c_ares_INCLUDE_DIR" \
         -Dc-ares_LIBRARY="$c_ares_LIBRARY_DIR/libcares.so" \
         -DProtobuf_INCLUDE_DIR="$protobuf_INCLUDE_DIR" \
