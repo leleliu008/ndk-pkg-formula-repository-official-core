@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [gzip,help2man,htop,hugo,hwloc,hyperfine,id3lib,ideviceinstaller,jfrog-cli,jq,json-glib,json,jsoncpp,krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap-ng,libcddb,libcdio]
+        pkg: [gzip,help2man,htop,hugo,hwloc,hyperfine,id3lib,ideviceinstaller,itstool,jfrog-cli,jq,json-glib,json,jsoncpp,krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap-ng,libcddb,libcdio]
 
     runs-on: ${{ matrix.os }}
 

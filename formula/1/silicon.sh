@@ -19,10 +19,11 @@ prepare() {
         unset RES_UNPACK_DIR
         RES_UNPACK_DIR="$RES_NAME-$RES_VERS"
 
-        fetch "https://github.com/servo/$RES_NAME/archive/refs/tags/v$RES_VERS.tar.gz" --output-dir "$MY_CACHED_SOURCE_DIR" --output-name "font-kit-0.10.1.tar.gz" &&
+        fetch "https://github.com/servo/$RES_NAME/archive/refs/tags/v$RES_VERS.tar.gz" --output-dir="$MY_CACHED_SOURCE_DIR" --output-name="$RES_NAME-$RES_VERS.tar.gz" &&
         run mkdir -p $RES_UNPACK_DIR &&
-        run tar xf -C $RES_UNPACK_DIR --strip-components 1 &&
-        sed_in_place "/dependencies.servo-fontconfig/a " $RES_UNPACK_DIR/Cargo.toml &&
-        sed_in_place "/dependencies.servo-fontconfig/a " $RES_UNPACK_DIR/Cargo.toml
+        run tar xf "$MY_CACHED_SOURCE_DIR/$RES_NAME-$RES_VERS.tar.gz" -C $RES_UNPACK_DIR --strip-components 1
     done
+    sed_in_place 's|--target=$(TARGET)||' ./libfontconfig-5.1.0/makefile.cargo &&
+    sed_in_place '/version = "0.5"/c path = "./libfontconfig-5.1.0"' ./font-kit-0.10.1/Cargo.toml &&
+    sed_in_place "/font-kit =/c font-kit = { path = \"./font-kit-0.10.1\" }" Cargo.toml
 }
