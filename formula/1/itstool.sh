@@ -7,3 +7,7 @@ package set license "GPL-3.0"
 package set dep.pkg "python"
 package set dep.pip "libxml2"
 package set bsystem "autogen"
+
+build() {
+    configure PYTHON=$(command -v python3 || command -v python3.9 || command -v python)
+}
