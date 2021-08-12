@@ -6,5 +6,5 @@ package set src.sum "13e766ae3de957e322790cf9874ebc1b768abd205228db7181643e66564
 package set license "MIT"
 package set bsystem "cargo"
 package set dep.cmd "pkg-config"
-package set dep.pkg "libgit2-git nghttp2"
+package set dep.pkg "libgit2 nghttp2"
 package set binsrcd 'true'
