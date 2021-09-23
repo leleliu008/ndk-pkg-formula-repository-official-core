@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
+        os: [macos-11, ubuntu-18.04, ubuntu-20.04, macos-10.15]
         pkg: [dos2unix,double-conversion,duf,dust,esbuild,faac,faad2,fd,fdk-aac,ffmpeg,findutils,fish,flex,fzf,gawk,gdbm,gh,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,gogs,gomobile,google-benchmark,gperf,gping,graphite2,grep]
 
     runs-on: ${{ matrix.os }}
