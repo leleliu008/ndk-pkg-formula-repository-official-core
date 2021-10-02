@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-11, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,vala,vsftpd,wabt,wasm3,webhook,wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,zlib-ng,zola,zsh,zsync]
+        pkg: [ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,vala,vsftpd,wabt,wasm3,webhook,wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,zlib-ng,zola,zsh,zsync,libidn]
 
     runs-on: ${{ matrix.os }}
 
