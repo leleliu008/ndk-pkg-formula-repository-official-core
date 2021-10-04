@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-11, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [libcdio,libcroco,libexecinfo,libexif,libgit2,libimagequant,libirecovery,libisoburn,libmd,libmetalink,libnl,libphonenumber,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libsodium,libtool,libtorrent-rasterbar,libunwind,libusbmuxd-server,libvpx,libxslt,libyuv,lighttpd,links,livego,lmdb,lodepng]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap-ng,libcddb,libcdio,libcroco,libexecinfo,libexif,libgit2,libidn,libimagequant,libirecovery,libisoburn,libmd]
 
     runs-on: ${{ matrix.os }}
 

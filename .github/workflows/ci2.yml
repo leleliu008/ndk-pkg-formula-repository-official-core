@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-11, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [dos2unix,double-conversion,duf,dust,esbuild,faac,faad2,fd,fdk-aac,ffmpeg,findutils,fish,flex,fzf,gawk,gdbm,gh,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,gogs,gomobile,google-benchmark,gperf,gping,graphite2,grep]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust,esbuild,faac,faad2,fd,fdk-aac,ffmpeg,findutils,fish,flex,fzf,gawk,gdbm,gh,glog,gnu-coreutils,gnu-sed]
 
     runs-on: ${{ matrix.os }}
 

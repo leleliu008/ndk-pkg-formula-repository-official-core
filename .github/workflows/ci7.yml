@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-11, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,vala,vsftpd,wabt,wasm3,webhook,wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,zlib-ng,zola,zsh,zsync,libidn]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [pkg-config,pkgconf,pngquant,progress,proot2,putty,python,qrencode,quiche,quickjs,rhash,ripgrep,rlwrap,rsync,rtmpdump,rtorrent,sassc,sd,shell2http,snappy,soundtouch,spdlog,suricata,swig,tcl-core]
 
     runs-on: ${{ matrix.os }}
 
