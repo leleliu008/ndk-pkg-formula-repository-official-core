@@ -7,3 +7,4 @@ package set license "GPL-2.0-or-later"
 package set dep.pkg "readline libiconv"
 package set dep.cmd "pkg-config"
 package set bsystem "configure"
+package set binsrcd 'true'
