@@ -8,3 +8,10 @@ package set dep.pkg "readline libiconv"
 package set dep.cmd "pkg-config"
 package set bsystem "configure"
 package set binsrcd 'true'
+
+prepare() {
+    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
+    if [ "$TARGET_OS_VERS" -lt 26 ] ; then
+        sed_in_place '/nl_langinfo(CODESET)/d' src/tig.c
+    fi
+}
