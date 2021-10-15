@@ -7,7 +7,7 @@ package set version "5.0.18"
 package set license "GPL-3.0-or-later"
 package set bsystem "configure"
 package set dep.pkg "readline ncurses"
-package set cflags  "-fPIE"
+package set ccflags "-fPIE"
 
 build() {
     configure \
