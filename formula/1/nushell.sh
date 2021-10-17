@@ -7,4 +7,4 @@ package set license "MIT"
 package set bsystem "cargo"
 package set dep.cmd "pkg-config"
 package set dep.pkg "libgit2 nghttp2"
-package set binsrcd 'true'
+package set binsrcd 'YES'

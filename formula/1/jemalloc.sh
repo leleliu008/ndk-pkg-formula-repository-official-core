@@ -16,7 +16,7 @@ modify_code()    {
     done
 }
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     ./configure \

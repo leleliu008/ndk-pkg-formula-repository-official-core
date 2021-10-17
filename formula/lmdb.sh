@@ -8,7 +8,7 @@ package set bsystem "make"
 package set cdefine "MDB_USE_ROBUST=0"
 package set sourced "libraries/liblmdb"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     makew clean &&

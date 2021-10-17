@@ -8,7 +8,7 @@ package set bsystem "autogen"
 package set dep.cmd "pkg-config"
 package set dep.pkg "libzen zlib curl"
 package set sourced "Project/GNU/Library"
-package set binsrcd true
+package set binsrcd 'YES'
 
 prepare() {
     sed_in_place 's|${libdir}/libzen.a||' libmediainfo.pc.in &&

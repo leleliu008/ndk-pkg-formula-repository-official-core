@@ -7,7 +7,7 @@ package set license "GPL-2.0-or-later"
 package set dep.pkg "readline libiconv"
 package set dep.cmd "pkg-config"
 package set bsystem "configure"
-package set binsrcd 'true'
+package set binsrcd 'YES'
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);

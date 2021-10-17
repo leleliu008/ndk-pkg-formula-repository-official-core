@@ -5,7 +5,7 @@ package set src.url "https://boostorg.jfrog.io/artifactory/main/release/${PACKAG
 package set src.sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 package set license "BSL-1.0"
 package set dep.pkg "xz bzip2 zstd icu4c libiconv"
-package set binsrcd 'true'
+package set binsrcd 'YES'
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android

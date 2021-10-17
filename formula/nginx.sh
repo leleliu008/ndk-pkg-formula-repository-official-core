@@ -9,7 +9,7 @@ trace_configure() {
     for item in $(ls $1)
     do
         if [ -f "$1/$item" ] ; then
-            if [ "$XTRACE" = 'true' ] ; then
+            if [ "$XTRACE" = YES ] ; then
                 sed_in_place '1i set -x' "$1/$item"
             fi
             sed_in_place 's/ngx_feature_run=yes/ngx_feature_run=no/g' "$1/$item"
@@ -21,7 +21,7 @@ trace_configure() {
 
 prepare() {
     trace_configure auto
-    if [ "$XTRACE" = 'true' ] ; then
+    if [ "$XTRACE" = YES ] ; then
         sed_in_place '1i set -x' configure
     fi
 
@@ -30,7 +30,7 @@ prepare() {
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 }
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     export NGX_SYSTEM=Linux

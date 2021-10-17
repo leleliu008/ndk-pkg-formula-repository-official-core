@@ -6,7 +6,7 @@ package set license "GPL-2.0"
 package set bsystem "make"
 package set dep.pkg "xz bzip2 libtiff libjpeg-turbo openssl"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     # configure [options] [host]

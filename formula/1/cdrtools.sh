@@ -4,7 +4,7 @@ package set src.url "https://downloads.sourceforge.net/project/cdrtools/alpha/cd
 package set src.sum "c7e4f732fb299e9b5d836629dadf5512aa5e6a5624ff438ceb1d056f4dcb07c2"
 package set dep.cmd "smake"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     export SYSROOT

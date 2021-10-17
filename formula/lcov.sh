@@ -5,7 +5,7 @@ package set src.url "https://github.com/linux-test-project/lcov/releases/downloa
 package set src.sum "c1cda2fa33bec9aa2c2c73c87226cfe97de0831887176b45ee523c5e30f8053a"
 package set license "GPL-2.0-or-later"
 package set bsystem 'make'
-package set binsrcd 'true'
+package set binsrcd 'YES'
 
 build() {
     make install PREFIX="$ABI_INSTALL_DIR"

@@ -6,7 +6,7 @@ package set license "GPL-2.0"
 package set bsystem "configure"
 package set sourced "build/generic"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     configure \

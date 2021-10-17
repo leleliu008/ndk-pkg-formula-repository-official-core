@@ -5,4 +5,4 @@ package set src.sum "780faa7330f306430aaf895984c936f451a8d35555145eff5451dc57b0c
 package set license "GPL-2.0-or-later"
 package set bsystem "autotools"
 package set dep.pkg "readline"
-package set binsrcd true
+package set binsrcd 'YES'

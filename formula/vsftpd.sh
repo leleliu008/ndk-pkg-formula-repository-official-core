@@ -6,7 +6,7 @@ package set license "GPL-2.0-only"
 package set bsystem "make"
 package set dep.pkg "openssl libcap libcrypt"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 prepare() {
     # https://linux.die.net/man/3/getusershell

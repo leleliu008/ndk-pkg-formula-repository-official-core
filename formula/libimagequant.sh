@@ -6,7 +6,7 @@ package set src.sum "b5fa27da1f3cf3e8255dd02778bb6a51dc71ce9f99a4fc930ea69b83200
 package set license "GPL-3.0"
 package set bsystem "make"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     export OSTYPE=Linux

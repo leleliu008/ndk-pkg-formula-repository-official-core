@@ -7,7 +7,7 @@ package set bsystem "make"
 package set dep.cmd "pkg-config"
 package set dep.pkg "ncurses libwordexp"
 
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     makew clean &&

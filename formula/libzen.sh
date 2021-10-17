@@ -7,7 +7,7 @@ package set license "BSD-2-Clause"
 package set bsystem "autogen"
 package set dep.cmd "libtoolize libtool"
 package set sourced "Project/GNU/Library"
-package set binsrcd true
+package set binsrcd 'YES'
 
 prepare() {
     sed_in_place 's|-lpthread||g' configure.ac && ./autogen.sh

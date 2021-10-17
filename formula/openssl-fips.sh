@@ -4,8 +4,8 @@ package set src.url "https://www.openssl.org/source/openssl-fips-2.0.16.tar.gz"
 package set src.sum "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4"
 package set bsystem "make"
 package set dep.cmd "perl"
-package set binsrcd 'true'
-package set build_in_parallel false
+package set binsrcd 'YES'
+package set build_in_parallel NO
 
 prepare() {
     export LC_COLLATE='C'
