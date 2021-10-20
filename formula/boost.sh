@@ -44,13 +44,13 @@ build() {
     run ./b2 install \
         -q \
         -d+2 \
-        -j$(nproc) \
+        -j$NATIVE_OS_NCPU \
         --reconfigure \
         --without-python \
         --prefix="$ABI_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$BUILD_ROUND_NUM \
+        toolset=clang-$BUILD_INDEX \
         link=static,shared \
         variant=release \
         threading=multi \
@@ -63,6 +63,6 @@ build() {
 
 gen_project_config() {
     cat > project-config.jam <<EOF
-using clang : $BUILD_ROUND_NUM : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+using clang : $BUILD_INDEX : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
 EOF
 }

@@ -28,7 +28,7 @@ EOF
 }
 
 build() {
-    if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
+    if [ "$BUILD_INDEX" -eq 1 ] ; then
         insert_1 || return 1
         insert_2 || return 1
     fi

@@ -19,11 +19,3 @@ build() {
         -DGIF_INCLUDE_DIR="$giflib_INCLUDE_DIR" \
         -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so"
 }
-
-build2() {
-    if [ "$BUILD_ROUND_NUM" -eq 1 ] ; then
-        ndk-build NDK_PROJECT_PATH="$SOURCE_DIR" APP_BUILD_SCRIPT="Android.mk" APP_PLATFORM=android-$TARGET_OS_VERS ENABLE_SHARED=1 V=1
-    fi 
-    install -d                               "$ABI_INSTALL_DIR" &&
-    cp -rv "$SOURCE_DIR/libs/$TARGET_OS_ABI" "$ABI_LIBRARY_DIR"
-}
