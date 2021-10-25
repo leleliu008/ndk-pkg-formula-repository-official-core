@@ -50,7 +50,7 @@ build() {
         --prefix="$ABI_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$BUILD_INDEX \
+        toolset=clang-$TARGET_INDEX \
         link=static,shared \
         variant=release \
         threading=multi \
@@ -63,6 +63,6 @@ build() {
 
 gen_project_config() {
     cat > project-config.jam <<EOF
-using clang : $BUILD_INDEX : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+using clang : $TARGET_INDEX : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
 EOF
 }

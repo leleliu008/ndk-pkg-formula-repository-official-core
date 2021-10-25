@@ -27,7 +27,7 @@ build() {
 }
 
 check_if_ffsl_exists() {
-    if [ "$BUILD_INDEX" -eq 1 ] ; then
+    if [ "$TARGET_INDEX" -eq 1 ] ; then
         cat > $BUILD_DIR/test.c <<'EOF'
         #include<strings.h>
         int main() {

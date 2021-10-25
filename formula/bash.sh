@@ -8,6 +8,10 @@ package set license "GPL-3.0-or-later"
 package set bsystem "configure"
 package set dep.pkg "readline ncurses"
 
+prepare() {
+    sed_in_place 's|@LIBS@|-pie -fPIE -Wl,Bstatic @LIBS@ -Wl,Bdynamic|' Makefile.in
+}
+
 build() {
     configure \
         --with-curses \
@@ -15,6 +19,5 @@ build() {
         --disable-profiling \
         --enable-readline \
         --enable-select \
-        --enable-history \
-        --enable-static-link
+        --enable-history
 }
