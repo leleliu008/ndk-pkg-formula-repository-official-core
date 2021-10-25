@@ -7,7 +7,7 @@ package set bsystem "make"
 package set dep.cmd "pkg-config"
 package set dep.pkg "libpng lcms2"
 
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 build() {
     export OSTYPE=Linux

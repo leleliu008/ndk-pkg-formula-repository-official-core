@@ -4,7 +4,7 @@ package set src.url "https://www.samba.org/ftp/talloc/talloc-2.3.2.tar.gz"
 package set src.sum "27a03ef99e384d779124df755deb229cd1761f945eca6d200e8cfd9bf5297bd7"
 package set license "GPL-3.0-or-later"
 package set dep.cmd "python3:python>=3.6.0"
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);

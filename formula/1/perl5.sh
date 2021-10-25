@@ -16,7 +16,7 @@ prepare() {
     }
 }
 
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 build() {
     ./configure \

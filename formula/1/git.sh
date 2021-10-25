@@ -6,7 +6,7 @@ package set dep.pkg "libiconv expat curl openssl pcre2"
 
 prepare() {
     {
-        if [ "$XTRACE" = YES ] ; then
+        if [ "$XTRACE" = yes ] ; then
             sed_in_place '1a set -x' configure
         fi
     } &&

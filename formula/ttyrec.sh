@@ -4,7 +4,7 @@ package set src.url "http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz"
 package set src.sum "ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec"
 package set bsystem "make"
 
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 prepare() {
     sed_in_place 's|union wait status|int status|' ttyrec.c

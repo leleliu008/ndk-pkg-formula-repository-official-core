@@ -5,7 +5,7 @@ package set src.sum "b5cc9108b1add88c6175e3e001ad4615a628f93f2fffcb7da9e85a9ec7f
 package set license "MIT"
 package set bsystem "make"
 
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 prepare() {
     sed_in_place 's|CFLAGS += -O2 -Wall|override CFLAGS +=|' Makefile

@@ -7,7 +7,7 @@ package set src.sum "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe
 package set license "MIT"
 package set bsystem "make"
 package set sourced "trunk"
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 
 build() {
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"

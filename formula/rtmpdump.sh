@@ -7,10 +7,10 @@ package set version "2.4+20151223"
 package set license "GPL-2.0-or-later"
 package set bsystem "make"
 package set dep.pkg "zlib openssl"
-package set binsrcd 'YES'
+package set binsrcd 'yes'
 package set patches "https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/rtmpdump/openssl-1.1.diff" \
                     "3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2bd"
-package set build_in_parallel NO
+package set no
 
 prepare() {
     patch -p0 < $PACKAGE_PATCHES
