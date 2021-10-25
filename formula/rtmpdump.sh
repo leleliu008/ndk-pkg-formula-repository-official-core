@@ -10,7 +10,7 @@ package set dep.pkg "zlib openssl"
 package set binsrcd 'yes'
 package set patches "https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/rtmpdump/openssl-1.1.diff" \
                     "3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2bd"
-package set no
+package set build_in_parallel no
 
 prepare() {
     patch -p0 < $PACKAGE_PATCHES

@@ -5,7 +5,7 @@ package set src.sum "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681
 package set bsystem "make"
 package set dep.cmd "perl"
 package set binsrcd 'yes'
-package set no
+package set build_in_parallel no
 
 prepare() {
     export LC_COLLATE='C'
