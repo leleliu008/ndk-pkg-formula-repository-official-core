@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [libmetalink,libnl,libphonenumber,libpipeline,libpsl,libsamplerate,libsigsegv,libsmi,libsodium,libtool,libtorrent-rasterbar,libunwind,libusbmuxd-server,libvpx,libxslt,libyuv,lighttpd,links,livego,lmdb,lodepng,lrzip,lsd,lsof,lynx]
+        pkg: [libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap-ng,libcddb,libcdio,libcroco,libexecinfo,libexif,libgit2,libidn,libimagequant,libirecovery,libisoburn]
 
     runs-on: ${{ matrix.os }}
 
@@ -20,19 +20,19 @@ jobs:
       HOMEBREW_NO_INSTALL_CLEANUP: set
 
     steps:
-    - run: export -p
+      - run: export -p
 
-    - name: install ndk-pkg
-      run: |
-        curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
-        chmod u+x ndk-pkg
-        mv ndk-pkg $(brew --prefix)/bin
+      - name: install ndk-pkg
+        run: |
+          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
+          chmod u+x ndk-pkg
+          mv ndk-pkg $(brew --prefix)/bin
 
-    - run: ndk-pkg --version
+      - run: ndk-pkg --version
 
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - run: install -d ~/.ndk-pkg/repos.d/offical
-    - run: mv *       ~/.ndk-pkg/repos.d/offical
+      - run: install -d ~/.ndk-pkg/repos.d/offical
+      - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-    - run: ndk-pkg install ${{ matrix.pkg }}
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree

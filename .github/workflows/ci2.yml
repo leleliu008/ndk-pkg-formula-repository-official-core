@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust,esbuild,faac,faad2,fd,fdk-aac,ffmpeg,findutils,fish,flex,fzf,gawk,gdbm,gh,glog,gnu-coreutils,gsed]
+        pkg: [cjson,cmake,cppcheck,cpu_features,crosstool-ng,ctop,darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust,esbuild,faac,faad2,fd,fdk-aac]
 
     runs-on: ${{ matrix.os }}
 
@@ -20,19 +20,19 @@ jobs:
       HOMEBREW_NO_INSTALL_CLEANUP: set
 
     steps:
-    - run: export -p
+      - run: export -p
 
-    - name: install ndk-pkg
-      run: |
-        curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
-        chmod u+x ndk-pkg
-        mv ndk-pkg $(brew --prefix)/bin
+      - name: install ndk-pkg
+        run: |
+          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
+          chmod u+x ndk-pkg
+          mv ndk-pkg $(brew --prefix)/bin
 
-    - run: ndk-pkg --version
+      - run: ndk-pkg --version
 
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - run: install -d ~/.ndk-pkg/repos.d/offical
-    - run: mv *       ~/.ndk-pkg/repos.d/offical
+      - run: install -d ~/.ndk-pkg/repos.d/offical
+      - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-    - run: ndk-pkg install ${{ matrix.pkg }}
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree
