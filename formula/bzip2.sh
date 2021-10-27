@@ -60,13 +60,13 @@ LIB_OBJS = blocksort.o  \\
 build: bzip2 bzip2recover \$(LIB_SHARED_FILE_NAME)
 
 bzip2: bzip2.o \$(LIB_STATIC_FILE_NAME)
-	\$(CC) \$(CFLAGS) \$(LDFLAGS) \$^ -o \$@
+	\$(CC) \$(CFLAGS) \$(LDFLAGS) -pie -fPIE \$^ -o \$@
 
 bzip2recover: bzip2recover.o
-	\$(CC) \$(CFLAGS) \$(LDFLAGS) \$^ -o \$@
+	\$(CC) \$(CFLAGS) \$(LDFLAGS) -pie -fPIE \$^ -o \$@
 
 \$(LIB_SHARED_FILE_NAME): \$(LIB_OBJS)
-	\$(CC) \$(CFLAGS) \$(LDFLAGS) \$^ -o \$@ -shared
+	\$(CC) \$(CFLAGS) \$(LDFLAGS) \$^ -o \$@ -shared -fpic
 
 \$(LIB_STATIC_FILE_NAME): \$(LIB_OBJS)
 	\$(AR) rcs \$@ \$^

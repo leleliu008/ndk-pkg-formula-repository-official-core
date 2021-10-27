@@ -1,7 +1,8 @@
 package set summary "Implementation of Telnet and SSH"
 package set webpage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
-package set src.url "https://the.earth.li/~sgtatham/putty/0.74/putty-0.74.tar.gz"
-package set src.sum "ddd5d388e51dd9e6e294005b30037f6ae802239a44c9dc9808c779e6d11b847d"
+package set src.git "https://git.tartarus.org/simon/putty.git"
+package set src.url "https://the.earth.li/~sgtatham/putty/0.76/putty-0.76.tar.gz"
+package set src.sum "547cd97a8daa87ef71037fab0773bceb54a8abccb2f825a49ef8eba5e045713f"
 package set bsystem "configure"
 
 build() {
