@@ -6,6 +6,6 @@ package set src.sum "1d88c395ac79ca9365aa5af71afe4ad136a4ed45099ca398168d4a2014d
 package set license "ISC"
 
 build() {
-    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o "darkhttpd $SOURCE_DIR/darkhttpd.c" &&
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o darkhttpd $SOURCE_DIR/darkhttpd.c &&
     install_bins darkhttpd
 }
