@@ -9,6 +9,6 @@ package set bsystem "cmake"
 
 build() {
     cmakew \
-        -DENABLE_UNIT_TESTS=OFF
+        -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
 }

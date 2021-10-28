@@ -13,7 +13,13 @@ package set sdk.api 24
 
 build() {
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0 -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE"
-    export LDFLAGS="$LDFLAGS -Wl,--Bstatic -lglob -Wl,--Bdynamic"
+
+    # int glob(const char* __pattern, int __flags, int (*__error_callback)(const char* __failure_path, int __failure_errno), glob_t* __result_ptr) __INTRODUCED_IN(28);
+    # void globfree(glob_t* __result_ptr) __INTRODUCED_IN(28);
+    if [ "$TARGET_OS_VERS" -lt 28 ] ; then
+        export LDFLAGS="$LDFLAGS $libglob_LIBRARY_DIR/libglob.a"
+    fi
+
     configure \
         --with-included-regex \
         --with-xattrs \

@@ -1,7 +1,8 @@
 package set summary "Open-source formatting library for C++"
 package set webpage "https://fmt.dev"
-package set src.url "https://github.com/fmtlib/fmt/archive/7.1.2.tar.gz"
-package set src.sum "4119a1c34dff91631e1d0a3707428f764f1ea22fe3cd5e70af5b4ccd5513831c"
+package set src.git "https://github.com/fmtlib/fmt.git"
+package set src.url "https://github.com/fmtlib/fmt/archive/8.0.1.tar.gz"
+package set src.sum "b06ca3130158c625848f3fb7418f235155a4d389b2abc3a6245fb01cb0eb1e01"
 package set license "MIT"
 package set bsystem "cmake"
 

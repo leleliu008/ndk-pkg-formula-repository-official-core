@@ -1,6 +1,6 @@
 package set summary "Ping, but with a graph"
 package set src.git "https://github.com/orf/gping.git"
-package set src.url "https://github.com/orf/gping/archive/v1.2.1.tar.gz"
-package set src.sum "ca11655f4357278a152476373cbc131b4183990e431196889c366706aedf6787"
+package set src.url "https://github.com/orf/gping/archive/refs/tags/gping-v1.2.6.tar.gz"
+package set src.sum "e36d5bc02157708c803d1855be4b2a9daa27d077fffe86c58b12c746fdc04c8f"
 package set license "MIT"
 package set bsystem "cargo"

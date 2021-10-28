@@ -1,7 +1,7 @@
 package set summary "Clone of cat(1) with syntax highlighting and Git integration"
 package set src.git "https://github.com/sharkdp/bat.git"
-package set src.url "https://github.com/sharkdp/bat/archive/v0.17.1.tar.gz"
-package set src.sum "16d39414e8a3b80d890cfdbca6c0e6ff280058397f4a3066c37e0998985d87c4"
+package set src.url "https://github.com/sharkdp/bat/archive/v0.18.3.tar.gz"
+package set src.sum "dff7fa5222f40c7b3c783d3ceb0c3ffb35662f1198b00d785f80f3f1523399dd"
 package set license "Apache-2.0"
 package set bsystem "cargo"
 

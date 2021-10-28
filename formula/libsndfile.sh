@@ -1,7 +1,8 @@
 package set summary "C library for files containing sampled sound"
-package set webpage "http://www.mega-nerd.com/libsndfile"
-package set src.url "http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz"
-package set src.sum "1ff33929f042fa333aed1e8923aa628c3ee9e1eb85512686c55092d1e5a9dfa9"
+package set webpage "http://libsndfile.github.io/libsndfile/"
+package set src.git "https://github.com/libsndfile/libsndfile.git"
+package set src.url "https://github.com/libsndfile/libsndfile/releases/download/1.0.31/libsndfile-1.0.31.tar.bz2"
+package set src.sum "a8cfb1c09ea6e90eff4ca87322d4168cdbe5035cb48717b40bf77e751cc02163"
 package set bsystem "configure"
 package set dep.pkg "libogg libvorbis flac sqlite"
 
