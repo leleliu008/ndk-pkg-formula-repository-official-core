@@ -6,6 +6,6 @@ package set bsystem "cmake"
 
 build() {
     cmakew \
-    -DENABLE_STATIC=ON \
-    -DENABLE_SHARED=ON
+        -DENABLE_STATIC=ON \
+        -DENABLE_SHARED=ON
 }

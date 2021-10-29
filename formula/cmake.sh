@@ -1,7 +1,8 @@
 package set summary "Cross-platform make"
 package set webpage "https://www.cmake.org"
-package set src.url "https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4.tar.gz"
-package set src.sum "597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77"
+package set src.git "https://gitlab.kitware.com/cmake/cmake.git"
+package set src.url "https://github.com/Kitware/CMake/releases/download/v3.21.4/cmake-3.21.4.tar.gz"
+package set src.sum "d9570a95c215f4c9886dd0f0564ca4ef8d18c30750f157238ea12669c2985978"
 package set license "BSD-3-Clause"
 package set bsystem "cmake"
 package set dep.pkg "libuv ncurses"
@@ -19,7 +20,7 @@ build() {
         -DCMake_BUILD_LTO=OFF \
         -DCMAKE_USE_SYSTEM_LIBUV=ON \
         -DCURSES_INCLUDE_PATH="$ncurses_INCLUDE_DIR" \
-        -DCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.so" \
+        -DCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" \
         -DLibUV_INCLUDE_DIR="$libuv_INCLUDE_DIR" \
-        -DLibUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.so"
+        -DLibUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.a"
 }

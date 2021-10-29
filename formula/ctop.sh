@@ -1,8 +1,8 @@
 package set summary "Top-like interface for container metrics"
 package set webpage "https://ctop.sh"
 package set src.git "https://github.com/bcicen/ctop.git"
-package set src.url "https://github.com/bcicen/ctop/archive/refs/tags/v0.7.5.tar.gz"
-package set src.sum "a9a3be0e5eab2fee6b44a5d063188a354f9c0dde3d96a169d1490981f7826e9a"
+package set src.url "https://github.com/bcicen/ctop/archive/refs/tags/v0.7.6.tar.gz"
+package set src.sum "8ef76a7d4d725f750a5d8a6ee330e81b3b845a91fbd50ae3e746cead74736391"
 package set license "MIT"
 package set bsystem "go"
 

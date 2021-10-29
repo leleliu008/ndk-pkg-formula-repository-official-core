@@ -10,5 +10,6 @@ package set bsystem "cmake"
 build() {
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
-        -DENABLE_FUNC_TESTS=OFF
+        -DENABLE_FUNC_TESTS=OFF \
+        -Dnlohmann_json_DIR="$nlohmann_json_LIBRARY_DIR/cmake/nlohmann_json"
 }

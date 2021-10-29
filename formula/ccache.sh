@@ -21,5 +21,5 @@ build() {
         -DWARNINGS_AS_ERRORS=OFF \
         -DZSTD_FROM_INTERNET=OFF \
         -DZSTD_INCLUDE_DIR="$zstd_INCLUDE_DIR" \
-        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.so"
+        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.a"
 }

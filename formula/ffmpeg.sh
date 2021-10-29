@@ -12,7 +12,7 @@ prepare() {
 }
 
 build() {
-    run ./configure \
+    if run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
         --ar="$AR" \
@@ -32,11 +32,15 @@ build() {
         --disable-asm \
         --disable-doc \
         --disable-debug \
-        --extra-cflags='-DANDROID' &&
-    change_config_h &&
-    makew clean &&
-    makew install &&
-    run cp ffbuild/config.log .
+        --extra-cflags='-DANDROID' ; then
+        change_config_h &&
+        makew clean &&
+        makew install &&
+        run cp ffbuild/config.log .
+    else
+        cat ffbuild/config.log
+        return 1
+    fi
 }
 
 change_config_h() {
