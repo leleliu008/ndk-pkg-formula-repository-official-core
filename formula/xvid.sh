@@ -5,7 +5,6 @@ package set src.sum "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1
 package set license "GPL-2.0"
 package set bsystem "configure"
 package set sourced "build/generic"
-
 package set binsrcd 'yes'
 
 build() {
@@ -13,8 +12,9 @@ build() {
         --disable-idebug \
         --disable-iprofile \
         --disable-gnuprofile \
-        --enable-assembly \
-        --enable-pthread &&
+        --disable-assembly \
+        --enable-pthread \
+        ac_cv_prog_ac_yasm=yasm &&
     install_pc_file 'xvidcore' <<EOF
 prefix=$ABI_INSTALL_DIR
 exec_prefix=\${prefix}

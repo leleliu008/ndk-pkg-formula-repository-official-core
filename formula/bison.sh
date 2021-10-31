@@ -17,5 +17,6 @@ build() {
         --enable-relocatable \
         --enable-threads=posix \
         --disable-gcc-warnings \
-        --disable-assert
+        --disable-assert \
+        ac_cv_func_ffsl=yes
 }
