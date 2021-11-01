@@ -1,5 +1,6 @@
 package set summary "Multi-format archive and compression library"
 package set webpage "https://www.libarchive.org"
+package set src.git "https://github.com/libarchive/libarchive.git"
 package set src.url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
 package set src.sum "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
 package set bsystem "configure"

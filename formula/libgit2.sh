@@ -10,7 +10,6 @@ package set dep.pkg "openssl pcre2 libssh2 zlib"
 
 build() {
     cmakew \
-        -DCMAKE_FIND_DEBUG_MODE=1 \
         -DBUILD_CLAR=OFF \
         -DBUILD_FUZZERS=OFF \
         -DBUILD_EXAMPLES=OFF \

@@ -11,6 +11,5 @@ build() {
         -DSPDLOG_BUILD_BENCH=OFF \
         -DSPDLOG_BUILD_TESTS=OFF \
         -DSPDLOG_BUILD_SHARED=ON \
-        -DSPDLOG_FMT_EXTERNAL=ON \
-        -Dfmt_DIR="$fmt_LIBRARY_DIR/cmake/fmt"
+        -DSPDLOG_FMT_EXTERNAL=ON
 }

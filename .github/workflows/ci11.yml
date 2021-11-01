@@ -36,7 +36,7 @@ jobs:
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
       - run: |
-            brew unlink go@1.15 || true
+            brew uninstall go@1.15 || true
             if [ -n "$ANDROID_NDK_LATEST_HOME" ] ; then
                 export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
             fi

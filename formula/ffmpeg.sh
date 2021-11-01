@@ -12,6 +12,7 @@ prepare() {
 }
 
 build() {
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed 's/-wl,/g')"
     if run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
