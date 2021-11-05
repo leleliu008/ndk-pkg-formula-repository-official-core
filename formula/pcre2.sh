@@ -8,9 +8,6 @@ package set bsystem "cmake"
 
 build() {
     cmakew \
-        -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON \
-        -DCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH=OFF \
-        -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=OFF \
         -DPCRE2_BUILD_PCRE2_8=ON \
         -DPCRE2_BUILD_PCRE2_16=ON \
         -DPCRE2_BUILD_PCRE2_32=ON \

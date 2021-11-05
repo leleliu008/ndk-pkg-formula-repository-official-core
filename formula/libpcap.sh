@@ -9,9 +9,6 @@ package set bsystem "cmake"
 
 build() {
     cmakew \
-        -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON \
-        -DCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH=OFF \
-        -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=OFF \
         -DINET6=ON \
         -DENABLE_REMOTE=ON \
         -DBDEBUG=OFF \

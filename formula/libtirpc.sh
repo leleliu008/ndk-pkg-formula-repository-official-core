@@ -6,7 +6,7 @@ package set src.sum "e24eb88b8ce7db3b7ca6eb80115dd1284abc5ec32a8deccfed2224fc253
 package set bsystem "configure"
 
 # https://github.com/openbsd/src/commit/9a4976752c76d2a34f38575c4ce09dd50f5f80b7
-package set cdefine "quad_t=int64_t u_quad_t=uint64_t NGROUPS=20"
+package set cdefine "_GNU_SOURCE quad_t=int64_t u_quad_t=uint64_t NGROUPS=20"
 
 # unistd.h: int getdomainname(char* __buf, size_t __buf_size) __INTRODUCED_IN(26);
 package set sdk.api 26

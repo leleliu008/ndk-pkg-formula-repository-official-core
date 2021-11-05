@@ -10,7 +10,7 @@ build() {
     cat > "$SOURCE_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
 set(PCAP_FOUND TRUE)
 set(PCAP_INCLUDE_DIRS "$libpcap_INCLUDE_DIR")
-set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.a")
+set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.so")
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(PCAP REQUIRED_VARS PCAP_LIBRARIES PCAP_INCLUDE_DIRS)
@@ -19,12 +19,9 @@ mark_as_advanced(PCAP_INCLUDE_DIRS PCAP_LIBRARIES)
 EOF
 
     cmakew \
-        -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON \
-        -DCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH=OFF \
-        -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=OFF \
         -DWITH_SMI=OFF \
         -DWITH_CAP_NG=OFF \
         -DENABLE_SMB=OFF \
         -DCRYPTO_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
-        -DCRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libssl.a"
+        -DCRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.a"
 }

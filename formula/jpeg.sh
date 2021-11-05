@@ -1,0 +1,7 @@
+package set summary "Image manipulation library"
+package set webpage "https://www.ijg.org/"
+package set version "9d"
+package set src.url "https://www.ijg.org/files/jpegsrc.v9d.tar.gz"
+package set src.sum "6c434a3be59f8f62425b2e3c077e785c9ce30ee5874ea1c270e843f273ba71ee"
+package set license "IJG"
+package set bsystem "configure"

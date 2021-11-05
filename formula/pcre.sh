@@ -1,6 +1,6 @@
 package set summary "Perl compatible regular expressions library"
 package set webpage "https://www.pcre.org"
-package set src.url "https://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2"
+package set src.url "https://fossies.org/linux/misc/pcre-8.45.tar.bz2"
 package set src.sum "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
 package set dep.pkg "zlib bzip2"
 package set bsystem "cmake"

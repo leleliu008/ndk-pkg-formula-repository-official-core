@@ -5,6 +5,9 @@ package set src.sum "9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5
 package set license "GPL-3.0-or-later"
 package set bsystem "configure"
 
+# https://github.com/westonal/android-ndk/blob/master/sysroot/usr/include/sys/cdefs.h#L228
+package set cdefine "_GNU_SOURCE"
+
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513

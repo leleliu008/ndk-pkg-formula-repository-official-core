@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,zlib-ng,zola,zsh,zsync]
+        pkg: [wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,zlib-ng,zola,zsh,zsync,jpeg]
 
     runs-on: ${{ matrix.os }}
 

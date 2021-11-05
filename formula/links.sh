@@ -1,12 +1,11 @@
 package set summary "Lynx-like WWW browser that supports tables, menus, etc."
 package set webpage "http://links.twibright.com"
-package set src.url "http://links.twibright.com/download/links-2.21.tar.bz2"
-package set src.sum "285eed8591c7781ec26213df82786665aaa1b9286782e8a7a1a7e2a6e1630d63"
+package set src.url "http://links.twibright.com/download/links-2.25.tar.bz2"
+package set src.sum "5c0b3b0b8fe1f3c8694f5fb7fbdb19c63278ac68ae4646da69b49640b20283b1"
 package set license "GPL-2.0"
-package set bsystem "make"
 package set dep.pkg "xz bzip2 libtiff libjpeg-turbo openssl"
-
-package set binsrcd 'yes'
+package set bsystem "make"
+package set binsrcd "yes"
 
 build() {
     # configure [options] [host]
