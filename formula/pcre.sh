@@ -1,25 +1,25 @@
 package set summary "Perl compatible regular expressions library"
 package set webpage "https://www.pcre.org"
-package set src.url "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
-package set src.sum "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
-package set bsystem "cmake"
+package set src.url "https://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2"
+package set src.sum "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
 package set dep.pkg "zlib bzip2"
+package set bsystem "cmake"
 
 build() {
     cmakew \
-    -DPCRE_BUILD_PCRE8=ON \
-    -DPCRE_BUILD_PCRE16=ON \
-    -DPCRE_BUILD_PCRE32=ON \
-    -DPCRE_BUILD_PCREGREP=ON \
-    -DPCRE_BUILD_PCRECPP=OFF \
-    -DPCRE_BUILD_TESTS=OFF \
-    -DPCRE_SUPPORT_VALGRIND=OFF \
-    -DPCRE_SUPPORT_LIBZ=ON \
-    -DPCRE_SUPPORT_LIBBZ2=ON \
-    -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-    -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-    -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" &&
+        -DPCRE_BUILD_PCRE8=ON \
+        -DPCRE_BUILD_PCRE16=ON \
+        -DPCRE_BUILD_PCRE32=ON \
+        -DPCRE_BUILD_PCREGREP=ON \
+        -DPCRE_BUILD_PCRECPP=OFF \
+        -DPCRE_BUILD_TESTS=OFF \
+        -DPCRE_SUPPORT_VALGRIND=OFF \
+        -DPCRE_SUPPORT_LIBZ=ON \
+        -DPCRE_SUPPORT_LIBBZ2=ON \
+        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
+        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
+        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
+        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" &&
     install_pc_files
 }
 

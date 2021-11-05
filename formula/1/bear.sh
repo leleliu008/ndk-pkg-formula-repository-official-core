@@ -6,6 +6,11 @@ package set license "GPL-3.0-or-later"
 package set dep.pkg "fmt grpc nlohmann-json spdlog"
 package set dep.cmd "pkg-config"
 package set bsystem "cmake"
+package set sdk.api 28
+
+prepare() {
+    sed_in_place '/-DCMAKE_PREFIX_PATH/c \            -DCMAKE_FIND_ROOT_PATH:PATH=${CMAKE_FIND_ROOT_PATH}' CMakeLists.txt
+}
 
 build() {
     cmakew \

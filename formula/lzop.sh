@@ -1,0 +1,7 @@
+package set summary "File compressor"
+package set webpage "https://www.lzop.org/"
+package set src.url "https://www.lzop.org/download/lzop-1.04.tar.gz"
+package set src.sum "7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41"
+package set license "GPL-2.0"
+package set dep.pkg "lzo"
+package set bsystem "cmake"

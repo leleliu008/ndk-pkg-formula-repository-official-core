@@ -6,6 +6,10 @@ package set src.sum "59b862f50e710277f8ede96f083a5bb8d7c9595376146838b9580be9037
 package set license "Apache-2.0"
 package set bsystem "cmake"
 
+prepare() {
+    sed_in_place '/-lrt/d' absl/base/CMakeLists.txt
+}
+
 build() {
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \

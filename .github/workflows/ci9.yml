@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [quiche,quickjs,rhash,ripgrep,rlwrap,rsync,rtmpdump,rtorrent,sassc,sd,shell2http,snappy,soundtouch,suricata,swig,tcl-core,tcpdump,texinfo,tig,tinyxml2]
+        pkg: [putty,python,qrencode,quiche,quickjs,re2c,rhash,ripgrep,rlwrap,rsync,rtmpdump,rtorrent,sassc,sd,shell2http,snappy,soundtouch,spdlog,suricata,swig]
 
     runs-on: ${{ matrix.os }}
 
@@ -36,6 +36,7 @@ jobs:
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
       - run: |
+            brew uninstall go@1.15 || true
             if [ -n "$ANDROID_NDK_LATEST_HOME" ] ; then
                 export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
             fi

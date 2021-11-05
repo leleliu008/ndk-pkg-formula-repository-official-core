@@ -1,7 +1,7 @@
 package set summary "Library for interacting with JSON"
 package set src.git "https://github.com/open-source-parsers/jsoncpp.git"
-package set src.url "https://github.com/open-source-parsers/jsoncpp/archive/1.9.3.tar.gz"
-package set src.sum "8593c1d69e703563d94d8c12244e2e18893eeb9a8a9f8aa3d09a327aa45c8f7d"
+package set src.url "https://github.com/open-source-parsers/jsoncpp/archive/1.9.4.tar.gz"
+package set src.sum "e34a628a8142643b976c7233ef381457efad79468c67cb1ae0b83a33d7493999"
 package set license "MIT"
 package set bsystem "cmake"
 

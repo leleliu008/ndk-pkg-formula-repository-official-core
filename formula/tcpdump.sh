@@ -1,13 +1,30 @@
 package set summary "Command-line packet(TCP/IP) analyzer"
 package set webpage "https://www.tcpdump.org"
-package set src.url "https://www.tcpdump.org/release/tcpdump-4.9.3.tar.gz"
-package set src.sum "2cd47cb3d460b6ff75f4a9940f594317ad456cfbf2bd2c8e5151e16559db6410"
-package set bsystem "configure"
+package set src.git "https://github.com/the-tcpdump-group/tcpdump.git"
+package set src.url "https://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz"
+package set src.sum "79b36985fb2703146618d87c4acde3e068b91c553fb93f021a337f175fd10ebe"
 package set dep.pkg "libpcap"
+package set bsystem "cmake"
 
 build() {
-    configure \
-        --without-gcc \
-        --disable-smb \
-        --disable-universal
+    cat > "$SOURCE_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
+set(PCAP_FOUND TRUE)
+set(PCAP_INCLUDE_DIRS "$libpcap_INCLUDE_DIR")
+set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.a")
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(PCAP REQUIRED_VARS PCAP_LIBRARIES PCAP_INCLUDE_DIRS)
+
+mark_as_advanced(PCAP_INCLUDE_DIRS PCAP_LIBRARIES)
+EOF
+
+    cmakew \
+        -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON \
+        -DCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH=OFF \
+        -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=OFF \
+        -DWITH_SMI=OFF \
+        -DWITH_CAP_NG=OFF \
+        -DENABLE_SMB=OFF \
+        -DCRYPTO_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
+        -DCRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libssl.a"
 }
