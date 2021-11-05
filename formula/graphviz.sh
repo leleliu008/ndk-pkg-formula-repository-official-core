@@ -1,5 +1,6 @@
 package set summary "Graph visualization software from AT&T and Bell Labs"
 package set webpage "https://www.graphviz.org"
+package set src.git "https://gitlab.com/graphviz/graphviz.git"
 package set src.url "https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.1.tar.gz"
 package set src.sum "8e1b34763254935243ccdb83c6ce108f531876d7a5dfd443f255e6418b8ea313"
 package set license "EPL-1.0"

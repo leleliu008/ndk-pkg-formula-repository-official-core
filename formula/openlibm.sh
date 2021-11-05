@@ -1,8 +1,8 @@
 package set summary "High quality, portable, open source libm implementation"
 package set webpage "https://openlibm.org"
 package set src.git "https://github.com/JuliaMath/openlibm.git"
-package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
-package set src.sum "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
+package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.0.tar.gz"
+package set src.sum "03620768df4ca526a63dd675c6de95a5c9d167ff59555ce57a61c6bf49e400ee"
 package set bsystem "make"
 
 prepare() {
@@ -19,9 +19,9 @@ build() {
     makew -C "$SOURCE_DIR" install \
         prefix="$ABI_INSTALL_DIR" \
         CC="$CC" \
-        CFLAGS="\"$CFLAGS\"" \
-        CPPFLAGS="\"$CPPFLAGS\"" \
-        LDFLAGS="\"$LDFLAGS\"" \
+        CFLAGS="'$CFLAGS'" \
+        CPPFLAGS="'$CPPFLAGS'" \
+        LDFLAGS="'$LDFLAGS'" \
         AR="$AR" \
         OS=Linux \
         ARCH="$TARGET_OS_ARCH" \

@@ -7,6 +7,10 @@ package set dep.cmd "flex bison"
 package set dep.pkg "openssl"
 package set bsystem "cmake"
 
+prepare() {
+    sed_in_place '/Libs.private:/c Libs.private: -lssl -lcrypto' libpcap.pc.in
+}
+
 build() {
     cmakew \
         -DINET6=ON \

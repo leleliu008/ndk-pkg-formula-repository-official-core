@@ -1,6 +1,6 @@
 package set summary "Reimplementation of pkg-config"
 package set webpage "http://pkgconf.org"
 package set src.git "https://github.com/pkgconf/pkgconf.git"
-package set src.url "http://distfiles.dereferenced.org/pkgconf/pkgconf-1.7.3.tar.xz"
-package set src.sum "b846aea51cf696c3392a0ae58bef93e2e72f8e7073ca6ad1ed8b01c85871f9c0"
+package set src.url "http://distfiles.dereferenced.org/pkgconf/pkgconf-1.8.0.tar.xz"
+package set src.sum "ef9c7e61822b7cb8356e6e9e1dca58d9556f3200d78acab35e4347e9d4c2bbaf"
 package set bsystem "configure"

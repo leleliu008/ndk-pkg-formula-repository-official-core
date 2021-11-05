@@ -7,18 +7,18 @@ package set dep.pkg "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
 package set bsystem "make"
 package set binsrcd 'yes'
 
-prepare() {
-    sed_in_place 's/Wl,-soname,/o /g' configure
-}
+#prepare() {
+    #sed_in_place 's/Wl,-soname,/o /g' configure
+#}
 
 build() {
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed 's/-wl,/g')"
+    #export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed 's/-wl,/g')"
     if run ./configure \
         --prefix="$ABI_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
         --ar="$AR" \
         --as="$AS" \
-        --ld="$LD" \
+        --ld="$CC" \
         --cc="$CC" \
         --cxx="$CXX" \
         --nm="$NM" \
