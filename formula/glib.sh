@@ -14,7 +14,9 @@ build() {
         -Dgtk_doc=false \
         -Diconv=external \
         -Ddtrace=false \
-        -Dinternal_pcre=false \
+        -Dglib_debug=disabled \
+        -Dglib_assert=false \
+        -Dtests=false \
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
 }
