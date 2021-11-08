@@ -1,7 +1,7 @@
 package set summary "Image loading and rendering library"
 package set webpage "https://sourceforge.net/projects/enlightenment/"
 package set src.url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.7.4/imlib2-1.7.4.tar.bz2"
-package set src.sum "033a6a639dcbc8e03f65ff05e57068e7346d50ee2f2fff304bb9095a1b2bc407"
+package set src.sum "8371f71fe4e40dd5b189150fa264d88f046dd45061c5fad1260347c205d3992d"
 package set license "Imlib2"
 package set bsystem "configure"
 package set dep.cmd "pkg-config"
