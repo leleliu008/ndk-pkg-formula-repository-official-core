@@ -1,7 +1,7 @@
 package set summary "Common error values for all GnuPG components"
 package set webpage "https://www.gnupg.org/related_software/libgpg-error"
-package set src.url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.42.tar.bz2"
-package set src.sum "fc07e70f6c615f8c4f590a8e37a9b8dd2e2ca1e9408f8e60459c67452b925e23"
+package set src.url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.43.tar.bz2"
+package set src.sum "a9ab83ca7acc442a5bd846a75b920285ff79bdb4e3d34aa382be88ed2c3aebaf"
 package set license "LGPL-2.1-or-later"
 package set bsystem "configure"
 

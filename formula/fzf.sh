@@ -1,7 +1,7 @@
 package set summary "Command-line fuzzy finder written in Go"
 package set src.git "https://github.com/junegunn/fzf.git"
-package set src.url "https://github.com/junegunn/fzf/archive/0.27.3.tar.gz"
-package set src.sum "a0ad8dc6dd5c7a0c87ad623c0d9164cc2861489b76cb7a8b66f51cb4f9a81254"
+package set src.url "https://github.com/junegunn/fzf/archive/0.28.0.tar.gz"
+package set src.sum "05bbfa4dd84b72e55afc3fe56c0fc185d6dd1fa1c4eef56a1559b68341f3d029"
 package set license "MIT"
 package set bsystem 'go'
 
