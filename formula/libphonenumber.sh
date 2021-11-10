@@ -1,10 +1,10 @@
 package set summary "C++ Phone Number library by Google"
 package set src.git "https://github.com/google/libphonenumber.git"
-package set src.url "https://github.com/google/libphonenumber/archive/v8.12.13.tar.gz"
-package set src.sum "4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
+package set src.url "https://github.com/google/libphonenumber/archive/v8.12.35.tar.gz"
+package set src.sum "8ebd00c89a441d1989f609ad2c7eb7cc0d900d4f126fa3df835a805e25235dc7"
 package set license "Apache-2.0"
 package set dep.cmd "pkg-config protoc"
-package set dep.pkg "boost icu4c protobuf google-test"
+package set dep.pkg "boost icu4c protobuf googletest"
 package set ldflags "-llog -lz -licudata -lstdc++"
 package set sourced "cpp"
 
@@ -26,8 +26,8 @@ build() {
         -DBoost_SYSTEM_LIBRARY_RELEASE="$boost_LIBRARY_DIR/libboost_system.so" \
         -DBoost_THREAD_LIBRARY_RELEASE="$boost_LIBRARY_DIR/libboost_thread.so" \
         -DBoost_DATE_TIME_LIBRARY_RELEASE="$boost_LIBRARY_DIR/libboost_date_time.so" \
-        -DGTEST_INCLUDE_DIR="$google_test_INCLUDE_DIR" \
-        -DGTEST_LIB="$google_test_LIBRARY_DIR/libgtest.so" \
+        -DGTEST_INCLUDE_DIR="$googletest_INCLUDE_DIR" \
+        -DGTEST_LIB="$googletest_LIBRARY_DIR/libgtest.so" \
         -DPROTOBUF_INCLUDE_DIR="$protobuf_INCLUDE_DIR" \
         -DPROTOBUF_LIB="$protobuf_LIBRARY_DIR/libprotobuf.so" \
         -DICU_I18N_INCLUDE_DIR="$icu4c_INCLUDE_DIR" \

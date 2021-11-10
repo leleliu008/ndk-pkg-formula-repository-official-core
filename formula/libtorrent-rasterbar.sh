@@ -1,8 +1,8 @@
 package set summary "an efficient feature complete C++ bittorrent implementation focusing on efficiency and scalability."
 package set webpage "http://libtorrent.org"
 package set src.git "https://github.com/arvidn/libtorrent.git"
-package set src.url "https://github.com/arvidn/libtorrent/releases/download/v2.0.3/libtorrent-rasterbar-2.0.3.tar.gz"
-package set src.sum "59bfc7654bccaa2735353fb21e503ed6f66f1964150b70799150ed3f2403bcc5"
+package set src.url "https://github.com/arvidn/libtorrent/releases/download/v2.0.4/libtorrent-rasterbar-2.0.4.tar.gz"
+package set src.sum "55bcce16c4b85b8cccd20e7ff4a9fde92db66333a25d6504a83c0bb0a5f7f529"
 package set bsystem "cmake"
 package set dep.pkg "openssl boost"
 
