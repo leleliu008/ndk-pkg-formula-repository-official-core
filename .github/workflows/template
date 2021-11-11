@@ -37,7 +37,5 @@ jobs:
 
       - run: |
             brew uninstall go@1.15 || true
-            if [ -n "$ANDROID_NDK_LATEST_HOME" ] ; then
-                export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-            fi
+            export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
             ndk-pkg install ${{ matrix.pkg }} --tree

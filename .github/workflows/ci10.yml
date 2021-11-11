@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [tcl-core,tcpdump,texinfo,tig,tinyxml2,tmux,tree,ttyd,ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,vala,vsftpd,wabt,wasm3,webhook]
+        pkg: [suricata,swig,tcl-core,tcpdump,texinfo,tig,tinyxml2,tmux,tree,ttyd,ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,vala,vsftpd,wabt]
 
     runs-on: ${{ matrix.os }}
 
@@ -37,7 +37,5 @@ jobs:
 
       - run: |
             brew uninstall go@1.15 || true
-            if [ -n "$ANDROID_NDK_LATEST_HOME" ] ; then
-                export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-            fi
+            export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
             ndk-pkg install ${{ matrix.pkg }} --tree
