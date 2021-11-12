@@ -1,12 +1,13 @@
 package set summary "Multi-format archive and compression library"
 package set webpage "https://www.libarchive.org"
 package set src.git "https://github.com/libarchive/libarchive.git"
-package set src.url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
-package set src.sum "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
+package set src.url "https://www.libarchive.org/downloads/libarchive-3.5.2.tar.xz"
+package set src.sum "f0b19ff39c3c9a5898a219497ababbadab99d8178acc980155c7e1271089b5a0"
 package set bsystem "configure"
 package set dep.pkg "libiconv expat openssl xz bzip2 lz4 lzo zstd"
 
 build() {
+    export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)
     export CPPFLAGS="$CPPFLAGS -I$SOURCE_DIR/contrib/android/include"
     configure \
         --enable-xattr \

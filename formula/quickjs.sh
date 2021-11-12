@@ -11,8 +11,6 @@ package set binsrcd 'yes'
 prepare() {
     sed_in_place 's|-g||' Makefile &&
     sed_in_place 's|LIBS+=-ldl -lpthread|LIBS+=-ldl|' Makefile &&
-    sed_in_place 's|$(QJSC) -c|./host-qjsc -c|'       Makefile &&
-    sed_in_place 's|$(QJSC) -fbignum|./host-qjsc -fbignum|' Makefile &&
     sed_in_place 's|lib/quickjs|lib|g'         Makefile &&
     sed_in_place 's|include/quickjs|include|g' Makefile
 }
