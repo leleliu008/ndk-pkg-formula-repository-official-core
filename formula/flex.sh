@@ -6,8 +6,5 @@ package set license "BSD-2-Clause"
 package set bsystem "configure"
 
 build() {
-    configure \
-        --enable-warnings \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
+    configure --enable-warnings
 }

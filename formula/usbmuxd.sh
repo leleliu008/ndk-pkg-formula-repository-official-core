@@ -28,7 +28,5 @@ build() {
         --without-systemd \
         libplist_LIBS="$libplist_LIBRARY_DIR/libplist-2.0.a" \
         libusb_LIBS="$libusb_LIBRARY_DIR/libusb-1.0.a" \
-        ac_cv_lib_pthread_pthread_create__pthread_mutex_lock=yes \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
+        ac_cv_lib_pthread_pthread_create__pthread_mutex_lock=yes
 }

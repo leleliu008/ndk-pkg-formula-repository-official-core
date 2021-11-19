@@ -30,9 +30,7 @@ build_with_configure() {
         ac_cv_lib_boost_iostreams___exit=yes \
         ac_cv_lib_boost_thread___exit=yes \
         ac_cv_lib_z_adler32=yes \
-        ac_cv_lib_jsoncpp_main=yes \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
+        ac_cv_lib_jsoncpp_main=yes
 }
 
 build_with_cmake() {

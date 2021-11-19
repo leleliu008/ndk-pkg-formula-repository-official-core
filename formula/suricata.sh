@@ -20,8 +20,6 @@ build() {
     sed_in_place '/RUST_LDADD="${RUST_SURICATA_LIB}/a RUST_LDADD=$(echo "$RUST_LDADD" | sed "s/-lrt//")' "$SOURCE_DIR/configure" &&
     configure \
         --enable-pie \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes \
         ac_cv_lib_pthread_pthread_create=yes \
         ac_cv_lib_jansson_json_dump_callback=yes \
         ac_cv_lib_pcap_pcap_open_live=yes

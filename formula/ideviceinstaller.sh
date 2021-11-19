@@ -6,9 +6,3 @@ package set license "GPL-2.0"
 package set bsystem "configure"
 package set dep.pkg "libimobiledevice libzip"
 package set sdk.api 24
-
-build() {
-    configure \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
-}

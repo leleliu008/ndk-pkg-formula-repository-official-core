@@ -20,7 +20,5 @@ build() {
         --with-libintl-prefix="$gettext_INSTALL_DIR" \
         CURSES_LIBS="$ncurses_LIBRARY_DIR/libncurses.so" \
         PANEL_LIBS="$ncurses_LIBRARY_DIR/libpanel.so" \
-        MENU_LIBS="$ncurses_LIBRARY_DIR/libmenu.so" \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
+        MENU_LIBS="$ncurses_LIBRARY_DIR/libmenu.so"
 }

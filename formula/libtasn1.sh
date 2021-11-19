@@ -1,7 +1,7 @@
 package set summary "ASN.1 structure parser library"
 package set webpage "https://www.gnu.org/software/libtasn1"
-package set src.url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.17.0.tar.gz"
-package set src.sum "ece7551cea7922b8e10d7ebc70bc2248d1fdd73351646a2d6a8d68a9421c45a5"
+package set src.url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.18.0.tar.gz"
+package set src.sum "4365c154953563d64c67a024b607d1ee75c6db76e0d0f65709ea80a334cd1898"
 package set bsystem "configure"
 
 build() {

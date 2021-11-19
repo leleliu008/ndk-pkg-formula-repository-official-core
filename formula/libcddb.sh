@@ -6,8 +6,5 @@ package set bsystem "configure"
 package set dep.pkg "libiconv"
 
 build() {
-    configure \
-        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
-        ac_cv_func_malloc_0_nonnull=yes \
-        ac_cv_func_realloc_0_nonnull=yes
+    configure --with-libiconv-prefix="$libiconv_INSTALL_DIR"
 }

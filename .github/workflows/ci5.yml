@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libb2,libbcrypt,libbthread,libcaca,libcap-ng,libcddb,libcdio,libcroco,libexecinfo,libexif,libgit2]
+        pkg: [json-glib,json,jsoncpp,krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf]
 
     runs-on: ${{ matrix.os }}
 
