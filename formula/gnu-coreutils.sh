@@ -1,7 +1,7 @@
 package set summary "GNU File, Shell, and Text utilities"
 package set webpage "https://www.gnu.org/software/coreutils"
-package set src.url "https://ftp.gnu.org/gnu/coreutils/coreutils-8.32.tar.xz"
-package set src.sum "4458d8de7849df44ccab15e16b1548b285224dbba5f08fac070c1c0e0bcc4cfa"
+package set src.url "https://ftp.gnu.org/gnu/coreutils/coreutils-9.0.tar.xz"
+package set src.sum "ce30acdf4a41bc5bb30dd955e9eaa75fa216b4e3deb08889ed32433c7b3b97ce"
 package set license "GPL-3.0"
 package set bsystem "configure"
 

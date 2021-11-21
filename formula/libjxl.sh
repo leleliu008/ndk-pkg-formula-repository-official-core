@@ -4,11 +4,12 @@ package set src.git "https://github.com/libjxl/libjxl.git"
 package set src.url "https://github.com/libjxl/libjxl/archive/v0.6.1.tar.gz"
 package set src.sum "ccbd5a729d730152303be399f033b905e608309d5802d77a61a95faa092592c5"
 package set license "BSD-3-Clause"
-package set dep.cmd "pkg-config realpath"
+package set dep.cmd "pkg-config realpath bash>=4.0"
 package set dep.pkg "brotli libwebp openexr"
 package set bsystem "cmake"
 
 prepare() {
+
     ./deps.sh
 }
 
