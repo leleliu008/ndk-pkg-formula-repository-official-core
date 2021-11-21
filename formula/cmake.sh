@@ -1,11 +1,11 @@
 package set summary "Cross-platform make"
 package set webpage "https://www.cmake.org"
 package set src.git "https://gitlab.kitware.com/cmake/cmake.git"
-package set src.url "https://github.com/Kitware/CMake/releases/download/v3.21.4/cmake-3.21.4.tar.gz"
-package set src.sum "d9570a95c215f4c9886dd0f0564ca4ef8d18c30750f157238ea12669c2985978"
+package set src.url "https://github.com/Kitware/CMake/releases/download/v3.22.0/cmake-3.22.0.tar.gz"
+package set src.sum "998c7ba34778d2dfdb3df8a695469e24b11e2bfa21fbe41b361a3f45e1c9345e"
 package set license "BSD-3-Clause"
-package set bsystem "cmake"
 package set dep.pkg "libuv ncurses"
+package set bsystem "cmake"
 
 prepare() {
     sed_in_place 's/defined(__linux__) || defined(_WIN32)/0/g' Source/cmake.cxx

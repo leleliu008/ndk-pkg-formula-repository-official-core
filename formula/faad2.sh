@@ -1,6 +1,14 @@
 package set summary "ISO AAC audio decoder"
-package set webpage "https://www.audiocoding.com/faad2.html"
-package set src.url "https://downloads.sourceforge.net/project/faac/faad2-src/faad2-2.8.0/faad2-2.8.8.tar.gz"
-package set src.sum "985c3fadb9789d2815e50f4ff714511c79c2710ac27a4aaaf5c0c2662141426d"
-package set bsystem "configure"
+package set webpage "https://sourceforge.net/projects/faac/"
+package set src.git "https://github.com/knik0/faad2.git"
+package set src.url "https://github.com/knik0/faad2/archive/refs/tags/2_10_0.tar.gz"
+package set src.sum "0c6d9636c96f95c7d736f097d418829ced8ec6dbd899cc6cc82b728480a84bfb"
+package set version "2.10.0"
+package set license "GPL-2.0-or-later"
+package set dep.cmd "libtoolize"
+package set bsystem "autotools"
 package set ldflags "-lm"
+
+prepare() {
+    ./bootstrap
+}

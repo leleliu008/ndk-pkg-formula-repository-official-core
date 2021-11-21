@@ -1,7 +1,7 @@
 package set summary "Simple terminal UI for git commands"
 package set src.git "https://github.com/jesseduffield/lazygit.git"
-package set src.url "https://github.com/jesseduffield/lazygit/archive/v0.31.1.tar.gz"
-package set src.sum "b16d18bb15e30e25882da8cf3c1706919bc7953ea0da319f32ee503721ca88c8"
+package set src.url "https://github.com/jesseduffield/lazygit/archive/v0.31.3.tar.gz"
+package set src.sum "7a9fcb0c5f1edf025d1e1f5fb21099770e0de7ed424af62e133bd9d4afffdc35"
 package set license "MIT"
 package set bsystem 'go'
 

@@ -1,5 +1,13 @@
 package set summary "ISO AAC audio encoder"
-package set webpage "https://www.audiocoding.com/faac.html"
-package set src.url "https://downloads.sourceforge.net/project/faac/faac-src/faac-1.29/faac-1.29.9.2.tar.gz"
-package set src.sum "d45f209d837c49dae6deebcdd87b8cc3b04ea290880358faecf5e7737740c771"
-package set bsystem "configure"
+package set webpage "https://sourceforge.net/projects/faac"
+package set src.git "https://github.com/knik0/faac.git"
+package set src.url "https://github.com/knik0/faac/archive/refs/tags/1_30.tar.gz"
+package set src.sum "adc387ce588cca16d98c03b6ec1e58f0ffd9fc6eadb00e254157d6b16203b2d2"
+package set version "1.30"
+package set license "LGPL-2.1-or-later"
+package set dep.cmd "libtoolize"
+package set bsystem "autotools"
+
+prepare() {
+    ./bootstrap
+}

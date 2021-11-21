@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [lzop,md4c,mediainfo,mesalink,mm-wiki,mpg123,mpir,nanomsg,nasm,neofetch,nginx,ngtcp2,ninja,nlohmann-json,nng,ntbtls,numactl,openblas,openlibm,openmpi]
+        pkg: [lynx,lzip,lzop,md4c,mediainfo,mesalink,mm-wiki,mpg123,mpir,nanomsg,nasm,neofetch,nginx,ngtcp2,ninja,nlohmann-json,nng,ntbtls,numactl,openblas]
 
     runs-on: ${{ matrix.os }}
 

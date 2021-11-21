@@ -1,8 +1,8 @@
 package set summary "a lightweight and portable command-line YAML processor"
 package set webpage "https://mikefarah.gitbook.io/yq"
 package set src.git "https://github.com/mikefarah/yq.git"
-package set src.url "https://github.com/mikefarah/yq/archive/v4.14.1.tar.gz"
-package set src.sum "294300a8c182c3f8e1f537ad2feebb6d0651f61330f33504bdc502f48992bf84"
+package set src.url "https://github.com/mikefarah/yq/archive/v4.14.2.tar.gz"
+package set src.sum "2917a72bc0cb0fbd132b3257ff9162db83d129adc5670f7661c29a873684e04a"
 package set license "MIT"
 package set bsystem "go"
 
