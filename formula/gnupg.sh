@@ -1,7 +1,7 @@
 package set summary "GNU Pretty Good Privacy (PGP) package"
 package set webpage "https://gnupg.org"
-package set src.url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.23.tar.bz2"
-package set src.sum "10b55e49d78b3e49f1edb58d7541ecbdad92ddaeeb885b6f486ed23d1cd1da5c"
+package set src.url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.3.tar.bz2"
+package set src.sum "5789b86da6a1a6752efb38598f16a77af51170a8494039c3842b085032e8e937"
 package set dep.pkg "libgpg-error libgcrypt libassuan libksba npth libiconv bzip2 readline"
 package set bsystem "configure"
 
