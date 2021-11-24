@@ -11,7 +11,7 @@ build0() {
 }
 
 build() {
-    export PATH=$NATIVE_INSTALL_DIR/bin:$PATH
+    export PATH="$NATIVE_INSTALL_DIR/bin:$PATH"
     configure \
         --enable-zlib \
         --disable-bzlib \

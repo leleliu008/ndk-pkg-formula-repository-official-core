@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [gping,graphite2,grep,grpc,gsed,gtar,gzip,help2man,hexdump,hiredis,htop,hugo,hunspell,hwloc,hyperfine,id3lib,ideviceinstaller,jbig2dec,jfrog-cli,jpeg]
+        pkg: [gperf,gping,graphite2,grep,grpc,gsed,gtar,gzip,help2man,hexdump,hiredis,htop,hugo,hunspell,hwloc,hyperfine,id3lib,ideviceinstaller,jbig2dec,jfrog-cli]
 
     runs-on: ${{ matrix.os }}
 

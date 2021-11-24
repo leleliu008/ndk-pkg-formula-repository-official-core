@@ -5,6 +5,14 @@ package set src.url "https://download.gnome.org/sources/pango/1.48/pango-1.48.10
 package set src.sum "21e1f5798bcdfda75eabc4280514b0896ab56f656d4e7e66030b9a2535ecdc98"
 package set license "LGPL-2.0-or-later"
 package set dep.cmd "pkg-config glib-mkenums"
-package set dep.pkg "fontconfig fribidi glib harfbuzz"
+package set dep.pkg "cairo fribidi harfbuzz"
 package set bsystem "meson"
-#package set ldflags "-lffi -lbz2 -lz -lbrotlicommon -lbrotlidec -lfontconfig -lpng16 -luuid -lgmodule-2.0 -lgio-2.0 -lpcre"
+
+build() {
+    mesonw \
+        -Dgtk_doc=false \
+        -Dinstall-tests=false \
+        -Dcairo=enabled \
+        -Dfreetype=enabled \
+        -Dfontconfig=enabled
+}
