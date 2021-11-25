@@ -12,10 +12,12 @@ prepare() {
     sed_in_place 's|-g||' Makefile &&
     sed_in_place 's|LIBS+=-ldl -lpthread|LIBS+=-ldl|' Makefile &&
     sed_in_place 's|lib/quickjs|lib|g'         Makefile &&
-    sed_in_place 's|include/quickjs|include|g' Makefile
+    sed_in_place 's|include/quickjs|include|g' Makefile &&
+    sed_in_place 's|$(HOST_CC) $(LDFLAGS)|$(HOST_CC) -B/usr/bin $(LDFLAGS)|' Makefile
+    # https://newbedev.com/how-to-specify-alternate-linker-command-when-linking-with-cc
 }
 
 build() {
     makew clean &&
-    makew install HOST_CC=$CC_FOR_BUILD CC=$CC AR=$AR STRIP=$STRIP CROSS_PREFIX=xxx prefix="$ABI_INSTALL_DIR"
+    makew install HOST_CC=$CC_FOR_BUILD CC=$CC AR=$AR STRIP=$STRIP LDFLAGS="'-Wl,-v'" CROSS_PREFIX=xxx prefix="$ABI_INSTALL_DIR"
 }
