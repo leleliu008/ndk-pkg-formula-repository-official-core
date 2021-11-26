@@ -6,6 +6,6 @@ package set binsrcd 'yes'
 build() {
     cargow build &&
     install_incs include/quiche.h &&
-    install_libs target/$CARGO_TARGET/release/libquiche.a &&
-    install_libs target/$CARGO_TARGET/release/libquiche.so
+    install_libs target/$RUST_TARGET/release/libquiche.a &&
+    install_libs target/$RUST_TARGET/release/libquiche.so
 }

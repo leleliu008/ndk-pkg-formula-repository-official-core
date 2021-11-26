@@ -14,8 +14,6 @@ build() {
         export PATH="/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/:$PATH"
     fi
 
-    export CARGO_BUILD_JOBS=1
-
     configure \
         --enable-tools=yes \
         --enable-pixbuf-loader=yes \
