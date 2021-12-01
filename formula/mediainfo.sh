@@ -1,16 +1,10 @@
 package set summary "Unified display of technical and tag data for audio/video"
 package set webpage "https://mediaarea.net"
-package set version "20.09"
-package set src.url "https://mediaarea.net/download/source/mediainfo/20.09/mediainfo_${PACKAGE_VERSION}.tar.bz2"
-package set src.sum "3534cbb6145c0d39d1de3ea104c11b59b320ce9cd39123b6797a9f3af11c61ff"
+package set src.url "https://mediaarea.net/download/source/mediainfo/21.09/mediainfo_21.09.tar.bz2"
+package set src.sum "5362250cf842b958c72f225e70bbe16d4cbe7063e20aee8f685947a208755207"
 package set license "BSD-2-Clause"
-package set bsystem "autogen"
-package set dep.cmd "pkg-config glibtoolize:libtoolize libtool"
+package set dep.cmd "pkg-config glibtoolize:libtoolize"
 package set dep.pkg "libmediainfo"
 package set sourced "Project/GNU/CLI"
+package set bsystem "autogen"
 package set binsrcd 'yes'
-
-build() {
-    export LDFLAGS="$LDFLAGS $SYSTEM_LIBRARY_DIR/libstdc++.so"
-    configure
-}

@@ -1,7 +1,8 @@
 package set summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
 package set src.git "https://github.com/BLAKE3-team/BLAKE3.git"
-package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
-package set src.sum "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
+package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/1.2.0.tar.gz"
+package set src.sum "2873f42f89c0553b7105bda4b3edb93584ba3a163b31bbfae6b6e1bc203ca8c3"
+package set license "CC0-1.0"
 package set sourced "c"
 
 build() {

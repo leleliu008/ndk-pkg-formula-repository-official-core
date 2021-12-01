@@ -1,0 +1,7 @@
+package set summary "BLAKE3 cryptographic hash function"
+package set src.git "https://github.com/BLAKE3-team/BLAKE3.git"
+package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/1.2.0.tar.gz"
+package set src.sum "2873f42f89c0553b7105bda4b3edb93584ba3a163b31bbfae6b6e1bc203ca8c3"
+package set license "CC0-1.0"
+package set sourced "b3sum"
+package set bsystem "cargo"
