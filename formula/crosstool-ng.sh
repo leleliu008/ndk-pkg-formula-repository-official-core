@@ -4,7 +4,7 @@ package set src.url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-
 package set src.sum "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
 package set license "LGPL-2.1"
 package set dep.pkg "ncurses libiconv gettext"
-package set dep.cmd "libtoolize libtool help2man objcopy"
+package set dep.cmd "glibtoolize:libtoolize libtool help2man objcopy"
 package set bsystem "configure"
 
 if [ "$NATIVE_OS_KIND" = 'darwin' ] ; then

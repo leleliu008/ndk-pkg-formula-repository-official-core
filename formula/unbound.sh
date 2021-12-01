@@ -5,7 +5,7 @@ package set src.url "https://nlnetlabs.nl/downloads/unbound/unbound-1.13.2.tar.g
 package set src.sum "0a13b547f3b92a026b5ebd0423f54c991e5718037fd9f72445817f6a040e1a83"
 package set license "BSD-3-Clause"
 package set bsystem "configure"
-package set dep.cmd "libtoolize libtool"
+package set dep.cmd "glibtoolize:libtoolize libtool"
 package set dep.pkg "openssl libmnl libevent expat nghttp2"
 
 build() {

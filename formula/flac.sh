@@ -4,7 +4,7 @@ package set src.git "https://github.com/xiph/flac.git"
 package set src.url "https://github.com/xiph/flac/archive/1.3.3.tar.gz"
 package set src.sum "668cdeab898a7dd43cf84739f7e1f3ed6b35ece2ef9968a5c7079fe9adfe1689"
 package set bsystem "autogen"
-package set dep.cmd "libtoolize libtool"
+package set dep.cmd "glibtoolize:libtoolize libtool"
 package set dep.pkg "libogg libiconv"
 
 # https://github.com/android/ndk/issues/702

@@ -5,7 +5,7 @@ package set src.url "https://mediaarea.net/download/source/mediainfo/20.09/media
 package set src.sum "3534cbb6145c0d39d1de3ea104c11b59b320ce9cd39123b6797a9f3af11c61ff"
 package set license "BSD-2-Clause"
 package set bsystem "autogen"
-package set dep.cmd "pkg-config libtoolize libtool"
+package set dep.cmd "pkg-config glibtoolize:libtoolize libtool"
 package set dep.pkg "libmediainfo"
 package set sourced "Project/GNU/CLI"
 package set binsrcd 'yes'
