@@ -4,7 +4,7 @@ package set src.url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixb
 package set src.sum "c4a6b75b7ed8f58ca48da830b9fa00ed96d668d3ab4b1f723dcf902f78bde77f"
 package set license "LGPL-2.1-or-later"
 package set dep.pkg "glib libjpeg-turbo libpng libtiff"
-package set dep.cmd "pkg-config"
+package set dep.cmd "pkg-config glib-compile-resources glib-mkenums"
 package set bsystem "meson"
 
 build() {
