@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [tcl-core,tcpdump,texinfo,tig,tinyxml2,tmux,tree,ttyd,ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,utfcpp,vala,vsftpd,wabt,wasm3]
+        pkg: [shell2http,snappy,soundtouch,spdlog,starship,supervisord,swig,tcl-core,tcpdump,tdu,tengo,texinfo,tig,tinyxml2,tmux,tree,ttyd,ttygif,ttyrec,unbound]
 
     runs-on: ${{ matrix.os }}
 

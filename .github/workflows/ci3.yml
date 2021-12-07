@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [fff,ffmpeg,file,findutils,fish,flex,fzf,gawk,gd,gdbm,gdk-pixbuf,gh,glog,gmake,gnu-coreutils,gnu-which,gnupg,gnutls,gogs,gomobile]
+        pkg: [fdk-aac,fff,ffmpeg,file,findutils,fish,flex,fzf,gawk,gd,gdbm,gdk-pixbuf,gdu,gh,glog,gmake,gnu-coreutils,gnu-which,gnupg,gnutls]
 
     runs-on: ${{ matrix.os }}
 

@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [jbig2dec,jfrog-cli,jpeg,jq,json-glib,json,jsoncpp,krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca]
+        pkg: [hyperfine,id3lib,ideviceinstaller,jbig2dec,jfrog-cli,jpeg,jq,json-glib,json,jsoncpp,krb5,lazygit,lcov,less,libaio,libao,libarchive,libass,libatomic_ops,libavif]
 
     runs-on: ${{ matrix.os }}
 
