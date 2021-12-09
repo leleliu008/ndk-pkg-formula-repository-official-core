@@ -10,6 +10,10 @@ build0() {
     configure
 }
 
+prepare() {
+    sed_in_place 's|-lpthread|-lc|g' configure
+}
+
 build() {
     configure \
         --build=$($SOURCE_DIR/config.guess) \

@@ -4,7 +4,7 @@ package set version "1.73.0"
 package set src.url "https://boostorg.jfrog.io/artifactory/main/release/${PACKAGE_VERSION}/source/boost_$(echo ${PACKAGE_VERSION} | tr . _).tar.bz2"
 package set src.sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 package set license "BSL-1.0"
-package set dep.pkg "xz bzip2 zstd icu4c libiconv python"
+package set dep.pkg "xz bzip2 zstd icu4c libiconv python libpthread-fake"
 package set binsrcd 'yes'
 
 # https://boostorg.github.io/build/manual/master/index.html
@@ -14,7 +14,11 @@ package set binsrcd 'yes'
 build0() {
     sed_in_place '1a set -x' bootstrap.sh &&
     sed_in_place '1a set -x' tools/build/src/engine/build.sh &&
-    run ./bootstrap.sh --with-python=python3 --with-python-root="$MY_HOME_DIR/native/python"
+    run ./bootstrap.sh
+}
+
+prepare() {
+    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH"
 }
 
 build() {
@@ -63,5 +67,6 @@ build() {
 gen_project_config() {
     cat > project-config.jam <<EOF
 using clang : $TARGET_INDEX : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+using python : 3.9 : $MY_HOME_DIR/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.9 : $python_INSTALL_DIR/lib ;
 EOF
 }
