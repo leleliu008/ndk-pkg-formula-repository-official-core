@@ -1,0 +1,7 @@
+package set summary "Geometry Engine"
+package set webpage "https://trac.osgeo.org/geos"
+package set src.git "https://github.com/libgeos/geos.git"
+package set src.url "https://download.osgeo.org/geos/geos-3.10.1.tar.bz2"
+package set src.sum "a8148eec9636814c8ab0f8f5266ce6f9b914ed65b0d083fc43bb0bbb01f83648"
+package set license "LGPL-2.1-or-later"
+package set bsystem "cmake"

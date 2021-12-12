@@ -1,0 +1,8 @@
+package set summary "Library to store and retrieve huge raster coverages"
+package set webpage "https://www.gaia-gis.it/fossil/librasterlite/index"
+package set src.url "https://www.gaia-gis.it/gaia-sins/librasterlite-sources/librasterlite-1.1g.tar.gz"
+package set src.sum "0a8dceb75f8dec2b7bd678266e0ffd5210d7c33e3d01b247e9e92fa730eebcb3"
+package set license "MPL-1.1"
+package set dep.pkg "libgeotiff libspatialite libpng"
+package set dep.cmd "pkg-config"
+package set bsystem "configure"

@@ -11,7 +11,7 @@ build() {
     cmakew \
         -DBUILD_DOC=OFF \
         -DBUILD_CODEC=ON \
-        -DBUILD_JPIP=ON \
+        -DBUILD_JPIP=OFF \
         -DBUILD_JPIP_SERVER=OFF \
         -DBUILD_VIEWER=OFF \
         -DBUILD_JAVA=OFF \

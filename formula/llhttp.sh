@@ -1,0 +1,6 @@
+package set summary "http_parser replacement"
+package set webpage "https://llhttp.org/"
+package set src.git "https://github.com/nodejs/llhttp.git"
+package set src.url "https://github.com/nodejs/llhttp/archive/refs/tags/release/v6.0.6.tar.gz"
+package set src.sum "14023d0efce07a996a197d3b6b15020b26526605277e521f5aa10dacc3af67ad"
+package set bsystem "cmake"
