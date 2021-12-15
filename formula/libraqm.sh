@@ -1,12 +1,8 @@
 package set summary "Library for complex text layout"
 package set src.git "https://github.com/HOST-Oman/libraqm.git"
-package set src.url "https://github.com/HOST-Oman/libraqm/archive/v0.7.2.tar.gz"
-package set src.sum "eeccbb0bf23ef77d8ff2be24a9c6c1547cc8e443d3d6b57814d73d44758d95c2"
+package set src.url "https://github.com/HOST-Oman/libraqm/archive/v0.8.0.tar.gz"
+package set src.sum "6429e35f69f5e7d514877624fb73ae6d07a7e9ac746ae6a1cf2bf1277bb5b68d"
 package set license "MIT"
-package set dep.cmd "pkg-config glibtoolize:libtoolize gtkdocize"
 package set dep.pkg "fribidi freetype2-with-harfbuzz"
-package set bsystem "autogen"
-
-build() {
-    configure --disable-Werror
-}
+package set dep.cmd "pkg-config"
+package set bsystem "meson"

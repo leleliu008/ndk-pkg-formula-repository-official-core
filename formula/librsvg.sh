@@ -1,8 +1,8 @@
 package set summary "Library to render SVG files using Cairo"
 package set webpage "https://wiki.gnome.org/Projects/LibRsvg"
 package set src.git "https://gitlab.gnome.org/GNOME/librsvg.git"
-package set src.url "https://download.gnome.org/sources/librsvg/2.50/librsvg-2.50.7.tar.xz"
-package set src.sum "fffb61b08cd5282aaae147a02b305166a7426fad22a8b9427708f0f2fc426ebc"
+package set src.url "https://download-fallback.gnome.org/sources/librsvg/2.52/librsvg-2.52.4.tar.xz"
+package set src.sum "660ec8836a3a91587bc9384920132d4c38d1d1718c67fe160c5213fe4dec2928"
 package set license "LGPL-2.1-or-later"
 package set dep.pkg "gdk-pixbuf pango"
 package set dep.cmd "pkg-config gdk-pixbuf-query-loaders"
@@ -14,8 +14,17 @@ build() {
         export PATH="/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/:$PATH"
     fi
 
+    export LDFLAGS="$LDFLAGS -Wl,-z,muldefs"
+
+    if [ "$TARGET_INDEX" -eq 1 ] ; then
+        ln -s "$libjpeg_turbo_LIBRARY_DIR/libjpeg.a" "$WORK_DIR/$TIMESTAMP_UNIX/libjpeg.a" || return 1
+        ln -s "$gettext_LIBRARY_DIR/libintl.a"       "$WORK_DIR/$TIMESTAMP_UNIX/libintl.a" || return 1
+        ln -s "$bzip2_LIBRARY_DIR/libbz2.a"          "$WORK_DIR/$TIMESTAMP_UNIX/libbz2.a"  || return 1
+    fi
+
     configure \
         --enable-tools=yes \
         --enable-pixbuf-loader=yes \
-        --enable-introspection=no
+        --enable-introspection=no \
+        --disable-static
 }

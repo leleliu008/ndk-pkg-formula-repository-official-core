@@ -9,6 +9,5 @@ build() {
     run go build -v -trimpath -ldflags="'-X main.VERSION=$PACKAGE_VERSION -s -w'" -o kcptun_client github.com/xtaci/kcptun/client &&
     run go build -v -trimpath -ldflags="'-X main.VERSION=$PACKAGE_VERSION -s -w'" -o kcptun_server github.com/xtaci/kcptun/server &&
     run install_bins kcptun_client kcptun_server &&
-    run install -d                        "$ABI_INSTALL_DIR/etc" &&
-    run install -m644 examples/local.json "$ABI_INSTALL_DIR/etc/kcptun_client.json"
+    run install_etcs examples/local.json
 }

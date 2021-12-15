@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [choose,cjson,cmake,cppcheck,cppunit,cpu_features,cpuinfo,crosstool-ng,ctop,darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust,epsilon,esbuild]
+        pkg: [cheat,check,choose,cjson,cmake,cppcheck,cppunit,cpu_features,cpuinfo,crosstool-ng,ctop,darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust]
 
     runs-on: ${{ matrix.os }}
 
