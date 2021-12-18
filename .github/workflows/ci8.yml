@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [libsmi,libsodium,libthai,libtool,libtorrent-rasterbar,libunwind,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lodepng,lolcat,lrzip,lsd]
+        pkg: [libtorrent-rasterbar,libunwind,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lodepng,lolcat,lrzip,lsd,lsof,lua,luau,lynx]
 
     runs-on: ${{ matrix.os }}
 
@@ -35,7 +35,4 @@ jobs:
       - run: install -d ~/.ndk-pkg/repos.d/offical
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-      - run: |
-            brew uninstall go@1.15 || true
-            export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-            ndk-pkg install ${{ matrix.pkg }} --tree
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree

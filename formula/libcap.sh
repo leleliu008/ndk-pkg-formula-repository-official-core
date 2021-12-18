@@ -1,7 +1,7 @@
 package set summary "Linux Capability Library"
 package set webpage "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
-package set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.60.tar.gz"
-package set src.sum "5210a3c3caee54bf59e3724cac4a5c805579aefb3d91bf851fde8e921eabba8b"
+package set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.62.tar.gz"
+package set src.sum "dc88d04b0dcceecd90a02ed4e579ad167b450105d2847fe0022ac9b551cec183"
 package set dep.cmd "gperf"
 package set bsystem "make"
 

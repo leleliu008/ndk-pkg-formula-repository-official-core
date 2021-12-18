@@ -1,0 +1,8 @@
+package set summary "New way to see and navigate directory trees"
+package set webpage "https://dystroy.org/broot/"
+package set src.git "https://github.com/Canop/broot.git"
+package set src.url "https://github.com/Canop/broot/archive/v1.7.4.tar.gz"
+package set src.sum "b9c435b5cf0b05c0eb17b3934df961f3c73461153fa7fc3d50517735b048d49f"
+package set license "MIT"
+package set dep.pkg "zlib"
+package set bsystem "cargo"

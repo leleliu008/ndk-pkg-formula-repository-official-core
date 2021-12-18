@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [gh,glog,gmake,gnu-coreutils,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,gpatch,gperf,gping,graphite2,grep,grpc,gsed,gtar,gzip]
+        pkg: [glog,gmake,gnu-coreutils,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,gpatch,gperf,gping,graphite2,grep,grpc,gsed,gtar,gts,gzip]
 
     runs-on: ${{ matrix.os }}
 
@@ -35,7 +35,4 @@ jobs:
       - run: install -d ~/.ndk-pkg/repos.d/offical
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-      - run: |
-            brew uninstall go@1.15 || true
-            export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-            ndk-pkg install ${{ matrix.pkg }} --tree
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree

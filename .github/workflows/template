@@ -35,7 +35,4 @@ jobs:
       - run: install -d ~/.ndk-pkg/repos.d/offical
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-      - run: |
-            brew uninstall go@1.15 || true
-            export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-            ndk-pkg install ${{ matrix.pkg }} --tree
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree

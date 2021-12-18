@@ -9,6 +9,10 @@ package set dep.cmd "flex bison"
 package set bsystem "make"
 package set binsrcd "yes"
 
+prepare() {
+    sed_in_place 's|STRIP=true||' src/Makefile
+}
+
 build() {
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
     makew -C "$SOURCE_DIR" clean &&
