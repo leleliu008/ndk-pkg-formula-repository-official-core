@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [help2man,hexdump,hiredis,htop,hugo,hunspell,hwloc,hyperfine,id3lib,ideviceinstaller,imagemagick,jfrog-cli,jpeg,jq,json-glib,json,jsoncpp,kcp,kcptun,krb5]
+        pkg: [json,jsoncpp,kcp,kcptun,krb5,lazygit,lcov,less,libaec,libaio,libao,libarchive,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexecinfo]
 
     runs-on: ${{ matrix.os }}
 

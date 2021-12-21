@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [cfitsio,cheat,check,choose,cjson,cmake,cppcheck,cppunit,cpuinfo,crosstool-ng,ctop,darkhttpd,dash,delta,diffutils,dog,dos2unix,double-conversion,duf,dust]
+        pkg: [choose,cjson,cmake,cppcheck,cpprestsdk,cppunit,cpuinfo,crosstool-ng,ctop,darkhttpd,dash,dav1d,delta,diffutils,dog,dos2unix,double-conversion,duf,dust,epsilon,esbuild,exa,faac,faad2,fd]
 
     runs-on: ${{ matrix.os }}
 

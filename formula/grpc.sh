@@ -1,13 +1,13 @@
 package set summary "Next generation open source RPC library and framework"
 package set webpage "https://grpc.io"
 package set src.git "https://github.com/grpc/grpc.git"
-package set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.42.0.tar.gz"
-package set src.sum "b2f2620c762427bfeeef96a68c1924319f384e877bc0e084487601e4cc6e434c"
+package set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.43.0.tar.gz"
+package set src.sum "9647220c699cea4dafa92ec0917c25c7812be51a18143af047e20f3fb05adddc"
 package set license "Apache-2.0"
 package set dep.pkg "abseil c-ares openssl protobuf re2 zlib"
 package set dep.cmd "pkg-config grpc_cpp_plugin"
 package set bsystem "cmake"
-package set ldflags "-llog -lz"
+#package set ldflags "-llog -lz"
 
 prepare() {
     sed_in_place 's|GPR_MUSL_LIBC_COMPAT|__ANDROID__|' src/core/lib/gpr/wrap_memcpy.cc

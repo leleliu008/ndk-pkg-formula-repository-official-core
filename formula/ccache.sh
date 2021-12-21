@@ -1,10 +1,14 @@
 package set summary "Object-file caching compiler wrapper"
 package set webpage "https://ccache.dev"
-package set src.url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
-package set src.sum "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
+package set src.url "https://github.com/ccache/ccache/releases/download/v4.5.1/ccache-4.5.1.tar.xz"
+package set src.sum "51186ebe0326365f4e6131e1caa8911de7da4aa6718efc00680322d63a759517"
 package set license "GPL-3.0-or-later"
+package set dep.pkg "hiredis zstd blake3"
 package set bsystem "cmake"
-package set dep.pkg "zstd blake3"
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+package set sdk.api 24
 
 prepare() {
     sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&

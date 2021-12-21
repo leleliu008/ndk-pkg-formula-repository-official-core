@@ -6,6 +6,7 @@ package set license "GPL-3.0-or-later"
 package set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
 package set dep.cmd "flex"
 package set bsystem "make"
+package set cdefine "_GNU_SOURCE"
 
 prepare() {
     sed_in_place 's|$(CFLAGS)||' buildtools/Makefile &&

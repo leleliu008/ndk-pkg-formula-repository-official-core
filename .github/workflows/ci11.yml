@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [putty,pybind11,qrencode,quiche,quickjs,rapidjson,rclone,re2c,rhash,ripgrep,rlwrap,rsync,rtmpdump,rtorrent,sassc,sd,shell2http,sl,snappy,soundtouch]
+        pkg: [ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vsftpd,wabt,wasm3,webhook,wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,yyjson,zlib-ng,zsh,zsync]
 
     runs-on: ${{ matrix.os }}
 
