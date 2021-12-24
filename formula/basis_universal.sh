@@ -7,5 +7,6 @@ package set license "Apache-2.0"
 package set bsystem "cmake"
 
 prepare() {
+    sed_in_place '/strip/c message("--")' CMakeLists.txt &&
     sed_in_place '/#include <vector>/a #define ftello(f) ftell(f)' encoder/basisu_enc.cpp
 }

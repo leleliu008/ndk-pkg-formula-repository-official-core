@@ -5,8 +5,6 @@ package set src.sum "68d64ade34ac571cf2d092f9a6f124e2c7d0441a91e3ba00ca1c8edcdd0
 package set license "MIT"
 package set bsystem "cargo"
 
-package set res
-
 prepare() {
     for item in font-kit/0.10.1 libfontconfig/5.1.0
     do

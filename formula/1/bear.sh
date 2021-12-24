@@ -1,22 +1,24 @@
 package set summary "Generate compilation database for clang tooling"
 package set src.git "https://github.com/rizsotto/Bear.git"
-#package set src.url "dir:///data/data/com.termux/files/home/Bear"
-package set src.url "https://github.com/rizsotto/Bear/archive/3.0.16.tar.gz"
-package set src.sum "877ee5e89e8445f74df95f2f3896597f04b86a4e5d0dbbca07ac71027dcb362d"
+package set src.url "https://github.com/rizsotto/Bear/archive/3.0.17.tar.gz"
+package set src.url "dir:///home/fpliu/Bear-3.0.17"
+package set src.sum "107f94e045d930e88f5f5b4b484c8df1bf4834722943525765c271e0b5b34b78"
 package set license "GPL-3.0-or-later"
-package set dep.pkg "fmt grpc nlohmann-json spdlog libconfstr"
+package set dep.pkg "fmt grpc nlohmann-json spdlog"
 package set dep.cmd "pkg-config"
 package set bsystem "cmake"
+
+# spawn.h: int posix_spawnp(pid_t* __pid, const char* __file, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
 package set sdk.api 28
-package set ldflags "-lconfstr"
 
 prepare() {
-    sed_in_place '/-DCMAKE_PREFIX_PATH/c \            -DCMAKE_FIND_ROOT_PATH:PATH=${CMAKE_FIND_ROOT_PATH}' CMakeLists.txt
-    sed_in_place '/HAVE_CONFSTR/c set(HAVE_CONFSTR 1)' source/CMakeLists.txt
+    #sed_in_place '/-DCMAKE_PREFIX_PATH/c \            -DCMAKE_FIND_ROOT_PATH:PATH=${CMAKE_FIND_ROOT_PATH}' CMakeLists.txt
+    #sed_in_place '/HAVE_CONFSTR/c set(HAVE_CONFSTR 1)' source/CMakeLists.txt
     cat >> "$WORK_DIR/$TIMESTAMP_UNIX/include.h" <<EOF
-#define _CS_PATH 10
 #include<stdlib.h>
-size_t confstr(int name, char *buf, size_t len);
+#include<string.h>
+#define _CS_PATH 10
+#define confstr(name, buf, len) strcpy(buf, "/bin:/usr/bin")
 EOF
 }
 

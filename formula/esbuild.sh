@@ -1,8 +1,8 @@
 package set summary "An extremely fast JavaScript bundler and minifier"
 package set webpage "https://esbuild.github.io"
 package set src.git "https://github.com/evanw/esbuild.git"
-package set src.url "https://github.com/evanw/esbuild/archive/v0.14.5.tar.gz"
-package set src.sum "30f3a2fde14ec6de4c6d3852be8106d3cac95a953cb3ccc9a0cd4a5d719e3a55"
+package set src.url "https://github.com/evanw/esbuild/archive/v0.14.8.tar.gz"
+package set src.sum "7ee97838858259f5d9e053319c8eb69a8119e95d40955a06cb586da2ebabb1c6"
 package set license "MIT"
 package set bsystem "go"
 

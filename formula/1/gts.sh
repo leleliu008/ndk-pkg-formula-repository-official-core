@@ -6,7 +6,3 @@ package set license "LGPL-2.0-or-later"
 package set dep.pkg "glib netpbm"
 package set dep.cmd "pkg-config"
 package set bsystem "configure"
-
-build0() {
-    configure
-}
