@@ -9,7 +9,7 @@ package set bsystem "make"
 
 prepare() {
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
-    sed_in_place 's|$(CFLAGS)|-D_XOPEN_SOURCE=500|' buildtools/Makefile &&
+    sed_in_place 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile &&
     sed_in_place '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in &&
     sed_in_place '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in &&
     sed_in_place '/^INSTALL =/c INSTALL = install' config.mk.in &&

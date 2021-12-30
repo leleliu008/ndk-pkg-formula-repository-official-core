@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lodepng,lolcat,lrzip,lsd,lsof,lua,luajit,luau,lynx,lzip,lzop,magic_enum,md4c,mediainfo,mesalink]
+        pkg: [librsvg,libsamplerate,libsigsegv,libsmi,libsodium,libspectre,libthai,libtorrent-rasterbar,libunibreak,libunwind,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lodepng,log4cplus,lolcat,lrzip,lsd]
 
     runs-on: ${{ matrix.os }}
 

@@ -10,7 +10,10 @@ package set sourced "source"
 
 build0() {
     # https://www.talkwithdevices.com/archives/260
-    run "$SOURCE_DIR/runConfigureICU" Linux && make
+    case $NATIVE_OS_KIND in
+        darwin) run "$SOURCE_DIR/runConfigureICU" MacOSX && make ;;
+        *)      run "$SOURCE_DIR/runConfigureICU" Linux  && make ;;
+    esac
 }
 
 build() {
