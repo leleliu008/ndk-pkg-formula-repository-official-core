@@ -1,5 +1,5 @@
 package set summary "C++ functions matching the interface and behavior of python string methods with std::string"
-package set src.git "https://github.com/imageworks/pystring.git"
+package set git.url "https://github.com/imageworks/pystring.git"
 package set binsrcd "yes"
 
 prepare() {

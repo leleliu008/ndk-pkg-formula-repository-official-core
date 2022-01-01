@@ -1,6 +1,6 @@
 package set summary "Just-In-Time Compiler (JIT) for the Lua programming language"
 package set webpage "https://luajit.org/"
-package set src.git "https://github.com/LuaJIT/LuaJIT.git"
+package set git.url "https://github.com/LuaJIT/LuaJIT.git"
 package set src.url "https://github.com/leleliu008/test/releases/download/v2.1/LuaJIT-2.1.tar.xz"
 package set src.sum "0ed7e56ad5dbb24b87669ce9fc8a26995a919afe92efc05dad041e3f5cb1f59f"
 package set license "MIT"

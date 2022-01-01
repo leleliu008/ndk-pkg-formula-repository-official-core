@@ -1,6 +1,6 @@
 package set summary "Port of Sun's Transport-Independent RPC library to Linux"
 package set webpage "https://sourceforge.net/projects/libtirpc"
-package set src.git "https://src.fedoraproject.org/rpms/libtirpc.git"
+package set git.url "https://src.fedoraproject.org/rpms/libtirpc.git"
 package set src.url "https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.2/libtirpc-1.3.2.tar.bz2"
 package set src.sum "e24eb88b8ce7db3b7ca6eb80115dd1284abc5ec32a8deccfed2224fc2532b9fd"
 package set bsystem "configure"

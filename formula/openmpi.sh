@@ -1,6 +1,6 @@
 package set summary "High performance message passing library"
 package set webpage "https://www.open-mpi.org"
-package set src.git "https://github.com/open-mpi/ompi.git"
+package set git.url "https://github.com/open-mpi/ompi.git"
 package set src.url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.1.tar.bz2"
 package set src.sum "e24f7a778bd11a71ad0c14587a7f5b00e68a71aa5623e2157bafee3d44c07cda"
 package set license "BSD-3-Clause"

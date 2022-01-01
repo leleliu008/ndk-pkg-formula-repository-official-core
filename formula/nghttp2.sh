@@ -1,6 +1,6 @@
 package set summary "HTTP/2 C Library"
 package set webpage "https://nghttp2.org"
-package set src.git "https://github.com/nghttp2/nghttp2.git"
+package set git.url "https://github.com/nghttp2/nghttp2.git"
 package set src.url "https://github.com/nghttp2/nghttp2/releases/download/v1.46.0/nghttp2-1.46.0.tar.gz"
 package set src.sum "4b6d11c85f2638531d1327fe1ed28c1e386144e8841176c04153ed32a4878208"
 package set license "MIT"

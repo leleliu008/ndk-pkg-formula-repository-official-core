@@ -1,5 +1,5 @@
 package set summary "HTTP/3 library written in C"
-package set src.git "https://github.com/ngtcp2/nghttp3.git"
+package set git.url "https://github.com/ngtcp2/nghttp3.git"
 package set bsystem "cmake"
 
 build() {

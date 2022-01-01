@@ -1,6 +1,6 @@
 package set summary "an efficient feature complete C++ bittorrent implementation focusing on efficiency and scalability."
 package set webpage "http://libtorrent.org"
-package set src.git "https://github.com/arvidn/libtorrent.git"
+package set git.url "https://github.com/arvidn/libtorrent.git"
 package set src.url "https://github.com/arvidn/libtorrent/releases/download/v2.0.5/libtorrent-rasterbar-2.0.5.tar.gz"
 package set src.sum "e965c2e53170c61c0db3a2d898a61769cb7acd541bbf157cbbef97a185930ea5"
 package set dep.pkg "openssl boost"

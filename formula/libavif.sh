@@ -1,5 +1,5 @@
 package set summary "Library for encoding and decoding .avif files"
-package set src.git "https://github.com/AOMediaCodec/libavif.git"
+package set git.url "https://github.com/AOMediaCodec/libavif.git"
 package set src.url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.9.3.tar.gz"
 package set src.sum "bcd9a1f57f982a9615eb7e2faf87236dc88eb1d0c886f3471c7440ead605060d"
 package set license "BSD-2-Clause"

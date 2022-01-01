@@ -1,6 +1,6 @@
 package set summary "PNG image optimizing utility"
 package set webpage "https://pngquant.org"
-package set src.git "https://github.com/kornelski/pngquant.git"
+package set git.url "https://github.com/kornelski/pngquant.git"
 package set src.url "https://pngquant.org/pngquant-2.17.0-src.tar.gz"
 package set src.sum "a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802fcda66"
 package set dep.pkg "libpng lcms2"

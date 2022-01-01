@@ -1,6 +1,6 @@
 package set summary "Next-gen compiler infrastructure"
 package set webpage "https://llvm.org"
-package set src.git "https://github.com/llvm/llvm-project.git"
+package set git.url "https://github.com/llvm/llvm-project.git"
 package set src.url "https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.0/llvm-project-12.0.0.src.tar.xz"
 package set src.sum "9ed1688943a4402d7c904cc4515798cdb20080066efa010fe7e1f2551b423628"
 package set license "Apache-2.0"

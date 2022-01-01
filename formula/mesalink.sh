@@ -1,6 +1,6 @@
 package set summary "memory-safe and OpenSSL-compatible TLS library"
 package set webpage "https://mesalink.io"
-package set src.git "https://github.com/mesalock-linux/mesalink.git"
+package set git.url "https://github.com/mesalock-linux/mesalink.git"
 package set bsystem "cargo"
 package set binsrcd 'yes'
 

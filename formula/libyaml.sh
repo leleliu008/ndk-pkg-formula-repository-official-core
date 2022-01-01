@@ -1,5 +1,5 @@
 package set summary "YAML Parser"
-package set src.git "https://github.com/yaml/libyaml.git"
+package set git.url "https://github.com/yaml/libyaml.git"
 package set src.url "https://github.com/yaml/libyaml/releases/download/0.2.5/yaml-0.2.5.tar.gz"
 package set src.sum "c642ae9b75fee120b2d96c712538bd2cf283228d2337df2cf2988e3c02678ef4"
 package set license "MIT"

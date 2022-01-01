@@ -1,5 +1,5 @@
 package set summary "line breaking and word breaking algorithms"
-package set src.git "https://github.com/adah1972/libunibreak.git"
+package set git.url "https://github.com/adah1972/libunibreak.git"
 package set src.url "https://github.com/adah1972/libunibreak/releases/download/libunibreak_5_0/libunibreak-5.0.tar.gz"
 package set src.sum "58f2fe4f9d9fc8277eb324075ba603479fa847a99a4b134ccb305ca42adf7158"
 package set license "Zlib"

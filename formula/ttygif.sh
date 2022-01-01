@@ -1,5 +1,5 @@
 package set summary "Converts a ttyrec file into gif files"
-package set src.git "https://github.com/icholy/ttygif.git"
+package set git.url "https://github.com/icholy/ttygif.git"
 package set src.url "https://github.com/icholy/ttygif/archive/1.5.0.tar.gz"
 package set src.sum "b5cc9108b1add88c6175e3e001ad4615a628f93f2fffcb7da9e85a9ec7f23ef6"
 package set license "MIT"

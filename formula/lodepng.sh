@@ -1,5 +1,5 @@
 package set summary "PNG encoder and decoder in C and C++"
-package set src.git "https://github.com/lvandeve/lodepng.git"
+package set git.url "https://github.com/lvandeve/lodepng.git"
 package set license "Zlib"
 package set bsystem "make"
 

@@ -1,10 +1,11 @@
 package set summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
 package set webpage "https://nginx.org"
-package set src.git "https://github.com/nginx/nginx.git"
-package set src.url "https://nginx.org/download/nginx-1.21.4.tar.gz"
-package set src.sum "d1f72f474e71bcaaf465dcc7e6f7b6a4705e4b1ed95c581af31df697551f3bfe"
+package set git.url "https://github.com/nginx/nginx.git"
+package set src.url "https://nginx.org/download/nginx-1.21.5.tar.gz"
+package set src.sum "b20f3bf533a518a6f0f3a7967dfeed872d268d31e4cc121a0001329602ddcfbb"
 package set dep.pkg "openssl pcre libcrypt libglob"
 package set bsystem "make"
+package set binsrcd 'yes'
 
 trace_configure() {
     for item in $(ls $1)
@@ -30,8 +31,6 @@ prepare() {
     sed_in_place 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c &&
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 }
-
-package set binsrcd 'yes'
 
 build() {
     export NGX_SYSTEM=Linux

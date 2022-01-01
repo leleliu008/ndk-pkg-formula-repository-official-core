@@ -1,5 +1,5 @@
 package set summary "Zip file manipulation library with minizip 1.x compatibility layer"
-package set src.git "https://github.com/zlib-ng/minizip-ng.git"
+package set git.url "https://github.com/zlib-ng/minizip-ng.git"
 package set src.url "https://github.com/zlib-ng/minizip-ng/archive/3.0.4.tar.gz"
 package set src.sum "2ab219f651901a337a7d3c268128711b80330a99ea36bdc528c76b591a624c3c"
 package set license "Zlib"

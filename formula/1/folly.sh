@@ -1,5 +1,5 @@
 package set summary "Collection of reusable C++ library artifacts developed at Facebook"
-package set src.git "https://github.com/facebook/folly.git"
+package set git.url "https://github.com/facebook/folly.git"
 package set src.url "https://github.com/facebook/folly/archive/v2021.12.20.00.tar.gz"
 package set src.sum "1e780708cd23cb01b62b4db09ef02ba36f8949a8a8115d3398fd395e748a9343"
 package set license "Apache-2.0"

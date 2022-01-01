@@ -1,6 +1,6 @@
 package set summary "a simple, small, efficient, C++ XML parser library"
 package set webpage "http://grinninglizard.com/tinyxml2"
-package set src.git "https://github.com/leethomason/tinyxml2.git"
+package set git.url "https://github.com/leethomason/tinyxml2.git"
 package set src.url "https://github.com/leethomason/tinyxml2/archive/9.0.0.tar.gz"
 package set src.sum "cc2f1417c308b1f6acc54f88eb70771a0bf65f76282ce5c40e54cfe52952702c"
 package set license "Zlib"

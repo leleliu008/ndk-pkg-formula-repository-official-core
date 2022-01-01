@@ -1,5 +1,5 @@
 package set summary "Command-line benchmarking tool"
-package set src.git "https://github.com/sharkdp/hyperfine.git"
+package set git.url "https://github.com/sharkdp/hyperfine.git"
 package set src.url "https://github.com/sharkdp/hyperfine/archive/v1.12.0.tar.gz"
 package set src.sum "2120870a97e68fa3426eac5646a071c9646e96d2309220e3c258bf588e496454"
 package set license "Apache-2.0"

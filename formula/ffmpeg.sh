@@ -1,6 +1,6 @@
 package set summary "Play, record, convert, and stream audio and video"
 package set webpage "https://ffmpeg.org"
-package set src.git "https://github.com/FFmpeg/FFmpeg.git"
+package set git.url "https://github.com/FFmpeg/FFmpeg.git"
 package set src.url "https://ffmpeg.org/releases/ffmpeg-4.4.1.tar.xz"
 package set src.sum "eadbad9e9ab30b25f5520fbfde99fae4a92a1ae3c0257a8d68569a4651e30e02"
 package set dep.pkg "sdl2 opus libwebp libvorbis theora speex x264 x265 lame"

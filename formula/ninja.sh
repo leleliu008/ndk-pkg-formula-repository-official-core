@@ -1,6 +1,6 @@
 package set summary "Small build system for use with gyp or CMake"
 package set webpage "https://ninja-build.org"
-package set src.git "https://github.com/ninja-build/ninja.git"
+package set git.url "https://github.com/ninja-build/ninja.git"
 package set src.url "https://github.com/ninja-build/ninja/archive/v1.10.2.tar.gz"
 package set src.sum "ce35865411f0490368a8fc383f29071de6690cbadc27704734978221f25e2bed"
 package set license "Apache-2.0"

@@ -1,5 +1,5 @@
 package set summary "Fish-like, POSIX-compatible shell"
-package set src.git "https://github.com/nuta/nsh.git"
+package set git.url "https://github.com/nuta/nsh.git"
 package set src.url "https://github.com/nuta/nsh/archive/refs/tags/v0.4.2.tar.gz"
 package set src.sum "b0c656e194e2d3fe31dc1c6ee15fd5808db3b2428d79adf786c6900ebbba0849"
 package set license "MIT"

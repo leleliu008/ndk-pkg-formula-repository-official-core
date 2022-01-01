@@ -1,6 +1,6 @@
 package set summary "Tools and libraries to manipulate images in many formats"
 package set webpage "https://imagemagick.org/"
-package set src.git "https://github.com/ImageMagick/ImageMagick.git"
+package set git.url "https://github.com/ImageMagick/ImageMagick.git"
 package set src.url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-14.tar.xz"
 package set version "7.1.0.14"
 package set src.sum "8f08592b759eb8ff948814d4329fab2004042c5f4bd185315b066aca76f69f76"

@@ -1,6 +1,6 @@
 package set summary "Library and utility to talk to iBoot/iBSS via USB"
 package set webpage "https://www.libimobiledevice.org"
-package set src.git "https://github.com/libimobiledevice/libirecovery.git"
+package set git.url "https://github.com/libimobiledevice/libirecovery.git"
 package set src.url "https://github.com/libimobiledevice/libirecovery/releases/download/1.0.0/libirecovery-1.0.0.tar.bz2"
 package set src.sum "cda0aba10a5b6fc2e1d83946b009e3e64d0be36912a986e35ad6d34b504ad9b4"
 package set license "LGPL-2.1-only"

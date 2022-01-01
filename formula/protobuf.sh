@@ -1,5 +1,5 @@
 package set summary "Protocol buffers (Google's data interchange format)"
-package set src.git "https://github.com/protocolbuffers/protobuf.git"
+package set git.url "https://github.com/protocolbuffers/protobuf.git"
 package set src.url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protobuf-all-3.19.1.tar.gz"
 package set src.sum "80631d5a18d51daa3a1336e340001ad4937e926762f21144c62d26fe2a8d71fe"
 package set license "BSD-3-Clause"

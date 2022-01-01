@@ -1,5 +1,5 @@
 package set summary "XML parser"
-package set src.git "https://github.com/timniederhausen/rapidxml.git"
+package set git.url "https://github.com/timniederhausen/rapidxml.git"
 package set bsystem "cmake"
 
 build() {

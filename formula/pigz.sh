@@ -1,6 +1,6 @@
 package set summary "Parallel gzip"
 package set webpage "https://zlib.net/pigz/"
-package set src.git "https://github.com/madler/pigz.git"
+package set git.url "https://github.com/madler/pigz.git"
 package set src.url "https://zlib.net/pigz/pigz-2.6.tar.gz"
 package set src.sum "2eed7b0d7449d1d70903f2a62cd6005d262eb3a8c9e98687bc8cbb5809db2a7d"
 package set license "Zlib"

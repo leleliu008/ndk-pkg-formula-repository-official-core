@@ -1,5 +1,5 @@
 package set summary "CPU INFOrmation library"
-package set src.git "https://github.com/pytorch/cpuinfo.git"
+package set git.url "https://github.com/pytorch/cpuinfo.git"
 package set bsystem "cmake"
 
 build() {

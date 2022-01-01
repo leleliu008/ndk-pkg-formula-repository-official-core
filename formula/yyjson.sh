@@ -1,5 +1,5 @@
 package set summary "The fastest JSON library in C"
-package set src.git "https://github.com/ibireme/yyjson.git"
+package set git.url "https://github.com/ibireme/yyjson.git"
 package set src.url "https://github.com/ibireme/yyjson/archive/refs/tags/0.4.0.tar.gz"
 package set src.sum "061fe713391d7f3f85f13e8bb2752a4cdeb8e70ce20d68e1e9e4332bd0bf64fa"
 package set license "MIT"

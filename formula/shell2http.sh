@@ -1,5 +1,5 @@
 package set summary "HTTP-server to execute shell commands."
-package set src.git "https://github.com/msoap/shell2http.git"
+package set git.url "https://github.com/msoap/shell2http.git"
 package set license "MIT"
 package set bsystem "go"
 

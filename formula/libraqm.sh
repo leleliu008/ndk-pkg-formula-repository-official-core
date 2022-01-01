@@ -1,5 +1,5 @@
 package set summary "Library for complex text layout"
-package set src.git "https://github.com/HOST-Oman/libraqm.git"
+package set git.url "https://github.com/HOST-Oman/libraqm.git"
 package set src.url "https://github.com/HOST-Oman/libraqm/archive/v0.8.0.tar.gz"
 package set src.sum "6429e35f69f5e7d514877624fb73ae6d07a7e9ac746ae6a1cf2bf1277bb5b68d"
 package set license "MIT"

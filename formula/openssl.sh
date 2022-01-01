@@ -1,6 +1,6 @@
 package set summary "Cryptography and SSL/TLS Toolkit"
 package set webpage "https://openssl.org"
-package set src.git "https://github.com/openssl/openssl.git"
+package set git.url "https://github.com/openssl/openssl.git"
 package set src.url "https://www.openssl.org/source/openssl-1.1.1g.tar.gz"
 package set src.sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
 package set license "OpenSSL"

@@ -1,6 +1,6 @@
 package set summary "Embeddable, persistent key-value store for fast storage"
 package set webpage "https://rocksdb.org/"
-package set src.git "https://github.com/facebook/rocksdb.git"
+package set git.url "https://github.com/facebook/rocksdb.git"
 package set src.url "https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz"
 package set src.sum "ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58"
 package set license "GPL-2.0-only"

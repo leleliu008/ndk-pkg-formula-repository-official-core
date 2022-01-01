@@ -1,5 +1,5 @@
 package set summary "Numeric library for complex error functions"
-package set src.git "https://jugit.fz-juelich.de/mlz/libcerf.git"
+package set git.url "https://jugit.fz-juelich.de/mlz/libcerf.git"
 package set src.url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v1.17/libcerf-v1.17.tar.gz"
 package set src.sum "b1916b292cb37f2d0d0b699fbcf0fe260cca97ec7266ea20ff0c5cd8ef2eaab4"
 package set license "MIT"

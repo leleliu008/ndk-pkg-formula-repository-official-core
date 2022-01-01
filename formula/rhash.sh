@@ -1,6 +1,6 @@
 package set summary "Utility for computing and verifying hash sums of files"
 package set webpage "http://rhash.sourceforge.net"
-package set src.git "https://github.com/rhash/RHash.git"
+package set git.url "https://github.com/rhash/RHash.git"
 package set src.url "https://github.com/rhash/RHash/archive/v1.4.0.tar.gz"
 package set src.sum "2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861"
 package set license "0BSD"

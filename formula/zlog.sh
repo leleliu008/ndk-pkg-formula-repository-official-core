@@ -1,5 +1,5 @@
 package set summary "High-performance C logging library"
-package set src.git "https://github.com/HardySimpson/zlog.git"
+package set git.url "https://github.com/HardySimpson/zlog.git"
 package set src.url "https://github.com/HardySimpson/zlog/archive/1.2.15.tar.gz"
 package set src.sum "00037ab8d52772a95d645f1dcfd2c292b7cea326b54e63e219a5b7fdcb7e6508"
 package set license "LGPL-2.1"

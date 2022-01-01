@@ -1,5 +1,5 @@
 package set summary "More intuitive version of du in rust"
-package set src.git "https://github.com/bootandy/dust.git"
+package set git.url "https://github.com/bootandy/dust.git"
 package set src.url "https://github.com/bootandy/dust/archive/v0.7.5.tar.gz"
 package set src.sum "f892aaf7a0a7852e12d01b2ced6c2484fb6dc5fe7562abdf0c44a2d08aa52618"
 package set license "Apache-2.0"

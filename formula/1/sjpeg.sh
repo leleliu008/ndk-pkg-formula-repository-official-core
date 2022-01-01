@@ -1,5 +1,5 @@
 package set summary "Simple JPEG Encoder"
-package set src.git "https://github.com/webmproject/sjpeg.git"
+package set git.url "https://github.com/webmproject/sjpeg.git"
 package set dep.pkg "libjpeg-turbo libpng"
 package set bsystem "cmake"
 

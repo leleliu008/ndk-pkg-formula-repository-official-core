@@ -1,5 +1,5 @@
 package set summary "C++ microbenchmark support library"
-package set src.git "https://github.com/google/benchmark.git"
+package set git.url "https://github.com/google/benchmark.git"
 package set src.url "https://github.com/google/benchmark/archive/v1.6.0.tar.gz"
 package set src.sum "1f71c72ce08d2c1310011ea6436b31e39ccab8c2db94186d26657d41747c85d6"
 package set license "Apache-2.0"

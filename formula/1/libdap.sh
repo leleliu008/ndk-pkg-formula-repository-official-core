@@ -1,6 +1,6 @@
 package set summary "Framework for scientific data networking"
 package set webpage "https://www.opendap.org/"
-package set src.git "https://github.com/OPENDAP/libdap4.git"
+package set git.url "https://github.com/OPENDAP/libdap4.git"
 package set src.url "https://www.opendap.org/pub/source/libdap-3.20.8.tar.gz"
 package set src.sum "65eb5c8f693cf74d58eece5eaa2e7c3c65f368926b1bffab0cf5b207757b94eb"
 package set license "LGPL-2.1-or-later"

@@ -1,11 +1,10 @@
 package set summary "Embedded SSL Library written in C"
 package set webpage "https://www.wolfssl.com"
-package set src.git "https://github.com/wolfSSL/wolfssl.git"
-package set src.url "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.0.0-stable.tar.gz"
-package set src.sum "908390282cc613a3943533f3d922b3c18dee3289f498b6f944cb86a19a5eeb56"
+package set git.url "https://github.com/wolfSSL/wolfssl.git"
+package set src.url "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.1.0-stable.tar.gz"
+package set src.sum "3791e62ef98e3b054968729e7ebd935930562bc4453fe1ee40a1983589112e5e"
 package set dep.cmd "glibtoolize:libtoolize"
 package set bsystem "autogen"
-#package set ldflags "-lm"
 
 build() {
     configure \

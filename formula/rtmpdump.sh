@@ -1,6 +1,6 @@
 package set summary "Tool for downloading RTMP streaming media"
 package set webpage "https://rtmpdump.mplayerhq.hu"
-package set src.git "https://git.ffmpeg.org/rtmpdump.git"
+package set git.url "https://git.ffmpeg.org/rtmpdump.git"
 package set src.url "https://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz"
 package set src.sum "5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5"
 package set version "2.4+20151223"

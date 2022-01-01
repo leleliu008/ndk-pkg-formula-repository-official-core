@@ -1,6 +1,6 @@
 package set summary "Library for Qalculate! program"
 package set webpage "https://qalculate.github.io/"
-package set src.git "https://github.com/Qalculate/libqalculate.git"
+package set git.url "https://github.com/Qalculate/libqalculate.git"
 package set src.url "https://github.com/Qalculate/libqalculate/releases/download/v3.22.0/libqalculate-3.22.0.tar.gz"
 package set src.sum "533ec2fc3550b44a562e4ff93f2bb21332c802c60d13ae1323bfa54ffe5d57f6"
 package set license "GPL-2.0-or-later"

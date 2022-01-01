@@ -1,6 +1,6 @@
 package set summary "Next generation open source RPC library and framework"
 package set webpage "https://grpc.io"
-package set src.git "https://github.com/grpc/grpc.git"
+package set git.url "https://github.com/grpc/grpc.git"
 package set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.43.0.tar.gz"
 package set src.sum "9647220c699cea4dafa92ec0917c25c7812be51a18143af047e20f3fb05adddc"
 package set license "Apache-2.0"

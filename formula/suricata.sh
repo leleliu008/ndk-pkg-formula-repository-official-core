@@ -1,6 +1,6 @@
 package set summary "Network IDS, IPS, and security monitoring engine"
 package set webpage "https://suricata-ids.org"
-package set src.git "https://github.com/OISF/suricata.git"
+package set git.url "https://github.com/OISF/suricata.git"
 package set src.url "https://www.openinfosecfoundation.org/download/suricata-6.0.4.tar.gz"
 package set src.sum "a8f197e33d1678689ebbf7bc1abe84934c465d22c504c47c2c7e9b74aa042d0d"
 package set license "GPL-2.0"

@@ -1,5 +1,5 @@
 package set summary "7-Zip (high compression file archiver) implementation"
-package set src.git "https://github.com/jinfeihan57/p7zip.git"
+package set git.url "https://github.com/jinfeihan57/p7zip.git"
 package set src.url "https://github.com/jinfeihan57/p7zip/archive/v17.04.tar.gz"
 package set src.sum "ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef"
 package set license "LGPL-2.1-or-later"

@@ -1,5 +1,5 @@
 package set summary "Fast strong hash functions"
-package set src.git "https://github.com/google/highwayhash.git"
+package set git.url "https://github.com/google/highwayhash.git"
 package set license "Apache-2.0"
 package set bsystem "make"
 

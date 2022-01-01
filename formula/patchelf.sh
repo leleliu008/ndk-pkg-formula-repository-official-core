@@ -1,5 +1,5 @@
 package set summary "Modify dynamic ELF executables"
-package set src.git "https://github.com/NixOS/patchelf.git"
+package set git.url "https://github.com/NixOS/patchelf.git"
 package set src.url "https://github.com/NixOS/patchelf/releases/download/0.14.3/patchelf-0.14.3.tar.bz2"
 package set src.sum "a017ec3d2152a19fd969c0d87b3f8b43e32a66e4ffabdc8767a56062b9aec270"
 package set license "GPL-3.0-or-later"

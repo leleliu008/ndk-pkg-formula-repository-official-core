@@ -1,5 +1,5 @@
 package set summary "Library and tools for dealing with GeoTIFF"
-package set src.git "https://github.com/OSGeo/libgeotiff.git"
+package set git.url "https://github.com/OSGeo/libgeotiff.git"
 package set src.url "https://github.com/OSGeo/libgeotiff/releases/download/1.7.0/libgeotiff-1.7.0.tar.gz"
 package set src.sum "fc304d8839ca5947cfbeb63adb9d1aa47acef38fc6d6689e622926e672a99a7e"
 package set license "MIT"

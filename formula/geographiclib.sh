@@ -1,6 +1,6 @@
 package set summary "C++ geography library"
 package set webpage "https://geographiclib.sourceforge.io/"
-package set src.git "https://github.com/geographiclib/geographiclib.git"
+package set git.url "https://github.com/geographiclib/geographiclib.git"
 package set src.url "https://downloads.sourceforge.net/project/geographiclib/distrib/GeographicLib-1.52.tar.gz"
 package set src.sum "5d4145cd16ebf51a2ff97c9244330a340787d131165cfd150e4b2840c0e8ac2b"
 package set license "MIT"

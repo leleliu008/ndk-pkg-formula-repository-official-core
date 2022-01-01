@@ -1,5 +1,5 @@
 package set summary "C Markdown parser. Fast. SAX-like interface"
-package set src.git "https://github.com/mity/md4c.git"
+package set git.url "https://github.com/mity/md4c.git"
 package set src.url "https://github.com/mity/md4c/archive/release-0.4.8.tar.gz"
 package set src.sum "4a457df853425b6bb6e3457aa1d1a13bccec587a04c38c622b1013a0da41439f"
 package set license "MIT"

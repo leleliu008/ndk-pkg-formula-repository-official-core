@@ -1,6 +1,6 @@
 package set summary "Bytecode optimizer for Android apps"
 package set webpage "https://fbredex.com"
-package set src.git "https://github.com/facebook/redex.git"
+package set git.url "https://github.com/facebook/redex.git"
 package set license "MIT"
 package set dep.pkg "boost jsoncpp libexecinfo"
 package set bsystem "autotools"

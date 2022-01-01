@@ -1,5 +1,5 @@
 package set summary "OCR (Optical Character Recognition) engine"
-package set src.git "https://github.com/tesseract-ocr/tesseract.git"
+package set git.url "https://github.com/tesseract-ocr/tesseract.git"
 package set src.url "https://github.com/tesseract-ocr/tesseract/archive/5.0.0.tar.gz"
 package set src.sum "72467b7876dc0c39ef7fbcb0f793f73aee1c78d9fabab3ab19cbac1eb42e9fed"
 package set license "Apache-2.0"

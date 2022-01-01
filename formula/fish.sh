@@ -1,6 +1,6 @@
 package set summary "User-friendly command-line shell for UNIX-like operating systems"
 package set webpage "https://fishshell.com"
-package set src.git "https://github.com/fish-shell/fish-shell.git"
+package set git.url "https://github.com/fish-shell/fish-shell.git"
 package set src.url "https://github.com/fish-shell/fish-shell/releases/download/3.3.1/fish-3.3.1.tar.xz"
 package set src.sum "b5b4ee1a5269762cbbe993a4bd6507e675e4100ce9bbe84214a5eeb2b19fae89"
 package set license "GPL-2.0"

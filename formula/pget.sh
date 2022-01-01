@@ -1,5 +1,5 @@
 package set summary "The fastest file download client"
-package set src.git "https://github.com/Code-Hex/pget.git"
+package set git.url "https://github.com/Code-Hex/pget.git"
 package set bsystem "go"
 
 build() {

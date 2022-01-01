@@ -1,7 +1,7 @@
 package set summary "Library for reading, processing and writing images"
 package set webpage "https://openimageio.org/"
 package set license "BSD-3-Clause"
-package set src.git "https://github.com/OpenImageIO/oiio.git"
+package set git.url "https://github.com/OpenImageIO/oiio.git"
 package set src.url "https://github.com/OpenImageIO/oiio/archive/v2.3.10.0.tar.gz"
 package set src.sum "3b8a43135792373da7d8897a5937dce96cfd2a2bfb92ff8c51a870df1e9cfbd9"
 package set dep.pkg "boost ffmpeg freetype2 libheif libraw opencolorio openexr openjpeg pybind11"

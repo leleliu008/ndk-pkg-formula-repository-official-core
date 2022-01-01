@@ -1,6 +1,6 @@
 package set summary "C websockets server library"
 package set webpage "https://libwebsockets.org"
-package set src.git "https://github.com/warmcat/libwebsockets.git"
+package set git.url "https://github.com/warmcat/libwebsockets.git"
 package set src.url "https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.0.tar.gz"
 package set src.sum "ceef46e3bffb368efe4959202f128fd93d74e10cd2e6c3ac289a33b075645c3b"
 package set license "MIT"

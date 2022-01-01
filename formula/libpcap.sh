@@ -1,6 +1,6 @@
 package set summary "Packet(TCP/IP) Capture libray"
 package set webpage "https://www.tcpdump.org"
-package set src.git "https://github.com/the-tcpdump-group/libpcap.git"
+package set git.url "https://github.com/the-tcpdump-group/libpcap.git"
 package set src.url "https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz"
 package set src.sum "ed285f4accaf05344f90975757b3dbfe772ba41d1c401c2648b7fa45b711bdd4"
 package set dep.cmd "flex bison"

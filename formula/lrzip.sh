@@ -1,6 +1,6 @@
 package set summary "Compression program with a very high compression ratio"
 package set webpage "http://lrzip.kolivas.org"
-package set src.git "https://github.com/ckolivas/lrzip.git"
+package set git.url "https://github.com/ckolivas/lrzip.git"
 package set src.url "http://ck.kolivas.org/apps/lrzip/lrzip-0.641.tar.xz"
 package set src.sum "2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e"
 package set license "GPL-2.0"

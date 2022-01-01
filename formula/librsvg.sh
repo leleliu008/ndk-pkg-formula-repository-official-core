@@ -1,6 +1,6 @@
 package set summary "Library to render SVG files using Cairo"
 package set webpage "https://wiki.gnome.org/Projects/LibRsvg"
-package set src.git "https://gitlab.gnome.org/GNOME/librsvg.git"
+package set git.url "https://gitlab.gnome.org/GNOME/librsvg.git"
 package set src.url "https://download-fallback.gnome.org/sources/librsvg/2.52/librsvg-2.52.4.tar.xz"
 package set src.sum "660ec8836a3a91587bc9384920132d4c38d1d1718c67fe160c5213fe4dec2928"
 package set license "LGPL-2.1-or-later"

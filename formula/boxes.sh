@@ -1,6 +1,6 @@
 package set summary "Draw boxes around text"
 package set webpage "https://boxes.thomasjensen.com/"
-package set src.git "https://github.com/ascii-boxes/boxes.git"
+package set git.url "https://github.com/ascii-boxes/boxes.git"
 package set src.url "https://github.com/ascii-boxes/boxes/archive/v2.1.1.tar.gz"
 package set src.sum "95ae6b46e057a79c6414b8c0b5b561c3e9d886ab8123a4085d256edccce625f9"
 package set license "GPL-2.0-only"

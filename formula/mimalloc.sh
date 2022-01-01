@@ -1,5 +1,5 @@
 package set summary "Compact general purpose allocator"
-package set src.git "https://github.com/microsoft/mimalloc"
+package set git.url "https://github.com/microsoft/mimalloc"
 package set src.url "https://github.com/microsoft/mimalloc/archive/refs/tags/v1.7.2.tar.gz"
 package set src.sum "b1912e354565a4b698410f7583c0f83934a6dbb3ade54ab7ddcb1569320936bd"
 package set license "MIT"

@@ -1,6 +1,6 @@
 package set summary "Static analysis tool for C and C++ code"
 package set webpage "https://sourceforge.net/projects/cppcheck"
-package set src.git "https://github.com/danmar/cppcheck.git"
+package set git.url "https://github.com/danmar/cppcheck.git"
 package set src.url "https://github.com/danmar/cppcheck/archive/2.6.3.tar.gz"
 package set src.sum "7a49ebb7a54356ade09867f466cb41ee4020ebf3732582762669e5c8903f16c8"
 package set license "GPL-3.0-or-later"

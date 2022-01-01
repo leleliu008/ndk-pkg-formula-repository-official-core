@@ -1,6 +1,6 @@
 package set summary "C/C++ and Java libraries for Unicode and globalization"
 package set webpage "http://site.icu-project.org/home"
-package set src.git "https://github.com/unicode-org/icu.git"
+package set git.url "https://github.com/unicode-org/icu.git"
 package set src.url "https://github.com/unicode-org/icu/releases/download/release-69-1/icu4c-69_1-src.tgz"
 package set version "69.1"
 package set src.sum "4cba7b7acd1d3c42c44bb0c14be6637098c7faf2b330ce876bc5f3b915d09745"

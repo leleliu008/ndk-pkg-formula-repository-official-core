@@ -1,6 +1,6 @@
 package set summary "Database of common MIME types"
 package set webpage "https://wiki.freedesktop.org/www/Software/shared-mime-info"
-package set src.git "https://gitlab.freedesktop.org/xdg/shared-mime-info.git"
+package set git.url "https://gitlab.freedesktop.org/xdg/shared-mime-info.git"
 package set src.url "https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/0440063a2e6823a4b1a6fb2f2af8350f/shared-mime-info-2.0.tar.xz"
 package set src.sum "23c1cb7919f31cf97aeb5225548f75705f706aa5cc7d1c4c503364bcc8681e06"
 package set license "GPL-2.0"

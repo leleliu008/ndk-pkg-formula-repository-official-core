@@ -1,7 +1,7 @@
 package set summary "Small and embeddable JavaScript engine"
 package set webpage "https://bellard.org/quickjs"
 package set version "2021-03-27"
-package set src.git "https://github.com/bellard/quickjs.git"
+package set git.url "https://github.com/bellard/quickjs.git"
 package set src.url "https://bellard.org/quickjs/quickjs-${PACKAGE_VERSION}.tar.xz"
 package set src.sum "a45bface4c3379538dea8533878d694e289330488ea7028b105f72572fe7fe1a"
 package set license "MIT"

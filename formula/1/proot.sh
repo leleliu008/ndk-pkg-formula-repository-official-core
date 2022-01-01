@@ -1,6 +1,6 @@
 package set summary "a user-space implementation of chroot, mount --bind, and binfmt_misc."
 package set webpage "https://proot-me.github.io"
-package set src.git "https://github.com/proot-me/proot.git"
+package set git.url "https://github.com/proot-me/proot.git"
 package set version "5.2.0-alpha"
 package set src.url "https://github.com/proot-me/proot/archive/refs/tags/v$PACKAGE_VERSION.tar.gz"
 package set src.sum "852d2faf85234e6e832d4c9938ff8befa91b89f019969afd80907554568905fc"
