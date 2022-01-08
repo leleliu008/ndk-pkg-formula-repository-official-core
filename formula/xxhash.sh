@@ -7,5 +7,5 @@ package set bsystem "make"
 
 build() {
     makew -C "$SOURCE_DIR" clean   UNAME=Linux &&
-    makew -C "$SOURCE_DIR" install UNAME=Linux PREFIX="$ABI_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS -shared'" AR="$AR"
+    makew -C "$SOURCE_DIR" install UNAME=Linux PREFIX="$ABI_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS -shared'" AR="$AR" V=1
 }
