@@ -1,4 +1,4 @@
-name: workflow4
+name: workflow11
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [gmake,gnu-coreutils,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,gosh,gpatch,gperf,gping,graphite2,grep,grpc,gsed,gtar,gzip,helm,help2man,hexdump,htop,hugo,hunspell]
+        pkg: [sl,snappy,soundtouch,spdlog,starship,supervisord,suricata,swig,szip,taglib,tcc,tcl-core,tcpdump,tdu,tengo,texinfo,tig,tinyxml2,tmux,toml++,tree,ttyd,ttygif,ttyrec,unbound]
 
     runs-on: ${{ matrix.os }}
 
