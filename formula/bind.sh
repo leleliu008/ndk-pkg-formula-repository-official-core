@@ -1,11 +1,11 @@
 package set summary "Implementation of the DNS protocols"
 package set webpage "https://www.isc.org/downloads/bind"
-package set src.url "https://downloads.isc.org/isc/bind9/9.16.23/bind-9.16.23.tar.xz"
-package set src.sum "dedb5e27aa9cb6a9ce3e872845887ff837b99e4e9a91a5e2fcd67cf6e1ef173c"
+package set git.url "https://github.com/isc-projects/bind9.git"
+package set src.url "https://downloads.isc.org/isc/bind9/9.16.24/bind-9.16.24.tar.xz"
+package set src.sum "5582f3734bd6232284f93f14206b8a46d1f819dea4797ae157066f6963b08507"
 package set license "MPL-2.0"
-package set dep.cmd "pkg-config"
 package set dep.pkg "json-c libxml2 libidn2 libuv openssl zlib"
-package set ldflags "-lm -liconv"
+package set dep.cmd "pkg-config"
 package set bsystem "configure"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);

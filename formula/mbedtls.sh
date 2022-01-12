@@ -1,7 +1,7 @@
 package set summary "Cryptographic & SSL/TLS library"
 package set webpage "https://tls.mbed.org"
-package set src.url "https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.0.0.tar.gz"
-package set src.sum "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55"
+package set src.url "https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.1.0.tar.gz"
+package set src.sum "b02df6f68dd1537e115a8497d5c173dc71edc55ad084756e57a30f951b725acd"
 package set dep.pkg "zlib"
 package set bsystem "cmake"
 

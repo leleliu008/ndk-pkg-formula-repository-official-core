@@ -1,16 +1,12 @@
 package set summary "OCR (Optical Character Recognition) engine"
 package set git.url "https://github.com/tesseract-ocr/tesseract.git"
-package set src.url "https://github.com/tesseract-ocr/tesseract/archive/5.0.0.tar.gz"
-package set src.sum "72467b7876dc0c39ef7fbcb0f793f73aee1c78d9fabab3ab19cbac1eb42e9fed"
+package set src.url "https://github.com/tesseract-ocr/tesseract/archive/5.0.1.tar.gz"
+package set src.sum "b5b0e561650ed67feb1e9de38d4746121d302ae4c876c95b99b8b6f9f89d5c58"
 package set license "Apache-2.0"
 package set dep.pkg "leptonica icu4c pango libglob cpu_features"
 package set dep.cmd "pkg-config"
 package set bsystem "cmake"
 package set cdefine "ANDROID"
-
-prepare() {
-    sed_in_place 's/x86|AMD64/i686|x86_64/' CMakeLists.txt
-}
 
 build() {
     export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"

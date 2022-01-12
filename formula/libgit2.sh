@@ -4,9 +4,9 @@ package set git.url "https://github.com/libgit2/libgit2.git"
 package set src.url "https://github.com/libgit2/libgit2/archive/v1.3.0.tar.gz"
 package set src.sum "192eeff84596ff09efb6b01835a066f2df7cd7985e0991c79595688e6b36444e"
 package set license "GPL-2.0-only"
-package set bsystem "cmake"
-package set dep.cmd "pkg-config"
 package set dep.pkg "openssl pcre2 libssh2 zlib"
+package set dep.cmd "pkg-config"
+package set bsystem "cmake"
 
 build() {
     cmakew \

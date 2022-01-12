@@ -8,6 +8,9 @@ package set dep.pkg "openssl"
 package set dep.cmd "pkg-config"
 package set bsystem "cargo"
 
+# sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
+#package set sdk.api 24
+
 build() {
-    cargow install --no-default-features --features http
+    cargow install --locked --no-default-features --features http
 }

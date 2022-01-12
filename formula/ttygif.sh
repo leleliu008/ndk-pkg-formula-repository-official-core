@@ -1,10 +1,9 @@
 package set summary "Converts a ttyrec file into gif files"
 package set git.url "https://github.com/icholy/ttygif.git"
-package set src.url "https://github.com/icholy/ttygif/archive/1.5.0.tar.gz"
-package set src.sum "b5cc9108b1add88c6175e3e001ad4615a628f93f2fffcb7da9e85a9ec7f23ef6"
+package set src.url "https://github.com/icholy/ttygif/archive/1.6.0.tar.gz"
+package set src.sum "050b9e86f98fb790a2925cea6148f82f95808d707735b2650f3856cb6f53e0ae"
 package set license "MIT"
 package set bsystem "make"
-
 package set binsrcd 'yes'
 
 prepare() {

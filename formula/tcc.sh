@@ -21,6 +21,6 @@ build() {
         --extra-ldflags="'$LDFLAGS'" \
         --enable-cross &&
     makew clean &&
-    makew &&
+    makew ONE_SOURCE=yes &&
     makew install
 }

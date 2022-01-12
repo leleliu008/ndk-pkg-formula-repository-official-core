@@ -1,4 +1,4 @@
-name: workflow12
+name: workflow13
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [ttyd,ttygif,ttyrec,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vim,vsftpd,wabt,wasm3,webhook,wget,wolfssl,xorriso,xvid,yasm,youtubedr,yq,yyjson,zlib-ng]
+        pkg: [zlog,zsh,zsync]
 
     runs-on: ${{ matrix.os }}
 

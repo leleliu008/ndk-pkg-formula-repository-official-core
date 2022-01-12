@@ -1,0 +1,6 @@
+package set summary "TOML for Modern C++"
+package set webpage "https://github.com/ToruNiina/toml11"
+package set src.url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.7.0.tar.gz"
+package set src.sum "a0b6bec77c0e418eea7d270a4437510884f2fe8f61e7ab121729624f04c4b58e"
+package set license "MIT"
+package set bsystem "cmake"
