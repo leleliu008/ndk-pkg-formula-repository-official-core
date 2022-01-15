@@ -7,6 +7,7 @@ package set dep.cmd "cmake make"
 package set bsystem "cargo"
 
 build() {
+    # https://github.com/servo/libfontconfig/issues/62
     if [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] ; then
         run install -d "$ABI_BINARY__DIR"
     else

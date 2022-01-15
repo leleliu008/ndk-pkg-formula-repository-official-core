@@ -1,15 +1,14 @@
 package set summary "Protocol buffers (Google's data interchange format)"
 package set git.url "https://github.com/protocolbuffers/protobuf.git"
-package set src.url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protobuf-all-3.19.1.tar.gz"
-package set src.sum "80631d5a18d51daa3a1336e340001ad4937e926762f21144c62d26fe2a8d71fe"
+package set src.url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.3/protobuf-all-3.19.3.tar.gz"
+package set src.sum "84cca73ed97abce159c381e682ba0237bc21952359b07d8d45dc7e6399edd923"
 package set license "BSD-3-Clause"
-package set bsystem "cmake"
 package set dep.pkg "zlib"
+package set bsystem "cmake"
 package set sourced "cmake"
-package set ldflags "-llog"
 
 build0() {
-    # used by other package. makew sure protoc and libprotoc same version
+    # used by other package. make sure protoc and libprotoc same version
     cmakew \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF

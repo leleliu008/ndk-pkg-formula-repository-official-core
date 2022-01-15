@@ -1,8 +1,9 @@
 package set summary "Collection of portable C++ source libraries"
 package set webpage "https://www.boost.org"
-package set version "1.73.0"
-package set src.url "https://boostorg.jfrog.io/artifactory/main/release/${PACKAGE_VERSION}/source/boost_$(echo ${PACKAGE_VERSION} | tr . _).tar.bz2"
+package set git.url "https://github.com/boostorg/boost.git"
+package set src.url "https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2"
 package set src.sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+package set version "1.73.0"
 package set license "BSL-1.0"
 package set dep.pkg "xz bzip2 zstd icu4c libiconv python"
 package set binsrcd 'yes'

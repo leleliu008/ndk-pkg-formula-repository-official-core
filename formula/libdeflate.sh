@@ -1,14 +1,9 @@
 package set summary "Heavily optimized DEFLATE/zlib/gzip compression and decompression"
 package set git.url "https://github.com/ebiggers/libdeflate.git"
-#package set src.url "dir:///home/fpliu/libdeflate"
-#package set src.url "https://github.com/ebiggers/libdeflate/archive/v1.8.tar.gz"
-#package set src.sum "50711ad4e9d3862f8dfb11b97eb53631a86ee3ce49c0e68ec2b6d059a9662f61"
+package set src.url "https://github.com/ebiggers/libdeflate/archive/v1.9.tar.gz"
+package set src.sum "a537ab6125c226b874c02b166488b326aece954930260dbf682d88fc339137e3"
 package set license "MIT"
 package set bsystem "make"
-
-prepare2() {
-    sed_in_place 's|$(shell uname)|vv|' Makefile
-}
 
 build() {
     makew -C "$SOURCE_DIR" clean install PREFIX="$ABI_INSTALL_DIR" CC="$CC" CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" AR="$AR" V=1
