@@ -1,0 +1,7 @@
+package set summary "Create modern online books from Markdown files"
+package set webpage "https://rust-lang.github.io/mdBook/"
+package set git.url "https://github.com/rust-lang/mdBook.git"
+package set src.url "https://github.com/rust-lang/mdBook/archive/v0.4.15.tar.gz"
+package set src.sum "fa7f217fb6be229c25be21ccb712af8d0012241b529d1bbacb8f5cac65fe0013"
+package set license "MPL-2.0"
+package set bsystem "cargo"

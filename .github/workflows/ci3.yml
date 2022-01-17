@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [duf,dust,epsilon,esbuild,exa,faac,faad2,fd,fdk-aac,fff,ffmpeg,figlet,findutils,fish,flatbuffers,flex,fortune,fzf,gawk,gd,gdbm,gdu,geographiclib,gh,glog]
+        pkg: [double-conversion,dua,duf,dust,epsilon,esbuild,exa,faac,faad2,fd,fdk-aac,fff,ffmpeg,figlet,findutils,fish,flatbuffers,flex,fortune,fzf,gawk,gd,gdbm,gdu,geographiclib]
 
     runs-on: ${{ matrix.os }}
 

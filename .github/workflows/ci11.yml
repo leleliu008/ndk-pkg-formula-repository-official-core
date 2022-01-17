@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [shc,shell2http,silicon,sl,snappy,soundtouch,spdlog,starship,supervisord,suricata,swig,szip,taglib,tcc,tcl-core,tcpdump,tdu,tengo,texinfo,tig,tinyxml2,tmux,toml++,toml11,tree]
+        pkg: [rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,sd,shc,shell2http,silicon,sl,snappy,soundtouch,spdlog,starship,stylua,supervisord,suricata,swig,szip,taglib,tcc,tcl-core,tcpdump]
 
     runs-on: ${{ matrix.os }}
 

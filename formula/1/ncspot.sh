@@ -1,0 +1,6 @@
+package set summary "Cross-platform ncurses Spotify client written in Rust"
+package set git.url "https://github.com/hrkfdn/ncspot.git"
+package set src.url "https://github.com/hrkfdn/ncspot/archive/v0.9.4.tar.gz"
+package set src.sum "17c300194de48bba1aa75801ede1d9a3a6e3be473145d8663e3f4360b41361e3"
+package set license "BSD-2-Clause"
+package set bsystem "cargo"
