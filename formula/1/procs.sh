@@ -1,7 +1,0 @@
-package set summary "Modern replacement for ps written by Rust"
-package set git.url "https://github.com/dalance/procs.git"
-package set src.url "https://github.com/dalance/procs/archive/v0.11.13.tar.gz"
-package set src.url "dir:///tmp/tmp.dx16knp5n7"
-package set src.sum "b769ddf1b2faeca4e9fb22e8e0248f5d69b4b88bd51fb37c8510d2e6a8e897d3"
-package set license "MIT"
-package set bsystem "cargo"

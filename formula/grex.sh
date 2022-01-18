@@ -1,0 +1,6 @@
+package set summary "Command-line tool for generating regular expressions"
+package set git.url "https://github.com/pemistahl/grex.git"
+package set src.url "https://github.com/pemistahl/grex/archive/v1.3.0.tar.gz"
+package set src.sum "a330ce004fcfdd8958d057a5ae07a85b6546de585fe7d9060d05f0ada7f7686b"
+package set license "Apache-2.0"
+package set bsystem "cargo"
