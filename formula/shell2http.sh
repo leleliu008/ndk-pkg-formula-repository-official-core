@@ -4,7 +4,6 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -o shell2http &&
-    run install_bins shell2http &&
+    gow &&
     run install_mans shell2http.1
 }

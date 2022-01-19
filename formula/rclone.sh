@@ -7,7 +7,6 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags "'-s -w -X github.com/rclone/rclone/fs.Version=v$PACKAGE_VERSION'" &&
-    run install_bins rclone &&
+    gow -X github.com/rclone/rclone/fs.Version=v$PACKAGE_VERSION &&
     run install_mans rclone.1
 }

@@ -7,6 +7,5 @@ package set license "Apache-2.0"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o jfrog &&
-    run install_bins jfrog
+    gow -o jfrog
 }

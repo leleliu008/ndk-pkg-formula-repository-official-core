@@ -1,4 +1,4 @@
-name: workflow8
+name: workflow13
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mpg123,mpir,mruby,msgpack-c]
+        pkg: [tcpdump,tdu,tealdeer,tectonic,tengo,texinfo,tig,tinyxml2,tmux,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta]
 
     runs-on: ${{ matrix.os }}
 

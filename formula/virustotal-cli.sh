@@ -6,6 +6,5 @@ package set license "Apache-2.0"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X cmd.Version=$PACKAGE_VERSION'" -o vt/vt ./vt &&
-    run install_bins vt/vt
+    gow -X cmd.Version=$PACKAGE_VERSION ./vt
 }

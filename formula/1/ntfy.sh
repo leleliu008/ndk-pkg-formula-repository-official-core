@@ -10,6 +10,5 @@ package set bsystem "go"
 # https://github.com/binwiederhier/ntfy/issues/72
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.version=$PACKAGE_VERSION'" -o ntfy &&
-    run install_bins ntfy
+    gow -X main.version=$PACKAGE_VERSION
 }

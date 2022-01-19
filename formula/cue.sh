@@ -7,6 +7,5 @@ package set license "Apache-2.0"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X cuelang.org/go/cmd/cue/cmd.version=$PACKAGE_VERSION'" -o cmd/cue/cue ./cmd/cue &&
-    run install_bins cmd/cue/cue
+    gow -X cuelang.org/go/cmd/cue/cmd.version=$PACKAGE_VERSION ./cmd/cue
 }

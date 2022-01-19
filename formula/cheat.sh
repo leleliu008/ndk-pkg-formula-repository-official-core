@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -mod vendor -o cheat ./cmd/cheat &&
-    run install_bins cheat
+    gow -mod vendor ./cmd/cheat
 }

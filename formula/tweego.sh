@@ -9,8 +9,3 @@ prepare() {
     run go mod init github.com/tmedwards/tweego
     run go mod tidy
 }
-
-build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o tweego &&
-    run install_bins tweego
-}

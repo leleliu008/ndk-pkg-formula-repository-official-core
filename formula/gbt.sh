@@ -11,6 +11,5 @@ prepare() {
 }
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.version=$PACKAGE_VERSION -X main.build=$PACKAGE_GIT_REV'" ./cmd/gbt &&
-    run install_bins gbt
+    gow -X main.version=$PACKAGE_VERSION -X main.build=$PACKAGE_GIT_REV ./cmd/gbt
 }

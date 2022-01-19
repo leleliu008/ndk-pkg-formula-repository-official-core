@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -o arc cmd/arc/main.go &&
-    run install_bins arc
+    gow ./cmd/arc
 }

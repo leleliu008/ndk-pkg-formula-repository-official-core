@@ -7,6 +7,5 @@ package set license "GPL-3.0-only"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" ./cli/brook &&
-    run install_bins brook
+    gow ./cli/brook
 }

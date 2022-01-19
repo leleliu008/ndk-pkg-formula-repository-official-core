@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o germanium ./cmd/germanium &&
-    run install_bins germanium
+    gow ./cmd/germanium
 }

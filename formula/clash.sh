@@ -6,6 +6,5 @@ package set license "GPL-3.0-only"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X github.com/Dreamacro/clash/constant.Version=$PACKAGE_VERSION -X \"github.com/Dreamacro/clash/constant.BuildTime=$(date -u)\"'" &&
-    run install_bins clash
+    gow -X github.com/Dreamacro/clash/constant.Version=$PACKAGE_VERSION -X "\"github.com/Dreamacro/clash/constant.BuildTime=$(date -u)\""
 }

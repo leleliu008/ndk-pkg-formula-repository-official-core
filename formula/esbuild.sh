@@ -7,6 +7,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o esbuild ./cmd/esbuild &&
-    run install_bins esbuild
+    gow ./cmd/esbuild
 }

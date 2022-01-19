@@ -6,7 +6,8 @@ package set license "BSD-3-Clause"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o gosh  ./cmd/gosh  &&
-    run go build -v -trimpath -ldflags="'-s -w'" -o shfmt ./cmd/shfmt &&
-    run install_bins gosh shfmt
+    for item in gosh shfmt
+    do
+        gow ./cmd/$item || return 1
+    done
 }

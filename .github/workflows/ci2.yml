@@ -1,4 +1,4 @@
-name: workflow5
+name: workflow2
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [htop,hugo,hunspell,hwloc,hyperfine,id3lib,ideviceinstaller,imagemagick,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,json,jsoncpp,kcp,kcptun,krb5,lazygit,lcov,less,libaec,libaio,libao,libarchive]
+        pkg: [bullet,caddy,catch2,ccache,cereal,cfitsio,cheat,check,choose,cjson,clash,cli11,cmake,cppcheck,cpprestsdk,cppunit,cpuinfo,crc32c,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts]
 
     runs-on: ${{ matrix.os }}
 

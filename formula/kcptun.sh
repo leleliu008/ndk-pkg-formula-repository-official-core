@@ -6,8 +6,10 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-X main.VERSION=$PACKAGE_VERSION -s -w'" -o kcptun_client github.com/xtaci/kcptun/client &&
-    run go build -v -trimpath -ldflags="'-X main.VERSION=$PACKAGE_VERSION -s -w'" -o kcptun_server github.com/xtaci/kcptun/server &&
-    run install_bins kcptun_client kcptun_server &&
+    for item in server client
+    do
+        gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_$item ./$item || return 1
+    done
+
     run install_etcs examples/local.json
 }

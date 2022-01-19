@@ -7,6 +7,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -trimpath -v -tags release -ldflags "'-s -w'" -o yq &&
-    run install_bins yq
+    gow -tags release
 }

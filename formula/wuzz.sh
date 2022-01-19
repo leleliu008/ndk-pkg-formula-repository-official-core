@@ -10,8 +10,3 @@ prepare() {
     run go mod init github.com/asciimoo/wuzz &&
     run go mod tidy
 }
-
-build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o wuzz &&
-    run install_bins wuzz
-}

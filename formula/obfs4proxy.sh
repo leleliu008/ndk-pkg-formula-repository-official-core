@@ -6,6 +6,5 @@ package set license "BSD-2-Clause"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o obfs4proxy/obfs4proxy ./obfs4proxy &&
-    run install_bins obfs4proxy/obfs4proxy
+    gow ./obfs4proxy
 }

@@ -6,7 +6,6 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.gVersion=$PACKAGE_VERSION'" -o lf &&
-    run install_bins lf &&
+    gow -X main.gVersion=$PACKAGE_VERSION &&
     run install_mans lf.1
 }

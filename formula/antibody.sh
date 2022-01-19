@@ -7,6 +7,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.version=$PACKAGE_VERSION'" -o antibody &&
-    run install_bins antibody
+    gow -X main.version=$PACKAGE_VERSION
 }

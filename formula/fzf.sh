@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem 'go'
 
 build() {
-    run go build -v -trimpath -o fzf -ldflags "'-s -w -X main.version=$PACKAGE_VERSION -X main.revision=ndk-pkg'" &&
-    run install_bins fzf
+    gow -X main.version=$PACKAGE_VERSION -X main.revision=ndk-pkg
 }

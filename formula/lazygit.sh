@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -o lazygit -mod=vendor -ldflags "'-s -w -X main.version=$PACKAGE_VERSION -X main.buildSource=ndk-pkg'" &&
-    run install_bins lazygit
+    gow -mod vendor -X main.version=$PACKAGE_VERSION -X main.buildSource=ndk-pkg
 }

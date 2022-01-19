@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.Version=$PACKAGE_VERSION'" -o vegeta &&
-    run install_bins vegeta
+    gow -X main.Version=$PACKAGE_VERSION
 }

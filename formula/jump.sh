@@ -6,7 +6,6 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o jump &&
-    run install_bins jump &&
+    gow &&
     run install_mans man/jump.1
 }

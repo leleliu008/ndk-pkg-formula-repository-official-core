@@ -6,6 +6,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -x -trimpath -ldflags "'-s -w -X main.version=${PACKAGE_VERSION} -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')'" -o youtubedr ./cmd/youtubedr &&
-    run install_bins youtubedr
+    gow -X main.version=$PACKAGE_VERSION -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') ./cmd/youtubedr
 }

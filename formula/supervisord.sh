@@ -10,6 +10,5 @@ prepare() {
 }
 
 build() {
-    run go build -v -trimpath -tags release -ldflags "'-w -s'" &&
-    run install_bins supervisord
+    gow -tags release
 }

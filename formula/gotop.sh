@@ -6,6 +6,5 @@ package set license "BSD-3-Clause"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w -X main.Version=v$PACKAGE_VERSION -X main.BuildDate=$(date +%Y%m%dT%H%M%S)'" ./cmd/gotop &&
-    run install_bins gotop
+    gow -X main.Version=v$PACKAGE_VERSION -X main.BuildDate=$(date +%Y%m%dT%H%M%S) ./cmd/gotop
 }

@@ -8,6 +8,6 @@ package set sourced "src/cmd"
 package set bsystem "go"
 
 build() {
-    run go build -v -x -trimpath -ldflags "'-s -w'"
+    gow
     exit 1
 }

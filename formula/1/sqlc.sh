@@ -7,6 +7,5 @@ package set license "MIT"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" -o sqlc ./cmd/sqlc &&
-    run install_bins sqlc
+    gow ./cmd/sqlc
 }

@@ -7,6 +7,5 @@ package set license "BSD-2-Clause"
 package set bsystem "go"
 
 build() {
-    run go build -v -trimpath -ldflags="'-s -w'" ./cmd/elvish &&
-    run install_bins elvish
+    gow ./cmd/elvish
 }
