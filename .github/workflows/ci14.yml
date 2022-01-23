@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [vim,virustotal-cli,vsftpd,wabt,wasm3,webhook,wget,wolfssl,wuzz,xorriso,xvid,yasm,youtubedr,yq,yyjson,zlib-ng,zlog,zsh,zsync]
+        pkg: [tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xorriso,xpup,xvid,yasm,youtubedr]
 
     runs-on: ${{ matrix.os }}
 

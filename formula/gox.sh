@@ -1,0 +1,6 @@
+package set summary "Go cross compile tool"
+package set git.url "https://github.com/mitchellh/gox.git"
+package set src.url "https://github.com/mitchellh/gox/archive/v1.0.1.tar.gz"
+package set src.sum "25aab55a4ba75653931be2a2b95e29216b54bd8fecc7931bd416efe49a388229"
+package set license "MPL-2.0"
+package set bsystem "go"
