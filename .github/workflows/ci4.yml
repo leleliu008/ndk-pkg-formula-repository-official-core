@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [figlet,findutils,fish,flatbuffers,flex,fortune,fzf,gawk,gbt,gd,gdbm,gdu,geographiclib,germanium,geth,gh,git-lfs,glog,glow,gmake,gnu-coreutils,gnu-which,gnupg,gnutls,godu]
+        pkg: [fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fzf,gawk,gbt,gd,gdbm,gdu,geographiclib,germanium,geth,gh,git-lfs,glog,glow,gmake,gnu-coreutils,gnu-which,gnupg]
 
     runs-on: ${{ matrix.os }}
 

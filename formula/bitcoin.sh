@@ -13,6 +13,10 @@ build() {
     export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-DNDEBUG||g')"
     export CXXFLAGS="$(printf '%s\n' "$CXXFLAGS" | sed 's|-DNDEBUG||g')"
 
+    export ac_cv_prog_AR="$AR"
+    export ac_cv_prog_RANLIB="$RANLIB"
+    export ac_cv_prog_STRIP="$STRIP"
+
     configure \
         --disable-tests \
         --with-daemon \

@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,openblas,opencolorio]
+        pkg: [minizip-ng,mm-wiki,mold,mozjpeg,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++]
 
     runs-on: ${{ matrix.os }}
 

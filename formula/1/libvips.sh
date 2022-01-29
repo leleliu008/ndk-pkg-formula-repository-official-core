@@ -1,0 +1,8 @@
+package set summary "A fast image processing library with low memory needs."
+package set git.url "https://github.com/libvips/libvips.git"
+package set src.url "https://github.com/libvips/libvips/releases/download/v8.12.1/vips-8.12.1.tar.gz"
+package set src.sum "474d8439244cd26c504812fd623259f806c32553b38d2a54798c9766135f5a5c"
+package set license "LGPL-2.1-or-later"
+package set dep.pkg "fftw giflib imagemagick libexif libexpat libwebp"
+package set dep.cmd "pkg-config"
+package set bsystem "configure"

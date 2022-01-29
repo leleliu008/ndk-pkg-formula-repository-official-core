@@ -1,0 +1,6 @@
+package set summary "Command-line hex viewer"
+package set git.url "https://github.com/sharkdp/hexyl.git"
+package set src.url "https://github.com/sharkdp/hexyl/archive/v0.9.0.tar.gz"
+package set src.sum "73f0dc1be1eaa1a34e3280bc1eeb4f86f34b024205fc7bf3c87d5a0bc4021a6a"
+package set license "MIT"
+package set bsystem "cargo"

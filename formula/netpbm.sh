@@ -6,6 +6,7 @@ package set license "GPL-3.0-or-later"
 package set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
 package set dep.cmd "flex"
 package set bsystem "make"
+package set build_in_parallel no
 
 prepare() {
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
