@@ -1,7 +1,7 @@
 package set summary "Fly through your shell history"
 package set git.url "https://github.com/cantino/mcfly.git"
-package set src.url "https://github.com/cantino/mcfly/archive/v0.5.12.tar.gz"
-package set src.sum "41bbcbde13c3a27696cb4ac0b9e752a925661747acc4075450e10d4e17b17bde"
+package set src.url "https://github.com/cantino/mcfly/archive/v0.5.13.tar.gz"
+package set src.sum "b4dc5fab1ef1fe05fc34b620f1dea6617b48d6d0e3aadcf29a4c9e4cb0894983"
 package set license "MIT"
 package set bsystem "cargo"
 

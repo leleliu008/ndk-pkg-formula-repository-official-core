@@ -1,8 +1,8 @@
 package set summary "Open source continuous file synchronization application"
 package set webpage "https://syncthing.net/"
 package set git.url "https://github.com/syncthing/syncthing.git"
-package set src.url "https://github.com/syncthing/syncthing/archive/v1.18.6.tar.gz"
-package set src.sum "b27911d4c804063b13e9474848953c2c6709218603739b5f09a7f88a69eca88f"
+package set src.url "https://github.com/syncthing/syncthing/archive/v1.19.0.tar.gz"
+package set src.sum "9d7f020ee151512b5a121c08e2b07f7a2ce5bd4a749ca91e60803d21eb1aca02"
 package set license "MPL-2.0"
 package set bsystem "go"
 

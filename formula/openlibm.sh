@@ -1,8 +1,8 @@
 package set summary "High quality, portable, open source libm implementation"
 package set webpage "https://openlibm.org"
 package set git.url "https://github.com/JuliaMath/openlibm.git"
-package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.0.tar.gz"
-package set src.sum "03620768df4ca526a63dd675c6de95a5c9d167ff59555ce57a61c6bf49e400ee"
+package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
+package set src.sum "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
 package set bsystem "make"
 
 prepare() {

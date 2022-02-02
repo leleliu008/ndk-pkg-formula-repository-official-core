@@ -13,16 +13,17 @@ build() {
     export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-DNDEBUG||g')"
     export CXXFLAGS="$(printf '%s\n' "$CXXFLAGS" | sed 's|-DNDEBUG||g')"
 
-    export ac_cv_prog_AR="$AR"
-    export ac_cv_prog_RANLIB="$RANLIB"
-    export ac_cv_prog_STRIP="$STRIP"
+    export ac_cv_path_ac_pt_AR="$TOOLCHAIN_BIND/$AR"
+    export ac_cv_path_ac_pt_RANLIB="$TOOLCHAIN_BIND/$RANLIB"
+    export ac_cv_path_ac_pt_OBJCOPY="$TOOLCHAIN_BIND/$OBJCOPY"
+    export ac_cv_path_ac_pt_STRIP="$TOOLCHAIN_BIND/$STRIP"
 
     configure \
-        --disable-tests \
-        --with-daemon \
         --with-boost="$boost_INSTALL_DIR" \
+        --with-daemon \
         --without-gui \
-        --without-bdb
+        --without-bdb \
+        --disable-tests
 
         #--without-libs
 }

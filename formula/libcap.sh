@@ -1,7 +1,8 @@
 package set summary "Linux Capability Library"
-package set webpage "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
-package set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.62.tar.gz"
-package set src.sum "dc88d04b0dcceecd90a02ed4e579ad167b450105d2847fe0022ac9b551cec183"
+package set git.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
+package set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.63.tar.gz"
+package set src.sum "64cc82775bad5b2dd9f8f4894366ff233c809ebb551fcff67b7ca21f4cb37863"
+package set license "BSD-3-Clause GPL-2.0-or-later"
 package set dep.cmd "gperf"
 package set bsystem "make"
 
