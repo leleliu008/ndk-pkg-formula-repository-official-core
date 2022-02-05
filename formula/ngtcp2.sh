@@ -1,7 +1,7 @@
 package set summary "QUIC library written in C"
 package set git.url "https://github.com/ngtcp2/ngtcp2.git"
-package set bsystem "cmake"
 package set dep.pkg "libev nghttp3"
+package set bsystem "cmake"
 
 build() {
     cmakew \
@@ -10,7 +10,5 @@ build() {
         -DENABLE_WERROR=OFF \
         -DENABLE_GNUTLS=OFF \
         -DENABLE_OPENSSL=OFF \
-        -DENABLE_LIB_ONLY=OFF \
-        -DLIBEV_INCLUDE_DIR="$libev_INCLUDE_DIR" \
-        -DLIBEV_LIBRARY="$libev_LIBRARY_DIR/libev.so"
+        -DENABLE_LIB_ONLY=OFF
 }

@@ -1,5 +1,6 @@
 package set summary "C library for reading, creating, and modifying zip archives"
 package set webpage "https://libzip.org"
+package set git.url "https://github.com/nih-at/libzip.git"
 package set src.url "https://libzip.org/download/libzip-1.8.0.tar.xz"
 package set src.sum "f0763bda24ba947e80430be787c4b068d8b6aa6027a26a19923f0acfa3dac97e"
 package set dep.pkg "zlib"
@@ -15,7 +16,5 @@ build() {
         -DBUILD_DOC=OFF \
         -DBUILD_TOOLS=OFF \
         -DBUILD_REGRESS=OFF \
-        -DBUILD_EXAMPLES=OFF \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY="$zlib_LIBRARY_DIR/libz.a"
+        -DBUILD_EXAMPLES=OFF
 }

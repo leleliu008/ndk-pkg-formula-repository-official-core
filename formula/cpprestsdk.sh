@@ -14,7 +14,5 @@ prepare() {
 build() {
     cmakew \
         -DBUILD_TESTS=OFF \
-        -DBUILD_SAMPLES=OFF \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+        -DBUILD_SAMPLES=OFF
 }

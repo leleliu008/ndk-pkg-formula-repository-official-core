@@ -15,11 +15,7 @@ build() {
         -DPCRE_BUILD_TESTS=OFF \
         -DPCRE_SUPPORT_VALGRIND=OFF \
         -DPCRE_SUPPORT_LIBZ=ON \
-        -DPCRE_SUPPORT_LIBBZ2=ON \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" &&
+        -DPCRE_SUPPORT_LIBBZ2=ON &&
     install_pc_files
 }
 

@@ -13,11 +13,5 @@ build() {
         -Dlzma=ON \
         -Dlzw=ON \
         -Dwebp=OFF \
-        -Djpeg=OFF \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-        -DZSTD_INCLUDE_DIR="$zstd_INCLUDE_DIR" \
-        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.so" \
-        -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
-        -DLIBLZMA_LIBRARY_RELEASE="$xz_LIBRARY_DIR/liblzma.so"
+        -Djpeg=OFF
 }

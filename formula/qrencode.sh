@@ -11,9 +11,5 @@ build() {
     cmakew \
         -DWITH_TOOLS=ON \
         -DWITH_TESTS=OFF \
-        -DWITHOUT_PNG=OFF \
-        -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
-        -DPNG_LIBRARY="$libpng_LIBRARY_DIR/libpng.so" \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+        -DWITHOUT_PNG=OFF
 }

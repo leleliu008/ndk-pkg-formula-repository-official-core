@@ -9,14 +9,9 @@ package set bsystem "cmake"
 
 build() {
     cmakew \
-        -DCMAKE_FIND_USE_CMAKE_SYSTEM_PATH=ON \
         -DENABLE_STATIC=ON \
         -DENABLE_SHARED=ON \
         -DPNG_SUPPORTED=ON \
         -DWITH_JAVA=OFF \
-        -DWITH_FUZZ=OFF \
-        -DZLIB_ROOT="$zlib_INSTALL_DIR"
+        -DWITH_FUZZ=OFF
 }
-
-# https://cmake.org/cmake/help/latest/module/FindPNG.html
-# https://cmake.org/cmake/help/latest/module/FindZLIB.html

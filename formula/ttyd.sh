@@ -14,15 +14,3 @@ package set sdk.api 23
 prepare() {
     sed_in_place 's/LINK_LIBS util/LINK_LIBS mbedcrypto mbedtls mbedx509/' CMakeLists.txt
 }
-
-build() {
-    cmakew \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
-        -DLIBUV_INCLUDE_DIR="$libuv_INCLUDE_DIR" \
-        -DLIBUV_LIBRARY="$libuv_LIBRARY_DIR/libuv.a" \
-        -DJSON-C_INCLUDE_DIR="$json_c_INCLUDE_DIR/json-c" \
-        -DJSON-C_LIBRARY="$json_c_LIBRARY_DIR/libjson-c.a" \
-        -DLIBWEBSOCKETS_INCLUDE_DIR="$libwebsockets_INCLUDE_DIR" \
-        -DLIBWEBSOCKETS_LIBRARY="$libwebsockets_LIBRARY_DIR/libwebsockets.a"
-}

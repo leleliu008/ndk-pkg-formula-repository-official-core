@@ -13,6 +13,5 @@ build() {
         -Dbuild_tools=ON \
         -Dbuild_tests=OFF \
         -Dbuild_examples=OFF \
-        -Dpython-bindings=OFF \
-        -DBoost_INCLUDE_DIR="$boost_INCLUDE_DIR"
+        -Dpython-bindings=OFF
 }

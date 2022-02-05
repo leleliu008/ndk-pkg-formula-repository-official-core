@@ -11,9 +11,5 @@ build() {
     cmakew \
         -DNNG_TESTS=OFF \
         -DNNG_ENABLE_TLS=ON \
-        -DNNG_ENABLE_HTTP=ON \
-        -DMBEDTLS_TLS_LIBRARY="$mbedtls_LIBRARY_DIR/libmbedtls.so" \
-        -DMBEDTLS_CRYPTO_LIBRARY="$mbedtls_LIBRARY_DIR/libmbedcrypto.so" \
-        -DMBEDTLS_X509_LIBRARY="$mbedtls_LIBRARY_DIR/libmbedx509.so" \
-        -DMBEDTLS_INCLUDE_DIR="$mbedtls_INCLUDE_DIR"
+        -DNNG_ENABLE_HTTP=ON
 }

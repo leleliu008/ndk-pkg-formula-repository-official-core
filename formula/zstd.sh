@@ -17,9 +17,5 @@ build() {
         -DZSTD_BUILD_SHARED=ON \
         -DZSTD_ZLIB_SUPPORT=ON \
         -DZSTD_LZMA_SUPPORT=ON \
-        -DZSTD_LZ4_SUPPORT=OFF \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY="$zlib_LIBRARY_DIR/libz.a" \
-        -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
-        -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.a"
+        -DZSTD_LZ4_SUPPORT=OFF
 }

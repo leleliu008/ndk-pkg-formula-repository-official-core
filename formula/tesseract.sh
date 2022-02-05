@@ -18,7 +18,5 @@ build() {
         -DDISABLE_ARCHIVE=OFF \
         -DDISABLE_CURL=OFF \
         -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=ON \
-        -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
-        -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.so"
+        -DBUILD_TRAINING_TOOLS=ON
 }

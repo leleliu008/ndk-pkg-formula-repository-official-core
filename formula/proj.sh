@@ -6,9 +6,3 @@ package set license "MIT"
 package set dep.pkg "libtiff curl sqlite nlohmann-json"
 package set dep.cmd "sqlite3"
 package set bsystem "cmake"
-
-build() {
-    cmakew \
-        -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
-        -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.so"
-}

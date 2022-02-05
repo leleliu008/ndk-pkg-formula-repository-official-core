@@ -4,7 +4,7 @@ package set git.url "https://github.com/grpc/grpc.git"
 package set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.43.2.tar.gz"
 package set src.sum "b74ce7d26fe187970d1d8e2c06a5d3391122f7bc1fdce569aff5e435fb8fe780"
 package set license "Apache-2.0"
-package set dep.pkg "abseil c-ares openssl protobuf re2 zlib"
+package set dep.pkg "abseil c-ares openssl protobuf re2"
 package set dep.cmd "pkg-config grpc_cpp_plugin"
 package set bsystem "cmake"
 
@@ -24,17 +24,5 @@ build() {
         -DgRPC_PROTOBUF_PROVIDER=package \
         -DgRPC_SSL_PROVIDER=package \
         -DgRPC_ZLIB_PROVIDER=package \
-        -DgRPC_RE2_PROVIDER=package \
-        -Dre2_DIR="$re2_LIBRARY_DIR/cmake/re2" \
-        -Dabsl_DIR="$abseil_LIBRARY_DIR/cmake/absl" \
-        -Dc-ares_INCLUDE_DIR="$c_ares_INCLUDE_DIR" \
-        -Dc-ares_LIBRARY="$c_ares_LIBRARY_DIR/libcares.so" \
-        -DProtobuf_INCLUDE_DIR="$protobuf_INCLUDE_DIR" \
-        -DProtobuf_PROTOC_LIBRARY="$protobuf_LIBRARY_DIR/libprotoc.so" \
-        -DProtobuf_LIBRARIES="'$protobuf_LIBRARY_DIR/libprotoc.so;$protobuf_LIBRARY_DIR/libprotobuf.so'" \
-        -DOPENSSL_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
-        -DOPENSSL_SSL_LIBRARY="$openssl_LIBRARY_DIR/libssl.so" \
-        -DOPENSSL_CRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.so" \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+        -DgRPC_RE2_PROVIDER=package
 }

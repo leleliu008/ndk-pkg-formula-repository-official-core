@@ -21,7 +21,5 @@ EOF
     cmakew \
         -DWITH_SMI=OFF \
         -DWITH_CAP_NG=OFF \
-        -DENABLE_SMB=OFF \
-        -DCRYPTO_INCLUDE_DIR="$openssl_INCLUDE_DIR" \
-        -DCRYPTO_LIBRARY="$openssl_LIBRARY_DIR/libcrypto.a"
+        -DENABLE_SMB=OFF
 }

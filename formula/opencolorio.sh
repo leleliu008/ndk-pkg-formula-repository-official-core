@@ -19,7 +19,5 @@ build() {
         -DOCIO_BUILD_TESTS=OFF \
         -DOCIO_BUILD_JAVA=OFF \
         -DOCIO_BUILD_PYTHON=OFF \
-        -DOCIO_WARNING_AS_ERROR=OFF \
-        -Dpystring_INCLUDE_DIR="$pystring_INCLUDE_DIR" \
-        -Dpystring_LIBRARY="$pystring_LIBRARY_DIR/libpystring.a"
+        -DOCIO_WARNING_AS_ERROR=OFF
 }

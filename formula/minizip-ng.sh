@@ -6,11 +6,3 @@ package set license "Zlib"
 package set dep.pkg "zlib xz zstd bzip2"
 package set dep.cmd "pkg-config"
 package set bsystem "cmake"
-
-build() {
-    cmakew \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so"
-}

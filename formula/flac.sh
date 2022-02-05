@@ -27,9 +27,7 @@ build_with_cmake() {
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_CXXLIBS=ON \
     -DWITH_ASM=OFF \
-    -DWITH_OGG=ON \
-    -DOGG_INCLUDE_DIR="$libogg_INCLUDE_DIR" \
-    -DOGG_LIBRARY="$libogg_LIBRARY_DIR/libogg.so"
+    -DWITH_OGG=ON
 }
 
 build_with_configure() {

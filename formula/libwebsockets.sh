@@ -19,11 +19,5 @@ build() {
         -DLWS_WITH_PLUGINS=ON \
         -DLWS_WITHOUT_TESTAPPS=ON \
         -DLWS_OPENSSL_SUPPORT=OFF \
-        -DLWS_BUILD_HASH=no_hash \
-        -DLWS_MBEDTLS_INCLUDE_DIRS="$mbedtls_INCLUDE_DIR" \
-        -DLWS_MBEDTLS_LIBRARIES="'$mbedtls_LIBRARY_DIR/libmbedcrypto.so;$mbedtls_LIBRARY_DIR/libmbedtls.so;;$mbedtls_LIBRARY_DIR/libmbedx509.so'" \
-        -DLIBUV_INCLUDE_DIRS="$libuv_INCLUDE_DIR" \
-        -DLIBUV_LIBRARIES="$libuv_LIBRARY_DIR/libuv.so" \
-        -DLIBEVENT_INCLUDE_DIRS="$libevent_INCLUDE_DIR" \
-        -DLIBEVENT_LIBRARIES="$libevent_LIBRARY_DIR/libevent.so"
+        -DLWS_BUILD_HASH=no_hash
 }

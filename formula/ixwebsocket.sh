@@ -10,7 +10,5 @@ build() {
     cmakew \
         -DUSE_TLS=ON \
         -DUSE_OPEN_SSL=ON \
-        -DIXWEBSOCKET_INSTALL=ON \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+        -DIXWEBSOCKET_INSTALL=ON
 }
