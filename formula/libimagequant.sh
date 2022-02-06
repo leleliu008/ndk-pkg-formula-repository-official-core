@@ -1,21 +1,16 @@
 package set summary "Palette quantization library extracted from pnquant2"
 package set webpage "https://pngquant.org/lib"
 package set git.url "https://github.com/ImageOptim/libimagequant.git"
-package set src.url "https://github.com/ImageOptim/libimagequant/archive/2.17.0.tar.gz"
-package set src.sum "9f6cc50182be4d2ece75118aa0b0fd3e9bbad06e94fd6b9eb3a4c08129c2dd26"
+package set src.url "https://github.com/ImageOptim/libimagequant/archive/4.0.0.tar.gz"
+package set src.sum "d041f6f2dac36df76f22cedaf74c914f46bff1fea7d6025d1b13199204c25dd8"
 package set license "GPL-3.0"
-package set bsystem "make"
+package set bsystem "cargo"
+package set sourced "imagequant-sys"
 package set binsrcd "yes"
 
 build() {
-    export OSTYPE=Linux
- 
-    run ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
-        --disable-sse \
-        CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS'" \
-        LDFLAGS="'$LDFLAGS'" &&
-    makew clean &&
-    makew install
+    cargow build &&
+    install_incs libimagequant.h &&
+    mv ../target/$RUST_TARGET/release/libimagequant_sys.a libimagequant.a &&
+    install_libs libimagequant.a
 }

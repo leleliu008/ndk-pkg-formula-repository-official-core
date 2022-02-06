@@ -1,8 +1,8 @@
 package set summary "Low-level access to audio, keyboard, mouse, joystick and graphics"
 package set webpage "https://www.libsdl.org"
 package set git.url "https://github.com/libsdl-org/SDL.git"
-package set src.url "https://libsdl.org/release/SDL2-2.0.18.tar.gz"
-package set src.sum "94d40cd73dbfa10bb6eadfbc28f355992bb2d6ef6761ad9d4074eff95ee5711c"
+package set src.url "https://libsdl.org/release/SDL2-2.0.20.tar.gz"
+package set src.sum "c56aba1d7b5b0e7e999e4a7698c70b63a3394ff9704b5f6e1c57e0c16f04dd06"
 package set license "Zlib"
 package set bsystem "ndk-build"
 

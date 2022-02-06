@@ -1,6 +1,6 @@
 package set summary "Securely send things from one computer to another"
 package set git.url "https://github.com/schollz/croc.git"
-package set src.url "https://github.com/schollz/croc/archive/v9.5.0.tar.gz"
-package set src.sum "0e250ecebc72753991a3442e48f9caadfae2467430a81595b79b5443e2ff523b"
+package set src.url "https://github.com/schollz/croc/archive/v9.5.1.tar.gz"
+package set src.sum "84bc80900c90d3b3ef0fd9590b9b839c876ffa15ec24ebf230c9a979c4ef5188"
 package set license "MIT"
 package set bsystem "go"
