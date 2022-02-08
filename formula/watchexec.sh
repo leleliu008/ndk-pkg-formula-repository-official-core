@@ -7,6 +7,6 @@ package set bsystem "cargo"
 package set binsrcd "yes"
 
 build() {
-    cargow install --path cli &&
+    cargow install --locked --path cli &&
     run install_mans doc/watchexec.1
 }

@@ -1,16 +1,16 @@
 package set summary "Collection of portable C++ source libraries"
 package set webpage "https://www.boost.org"
 package set git.url "https://github.com/boostorg/boost.git"
-package set src.url "https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2"
-package set src.sum "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
-package set version "1.73.0"
+package set src.url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
+package set src.sum "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
+package set version "1.76.0"
 package set license "BSL-1.0"
-package set dep.pkg "xz bzip2 zstd icu4c libiconv python"
+package set dep.pkg "zstd icu4c libiconv python"
 package set binsrcd 'yes'
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android
-# https://www.boost.org/doc/libs/1_73_0/libs/context/doc/html/context/architectures/crosscompiling.html
+# https://www.boost.org/doc/libs/1_76_0/libs/context/doc/html/context/architectures/crosscompiling.html
 # https://www.boost.org/doc/libs/1_65_1/libs/context/doc/html/context/architectures.html
 build0() {
     sed_in_place '1a set -x' bootstrap.sh &&
@@ -19,7 +19,18 @@ build0() {
 }
 
 prepare() {
-    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH"
+    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
+    sed_in_place '/ftello/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
+    sed_in_place '/fseeko/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
+
+    # https://stackoverflow.com/questions/32826175/ftello-and-fseeko-android-build-errors
+    # https://linux.die.net/man/3/ftello
+    # int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    # off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    if [ "$TARGET_OS_VERS" -lt 24 ] ; then
+        sed_in_place 's|BOOST_NOWIDE_FTELL ftello|BOOST_NOWIDE_FTELL ::ftell|' libs/nowide/src/filebuf.cpp &&
+        sed_in_place 's|BOOST_NOWIDE_FTELL fseeko|BOOST_NOWIDE_FTELL ::fseek|' libs/nowide/src/filebuf.cpp
+    fi
 }
 
 build() {
@@ -68,6 +79,6 @@ build() {
 gen_project_config() {
     cat > project-config.jam <<EOF
 using clang : $TARGET_INDEX : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
-using python : 3.9 : $MY_HOME_DIR/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.9 : $python_INSTALL_DIR/lib ;
+using python : 3.10 : $MY_HOME_DIR/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.10 : $python_INSTALL_DIR/lib ;
 EOF
 }

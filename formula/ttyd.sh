@@ -12,5 +12,5 @@ package set bsystem "cmake"
 package set sdk.api 23
 
 prepare() {
-    sed_in_place 's/LINK_LIBS util/LINK_LIBS mbedcrypto mbedtls mbedx509/' CMakeLists.txt
+    sed_in_place '/LINK_LIBS util/d' CMakeLists.txt
 }
