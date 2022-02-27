@@ -6,8 +6,8 @@ fi
 
 package set summary "a tool for displaying a random quotation"
 package set git.url "https://github.com/shlomif/fortune-mod.git"
-package set src.url "https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.10.0/fortune-mod-3.10.0.tar.xz"
-package set src.sum "0d1ef7257a4e92968eb3298ff67c409250b1768c409e32f519e345e83fed0d37"
+package set src.url "https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.12.0/fortune-mod-3.12.0.tar.xz"
+package set src.sum "7d5aed7cb9998950d349eba83a5b57fefba71928b34b0f998508419fdb740b71"
 package add dep.cmd "pkg-config xsltproc"
 package set dep.plm "App::Cpan Path::Tiny App::Docmake"
 package set bsystem "cmake"

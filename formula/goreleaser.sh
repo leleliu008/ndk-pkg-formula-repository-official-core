@@ -1,8 +1,8 @@
 package set summary "Deliver Go binaries as fast and easily as possible"
 package set webpage "https://goreleaser.com/"
 package set git.url "https://github.com/goreleaser/goreleaser.git"
-package set src.url "https://github.com/goreleaser/goreleaser/archive/refs/tags/v1.4.1.tar.gz"
-package set src.sum "a9ac289bd72098ad5bd0c81efb29db48576fe380147053a6b72ac89eb0f85d65"
+package set src.url "https://github.com/goreleaser/goreleaser/archive/refs/tags/v1.5.0.tar.gz"
+package set src.sum "51851dd9d02f51b2a24933ce140e35d62d637c5fd782170ca552f073a3a08a61"
 package set license "MIT"
 package set bsystem "go"
 

@@ -1,7 +1,7 @@
 package set summary "Download Youtube Video in Golang"
 package set git.url "https://github.com/kkdai/youtube.git"
-package set src.url "https://github.com/kkdai/youtube/archive/v2.7.9.tar.gz"
-package set src.sum "1c0feca8db4d05cf8c29c39c0470cff75cc5fe18b17f5fa260bd9aa7c58ce986"
+package set src.url "https://github.com/kkdai/youtube/archive/v2.7.10.tar.gz"
+package set src.sum "04a4f0b745094884fb2902945ac3b1c966fbe4fbd67a027cb482d491662900f9"
 package set license "MIT"
 package set bsystem "go"
 

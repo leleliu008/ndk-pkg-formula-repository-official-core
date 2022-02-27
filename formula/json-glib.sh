@@ -7,7 +7,6 @@ package set license "LGPL-2.1-or-later"
 package set dep.cmd "pkg-config glib-mkenums"
 package set dep.pkg "glib"
 package set bsystem "meson"
-#package set ldflags "-lgmodule-2.0 -lffi -lpcre -lz"
 
 build() {
     mesonw \

@@ -1,6 +1,6 @@
 package set summary "Git extension for versioning large files"
 package set git.url "https://github.com/git-lfs/git-lfs.git"
-package set src.url "https://github.com/git-lfs/git-lfs/releases/download/v3.0.2/git-lfs-v3.0.2.tar.gz"
-package set src.sum "7179a357a0d0e7beaba217489f7f784ca8717035a5e3f1ee91ca7193ba3a35f3"
+package set src.url "https://github.com/git-lfs/git-lfs/releases/download/v3.1.2/git-lfs-v3.1.2.tar.gz"
+package set src.sum "5c9bc449068d0104ea124c25f596af16da85e7b5bf256bc544d8ce5f4fe231f2"
 package set license "MIT"
 package set bsystem "go"

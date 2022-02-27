@@ -1,8 +1,8 @@
 package set summary "Generate C-based recognizers from regular expressions"
 package set webpage "https://re2c.org"
 package set git.url "https://github.com/skvadrik/re2c.git"
-package set src.url "https://github.com/skvadrik/re2c/releases/download/2.2/re2c-2.2.tar.xz"
-package set src.sum "0fc45e4130a8a555d68e230d1795de0216dfe99096b61b28e67c86dfd7d86bda"
+package set src.url "https://github.com/skvadrik/re2c/releases/download/3.0/re2c-3.0.tar.xz"
+package set src.sum "b3babbbb1461e13fe22c630a40c43885efcfbbbb585830c6f4c0d791cf82ba0b"
 package set bsystem "cmake"
 
 build() {

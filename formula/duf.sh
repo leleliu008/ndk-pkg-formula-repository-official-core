@@ -1,6 +1,6 @@
 package set summary "a better alternative to 'df'"
 package set git.url "https://github.com/muesli/duf.git"
-package set src.url "https://github.com/muesli/duf/archive/v0.8.0.tar.gz"
-package set src.sum "6b483e68ec783821d07f03cb85629832b8c6f302a7d1bca25af142f891381e8b"
+package set src.url "https://github.com/muesli/duf/archive/v0.8.1.tar.gz"
+package set src.sum "ebc3880540b25186ace220c09af859f867251f4ecaef435525a141d98d71a27a"
 package set license "MIT"
 package set bsystem "go"

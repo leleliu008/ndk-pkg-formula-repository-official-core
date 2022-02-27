@@ -1,12 +1,11 @@
 package set summary "Fast script language for Go"
 package set webpage "https://tengolang.com"
 package set git.url "https://github.com/d5/tengo.git"
-package set src.url "https://github.com/d5/tengo/archive/v2.10.0.tar.gz"
-package set src.sum "487331f79a3742fc05817d6210f6fb751b3ade90826910dde634037c60804f4e"
+package set src.url "https://github.com/d5/tengo/archive/v2.10.1.tar.gz"
+package set src.sum "00c892a7cb4e847eefd36f5b8db695e184da5c090c6b509339c3b5d3a746232f"
 package set license "MIT"
 package set bsystem "go"
 
 build() {
-    go build -v -trimpath -o tengo ./cmd/tengo &&
-    run install_bins tengo
+    gow ./cmd/tengo
 }
