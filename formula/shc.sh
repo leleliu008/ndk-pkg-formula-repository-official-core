@@ -1,7 +1,7 @@
 package set summary "Shell Script Compiler"
 package set webpage "https://neurobin.github.io/shc"
 package set git.url "https://github.com/neurobin/shc.git"
-package set src.url "https://github.com/neurobin/shc/archive/4.0.3.tar.gz"
+package set src.url "https://github.com/neurobin/shc/archive/refs/tags/4.0.3.tar.gz"
 package set src.sum "7d7fa6a9f5f53d607ab851d739ae3d3b99ca86e2cb1425a6cab9299f673aee16"
 package set license "GPL-3.0"
 package set bsystem "configure"
