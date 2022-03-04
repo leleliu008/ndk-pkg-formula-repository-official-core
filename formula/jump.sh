@@ -1,7 +1,7 @@
 package set summary "Helps you navigate your file system faster by learning your habits"
 package set git.url "https://github.com/gsamokovarov/jump.git"
-package set src.url "https://github.com/gsamokovarov/jump/archive/v0.40.0.tar.gz"
-package set src.sum "f005f843fc65b7be1d4159da7d4c220eef0229ecec9935c6ac23e4963eef645e"
+package set src.url "https://github.com/gsamokovarov/jump/archive/v0.41.0.tar.gz"
+package set src.sum "833151da3e9dc09190588c0a381116e3dfdf5b728869cb7b96681eb59c452b4c"
 package set license "MIT"
 package set bsystem "go"
 

@@ -1,4 +1,4 @@
-package set summary "C library includes YUV conpackage set version and scaling functionality"
+package set summary "C library includes YUV conversion and scaling functionality"
 package set webpage "https://chromium.googlesource.com/libyuv/libyuv"
 package set git.url "https://github.com/leleliu008/libyuv.git"
 package set src.url "https://github.com/leleliu008/libyuv/archive/refs/tags/v1788.tar.gz"

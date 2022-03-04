@@ -1,4 +1,4 @@
-package set summary "POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)"
+package set summary "a POSIX-compliant implementation of /bin/sh that aims to be as small as possible"
 package set webpage "http://gondor.apana.org.au/~herbert/dash"
 package set git.url "https://git.kernel.org/pub/scm/utils/dash/dash.git"
 package set src.url "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.5.tar.gz"

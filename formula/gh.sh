@@ -1,7 +1,7 @@
 package set summary "GitHub command-line tool"
 package set git.url "https://github.com/cli/cli.git"
-package set src.url "https://github.com/cli/cli/archive/v2.5.1.tar.gz"
-package set src.sum "89aac9c35ad875f1b17144bf9fcbfa7231554d4abce187d9277fcc83da846e4a"
+package set src.url "https://github.com/cli/cli/archive/v2.5.2.tar.gz"
+package set src.sum "cbf22fea4574047ca3a356ee4ef629d62b872f4c4ff4e4b78fe4f89ca431858e"
 package set license "MIT"
 package set bsystem "go"
 

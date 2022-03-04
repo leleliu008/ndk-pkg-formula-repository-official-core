@@ -1,4 +1,4 @@
-package set summary "GNU package set version of the tar archiving utility"
+package set summary "GNU version of the tar archiving utility"
 package set webpage "https://www.gnu.org/software/tar"
 package set git.url "https://git.savannah.gnu.org/git/tar.git"
 package set src.url "https://ftp.gnu.org/gnu/tar/tar-1.34.tar.gz"
