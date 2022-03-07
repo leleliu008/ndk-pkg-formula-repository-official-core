@@ -3,8 +3,8 @@ package set webpage "https://www.gnu.org/software/ncurses"
 package set src.url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz"
 package set src.sum "30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d"
 package set license "MIT"
-package set bsystem "configure"
 package set dep.cmd "sed grep"
+package set bsystem "configure"
 
 need_native_build() {
     # https://github.com/termux/termux-packages/issues/4487
