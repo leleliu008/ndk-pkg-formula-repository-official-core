@@ -1,8 +1,8 @@
 package set summary "Manage your dotfiles across multiple diverse machines, securely"
 package set webpage "https://chezmoi.io/"
 package set git.url "https://github.com/twpayne/chezmoi.git"
-package set src.url "https://github.com/twpayne/chezmoi/archive/refs/tags/v2.13.1.tar.gz"
-package set src.sum "52fba493bb9f987a7971bcc187e7af9c01277b00daa91e4113e2e1f68c634ae2"
+package set src.url "https://github.com/twpayne/chezmoi/archive/refs/tags/v2.14.0.tar.gz"
+package set src.sum "4d7a1baf7e3caa8f6976b1ea5e6ba81c75273b1dd1f0fc946134a82454720397"
 package set license "MIT"
 package set bsystem "go"
 

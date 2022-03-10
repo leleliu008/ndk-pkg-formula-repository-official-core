@@ -1,0 +1,6 @@
+package set summary "Automatically restart SSH sessions and tunnels"
+package set webpage "https://www.harding.motd.ca/autossh/"
+package set src.url "https://www.harding.motd.ca/autossh/autossh-1.4g.tgz"
+package set src.sum "5fc3cee3361ca1615af862364c480593171d0c54ec156de79fc421e31ae21277"
+package set bsystem "configure"
+package set binsrcd "yes"

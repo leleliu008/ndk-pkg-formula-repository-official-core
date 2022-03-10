@@ -1,8 +1,8 @@
 package set summary "Multi-platform support library with a focus on asynchronous I/O"
 package set webpage "https://libuv.org"
 package set git.url "https://github.com/libuv/libuv.git"
-package set src.url "https://github.com/libuv/libuv/archive/v1.43.0.tar.gz"
-package set src.sum "9e27825a55279de69a7c43e42d509fd1337c9bece2547c761e91a1592e91cc4d"
+package set src.url "https://github.com/libuv/libuv/archive/v1.44.0.tar.gz"
+package set src.sum "f2482d547009d26d4d590ed6588043c540e707c833df52536744cb9a809e6617"
 package set license "MIT"
 package set bsystem "cmake"
 

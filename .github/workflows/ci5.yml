@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [gnutls,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl]
+        pkg: [geth,gh,git-lfs,glog,glow,gmake,gnu-barcode,gnu-coreutils,gnupg,gnutls,gnu-which,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils]
 
     runs-on: ${{ matrix.os }}
 

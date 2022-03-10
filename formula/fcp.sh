@@ -1,0 +1,6 @@
+package set summary "Significantly faster alternative to the classic Unix cp(1) command"
+package set git.url "https://github.com/Svetlitski/fcp.git"
+package set src.url "https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz"
+package set src.sum "e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2"
+package set license "BSD-3-Clause"
+package set bsystem "cargo"
