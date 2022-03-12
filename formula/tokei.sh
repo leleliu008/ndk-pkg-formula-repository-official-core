@@ -1,0 +1,6 @@
+package set summary "Program that allows you to count code, quickly"
+package set git.url "https://github.com/XAMPPRocky/tokei.git"
+package set src.url "https://github.com/XAMPPRocky/tokei/archive/v12.1.2.tar.gz"
+package set src.sum "81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50"
+package set license "MIT"
+package set bsystem "cargo"

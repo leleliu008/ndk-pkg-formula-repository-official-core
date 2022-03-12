@@ -1,0 +1,6 @@
+package set summary "Terminal bandwidth utilization tool"
+package set git.url "https://github.com/imsnif/bandwhich.git"
+package set src.url "https://github.com/imsnif/bandwhich/archive/0.20.0.tar.gz"
+package set src.sum "4bbf05be32439049edd50bd1e4d5a2a95b0be8d36782e4100732f0cc9f19ba12"
+package set license "MIT"
+package set bsystem "cargo"

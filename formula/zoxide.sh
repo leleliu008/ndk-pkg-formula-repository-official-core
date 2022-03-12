@@ -1,0 +1,6 @@
+package set summary "Shell extension to navigate your filesystem faster"
+package set git.url "https://github.com/ajeetdsouza/zoxide.git"
+package set src.url "https://github.com/ajeetdsouza/zoxide/archive/v0.8.0.tar.gz"
+package set src.sum "111c5f1cd92b1cb54e2f0a801003098a601c653ec5a378f3d0ea1c9659854477"
+package set license "MIT"
+package set bsystem "cargo"

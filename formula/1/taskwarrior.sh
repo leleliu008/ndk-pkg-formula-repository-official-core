@@ -1,0 +1,8 @@
+package set summary "Feature-rich console based todo list manager"
+package set webpage "https://taskwarrior.org/"
+package set git.url "https://github.com/GothenburgBitFactory/taskwarrior.git"
+package set src.url "https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.1/task-2.6.1.tar.gz"
+package set src.sum "00aa6032b3d8379a5cfa29afb66d2b0703a69e3d1fea733d225d654dbcb0084f"
+package set license "MIT"
+package set dep.pkg "gnutls util-linux readline"
+package set bsystem "cmake"

@@ -6,6 +6,10 @@ package set license "MIT"
 package set bsystem "make"
 package set binsrcd "yes"
 
+prepare() {
+    sed_in_place 's|$(shell uname)|Linux|' Makefile
+}
+
 build() {
     makew clean
     makew FANOTIFY_CFLAGS="'-DHAVE_FANOTIFY=1 -DHAVE_SYS_FANOTIFY=0'"

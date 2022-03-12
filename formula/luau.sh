@@ -1,8 +1,8 @@
 package set summary "A fast, small, safe, gradually typed embeddable scripting language derived from Lua"
 package set webpage "https://luau-lang.org"
 package set git.url "https://github.com/Roblox/luau.git"
-package set src.url "https://github.com/Roblox/luau/archive/refs/tags/0.517.tar.gz"
-package set src.sum "d367a92fc90a1e9b9c1693110208e3854e73cb88db75161c3bb74db9244430b3"
+package set src.url "https://github.com/Roblox/luau/archive/refs/tags/0.518.tar.gz"
+package set src.sum "4965e35633a15825b114c4a7504049c598ff1cd6b2774a65b664b656342c6329"
 package set license "MIT"
 package set bsystem "cmake"
 
