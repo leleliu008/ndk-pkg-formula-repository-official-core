@@ -13,5 +13,5 @@ package set ldflags "-lbthread"
 build() {
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" uname_S=Linux uname_M="$TARGET_OS_ARCH" BUILD_TLS=yes USE_JEMALLOC=no &&
-    makew -C "$SOURCE_DIR" install PREFIX="$ABI_INSTALL_DIR"
+    makew -C "$SOURCE_DIR" install PREFIX="$TARGET_INSTALL_DIR"
 }

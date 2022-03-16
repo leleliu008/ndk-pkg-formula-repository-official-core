@@ -40,7 +40,7 @@ build0() {
 
 build() {
     configure \
-        --with-pkg-config-libdir="$ABI_PKGCONF_DIR" \
+        --with-pkg-config-libdir="$TARGET_PKGCONF_DIR" \
         --with-shared \
         --without-ada \
         --without-tests \
@@ -61,13 +61,13 @@ build() {
 }
 
 install_links() {
-    cd "$ABI_INCLUDE_DIR" || return 1
+    cd "$TARGET_INCLUDE_DIR" || return 1
     for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
         ln -s "ncursesw/$item" "$item" || return 1
     done
     
-    cd "$ABI_LIBRARY_DIR" || return 1
+    cd "$TARGET_LIBRARY_DIR" || return 1
     for item in libncurses libpanel libmenu libform
     do
         ln -s "${item}w.a"  "${item}.a"  || return 1
@@ -75,6 +75,6 @@ install_links() {
     done
     ln -s libncurses++w.a libncurses++.a || return 1
 
-    cd "$ABI_PKGCONF_DIR" &&
+    cd "$TARGET_PKGCONF_DIR" &&
     ln -s ncursesw.pc ncurses.pc
 }

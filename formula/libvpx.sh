@@ -14,7 +14,7 @@ build() {
     esac
 
     run $SOURCE_DIR/configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --target="$(target)" \
         --disable-examples \
         --disable-unit-tests \

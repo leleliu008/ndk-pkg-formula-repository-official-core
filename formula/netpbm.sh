@@ -22,17 +22,17 @@ prepare() {
 build() {
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB=-ltiff JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB=-ljasper JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper" &&
-    makew -C "$SOURCE_DIR" package pkgdir=$ABI_INSTALL_DIR SONAME=libnetpbm.so &&
-    run mv "$ABI_INSTALL_DIR/link/libnetpbm.a" "$ABI_LIBRARY_DIR" &&
-    run rm -rf "$ABI_INSTALL_DIR/link" &&
-    sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"    "$ABI_INSTALL_DIR/pkgconfig_template" &&
-    sed_in_place "s|@LINKDIR@|$ABI_LIBRARY_DIR|"    "$ABI_INSTALL_DIR/pkgconfig_template" &&
-    sed_in_place "s|@INCLUDEDIR@|$ABI_INCLUDE_DIR|" "$ABI_INSTALL_DIR/pkgconfig_template" &&
-    run install -d "$ABI_LIBRARY_DIR/pkgconfig" &&
-    run mv "$ABI_INSTALL_DIR/pkgconfig_template"    "$ABI_LIBRARY_DIR/pkgconfig/netpbm.pc" &&
-    run rm "$ABI_INSTALL_DIR/README" &&
-    run rm "$ABI_INSTALL_DIR/VERSION" &&
-    run rm "$ABI_INSTALL_DIR/pkginfo" &&
-    run rm "$ABI_INSTALL_DIR/config_template" &&
-    run mv "$ABI_INSTALL_DIR/man" "$ABI_INSTALL_DIR/share"
+    makew -C "$SOURCE_DIR" package pkgdir=$TARGET_INSTALL_DIR SONAME=libnetpbm.so &&
+    run mv "$TARGET_INSTALL_DIR/link/libnetpbm.a" "$TARGET_LIBRARY_DIR" &&
+    run rm -rf "$TARGET_INSTALL_DIR/link" &&
+    sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"    "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    sed_in_place "s|@LINKDIR@|$TARGET_LIBRARY_DIR|"    "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    sed_in_place "s|@INCLUDEDIR@|$TARGET_INCLUDE_DIR|" "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    run install -d "$TARGET_LIBRARY_DIR/pkgconfig" &&
+    run mv "$TARGET_INSTALL_DIR/pkgconfig_template"    "$TARGET_LIBRARY_DIR/pkgconfig/netpbm.pc" &&
+    run rm "$TARGET_INSTALL_DIR/README" &&
+    run rm "$TARGET_INSTALL_DIR/VERSION" &&
+    run rm "$TARGET_INSTALL_DIR/pkginfo" &&
+    run rm "$TARGET_INSTALL_DIR/config_template" &&
+    run mv "$TARGET_INSTALL_DIR/man" "$TARGET_INSTALL_DIR/share"
 }

@@ -8,5 +8,5 @@ package set bsystem 'make'
 package set binsrcd 'yes'
 
 build() {
-    make install PREFIX="$ABI_INSTALL_DIR"
+    make install PREFIX="$TARGET_INSTALL_DIR"
 }

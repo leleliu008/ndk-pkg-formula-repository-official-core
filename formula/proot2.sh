@@ -20,5 +20,5 @@ prepare() {
 build() {
     makew clean &&
     makew V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS $talloc_LIBRARY_DIR/libtalloc.a'" &&
-    makew install PREFIX=$ABI_INSTALL_DIR DESTDIR=
+    makew install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
 }

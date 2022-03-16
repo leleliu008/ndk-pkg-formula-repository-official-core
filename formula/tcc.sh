@@ -13,7 +13,7 @@ prepare() {
 build() {
     run "$SOURCE_DIR/configure" \
         --source-path="$SOURCE_DIR" \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --cpu=$TARGET_OS_ARCH \
         --cc=$CC \
         --ar=$AR \

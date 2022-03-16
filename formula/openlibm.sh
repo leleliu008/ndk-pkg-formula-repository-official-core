@@ -17,7 +17,7 @@ build() {
     fi
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" install \
-        prefix="$ABI_INSTALL_DIR" \
+        prefix="$TARGET_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="'$CFLAGS'" \
         CPPFLAGS="'$CPPFLAGS'" \

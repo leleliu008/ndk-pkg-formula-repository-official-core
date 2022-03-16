@@ -11,7 +11,7 @@ build() {
     run rm -f pystring.a &&
     run $CXX $CXXFLAGS $CPPFLAGS $LDFLAGS -c -o pystring.o pystring.cpp &&
     run $AR rcs libpystring.a pystring.o &&
-    run install -d         "$ABI_INCLUDE_DIR/pystring" &&
-    run install pystring.h "$ABI_INCLUDE_DIR/pystring" &&
+    run install -d         "$TARGET_INCLUDE_DIR/pystring" &&
+    run install pystring.h "$TARGET_INCLUDE_DIR/pystring" &&
     run install_libs libpystring.a
 }

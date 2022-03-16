@@ -19,7 +19,7 @@ prepare() {
 build() {
     makew -C "$SOURCE_DIR/libcap" clean &&
     makew -C "$SOURCE_DIR/libcap" install \
-        prefix="$ABI_INSTALL_DIR" \
+        prefix="$TARGET_INSTALL_DIR" \
         lib=lib \
         PAM_CAP=no \
         GOLANG=no \

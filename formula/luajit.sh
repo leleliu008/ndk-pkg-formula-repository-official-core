@@ -24,7 +24,7 @@ prepare() {
 
 build() {
     makew -C "$SOURCE_DIR" clean install \
-        PREFIX="$ABI_INSTALL_DIR" \
+        PREFIX="$TARGET_INSTALL_DIR" \
         HOST_SYS=$(uname -s) \
         HOST_CC="'$CC_FOR_BUILD -m$TARGET_OS_BIT'" \
         HOST_LD="$CC_FOR_BUILD" \

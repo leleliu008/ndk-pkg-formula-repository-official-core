@@ -13,5 +13,5 @@ prepare() {
 build() {
     makew clean
     makew UNAME=Linux CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"
-    makew install PREFIX="$ABI_INSTALL_DIR"
+    makew install PREFIX="$TARGET_INSTALL_DIR"
 }

@@ -9,5 +9,4 @@ build() {
     cmakew \
         -DJSON_BuildTests=OFF \
         -DJSON_MultipleHeaders=ON
-
 }

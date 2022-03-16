@@ -8,5 +8,5 @@ package set binsrcd "yes"
 
 build() {
     makew clean
-    makew install PREFIX="$ABI_INSTALL_DIR" LIBS=
+    makew install PREFIX="$TARGET_INSTALL_DIR" LIBS=
 }

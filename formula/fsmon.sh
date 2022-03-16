@@ -13,5 +13,5 @@ prepare() {
 build() {
     makew clean
     makew FANOTIFY_CFLAGS="'-DHAVE_FANOTIFY=1 -DHAVE_SYS_FANOTIFY=0'"
-    makew install PREFIX="$ABI_INSTALL_DIR"
+    makew install PREFIX="$TARGET_INSTALL_DIR"
 }

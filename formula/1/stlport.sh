@@ -7,7 +7,7 @@ package set binsrcd 'yes'
 
 build() {
     ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --without-debug \
         --enable-static \
         --with-cc="$CC" \

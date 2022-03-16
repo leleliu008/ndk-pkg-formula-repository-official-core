@@ -18,7 +18,7 @@ prepare() {
 build() {
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" install \
-        prefix="$ABI_INSTALL_DIR" \
+        prefix="$TARGET_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64'" \
         LDFLAGS="'$LDFLAGS'"

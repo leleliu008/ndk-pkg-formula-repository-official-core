@@ -22,7 +22,7 @@ build() {
         --extra-cflags="'$CFLAGS $CPPFLAGS'" \
         --extra-ldflags="'$LDFLAGS'" \
         --target="$TARGET_TRIPLE" \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --enable-static \
         --enable-lib-static \
         --enable-lib-shared &&

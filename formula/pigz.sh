@@ -17,8 +17,8 @@ build() {
     makew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -pie -fPIE'" &&
     install_bins pigz &&
     install_mans pigz.1 &&
-    cd "$ABI_INSTALL_DIR/bin" &&
+    cd "$TARGET_INSTALL_DIR/bin" &&
     ln -sf pigz unpigz &&
-    cd "$ABI_INSTALL_DIR/share/man/man1" &&
+    cd "$TARGET_INSTALL_DIR/share/man/man1" &&
     ln -sf pigz.1 unpigz.1
 }

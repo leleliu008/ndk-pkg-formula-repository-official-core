@@ -14,7 +14,7 @@ prepare() {
 build() {
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$SOURCE_DIR/src'" AR="$AR" RANLIB="$RANLIB" &&
-    install -d "$ABI_INCLUDE_DIR" &&
-    install -d "$ABI_LIBRARY_DIR" &&
-    makew -C "$SOURCE_DIR" install prefix="$ABI_INSTALL_DIR"
+    install -d "$TARGET_INCLUDE_DIR" &&
+    install -d "$TARGET_LIBRARY_DIR" &&
+    makew -C "$SOURCE_DIR" install prefix="$TARGET_INSTALL_DIR"
 }

@@ -11,5 +11,5 @@ package set binsrcd "yes"
 build() {
     makew clean &&
     makew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS -pie -fPIE'" MYLIBS=-lreadline &&
-    makew install INSTALL_TOP="$ABI_INSTALL_DIR"
+    makew install INSTALL_TOP="$TARGET_INSTALL_DIR"
 }

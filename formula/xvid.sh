@@ -16,7 +16,7 @@ build() {
         --enable-pthread \
         ac_cv_prog_ac_yasm=yasm &&
     install_pc_file 'xvidcore' <<EOF
-prefix=$ABI_INSTALL_DIR
+prefix=$TARGET_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include

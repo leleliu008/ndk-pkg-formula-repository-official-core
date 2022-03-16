@@ -20,7 +20,7 @@ build() {
     esac
     
     run ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --static \
         "$CONFIGURE_EXTRA_FLAGS" \
         --cc=$CC \

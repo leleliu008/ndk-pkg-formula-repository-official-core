@@ -8,5 +8,5 @@ package set bsystem "make"
 
 build() {
     run make -C "$SOURCE_DIR" clean &&
-    run make -C "$SOURCE_DIR" install CC="$CC" LD="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix="$ABI_INSTALL_DIR"
+    run make -C "$SOURCE_DIR" install CC="$CC" LD="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix="$TARGET_INSTALL_DIR"
 }

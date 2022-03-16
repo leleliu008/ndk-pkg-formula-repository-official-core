@@ -11,7 +11,7 @@ build() {
     # configure [options] [host]
     run ./configure \
         --host="$TARGET_TRIPLE" \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --enable-ipv6 \
         --enable-utf8 \
         --disable-graphics \

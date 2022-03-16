@@ -1,8 +1,8 @@
 package set summary "Cryptography and SSL/TLS Toolkit"
 package set webpage "https://openssl.org"
 package set git.url "https://github.com/openssl/openssl.git"
-package set src.url "https://www.openssl.org/source/openssl-1.1.1g.tar.gz"
-package set src.sum "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46"
+package set src.url "https://www.openssl.org/source/openssl-1.1.1m.tar.gz"
+package set src.sum "f89199be8b23ca45fc7cb9f1d8d3ee67312318286ad030f5316aca6462db6c96"
 package set license "OpenSSL"
 package set dep.cmd "perl"
 package set bsystem "make"
@@ -32,7 +32,7 @@ build() {
         no-engine \
         no-asm \
         -D__ANDROID_API__="$TARGET_OS_VERS" \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         "$(os_compiler)" &&
     makew clean &&
     makew CROSS_COMPILE= &&

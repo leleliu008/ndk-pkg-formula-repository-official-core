@@ -13,6 +13,6 @@ package set sdk.api 26
 
 build() {
     makew clean &&
-    makew install PREFIX="$ABI_INSTALL_DIR" &&
+    makew install PREFIX="$TARGET_INSTALL_DIR" &&
     install_mans nnn.1
 }

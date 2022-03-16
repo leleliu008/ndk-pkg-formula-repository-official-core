@@ -13,5 +13,5 @@ build() {
     export CONFIG_RMTHOST=NONE
     
     smakew ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
-    smakew install INS_BASE="$ABI_INSTALL_DIR"
+    smakew install INS_BASE="$TARGET_INSTALL_DIR"
 }

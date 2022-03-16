@@ -62,7 +62,7 @@ build() {
         -d+2 \
         -j$BUILD_NJOBS \
         --reconfigure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
         toolset=clang-$TARGET_INDEX \

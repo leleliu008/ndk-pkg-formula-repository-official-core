@@ -9,7 +9,7 @@ build() {
     cmakew \
         -DMI_BUILD_TESTS=OFF \
         -DMI_INSTALL_TOPLEVEL=ON &&
-    run install -d "$ABI_LIBRARY_DIR/cmake/mimalloc" &&
-    run mv "$ABI_INSTALL_DIR/cmake/*" "$ABI_LIBRARY_DIR/cmake/mimalloc" &&
-    run rm -rf "$ABI_INSTALL_DIR/cmake"
+    run install -d "$TARGET_LIBRARY_DIR/cmake/mimalloc" &&
+    run mv "$TARGET_INSTALL_DIR/cmake/*" "$TARGET_LIBRARY_DIR/cmake/mimalloc" &&
+    run rm -rf "$TARGET_INSTALL_DIR/cmake"
 }

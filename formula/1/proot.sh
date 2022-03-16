@@ -35,7 +35,7 @@ build() {
     makew -C $SOURCE_DIR/src clean &&
     create_build_h &&
     makew -C $SOURCE_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    makew -C $SOURCE_DIR/src install PREFIX=$ABI_INSTALL_DIR DESTDIR=
+    makew -C $SOURCE_DIR/src install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
 }
 
 insert_1() {

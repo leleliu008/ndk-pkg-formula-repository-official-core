@@ -12,7 +12,7 @@ build() {
     export OSTYPE=Linux
     
     run ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --disable-sse \
         --with-libpng="$libpng_INSTALL_DIR" \
         CC="$CC" \

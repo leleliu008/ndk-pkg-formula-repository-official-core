@@ -8,5 +8,5 @@ package set sourced "core"
 package set bsystem "xmake"
 
 build() {
-    xmakew && run rm -rf "$ABI_INSTALL_DIR" && run install_bins "$BUILD_DIR/xmake"
+    xmakew && run rm -rf "$TARGET_INSTALL_DIR" && run install_bins "$TARGET_BUILD_DIR/xmake"
 }

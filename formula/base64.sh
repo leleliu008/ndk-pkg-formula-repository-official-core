@@ -6,7 +6,7 @@ package set bsystem "configure"
 package set binsrcd 'yes'
 
 build() {
-    run install -d "$ABI_INSTALL_DIR/bin" &&
-    run install -d "$ABI_INSTALL_DIR/share/man/man1" &&
-    configure --mandir="$ABI_INSTALL_DIR/share/man"
+    run install -d "$TARGET_INSTALL_DIR/bin" &&
+    run install -d "$TARGET_INSTALL_DIR/share/man/man1" &&
+    configure --mandir="$TARGET_INSTALL_DIR/share/man"
 }

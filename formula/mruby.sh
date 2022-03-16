@@ -126,5 +126,5 @@ build() {
 
     run install_bins build/android/bin/*   || return 1
     run install_libs build/android/lib/*.a || return 1
-    run cp -r build/android/include "$ABI_INSTALL_DIR" || return 1
+    run cp -r build/android/include "$TARGET_INSTALL_DIR" || return 1
 }

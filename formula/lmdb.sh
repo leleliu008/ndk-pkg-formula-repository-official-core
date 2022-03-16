@@ -11,5 +11,5 @@ package set binsrcd 'yes'
 build() {
     makew clean &&
     makew CC="$CC" XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" &&
-    makew install prefix="$ABI_INSTALL_DIR"
+    makew install prefix="$TARGET_INSTALL_DIR"
 }

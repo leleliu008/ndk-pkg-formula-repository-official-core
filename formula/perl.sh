@@ -51,7 +51,7 @@ build() {
         --target="$TARGET_TRIPLE" \
         -Dosname=android \
 		-Dsysroot=$SYSROOT \
-		-Dprefix=$ABI_INSTALL_DIR \
+		-Dprefix=$TARGET_INSTALL_DIR \
 		-Dcc="$TARGET_CC" \
         -Dld="$TARGET_CC -Wl,--enable-new-dtags" \
 		-Dar="$TARGET_AR" \
@@ -61,7 +61,7 @@ build() {
     makew clean &&
     makew &&
     makew install &&
-    run ln -sr "$ABI_LIBRARY_DIR/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE/libperl.so" "$ABI_LIBRARY_DIR/libperl.so" &&
-    run install -d "$ABI_INCLUDE_DIR" &&
-    run ln -sr "$ABI_LIBRARY_DIR/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE" "$ABI_INCLUDE_DIR/perl"
+    run ln -sr "$TARGET_LIBRARY_DIR/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE/libperl.so" "$TARGET_LIBRARY_DIR/libperl.so" &&
+    run install -d "$TARGET_INCLUDE_DIR" &&
+    run ln -sr "$TARGET_LIBRARY_DIR/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE" "$TARGET_INCLUDE_DIR/perl"
 }

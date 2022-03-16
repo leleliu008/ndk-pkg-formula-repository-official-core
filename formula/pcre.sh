@@ -23,7 +23,7 @@ install_pc_files() {
     for item in pcre pcre16 pcre32 pcreposix
     do
         install_pc_file "lib$item" <<EOF
-prefix=$ABI_INSTALL_DIR
+prefix=$TARGET_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include

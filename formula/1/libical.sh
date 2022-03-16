@@ -9,7 +9,7 @@ package set dep.pkg "icu4c libxml2 glib"
 
 build() {
     cmakew \
-        -DABI_DUMPER=OFF \
+        -DTARGET_DUMPER=OFF \
         -DADDRESS_SANITIZER=OFF \
         -DENABLE_GTK_DOC=OFF \
         -DGOBJECT_INTROSPECTION=OFF \

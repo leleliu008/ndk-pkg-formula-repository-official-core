@@ -46,7 +46,7 @@ build() {
     [ -f Makefile ] && makew clean
     
     run ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --crossbuild=Linux:unkown:$TARGET_OS_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \

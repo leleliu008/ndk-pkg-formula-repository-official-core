@@ -11,5 +11,5 @@ package set binsrcd 'yes'
 build() {
     makew clean &&
     makew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS $libwordexp_LIBRARY_DIR/libwordexp.a'" UNAME=Linux &&
-    makew install PREFIX="$ABI_INSTALL_DIR"
+    makew install PREFIX="$TARGET_INSTALL_DIR"
 }

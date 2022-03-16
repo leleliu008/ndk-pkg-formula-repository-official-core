@@ -9,7 +9,7 @@ package set binsrcd 'yes'
 
 build() {
     if run ./configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
         --ar="$AR" \
         --as="$AS" \

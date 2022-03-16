@@ -14,7 +14,7 @@ build() {
         CXXFLAGS="'$CXXFLAGS'" \
         CPPFLAGS="'$CPPFLAGS'" \
         AR="$AR" \
-        PREFIX="$ABI_INSTALL_DIR"
+        PREFIX="$TARGET_INSTALL_DIR"
 }
 
 override_makefile() {

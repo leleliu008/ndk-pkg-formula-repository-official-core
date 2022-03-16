@@ -11,5 +11,5 @@ build() {
         -DLIBUV_BUILD_TESTS=OFF \
         -DLIBUV_BUILD_BENCH=OFF \
         -DQEMU=OFF &&
-    mv "$ABI_LIBRARY_DIR/libuv_a.a" "$ABI_LIBRARY_DIR/libuv.a"
+    mv "$TARGET_LIBRARY_DIR/libuv_a.a" "$TARGET_LIBRARY_DIR/libuv.a"
 }

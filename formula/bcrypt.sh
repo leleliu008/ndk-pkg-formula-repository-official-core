@@ -11,5 +11,5 @@ prepare() {
 
 build() {
     makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" PREFIX="$ABI_INSTALL_DIR"
+    makew -C "$SOURCE_DIR" install CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" PREFIX="$TARGET_INSTALL_DIR"
 }

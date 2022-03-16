@@ -16,9 +16,9 @@ prepare() {
 
 build() {
     makew -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    install -d "$ABI_BINARY__DIR" &&
-    makew -f makefile install-unrar DESTDIR="$ABI_INSTALL_DIR" &&
+    install -d "$TARGET_BINARY__DIR" &&
+    makew -f makefile install-unrar DESTDIR="$TARGET_INSTALL_DIR" &&
     makew -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    install -d "$ABI_LIBRARY_DIR"
-    makew -f makefile install-lib   DESTDIR="$ABI_INSTALL_DIR"
+    install -d "$TARGET_LIBRARY_DIR"
+    makew -f makefile install-lib   DESTDIR="$TARGET_INSTALL_DIR"
 }

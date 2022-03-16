@@ -9,7 +9,7 @@ package set bsystem "make"
 build() {
     makew -C "$SOURCE_DIR" clean &&
     makew -C "$SOURCE_DIR" install \
-        PREFIX=$ABI_INSTALL_DIR \
+        PREFIX=$TARGET_INSTALL_DIR \
         STRIP=true \
         LTO=1 \
         OS=Linux \

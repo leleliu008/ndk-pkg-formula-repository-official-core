@@ -65,20 +65,20 @@ build() {
 }
 
 install_files() {
-    mkdir -p $ABI_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
+    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
     
-    install -v -m755 Linux*/lib/*.so              $ABI_LIBRARY_DIR       || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $ABI_LIBRARY_DIR       || return 1
+    install -v -m755 Linux*/lib/*.so              $TARGET_LIBRARY_DIR       || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $TARGET_LIBRARY_DIR       || return 1
     
-    cp -v -RL {public,private}/nss/*              $ABI_INCLUDE_DIR/nss   || return 1
-    chmod -v 644                                  $ABI_INCLUDE_DIR/nss/* || return 1
+    cp -v -RL {public,private}/nss/*              $TARGET_INCLUDE_DIR/nss   || return 1
+    chmod -v 644                                  $TARGET_INCLUDE_DIR/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $ABI_BINARY__DIR     || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_BINARY__DIR     || return 1
 }
 
 install_pc_files() {
     install_pc_file 'nss' <<EOF
-prefix=$ABI_INSTALL_DIR
+prefix=$TARGET_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss

@@ -24,7 +24,7 @@ build() {
         no-engine \
         no-asm \
         -D__ANDROID_API__="$TARGET_OS_VERS" \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         "$(get_os_compiler)" &&
     makew clean &&
     makew install

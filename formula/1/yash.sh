@@ -7,7 +7,7 @@ package set license "GPL-2.0-or-later"
 
 build() {
     "$SOURCE_DIR"/configure \
-        --prefix="$ABI_INSTALL_DIR" \
+        --prefix="$TARGET_INSTALL_DIR" \
         --enable-array \
         --enable-dirstack \
         --enable-help \

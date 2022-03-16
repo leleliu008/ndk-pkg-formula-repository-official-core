@@ -11,7 +11,7 @@ prepare() {
 }
 
 build() {
-    install -d                               "$ABI_INSTALL_DIR" &&
-    cp -rv "$SOURCE_DIR/include"             "$ABI_INSTALL_DIR" &&
-    cp -rv "$SOURCE_DIR/libs/$TARGET_OS_ABI" "$ABI_LIBRARY_DIR"
+    install -d                               "$TARGET_INSTALL_DIR" &&
+    cp -rv "$SOURCE_DIR/include"             "$TARGET_INSTALL_DIR" &&
+    cp -rv "$SOURCE_DIR/libs/$TARGET_OS_ABI" "$TARGET_LIBRARY_DIR"
 }
