@@ -1,7 +1,7 @@
 package set summary "Command-line interface for VirusTotal"
 package set git.url "https://github.com/VirusTotal/vt-cli.git"
-package set src.url "https://github.com/VirusTotal/vt-cli/archive/0.10.0.tar.gz"
-package set src.sum "88ef4d2c7708be1bc27c2290181996b6c18e08d5f56a8765de8a5ec13f68e6ac"
+package set src.url "https://github.com/VirusTotal/vt-cli/archive/0.10.1.tar.gz"
+package set src.sum "b9004ebdd7a66eff15d160fe795b7f3c5577af7c316f896e7e05418e89c3792c"
 package set license "Apache-2.0"
 package set bsystem "go"
 

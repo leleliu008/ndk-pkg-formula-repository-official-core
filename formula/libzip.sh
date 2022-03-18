@@ -20,5 +20,6 @@ build() {
         -DBUILD_DOC=OFF \
         -DBUILD_TOOLS=OFF \
         -DBUILD_REGRESS=OFF \
-        -DBUILD_EXAMPLES=OFF
+        -DBUILD_EXAMPLES=OFF &&
+    sed_in_place 's|-lZstd|-lzstd|' "$TARGET_PKGCONF_DIR/libzip.pc"
 }

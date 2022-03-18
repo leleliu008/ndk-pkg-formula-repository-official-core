@@ -21,7 +21,7 @@ package set <KEY> <VALUE>
 ||||
 |`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
-|`fix.url`|required|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
+|`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
 |`fix.sum`|optional|the `sha256sum` of patch file.|
 ||||
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
@@ -107,13 +107,15 @@ package set <KEY> <VALUE>
 ## the variable can be used in build function only
 |variable|overview|
 |-|-|
-|`BUILD_DIR`|the build directory of this abi.|
-|`PKG_INSTALL_DIR`|the installation directory of this package.|
-|`ABI_INSTALL_DIR`|the installation directory of this package of this abi.|
-|`ABI_BINARY__DIR`|the `bin` directory of this package of this abi.|
-|`ABI_INCLUDE_DIR`|the `include` directory of this package of this abi.|
-|`ABI_LIBRARY_DIR`|the `lib` directory of this package of this abi.|
-|`ABI_PKGCONF_DIR`|the `pkgconfig` directory of this package of this abi.|
+|`PACKAGE_INSTALL_DIR`|the installation directory of this package.|
+|||
+|`TARGET_BUILD_DIR`|the build directory of this abi.|
+|`TARGET_INSTALL_DIR`|the installation directory of this package of this abi.|
+|`TARGET_BINARY__DIR`|the `bin` directory of this package of this abi.|
+|`TARGET_INCLUDE_DIR`|the `include` directory of this package of this abi.|
+|`TARGET_LIBRARY_DIR`|the `lib` directory of this package of this abi.|
+|`TARGET_PKGCONF_DIR`|the `pkgconfig` directory of this package of this abi.|
+|||
 |`x_INSTALL_DIR`|the installation directory of x package of this abi.|
 |`x_INCLUDE_DIR`|the `include` directory of x package of this abi.|
 |`x_LIBRARY_DIR`|the `lib` directory of x package of this abi.|
