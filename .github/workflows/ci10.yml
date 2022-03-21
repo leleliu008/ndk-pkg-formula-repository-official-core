@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,minizip-ng,miniz,mm-wiki,mold,mozjpeg,mpg123,mpir,mruby,msgpack-c,nanomsg,nano,nasm,navi]
+        pkg: [libexif,libimagequant,libirecovery,libisoburn,libmaxminddb,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,librsvg,libsamplerate,libsigsegv,libsmi]
 
     runs-on: ${{ matrix.os }}
 

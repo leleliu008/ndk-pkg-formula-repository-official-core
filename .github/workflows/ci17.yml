@@ -1,4 +1,4 @@
-name: workflow13
+name: workflow17
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [mm-wiki,mold,mozjpeg,mpg123,mpir,mruby,msgpack-c,nanomsg,nano,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn,nsh]
+        pkg: [starship,stylua,supervisord,suricata,swig,syncthing,szip,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,texinfo,tig,tinyxml2,tmux]
 
     runs-on: ${{ matrix.os }}
 

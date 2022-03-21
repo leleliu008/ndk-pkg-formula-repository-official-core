@@ -8,7 +8,7 @@ package set bsystem "cargo cmake"
 build() {
     # https://github.com/servo/libfontconfig/issues/62
     if [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] ; then
-        run install -d "$TARGET_BINARY__DIR"
+        run install -d "$TARGET_INSTALL_DIR/bin"
     else
         cargow install
     fi

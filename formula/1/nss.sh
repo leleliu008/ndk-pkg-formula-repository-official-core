@@ -65,15 +65,15 @@ build() {
 }
 
 install_files() {
-    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
+    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}              || return 1
     
-    install -v -m755 Linux*/lib/*.so              $TARGET_LIBRARY_DIR       || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $TARGET_LIBRARY_DIR       || return 1
+    install -v -m755 Linux*/lib/*.so                $TARGET_INSTALL_DIR/lib   || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $TARGET_INSTALL_DIR/lib   || return 1
     
-    cp -v -RL {public,private}/nss/*              $TARGET_INCLUDE_DIR/nss   || return 1
-    chmod -v 644                                  $TARGET_INCLUDE_DIR/nss/* || return 1
+    cp -v -RL {public,private}/nss/*                $TARGET_INCLUDE_DIR/nss   || return 1
+    chmod -v 644                                    $TARGET_INCLUDE_DIR/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_BINARY__DIR     || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_INSTALL_DIR/bin   || return 1
 }
 
 install_pc_files() {

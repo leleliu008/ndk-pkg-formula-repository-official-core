@@ -21,11 +21,13 @@ package set <KEY> <VALUE>
 ||||
 |`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+||||
 |`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
 |`fix.sum`|optional|the `sha256sum` of patch file.|
 ||||
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|append to `CFLAGS`|
 |`xxflags`|optional|append to `CXXFLAGS`|
@@ -74,14 +76,15 @@ package set <KEY> <VALUE>
 |`MY_VERSION`|the version of `ndk-pkg`.|
 |`MY_HOME_DIR`|the home directory of `ndk-pkg`.|
 |`MY_HOME_PAGE`|the home webpage of `ndk-pkg`.|
-|`MY_CACHED_DIR`|the downloads directory of `ndk-pkg`.|
-|`MY_INSTALL_DIR`|the installed directory of `ndk-pkg`.|
+|`MY_SOURCE_DIR`|the source code store directory of `ndk-pkg`.|
+|`MY_INSTALL_DIR`|the installed packages directory of `ndk-pkg`.|
 
 ## the variable can be used in prepare and build function
 |variable|overview|
 |-|-|
-|`ANDROID_NDK_VERSION`|the version of `Android NDK`.|
+|`ANDROID_NDK_VERS`|the version of `Android NDK`.|
 |`ANDROID_NDK_HOME`|the home directory of `Android NDK`.|
+|`ANDROID_NDK_ROOT`|the home directory of `Android NDK`.|
 |||
 |`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
 |||
@@ -107,11 +110,8 @@ package set <KEY> <VALUE>
 ## the variable can be used in build function only
 |variable|overview|
 |-|-|
-|`PACKAGE_INSTALL_DIR`|the installation directory of this package.|
-|||
 |`TARGET_BUILD_DIR`|the build directory of this abi.|
 |`TARGET_INSTALL_DIR`|the installation directory of this package of this abi.|
-|`TARGET_BINARY__DIR`|the `bin` directory of this package of this abi.|
 |`TARGET_INCLUDE_DIR`|the `include` directory of this package of this abi.|
 |`TARGET_LIBRARY_DIR`|the `lib` directory of this package of this abi.|
 |`TARGET_PKGCONF_DIR`|the `pkgconfig` directory of this package of this abi.|

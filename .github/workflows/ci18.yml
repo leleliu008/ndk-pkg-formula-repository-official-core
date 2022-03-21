@@ -1,4 +1,4 @@
-name: workflow13
+name: workflow18
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [mm-wiki,mold,mozjpeg,mpg123,mpir,mruby,msgpack-c,nanomsg,nano,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn,nsh]
+        pkg: [tokei,toml11,toml++,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd]
 
     runs-on: ${{ matrix.os }}
 

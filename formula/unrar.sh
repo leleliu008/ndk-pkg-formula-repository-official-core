@@ -16,9 +16,9 @@ prepare() {
 
 build() {
     makew -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    install -d "$TARGET_BINARY__DIR" &&
+    install -d "$TARGET_INSTALL_DIR/bin" &&
     makew -f makefile install-unrar DESTDIR="$TARGET_INSTALL_DIR" &&
     makew -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    install -d "$TARGET_LIBRARY_DIR"
+    install -d "$TARGET_INSTALL_DIR/lib"
     makew -f makefile install-lib   DESTDIR="$TARGET_INSTALL_DIR"
 }

@@ -1,4 +1,7 @@
 package set summary "Encrypted P2P networking library"
 package set webpage "https://www.zerotier.com"
 package set git.url "https://github.com/zerotier/libzt.git"
+package set src.url "https://github.com/zerotier/libzt/archive/refs/tags/1.8.4.tar.gz"
+package set src.sum "c0e2d04ad533c95c8772d5b11717bfc7325d95d16145ca7fc36aa53a02c9308e"
+package set license "https://github.com/zerotier/libzt/blob/master/LICENSE.txt"
 package set bsystem "cmake"
