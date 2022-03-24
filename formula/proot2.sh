@@ -8,8 +8,8 @@ package set license "GPL-2.0"
 package set dep.cmd "base64 patch"
 package set dep.pkg "talloc"
 package set bsystem "make"
-package set binsrcd 'yes'
-package set sourced "proot-$(basename "$PACKAGE_SRC_URL" .zip)/src"
+package set binbstd 'yes'
+package set bscript "proot-$(basename "$PACKAGE_SRC_URL" .zip)/src"
 package set sdk.api '23'
 
 prepare() {

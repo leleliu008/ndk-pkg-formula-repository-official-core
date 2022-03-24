@@ -5,6 +5,6 @@ package set src.sum "5362250cf842b958c72f225e70bbe16d4cbe7063e20aee8f685947a2087
 package set license "BSD-2-Clause"
 package set dep.cmd "pkg-config glibtoolize:libtoolize"
 package set dep.pkg "libmediainfo"
-package set sourced "Project/GNU/CLI"
+package set bscript "Project/GNU/CLI"
 package set bsystem "autogen"
-package set binsrcd 'yes'
+package set binbstd 'yes'

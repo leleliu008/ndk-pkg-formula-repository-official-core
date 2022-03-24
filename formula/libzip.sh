@@ -21,5 +21,5 @@ build() {
         -DBUILD_TOOLS=OFF \
         -DBUILD_REGRESS=OFF \
         -DBUILD_EXAMPLES=OFF &&
-    sed_in_place 's|-lZstd|-lzstd|' "$TARGET_PKGCONF_DIR/libzip.pc"
+    sed_in_place 's|-lZstd|-lzstd|' "$TARGET_INSTALL_DIR/lib/pkgconfig/libzip.pc"
 }

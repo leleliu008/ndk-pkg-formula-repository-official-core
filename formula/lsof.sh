@@ -6,7 +6,7 @@ package set src.sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8
 package set license "Zlib"
 package set bsystem "make"
 package set dep.pkg "libtirpc"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 package set sdk.api 26
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 
@@ -21,7 +21,7 @@ build() {
     export LSOF_ARCH="$TARGET_OS_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
-    export LSOF_CFGL="$LDFLAGS -L$SOURCE_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"
+    export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"
     
     run ./Configure -clean &&
     run ./Configure -n linux &&

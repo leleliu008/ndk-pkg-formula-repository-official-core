@@ -9,7 +9,7 @@ package set bsystem "configure"
 
 build() {
     export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)
-    export CPPFLAGS="$CPPFLAGS -I$SOURCE_DIR/contrib/android/include"
+    export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
     configure \
         --enable-xattr \
         --enable-acl \

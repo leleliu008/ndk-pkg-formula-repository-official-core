@@ -6,7 +6,7 @@ package set git.url "https://github.com/seladb/PcapPlusPlus.git"
 package set license "Unlicense"
 package set dep.pkg "libpcap"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     run ./configure-android.sh \

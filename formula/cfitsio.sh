@@ -4,7 +4,7 @@ package set src.url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio
 package set src.sum "b367c695d2831958e7166921c3b356d5dfa51b1ecee505b97416ba39d1b6c17a"
 package set dep.pkg "zlib"
 package set bsystem "configure"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 prepare() {
     sed_in_place 's|-lpthread|-lc|' configure

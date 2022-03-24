@@ -4,6 +4,7 @@ package set src.url "https://pagure.io/libaio/archive/libaio-0.3.112/libaio-liba
 package set src.sum "b7cf93b29bbfb354213a0e8c0e82dfcf4e776157940d894750528714a0af2272"
 package set license "LGPL-2.1-or-later"
 package set bsystem "make"
+package set binbstd "yes"
 
 prepare() {
     # on macOS, some fs is non-case-sensitive. In this case, makew install will always say make: 'install' is up to date.
@@ -12,9 +13,9 @@ prepare() {
 }
 
 build() {
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$SOURCE_DIR/src'" AR="$AR" RANLIB="$RANLIB" &&
-    install -d "$TARGET_INCLUDE_DIR" &&
-    install -d "$TARGET_LIBRARY_DIR" &&
-    makew -C "$SOURCE_DIR" install prefix="$TARGET_INSTALL_DIR"
+    makew clean &&
+    makew default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$PACKAGE_BSCRIPT_DIR/src'" AR="$AR" RANLIB="$RANLIB" &&
+    install -d "$TARGET_INSTALL_DIR/include" &&
+    install -d "$TARGET_INSTALL_DIR/lib" &&
+    makew install prefix="$TARGET_INSTALL_DIR"
 }

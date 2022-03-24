@@ -3,7 +3,7 @@ package set git.url "https://github.com/BLAKE3-team/BLAKE3.git"
 package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/1.3.1.tar.gz"
 package set src.sum "112becf0983b5c83efff07f20b458f2dbcdbd768fd46502e7ddd831b83550109"
 package set license "CC0-1.0"
-package set sourced "c"
+package set bscript "c"
 
 build() {
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'
@@ -30,13 +30,13 @@ build() {
                 blake3_avx2.c)   export CFLAGS="$CFLAGS -mavx2"   ;;
                 blake3_avx512.c) export CFLAGS="$CFLAGS -mavx512f -mavx512vl"
             esac
-            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $SOURCE_DIR/$item || return 1
+            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $PACKAGE_BSCRIPT_DIR/$item || return 1
         )
         OBJS="$item.o $OBJS"
     done
     
     run $CC $LDFLAGS -shared -o libblake3.so $OBJS &&
     run $AR rsc libblake3.a $OBJS &&
-    run install_incs "$SOURCE_DIR/blake3.h" &&
+    run install_incs "$PACKAGE_BSCRIPT_DIR/blake3.h" &&
     run install_libs libblake3.a libblake3.so
 }

@@ -13,7 +13,7 @@ package set version "2.4+20151223"
 package set license "GPL-2.0-or-later"
 package set bsystem "make"
 package set dep.pkg "zlib openssl"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 package set build_in_parallel no
 
 prepare() {

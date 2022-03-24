@@ -6,6 +6,7 @@ package set version "2.1.0"
 package set license "MIT"
 package set dep.cmd "cc"
 package set bsystem "make"
+package set binbstd "yes"
 
 prepare() {
     printf '%s\n' 'int main() {return 0;}' > test.c
@@ -23,7 +24,7 @@ prepare() {
 }
 
 build() {
-    makew -C "$SOURCE_DIR" clean install \
+    makew clean install \
         PREFIX="$TARGET_INSTALL_DIR" \
         HOST_SYS=$(uname -s) \
         HOST_CC="'$CC_FOR_BUILD -m$TARGET_OS_BIT'" \

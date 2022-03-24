@@ -11,10 +11,10 @@ package set fix.url "https://deb.debian.org/debian/pool/main/z/zip/zip_${PACKAGE
 package set fix.sum "c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed"
 
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
-    run tar xf $PACKAGE_FIX_PATH -C "$SOURCE_DIR" || return 1
+    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
     while read PATCH
     do
         patch -p1 < "debian/patches/$PATCH" || return 1

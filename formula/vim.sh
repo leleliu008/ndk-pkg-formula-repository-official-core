@@ -6,10 +6,10 @@ package set src.sum "55d3ac526bed12090b8d2021810ec6c7565a55a54ba8401c614f4e794d5
 package set license "Vim"
 package set dep.pkg "gettext python lua"
 package set bsystem "configure"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
-    printf '\n' > "$WORK_DIR/$TIMESTAMP_UNIX/include.h"
+    printf '\n' > ../include.h
 
     rm -f ./src/auto/config.cache
 

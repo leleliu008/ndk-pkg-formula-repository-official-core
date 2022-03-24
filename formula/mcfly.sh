@@ -8,7 +8,7 @@ package set bsystem "cargo"
 build() {
     if [ "$TARGET_OS_ARCH" = "x86_64" ] ; then
         LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
-		run "echo 'INPUT($LIBCLANG_RT_BUILTINS_FILEPATH -l:libunwind.a)' > '$WORK_DIR/$TIMESTAMP_UNIX/libgcc.a'"
+		run "echo 'INPUT($LIBCLANG_RT_BUILTINS_FILEPATH -l:libunwind.a)' > '$TARGET_WORKING_DIR/lib/libgcc.a'"
     fi
 
     cargow install

@@ -4,9 +4,9 @@ package set src.url "https://mediaarea.net/download/source/libzen/0.4.39/libzen_
 package set src.sum "bd2772ab1ae4e375cdbbbdd114ad8471ebe67bf78c76e3812d66c7d462ed8ae7"
 package set license "BSD-2-Clause"
 package set dep.cmd "glibtoolize:libtoolize"
-package set sourced "Project/GNU/Library"
+package set bscript "Project/GNU/Library"
 package set bsystem "autogen"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 # https://mediaarea.net/en/MediaInfo/Download/Source
 

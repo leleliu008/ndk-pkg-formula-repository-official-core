@@ -8,6 +8,6 @@ package set ldflags "-lcharset"
 package set bsystem "configure"
 
 build0() {
-    sed_in_place '/$(LN_S) trietool/d' "$SOURCE_DIR/tools/Makefile.in" &&
+    sed_in_place '/$(LN_S) trietool/d' "$PACKAGE_BSCRIPT_DIR/tools/Makefile.in" &&
     configure
 }

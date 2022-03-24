@@ -5,4 +5,4 @@ package set src.sum "55b83a5d7145afc4358b29db49d8e107494b64bf4f8938da865ffed978d
 package set license "MIT"
 package set dep.pkg "openssl"
 package set bsystem "cargo"
-package set sourced "lychee-bin"
+package set bscript "lychee-bin"

@@ -6,7 +6,7 @@ package set src.sum "f89199be8b23ca45fc7cb9f1d8d3ee67312318286ad030f5316aca6462d
 package set license "OpenSSL"
 package set dep.cmd "perl"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&

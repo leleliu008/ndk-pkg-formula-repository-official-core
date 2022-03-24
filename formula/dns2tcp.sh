@@ -4,7 +4,7 @@ package set src.url "https://deb.debian.org/debian/pool/main/d/dns2tcp/dns2tcp_0
 package set src.sum "ea9ef59002b86519a43fca320982ae971e2df54cdc54cdb35562c751704278d9"
 package set license "GPL-2.0"
 package set bsystem "configure"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 prepare() {
     # https://github.com/android/ndk/issues/1409

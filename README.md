@@ -32,9 +32,10 @@ package set <KEY> <VALUE>
 |`ccflags`|optional|append to `CFLAGS`|
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
-|`sourced`|optional|the source directory, relative to `WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binsrcd`|optional|build in source directory, otherwise build out-of source directory.|
-|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `make` `ninja` `cargo` `go` `ndk-build`|
+||||
+|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `xmake` `make` `ninja` `cargo` `go` `ndk-build`|
+|`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
 
 ## the function can be declared in a formula
 |function|required?|overview|
@@ -53,7 +54,6 @@ package set <KEY> <VALUE>
 |`error`|`error 'error message.'`|
 |`die`|`die "please specify a package name."`|
 |`success`|`success "build success."`|
-|`nproc`|`make --directory="$BUILD_DIR" -j$(nproc)`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
 |`getvalue`|`VALUE=$(getvalue --min-sdk-api-level=21)`|
@@ -67,8 +67,10 @@ package set <KEY> <VALUE>
 |`configure`|`configure --enable-pic`|
 |`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
 |`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
+|`xmakew`|`xmakew`|
 |`makew`|`makew`|
-|`cargo`|`cargo`|
+|`cargow`|`cargow`|
+|`gow`|`gow`|
 
 ## the variable can be used in a formula at anywhere
 |variable|overview|
@@ -78,6 +80,7 @@ package set <KEY> <VALUE>
 |`MY_HOME_PAGE`|the home webpage of `ndk-pkg`.|
 |`MY_SOURCE_DIR`|the source code store directory of `ndk-pkg`.|
 |`MY_INSTALL_DIR`|the installed packages directory of `ndk-pkg`.|
+|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
 
 ## the variable can be used in prepare and build function
 |variable|overview|
@@ -86,12 +89,11 @@ package set <KEY> <VALUE>
 |`ANDROID_NDK_HOME`|the home directory of `Android NDK`.|
 |`ANDROID_NDK_ROOT`|the home directory of `Android NDK`.|
 |||
-|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
-|||
 |`TARGET_OS_VERS`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
 |||
-|`WORKING_DIR`|the direcotory where the source code tarball uncompressed to or copy to.|
-|`SOURCE_DIR`|the source code directory of this installation. `the source code direcotory` is the direcotory who contains `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`|
+|`PACKAGE_WORKING_DIR`|the direcotory where for installing.|
+|`PACKAGE_SRC_DIR`|the direcotory where the source code tarball will be uncompressed to or copied to.|
+|`PACKAGE_BSCRIPT_DIR`|the direcotory where the build script is located(build script filename: `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`)|
 |||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
@@ -110,11 +112,9 @@ package set <KEY> <VALUE>
 ## the variable can be used in build function only
 |variable|overview|
 |-|-|
+|`TARGET_WORKING_DIR`|the working directory of this abi.|
 |`TARGET_BUILD_DIR`|the build directory of this abi.|
 |`TARGET_INSTALL_DIR`|the installation directory of this package of this abi.|
-|`TARGET_INCLUDE_DIR`|the `include` directory of this package of this abi.|
-|`TARGET_LIBRARY_DIR`|the `lib` directory of this package of this abi.|
-|`TARGET_PKGCONF_DIR`|the `pkgconfig` directory of this package of this abi.|
 |||
 |`x_INSTALL_DIR`|the installation directory of x package of this abi.|
 |`x_INCLUDE_DIR`|the `include` directory of x package of this abi.|

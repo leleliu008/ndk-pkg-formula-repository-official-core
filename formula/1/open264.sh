@@ -6,7 +6,7 @@ package set dep.cmd "nasm"
 package set dep.jdk "yes"
 package set dep.sdk "yes"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     case $TARGET_OS_ARCH in
@@ -15,6 +15,6 @@ build() {
         i686)    TARGET_OS_ARCH=x86   ;;
         x86_64)  TARGET_OS_ARCH=x86_64;;
     esac
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" OS=android ARCH=$TARGET_OS_ARCH NDKROOT=$ANDROID_NDK_ROOT TARGET=android-30 NDKLEVEL=$TARGET_OS_VERS NDK_TOOLCHAIN_VERSION=clang
+    makew -C "$PACKAGE_BSCRIPT_DIR" clean &&
+    makew -C "$PACKAGE_BSCRIPT_DIR" OS=android ARCH=$TARGET_OS_ARCH NDKROOT=$ANDROID_NDK_ROOT TARGET=android-30 NDKLEVEL=$TARGET_OS_VERS NDK_TOOLCHAIN_VERSION=clang
 }

@@ -9,6 +9,6 @@ package set dep.cmd "pkg-config"
 package set bsystem "configure"
 
 prepare() {
-    rm -rf "$WORK_DIR/$TIMESTAMP_UNIX/include.h" &&
-    touch  "$WORK_DIR/$TIMESTAMP_UNIX/include.h"
+    rm -rf include.h &&
+    touch  include.h
 }

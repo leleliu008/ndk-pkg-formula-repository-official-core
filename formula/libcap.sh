@@ -17,8 +17,8 @@ prepare() {
 }
 
 build() {
-    makew -C "$SOURCE_DIR/libcap" clean &&
-    makew -C "$SOURCE_DIR/libcap" install \
+    makew -C "$PACKAGE_BSCRIPT_DIR/libcap" clean &&
+    makew -C "$PACKAGE_BSCRIPT_DIR/libcap" install \
         prefix="$TARGET_INSTALL_DIR" \
         lib=lib \
         PAM_CAP=no \
@@ -31,5 +31,5 @@ build() {
         AR="$AR" \
         RANLIB="$RANLIB" \
         OBJCOPY="$OBJCOPY" &&
-    cp "$SOURCE_DIR/libcap/_caps_output.gperf" .
+    cp "$PACKAGE_BSCRIPT_DIR/libcap/_caps_output.gperf" .
 }

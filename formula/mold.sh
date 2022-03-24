@@ -5,10 +5,11 @@ package set src.sum "47c5ddfe60beffc01da954191c819d78924e4d1eb96aeebfa24e1862cb3
 package set license "AGPL-3.0-only"
 package set dep.pkg "tbb xxhash zlib openssl"
 package set bsystem "make"
+package set binbstd "yes"
 
 build() {
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install \
+    makew clean &&
+    makew install \
         PREFIX=$TARGET_INSTALL_DIR \
         STRIP=true \
         LTO=1 \

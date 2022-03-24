@@ -6,7 +6,7 @@ package set license "BSD-2-Clause"
 package set dep.pkg "readline"
 package set dep.cmd "pkg-config"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
 package set sdk.api 26

@@ -6,7 +6,7 @@ package set license "GPL-3.0"
 package set dep.cmd "pkg-config"
 package set dep.pkg "ncurses libwordexp"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     makew clean &&

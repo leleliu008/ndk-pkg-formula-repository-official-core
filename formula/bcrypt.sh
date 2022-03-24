@@ -3,6 +3,7 @@ package set webpage "https://bcrypt.sourceforge.io"
 package set src.url "https://bcrypt.sourceforge.io/bcrypt-1.1.tar.gz"
 package set src.sum "b9c1a7c0996a305465135b90123b0c63adbb5fa7c47a24b3f347deb2696d417d"
 package set bsystem "make"
+package set binbstd "yes"
 package set ldflags "-lz"
 
 prepare() {
@@ -10,6 +11,6 @@ prepare() {
 }
 
 build() {
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" PREFIX="$TARGET_INSTALL_DIR"
+    makew clean &&
+    makew install CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" PREFIX="$TARGET_INSTALL_DIR"
 }

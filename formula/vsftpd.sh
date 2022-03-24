@@ -5,7 +5,7 @@ package set src.sum "26b602ae454b0ba6d99ef44a09b6b9e0dfa7f67228106736df1f278c70b
 package set license "GPL-2.0-only"
 package set dep.pkg "openssl libcap libcrypt"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
     # https://linux.die.net/man/3/getusershell

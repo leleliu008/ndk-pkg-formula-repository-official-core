@@ -5,7 +5,7 @@ package set src.sum "0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8
 package set license "BSD 3-Clause"
 package set bsystem "configure"
 package set dep.pkg "openssl"
-package set sourced "dist"
+package set bscript "dist"
 
 prepare() {
     sed_in_place 's| install_docs||' Makefile.in

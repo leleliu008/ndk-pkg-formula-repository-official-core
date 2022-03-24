@@ -12,10 +12,10 @@ package set fix.sum "88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d26
 
 package set dep.pkg "zip bzip2"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
-    run tar xf $PACKAGE_FIX_PATH -C "$SOURCE_DIR" || return 1
+    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
     while read PATCH
     do
         patch -p1 < "debian/patches/$PATCH" || return 1

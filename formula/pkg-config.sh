@@ -7,7 +7,7 @@ package set bsystem "configure"
 package set dep.pkg "libiconv"
 
 prepare() {
-    CACHE_FILE="$SOURCE_DIR/glib/configure.cache"
+    CACHE_FILE="$PACKAGE_BSCRIPT_DIR/glib/configure.cache"
     sed_in_place '/HAVE_PTHREAD_COND_TIMEDWAIT_MONOTONIC/d' glib/configure
 }
 

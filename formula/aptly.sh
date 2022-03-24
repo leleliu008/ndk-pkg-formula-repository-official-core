@@ -14,5 +14,5 @@ prepare() {
 
 build() {
     gow -X main.Version=$PACKAGE_VERSION &&
-    run install_mans $SOURCE_DIR/man/aptly.1
+    run install_mans $PACKAGE_BSCRIPT_DIR/man/aptly.1
 }

@@ -11,7 +11,7 @@ package set bsystem "cargo"
 build() {
     cargow install &&
     cargow cbuild &&
-    run cd "'$SOURCE_DIR/target/$RUST_TARGET/release'" &&
+    run cd "'$PACKAGE_BSCRIPT_DIR/target/$RUST_TARGET/release'" &&
     run install_incs rav1e.h:rav1e &&
     run install_libs librav1e.a librav1e.so &&
     run install_pcfs rav1e.pc

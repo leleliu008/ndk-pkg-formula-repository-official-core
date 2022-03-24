@@ -16,11 +16,9 @@ build() {
 
     export LDFLAGS="$LDFLAGS -Wl,-z,muldefs"
 
-    if [ "$TARGET_INDEX" -eq 1 ] ; then
-        ln -s "$libjpeg_turbo_LIBRARY_DIR/libjpeg.a" "$WORK_DIR/$TIMESTAMP_UNIX/libjpeg.a" || return 1
-        ln -s "$gettext_LIBRARY_DIR/libintl.a"       "$WORK_DIR/$TIMESTAMP_UNIX/libintl.a" || return 1
-        ln -s "$bzip2_LIBRARY_DIR/libbz2.a"          "$WORK_DIR/$TIMESTAMP_UNIX/libbz2.a"  || return 1
-    fi
+    ln -s "$libjpeg_turbo_LIBRARY_DIR/libjpeg.a" "$TARGET_WORKING_DIR/lib/libjpeg.a" || return 1
+    ln -s "$gettext_LIBRARY_DIR/libintl.a"       "$TARGET_WORKING_DIR/lib/libintl.a" || return 1
+    ln -s "$bzip2_LIBRARY_DIR/libbz2.a"          "$TARGET_WORKING_DIR/lib/libbz2.a"  || return 1
 
     configure \
         --enable-tools=yes \

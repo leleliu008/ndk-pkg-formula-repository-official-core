@@ -6,7 +6,7 @@ package set license "Apache-2.0"
 package set dep.pkg "boost icu4c protobuf googletest"
 package set dep.cmd "pkg-config protoc"
 package set ldflags "-llog -lz -licudata -lstdc++"
-package set sourced "cpp"
+package set bscript "cpp"
 
 prepare() {
     sed_in_place '/pthread/d' CMakeLists.txt

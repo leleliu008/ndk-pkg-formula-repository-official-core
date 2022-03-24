@@ -7,6 +7,6 @@ package set license "BSD-3-Clause"
 package set bsystem "make"
 
 build() {
-    run make -C "$SOURCE_DIR" clean &&
-    run make -C "$SOURCE_DIR" install CC="$CC" LD="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix="$TARGET_INSTALL_DIR"
+    run make -C "$PACKAGE_BSCRIPT_DIR" clean &&
+    run make -C "$PACKAGE_BSCRIPT_DIR" install CC="$CC" LD="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix="$TARGET_INSTALL_DIR"
 }

@@ -4,8 +4,8 @@ package set src.url "https://github.com/HardySimpson/zlog/archive/1.2.15.tar.gz"
 package set src.sum "00037ab8d52772a95d645f1dcfd2c292b7cea326b54e63e219a5b7fdcb7e6508"
 package set license "LGPL-2.1"
 package set bsystem "make"
-package set sourced "src"
-package set binsrcd "yes"
+package set bscript "src"
+package set binbstd "yes"
 package set dep.pkg "libglob"
 
 prepare() {
@@ -21,8 +21,8 @@ build() {
         LIBGLOB=
     fi
 
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" all \
+    makew clean &&
+    makew all \
         CC="$CC" \
         REAL_CFLAGS="'$CPPFLAGS $CFLAGS'" \
         REAL_LDFLAGS="'$LDFLAGS $LIBGLOB'" \

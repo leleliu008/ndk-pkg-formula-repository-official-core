@@ -5,7 +5,7 @@ package set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE
 package set src.sum "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
 package set license "TCL"
 package set bsystem "configure"
-package set sourced "unix"
+package set bscript "unix"
 
 prepare() {
     sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure

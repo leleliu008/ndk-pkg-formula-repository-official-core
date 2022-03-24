@@ -5,7 +5,7 @@ package set src.url "https://github.com/facebook/zstd/archive/v1.5.2.tar.gz"
 package set src.sum "f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e"
 package set bsystem "cmake"
 package set dep.pkg "xz zlib"
-package set sourced "build/cmake"
+package set bscript "build/cmake"
 
 build() {
     cmakew \

@@ -4,8 +4,8 @@ package set src.url "https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.bz2
 package set src.sum "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7"
 package set license "GPL-2.0"
 package set bsystem "configure"
-package set sourced "build/generic"
-package set binsrcd 'yes'
+package set bscript "build/generic"
+package set binbstd 'yes'
 
 build() {
     configure \

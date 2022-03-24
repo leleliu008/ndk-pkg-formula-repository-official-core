@@ -11,5 +11,5 @@ build() {
         -DLIBUV_BUILD_TESTS=OFF \
         -DLIBUV_BUILD_BENCH=OFF \
         -DQEMU=OFF &&
-    mv "$TARGET_LIBRARY_DIR/libuv_a.a" "$TARGET_LIBRARY_DIR/libuv.a"
+    mv "$TARGET_INSTALL_DIR/lib/libuv_a.a" "$TARGET_INSTALL_DIR/lib/libuv.a"
 }

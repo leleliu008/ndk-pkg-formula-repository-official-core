@@ -18,7 +18,7 @@ prepare() {
 }
 
 create_build_h() {
-    cat > $SOURCE_DIR/src/build.h <<EOF
+    cat > $PACKAGE_BSCRIPT_DIR/src/build.h <<EOF
 #ifndef BUILD_H
 #define BUILD_H
 #undef  VERSION
@@ -32,15 +32,15 @@ build() {
         insert_1 || return 1
         insert_2 || return 1
     fi
-    makew -C $SOURCE_DIR/src clean &&
+    makew -C $PACKAGE_BSCRIPT_DIR/src clean &&
     create_build_h &&
-    makew -C $SOURCE_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    makew -C $SOURCE_DIR/src install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
+    makew -C $PACKAGE_BSCRIPT_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    makew -C $PACKAGE_BSCRIPT_DIR/src install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
 }
 
 insert_1() {
-    sed_in_place '1i static char* get_current_dir_name();' "$SOURCE_DIR/src/path/temp.c" &&
-    cat >> "$SOURCE_DIR/src/path/temp.c" <<'EOF'
+    sed_in_place '1i static char* get_current_dir_name();' "$PACKAGE_BSCRIPT_DIR/src/path/temp.c" &&
+    cat >> "$PACKAGE_BSCRIPT_DIR/src/path/temp.c" <<'EOF'
         char* get_current_dir_name() {
 	        struct stat a, b;
 	        char *res = getenv("PWD");
@@ -53,8 +53,8 @@ EOF
 }
 
 insert_2() {
-    sed_in_place '1i static char* get_current_dir_name();' "$SOURCE_DIR/src/syscall/rlimit.c" &&
-    cat >> "$SOURCE_DIR/src/syscall/rlimit.c" <<'EOF'
+    sed_in_place '1i static char* get_current_dir_name();' "$PACKAGE_BSCRIPT_DIR/src/syscall/rlimit.c" &&
+    cat >> "$PACKAGE_BSCRIPT_DIR/src/syscall/rlimit.c" <<'EOF'
         //prlimit(2)
         //Return Value
         //On success, these system calls return 0.

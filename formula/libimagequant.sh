@@ -5,8 +5,8 @@ package set src.url "https://github.com/ImageOptim/libimagequant/archive/4.0.0.t
 package set src.sum "d041f6f2dac36df76f22cedaf74c914f46bff1fea7d6025d1b13199204c25dd8"
 package set license "GPL-3.0"
 package set bsystem "cargo"
-package set sourced "imagequant-sys"
-package set binsrcd "yes"
+package set bscript "imagequant-sys"
+package set binbstd "yes"
 
 build() {
     cargow build &&

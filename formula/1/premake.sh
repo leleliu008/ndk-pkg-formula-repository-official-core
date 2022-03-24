@@ -8,5 +8,5 @@ package set license "BSD-3-Clause"
 package set bsystem "make"
 
 build() {
-    makew -C "$SOURCE_DIR" -f Bootstrap.mak linux-clean
+    makew -C "$PACKAGE_BSCRIPT_DIR" -f Bootstrap.mak linux-clean
 }

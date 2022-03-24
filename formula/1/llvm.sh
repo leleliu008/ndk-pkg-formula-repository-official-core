@@ -6,11 +6,15 @@ package set src.sum "6075ad30f1ac0e15f07c1bf062c1e1268c241d674f11bd32cdf0e040c71
 package set license "Apache-2.0"
 package set dep.pkg "libxml2 libedit libffi"
 package set dep.cmd "pkg-config python3:python"
-package set sourced "llvm"
+package set bscript "llvm"
 package set bsystem "cmake"
 
 build02() {
     cmakew -DLLVM_ENABLE_PROJECTS=clang
+}
+
+prepare() {
+    printf '%s\n' 'INPUT(-lc)' > ../libgcc_s.a
 }
 
 # https://llvm.org/docs/GettingStarted.html
@@ -22,10 +26,6 @@ build() {
         i686)    LLVM_TARGETS_TO_BUILD=X86     ;;
         x86_64)  LLVM_TARGETS_TO_BUILD=X86     ;;
     esac
-
-    if [ ! -f "$WORK_DIR/$TIMESTAMP_UNIX"/libgcc_s.a ] ; then
-        printf '%s\n' 'INPUT(-lc)' > "$WORK_DIR/$TIMESTAMP_UNIX"/libgcc_s.a
-    fi
 
     cmakew \
         -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=ON \

@@ -1,7 +1,7 @@
 package set summary "Savoury implementation of the QUIC transport protocol and HTTP/3"
 package set git.url "https://github.com/cloudflare/quiche.git"
 package set bsystem "cargo"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     cargow build --package quiche &&

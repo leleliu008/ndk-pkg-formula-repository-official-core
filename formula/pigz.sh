@@ -5,7 +5,7 @@ package set src.url "https://zlib.net/pigz/pigz-2.7.tar.gz"
 package set src.sum "b4c9e60344a08d5db37ca7ad00a5b2c76ccb9556354b722d56d55ca7e8b1c707"
 package set license "Zlib"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 prepare() {
     sed_in_place 's|-lpthread||' Makefile

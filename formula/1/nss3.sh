@@ -4,7 +4,7 @@ package set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_
 package set src.sum "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
 package set license "MPL-2.0"
 package set dep.pkg "nspr"
-package set sourced "nss"
+package set bscript "nss"
 
 prepare() {
     :
@@ -12,7 +12,7 @@ prepare() {
 }
 
 build() {
-    "$SOURCE_DIR/build.sh" \
+    "$PACKAGE_BSCRIPT_DIR/build.sh" \
         -DOS=android \
         -DSHARED_LIB_SUFFIX=.so \
         -c \
@@ -24,15 +24,15 @@ build() {
 }
 
 install_files() {
-    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
+    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}                      || return 1
     
-    install -v -m755 Linux*/lib/*.so              $TARGET_LIBRARY_DIR       || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $TARGET_LIBRARY_DIR       || return 1
+    install -v -m755 Linux*/lib/*.so                $TARGET_INSTALL_DIR/lib           || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $TARGET_INSTALL_DIR/lib           || return 1
     
-    cp -v -RL {public,private}/nss/*              $TARGET_INCLUDE_DIR/nss   || return 1
-    chmod -v 644                                  $TARGET_INCLUDE_DIR/nss/* || return 1
+    cp -v -RL {public,private}/nss/*                $TARGET_INSTALL_DIR/include/nss   || return 1
+    chmod -v 644                                    $TARGET_INSTALL_DIR/include/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_INSTALL_DIR/bin || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_INSTALL_DIR/bin           || return 1
 }
 
 install_pc_files() {

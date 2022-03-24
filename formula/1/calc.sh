@@ -6,7 +6,7 @@ package set src.sum "f7727835a103d9712c571958e924e9c254bd148f08eb4348019bc34f8e7
 package set license "LGPL-2.1-or-later"
 package set dep.pkg "readline"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     export BUILD_NJOBS=1

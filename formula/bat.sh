@@ -7,5 +7,5 @@ package set bsystem "cargo"
 
 build() {
     cargow install &&
-    install_mans $(find "$SOURCE_DIR/target/$RUST_TARGET/release/build" -name 'bat.1')
+    install_mans $(find "$PACKAGE_BSCRIPT_DIR/target/$RUST_TARGET/release/build" -name 'bat.1')
 }

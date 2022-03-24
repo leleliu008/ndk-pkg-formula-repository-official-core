@@ -6,7 +6,7 @@ package set src.sum "a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802f
 package set dep.pkg "libpng lcms2"
 package set dep.cmd "pkg-config"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     export OSTYPE=Linux

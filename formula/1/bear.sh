@@ -14,7 +14,7 @@ package set sdk.api 28
 prepare() {
     #sed_in_place '/-DCMAKE_PREFIX_PATH/c \            -DCMAKE_FIND_ROOT_PATH:PATH=${CMAKE_FIND_ROOT_PATH}' CMakeLists.txt
     #sed_in_place '/HAVE_CONFSTR/c set(HAVE_CONFSTR 1)' source/CMakeLists.txt
-    cat >> "$WORK_DIR/$TIMESTAMP_UNIX/include.h" <<EOF
+    cat >> include.h <<EOF
 #include<stdlib.h>
 #include<string.h>
 #define _CS_PATH 10

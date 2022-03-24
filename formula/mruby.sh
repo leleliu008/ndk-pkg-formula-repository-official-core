@@ -7,7 +7,7 @@ package set license "MIT"
 package set dep.pkg "readline"
 package set dep.cmd "bison cc"
 package set bsystem "rake"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 prepare() {
     cat > build_config/android.rb <<EOF

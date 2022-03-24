@@ -6,7 +6,7 @@ package set src.url "https://bellard.org/quickjs/quickjs-${PACKAGE_VERSION}.tar.
 package set src.sum "a45bface4c3379538dea8533878d694e289330488ea7028b105f72572fe7fe1a"
 package set license "MIT"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
     sed_in_place 's|-g||' Makefile &&

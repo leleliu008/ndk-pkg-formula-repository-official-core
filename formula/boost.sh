@@ -6,7 +6,7 @@ package set src.sum "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea5833
 package set version "1.76.0"
 package set license "BSL-1.0"
 package set dep.pkg "zstd icu4c libiconv python"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android

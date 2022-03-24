@@ -5,7 +5,7 @@ package set src.sum "d8dcc83f8e9686e6855da4c33d8c373f1735d87294edbd86ed662ba2f2f
 package set license "BSD-2-Clause-Patent"
 package set dep.cmd "nasm"
 package set bsystem "meson"
-package set sourced "libvmaf"
+package set bscript "libvmaf"
 
 build() {
     mesonw \

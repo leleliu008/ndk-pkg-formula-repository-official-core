@@ -5,7 +5,7 @@ package set src.url "https://nginx.org/download/nginx-1.21.6.tar.gz"
 package set src.sum "66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae"
 package set dep.pkg "openssl pcre libcrypt libglob"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 trace_configure() {
     for item in $(ls $1)

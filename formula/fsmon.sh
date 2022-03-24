@@ -4,7 +4,7 @@ package set src.url "https://github.com/nowsecure/fsmon/archive/1.8.4.tar.gz"
 package set src.sum "3e9ac1f20c76caf8d576535f21723419fe73bfe63178d306ea07f141f7dbaf0a"
 package set license "MIT"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 prepare() {
     sed_in_place 's|$(shell uname)|Linux|' Makefile

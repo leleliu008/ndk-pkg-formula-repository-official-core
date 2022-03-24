@@ -6,7 +6,7 @@ package set src.sum "164c7849653b80ae67bec4b7473b884bf5cc8d2dca05653475ec2ed27b9
 package set license "MIT"
 package set dep.pkg "readline"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     makew clean &&

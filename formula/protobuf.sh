@@ -5,7 +5,7 @@ package set src.sum "ba0650be1b169d24908eeddbe6107f011d8df0da5b1a5a4449a913b10e5
 package set license "BSD-3-Clause"
 package set dep.pkg "zlib"
 package set bsystem "cmake"
-package set sourced "cmake"
+package set bscript "cmake"
 
 build0() {
     # used by other package. make sure protoc and libprotoc same version

@@ -9,6 +9,6 @@ package set dep.cmd "pkg-config"
 package set bsystem "cargo"
 
 build() {
-    run ln -sf "$bzip2_LIBRARY_DIR/libbz2.so" "$WORK_DIR/$TIMESTAMP_UNIX/libbz2.so" &&
+    run ln -sf "$bzip2_LIBRARY_DIR/libbz2.so" "$TARGET_WORKING_DIR/lib/libbz2.so" &&
     cargow install --features external-harfbuzz
 }

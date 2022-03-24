@@ -7,7 +7,7 @@ package set bsystem "cmake"
 package set dep.pkg "libiconv"
 package set ldflags "-liconv"
 package set cdefine "_UINT64_T_DECLARED"
-package set sourced "CPP/7zip/CMAKE"
+package set bscript "CPP/7zip/CMAKE"
 
 prepare() {
     echo 'install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/7z_ DESTINATION bin RENAME 7z)' >> CMakeLists.txt &&

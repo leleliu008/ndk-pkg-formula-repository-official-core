@@ -4,7 +4,7 @@ package set git.url "https://github.com/wahern/hexdump.git"
 package set src.url "https://github.com/wahern/hexdump/archive/refs/tags/rel-20181215.tar.gz"
 package set src.sum "882975323317f595093125467d7b9604f78bded7ba1005f5fc17e33358cdb0fa"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
     sed_in_place '/VENDOR_OS =/d' GNUmakefile

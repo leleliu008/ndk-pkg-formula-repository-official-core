@@ -12,7 +12,7 @@ package set ldflags "-lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype"
 
 build() {
     if [ "$TARGET_OS_ARCH" = 'x86_64' ] ; then
-        sed_in_place '/HAVE_FLDLN2/d' "$SOURCE_DIR/configure" || return 1
+        sed_in_place '/HAVE_FLDLN2/d' "$PACKAGE_BSCRIPT_DIR/configure" || return 1
     fi
 
     configure \

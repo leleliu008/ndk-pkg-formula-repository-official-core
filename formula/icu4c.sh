@@ -6,13 +6,13 @@ package set version "70.1"
 package set src.sum "8d205428c17bf13bb535300669ed28b338a157b1c01ae66d31d0d3e2d47c3fd5"
 package set license "ICU"
 package set bsystem "configure"
-package set sourced "source"
+package set bscript "source"
 
 build0() {
     # https://www.talkwithdevices.com/archives/260
     case $NATIVE_OS_KIND in
-        darwin) run "$SOURCE_DIR/runConfigureICU" MacOSX && make ;;
-        *)      run "$SOURCE_DIR/runConfigureICU" Linux  && make ;;
+        darwin) run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" MacOSX && make ;;
+        *)      run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" Linux  && make ;;
     esac
 }
 

@@ -4,14 +4,15 @@ package set src.url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
 package set src.sum "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
 package set license "bzip2-1.0.6"
 package set bsystem "make"
+package set binbstd "yes"
 
 prepare() {
     repair_makefile
 }
 
 build() {
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install \
+    makew clean &&
+    makew install \
         PREFIX="$TARGET_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="\"$CFLAGS\"" \
@@ -30,7 +31,7 @@ Version: ${PACKAGE_VERSION}
 Libs: -L\${libdir} -lbz2
 Cflags: -I\${includedir}
 EOF
-    } && (cd "$TARGET_PKGCONF_DIR" && ln -s libbz2.pc bzip2.pc)
+    } && (cd "$TARGET_INSTALL_DIR/lib/pkgconfig" && ln -s libbz2.pc bzip2.pc)
 }
 
 repair_makefile() {

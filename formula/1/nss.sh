@@ -4,7 +4,7 @@ package set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_
 package set src.sum "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
 package set license "MPL-2.0"
 package set dep.pkg "nspr"
-package set sourced "nss"
+package set bscript "nss"
 
 prepare() {
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
@@ -30,7 +30,7 @@ prepare_includes() {
     done
 }
 
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     makew clean &&
@@ -70,8 +70,8 @@ install_files() {
     install -v -m755 Linux*/lib/*.so                $TARGET_INSTALL_DIR/lib   || return 1
     install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $TARGET_INSTALL_DIR/lib   || return 1
     
-    cp -v -RL {public,private}/nss/*                $TARGET_INCLUDE_DIR/nss   || return 1
-    chmod -v 644                                    $TARGET_INCLUDE_DIR/nss/* || return 1
+    cp -v -RL {public,private}/nss/*                $TARGET_INSTALL_DIR/include/nss   || return 1
+    chmod -v 644                                    $TARGET_INSTALL_DIR/include/nss/* || return 1
     
     install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_INSTALL_DIR/bin   || return 1
 }

@@ -5,7 +5,7 @@ package set src.url "https://ffmpeg.org/releases/ffmpeg-5.0.tar.xz"
 package set src.sum "51e919f7d205062c0fd4fae6243a84850391115104ccf1efc451733bc0ac7298"
 package set dep.pkg "sdl2 opus libwebp libvorbis theora speex x264 x265 lame"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     if run ./configure \

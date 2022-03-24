@@ -4,9 +4,9 @@ package set src.url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0
 package set src.sum "182e69af99788b445585b8075bbca89ae8101069fbeee25b2756fb9590e833f8"
 package set license "OLDAP-2.8"
 package set cdefine "MDB_USE_ROBUST=0"
-package set sourced "libraries/liblmdb"
+package set bscript "libraries/liblmdb"
 package set bsystem "make"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 build() {
     makew clean &&

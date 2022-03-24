@@ -6,7 +6,7 @@ package set src.sum "45f6604372df3f49293749cd7c0b42cb21c4fb666c66f8ed9765de004d1
 package set license "GPL-2.0-or-later"
 package set dep.pkg "openssl"
 package set bsystem "configure"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     export LD="$CC"

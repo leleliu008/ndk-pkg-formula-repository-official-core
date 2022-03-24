@@ -6,7 +6,7 @@ package set src.sum "6f15e68eeb63fd42e91c3ce75eccf325f2c938fa1dc248e7213af37c043
 package set license "GPL-2.0-or-later"
 
 build() {
-    "$SOURCE_DIR"/configure \
+    "$PACKAGE_BSCRIPT_DIR"/configure \
         --prefix="$TARGET_INSTALL_DIR" \
         --enable-array \
         --enable-dirstack \

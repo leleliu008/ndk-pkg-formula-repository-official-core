@@ -33,7 +33,7 @@ build() {
         libusb_LIBS="$libusb_LIBRARY_DIR/libusb-1.0.a" \
         ac_cv_lib_pthread_pthread_create__pthread_mutex_lock=yes &&
         (
-            cd $TARGET_LIBRARY_DIR && {
+            cd $TARGET_INSTALL_DIR/lib && {
                 if [ -f libusbmuxd-server.a ] ; then
                     run $CC -shared -o libusbmuxd-server.so -Wl,--whole-archive libusbmuxd-server.a $libplist_LIBRARY_DIR/libplist-2.0.a $libusb_LIBRARY_DIR/libusb-1.0.a -Wl,--no-whole-archive
                 fi

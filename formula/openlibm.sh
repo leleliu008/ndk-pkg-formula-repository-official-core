@@ -4,6 +4,7 @@ package set git.url "https://github.com/JuliaMath/openlibm.git"
 package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
 package set src.sum "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
 package set bsystem "make"
+package set binbstd "yes"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc
@@ -15,8 +16,9 @@ build() {
     else
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install \
+
+    makew clean &&
+    makew install \
         prefix="$TARGET_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="'$CFLAGS'" \

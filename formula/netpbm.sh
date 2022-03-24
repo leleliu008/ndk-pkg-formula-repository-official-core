@@ -6,6 +6,7 @@ package set license "GPL-3.0-or-later"
 package set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
 package set dep.cmd "flex"
 package set bsystem "make"
+package set binbstd "yes"
 package set build_in_parallel no
 
 prepare() {
@@ -20,16 +21,16 @@ prepare() {
 
 
 build() {
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB=-ltiff JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB=-ljasper JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper" &&
-    makew -C "$SOURCE_DIR" package pkgdir=$TARGET_INSTALL_DIR SONAME=libnetpbm.so &&
-    run mv "$TARGET_INSTALL_DIR/link/libnetpbm.a" "$TARGET_LIBRARY_DIR" &&
+    makew clean &&
+    makew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB=-ltiff JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB=-ljasper JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper" &&
+    makew package pkgdir=$TARGET_INSTALL_DIR SONAME=libnetpbm.so &&
+    run mv "$TARGET_INSTALL_DIR/link/libnetpbm.a" "$TARGET_INSTALL_DIR/lib" &&
     run rm -rf "$TARGET_INSTALL_DIR/link" &&
-    sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"    "$TARGET_INSTALL_DIR/pkgconfig_template" &&
-    sed_in_place "s|@LINKDIR@|$TARGET_LIBRARY_DIR|"    "$TARGET_INSTALL_DIR/pkgconfig_template" &&
-    sed_in_place "s|@INCLUDEDIR@|$TARGET_INCLUDE_DIR|" "$TARGET_INSTALL_DIR/pkgconfig_template" &&
-    run install -d "$TARGET_LIBRARY_DIR/pkgconfig" &&
-    run mv "$TARGET_INSTALL_DIR/pkgconfig_template"    "$TARGET_LIBRARY_DIR/pkgconfig/netpbm.pc" &&
+    sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"               "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    sed_in_place "s|@LINKDIR@|$TARGET_INSTALL_DIR/lib|"        "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    sed_in_place "s|@INCLUDEDIR@|$TARGET_INSTALL_DIR/include|" "$TARGET_INSTALL_DIR/pkgconfig_template" &&
+    run install -d "$TARGET_INSTALL_DIR/lib/pkgconfig" &&
+    run mv "$TARGET_INSTALL_DIR/pkgconfig_template"    "$TARGET_INSTALL_DIR/lib/pkgconfig/netpbm.pc" &&
     run rm "$TARGET_INSTALL_DIR/README" &&
     run rm "$TARGET_INSTALL_DIR/VERSION" &&
     run rm "$TARGET_INSTALL_DIR/pkginfo" &&

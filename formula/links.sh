@@ -5,7 +5,7 @@ package set src.sum "2dd78508698e8279ef4f09a3a2a21e9595040113402da6c553974414fb4
 package set license "GPL-2.0"
 package set dep.pkg "xz bzip2 libtiff libjpeg-turbo openssl"
 package set bsystem "make"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     # configure [options] [host]

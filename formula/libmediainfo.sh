@@ -5,9 +5,9 @@ package set src.sum "6a31671d99a3da4589f95825a603c061768fee17dc64daaae716e5ade13
 package set license "BSD-2-Clause"
 package set dep.cmd "pkg-config glibtoolize:libtoolize"
 package set dep.pkg "libzen zlib curl"
-package set sourced "Project/GNU/Library"
+package set bscript "Project/GNU/Library"
 package set bsystem "autogen"
-package set binsrcd 'yes'
+package set binbstd 'yes'
 
 prepare() {
     sed_in_place 's|${libdir}/libzen.a||' libmediainfo.pc.in &&

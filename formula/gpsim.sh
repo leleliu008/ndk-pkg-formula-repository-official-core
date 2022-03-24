@@ -5,7 +5,7 @@ package set src.sum "110ee6be3a5d02b32803a91e480cbfc9d423ef72e0830703fc0bc97b956
 package set license "GPL-2.0"
 package set dep.pkg "glib popt readline"
 package set bsystem "configure"
-package set binsrcd "yes"
+package set binbstd "yes"
 
 build() {
     configure --disable-gui
