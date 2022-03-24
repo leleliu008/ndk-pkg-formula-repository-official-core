@@ -2,9 +2,9 @@ name: workflow5
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master,dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ master,dev ]
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
 
       - name: install ndk-pkg
         run: |
-          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
+          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/bin/ndk-pkg
           chmod u+x ndk-pkg
           mv ndk-pkg $(brew --prefix)/bin
 
