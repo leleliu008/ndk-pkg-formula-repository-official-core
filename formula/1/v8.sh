@@ -1,6 +1,0 @@
-package set summary "Google's JavaScript engine"
-package set webpage "https://v8.dev/"
-package set src.url "https://github.com/v8/v8/archive/9.1.269.36.tar.gz"
-package set src.sum "c3ba0ce39d735987d4b6d7791f9f1ef4c70d995ee8570345ec7089724997191f"
-package set license "BSD-3-Clause"
-package set dep.cmd "gn ninjia"
