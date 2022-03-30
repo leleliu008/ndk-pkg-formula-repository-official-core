@@ -1,7 +1,7 @@
 package set summary "Rule-based tunnel in Go"
 package set git.url "https://github.com/Dreamacro/clash.git"
-package set src.url "https://github.com/Dreamacro/clash/archive/v1.9.0.tar.gz"
-package set src.sum "a276b1e7247e847fe44fe336a67bdecbb442748a1e7fa01d9c1ce0d52f9168ef"
+package set src.url "https://github.com/Dreamacro/clash/archive/v1.10.0.tar.gz"
+package set src.sum "40205e152ce73984a29f1888a1f235cb653f03a751ae5062b88b4b4076d5e87b"
 package set license "GPL-3.0-only"
 package set bsystem "go"
 

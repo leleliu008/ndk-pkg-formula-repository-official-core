@@ -9,19 +9,23 @@ package set dep.cmd "git gclient ninja"
 prepare() {
     unset -f fetch
 
-    run fetch v8 || return 1
-    run "echo \"target_os = ['android']\" >> .gclient" || return 1
-    run cd v8 || return 1
-    run git checkout $PACKAGE_VERSION || return 1
-    run "yes | gclient sync" || return 1
+    run cd .. &&
+    run fetch v8 &&
+    run "echo \"target_os = ['android']\" >> .gclient" &&
+    run mv v8 src &&
+    run cd src || &&
+    run git checkout $PACKAGE_VERSION &&
+    run "yes | gclient sync"
+
+    if [ $? -ne 0 ] ; then
+        return 1
+    fi
 
     GN="$(find "$PWD/buildtools" -name gn)"
 
     if [ -z "$GN" ] ; then
         die "gn command not found."
     fi
-
-    PACKAGE_BSCRIPT_DIR="$PWD"
 }
 
 build() {

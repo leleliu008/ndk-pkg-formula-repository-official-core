@@ -1,8 +1,8 @@
 package set summary "Cryptographic library based on the code from GnuPG"
 package set webpage "https://gnupg.org/related_software/libgcrypt"
 package set git.url "https://github.com/gpg/libgcrypt.git"
-package set src.url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.0.tar.bz2"
-package set src.sum "6a00f5c05caa4c4acc120c46b63857da0d4ff61dc4b4b03933fa8d46013fae81"
+package set src.url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2"
+package set src.sum "ef14ae546b0084cd84259f61a55e07a38c3b53afc0f546bffcef2f01baffe9de"
 package set dep.pkg "libgpg-error"
 package set bsystem "configure"
 

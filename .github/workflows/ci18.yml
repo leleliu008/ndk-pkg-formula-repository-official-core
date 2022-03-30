@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [toml11,toml++,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt]
+        pkg: [tokei,toml11,toml++,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd]
 
     runs-on: ${{ matrix.os }}
 
