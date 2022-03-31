@@ -15,11 +15,11 @@ prepare() {
     unset -f fetch
 
     cd .. &&
-    run fetch --nohooks webrtc_android &&
-    sed_in_place '/target_os = /d' .gclient &&
-    run "echo \"target_os = ['android']\" >> .gclient" &&
-    run cd src &&
-    run git checkout main &&
+    run fetch --nohooks webrtc_android
+    sed_in_place '/target_os = /d' .gclient
+    run "echo \"target_os = ['android']\" >> .gclient"
+    run cd src
+    run git checkout main
     run "yes | gclient sync"
 }
 
@@ -42,7 +42,7 @@ build() {
             GN_ARG_V8_TARGET_CPU=x64
     esac
 
-    run $PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn gen . --root="$PACKAGE_BSCRIPT_DIR" --args="'is_debug=false target_os=\"android\" target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_V8_TARGET_CPU\"'" &&
-    run ninja &&
+    run $PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn gen . --root="$PACKAGE_BSCRIPT_DIR" --args="'is_debug=false target_os=\"android\" target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_V8_TARGET_CPU\"'"
+    run ninja
     run install_libs *.so
 }

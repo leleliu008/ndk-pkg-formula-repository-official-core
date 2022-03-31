@@ -9,17 +9,13 @@ package set dep.cmd "git gclient ninja"
 prepare() {
     unset -f fetch
 
-    run cd .. &&
-    run fetch v8 &&
-    run "echo \"target_os = ['android']\" >> .gclient" &&
-    run mv v8 src &&
-    run cd src || &&
-    run git checkout $PACKAGE_VERSION &&
+    run cd ..
+    run fetch v8
+    run "echo \"target_os = ['android']\" >> .gclient"
+    run mv v8 src
+    run cd src
+    run git checkout $PACKAGE_VERSION
     run "yes | gclient sync"
-
-    if [ $? -ne 0 ] ; then
-        return 1
-    fi
 
     GN="$(find "$PWD/buildtools" -name gn)"
 
@@ -47,9 +43,9 @@ build() {
             GN_ARG_V8_TARGET_CPU=x64
     esac
 
-    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR" --args="'is_debug=false is_component_build=true v8_enable_i18n_support=false target_os=\"android\" target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_V8_TARGET_CPU\"'" &&
-    run ninja &&
-    run install_bins d8 &&
-    run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h &&
+    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR" --args="'is_debug=false is_component_build=true v8_enable_i18n_support=false target_os=\"android\" target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_V8_TARGET_CPU\"'"
+    run ninja
+    run install_bins d8
+    run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
     run install_libs *.so
 }
