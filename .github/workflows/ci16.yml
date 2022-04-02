@@ -1,0 +1,38 @@
+name: workflow16
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [re2c,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sl,soundtouch,spdlog]
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      HOMEBREW_NO_INSTALL_CLEANUP: set
+
+    steps:
+      - run: export -p
+
+      - name: install ndk-pkg
+        run: |
+          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/bin/ndk-pkg
+          chmod u+x ndk-pkg
+          mv ndk-pkg $(brew --prefix)/bin
+
+      - run: ndk-pkg env
+
+      - uses: actions/checkout@v2
+
+      - run: install -d ~/.ndk-pkg/repos.d/offical
+      - run: mv *       ~/.ndk-pkg/repos.d/offical
+
+      - run: ndk-pkg install ${{ matrix.pkg }} --tree
