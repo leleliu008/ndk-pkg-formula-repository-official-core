@@ -11,5 +11,5 @@ package set binbstd 'yes'
 # https://mediaarea.net/en/MediaInfo/Download/Source
 
 prepare() {
-    sed_in_place 's|-lpthread||g' configure.ac && ./autogen.sh
+    sed_in_place 's|-lpthread||g' configure.ac && run ./autogen.sh
 }

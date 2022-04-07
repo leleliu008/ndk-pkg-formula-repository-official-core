@@ -2,6 +2,7 @@ package set summary "C test project"
 package set git.url "https://github.com/leleliu008/C.git"
 package set bsystem "cmake"
 package set version "20.5"
+package set sdk.api 30
 
 build0() {
     :

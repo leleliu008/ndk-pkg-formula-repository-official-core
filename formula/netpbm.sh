@@ -16,6 +16,7 @@ prepare() {
     sed_in_place '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in &&
     sed_in_place '/^INSTALL =/c INSTALL = install' config.mk.in &&
     sed_in_place '/^LDSHLIB =/c LDSHLIB = --shared -o libnetpbm.so' config.mk.in &&
+    sed_in_place 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile &&
     run cp config.mk.in config.mk
 }
 
