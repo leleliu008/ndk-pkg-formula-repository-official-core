@@ -6,6 +6,7 @@ package set lisence "BSD"
 package set bsystem "go"
 
 prepare() {
+    run rm go.mod
     run go mod init github.com/tmedwards/tweego
     run go mod tidy
 }

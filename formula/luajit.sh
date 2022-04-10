@@ -24,6 +24,14 @@ prepare() {
 }
 
 build() {
+    if [ "$TARGET_INDEX" -ne 1 ] ; then
+        run cd
+        run rm -rf "$PACKAGE_SRC_DIR"
+        run mkdir  "$PACKAGE_SRC_DIR"
+        run cp -r  "$PACKAGE_SRC_PATH/." "$PACKAGE_SRC_DIR"
+        run cd "$PACKAGE_SRC_DIR"
+    fi
+
     makew clean install \
         PREFIX="$TARGET_INSTALL_DIR" \
         HOST_SYS=$(uname -s) \

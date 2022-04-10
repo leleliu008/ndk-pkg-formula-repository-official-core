@@ -8,7 +8,7 @@ build0() {
     :
 }
 
-build() {
+build2() {
     touch libtest.so.1.9 &&
     install_libs libtest.so.1.9
 }
