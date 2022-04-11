@@ -11,6 +11,14 @@ prepare() {
 }
 
 build() {
+    if [ "$TARGET_INDEX" -ne 1 ] ; then
+        run cd
+        run rm -rf  "$PACKAGE_SRC_DIR"
+        run mkdir   "$PACKAGE_SRC_DIR"
+        run tar vxf "$PACKAGE_SRC_PATH" -C "$PACKAGE_SRC_DIR" --strip-components=1
+        run cd "$PACKAGE_SRC_DIR"
+    fi
+
     makew distclean &&
     makew VENDOR_OS=android VENDOR_CC="$CC" CC="$CC" CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" SOFLAGS="'$LDFLAGS'" &&
     install_bins hexdump &&

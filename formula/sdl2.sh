@@ -8,7 +8,7 @@ package set bsystem "ndk-build"
 package set binbstd "yes"
 
 prepare() {
-    run ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_PLATFORM=android-$TARGET_OS_VERS V=1
+    run ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_PLATFORM=android-$TARGET_OS_VERS APP_STRIP_MODE=-S V=1
 }
 
 build() {

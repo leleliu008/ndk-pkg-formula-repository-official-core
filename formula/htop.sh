@@ -7,6 +7,17 @@ package set license "GPL-2.0-or-later"
 package set dep.pkg "ncurses"
 package set bsystem "autogen"
 
+# char* strchrnul(char* __s, int __ch) __RENAME(strchrnul) __attribute_pure__ __INTRODUCED_IN(24);
+package set sdk.api 24
+
+prepare() {
+    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
+    if [ "$TARGET_OS_VERS" -lt 26 ] ; then
+        sed_in_place 's|&& String_eq(nl_langinfo(CODESET), "UTF-8")||' CRT.c
+    fi
+    run ./autogen.sh
+}
+
 build() {
-    configure --enable-unicode LIBS=$ncurses_LIBRARY_DIR/libncursesw.a
+    configure --disable-static --enable-unicode LIBS=$ncurses_LIBRARY_DIR/libncursesw.a
 }

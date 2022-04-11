@@ -16,7 +16,7 @@ build() {
         --disable-sse \
         --with-libpng="$libpng_INSTALL_DIR" \
         CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS -static'" \
+        CFLAGS="'$CFLAGS $CPPFLAGS'" \
         LDFLAGS="'$LDFLAGS'" &&
     makew clean &&
     makew install

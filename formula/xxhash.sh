@@ -8,5 +8,5 @@ package set binbstd "yes"
 
 build() {
     makew clean   UNAME=Linux &&
-    makew install UNAME=Linux PREFIX="$TARGET_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS -shared'" AR="$AR" V=1
+    makew install UNAME=Linux PREFIX="$TARGET_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" SONAME_FLAGS=-shared AR="$AR" V=1
 }

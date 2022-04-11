@@ -16,6 +16,6 @@ prepare() {
 
 build() {
     makew clean
-    makew CC=$CC CPP="'$CPP'" STRIP=$STRIP CFLAGS="$CFLAGS" D2U_OS=android
+    makew CC=$CC CPP="'$CPP'" STRIP=$STRIP CFLAGS="'$CFLAGS'" D2U_OS=android
     makew install prefix="$TARGET_INSTALL_DIR"
 }
