@@ -1,12 +1,12 @@
 package set summary "High performance message passing library"
 package set webpage "https://www.open-mpi.org"
 package set git.url "https://github.com/open-mpi/ompi.git"
-package set src.url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.2.tar.bz2"
-package set src.sum "9b78c7cf7fc32131c5cf43dd2ab9740149d9d87cadb2e2189f02685749a6b527"
+package set src.url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.3.tar.bz2"
+package set src.sum "3d81d04c54efb55d3871a465ffb098d8d72c1f48ff1cbaf2580eb058567c0a3b"
 package set license "BSD-3-Clause"
-package set bsystem "configure"
-package set dep.cmd "perl"
 package set dep.pkg "libevent"
+package set dep.cmd "perl"
+package set bsystem "configure"
 package set cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);

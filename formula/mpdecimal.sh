@@ -6,6 +6,10 @@ package set license "BSD-2-Clause"
 package set bsystem "configure"
 package set binbstd "yes"
 
+prepare() {
+    sed_in_place 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
+}
+
 build() {
     export LD="$CC"
     configure

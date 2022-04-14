@@ -1,5 +1,6 @@
 package set summary "Minimalistic Netlink Library based Linux kernel interfaces"
 package set webpage "https://netfilter.org/projects/libmnl"
-package set src.url "https://netfilter.org/projects/libmnl/files/libmnl-1.0.4.tar.bz2"
-package set src.sum "171f89699f286a5854b72b91d06e8f8e3683064c5901fb09d954a9ab6f551f81"
+package set src.url "https://netfilter.org/projects/libmnl/files/libmnl-1.0.5.tar.bz2"
+package set src.sum "274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525"
+package set license "LGPL-2.1-or-later"
 package set bsystem "configure"
