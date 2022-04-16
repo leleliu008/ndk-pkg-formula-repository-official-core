@@ -1,6 +1,6 @@
 package set summary "Automatically generate simple man pages"
 package set webpage "https://www.gnu.org/software/help2man"
-package set src.url "https://ftp.gnu.org/gnu/help2man/help2man-1.49.1.tar.xz"
-package set src.sum "fd99a664ec4be9a86a0dd89719989f14f367a9c079d75d0e1d71e18a7bb51b03"
+package set src.url "https://ftp.gnu.org/gnu/help2man/help2man-1.49.2.tar.xz"
+package set src.sum "9e2e0e213a7e0a36244eed6204d902b6504602a578b6ecd15268b1454deadd36"
 package set license "GPL-3.0-or-later"
 package set bsystem "configure"

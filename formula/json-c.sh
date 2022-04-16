@@ -1,7 +1,7 @@
 package set summary "JSON parser for C"
 package set git.url "https://github.com/json-c/json-c.git"
-package set src.url "https://github.com/json-c/json-c/archive/json-c-0.15.tar.gz"
-package set src.sum "74985882e39467b34722e584ab836ed2abd47061888f318125fd4b167002afd5"
+package set src.url "https://github.com/json-c/json-c/archive/json-c-0.16.tar.gz"
+package set src.sum "c169436bd63a30fce4f9560befccb6bad3d375c8c7e9905ceb4e1f28f2cb24f7"
 package set license "MIT"
 package set bsystem "cmake"
 
