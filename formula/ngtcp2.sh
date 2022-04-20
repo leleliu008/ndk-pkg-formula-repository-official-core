@@ -1,5 +1,6 @@
 package set summary "QUIC library written in C"
 package set git.url "https://github.com/ngtcp2/ngtcp2.git"
+package set license "MIT"
 package set dep.pkg "libev nghttp3"
 package set bsystem "cmake"
 

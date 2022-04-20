@@ -3,6 +3,7 @@ package set webpage "https://gnutls.org"
 package set git.url "https://github.com/gnutls/gnutls.git"
 package set src.url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.4.tar.xz"
 package set src.sum "e6adbebcfbc95867de01060d93c789938cf89cc1d1f6ef9ef661890f6217451f"
+package set license "LGPL-2.1-or-later GPL-3.0-only"
 package set dep.pkg "gmp libunistring nettle libtasn1 libidn2 p11-kit"
 package set bsystem "configure"
 

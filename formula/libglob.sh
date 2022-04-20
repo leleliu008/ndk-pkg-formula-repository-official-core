@@ -1,4 +1,5 @@
 package set summary "glob(3) implementation"
 package set webpage "https://linux.die.net/man/3/glob"
 package set git.url "https://github.com/leleliu008/libglob.git"
+package set license ";LICENSE;https://raw.githubusercontent.com/leleliu008/libglob/master/LICENSE"
 package set bsystem "cmake"

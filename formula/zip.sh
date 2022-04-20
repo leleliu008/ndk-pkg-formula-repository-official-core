@@ -10,6 +10,7 @@ package set src.sum "f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c08
 package set fix.url "https://deb.debian.org/debian/pool/main/z/zip/zip_${PACKAGE_VERSION}.debian.tar.xz"
 package set fix.sum "c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed"
 
+package set license "Info-ZIP"
 package set bsystem "make"
 package set binbstd 'yes'
 

@@ -2,6 +2,7 @@ package set summary "Library and utilities for processing GIFs"
 package set webpage "https://giflib.sourceforge.io"
 package set src.url "https://downloads.sourceforge.net/project/giflib/giflib-5.2.1.tar.gz"
 package set src.sum "31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd"
+package set license ";COPYING;http://giflib.sourceforge.net/intro.html"
 package set bsystem "make"
 package set binbstd "yes"
 package set build_in_parallel no

@@ -1,5 +1,6 @@
 package set summary "a tool for building and running mobile apps written in Go"
 package set git.url "https://github.com/golang/mobile.git"
+package set license ";LICENSE;https://raw.githubusercontent.com/golang/mobile/master/LICENSE"
 package set bsystem "go"
 
 build() {

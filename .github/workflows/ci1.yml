@@ -35,4 +35,4 @@ jobs:
       - run: install -d ~/.ndk-pkg/repos.d/offical
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-      - run: ndk-pkg install ${{ matrix.pkg }} --tree
+      - run: ndk-pkg install ${{ matrix.pkg }}

@@ -2,6 +2,7 @@ package set summary "Perl compatible regular expressions library"
 package set webpage "https://www.pcre.org"
 package set src.url "https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2"
 package set src.sum "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
+package set license "BSD-3-Clause"
 package set dep.pkg "zlib bzip2"
 package set bsystem "cmake"
 

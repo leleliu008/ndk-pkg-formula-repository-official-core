@@ -3,6 +3,7 @@ package set webpage "https://www.wolfssl.com"
 package set git.url "https://github.com/wolfSSL/wolfssl.git"
 package set src.url "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.2.0-stable.tar.gz"
 package set src.sum "409b4646c5f54f642de0e9f3544c3b83de7238134f5b1ff93fb44527bf119d05"
+package set license "GPL-2.0-or-later"
 package set dep.cmd "glibtoolize:libtoolize"
 package set bsystem "autogen"
 

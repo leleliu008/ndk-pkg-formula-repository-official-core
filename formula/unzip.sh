@@ -10,6 +10,7 @@ package set src.sum "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e68670
 package set fix.url "https://deb.debian.org/debian/pool/main/u/unzip/unzip_${PACKAGE_VERSION}.debian.tar.xz"
 package set fix.sum "88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599"
 
+package set license "Info-ZIP"
 package set dep.pkg "zip bzip2"
 package set bsystem "make"
 package set binbstd 'yes'

@@ -3,6 +3,7 @@ package set webpage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
 package set git.url "https://git.tartarus.org/simon/putty.git"
 package set src.url "https://the.earth.li/~sgtatham/putty/0.76/putty-0.76.tar.gz"
 package set src.sum "547cd97a8daa87ef71037fab0773bceb54a8abccb2f825a49ef8eba5e045713f"
+package set license "MIT"
 package set bsystem "configure"
 
 build() {

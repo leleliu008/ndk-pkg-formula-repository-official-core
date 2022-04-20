@@ -3,10 +3,11 @@ package set webpage "https://libimobiledevice.org/"
 package set git.url "https://github.com/libimobiledevice/usbmuxd.git"
 package set src.url "https://github.com/libimobiledevice/usbmuxd/archive/refs/tags/1.1.1.tar.gz"
 package set src.sum "e7ce30143e69d77fc5aa6fb0cb5f0cfcdbeff47eb1ac7fd90ac259a90de9fadd"
-package set dep.cmd "pkg-config"
+package set license "LGPL-2.0"
 package set dep.pkg "libusb libplist"
-package set ldflags "-lm"
+package set dep.cmd "pkg-config"
 package set bsystem "autogen"
+package set ldflags "-lm"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

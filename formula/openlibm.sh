@@ -3,6 +3,7 @@ package set webpage "https://openlibm.org"
 package set git.url "https://github.com/JuliaMath/openlibm.git"
 package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
 package set src.sum "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
+package set license "MIT ISC BSD-2-Clause"
 package set bsystem "make"
 package set binbstd "yes"
 

@@ -3,8 +3,9 @@ package set webpage "http://libsndfile.github.io/libsndfile/"
 package set git.url "https://github.com/libsndfile/libsndfile.git"
 package set src.url "https://github.com/libsndfile/libsndfile/releases/download/1.0.31/libsndfile-1.0.31.tar.bz2"
 package set src.sum "a8cfb1c09ea6e90eff4ca87322d4168cdbe5035cb48717b40bf77e751cc02163"
-package set bsystem "configure"
+package set license "LGPL-2.1-or-later"
 package set dep.pkg "libogg libvorbis flac sqlite"
+package set bsystem "configure"
 
 build() {
     configure \

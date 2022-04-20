@@ -1,5 +1,6 @@
 package set summary "Text-based UI library"
 package set webpage "https://www.gnu.org/software/ncurses"
+package set git.url "https://github.com/mirror/ncurses.git"
 package set src.url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz"
 package set src.sum "30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d"
 package set license "MIT"

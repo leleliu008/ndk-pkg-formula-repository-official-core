@@ -1,5 +1,6 @@
 package set summary "C++ functions matching the interface and behavior of python string methods with std::string"
 package set git.url "https://github.com/imageworks/pystring.git"
+package set license ";LICENSE;https://raw.githubusercontent.com/imageworks/pystring/master/LICENSE"
 package set binbstd "yes"
 
 prepare() {

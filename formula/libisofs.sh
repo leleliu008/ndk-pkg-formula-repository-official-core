@@ -2,8 +2,9 @@ package set summary "Library to create an ISO-9660 filesystem with extensions li
 package set webpage "https://www.libburnia-project.org"
 package set src.url "http://files.libburnia-project.org/releases/libisofs-1.5.2.tar.gz"
 package set src.sum "ef5a139600b3e688357450e52381e40ec26a447d35eb8d21524598c7b1675500"
-package set bsystem "configure"
+package set license "LGPL-2.0"
 package set dep.pkg "libiconv"
+package set bsystem "configure"
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26)

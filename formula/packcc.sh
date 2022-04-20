@@ -1,5 +1,6 @@
 package set summary "a packrat parser generator for C"
 package set git.url "https://github.com/enechaev/packcc.git"
+package set license "MIT"
 
 build() {
     run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o packcc $PACKAGE_BSCRIPT_DIR/packcc.c &&

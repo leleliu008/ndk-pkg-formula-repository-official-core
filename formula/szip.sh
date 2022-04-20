@@ -2,4 +2,5 @@ package set summary "Implementation of extended-Rice lossless compression algori
 package set webpage "https://support.hdfgroup.org/HDF5/release/obtain5.html#extlibs"
 package set src.url "https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz"
 package set src.sum "21ee958b4f2d4be2c9cabfa5e1a94877043609ce86fde5f286f105f7ff84d412"
+package set license ";COPYING;https://support.hdfgroup.org/doc_resource/SZIP/Commercial_szip.html"
 package set bsystem "configure"

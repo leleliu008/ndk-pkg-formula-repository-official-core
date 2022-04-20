@@ -1,4 +1,5 @@
 package set summary "wordexp(3) implementation"
 package set webpage "https://linux.die.net/man/3/wordexp"
 package set git.url "https://github.com/leleliu008/libwordexp.git"
+package set license ";;https://raw.githubusercontent.com/freebsd/freebsd-src/main/COPYRIGHT"
 package set bsystem "cmake"

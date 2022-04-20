@@ -2,6 +2,7 @@ package set summary "crypt(3) implementation"
 package set webpage "http://michael.dipperstein.com/crypt"
 package set src.url "http://michael.dipperstein.com/crypt/crypt3.c"
 package set src.sum "75b16b6ef7f1c0c7c4172ed346b2b91b6f1be72c824b6671a059de2b2da554ff"
+package set license "Unlicense"
 package set version "1"
 
 build() {

@@ -3,6 +3,7 @@ package set webpage "https://sourceforge.net/projects/libtirpc"
 package set git.url "https://src.fedoraproject.org/rpms/libtirpc.git"
 package set src.url "https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.2/libtirpc-1.3.2.tar.bz2"
 package set src.sum "e24eb88b8ce7db3b7ca6eb80115dd1284abc5ec32a8deccfed2224fc2532b9fd"
+package set license "BSD-3-Clause"
 package set bsystem "configure"
 
 # https://github.com/openbsd/src/commit/9a4976752c76d2a34f38575c4ce09dd50f5f80b7

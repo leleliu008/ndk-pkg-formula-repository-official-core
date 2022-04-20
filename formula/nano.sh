@@ -1,5 +1,6 @@
 package set summary "Free (GNU) replacement for the Pico text editor"
 package set webpage "https://www.nano-editor.org/"
+package set git.url "https://git.savannah.gnu.org/git/nano.git"
 package set src.url "https://www.nano-editor.org/dist/v6/nano-6.2.tar.xz"
 package set src.sum "2bca1804bead6aaf4ad791f756e4749bb55ed860eec105a97fba864bc6a77cb3"
 package set license "GPL-3.0-or-later"
