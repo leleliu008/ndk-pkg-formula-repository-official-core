@@ -1,9 +1,9 @@
 package set summary "Library making programming with POSIX capabilities easier than traditional libcap"
 package set webpage "https://people.redhat.com/sgrubb/libcap-ng"
-package set license "LGPL-2.1"
 package set git.url "https://github.com/stevegrubb/libcap-ng.git"
 package set src.url "https://github.com/stevegrubb/libcap-ng/archive/v0.8.3.tar.gz"
 package set src.sum "e542e9139961f0915ab5878427890cdc7762949fbe216bd0cb4ceedb309bb854"
+package set license "LGPL-2.1-or-later;LICENSE;https://raw.githubusercontent.com/stevegrubb/libcap-ng/master/LICENSE"
 package set dep.cmd "glibtoolize:libtoolize"
 package set bsystem "autogen"
 

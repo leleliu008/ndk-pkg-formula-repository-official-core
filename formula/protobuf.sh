@@ -2,7 +2,7 @@ package set summary "Protocol Buffers(data interchange format) compiler and libr
 package set git.url "https://github.com/protocolbuffers/protobuf.git"
 package set src.url "https://github.com/protocolbuffers/protobuf/releases/download/v3.19.4/protobuf-all-3.19.4.tar.gz"
 package set src.sum "ba0650be1b169d24908eeddbe6107f011d8df0da5b1a5a4449a913b10e578faf"
-package set license "BSD-3-Clause"
+package set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/protocolbuffers/protobuf/main/LICENSE"
 package set dep.pkg "zlib"
 package set bsystem "cmake"
 package set bscript "cmake"

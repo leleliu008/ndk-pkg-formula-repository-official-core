@@ -3,7 +3,7 @@ package set webpage "https://libevent.org"
 package set git.url "https://github.com/libevent/libevent.git"
 package set src.url "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz"
 package set src.sum "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
-package set license "BSD-3-Clause"
+package set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/libevent/libevent/master/LICENSE"
 package set dep.pkg "openssl"
 package set bsystem "cmake"
 

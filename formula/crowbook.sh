@@ -2,6 +2,6 @@ package set summary "Converts books written in Markdown to HTML, LaTeX/PDF and E
 package set git.url "https://github.com/lise-henry/crowbook.git"
 package set src.url "https://github.com/lise-henry/crowbook/archive/refs/tags/v0.15.2e.tar.gz"
 package set src.sum "ac950c051faece985821c28c17206188a6211247a040a8e7afaa34a5f45cf81f"
-package set license "LGPL-2.1"
+package set license "LGPL-2.1-or-later;LICENSE.md;https://raw.githubusercontent.com/lise-henry/crowbook/master/LICENSE.md"
 package set dep.pkg "openssl"
 package set bsystem "cargo"

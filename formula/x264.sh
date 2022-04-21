@@ -3,7 +3,7 @@ package set webpage "https://www.videolan.org/developers/x264.html"
 package set git.url "https://code.videolan.org/videolan/x264.git"
 package set git.rev "5db6aa6cab1b146e07b60cc1736a01f21da01154"
 package set version "r3060"
-package set license "GPL-2.0-only"
+package set license "GPL-2.0-only;COPYING;https://code.videolan.org/videolan/x264/-/raw/master/COPYING"
 package set bsystem "configure"
 
 prepare() {

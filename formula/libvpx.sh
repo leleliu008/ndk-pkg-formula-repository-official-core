@@ -3,7 +3,7 @@ package set webpage "https://www.webmproject.org/code/"
 package set git.url "https://github.com/webmproject/libvpx.git"
 package set src.url "https://github.com/webmproject/libvpx/archive/v1.11.0.tar.gz"
 package set src.sum "965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83"
-package set license "BSD-3-Clause"
+package set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/webmproject/libvpx/main/LICENSE"
 package set dep.cmd "yasm"
 package set bsystem "configure"
 

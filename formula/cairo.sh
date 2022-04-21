@@ -3,9 +3,10 @@ package set webpage "https://cairographics.org"
 package set git.url "https://gitlab.freedesktop.org/cairo/cairo.git"
 package set src.url "https://fossies.org/linux/misc/cairo-1.17.4.tar.xz"
 package set src.sum "74b24c1ed436bbe87499179a3b27c43f4143b8676d8ad237a6fa787401959705"
-package set license "LGPL-2.1"
-package set dep.cmd "pkg-config"
+package set license "LGPL-2.1-or-later;;https://gitlab.freedesktop.org/cairo/cairo/-/raw/master/COPYING-LGPL-2.1
+                     MPL-1.1;;https://gitlab.freedesktop.org/cairo/cairo/-/raw/master/COPYING-MPL-1.1"
 package set dep.pkg "libxml2 libpng pixman lzo glib fontconfig"
+package set dep.cmd "pkg-config"
 package set bsystem "meson"
 
 build() {
