@@ -1,7 +1,7 @@
 package set summary "Cryptographic & SSL/TLS library"
 package set webpage "https://tls.mbed.org"
 package set git.url "https://github.com/Mbed-TLS/mbedtls.git"
-package set src.url "https://github.com/ARMmbed/mbedtls/archive/refs/tags/v3.0.0.tar.gz"
+package set src.url "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.tar.gz"
 package set src.sum "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55"
 package set license "Apache-2.0"
 package set dep.pkg "zlib"

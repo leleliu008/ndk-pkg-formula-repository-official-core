@@ -3,7 +3,7 @@ package set webpage "https://e2fsprogs.sourceforge.io/"
 package set git.url "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git"
 package set src.url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.gz"
 package set src.sum "5f64ac50a2b60b8e67c5b382bb137dec39344017103caffc3a61554424f2d693"
-package set license "GPL-2.0"
+package set license "GPL-2.0-or-later"
 package set dep.cmd "pkg-config"
 package set dep.pkg "gettext libiconv"
 

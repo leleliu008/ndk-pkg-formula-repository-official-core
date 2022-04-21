@@ -2,7 +2,7 @@ package set summary "GNU File, Shell, and Text utilities"
 package set webpage "https://www.gnu.org/software/coreutils"
 package set src.url "https://ftp.gnu.org/gnu/coreutils/coreutils-9.0.tar.xz"
 package set src.sum "ce30acdf4a41bc5bb30dd955e9eaa75fa216b4e3deb08889ed32433c7b3b97ce"
-package set license "GPL-3.0"
+package set license "GPL-3.0-or-later"
 package set bsystem "configure"
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;

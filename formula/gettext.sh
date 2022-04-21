@@ -2,7 +2,7 @@ package set summary "GNU internationalization (i18n) and localization (l10n) lib
 package set webpage "https://www.gnu.org/software/gettext"
 package set src.url "https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.xz"
 package set src.sum "d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192"
-package set license "GPL-3.0"
+package set license "GPL-3.0-or-later"
 package set bsystem "configure"
 package set dep.pkg "ncurses libiconv"
 
