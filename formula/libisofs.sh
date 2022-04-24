@@ -1,8 +1,8 @@
 package set summary "Library to create an ISO-9660 filesystem with extensions like RockRidge or Joliet"
-package set webpage "https://www.libburnia-project.org"
+package set git.url "https://dev.lovelyhq.com/libburnia/libisofs.git"
 package set src.url "http://files.libburnia-project.org/releases/libisofs-1.5.2.tar.gz"
 package set src.sum "ef5a139600b3e688357450e52381e40ec26a447d35eb8d21524598c7b1675500"
-package set license "LGPL-2.0"
+package set license "LGPL-2.0-or-later;COPYING;https://dev.lovelyhq.com/libburnia/libisofs/raw/branch/master/COPYING"
 package set dep.pkg "libiconv"
 package set bsystem "configure"
 

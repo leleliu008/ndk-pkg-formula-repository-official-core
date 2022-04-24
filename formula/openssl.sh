@@ -3,7 +3,7 @@ package set webpage "https://openssl.org"
 package set git.url "https://github.com/openssl/openssl.git"
 package set src.url "https://www.openssl.org/source/openssl-1.1.1n.tar.gz"
 package set src.sum "40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a"
-package set license "OpenSSL"
+package set license "OpenSSL;LICENSE;"
 package set dep.cmd "perl"
 package set bsystem "make"
 package set binbstd 'yes'

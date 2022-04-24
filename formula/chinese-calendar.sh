@@ -1,0 +1,7 @@
+package set summary "chinese festival/jieqi algorthm"
+package set git.url "https://github.com/leleliu008/C-examples.git"
+package set version "2022.04.24"
+package set bsystem "cmake"
+package set bscript "algorithm/chinese-calendar"
+package set license "Apache-2.0;LICENSE;https://raw.githubusercontent.com/leleliu008/C-examples/master/LICENSE"
+package set developer "leleliu008;leleliu008@gmail.com;leleliu008;https://github.com/leleliu008"

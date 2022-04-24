@@ -1,0 +1,7 @@
+package set summary "Packaged version of iLBC codec from the WebRTC project"
+package set git.url "https://github.com/TimothyGu/libilbc.git"
+package set src.url "https://github.com/TimothyGu/libilbc/releases/download/v3.0.4/libilbc-3.0.4.tar.gz"
+package set src.sum "6820081a5fc58f86c119890f62cac53f957adb40d580761947a0871cea5e728f"
+package set bsystem "cmake"
+package set license "BSD-3-Clause;COPYING;https://raw.githubusercontent.com/TimothyGu/libilbc/main/COPYING"
+package set developer "WebRTC project authors;;WebRTC Team;https://webrtc.org/"

@@ -3,7 +3,7 @@ package set webpage "http://www.tinycc.org/"
 package set git.url "https://repo.or.cz/tinycc.git"
 package set src.url "https://download.savannah.nongnu.org/releases/tinycc/tcc-0.9.27.tar.bz2"
 package set src.sum "de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c"
-package set license "LGPL-2.0-or-later"
+package set license "LGPL-2.1-or-later;COPYING;https://repo.or.cz/tinycc.git/blob_plain/HEAD:/COPYING"
 package set bsystem "make"
 
 prepare() {

@@ -13,7 +13,8 @@ package set <KEY> <VALUE>
 |`summary`|required|the summary of this package.|
 |`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git.url` must be present.|
 |`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
-|`license`|required|the short name of license list that is used by this package. license short name should be found in [SPDX license list](https://spdx.github.io/spdx-spec/SPDX-license-list/). here also support custom license form: `[LICENSE-NAME];[LICENSE-FILEPATH-IN-SRC];<LICENSE-URL>`|
+|`license`|optional|value has form: `[LICENSE-NAME][;LICENSE-FILEPATH-IN-SRC][;LICENSE-URL]`. if `LICENSE-FILEPATH-IN-SRC` and `LICENSE-URL` are not given, `LICENSE-NAME` should be found in [SPDX license list](https://spdx.github.io/spdx-spec/SPDX-license-list/). if value is not given, package can not be deployed to maven central.|
+|`developer`|optional|value has form: `[DEVELOPER-NAME][;DEVELOPER-EMAIL][;DEVELOPER-ORGANIZATION-NAME][;DEVELOPER-ORGANIZATION-URL]`.|
 ||||
 |`git.url`|optional|the source code git repository.<br>must end with `.git`|
 |`git.rev`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
