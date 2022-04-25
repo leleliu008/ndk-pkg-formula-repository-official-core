@@ -1,12 +1,12 @@
-package set summary "C library of Git core methods that is re-entrant and linkable"
-package set webpage "https://libgit2.github.com"
-package set git.url "https://github.com/libgit2/libgit2.git"
-package set src.url "https://github.com/libgit2/libgit2/archive/v1.3.0.tar.gz"
-package set src.sum "192eeff84596ff09efb6b01835a066f2df7cd7985e0991c79595688e6b36444e"
-package set license "GPL-2.0-only"
-package set dep.pkg "libssh2 pcre2"
-package set dep.cmd "pkg-config"
-package set bsystem "cmake"
+pkg_set summary "C library of Git core methods that is re-entrant and linkable"
+pkg_set webpage "https://libgit2.github.com"
+pkg_set git.url "https://github.com/libgit2/libgit2.git"
+pkg_set src.url "https://github.com/libgit2/libgit2/archive/v1.3.0.tar.gz"
+pkg_set src.sha "192eeff84596ff09efb6b01835a066f2df7cd7985e0991c79595688e6b36444e"
+pkg_set license "GPL-2.0-only"
+pkg_set dep.pkg "libssh2 pcre2"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

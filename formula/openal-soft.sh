@@ -1,10 +1,10 @@
-package set summary "Implementation of the OpenAL 3D audio API"
-package set webpage "https://openal-soft.org/"
-package set git.url "https://github.com/kcat/openal-soft.git"
-package set src.url "https://openal-soft.org/openal-releases/openal-soft-1.21.1.tar.bz2"
-package set src.sum "c8ad767e9a3230df66756a21cc8ebf218a9d47288f2514014832204e666af5d8"
-package set license "LGPL-2.0-or-later;COPYING;https://raw.githubusercontent.com/kcat/openal-soft/master/COPYING"
-package set bsystem "cmake"
+pkg_set summary "Implementation of the OpenAL 3D audio API"
+pkg_set webpage "https://openal-soft.org/"
+pkg_set git.url "https://github.com/kcat/openal-soft.git"
+pkg_set src.url "https://openal-soft.org/openal-releases/openal-soft-1.21.1.tar.bz2"
+pkg_set src.sha "c8ad767e9a3230df66756a21cc8ebf218a9d47288f2514014832204e666af5d8"
+pkg_set license "LGPL-2.0-or-later;COPYING;https://raw.githubusercontent.com/kcat/openal-soft/master/COPYING"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

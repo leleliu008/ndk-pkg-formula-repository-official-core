@@ -1,12 +1,12 @@
-package set summary "Vi IMproved - enhanced vi editor"
-package set webpage "https://www.vim.org/"
-package set git.url "https://github.com/vim/vim.git"
-package set src.url "https://github.com/vim/vim/archive/v8.2.4700.tar.gz"
-package set src.sum "ccf96833675361f30064c6ac8a9637cec6362d6eb7df78fcf789e70bca042c6d"
-package set license "Vim"
-package set dep.pkg "gettext python lua"
-package set bsystem "configure"
-package set binbstd "yes"
+pkg_set summary "Vi IMproved - enhanced vi editor"
+pkg_set webpage "https://www.vim.org/"
+pkg_set git.url "https://github.com/vim/vim.git"
+pkg_set src.url "https://github.com/vim/vim/archive/v8.2.4700.tar.gz"
+pkg_set src.sha "ccf96833675361f30064c6ac8a9637cec6362d6eb7df78fcf789e70bca042c6d"
+pkg_set license "Vim"
+pkg_set dep.pkg "gettext python lua"
+pkg_set bsystem "configure"
+pkg_set binbstd "yes"
 
 build() {
     printf '\n' > ../include.h

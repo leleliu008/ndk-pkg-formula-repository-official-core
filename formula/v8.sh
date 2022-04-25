@@ -1,10 +1,10 @@
-package set summary "Google's JavaScript engine"
-package set webpage "https://v8.dev/"
-package set git.url "https://github.com/v8/v8.git"
-package set src.url "dir:///dev/null"
-package set version "9.9.115.8"
-package set license "BSD-3-Clause"
-package set dep.cmd "git ninja"
+pkg_set summary "Google JavaScript engine"
+pkg_set webpage "https://v8.dev/"
+pkg_set git.url "https://github.com/v8/v8.git"
+pkg_set src.url "dir:///dev/null"
+pkg_set version "9.9.115.8"
+pkg_set license "BSD-3-Clause"
+pkg_set dep.cmd "git ninja"
 
 prepare() {
     set -e

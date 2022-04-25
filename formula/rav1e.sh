@@ -1,10 +1,10 @@
-package set summary "Fastest and safest AV1 video encoder"
-package set git.url "https://github.com/xiph/rav1e.git"
-package set src.url "https://github.com/xiph/rav1e/archive/v0.5.1.tar.gz"
-package set src.sum "7b3060e8305e47f10b79f3a3b3b6adc3a56d7a58b2cb14e86951cc28e1b089fd"
-package set license "BSD-2-Clause"
-package set dep.cmd "nasm cargo-cbuild"
-package set bsystem "cargo"
+pkg_set summary "Fastest and safest AV1 video encoder"
+pkg_set git.url "https://github.com/xiph/rav1e.git"
+pkg_set src.url "https://github.com/xiph/rav1e/archive/v0.5.1.tar.gz"
+pkg_set src.sha "7b3060e8305e47f10b79f3a3b3b6adc3a56d7a58b2cb14e86951cc28e1b089fd"
+pkg_set license "BSD-2-Clause"
+pkg_set dep.cmd "nasm cargo-cbuild"
+pkg_set bsystem "cargo"
 
 # https://github.com/lu-zero/cargo-c/issues/248
 

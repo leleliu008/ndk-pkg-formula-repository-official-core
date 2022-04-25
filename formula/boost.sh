@@ -1,12 +1,12 @@
-package set summary "Collection of portable C++ source libraries"
-package set webpage "https://www.boost.org"
-package set git.url "https://github.com/boostorg/boost.git"
-package set src.url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
-package set src.sum "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
-package set version "1.76.0"
-package set license "BSL-1.0"
-package set dep.pkg "zstd icu4c libiconv python"
-package set binbstd 'yes'
+pkg_set summary "Collection of portable C++ source libraries"
+pkg_set webpage "https://www.boost.org"
+pkg_set git.url "https://github.com/boostorg/boost.git"
+pkg_set src.url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
+pkg_set src.sha "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
+pkg_set version "1.76.0"
+pkg_set license "BSL-1.0"
+pkg_set dep.pkg "zstd icu4c libiconv python"
+pkg_set binbstd 'yes'
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android

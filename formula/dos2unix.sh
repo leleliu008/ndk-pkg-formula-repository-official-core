@@ -1,10 +1,10 @@
-package set summary "Convert text between DOS, UNIX, and Mac formats"
-package set webpage "https://waterlan.home.xs4all.nl/dos2unix.html"
-package set src.url "https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.4.2.tar.gz"
-package set src.sum "6035c58df6ea2832e868b599dfa0d60ad41ca3ecc8aa27822c4b7a9789d3ae01"
-package set license "BSD-2-Clause"
-package set bsystem 'make'
-package set binbstd 'yes'
+pkg_set summary "Convert text between DOS, UNIX, and Mac formats"
+pkg_set webpage "https://waterlan.home.xs4all.nl/dos2unix.html"
+pkg_set src.url "https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.4.2.tar.gz"
+pkg_set src.sha "6035c58df6ea2832e868b599dfa0d60ad41ca3ecc8aa27822c4b7a9789d3ae01"
+pkg_set license "BSD-2-Clause"
+pkg_set bsystem 'make'
+pkg_set binbstd 'yes'
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26)

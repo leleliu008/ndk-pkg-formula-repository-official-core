@@ -1,11 +1,11 @@
-package set summary "Library for JPEG-2000 image manipulation"
-package set webpage "https://www.openjpeg.org/"
-package set git.url "https://github.com/uclouvain/openjpeg.git"
-package set src.url "https://github.com/uclouvain/openjpeg/archive/v2.4.0.tar.gz"
-package set src.sum "8702ba68b442657f11aaeb2b338443ca8d5fb95b0d845757968a7be31ef7f16d"
-package set license "BSD-2-Clause"
-package set dep.pkg "libpng lcms2"
-package set bsystem "cmake"
+pkg_set summary "Library for JPEG-2000 image manipulation"
+pkg_set webpage "https://www.openjpeg.org/"
+pkg_set git.url "https://github.com/uclouvain/openjpeg.git"
+pkg_set src.url "https://github.com/uclouvain/openjpeg/archive/v2.4.0.tar.gz"
+pkg_set src.sha "8702ba68b442657f11aaeb2b338443ca8d5fb95b0d845757968a7be31ef7f16d"
+pkg_set license "BSD-2-Clause"
+pkg_set dep.pkg "libpng lcms2"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

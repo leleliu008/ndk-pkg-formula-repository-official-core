@@ -1,4 +1,4 @@
-package set summary "Parse HTML at the command-line"
-package set git.url "https://github.com/EricChiang/pup.git"
-package set license "MIT"
-package set bsystem "go"
+pkg_set summary "Parse HTML at the command-line"
+pkg_set git.url "https://github.com/EricChiang/pup.git"
+pkg_set license "MIT"
+pkg_set bsystem "go"

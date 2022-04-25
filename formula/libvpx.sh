@@ -1,11 +1,11 @@
-package set summary "VP8/VP9 video codec"
-package set webpage "https://www.webmproject.org/code/"
-package set git.url "https://github.com/webmproject/libvpx.git"
-package set src.url "https://github.com/webmproject/libvpx/archive/v1.11.0.tar.gz"
-package set src.sum "965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83"
-package set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/webmproject/libvpx/main/LICENSE"
-package set dep.cmd "yasm"
-package set bsystem "configure"
+pkg_set summary "VP8/VP9 video codec"
+pkg_set webpage "https://www.webmproject.org/code/"
+pkg_set git.url "https://github.com/webmproject/libvpx.git"
+pkg_set src.url "https://github.com/webmproject/libvpx/archive/v1.11.0.tar.gz"
+pkg_set src.sha "965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83"
+pkg_set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/webmproject/libvpx/main/LICENSE"
+pkg_set dep.cmd "yasm"
+pkg_set bsystem "configure"
 
 build() {
     case $TARGET_OS_ARCH in

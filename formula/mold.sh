@@ -1,11 +1,11 @@
-package set summary "Modern Linker"
-package set git.url "https://github.com/rui314/mold.git"
-package set src.url "https://github.com/rui314/mold/archive/v1.1.1.tar.gz"
-package set src.sum "47c5ddfe60beffc01da954191c819d78924e4d1eb96aeebfa24e1862cb3a33f9"
-package set license "AGPL-3.0-only"
-package set dep.pkg "tbb xxhash zlib openssl"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "Modern Linker"
+pkg_set git.url "https://github.com/rui314/mold.git"
+pkg_set src.url "https://github.com/rui314/mold/archive/v1.1.1.tar.gz"
+pkg_set src.sha "47c5ddfe60beffc01da954191c819d78924e4d1eb96aeebfa24e1862cb3a33f9"
+pkg_set license "AGPL-3.0-only"
+pkg_set dep.pkg "tbb xxhash zlib openssl"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 build() {
     makew clean &&

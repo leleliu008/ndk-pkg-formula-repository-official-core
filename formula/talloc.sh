@@ -1,14 +1,14 @@
-package set summary "Hierarchical, reference-counted memory pool with destructors"
-package set webpage "https://talloc.samba.org/"
-package set src.url "https://www.samba.org/ftp/talloc/talloc-2.3.3.tar.gz"
-package set src.sum "6be95b2368bd0af1c4cd7a88146eb6ceea18e46c3ffc9330bf6262b40d1d8aaa"
-package set license "GPL-3.0-or-later"
-package set dep.cmd "python3:python>=3.6.0"
-package set binbstd 'yes'
+pkg_set summary "Hierarchical, reference-counted memory pool with destructors"
+pkg_set webpage "https://talloc.samba.org/"
+pkg_set src.url "https://www.samba.org/ftp/talloc/talloc-2.3.3.tar.gz"
+pkg_set src.sha "6be95b2368bd0af1c4cd7a88146eb6ceea18e46c3ffc9330bf6262b40d1d8aaa"
+pkg_set license "GPL-3.0-or-later"
+pkg_set dep.cmd "python3:python>=3.6.0"
+pkg_set binbstd 'yes'
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);
-package set sdk.api 23
+pkg_set sdk.api 23
 
 prepare() {
     sed_in_place 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py &&

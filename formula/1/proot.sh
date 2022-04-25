@@ -1,15 +1,15 @@
-package set summary "a user-space implementation of chroot, mount --bind, and binfmt_misc."
-package set webpage "https://proot-me.github.io"
-package set git.url "https://github.com/proot-me/proot.git"
-package set version "5.2.0-alpha"
-package set src.url "https://github.com/proot-me/proot/archive/refs/tags/v$PACKAGE_VERSION.tar.gz"
-package set src.sum "852d2faf85234e6e832d4c9938ff8befa91b89f019969afd80907554568905fc"
-package set license "GPL-2.0-or-later"
-package set dep.cmd "pkg-config python3 git"
-package set dep.pkg "libarchive talloc"
-package set bsystem "make"
+pkg_set summary "a user-space implementation of chroot, mount --bind, and binfmt_misc."
+pkg_set webpage "https://proot-me.github.io"
+pkg_set git.url "https://github.com/proot-me/proot.git"
+pkg_set version "5.2.0-alpha"
+pkg_set src.url "https://github.com/proot-me/proot/archive/refs/tags/v$PACKAGE_VERSION.tar.gz"
+pkg_set src.sha "852d2faf85234e6e832d4c9938ff8befa91b89f019969afd80907554568905fc"
+pkg_set license "GPL-2.0-or-later"
+pkg_set dep.cmd "pkg-config python3 git"
+pkg_set dep.pkg "libarchive talloc"
+pkg_set bsystem "make"
 
-package set sdk.api 23
+pkg_set sdk.api 23
 
 prepare() {
     cd src &&

@@ -1,9 +1,9 @@
-package set summary "Disk usage analyzer with console interface written in Go"
-package set git.url "https://github.com/dundee/gdu.git"
-package set src.url "https://github.com/dundee/gdu/archive/v5.13.2.tar.gz"
-package set src.sum "f4f237f6da470599f6393591282cfd67922a963325859a939ca40ba7e18024a8"
-package set license "MIT"
-package set bsystem "go"
+pkg_set summary "Disk usage analyzer with console interface written in Go"
+pkg_set git.url "https://github.com/dundee/gdu.git"
+pkg_set src.url "https://github.com/dundee/gdu/archive/v5.13.2.tar.gz"
+pkg_set src.sha "f4f237f6da470599f6393591282cfd67922a963325859a939ca40ba7e18024a8"
+pkg_set license "MIT"
+pkg_set bsystem "go"
 
 build() {
     gow \

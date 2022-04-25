@@ -1,12 +1,12 @@
-package set summary "Cryptography and SSL/TLS Toolkit"
-package set webpage "https://openssl.org"
-package set src.url "https://www.openssl.org/source/openssl-fips-2.0.16.tar.gz"
-package set src.sum "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4"
-package set license "OpenSSL"
-package set bsystem "make"
-package set dep.cmd "perl"
-package set binbstd 'yes'
-package set build_in_parallel no
+pkg_set summary "Cryptography and SSL/TLS Toolkit"
+pkg_set webpage "https://openssl.org"
+pkg_set src.url "https://www.openssl.org/source/openssl-fips-2.0.16.tar.gz"
+pkg_set src.sha "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4"
+pkg_set license "OpenSSL"
+pkg_set bsystem "make"
+pkg_set dep.cmd "perl"
+pkg_set binbstd 'yes'
+pkg_set build_in_parallel no
 
 prepare() {
     export LC_COLLATE='C'

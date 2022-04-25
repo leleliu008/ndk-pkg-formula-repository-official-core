@@ -1,12 +1,12 @@
-package set summary "Free lossless audio codec"
-package set webpage "https://xiph.org/flac"
-package set git.url "https://github.com/xiph/flac.git"
-package set src.url "https://github.com/xiph/flac/archive/1.3.4.tar.gz"
-package set src.sum "53e9dbe3ae54a9f42c1e65afe7f516c02d8393c0c6d56bc455c15e1e044069a9"
-package set license "GFDL-1.2-or-later;COPYING.FDL;https://raw.githubusercontent.com/xiph/flac/master/COPYING.FDL"
-package set dep.cmd "glibtoolize:libtoolize libtool"
-package set dep.pkg "libogg libiconv"
-package set bsystem "autogen"
+pkg_set summary "Free lossless audio codec"
+pkg_set webpage "https://xiph.org/flac"
+pkg_set git.url "https://github.com/xiph/flac.git"
+pkg_set src.url "https://github.com/xiph/flac/archive/1.3.4.tar.gz"
+pkg_set src.sha "53e9dbe3ae54a9f42c1e65afe7f516c02d8393c0c6d56bc455c15e1e044069a9"
+pkg_set license "GFDL-1.2-or-later;COPYING.FDL;https://raw.githubusercontent.com/xiph/flac/master/COPYING.FDL"
+pkg_set dep.cmd "glibtoolize:libtoolize libtool"
+pkg_set dep.pkg "libogg libiconv"
+pkg_set bsystem "autogen"
 
 # https://github.com/android/ndk/issues/702
 # iconv_t iconv_open(const char* __src_encoding, const char* __dst_encoding) __INTRODUCED_IN(28);

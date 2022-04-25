@@ -1,16 +1,16 @@
-package set summary "High performance message passing library"
-package set webpage "https://www.open-mpi.org"
-package set git.url "https://github.com/open-mpi/ompi.git"
-package set src.url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.3.tar.bz2"
-package set src.sum "3d81d04c54efb55d3871a465ffb098d8d72c1f48ff1cbaf2580eb058567c0a3b"
-package set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/open-mpi/ompi/main/LICENSE"
-package set dep.pkg "libevent"
-package set dep.cmd "perl"
-package set bsystem "configure"
-package set cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
+pkg_set summary "High performance message passing library"
+pkg_set webpage "https://www.open-mpi.org"
+pkg_set git.url "https://github.com/open-mpi/ompi.git"
+pkg_set src.url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.3.tar.bz2"
+pkg_set src.sha "3d81d04c54efb55d3871a465ffb098d8d72c1f48ff1cbaf2580eb058567c0a3b"
+pkg_set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/open-mpi/ompi/main/LICENSE"
+pkg_set dep.pkg "libevent"
+pkg_set dep.cmd "perl"
+pkg_set bsystem "configure"
+pkg_set cdefine "POSIX_MADV_DONTNEED=MADV_DONTNEED"
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
-package set sdk.api 26
+pkg_set sdk.api 26
 
 prepare() {
     sed_in_place 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c &&

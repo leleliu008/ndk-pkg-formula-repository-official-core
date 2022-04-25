@@ -1,15 +1,15 @@
-package set summary "Cross-shell prompt for astronauts"
-package set webpage "https://starship.rs"
-package set git.url "https://github.com/starship/starship.git"
-package set src.url "https://github.com/starship/starship/archive/v1.4.2.tar.gz"
-package set src.sum "d7d1a4fb661c1612617306f4a99bacccdffca4210a51cb1b91e87fb005bbd32e"
-package set license "ISC"
-package set dep.pkg "openssl"
-package set dep.cmd "pkg-config"
-package set bsystem "cargo"
+pkg_set summary "Cross-shell prompt for astronauts"
+pkg_set webpage "https://starship.rs"
+pkg_set git.url "https://github.com/starship/starship.git"
+pkg_set src.url "https://github.com/starship/starship/archive/v1.4.2.tar.gz"
+pkg_set src.sha "d7d1a4fb661c1612617306f4a99bacccdffca4210a51cb1b91e87fb005bbd32e"
+pkg_set license "ISC"
+pkg_set dep.pkg "openssl"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "cargo"
 
 # sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
-package set sdk.api 24
+pkg_set sdk.api 24
 
 build() {
     cargow install --locked --no-default-features

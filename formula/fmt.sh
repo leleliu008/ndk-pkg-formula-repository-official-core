@@ -1,10 +1,10 @@
-package set summary "Open-source formatting library for C++"
-package set webpage "https://fmt.dev"
-package set git.url "https://github.com/fmtlib/fmt.git"
-package set src.url "https://github.com/fmtlib/fmt/archive/8.1.1.tar.gz"
-package set src.sum "3d794d3cf67633b34b2771eb9f073bde87e846e0d395d254df7b211ef1ec7346"
-package set license "MIT"
-package set bsystem "cmake"
+pkg_set summary "Open-source formatting library for C++"
+pkg_set webpage "https://fmt.dev"
+pkg_set git.url "https://github.com/fmtlib/fmt.git"
+pkg_set src.url "https://github.com/fmtlib/fmt/archive/8.1.1.tar.gz"
+pkg_set src.sha "3d794d3cf67633b34b2771eb9f073bde87e846e0d395d254df7b211ef1ec7346"
+pkg_set license "MIT"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

@@ -1,8 +1,8 @@
-package set summary "PNG encoder and decoder in C and C++"
-package set git.url "https://github.com/lvandeve/lodepng.git"
-package set license "Zlib"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "PNG encoder and decoder in C and C++"
+pkg_set git.url "https://github.com/lvandeve/lodepng.git"
+pkg_set license "Zlib"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 prepare() {
     override_makefile

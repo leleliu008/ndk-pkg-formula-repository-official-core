@@ -1,18 +1,18 @@
-package set summary "Bourne-Again SHell, a UNIX command interpreter"
-package set webpage "https://www.gnu.org/software/bash"
-package set git.url "https://git.savannah.gnu.org/git/bash.git"
-package set src.url "https://mirrors.tuna.tsinghua.edu.cn/gnu/bash/bash-5.1.tar.gz"
-package set src.sum "cc012bc860406dcf42f64431bcd3d2fa7560c02915a601aba9cd597a39329baa"
-package set version "5.1"
-package set license "GPL-3.0-or-later"
-package set bsystem "configure"
-package set dep.pkg "readline ncurses"
-package set ccflags "-pie -fPIE"
-package set ldflags "-pie -fPIE"
+pkg_set summary "Bourne-Again SHell, a UNIX command interpreter"
+pkg_set webpage "https://www.gnu.org/software/bash"
+pkg_set git.url "https://git.savannah.gnu.org/git/bash.git"
+pkg_set src.url "https://mirrors.tuna.tsinghua.edu.cn/gnu/bash/bash-5.1.tar.gz"
+pkg_set src.sha "cc012bc860406dcf42f64431bcd3d2fa7560c02915a601aba9cd597a39329baa"
+pkg_set version "5.1"
+pkg_set license "GPL-3.0-or-later"
+pkg_set bsystem "configure"
+pkg_set dep.pkg "readline ncurses"
+pkg_set ccflags "-pie -fPIE"
+pkg_set ldflags "-pie -fPIE"
 
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 # void endgrent(void) __INTRODUCED_IN(26);
-package set sdk.api 26
+pkg_set sdk.api 26
 
 prepare() {
     sed_in_place 's|$(BUILTINS_LIB) $(LIBRARIES)|-Wl,--Bstatic $(BUILTINS_LIB) $(LIBRARIES) -Wl,--Bdynamic|' Makefile.in

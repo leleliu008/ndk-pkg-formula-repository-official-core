@@ -1,13 +1,13 @@
-package set summary "7-Zip (high compression file archiver) implementation"
-package set git.url "https://github.com/jinfeihan57/p7zip.git"
-package set src.url "https://github.com/jinfeihan57/p7zip/archive/v17.04.tar.gz"
-package set src.sum "ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef"
-package set license "LGPL-2.1-or-later"
-package set bsystem "cmake"
-package set dep.pkg "libiconv"
-package set ldflags "-liconv"
-package set cdefine "_UINT64_T_DECLARED"
-package set bscript "CPP/7zip/CMAKE"
+pkg_set summary "7-Zip (high compression file archiver) implementation"
+pkg_set git.url "https://github.com/jinfeihan57/p7zip.git"
+pkg_set src.url "https://github.com/jinfeihan57/p7zip/archive/v17.04.tar.gz"
+pkg_set src.sha "ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef"
+pkg_set license "LGPL-2.1-or-later"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "libiconv"
+pkg_set ldflags "-liconv"
+pkg_set cdefine "_UINT64_T_DECLARED"
+pkg_set bscript "CPP/7zip/CMAKE"
 
 prepare() {
     echo 'install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/7z_ DESTINATION bin RENAME 7z)' >> CMakeLists.txt &&

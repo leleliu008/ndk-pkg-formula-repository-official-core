@@ -1,11 +1,11 @@
-package set summary "hexdump library and cli"
-package set webpage "https://www.25thandclement.com/~william/projects/hexdump.c.html"
-package set git.url "https://github.com/wahern/hexdump.git"
-package set src.url "https://github.com/wahern/hexdump/archive/refs/tags/rel-20181215.tar.gz"
-package set src.sum "882975323317f595093125467d7b9604f78bded7ba1005f5fc17e33358cdb0fa"
-package set license ";README.md;https://raw.githubusercontent.com/wahern/hexdump/master/README.md"
-package set bsystem "make"
-package set binbstd 'yes'
+pkg_set summary "hexdump library and cli"
+pkg_set webpage "https://www.25thandclement.com/~william/projects/hexdump.c.html"
+pkg_set git.url "https://github.com/wahern/hexdump.git"
+pkg_set src.url "https://github.com/wahern/hexdump/archive/refs/tags/rel-20181215.tar.gz"
+pkg_set src.sha "882975323317f595093125467d7b9604f78bded7ba1005f5fc17e33358cdb0fa"
+pkg_set license ";README.md;https://raw.githubusercontent.com/wahern/hexdump/master/README.md"
+pkg_set bsystem "make"
+pkg_set binbstd 'yes'
 
 prepare() {
     sed_in_place '/VENDOR_OS =/d' GNUmakefile

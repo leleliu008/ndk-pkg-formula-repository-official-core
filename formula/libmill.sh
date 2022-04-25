@@ -1,7 +1,7 @@
-package set summary "Go-style concurrency in C"
-package set git.url "https://github.com/sustrik/libmill.git"
-package set license "MIT"
-package set bsystem "cmake"
+pkg_set summary "Go-style concurrency in C"
+pkg_set git.url "https://github.com/sustrik/libmill.git"
+pkg_set license "MIT"
+pkg_set bsystem "cmake"
 
 # ifaddrs.h: int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
-package set sdk.api 24
+pkg_set sdk.api 24

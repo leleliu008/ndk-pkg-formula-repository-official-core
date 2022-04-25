@@ -1,13 +1,13 @@
-package set summary "Image manipulation"
-package set webpage "http://netpbm.sourceforge.net/"
-package set src.url "https://downloads.sourceforge.net/project/netpbm/super_stable/10.73.38/netpbm-10.73.38.tgz"
-package set src.sum "0bbf8ef88413ed286e9b040685c44758857e86ccb266ccf9643ee29807e961de"
-package set license "GPL-3.0-or-later"
-package set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
-package set dep.cmd "flex"
-package set bsystem "make"
-package set binbstd "yes"
-package set build_in_parallel no
+pkg_set summary "Image manipulation"
+pkg_set webpage "http://netpbm.sourceforge.net/"
+pkg_set src.url "https://downloads.sourceforge.net/project/netpbm/super_stable/10.73.38/netpbm-10.73.38.tgz"
+pkg_set src.sha "0bbf8ef88413ed286e9b040685c44758857e86ccb266ccf9643ee29807e961de"
+pkg_set license "GPL-3.0-or-later"
+pkg_set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
+pkg_set dep.cmd "flex"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
+pkg_set build_in_parallel no
 
 prepare() {
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99

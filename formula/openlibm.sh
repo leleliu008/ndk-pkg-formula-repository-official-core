@@ -1,11 +1,11 @@
-package set summary "High quality, portable, open source libm implementation"
-package set webpage "https://openlibm.org"
-package set git.url "https://github.com/JuliaMath/openlibm.git"
-package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
-package set src.sum "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
-package set license "MIT ISC BSD-2-Clause"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "High quality, portable, open source libm implementation"
+pkg_set webpage "https://openlibm.org"
+pkg_set git.url "https://github.com/JuliaMath/openlibm.git"
+pkg_set src.url "https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
+pkg_set src.sha "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
+pkg_set license "MIT ISC BSD-2-Clause"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc

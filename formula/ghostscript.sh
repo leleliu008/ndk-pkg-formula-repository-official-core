@@ -1,12 +1,12 @@
-package set summary "Interpreter for PostScript and PDF"
-package set webpage "https://www.ghostscript.com/"
-package set src.url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz"
-package set src.sum "05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299"
-package set license "AGPL-3.0-or-later"
-package set dep.pkg "fontconfig jbig2dec libidn lcms2 openjpeg tesseract"
-package set dep.cmd "pkg-config"
-package set bsystem "configure"
-package set binbstd "yes"
+pkg_set summary "Interpreter for PostScript and PDF"
+pkg_set webpage "https://www.ghostscript.com/"
+pkg_set src.url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz"
+pkg_set src.sha "05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299"
+pkg_set license "AGPL-3.0-or-later"
+pkg_set dep.pkg "fontconfig jbig2dec libidn lcms2 openjpeg tesseract"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "configure"
+pkg_set binbstd "yes"
 
 prepare() {
     rm -rf expat

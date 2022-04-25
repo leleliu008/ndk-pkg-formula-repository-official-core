@@ -1,3 +1,3 @@
-package set summary "file system watcher and notifier."
-package set git.url "https://github.com/SpartanJ/efsw.git"
-package set bsystem "cmake"
+pkg_set summary "file system watcher and notifier."
+pkg_set git.url "https://github.com/SpartanJ/efsw.git"
+pkg_set bsystem "cmake"

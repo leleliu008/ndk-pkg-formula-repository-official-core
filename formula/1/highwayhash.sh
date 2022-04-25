@@ -1,7 +1,7 @@
-package set summary "Fast strong hash functions"
-package set git.url "https://github.com/google/highwayhash.git"
-package set license "Apache-2.0"
-package set bsystem "make"
+pkg_set summary "Fast strong hash functions"
+pkg_set git.url "https://github.com/google/highwayhash.git"
+pkg_set license "Apache-2.0"
+pkg_set bsystem "make"
 
 prepare() {
     sed_in_place 's/| sed.*/> $@/' Makefile &&

@@ -1,14 +1,14 @@
-package set summary "Extract, view, and test RAR archives"
-package set webpage "https://www.rarlab.com"
-package set src.url "https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz"
-package set src.sum "81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd3"
-package set license "Unlicense"
-package set bsystem "make"
-package set binbstd 'yes'
-package set build_in_parallel no
+pkg_set summary "Extract, view, and test RAR archives"
+pkg_set webpage "https://www.rarlab.com"
+pkg_set src.url "https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz"
+pkg_set src.sha "81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd3"
+pkg_set license "Unlicense"
+pkg_set bsystem "make"
+pkg_set binbstd 'yes'
+pkg_set build_in_parallel no
 
 # int lutimes(const char* __path, const struct timeval __times[2]) __INTRODUCED_IN(26);
-package set sdk.api 26
+pkg_set sdk.api 26
 
 prepare() {
     sed_in_place 's|getpass("")|""|g' consio.cpp &&

@@ -1,12 +1,12 @@
-package set summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
-package set webpage "https://nginx.org"
-package set git.url "https://github.com/nginx/nginx.git"
-package set src.url "https://nginx.org/download/nginx-1.21.6.tar.gz"
-package set src.sum "66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae"
-package set license "BSD-2-Clause"
-package set dep.pkg "openssl pcre libcrypt libglob"
-package set bsystem "make"
-package set binbstd 'yes'
+pkg_set summary "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server"
+pkg_set webpage "https://nginx.org"
+pkg_set git.url "https://github.com/nginx/nginx.git"
+pkg_set src.url "https://nginx.org/download/nginx-1.21.6.tar.gz"
+pkg_set src.sha "66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae"
+pkg_set license "BSD-2-Clause"
+pkg_set dep.pkg "openssl pcre libcrypt libglob"
+pkg_set bsystem "make"
+pkg_set binbstd 'yes'
 
 trace_configure() {
     for item in $(ls $1)

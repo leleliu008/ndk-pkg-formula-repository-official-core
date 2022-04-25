@@ -1,11 +1,11 @@
-package set summary "Tool Command Language"
-package set webpage "https://www.tcl-lang.org"
-package set version "8.6.12"
-package set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz"
-package set src.sum "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
-package set license "TCL"
-package set bsystem "configure"
-package set bscript "unix"
+pkg_set summary "Tool Command Language"
+pkg_set webpage "https://www.tcl-lang.org"
+pkg_set version "8.6.12"
+pkg_set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz"
+pkg_set src.sha "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
+pkg_set license "TCL"
+pkg_set bsystem "configure"
+pkg_set bscript "unix"
 
 prepare() {
     sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure

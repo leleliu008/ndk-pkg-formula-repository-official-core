@@ -1,12 +1,12 @@
-package set summary "High dynamic-range image file format"
-package set webpage "https://www.openexr.com/"
-package set git.url "https://github.com/AcademySoftwareFoundation/openexr.git"
-package set src.url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.4.tar.gz"
-package set src.sum "cb019c3c69ada47fe340f7fa6c8b863ca0515804dc60bdb25c942c1da886930b"
-package set license "BSD-3-Clause;LICENSE.md;https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr/main/LICENSE.md"
-package set dep.pkg "imath zlib"
-package set dep.cmd "pkg-config"
-package set bsystem "cmake"
+pkg_set summary "High dynamic-range image file format"
+pkg_set webpage "https://www.openexr.com/"
+pkg_set git.url "https://github.com/AcademySoftwareFoundation/openexr.git"
+pkg_set src.url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.4.tar.gz"
+pkg_set src.sha "cb019c3c69ada47fe340f7fa6c8b863ca0515804dc60bdb25c942c1da886930b"
+pkg_set license "BSD-3-Clause;LICENSE.md;https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr/main/LICENSE.md"
+pkg_set dep.pkg "imath zlib"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

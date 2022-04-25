@@ -1,11 +1,11 @@
-package set summary "Multi-format archive and compression library"
-package set webpage "https://www.libarchive.org"
-package set git.url "https://github.com/libarchive/libarchive.git"
-package set src.url "https://www.libarchive.org/downloads/libarchive-3.6.1.tar.xz"
-package set src.sum "5a411aceb978f43e626f0c2d1812ddd8807b645ed892453acabd532376c148e6"
-package set license "BSD-2-Clause"
-package set dep.pkg "libiconv expat openssl bzip2 lz4 lzo zstd"
-package set bsystem "configure"
+pkg_set summary "Multi-format archive and compression library"
+pkg_set webpage "https://www.libarchive.org"
+pkg_set git.url "https://github.com/libarchive/libarchive.git"
+pkg_set src.url "https://www.libarchive.org/downloads/libarchive-3.6.1.tar.xz"
+pkg_set src.sha "5a411aceb978f43e626f0c2d1812ddd8807b645ed892453acabd532376c148e6"
+pkg_set license "BSD-2-Clause"
+pkg_set dep.pkg "libiconv expat openssl bzip2 lz4 lzo zstd"
+pkg_set bsystem "configure"
 
 build() {
     export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)

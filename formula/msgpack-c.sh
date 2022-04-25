@@ -1,10 +1,10 @@
-package set summary "Library for a binary-based efficient data interchange format"
-package set webpage "https://msgpack.org/"
-package set git.url "https://github.com/msgpack/msgpack-c.git"
-package set src.url "https://github.com/msgpack/msgpack-c/releases/download/c-4.0.0/msgpack-c-4.0.0.tar.gz"
-package set src.sum "420fe35e7572f2a168d17e660ef981a589c9cbe77faa25eb34a520e1fcc032c8"
-package set license "BSL-1.0"
-package set bsystem "cmake"
+pkg_set summary "Library for a binary-based efficient data interchange format"
+pkg_set webpage "https://msgpack.org/"
+pkg_set git.url "https://github.com/msgpack/msgpack-c.git"
+pkg_set src.url "https://github.com/msgpack/msgpack-c/releases/download/c-4.0.0/msgpack-c-4.0.0.tar.gz"
+pkg_set src.sha "420fe35e7572f2a168d17e660ef981a589c9cbe77faa25eb34a520e1fcc032c8"
+pkg_set license "BSL-1.0"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

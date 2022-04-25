@@ -1,17 +1,17 @@
-package set summary "Highly capable, feature-rich programming language"
-package set webpage "https://www.perl.org"
-package set git.url "https://github.com/perl/perl5.git"
+pkg_set summary "Highly capable, feature-rich programming language"
+pkg_set webpage "https://www.perl.org"
+pkg_set git.url "https://github.com/perl/perl5.git"
 
-package set src.url "https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz"
-package set src.sum "82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded"
+pkg_set src.url "https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz"
+pkg_set src.sha "82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded"
 
 # http://arsv.github.io/perl-cross/index.html
-package set fix.url "https://github.com/arsv/perl-cross/releases/download/1.3.6/perl-cross-1.3.6.tar.gz"
-package set fix.sum "4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5"
+pkg_set fix.url "https://github.com/arsv/perl-cross/releases/download/1.3.6/perl-cross-1.3.6.tar.gz"
+pkg_set fix.sha "4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5"
 
-package set license "GPL-1.0-or-later"
-package set dep.cmd "cc ar nm ranlib readelf"
-package set bsystem "make"
+pkg_set license "GPL-1.0-or-later"
+pkg_set dep.cmd "cc ar nm ranlib readelf"
+pkg_set bsystem "make"
 
 build() {
     TARGET_CC=$CC

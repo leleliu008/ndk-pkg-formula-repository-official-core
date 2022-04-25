@@ -1,10 +1,10 @@
-package set summary "Open source continuous file synchronization application"
-package set webpage "https://syncthing.net/"
-package set git.url "https://github.com/syncthing/syncthing.git"
-package set src.url "https://github.com/syncthing/syncthing/archive/v1.19.2.tar.gz"
-package set src.sum "81be2d3b22fa7282eee9cc1dc7569975fa62e7149700dcedaf03d372fb012a1e"
-package set license "MPL-2.0"
-package set bsystem "go"
+pkg_set summary "Open source continuous file synchronization application"
+pkg_set webpage "https://syncthing.net/"
+pkg_set git.url "https://github.com/syncthing/syncthing.git"
+pkg_set src.url "https://github.com/syncthing/syncthing/archive/v1.19.2.tar.gz"
+pkg_set src.sha "81be2d3b22fa7282eee9cc1dc7569975fa62e7149700dcedaf03d372fb012a1e"
+pkg_set license "MPL-2.0"
+pkg_set bsystem "go"
 
 prepare() {
     run go build build.go

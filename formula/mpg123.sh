@@ -1,12 +1,12 @@
-package set summary "MP3 player"
-package set webpage "https://www.mpg123.de"
-package set git.url "https://github.com/madebr/mpg123.git"
-package set src.url "https://www.mpg123.de/download/mpg123-1.29.3.tar.bz2"
-package set src.sum "963885d8cc77262f28b77187c7d189e32195e64244de2530b798ddf32183e847"
-package set license "LGPL-2.1-only"
-package set dep.pkg "sdl2"
-package set dep.cmd "pkg-config"
-package set bsystem "configure"
+pkg_set summary "MP3 player"
+pkg_set webpage "https://www.mpg123.de"
+pkg_set git.url "https://github.com/madebr/mpg123.git"
+pkg_set src.url "https://www.mpg123.de/download/mpg123-1.29.3.tar.bz2"
+pkg_set src.sha "963885d8cc77262f28b77187c7d189e32195e64244de2530b798ddf32183e847"
+pkg_set license "LGPL-2.1-only"
+pkg_set dep.pkg "sdl2"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "configure"
 
 build() {
     configure \

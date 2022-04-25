@@ -1,12 +1,12 @@
-package set summary "Just-In-Time Compiler (JIT) for the Lua programming language"
-package set webpage "https://luajit.org/"
-package set git.url "https://github.com/LuaJIT/LuaJIT.git"
-package set git.rev "a91d0d9d3bba1a936669cfac3244509a0f2ac0e3"
-package set version "2.1.0"
-package set license "MIT"
-package set dep.cmd "cc"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "Just-In-Time Compiler (JIT) for the Lua programming language"
+pkg_set webpage "https://luajit.org/"
+pkg_set git.url "https://github.com/LuaJIT/LuaJIT.git"
+pkg_set git.sha "a91d0d9d3bba1a936669cfac3244509a0f2ac0e3"
+pkg_set version "2.1.0"
+pkg_set license "MIT"
+pkg_set dep.cmd "cc"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 prepare() {
     printf '%s\n' 'int main() {return 0;}' > test.c

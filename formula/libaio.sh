@@ -1,10 +1,10 @@
-package set summary "Linux-native asynchronous I/O access library"
-package set webpage "https://pagure.io/libaio"
-package set src.url "https://pagure.io/libaio/archive/libaio-0.3.113/libaio-libaio-0.3.113.tar.gz"
-package set src.sum "716c7059703247344eb066b54ecbc3ca2134f0103307192e6c2b7dab5f9528ab"
-package set license "LGPL-2.1-or-later"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "Linux-native asynchronous I/O access library"
+pkg_set webpage "https://pagure.io/libaio"
+pkg_set src.url "https://pagure.io/libaio/archive/libaio-0.3.113/libaio-libaio-0.3.113.tar.gz"
+pkg_set src.sha "716c7059703247344eb066b54ecbc3ca2134f0103307192e6c2b7dab5f9528ab"
+pkg_set license "LGPL-2.1-or-later"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 prepare() {
     # on macOS, some fs is non-case-sensitive. In this case, makew install will always say make: 'install' is up to date.

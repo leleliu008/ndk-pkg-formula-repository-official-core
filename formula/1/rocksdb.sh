@@ -1,11 +1,11 @@
-package set summary "Embeddable, persistent key-value store for fast storage"
-package set webpage "https://rocksdb.org/"
-package set git.url "https://github.com/facebook/rocksdb.git"
-package set src.url "https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz"
-package set src.sum "ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58"
-package set license "GPL-2.0-only"
-package set dep.pkg "gflags snappy lz4 zstd bzip2"
-package set bsystem "cmake"
+pkg_set summary "Embeddable, persistent key-value store for fast storage"
+pkg_set webpage "https://rocksdb.org/"
+pkg_set git.url "https://github.com/facebook/rocksdb.git"
+pkg_set src.url "https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz"
+pkg_set src.sha "ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58"
+pkg_set license "GPL-2.0-only"
+pkg_set dep.pkg "gflags snappy lz4 zstd bzip2"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

@@ -1,12 +1,12 @@
-package set summary "C websockets server library"
-package set webpage "https://libwebsockets.org"
-package set git.url "https://github.com/warmcat/libwebsockets.git"
-package set src.url "https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.1.tar.gz"
-package set src.sum "8fdb1454a1b34cd9a6351beaab237a485e6853806101de7e62bd2bc250bb50af"
-package set license "MIT"
-package set dep.pkg "zlib libevent libuv"
-package set dep.cmd "pkg-config"
-package set bsystem "cmake"
+pkg_set summary "C websockets server library"
+pkg_set webpage "https://libwebsockets.org"
+pkg_set git.url "https://github.com/warmcat/libwebsockets.git"
+pkg_set src.url "https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.1.tar.gz"
+pkg_set src.sha "8fdb1454a1b34cd9a6351beaab237a485e6853806101de7e62bd2bc250bb50af"
+pkg_set license "MIT"
+pkg_set dep.pkg "zlib libevent libuv"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "cmake"
 
 prepare() {
     sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in

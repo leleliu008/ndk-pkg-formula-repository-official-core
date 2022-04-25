@@ -1,11 +1,11 @@
-package set summary "Library for encoding and decoding .avif files"
-package set git.url "https://github.com/AOMediaCodec/libavif.git"
-package set src.url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.1.tar.gz"
-package set src.sum "66e82854ceb84a3e542bc140a343bc90e56c68f3ecb4fff63e636c136ed9a05e"
-package set license "BSD-2-Clause"
-package set dep.pkg "aom"
-package set dep.cmd "nasm"
-package set bsystem "cmake"
+pkg_set summary "Library for encoding and decoding .avif files"
+pkg_set git.url "https://github.com/AOMediaCodec/libavif.git"
+pkg_set src.url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.1.tar.gz"
+pkg_set src.sha "66e82854ceb84a3e542bc140a343bc90e56c68f3ecb4fff63e636c136ed9a05e"
+pkg_set license "BSD-2-Clause"
+pkg_set dep.pkg "aom"
+pkg_set dep.cmd "nasm"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

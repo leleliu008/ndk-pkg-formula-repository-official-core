@@ -1,12 +1,12 @@
-package set summary "Validating, recursive, caching DNS resolver"
-package set webpage "https://www.unbound.net"
-package set git.url "https://github.com/NLnetLabs/unbound.git"
-package set src.url "https://nlnetlabs.nl/downloads/unbound/unbound-1.15.0.tar.gz"
-package set src.sum "a480dc6c8937447b98d161fe911ffc76cfaffa2da18788781314e81339f1126f"
-package set license "BSD-3-Clause"
-package set dep.pkg "openssl libmnl libevent expat nghttp2"
-package set dep.cmd "glibtoolize:libtoolize"
-package set bsystem "configure"
+pkg_set summary "Validating, recursive, caching DNS resolver"
+pkg_set webpage "https://www.unbound.net"
+pkg_set git.url "https://github.com/NLnetLabs/unbound.git"
+pkg_set src.url "https://nlnetlabs.nl/downloads/unbound/unbound-1.15.0.tar.gz"
+pkg_set src.sha "a480dc6c8937447b98d161fe911ffc76cfaffa2da18788781314e81339f1126f"
+pkg_set license "BSD-3-Clause"
+pkg_set dep.pkg "openssl libmnl libevent expat nghttp2"
+pkg_set dep.cmd "glibtoolize:libtoolize"
+pkg_set bsystem "configure"
 
 build() {
     configure \

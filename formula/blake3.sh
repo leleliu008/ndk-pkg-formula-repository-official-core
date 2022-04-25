@@ -1,9 +1,9 @@
-package set summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
-package set git.url "https://github.com/BLAKE3-team/BLAKE3.git"
-package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/1.3.1.tar.gz"
-package set src.sum "112becf0983b5c83efff07f20b458f2dbcdbd768fd46502e7ddd831b83550109"
-package set license "CC0-1.0"
-package set bscript "c"
+pkg_set summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
+pkg_set git.url "https://github.com/BLAKE3-team/BLAKE3.git"
+pkg_set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/1.3.1.tar.gz"
+pkg_set src.sha "112becf0983b5c83efff07f20b458f2dbcdbd768fd46502e7ddd831b83550109"
+pkg_set license "CC0-1.0"
+pkg_set bscript "c"
 
 build() {
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'

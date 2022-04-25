@@ -1,10 +1,10 @@
-package set summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
-package set webpage "https://sourceware.org/bzip2"
-package set src.url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
-package set src.sum "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
-package set license "bzip2-1.0.6"
-package set bsystem "make"
-package set binbstd "yes"
+pkg_set summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
+pkg_set webpage "https://sourceware.org/bzip2"
+pkg_set src.url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+pkg_set src.sha "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+pkg_set license "bzip2-1.0.6"
+pkg_set bsystem "make"
+pkg_set binbstd "yes"
 
 prepare() {
     repair_makefile

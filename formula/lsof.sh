@@ -1,13 +1,13 @@
-package set summary "Utility to list open files"
-package set webpage "https://people.freebsd.org/~abe"
-package set git.url "https://github.com/lsof-org/lsof.git"
-package set src.url "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
-package set src.sum "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
-package set license "Zlib"
-package set bsystem "make"
-package set dep.pkg "libtirpc"
-package set binbstd 'yes'
-package set sdk.api 26
+pkg_set summary "Utility to list open files"
+pkg_set webpage "https://people.freebsd.org/~abe"
+pkg_set git.url "https://github.com/lsof-org/lsof.git"
+pkg_set src.url "https://github.com/lsof-org/lsof/archive/4.94.0.tar.gz"
+pkg_set src.sha "a9865eeb581c3abaac7426962ddb112ecfd86a5ae93086eb4581ce100f8fa8f4"
+pkg_set license "Zlib"
+pkg_set bsystem "make"
+pkg_set dep.pkg "libtirpc"
+pkg_set binbstd 'yes'
+pkg_set sdk.api 26
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 
 

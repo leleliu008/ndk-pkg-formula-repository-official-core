@@ -1,9 +1,9 @@
-package set summary "C test project"
-package set git.url "https://github.com/leleliu008/C.git"
-package set license "Unlicense"
-package set bsystem "cmake"
-package set version "20.5"
-package set sdk.api 30
+pkg_set summary "C test project"
+pkg_set git.url "https://github.com/leleliu008/C.git"
+pkg_set license "Unlicense"
+pkg_set bsystem "cmake"
+pkg_set version "20.5"
+pkg_set sdk.api 30
 
 build0() {
     :

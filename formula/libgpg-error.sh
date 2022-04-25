@@ -1,13 +1,13 @@
-package set summary "Common error values for all GnuPG components"
-package set webpage "https://www.gnupg.org/related_software/libgpg-error"
-package set git.url "https://dev.gnupg.org/source/libgpg-error.git"
-package set src.url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.bz2"
-package set src.sum "570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26"
-package set license "LGPL-2.1-or-later;COPYING;https://dev.gnupg.org/source/libgpg-error/browse/master/COPYING"
-package set dep.pkg "libbthread"
-package set ldflags "-lbthread"
-package set ccflags "-include pthread.h -include bthread.h"
-package set bsystem "configure"
+pkg_set summary "Common error values for all GnuPG components"
+pkg_set webpage "https://www.gnupg.org/related_software/libgpg-error"
+pkg_set git.url "https://dev.gnupg.org/source/libgpg-error.git"
+pkg_set src.url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.bz2"
+pkg_set src.sha "570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26"
+pkg_set license "LGPL-2.1-or-later;COPYING;https://dev.gnupg.org/source/libgpg-error/browse/master/COPYING"
+pkg_set dep.pkg "libbthread"
+pkg_set ldflags "-lbthread"
+pkg_set ccflags "-include pthread.h -include bthread.h"
+pkg_set bsystem "configure"
 
 prepare() {
     cp src/syscfg/lock-obj-pub.arm-unknown-linux-androideabi.h src/syscfg/lock-obj-pub.armv7a-unknown-linux-androideabi.h &&

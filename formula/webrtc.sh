@@ -1,10 +1,10 @@
-package set summary "Real-Time Communication"
-package set webpage "https://webrtc.org/"
-package set git.url "https://webrtc.googlesource.com/src.git"
-package set src.url "dir:///dev/null"
-package set version "1"
-package set license "BSD-3-Clause;;https://webrtc.googlesource.com/src.git/+/refs/heads/main/LICENSE?format=TEXT"
-package set dep.cmd "git gclient ninja"
+pkg_set summary "Real-Time Communication"
+pkg_set webpage "https://webrtc.org/"
+pkg_set git.url "https://webrtc.googlesource.com/src.git"
+pkg_set src.url "dir:///dev/null"
+pkg_set version "1"
+pkg_set license "BSD-3-Clause;;https://webrtc.googlesource.com/src.git/+/refs/heads/main/LICENSE?format=TEXT"
+pkg_set dep.cmd "git gclient ninja"
 
 # https://webrtc.github.io/webrtc-org/native-code/android/
 prepare() {

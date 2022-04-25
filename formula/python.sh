@@ -1,12 +1,12 @@
-package set summary "Interpreted, interactive, object-oriented programming language"
-package set webpage "https://www.python.org"
-package set git.url "https://github.com/python/cpython.git"
-package set src.url "https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz"
-package set src.sum "3c0ede893011319f9b0a56b44953a3d52c7abf9657c23fb4bc9ced93b86e9c97"
-package set license "Python-2.0"
-package set dep.pkg "expat libffi openssl sqlite bzip2 xz"
-package set dep.cmd "pkg-config"
-package set bsystem "configure"
+pkg_set summary "Interpreted, interactive, object-oriented programming language"
+pkg_set webpage "https://www.python.org"
+pkg_set git.url "https://github.com/python/cpython.git"
+pkg_set src.url "https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz"
+pkg_set src.sha "3c0ede893011319f9b0a56b44953a3d52c7abf9657c23fb4bc9ced93b86e9c97"
+pkg_set license "Python-2.0"
+pkg_set dep.pkg "expat libffi openssl sqlite bzip2 xz"
+pkg_set dep.cmd "pkg-config"
+pkg_set bsystem "configure"
 
 build0() {
     unset PYTHONHOME

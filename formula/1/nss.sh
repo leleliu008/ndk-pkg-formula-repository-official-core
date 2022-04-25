@@ -1,10 +1,10 @@
-package set summary "Mozilla Network Security Services"
-package set webpage "https://developer.mozilla.org/docs/NSS"
-package set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
-package set src.sum "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
-package set license "MPL-2.0"
-package set dep.pkg "nspr"
-package set bscript "nss"
+pkg_set summary "Mozilla Network Security Services"
+pkg_set webpage "https://developer.mozilla.org/docs/NSS"
+pkg_set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
+pkg_set src.sha "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
+pkg_set license "MPL-2.0"
+pkg_set dep.pkg "nspr"
+pkg_set bscript "nss"
 
 prepare() {
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
@@ -30,7 +30,7 @@ prepare_includes() {
     done
 }
 
-package set binbstd 'yes'
+pkg_set binbstd 'yes'
 
 build() {
     makew clean &&

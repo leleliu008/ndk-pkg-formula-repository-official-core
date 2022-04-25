@@ -1,10 +1,10 @@
-package set summary "Prints a steam locomotive if you type sl instead of ls"
-package set git.url "https://github.com/mtoyoda/sl.git"
-package set src.url "https://github.com/mtoyoda/sl/archive/5.02.tar.gz"
-package set src.sum "1e5996757f879c81f202a18ad8e982195cf51c41727d3fea4af01fdcbbb5563a"
-package set license "MIT"
-package set dep.pkg "ncurses"
-package set binbstd "yes"
+pkg_set summary "Prints a steam locomotive if you type sl instead of ls"
+pkg_set git.url "https://github.com/mtoyoda/sl.git"
+pkg_set src.url "https://github.com/mtoyoda/sl/archive/5.02.tar.gz"
+pkg_set src.sha "1e5996757f879c81f202a18ad8e982195cf51c41727d3fea4af01fdcbbb5563a"
+pkg_set license "MIT"
+pkg_set dep.pkg "ncurses"
+pkg_set binbstd "yes"
 
 build() {
     run rm -rf sl &&

@@ -1,11 +1,11 @@
-package set summary "Command-line packet(TCP/IP) analyzer"
-package set webpage "https://www.tcpdump.org"
-package set git.url "https://github.com/the-tcpdump-group/tcpdump.git"
-package set src.url "https://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz"
-package set src.sum "79b36985fb2703146618d87c4acde3e068b91c553fb93f021a337f175fd10ebe"
-package set license "BSD-3-Clause"
-package set dep.pkg "libpcap"
-package set bsystem "cmake"
+pkg_set summary "Command-line packet(TCP/IP) analyzer"
+pkg_set webpage "https://www.tcpdump.org"
+pkg_set git.url "https://github.com/the-tcpdump-group/tcpdump.git"
+pkg_set src.url "https://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz"
+pkg_set src.sha "79b36985fb2703146618d87c4acde3e068b91c553fb93f021a337f175fd10ebe"
+pkg_set license "BSD-3-Clause"
+pkg_set dep.pkg "libpcap"
+pkg_set bsystem "cmake"
 
 build() {
     cat > "$PACKAGE_BSCRIPT_DIR/cmake/Modules/FindPCAP.cmake" <<EOF

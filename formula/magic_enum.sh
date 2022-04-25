@@ -1,9 +1,9 @@
-package set summary "Static reflection for enums (to string, from string, iteration) for modern C++"
-package set git.url "https://github.com/Neargye/magic_enum.git"
-package set src.url "https://github.com/Neargye/magic_enum/archive/v0.7.3.tar.gz"
-package set src.sum "b8d0cd848546fee136dc1fa4bb021a1e4dc8fe98e44d8c119faa3ef387636bf7"
-package set license "MIT"
-package set bsystem "cmake"
+pkg_set summary "Static reflection for enums (to string, from string, iteration) for modern C++"
+pkg_set git.url "https://github.com/Neargye/magic_enum.git"
+pkg_set src.url "https://github.com/Neargye/magic_enum/archive/v0.7.3.tar.gz"
+pkg_set src.sha "b8d0cd848546fee136dc1fa4bb021a1e4dc8fe98e44d8c119faa3ef387636bf7"
+pkg_set license "MIT"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

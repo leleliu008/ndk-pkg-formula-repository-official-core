@@ -1,14 +1,14 @@
-package set summary "Improved top (interactive process viewer)"
-package set webpage "https://htop.dev"
-package set git.url "https://github.com/htop-dev/htop.git"
-package set src.url "https://github.com/htop-dev/htop/archive/3.1.2.tar.gz"
-package set src.sum "fe9559637c8f21f5fd531a4c072048a404173806acbdad1359c6b82fd87aa001"
-package set license "GPL-2.0-or-later"
-package set dep.pkg "ncurses"
-package set bsystem "autogen"
+pkg_set summary "Improved top (interactive process viewer)"
+pkg_set webpage "https://htop.dev"
+pkg_set git.url "https://github.com/htop-dev/htop.git"
+pkg_set src.url "https://github.com/htop-dev/htop/archive/3.1.2.tar.gz"
+pkg_set src.sha "fe9559637c8f21f5fd531a4c072048a404173806acbdad1359c6b82fd87aa001"
+pkg_set license "GPL-2.0-or-later"
+pkg_set dep.pkg "ncurses"
+pkg_set bsystem "autogen"
 
 # char* strchrnul(char* __s, int __ch) __RENAME(strchrnul) __attribute_pure__ __INTRODUCED_IN(24);
-package set sdk.api 24
+pkg_set sdk.api 24
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);

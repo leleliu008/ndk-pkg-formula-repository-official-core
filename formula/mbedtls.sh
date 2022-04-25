@@ -1,11 +1,11 @@
-package set summary "Cryptographic & SSL/TLS library"
-package set webpage "https://tls.mbed.org"
-package set git.url "https://github.com/Mbed-TLS/mbedtls.git"
-package set src.url "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.tar.gz"
-package set src.sum "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55"
-package set license "Apache-2.0"
-package set dep.pkg "zlib"
-package set bsystem "cmake"
+pkg_set summary "Cryptographic & SSL/TLS library"
+pkg_set webpage "https://tls.mbed.org"
+pkg_set git.url "https://github.com/Mbed-TLS/mbedtls.git"
+pkg_set src.url "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.tar.gz"
+pkg_set src.sha "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55"
+pkg_set license "Apache-2.0"
+pkg_set dep.pkg "zlib"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

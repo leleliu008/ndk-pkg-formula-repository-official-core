@@ -1,9 +1,9 @@
-package set summary "Bytecode optimizer for Android apps"
-package set webpage "https://fbredex.com"
-package set git.url "https://github.com/facebook/redex.git"
-package set license "MIT"
-package set dep.pkg "boost jsoncpp libexecinfo"
-package set bsystem "autotools"
+pkg_set summary "Bytecode optimizer for Android apps"
+pkg_set webpage "https://fbredex.com"
+pkg_set git.url "https://github.com/facebook/redex.git"
+pkg_set license "MIT"
+pkg_set dep.pkg "boost jsoncpp libexecinfo"
+pkg_set bsystem "autotools"
 
 prepare() {
     sed_in_place 's/-lpthread/-lc/g'           Makefile.am &&

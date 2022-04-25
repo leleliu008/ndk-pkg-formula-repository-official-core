@@ -1,7 +1,7 @@
-package set summary "allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments."
-package set webpage "https://www.sudo.ws"
-package set src.url "http://www.sudo.ws/dist/sudo-1.9.2.tar.gz"
-package set src.sum "7c98d201f181c47152711b9f391e0f6b5545f3ef8926298a3e8bc6288e118314"
+pkg_set summary "allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments."
+pkg_set webpage "https://www.sudo.ws"
+pkg_set src.url "http://www.sudo.ws/dist/sudo-1.9.2.tar.gz"
+pkg_set src.sha "7c98d201f181c47152711b9f391e0f6b5545f3ef8926298a3e8bc6288e118314"
 
 prepare() {
     sed_in_place '1i #include<sudo_compat.h>' include/compat/glob.h

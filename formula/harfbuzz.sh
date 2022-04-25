@@ -1,10 +1,10 @@
-package set summary "OpenType text shaping engine"
-package set git.url "https://github.com/harfbuzz/harfbuzz.git"
-package set src.url "https://github.com/harfbuzz/harfbuzz/archive/4.2.0.tar.gz"
-package set src.sum "7152d1bdcbd2bf6ba777cfe9161d40564fe0a7583e04e55e0a057d5f4414d3c9"
-package set license "MIT"
-package set dep.pkg "icu4c glib graphite2"
-package set bsystem "meson"
+pkg_set summary "OpenType text shaping engine"
+pkg_set git.url "https://github.com/harfbuzz/harfbuzz.git"
+pkg_set src.url "https://github.com/harfbuzz/harfbuzz/archive/4.2.0.tar.gz"
+pkg_set src.sha "7152d1bdcbd2bf6ba777cfe9161d40564fe0a7583e04e55e0a057d5f4414d3c9"
+pkg_set license "MIT"
+pkg_set dep.pkg "icu4c glib graphite2"
+pkg_set bsystem "meson"
 
 build() {
     mesonw \

@@ -1,7 +1,7 @@
-package set summary "CPU INFOrmation library"
-package set git.url "https://github.com/pytorch/cpuinfo.git"
-package set license "BSD-2-Clause"
-package set bsystem "cmake"
+pkg_set summary "CPU INFOrmation library"
+pkg_set git.url "https://github.com/pytorch/cpuinfo.git"
+pkg_set license "BSD-2-Clause"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

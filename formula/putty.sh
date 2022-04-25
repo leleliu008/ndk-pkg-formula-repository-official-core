@@ -1,10 +1,10 @@
-package set summary "Implementation of Telnet and SSH"
-package set webpage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
-package set git.url "https://git.tartarus.org/simon/putty.git"
-package set src.url "https://the.earth.li/~sgtatham/putty/0.76/putty-0.76.tar.gz"
-package set src.sum "547cd97a8daa87ef71037fab0773bceb54a8abccb2f825a49ef8eba5e045713f"
-package set license "MIT"
-package set bsystem "configure"
+pkg_set summary "Implementation of Telnet and SSH"
+pkg_set webpage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
+pkg_set git.url "https://git.tartarus.org/simon/putty.git"
+pkg_set src.url "https://the.earth.li/~sgtatham/putty/0.76/putty-0.76.tar.gz"
+pkg_set src.sha "547cd97a8daa87ef71037fab0773bceb54a8abccb2f825a49ef8eba5e045713f"
+pkg_set license "MIT"
+pkg_set bsystem "configure"
 
 build() {
     # int glob(const char* __pattern, int __flags, int (*__error_callback)(const char* __failure_path, int __failure_errno), glob_t* __result_ptr) __INTRODUCED_IN(28);

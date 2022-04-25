@@ -1,10 +1,10 @@
-package set summary "Program that can automate interactive applications"
-package set webpage "https://expect.sourceforge.io"
-package set version "5.45.4"
-package set src.url "https://downloads.sourceforge.net/project/expect/Expect/${PACKAGE_VERSION}/expect${PACKAGE_VERSION}.tar.gz"
-package set src.sum "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
-package set dep.cmd "make"
-package set dep.pkg "tcl-core"
+pkg_set summary "Program that can automate interactive applications"
+pkg_set webpage "https://expect.sourceforge.io"
+pkg_set version "5.45.4"
+pkg_set src.url "https://downloads.sourceforge.net/project/expect/Expect/${PACKAGE_VERSION}/expect${PACKAGE_VERSION}.tar.gz"
+pkg_set src.sha "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
+pkg_set dep.cmd "make"
+pkg_set dep.pkg "tcl-core"
 
 build() {
     configure \

@@ -1,13 +1,13 @@
-package set summary "Lightweight implementation of the Ruby language"
-package set webpage "https://mruby.org/"
-package set git.url "https://github.com/mruby/mruby.git"
-package set src.url "https://github.com/mruby/mruby/archive/3.0.0.tar.gz"
-package set src.sum "95b798cdd931ef29d388e2b0b267cba4dc469e8722c37d4ef8ee5248bc9075b0"
-package set license "MIT"
-package set dep.pkg "readline"
-package set dep.cmd "bison cc"
-package set bsystem "rake"
-package set binbstd "yes"
+pkg_set summary "Lightweight implementation of the Ruby language"
+pkg_set webpage "https://mruby.org/"
+pkg_set git.url "https://github.com/mruby/mruby.git"
+pkg_set src.url "https://github.com/mruby/mruby/archive/3.0.0.tar.gz"
+pkg_set src.sha "95b798cdd931ef29d388e2b0b267cba4dc469e8722c37d4ef8ee5248bc9075b0"
+pkg_set license "MIT"
+pkg_set dep.pkg "readline"
+pkg_set dep.cmd "bison cc"
+pkg_set bsystem "rake"
+pkg_set binbstd "yes"
 
 prepare() {
     cat > build_config/android.rb <<EOF

@@ -1,7 +1,7 @@
-package set summary "Simple JPEG Encoder"
-package set git.url "https://github.com/webmproject/sjpeg.git"
-package set dep.pkg "libjpeg-turbo libpng"
-package set bsystem "cmake"
+pkg_set summary "Simple JPEG Encoder"
+pkg_set git.url "https://github.com/webmproject/sjpeg.git"
+pkg_set dep.pkg "libjpeg-turbo libpng"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

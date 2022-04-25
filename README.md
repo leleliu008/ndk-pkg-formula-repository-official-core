@@ -6,7 +6,7 @@ formula is a POSIX sh script used to describe how to compile a package for [ndk-
 
 ## the function must be invoked on top of the formula
 ```
-package set <KEY> <VALUE>
+pkg_set <KEY> <VALUE>
 ```
 |KEY|required?|overview|
 |-|-|-|
@@ -17,14 +17,14 @@ package set <KEY> <VALUE>
 |`developer`|optional|value has form: `[DEVELOPER-NAME][;DEVELOPER-EMAIL][;DEVELOPER-ORGANIZATION-NAME][;DEVELOPER-ORGANIZATION-URL]`.|
 ||||
 |`git.url`|optional|the source code git repository.<br>must end with `.git`|
-|`git.rev`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
+|`git.sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
 |`git.tag`|optional|the git tag name, which to be fetched as source code|
 ||||
 |`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
-|`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+|`src.sha`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
 ||||
 |`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
-|`fix.sum`|optional|the `sha256sum` of patch file.|
+|`fix.sha`|optional|the `sha256sum` of patch file.|
 ||||
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|

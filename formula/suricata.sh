@@ -1,15 +1,15 @@
-package set summary "Network IDS, IPS, and security monitoring engine"
-package set webpage "https://suricata-ids.org"
-package set git.url "https://github.com/OISF/suricata.git"
-package set src.url "https://www.openinfosecfoundation.org/download/suricata-6.0.4.tar.gz"
-package set src.sum "a8f197e33d1678689ebbf7bc1abe84934c465d22c504c47c2c7e9b74aa042d0d"
-package set license "GPL-2.0-or-later"
-package set bsystem "configure cargo"
-package set dep.pkg "jansson file libnet libpcap libyaml lz4 pcre libiconv libglob"
-package set ldflags "-lglob"
+pkg_set summary "Network IDS, IPS, and security monitoring engine"
+pkg_set webpage "https://suricata-ids.org"
+pkg_set git.url "https://github.com/OISF/suricata.git"
+pkg_set src.url "https://www.openinfosecfoundation.org/download/suricata-6.0.4.tar.gz"
+pkg_set src.sha "a8f197e33d1678689ebbf7bc1abe84934c465d22c504c47c2c7e9b74aa042d0d"
+pkg_set license "GPL-2.0-or-later"
+pkg_set bsystem "configure cargo"
+pkg_set dep.pkg "jansson file libnet libpcap libyaml lz4 pcre libiconv libglob"
+pkg_set ldflags "-lglob"
 
 # void endgrent(void) __INTRODUCED_IN(26);
-package set sdk.api 26
+pkg_set sdk.api 26
 
 prepare() {
     sed_in_place '/LIBS="-lpthread/d' configure

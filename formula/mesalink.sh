@@ -1,9 +1,9 @@
-package set summary "memory-safe and OpenSSL-compatible TLS library"
-package set webpage "https://mesalink.io"
-package set git.url "https://github.com/mesalock-linux/mesalink.git"
-package set license ";LICENSE;https://raw.githubusercontent.com/mesalock-linux/mesalink/master/LICENSE"
-package set bsystem "cargo"
-package set binbstd 'yes'
+pkg_set summary "memory-safe and OpenSSL-compatible TLS library"
+pkg_set webpage "https://mesalink.io"
+pkg_set git.url "https://github.com/mesalock-linux/mesalink.git"
+pkg_set license ";LICENSE;https://raw.githubusercontent.com/mesalock-linux/mesalink/master/LICENSE"
+pkg_set bsystem "cargo"
+pkg_set binbstd 'yes'
 
 build() {
     cargow build &&

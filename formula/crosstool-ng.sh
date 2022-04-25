@@ -1,15 +1,16 @@
-package set summary "Tool for building toolchains"
-package set webpage "https://crosstool-ng.github.io"
-package set git.url "https://github.com/crosstool-ng/crosstool-ng.git"
-package set src.url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
-package set src.sum "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
-package set license "LGPL-2.1-or-later;COPYING;https://raw.githubusercontent.com/crosstool-ng/crosstool-ng/master/COPYING"
-package set dep.pkg "ncurses libiconv gettext"
-package set dep.cmd "glibtoolize:libtoolize libtool help2man objcopy makeinfo"
-package set bsystem "configure"
+pkg_set summary "Tool for building toolchains"
+pkg_set webpage "https://crosstool-ng.github.io"
+pkg_set git.url "https://github.com/crosstool-ng/crosstool-ng.git"
+pkg_set src.url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
+pkg_set src.sha "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
+pkg_set license "LGPL-2.1-or-later;COPYING;https://raw.githubusercontent.com/crosstool-ng/crosstool-ng/master/COPYING"
+pkg_set dep.pkg "ncurses libiconv gettext"
+pkg_set bsystem "configure"
 
 if [ "$NATIVE_OS_KIND" = 'darwin' ] ; then
-    package add dep.cmd gawk
+    pkg_set dep.cmd "glibtoolize:libtoolize libtool help2man objcopy makeinfo gawk"
+else
+    pkg_set dep.cmd "glibtoolize:libtoolize libtool help2man objcopy makeinfo"
 fi
 
 build() {
