@@ -3,7 +3,7 @@ pkg_set webpage "http://libtorrent.org"
 pkg_set git.url "https://github.com/arvidn/libtorrent.git"
 pkg_set src.url "https://github.com/arvidn/libtorrent/releases/download/v2.0.5/libtorrent-rasterbar-2.0.5.tar.gz"
 pkg_set src.sha "e965c2e53170c61c0db3a2d898a61769cb7acd541bbf157cbbef97a185930ea5"
-pkg_set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/arvidn/libtorrent/RC_2_0/LICENSE"
+pkg_set license "BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/arvidn/libtorrent/RC_2_0/LICENSE"
 pkg_set dep.pkg "openssl boost"
 pkg_set bsystem "cmake"
 

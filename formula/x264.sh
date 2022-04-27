@@ -3,7 +3,7 @@ pkg_set webpage "https://www.videolan.org/developers/x264.html"
 pkg_set git.url "https://code.videolan.org/videolan/x264.git"
 pkg_set git.sha "5db6aa6cab1b146e07b60cc1736a01f21da01154"
 pkg_set version "r3060"
-pkg_set license "GPL-2.0-only;COPYING;https://code.videolan.org/videolan/x264/-/raw/master/COPYING"
+pkg_set license "GPL-2.0-only|COPYING|https://code.videolan.org/videolan/x264/-/raw/master/COPYING"
 pkg_set bsystem "configure"
 
 prepare() {

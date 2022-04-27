@@ -6,7 +6,7 @@ pkg_set src.sha "31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879b
 pkg_set bsystem "make"
 pkg_set binbstd "yes"
 pkg_set parallel "no"
-pkg_set license ";COPYING;https://sourceforge.net/p/giflib/code/ci/master/tree/COPYING"
+pkg_set license "|COPYING|https://sourceforge.net/p/giflib/code/ci/master/tree/COPYING"
 pkg_set developer "Gershon+Elber;gershon@cs.technion.sc.il Toshio+Kuratomi;toshio@tiki-lounge.com Eric+Raymond;esr@snark.thyrsus.com"
 
 prepare() {

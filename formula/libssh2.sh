@@ -3,7 +3,7 @@ pkg_set webpage "https://www.libssh2.org"
 pkg_set git.url "https://github.com/libssh2/libssh2.git"
 pkg_set src.url "https://www.libssh2.org/download/libssh2-1.10.0.tar.gz"
 pkg_set src.sha "2d64e90f3ded394b91d3a2e774ca203a4179f69aebee03003e5a6fa621e41d51"
-pkg_set license "BSD-3-Clause;COPYING;https://github.com/libssh2/libssh2/blob/master/COPYING"
+pkg_set license "BSD-3-Clause|COPYING|https://github.com/libssh2/libssh2/blob/master/COPYING"
 pkg_set dep.pkg "zlib openssl"
 pkg_set bsystem "configure"
 

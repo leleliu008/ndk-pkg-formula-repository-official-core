@@ -3,7 +3,7 @@ pkg_set webpage "https://www.cmake.org"
 pkg_set git.url "https://gitlab.kitware.com/cmake/cmake.git"
 pkg_set src.url "https://github.com/Kitware/CMake/releases/download/v3.23.0/cmake-3.23.0.tar.gz"
 pkg_set src.sha "5ab0a12f702f44013be7e19534cd9094d65cc9fe7b2cd0f8c9e5318e0fe4ac82"
-pkg_set license "BSD-3-Clause;Copyright.txt;https://gitlab.kitware.com/cmake/cmake/-/raw/master/Copyright.txt"
+pkg_set license "BSD-3-Clause|Copyright.txt|https://gitlab.kitware.com/cmake/cmake/-/raw/master/Copyright.txt"
 pkg_set dep.pkg "libuv ncurses"
 pkg_set bsystem "cmake"
 

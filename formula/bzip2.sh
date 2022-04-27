@@ -5,7 +5,7 @@ pkg_set src.url "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
 pkg_set src.sha "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
 pkg_set bsystem "make"
 pkg_set binbstd "yes"
-pkg_set license ";LICENSE;https://sourceware.org/git/?p=bzip2.git;a=blob_plain;f=LICENSE;h=81a37eab7a5be1a34456f38adb74928cc9073e9b;hb=HEAD"
+pkg_set license "|LICENSE|https://sourceware.org/git/?p=bzip2.git;a=blob_plain;f=LICENSE;h=81a37eab7a5be1a34456f38adb74928cc9073e9b;hb=HEAD"
 pkg_set developer "Julian+Seward;jseward@acm.org"
 
 prepare() {

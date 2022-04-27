@@ -3,7 +3,7 @@ pkg_set webpage "https://ffmpeg.org"
 pkg_set git.url "https://github.com/FFmpeg/FFmpeg.git"
 pkg_set src.url "https://ffmpeg.org/releases/ffmpeg-5.0.1.tar.xz"
 pkg_set src.sha "ef2efae259ce80a240de48ec85ecb062cecca26e4352ffb3fda562c21a93007b"
-pkg_set license "GPL-2.0-or-later;LICENSE.md;https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/LICENSE.md"
+pkg_set license "GPL-2.0-or-later|LICENSE.md|https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/LICENSE.md"
 pkg_set dep.pkg "sdl2 opus libwebp libvorbis theora speex x264 x265 lame"
 pkg_set bsystem "make"
 pkg_set binbstd 'yes'

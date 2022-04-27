@@ -2,7 +2,7 @@ pkg_set summary "Perl compatible regular expressions library"
 pkg_set webpage "https://www.pcre.org"
 pkg_set src.url "https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2"
 pkg_set src.sha "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
-pkg_set license "BSD-3-Clause;LICENCE;"
+pkg_set license "BSD-3-Clause|LICENCE|"
 pkg_set dep.pkg "zlib bzip2"
 pkg_set bsystem "cmake"
 

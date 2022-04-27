@@ -6,7 +6,7 @@ pkg_set src.sha "f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6
 pkg_set dep.pkg "xz zlib"
 pkg_set bsystem "cmake"
 pkg_set bscript "build/cmake"
-pkg_set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/facebook/zstd/master/LICENSE GPL-2.0-or-later;COPYING;https://raw.githubusercontent.com/facebook/zstd/dev/COPYING"
+pkg_set license "BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/facebook/zstd/master/LICENSE GPL-2.0-or-later|COPYING|https://raw.githubusercontent.com/facebook/zstd/dev/COPYING"
 pkg_set developer ";;Facebook;https://github.com/facebook"
 
 build() {

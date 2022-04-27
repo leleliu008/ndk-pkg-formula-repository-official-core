@@ -2,5 +2,5 @@ pkg_set summary "Significantly faster alternative to the classic Unix cp(1) comm
 pkg_set git.url "https://github.com/Svetlitski/fcp.git"
 pkg_set src.url "https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz"
 pkg_set src.sha "e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2"
-pkg_set license "BSD-3-Clause;LICENSE;https://raw.githubusercontent.com/Svetlitski/fcp/master/LICENSE"
+pkg_set license "BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/Svetlitski/fcp/master/LICENSE"
 pkg_set bsystem "cargo"

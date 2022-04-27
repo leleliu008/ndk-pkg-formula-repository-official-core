@@ -3,7 +3,7 @@ pkg_set webpage "https://openssl.org"
 pkg_set git.url "https://github.com/openssl/openssl.git"
 pkg_set src.url "https://www.openssl.org/source/openssl-1.1.1n.tar.gz"
 pkg_set src.sha "40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a"
-pkg_set license "OpenSSL;LICENSE;"
+pkg_set license "OpenSSL|LICENSE|"
 pkg_set dep.cmd "perl"
 pkg_set bsystem "make"
 pkg_set binbstd 'yes'

@@ -5,7 +5,7 @@ pkg_set src.url "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.ta
 pkg_set src.sha "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55"
 pkg_set dep.pkg "zlib"
 pkg_set bsystem "cmake"
-pkg_set license "Apache-2.0;LICENSE;https://raw.githubusercontent.com/Mbed-TLS/mbedtls/development/LICENSE"
+pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/Mbed-TLS/mbedtls/development/LICENSE"
 pkg_set developer ";mbed-tls@lists.trustedfirmware.org;Mbed-TLS;https://github.com/Mbed-TLS"
 
 build() {

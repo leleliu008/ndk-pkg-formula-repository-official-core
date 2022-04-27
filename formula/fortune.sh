@@ -2,7 +2,7 @@ pkg_set summary "a tool for displaying a random quotation"
 pkg_set git.url "https://github.com/shlomif/fortune-mod.git"
 pkg_set src.url "https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.12.0/fortune-mod-3.12.0.tar.xz"
 pkg_set src.sha "7d5aed7cb9998950d349eba83a5b57fefba71928b34b0f998508419fdb740b71"
-pkg_set license ";COPYING.txt;https://raw.githubusercontent.com/shlomif/fortune-mod/master/LICENSE"
+pkg_set license "|COPYING.txt|https://raw.githubusercontent.com/shlomif/fortune-mod/master/LICENSE"
 pkg_set dep.plm "App::Cpan Path::Tiny App::Docmake"
 pkg_set bsystem "cmake"
 
