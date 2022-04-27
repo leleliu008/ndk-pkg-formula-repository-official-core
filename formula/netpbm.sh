@@ -7,7 +7,7 @@ pkg_set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
 pkg_set dep.cmd "flex"
 pkg_set bsystem "make"
 pkg_set binbstd "yes"
-pkg_set build_in_parallel no
+pkg_set parallel no
 
 prepare() {
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99

@@ -5,7 +5,7 @@ pkg_set src.sha "81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd
 pkg_set license "Unlicense"
 pkg_set bsystem "make"
 pkg_set binbstd 'yes'
-pkg_set build_in_parallel no
+pkg_set parallel no
 
 # int lutimes(const char* __path, const struct timeval __times[2]) __INTRODUCED_IN(26);
 pkg_set sdk.api 26

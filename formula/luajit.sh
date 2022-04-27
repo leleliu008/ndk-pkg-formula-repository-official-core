@@ -3,10 +3,11 @@ pkg_set webpage "https://luajit.org/"
 pkg_set git.url "https://github.com/LuaJIT/LuaJIT.git"
 pkg_set git.sha "a91d0d9d3bba1a936669cfac3244509a0f2ac0e3"
 pkg_set version "2.1.0"
-pkg_set license "MIT"
 pkg_set dep.cmd "cc"
 pkg_set bsystem "make"
 pkg_set binbstd "yes"
+pkg_set license "MIT;COPYRIGHT;https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT"
+pkg_set developer "Mike+Pall;luajit@freelists.org;LuaJIT;https://github.com/LuaJIT"
 
 prepare() {
     printf '%s\n' 'int main() {return 0;}' > test.c

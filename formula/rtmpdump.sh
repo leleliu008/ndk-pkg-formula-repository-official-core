@@ -14,7 +14,7 @@ pkg_set license "GPL-2.0-or-later"
 pkg_set bsystem "make"
 pkg_set dep.pkg "zlib openssl"
 pkg_set binbstd 'yes'
-pkg_set build_in_parallel no
+pkg_set parallel no
 
 prepare() {
     patch -p0 < $PACKAGE_FIX_PATH

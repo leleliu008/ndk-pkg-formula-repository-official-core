@@ -6,7 +6,7 @@ pkg_set license "OpenSSL"
 pkg_set bsystem "make"
 pkg_set dep.cmd "perl"
 pkg_set binbstd 'yes'
-pkg_set build_in_parallel no
+pkg_set parallel no
 
 prepare() {
     export LC_COLLATE='C'
