@@ -7,7 +7,7 @@ pkg_set dep.pkg "xz zlib"
 pkg_set bsystem "cmake"
 pkg_set bscript "build/cmake"
 pkg_set license "BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/facebook/zstd/master/LICENSE GPL-2.0-or-later|COPYING|https://raw.githubusercontent.com/facebook/zstd/dev/COPYING"
-pkg_set developer ";;Facebook;https://github.com/facebook"
+pkg_set developer "||Facebook|https://github.com/facebook"
 
 build() {
     cmakew \

@@ -7,7 +7,7 @@ pkg_set bsystem "make"
 pkg_set binbstd "yes"
 pkg_set parallel "no"
 pkg_set license "|COPYING|https://sourceforge.net/p/giflib/code/ci/master/tree/COPYING"
-pkg_set developer "Gershon+Elber;gershon@cs.technion.sc.il Toshio+Kuratomi;toshio@tiki-lounge.com Eric+Raymond;esr@snark.thyrsus.com"
+pkg_set developer "Gershon+Elber|gershon@cs.technion.sc.il Toshio+Kuratomi|toshio@tiki-lounge.com Eric+Raymond|esr@snark.thyrsus.com"
 
 prepare() {
     sed_in_place 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile

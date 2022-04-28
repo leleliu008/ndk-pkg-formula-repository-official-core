@@ -4,7 +4,7 @@ pkg_set src.url "https://github.com/google/cpu_features/archive/v0.7.0.tar.gz"
 pkg_set src.sha "df80d9439abf741c7d2fdcdfd2d26528b136e6c52976be8bd0cd5e45a27262c0"
 pkg_set bsystem "cmake"
 pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/google/cpu_features/main/LICENSE"
-pkg_set developer ";opensource@google.com;Google;https://github.com/google"
+pkg_set developer "|opensource@google.com|Google|https://github.com/google"
 
 build() {
     case $INSTALL_LIB in

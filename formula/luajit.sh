@@ -7,7 +7,7 @@ pkg_set dep.cmd "cc"
 pkg_set bsystem "make"
 pkg_set binbstd "yes"
 pkg_set license "MIT|COPYRIGHT|https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT"
-pkg_set developer "Mike+Pall;luajit@freelists.org;LuaJIT;https://github.com/LuaJIT"
+pkg_set developer "Mike+Pall|luajit@freelists.org|LuaJIT|https://github.com/LuaJIT"
 
 prepare() {
     printf '%s\n' 'int main() {return 0;}' > test.c

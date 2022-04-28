@@ -6,7 +6,7 @@ pkg_set src.sha "525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa5
 pkg_set dep.pkg "zlib"
 pkg_set bsystem "cmake"
 pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/Mbed-TLS/mbedtls/development/LICENSE"
-pkg_set developer ";mbed-tls@lists.trustedfirmware.org;Mbed-TLS;https://github.com/Mbed-TLS"
+pkg_set developer "|mbed-tls@lists.trustedfirmware.org|Mbed-TLS|https://github.com/Mbed-TLS"
 
 build() {
     cmakew \

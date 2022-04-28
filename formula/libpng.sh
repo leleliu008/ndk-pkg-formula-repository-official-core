@@ -6,4 +6,4 @@ pkg_set src.sha "505e70834d35383537b6491e7ae8641f1a4bed1876dbfe361201fc80868d88c
 pkg_set dep.pkg "zlib"
 pkg_set bsystem "configure"
 pkg_set license "libpng-2.0|LICENSE|https://raw.githubusercontent.com/glennrp/libpng/libpng16/LICENSE"
-pkg_set developer "PNG+REFERENCE+LIBRARY+AUTHORS;;PNG+REFERENCE+LIBRARY+AUTHORS;http://www.libpng.org/pub/png/src/libpng-AUTHORS.txt"
+pkg_set developer "PNG+REFERENCE+LIBRARY+AUTHORS||PNG+REFERENCE+LIBRARY+AUTHORS|http://www.libpng.org/pub/png/src/libpng-AUTHORS.txt"

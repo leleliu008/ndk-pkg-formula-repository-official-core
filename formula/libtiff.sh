@@ -6,7 +6,7 @@ pkg_set src.sha "0e46e5acb087ce7d1ac53cf4f56a09b221537fc86dfc5daaad1c2e89e1b37ac
 pkg_set dep.pkg "zstd"
 pkg_set bsystem "cmake"
 pkg_set license "libtiff|COPYRIGHT|https://gitlab.com/libtiff/libtiff/-/raw/master/COPYRIGHT"
-pkg_set developer "Sam+Leffler Even+Rouault Bob+Friesenhahn;bfriesen@GraphicsMagick.org Frank+Warmerdam Andrey+Kiselev;dron@ak4719.spb.edu Joris+Van+Damme Lee+Howard"
+pkg_set developer "Sam+Leffler Even+Rouault Bob+Friesenhahn|bfriesen@GraphicsMagick.org Frank+Warmerdam Andrey+Kiselev|dron@ak4719.spb.edu Joris+Van+Damme Lee+Howard"
 
 build() {
     CMAKE_CONFIG_COMMON_OPTIONS='

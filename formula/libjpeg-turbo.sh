@@ -6,7 +6,7 @@ pkg_set src.sha "467b310903832b033fe56cd37720d1b73a6a3bd0171dbf6ff0b620385f4f76d
 pkg_set dep.cmd "nasm"
 pkg_set bsystem "cmake"
 pkg_set license "|LICENSE.md|https://raw.githubusercontent.com/libjpeg-turbo/libjpeg-turbo/main/LICENSE.md"
-pkg_set developer ";information@libjpeg-turbo.org"
+pkg_set developer "|information@libjpeg-turbo.org"
 
 build() {
     cmakew \

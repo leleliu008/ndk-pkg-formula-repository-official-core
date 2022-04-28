@@ -7,7 +7,7 @@ pkg_set dep.pkg "openssl zlib"
 pkg_set dep.cmd "pkg-config"
 pkg_set bsystem "configure"
 pkg_set license "|COPYING|https://raw.githubusercontent.com/curl/curl/master/COPYING"
-pkg_set developer "Daniel+Stenberg;daniel@haxx.se"
+pkg_set developer "Daniel+Stenberg|daniel@haxx.se"
 
 build() {
     configure \
