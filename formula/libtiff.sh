@@ -18,6 +18,7 @@ build() {
         -Djpeg=OFF'
 
     case $INSTALL_LIB in
+        yes)    cmakew                         $CMAKE_CONFIG_COMMON_OPTIONS ;;
         static) cmakew -DBUILD_SHARED_LIBS=OFF $CMAKE_CONFIG_COMMON_OPTIONS ;;
         shared) cmakew -DBUILD_SHARED_LIBS=ON  $CMAKE_CONFIG_COMMON_OPTIONS ;;
         both)   cmakew -DBUILD_SHARED_LIBS=OFF $CMAKE_CONFIG_COMMON_OPTIONS

@@ -8,6 +8,7 @@ pkg_set developer "|opensource@google.com|Google|https://github.com/google"
 
 build() {
     case $INSTALL_LIB in
+        yes)    cmakew                         -DBUILD_PIC=ON ;;
         static) cmakew -DBUILD_SHARED_LIBS=OFF -DBUILD_PIC=ON ;;
         shared) cmakew -DBUILD_SHARED_LIBS=ON  -DBUILD_PIC=ON ;;
         both)   cmakew -DBUILD_SHARED_LIBS=OFF -DBUILD_PIC=ON

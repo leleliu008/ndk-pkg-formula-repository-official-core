@@ -10,6 +10,7 @@ pkg_set developer "Scott+Wheeler|wheeler@kde.org Lukas+Lalinsky|lalinsky@gmail.c
 
 build() {
     case $INSTALL_LIB in
+        yes)    cmakew                         -DWITH_MP4=ON -DWITH_ASF=ON ;;
         static) cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON ;;
         shared) cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON ;;
         both)   cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON

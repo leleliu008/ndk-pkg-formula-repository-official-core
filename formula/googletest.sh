@@ -8,6 +8,7 @@ pkg_set developer "|opensource@google.com|Google|https://github.com/google"
 
 build() {
     case $INSTALL_LIB in
+        yes)    cmakew                         -DBUILD_GMOCK=ON -DINSTALL_GTEST=ON ;;
         static) cmakew -DBUILD_SHARED_LIBS=OFF -DBUILD_GMOCK=ON -DINSTALL_GTEST=ON ;;
         shared) cmakew -DBUILD_SHARED_LIBS=ON  -DBUILD_GMOCK=ON -DINSTALL_GTEST=ON ;;
         both)   cmakew -DBUILD_SHARED_LIBS=OFF -DBUILD_GMOCK=ON -DINSTALL_GTEST=ON

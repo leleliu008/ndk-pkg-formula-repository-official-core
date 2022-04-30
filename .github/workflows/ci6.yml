@@ -35,4 +35,9 @@ jobs:
       - run: install -d ~/.ndk-pkg/repos.d/offical
       - run: mv *       ~/.ndk-pkg/repos.d/offical
 
-      - run: ndk-pkg install ${{ matrix.pkg }}
+      - run: |
+            MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} sdk.api)
+            if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=$(ndk-pkg ls-target-levels | head -n 1)
+            fi
+            ndk-pkg install ${{ matrix.pkg }} --min-sdk-api-level=$MIN_SDK_API_LEVEL

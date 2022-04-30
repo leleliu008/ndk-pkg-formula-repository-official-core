@@ -9,6 +9,7 @@ pkg_set developer "Monty|monty@xiph.org Greg+Maxwell|greg@xiph.org Ralph+Giles|g
 
 build() {
     case $INSTALL_LIB in
+        yes)    cmakew ;;
         static) cmakew -DBUILD_SHARED_LIBS=OFF ;;
         shared) cmakew -DBUILD_SHARED_LIBS=ON  ;;
         both)   cmakew -DBUILD_SHARED_LIBS=OFF
