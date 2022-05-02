@@ -5,7 +5,7 @@ pkg_set src.sha "ff16330f130917e42bc0b1a7efe5e4fba46633bfa62e35268acec855e17e385
 pkg_set dep.pkg "boost icu4c protobuf googletest"
 pkg_set dep.cmd "pkg-config protoc"
 pkg_set bscript "cpp"
-pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE BSD-3-Clause|LICENSE.Chromium|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE.Chromium BSD-3-Clause;LICENSE.Chromium;https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE.Chromium"
+pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE BSD-3-Clause|LICENSE.Chromium|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE.Chromium"
 
 prepare() {
     sed_in_place '/pthread/d' CMakeLists.txt
