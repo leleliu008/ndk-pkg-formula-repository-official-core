@@ -18,7 +18,7 @@ build0() {
 
 build() {
     configure \
-        --with-cross-build="$NATIVE_BUILD_DIR" \
+        --with-cross-build="$NATIVE_BUILDIN_DIR" \
         --enable-release \
         --enable-tools \
         --enable-fuzzer \

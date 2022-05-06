@@ -27,7 +27,7 @@ prepare() {
     fi
 
     PACKAGE_BSCRIPT_DIR="$PWD"
-    PACKAGE_SRC_DIR="$PWD"
+    PACKAGE_SRC_TOP_DIR="$PWD"
 }
 
 build() {

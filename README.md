@@ -93,7 +93,7 @@ pkg_set <KEY> <VALUE>
 |`TARGET_OS_VERS`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
 |||
 |`PACKAGE_WORKING_DIR`|the direcotory where for installing.|
-|`PACKAGE_SRC_DIR`|the direcotory where the source code tarball will be uncompressed to or copied to.|
+|`PACKAGE_SRC_TOP_DIR`|the direcotory where the source code tarball will be uncompressed to or copied to.|
 |`PACKAGE_BSCRIPT_DIR`|the direcotory where the build script is located(build script filename: `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`)|
 |||
 |`CC`|the C Compiler.|
@@ -114,7 +114,7 @@ pkg_set <KEY> <VALUE>
 |variable|overview|
 |-|-|
 |`TARGET_WORKING_DIR`|the working directory of this abi.|
-|`TARGET_BUILD_DIR`|the build directory of this abi.|
+|`TARGET_BUILDIN_DIR`|the directory where to store the temp files when building.|
 |`TARGET_INSTALL_DIR`|the installation directory of this package of this abi.|
 |||
 |`x_INSTALL_DIR`|the installation directory of x package of this abi.|

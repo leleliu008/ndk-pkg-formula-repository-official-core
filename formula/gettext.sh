@@ -7,7 +7,7 @@ pkg_set bsystem "configure"
 pkg_set dep.pkg "ncurses libiconv"
 
 build() {
-    export LDFLAGS="$LDFLAGS -L$TARGET_BUILD_DIR/gettext-tools/gnulib-lib/.libs/"
+    export LDFLAGS="$LDFLAGS -L$TARGET_BUILDIN_DIR/gettext-tools/gnulib-lib/.libs/"
     configure \
         --with-included-regex \
         --with-included-libxml \

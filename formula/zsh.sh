@@ -8,8 +8,8 @@ pkg_set dep.pkg "ncurses pcre"
 pkg_set bsystem "configure"
 
 build() {
-    install -d "$TARGET_BUILD_DIR/Doc" &&
-    cp "$PACKAGE_BSCRIPT_DIR"/Doc/*.1 "$TARGET_BUILD_DIR/Doc" &&
+    install -d "$TARGET_BUILDIN_DIR/Doc" &&
+    cp "$PACKAGE_BSCRIPT_DIR"/Doc/*.1 "$TARGET_BUILDIN_DIR/Doc" &&
     configure \
         --enable-multibyte \
         --enable-cap \
