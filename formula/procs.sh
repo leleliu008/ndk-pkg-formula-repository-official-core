@@ -1,7 +1,7 @@
 pkg_set summary "Modern replacement for ps written by Rust"
 pkg_set git.url "https://github.com/dalance/procs.git"
-pkg_set src.url "https://github.com/dalance/procs/archive/v0.12.1.tar.gz"
-pkg_set src.sha "ce84e98dd85cb8d5afda871ad2ddceb4faec077d9e019469aa668a75821e4fc2"
+pkg_set src.url "https://github.com/dalance/procs/archive/v0.12.2.tar.gz"
+pkg_set src.sha "14be8440fe85dc46e544a3f7e89b887db455a61db981d5f75b91fd89b366d84f"
 pkg_set license "MIT"
 pkg_set bsystem "cargo"
 

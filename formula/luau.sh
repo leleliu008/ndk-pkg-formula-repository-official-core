@@ -1,8 +1,8 @@
 pkg_set summary "A fast, small, safe, gradually typed embeddable scripting language derived from Lua"
 pkg_set webpage "https://luau-lang.org"
 pkg_set git.url "https://github.com/Roblox/luau.git"
-pkg_set src.url "https://github.com/Roblox/luau/archive/refs/tags/0.525.tar.gz"
-pkg_set src.sha "a8768a592fc429eb6d003e62461230fd2cccc6902804d2fa1a16671fe57f90e6"
+pkg_set src.url "https://github.com/Roblox/luau/archive/refs/tags/0.526.tar.gz"
+pkg_set src.sha "64b39fd654db44f66eed8be235d33ee94d624d5d847bba8fa69a2003a6977712"
 pkg_set license "MIT"
 pkg_set bsystem "cmake"
 

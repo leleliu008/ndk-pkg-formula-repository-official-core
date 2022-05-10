@@ -1,8 +1,8 @@
 pkg_set summary "Text-based UI library"
 pkg_set webpage "https://www.gnu.org/software/ncurses"
 pkg_set git.url "https://github.com/mirror/ncurses.git"
-pkg_set src.url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz"
-pkg_set src.sha "30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d"
+pkg_set src.url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.3.tar.gz"
+pkg_set src.sha "97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059"
 pkg_set license "MIT|COPYING|https://raw.githubusercontent.com/mirror/ncurses/master/COPYING"
 pkg_set dep.cmd "sed grep"
 pkg_set bsystem "configure"
@@ -40,6 +40,7 @@ build0() {
 }
 
 build() {
+    install -d "$TARGET_INSTALL_DIR/lib/pkgconfig"
     configure \
         --with-pkg-config-libdir="$TARGET_INSTALL_DIR/lib/pkgconfig" \
         --with-shared \

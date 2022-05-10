@@ -1,6 +1,6 @@
 pkg_set summary "Friendly and fast tool for sending HTTP requests"
 pkg_set git.url "https://github.com/ducaale/xh.git"
-pkg_set src.url "https://github.com/ducaale/xh/archive/refs/tags/v0.15.0.tar.gz"
-pkg_set src.sha "67dcea38d58115fb745eb41142a118110ff070d7d484128cc066d9b4bb01c68d"
+pkg_set src.url "https://github.com/ducaale/xh/archive/refs/tags/v0.16.0.tar.gz"
+pkg_set src.sha "d6ec84977da567dd36a4c59d624dc1e2b1c77a21e2b0a10e463216120be8112d"
 pkg_set license "MIT"
 pkg_set bsystem "cargo"
