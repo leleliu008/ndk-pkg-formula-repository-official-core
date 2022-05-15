@@ -1,7 +1,7 @@
 pkg_set summary "GitHub command-line tool"
 pkg_set git.url "https://github.com/cli/cli.git"
-pkg_set src.url "https://github.com/cli/cli/archive/v2.9.0.tar.gz"
-pkg_set src.sha "730b600d33afb67d84af4dca1af80cb1fbff79d302ac4f840fc8e9e4c25fceb7"
+pkg_set src.url "https://github.com/cli/cli/archive/v2.10.1.tar.gz"
+pkg_set src.sha "a94ba6a731ad558f7937d0ac46ff8034b56214ec9e24a9ad70296331b1bb12ed"
 pkg_set license "MIT"
 pkg_set bsystem "go"
 
