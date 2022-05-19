@@ -6,8 +6,8 @@ pkg_set src.sha "a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802fcda6
 pkg_set license "|COPYRIGHT|https://raw.githubusercontent.com/kornelski/pngquant/main/COPYRIGHT"
 pkg_set dep.pkg "libpng lcms2"
 pkg_set dep.cmd "pkg-config"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 build() {
     export OSTYPE=Linux
@@ -19,6 +19,6 @@ build() {
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         LDFLAGS="'$LDFLAGS'" &&
-    makew clean &&
-    makew install
+    gmakew clean &&
+    gmakew install
 }

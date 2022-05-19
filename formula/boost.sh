@@ -6,7 +6,7 @@ pkg_set src.sha "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c4
 pkg_set version "1.76.0"
 pkg_set license "BSL-1.0"
 pkg_set dep.pkg "zstd icu4c libiconv python"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 # https://boostorg.github.io/build/manual/master/index.html
 # https://sites.google.com/site/robdevelopertips/how-to-build-boost-1-64-0-for-android

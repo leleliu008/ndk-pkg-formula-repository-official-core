@@ -3,7 +3,7 @@ pkg_set webpage "https://mesalink.io"
 pkg_set git.url "https://github.com/mesalock-linux/mesalink.git"
 pkg_set license "|LICENSE|https://raw.githubusercontent.com/mesalock-linux/mesalink/master/LICENSE"
 pkg_set bsystem "cargo"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 build() {
     cargow build &&

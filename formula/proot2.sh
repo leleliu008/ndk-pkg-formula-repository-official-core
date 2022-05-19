@@ -7,8 +7,8 @@ pkg_set src.sha "a5d248d307766bb807a35ee88d90456c0d1e0791cecffe5fb5d40d203be663a
 pkg_set license "GPL-2.0-or-later"
 pkg_set dep.cmd "base64 patch"
 pkg_set dep.pkg "talloc"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 pkg_set bscript "proot-$(basename "$PACKAGE_SRC_URL" .zip)/src"
 pkg_set sdk.api '23'
 
@@ -18,7 +18,7 @@ prepare() {
 }
 
 build() {
-    makew clean &&
-    makew V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS $talloc_LIBRARY_DIR/libtalloc.a'" &&
-    makew install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
+    gmakew clean &&
+    gmakew V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS $talloc_LIBRARY_DIR/libtalloc.a'" &&
+    gmakew install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
 }

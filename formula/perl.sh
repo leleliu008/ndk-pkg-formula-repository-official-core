@@ -11,7 +11,7 @@ pkg_set fix.sha "4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce
 
 pkg_set license "GPL-1.0-or-later"
 pkg_set dep.cmd "cc ar nm ranlib readelf"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 
 build() {
     TARGET_CC=$CC
@@ -53,9 +53,9 @@ build() {
 		-Dranlib="$TARGET_RANLIB" \
         -Duseshrplib \
         -Dusethreads &&
-    makew clean &&
-    makew &&
-    makew install &&
+    gmakew clean &&
+    gmakew &&
+    gmakew install &&
     run ln -sr "$TARGET_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE/libperl.so" "$TARGET_INSTALL_DIR/lib/libperl.so" &&
     run install -d "$TARGET_INSTALL_DIR/include" &&
     run ln -sr "$TARGET_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE" "$TARGET_INSTALL_DIR/include/perl"

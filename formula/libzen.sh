@@ -6,7 +6,7 @@ pkg_set license "BSD-2-Clause"
 pkg_set dep.cmd "glibtoolize:libtoolize"
 pkg_set bscript "Project/GNU/Library"
 pkg_set bsystem "autogen"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 # https://mediaarea.net/en/MediaInfo/Download/Source
 

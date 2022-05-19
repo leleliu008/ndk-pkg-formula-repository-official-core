@@ -4,7 +4,7 @@ pkg_set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/
 pkg_set src.sha "0e47f5a88d0a296db279793d1ff525d7cc9b77887e50a0faf764b44f8cd7e85d"
 pkg_set license "BSD-3-Clause&&GPL-2.0-or-later|License|https://git.kernel.org/pub/scm/libs/libcap/libcap.git/plain/License"
 pkg_set dep.cmd "gperf"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
@@ -17,8 +17,8 @@ prepare() {
 }
 
 build() {
-    makew -C "$PACKAGE_BSCRIPT_DIR/libcap" clean &&
-    makew -C "$PACKAGE_BSCRIPT_DIR/libcap" install \
+    gmakew -C "$PACKAGE_BSCRIPT_DIR/libcap" clean &&
+    gmakew -C "$PACKAGE_BSCRIPT_DIR/libcap" install \
         prefix="$TARGET_INSTALL_DIR" \
         lib=lib \
         PAM_CAP=no \

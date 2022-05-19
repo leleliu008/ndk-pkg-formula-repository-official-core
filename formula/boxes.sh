@@ -6,7 +6,7 @@ pkg_set src.sha "95ae6b46e057a79c6414b8c0b5b561c3e9d886ab8123a4085d256edccce625f
 pkg_set license "GPL-2.0-only"
 pkg_set dep.pkg "pcre2 libunistring"
 pkg_set dep.cmd "flex bison>=2.5"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
@@ -15,8 +15,8 @@ prepare() {
 
 build() {
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
-    makew clean &&
-    makew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew clean &&
+    gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
     run install_bins out/boxes &&
     run install_mans doc/boxes.1 &&
     run install_etcs boxes-config

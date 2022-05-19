@@ -1,7 +1,7 @@
 pkg_set summary "PNG encoder and decoder in C and C++"
 pkg_set git.url "https://github.com/lvandeve/lodepng.git"
 pkg_set license "Zlib"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
@@ -9,8 +9,8 @@ prepare() {
 }
 
 build() {
-    makew clean &&
-    makew install \
+    gmakew clean &&
+    gmakew install \
         CXX="$CXX" \
         CXXFLAGS="'$CXXFLAGS'" \
         CPPFLAGS="'$CPPFLAGS'" \

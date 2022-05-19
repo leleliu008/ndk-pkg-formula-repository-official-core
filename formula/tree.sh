@@ -3,7 +3,7 @@ pkg_set webpage "http://mama.indstate.edu/users/ice/tree"
 pkg_set src.url "http://mama.indstate.edu/users/ice/tree/src/tree-2.0.0.tgz"
 pkg_set src.sha "782cd73179f65cfca7f29326f1511306e49e9b11d5b861daa57e13fd7262889f"
 pkg_set license "GPL-2.0-or-later"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
@@ -17,8 +17,8 @@ prepare() {
 }
 
 build() {
-    makew clean &&
-    makew install \
+    gmakew clean &&
+    gmakew install \
         prefix="$TARGET_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64'" \

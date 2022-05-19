@@ -30,18 +30,18 @@ prepare_includes() {
     done
 }
 
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 build() {
-    makew clean &&
-    makew \
+    gmakew clean &&
+    gmakew \
         -C coreconf/nsinstall \
         USE_64=1 \
         OBJDIR_NAME=build \
         CC="$CC_FOR_BUILD" \
         CFLAGS='-v' \
         LDFLAGS='-v' &&
-    makew \
+    gmakew \
         OBJDIR_NAME=build \
         OS_TARGET=Linux \
         CPU_ARCH="$TARGET_OS_ARCH" \

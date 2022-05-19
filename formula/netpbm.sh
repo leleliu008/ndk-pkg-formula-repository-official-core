@@ -5,7 +5,7 @@ pkg_set src.sha "0bbf8ef88413ed286e9b040685c44758857e86ccb266ccf9643ee29807e961d
 pkg_set license "GPL-3.0-or-later"
 pkg_set dep.pkg "jasper libxml2 libtiff libpng libjpeg-turbo"
 pkg_set dep.cmd "flex"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 pkg_set parallel no
 
@@ -22,9 +22,9 @@ prepare() {
 
 
 build() {
-    makew clean &&
-    makew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB=-ltiff JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB=-ljasper JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper" &&
-    makew package pkgdir=$TARGET_INSTALL_DIR SONAME=libnetpbm.so &&
+    gmakew clean &&
+    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB=-ltiff JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB=-ljasper JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper" &&
+    gmakew package pkgdir=$TARGET_INSTALL_DIR SONAME=libnetpbm.so &&
     run mv "$TARGET_INSTALL_DIR/link/libnetpbm.a" "$TARGET_INSTALL_DIR/lib" &&
     run rm -rf "$TARGET_INSTALL_DIR/link" &&
     sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"               "$TARGET_INSTALL_DIR/pkgconfig_template" &&

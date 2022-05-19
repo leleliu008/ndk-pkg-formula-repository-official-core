@@ -12,8 +12,8 @@ pkg_set version "6.0.26"
 
 pkg_set license "Info-ZIP"
 pkg_set dep.pkg "zip bzip2"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 prepare() {
     run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
@@ -24,14 +24,14 @@ prepare() {
 }
 
 build() {
-    makew -f unix/Makefile clean &&
-    makew -f unix/Makefile generic \
+    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile generic \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         AS="$AS" \
         STRIP="$STRIP" \
         LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
-    makew -f unix/Makefile install \
+    gmakew -f unix/Makefile install \
         prefix="$TARGET_INSTALL_DIR" \
         MANDIR="$TARGET_INSTALL_DIR/share/man/man1"
 }

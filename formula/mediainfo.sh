@@ -7,4 +7,4 @@ pkg_set dep.cmd "pkg-config glibtoolize:libtoolize"
 pkg_set dep.pkg "libmediainfo"
 pkg_set bscript "Project/GNU/CLI"
 pkg_set bsystem "autogen"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"

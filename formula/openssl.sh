@@ -5,8 +5,8 @@ pkg_set src.url "https://www.openssl.org/source/openssl-1.1.1o.tar.gz"
 pkg_set src.sha "9384a2b0570dd80358841464677115df785edb941c71211f75076d72fe6b438f"
 pkg_set license "OpenSSL|LICENSE|"
 pkg_set dep.cmd "perl"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&
@@ -34,9 +34,9 @@ build() {
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$TARGET_INSTALL_DIR" \
         "$(os_compiler)" &&
-    makew clean &&
-    makew CROSS_COMPILE= &&
-    makew CROSS_COMPILE= install
+    gmakew clean &&
+    gmakew CROSS_COMPILE= &&
+    gmakew CROSS_COMPILE= install
 }
 
 os_compiler() {

@@ -5,7 +5,7 @@ pkg_set git.url "https://github.com/jemalloc/jemalloc.git"
 #pkg_set src.sha "34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6"
 pkg_set license "BSD-2-Clause"
 pkg_set bsystem "autotools"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 prepare() {
     autoconf
@@ -43,6 +43,6 @@ build() {
         AR="$AR" \
         RANLIB="$RANLIB" &&
     modify_code &&
-    makew clean &&
-    makew install
+    gmakew clean &&
+    gmakew install
 }

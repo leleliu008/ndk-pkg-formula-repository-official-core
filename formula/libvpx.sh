@@ -21,8 +21,8 @@ build() {
         --disable-realtime-only \
         --enable-pic \
         --enable-vp9-highbitdepth &&
-    makew
-    makew install
+    gmake
+    gmakew install
 }
 
 target() {

@@ -5,9 +5,9 @@ pkg_set version "3.0-r3"
 pkg_set src.url "https://github.com/ossrs/srs/archive/v${PACKAGE_VERSION}.tar.gz"
 pkg_set src.sha "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724"
 pkg_set license "MIT"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set bscript "trunk"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 build() {
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
@@ -28,7 +28,7 @@ build() {
         --ar=$AR \
         --ld=$LD \
         --randlib=$RANLIB &&
-    makew clean &&
-    makew &&
-    makew install
+    gmakew clean &&
+    gmakew &&
+    gmakew install
 }

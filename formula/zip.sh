@@ -11,7 +11,7 @@ pkg_set fix.sha "c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40e
 pkg_set version "3.0.11"
 
 pkg_set license "Info-ZIP"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
@@ -25,14 +25,14 @@ prepare() {
 }
 
 build() {
-    makew -f unix/Makefile clean &&
-    makew -f unix/Makefile generic \
+    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile generic \
         CC="$CC" \
         CPP="'$CPP'" \
         AS="$AS" \
         AR="$AR" \
         CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
-    makew -f unix/Makefile install \
+    gmakew -f unix/Makefile install \
         prefix="$TARGET_INSTALL_DIR" \
         MANDIR="$TARGET_INSTALL_DIR/share/man/man1"
 }

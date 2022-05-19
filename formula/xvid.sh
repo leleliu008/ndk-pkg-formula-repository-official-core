@@ -5,7 +5,7 @@ pkg_set src.sha "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff
 pkg_set license "GPL-2.0-or-later"
 pkg_set bsystem "configure"
 pkg_set bscript "build/generic"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 build() {
     configure \

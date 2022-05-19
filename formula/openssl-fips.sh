@@ -3,9 +3,9 @@ pkg_set webpage "https://openssl.org"
 pkg_set src.url "https://www.openssl.org/source/openssl-fips-2.0.16.tar.gz"
 pkg_set src.sha "a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4"
 pkg_set license "OpenSSL"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set dep.cmd "perl"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 pkg_set parallel no
 
 prepare() {
@@ -27,8 +27,8 @@ build() {
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$TARGET_INSTALL_DIR" \
         "$(get_os_compiler)" &&
-    makew clean &&
-    makew install
+    gmakew clean &&
+    gmakew install
 }
 
 get_os_compiler() {

@@ -4,8 +4,8 @@ pkg_set git.url "https://github.com/wahern/hexdump.git"
 pkg_set src.url "https://github.com/wahern/hexdump/archive/refs/tags/rel-20181215.tar.gz"
 pkg_set src.sha "882975323317f595093125467d7b9604f78bded7ba1005f5fc17e33358cdb0fa"
 pkg_set license "|README.md|https://raw.githubusercontent.com/wahern/hexdump/master/README.md"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place '/VENDOR_OS =/d' GNUmakefile
@@ -20,8 +20,8 @@ build() {
         run cd "$PACKAGE_SRC_TOP_DIR"
     fi
 
-    makew distclean &&
-    makew VENDOR_OS=android VENDOR_CC="$CC" CC="$CC" CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" SOFLAGS="'$LDFLAGS'" &&
+    gmakew distclean &&
+    gmakew VENDOR_OS=android VENDOR_CC="$CC" CC="$CC" CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" SOFLAGS="'$LDFLAGS'" &&
     install_bins hexdump &&
     install_incs hexdump.h &&
     install_libs libhexdump.so

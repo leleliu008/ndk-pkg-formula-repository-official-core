@@ -11,9 +11,9 @@ pkg_set fix.sha "3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2b
 
 pkg_set version "2.4+20151223"
 pkg_set license "GPL-2.0-or-later"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set dep.pkg "zlib openssl"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 pkg_set parallel no
 
 prepare() {
@@ -21,7 +21,7 @@ prepare() {
 }
 
 build() {
-    makew clean   SYS=posix &&
-    makew         SYS=posix CC=$CC LD=$LD CRYPTO=OPENSSL OPT= THREADLIB_posix= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'" &&
-    makew install SYS=posix prefix="$TARGET_INSTALL_DIR" mandir="$TARGET_INSTALL_DIR/share/man"
+    gmakew clean   SYS=posix &&
+    gmakew         SYS=posix CC=$CC LD=$LD CRYPTO=OPENSSL OPT= THREADLIB_posix= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'" &&
+    gmakew install SYS=posix prefix="$TARGET_INSTALL_DIR" mandir="$TARGET_INSTALL_DIR/share/man"
 }

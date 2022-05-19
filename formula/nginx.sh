@@ -5,8 +5,8 @@ pkg_set src.url "https://nginx.org/download/nginx-1.21.6.tar.gz"
 pkg_set src.sha "66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae"
 pkg_set license "BSD-2-Clause"
 pkg_set dep.pkg "openssl pcre libcrypt libglob"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 trace_configure() {
     for item in $(ls $1)
@@ -44,7 +44,7 @@ build() {
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
     fi
     
-    [ -f Makefile ] && makew clean
+    [ -f Makefile ] && gmake clean
     
     run ./configure \
         --prefix="$TARGET_INSTALL_DIR" \
@@ -54,7 +54,7 @@ build() {
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt -lglob\"" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
-    makew install
+    gmakew install
 }
 
 write_NGX_SYS_NERR() {

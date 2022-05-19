@@ -7,7 +7,7 @@ pkg_set src.sha "852d2faf85234e6e832d4c9938ff8befa91b89f019969afd80907554568905f
 pkg_set license "GPL-2.0-or-later"
 pkg_set dep.cmd "pkg-config python3 git"
 pkg_set dep.pkg "libarchive talloc"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 
 pkg_set sdk.api 23
 
@@ -32,10 +32,10 @@ build() {
         insert_1 || return 1
         insert_2 || return 1
     fi
-    makew -C $PACKAGE_BSCRIPT_DIR/src clean &&
+    gmakew -C $PACKAGE_BSCRIPT_DIR/src clean &&
     create_build_h &&
-    makew -C $PACKAGE_BSCRIPT_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    makew -C $PACKAGE_BSCRIPT_DIR/src install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
+    gmakew -C $PACKAGE_BSCRIPT_DIR/src V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew -C $PACKAGE_BSCRIPT_DIR/src install PREFIX=$TARGET_INSTALL_DIR DESTDIR=
 }
 
 insert_1() {

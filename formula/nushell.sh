@@ -7,7 +7,7 @@ pkg_set license "MIT"
 pkg_set dep.pkg "openssl"
 pkg_set dep.cmd "pkg-config"
 pkg_set bsystem "cargo"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 pkg_set sdk.api 24

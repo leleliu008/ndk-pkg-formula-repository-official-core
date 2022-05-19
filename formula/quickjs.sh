@@ -5,8 +5,8 @@ pkg_set git.url "https://github.com/bellard/quickjs.git"
 pkg_set src.url "https://bellard.org/quickjs/quickjs-${PACKAGE_VERSION}.tar.xz"
 pkg_set src.sha "a45bface4c3379538dea8533878d694e289330488ea7028b105f72572fe7fe1a"
 pkg_set license "MIT"
-pkg_set bsystem "make"
-pkg_set binbstd 'yes'
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place 's|-g||' Makefile &&
@@ -18,6 +18,6 @@ prepare() {
 }
 
 build() {
-    makew clean &&
-    makew install HOST_CC=$CC_FOR_BUILD CC=$CC AR=$AR STRIP=$STRIP LDFLAGS="'-Wl,-v'" CROSS_PREFIX=xxx prefix="$TARGET_INSTALL_DIR"
+    gmakew clean &&
+    gmakew install HOST_CC=$CC_FOR_BUILD CC=$CC AR=$AR STRIP=$STRIP LDFLAGS="'-Wl,-v'" CROSS_PREFIX=xxx prefix="$TARGET_INSTALL_DIR"
 }

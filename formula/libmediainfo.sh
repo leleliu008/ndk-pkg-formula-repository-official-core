@@ -7,7 +7,7 @@ pkg_set dep.cmd "pkg-config glibtoolize:libtoolize"
 pkg_set dep.pkg "libzen zlib curl"
 pkg_set bscript "Project/GNU/Library"
 pkg_set bsystem "autogen"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place 's|${libdir}/libzen.a||' libmediainfo.pc.in &&

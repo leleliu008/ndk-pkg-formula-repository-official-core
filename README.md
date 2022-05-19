@@ -34,7 +34,7 @@ pkg_set <KEY> <VALUE>
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `xmake` `make` `ninja` `cargo` `go` `ndk-build`|
+|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go` `ndk-build`|
 |`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
 
@@ -69,7 +69,7 @@ pkg_set <KEY> <VALUE>
 |`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
 |`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
 |`xmakew`|`xmakew`|
-|`makew`|`makew`|
+|`gmakew`|`gmakew`|
 |`cargow`|`cargow`|
 |`gow`|`gow`|
 

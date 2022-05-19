@@ -4,7 +4,7 @@ pkg_set git.url "https://github.com/LuaJIT/LuaJIT.git"
 pkg_set git.sha "a91d0d9d3bba1a936669cfac3244509a0f2ac0e3"
 pkg_set version "2.1.0"
 pkg_set dep.cmd "cc"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 pkg_set license "MIT|COPYRIGHT|https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT"
 pkg_set developer "Mike+Pall|luajit@freelists.org|LuaJIT|https://github.com/LuaJIT"
@@ -33,7 +33,7 @@ build() {
         run cd "$PACKAGE_SRC_TOP_DIR"
     fi
 
-    makew clean install \
+    gmakew clean install \
         PREFIX="$TARGET_INSTALL_DIR" \
         HOST_SYS=$(uname -s) \
         HOST_CC="'$CC_FOR_BUILD -m$TARGET_OS_BIT'" \

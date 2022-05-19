@@ -1,7 +1,7 @@
 pkg_set summary "Fast strong hash functions"
 pkg_set git.url "https://github.com/google/highwayhash.git"
 pkg_set license "Apache-2.0"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 
 prepare() {
     sed_in_place 's/| sed.*/> $@/' Makefile &&
@@ -16,6 +16,6 @@ build() {
         aarch64) MAKE_EXTRA_FLAGS=HH_AARCH64=1 ;;
         *)       MAKE_EXTRA_FLAGS=X64=1
     esac
-    makew -C "$PACKAGE_BSCRIPT_DIR" distclean &&
-    makew -C "$PACKAGE_BSCRIPT_DIR" install PREFIX="$TARGET_INSTALL_DIR" CPPFLAGS="'$CPPFLAGS'" CXXFLAGS="'$CXXFLAGS'" LDFLAGS="'$LDFLAGS'" CXX="$CXX" AR="$AR" STRIP_CMD="$STRIP" $MAKE_EXTRA_FLAGS
+    gmakew -C "$PACKAGE_BSCRIPT_DIR" distclean &&
+    gmakew -C "$PACKAGE_BSCRIPT_DIR" install PREFIX="$TARGET_INSTALL_DIR" CPPFLAGS="'$CPPFLAGS'" CXXFLAGS="'$CXXFLAGS'" LDFLAGS="'$LDFLAGS'" CXX="$CXX" AR="$AR" STRIP_CMD="$STRIP" $MAKE_EXTRA_FLAGS
 }

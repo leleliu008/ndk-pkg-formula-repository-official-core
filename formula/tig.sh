@@ -7,7 +7,7 @@ pkg_set license "GPL-2.0-or-later"
 pkg_set dep.pkg "readline libiconv"
 pkg_set dep.cmd "pkg-config"
 pkg_set bsystem "configure"
-pkg_set binbstd 'yes'
+pkg_set binbstd "yes"
 
 prepare() {
     # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
