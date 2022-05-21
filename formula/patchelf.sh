@@ -1,4 +1,4 @@
-pkg_set summary "Modify dynamic ELF executables"
+pkg_set summary "Utility for modifying existing ELF executables and libraries."
 pkg_set git.url "https://github.com/NixOS/patchelf.git"
 pkg_set src.url "https://github.com/NixOS/patchelf/releases/download/0.14.5/patchelf-0.14.5.tar.bz2"
 pkg_set src.sha "b9a46f2989322eb89fa4f6237e20836c57b455aa43a32545ea093b431d982f5c"

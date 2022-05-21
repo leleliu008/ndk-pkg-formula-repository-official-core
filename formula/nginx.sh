@@ -44,7 +44,7 @@ build() {
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
     fi
     
-    [ -f Makefile ] && gmake clean
+    [ -f Makefile ] && gmakew clean
     
     run ./configure \
         --prefix="$TARGET_INSTALL_DIR" \
