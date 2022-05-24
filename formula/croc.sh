@@ -1,6 +1,6 @@
 pkg_set summary "Securely send things from one computer to another"
 pkg_set git.url "https://github.com/schollz/croc.git"
-pkg_set src.url "https://github.com/schollz/croc/archive/v9.5.5.tar.gz"
-pkg_set src.sha "221ebf034e05ef8c06b2e2290dfb83c6f8b4b3f8a9168d6d826b87ed3c62d51a"
+pkg_set src.url "https://github.com/schollz/croc/archive/v9.5.6.tar.gz"
+pkg_set src.sha "c03c7b9daf2ba841d373d9c43abb68dc27ab1d7e01bbadead771918d499dea9e"
 pkg_set license "MIT"
 pkg_set bsystem "go"
