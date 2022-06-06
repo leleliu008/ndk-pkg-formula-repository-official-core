@@ -8,7 +8,6 @@ pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
-    sed_in_place 's|-lpthread||' Makefile
     sed_in_place 's|ln -f|ln -sf|' Makefile
 }
 

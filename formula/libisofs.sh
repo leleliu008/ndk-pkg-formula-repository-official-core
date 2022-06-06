@@ -11,7 +11,6 @@ prepare() {
     if [ "$TARGET_OS_VERS" -lt 26 ] ; then
         sed_in_place 's/nl_langinfo(CODESET)/"UTF-8"/' libisofs/util.c || return 1
     fi
-    sed_in_place 's/-lpthread//g' configure
 }
 
 build() {

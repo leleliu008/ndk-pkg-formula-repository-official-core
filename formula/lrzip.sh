@@ -13,7 +13,6 @@ pkg_set ldflags "-lc++_shared"
 pkg_set sdk.api 23
 
 prepare() {
-    sed_in_place '/-lpthread /d' configure
     sed_in_place 's/PAGE_SIZE/XXXXXXXXXXXXXXXXXXXXXX/' lrzip_private.h util.c
 }
 

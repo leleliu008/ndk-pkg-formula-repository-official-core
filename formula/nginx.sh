@@ -51,7 +51,7 @@ build() {
         --crossbuild=Linux:unkown:$TARGET_OS_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
-        --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt -lglob\"" \
+        --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt\"" \
         --with-pcre &&
     write_NGX_SYS_NERR &&
     gmakew install

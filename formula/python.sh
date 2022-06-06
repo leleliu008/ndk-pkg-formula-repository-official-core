@@ -15,10 +15,6 @@ build0() {
     configure
 }
 
-prepare() {
-    sed_in_place 's|-lpthread|-lc|g' configure
-}
-
 build() {
     unset PYTHONHOME
     unset PYTHONPATH

@@ -6,7 +6,6 @@ pkg_set src.sha "ddda3cd0e9bc60c9fb56b4bf4a02eb60ecbfb4405c6758553f7d2668633b426
 pkg_set license "EPL-1.0"
 pkg_set dep.cmd "pkg-config glibtoolize:libtoolize python3 flex bison>=3.0 git awk"
 pkg_set dep.pkg "fontconfig libpng expat libglob"
-pkg_set ldflags "-lglob"
 pkg_set bsystem "autotools"
 
 prepare() {

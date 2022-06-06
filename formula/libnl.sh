@@ -11,7 +11,6 @@ pkg_set sdk.api 26
 
 prepare() {
     autoreconf -ivf &&
-    sed_in_place 's/-lpthread/-lc/g' configure &&
     sed_in_place 's@linux-private/@@g' lib/mpls.c &&
     sed_in_place 's@linux-private/@@g' lib/route/link/vrf.c &&
     sed_in_place '/linux-private/d' Makefile.in &&

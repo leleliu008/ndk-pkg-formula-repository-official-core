@@ -19,7 +19,6 @@ prepare() {
     rm -rf tiff
     rm -rf zlib
     rm -rf tesseract
-    sed_in_place 's|-lpthread||g' configure
     sed_in_place 's|nl_langinfo(CODESET)|"UTF-8"|' contrib/opvp/gdevopvp.c
 }
 

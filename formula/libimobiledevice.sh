@@ -15,8 +15,7 @@ pkg_set sdk.api 24
 prepare() {
     sed_in_place 's/@echo/echo/g' common/Makefile.in &&
     sed_in_place 's/@echo/echo/g' tools/Makefile.in &&
-    sed_in_place 's/@echo/echo/g' src/Makefile.in &&
-    sed_in_place 's/-lpthread//g' configure
+    sed_in_place 's/@echo/echo/g' src/Makefile.in
 }
 
 build() {

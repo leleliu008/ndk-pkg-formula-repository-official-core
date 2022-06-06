@@ -11,7 +11,3 @@ pkg_set bsystem "configure"
 # int shmdt(const void* __addr) __INTRODUCED_IN(26);
 # int shmget(key_t __key, size_t __size, int __flags) __INTRODUCED_IN(26);
 pkg_set sdk.api 26
-
-prepare() {
-    sed_in_place 's/-lrt//' Makefile.in
-}

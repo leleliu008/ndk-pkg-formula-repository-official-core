@@ -21,8 +21,7 @@ prepare() {
     sed_in_place 's|/var/run|/data/data/com.cczhr.otglocation/var/run|' src/main.c &&
     sed_in_place 's|/var/run|/data/data/com.cczhr.otglocation/var/run|' docs/usbmuxd.8 &&
     sed_in_place 's|/var/run|/data/data/com.cczhr.otglocation/var/run|' udev/39-usbmuxd.rules.in &&
-    NOCONFIGURE=yes ./autogen.sh &&
-    sed_in_place '/libpthread_LIBS=-lpthread/d' configure
+    NOCONFIGURE=yes ./autogen.sh
 }
 
 build() {

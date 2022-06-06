@@ -11,7 +11,6 @@ pkg_set cdefine "ANDROID"
 build() {
     export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"
     export LDFLAGS="$LDFLAGS $cpu_features_LIBRARY_DIR/libndk_compat.so"
-    export LDFLAGS="$LDFLAGS $libglob_LIBRARY_DIR/libglob.a"
     cmakew \
         -DENABLE_LTO=ON \
         -DUSE_SYSTEM_ICU=ON \

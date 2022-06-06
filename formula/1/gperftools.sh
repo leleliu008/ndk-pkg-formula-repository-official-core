@@ -16,10 +16,5 @@ prepare() {
 }
 
 build() {
-    # int glob(const char* __pattern, int __flags, int (*__error_callback)(const char* __failure_path, int __failure_errno), glob_t* __result_ptr) __INTRODUCED_IN(28);
-    # void globfree(glob_t* __result_ptr) __INTRODUCED_IN(28);
-    if [ "$TARGET_OS_VERS" -lt 28 ] ; then
-        export LDFLAGS="$LDFLAGS $libglob_LIBRARY_DIR/libglob.a"
-    fi
     configure --disable-libunwind
 }

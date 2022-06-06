@@ -7,7 +7,7 @@ pkg_set license "|NOTICE|https://raw.githubusercontent.com/krb5/krb5/master/NOTI
 pkg_set bscript "src"
 pkg_set bsystem "configure"
 pkg_set dep.pkg "readline openssl berkeley-db libglob"
-pkg_set ldflags "-lglob -lncurses"
+pkg_set ldflags "-lncurses"
 
 prepare() {
     sed_in_place '/search_paths_first"/d' configure && {

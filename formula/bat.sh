@@ -6,6 +6,9 @@ pkg_set license "Apache-2.0"
 pkg_set bsystem "cargo"
 
 build() {
-    cargow install &&
-    install_mans $(find "$PACKAGE_BSCRIPT_DIR/target/$RUST_TARGET/release/build" -name 'bat.1')
+    cargow install
+    install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
+    install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash
+    install_completion fish bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.fish
+    install_completion  zsh bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.zsh
 }

@@ -6,10 +6,6 @@ pkg_set src.sha "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c
 pkg_set license "Apache-2.0"
 pkg_set bsystem "cmake"
 
-prepare() {
-    sed_in_place '/-lrt/d' absl/base/CMakeLists.txt
-}
-
 build() {
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \

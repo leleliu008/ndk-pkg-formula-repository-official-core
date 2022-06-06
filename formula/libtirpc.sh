@@ -12,12 +12,6 @@ pkg_set cdefine "_GNU_SOURCE quad_t=int64_t u_quad_t=uint64_t NGROUPS=20"
 # unistd.h: int getdomainname(char* __buf, size_t __buf_size) __INTRODUCED_IN(26);
 pkg_set sdk.api 26
 
-prepare() {
-    sed_in_place 's/LIBS="-lpthread\s*$LIBS"//g' configure &&
-    sed_in_place 's/-lpthread//g' src/Makefile.am &&
-    sed_in_place 's/-lpthread//g' src/Makefile.in
-}
-
 build() {
     include_stub_getdtablesize &&
     configure \

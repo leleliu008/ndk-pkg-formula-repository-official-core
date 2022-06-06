@@ -5,7 +5,6 @@ pkg_set src.sha "e1489d9fa7496fbf2e071c338b593b2300d38c23f1e5967e52c9ef482e1b0e2
 pkg_set license "BSD-3-Clause"
 pkg_set dep.cmd "pkg-config"
 pkg_set dep.pkg "openssl zlib bzip2 pcre libglob"
-pkg_set ldflags "-lglob"
 pkg_set bsystem "autogen"
 
 build() {

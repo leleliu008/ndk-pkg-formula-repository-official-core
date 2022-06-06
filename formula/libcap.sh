@@ -9,9 +9,7 @@ pkg_set bsystem "gmake"
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
 prepare() {
-    sed_in_place 's/-lpthread//'            tests/Makefile &&
-    sed_in_place 's/-lpthread//'            Make.Rules &&
-    sed_in_place 's/indent -kr/indent -br/' Make.Rules &&
+    sed_in_place 's/indent -kr/indent -br/'    Make.Rules &&
     sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile &&
     sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile
 }
