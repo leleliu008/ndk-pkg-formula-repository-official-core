@@ -12,10 +12,8 @@ prepare() {
         die "this library is only supported built on Linux"
     fi
 
-    unset -f fetch
-
-    cd .. &&
-    run fetch --nohooks webrtc_android
+    cd ..
+    run command fetch --nohooks webrtc_android
     sed_in_place '/target_os = /d' .gclient
     run "echo \"target_os = ['android']\" >> .gclient"
     run cd src

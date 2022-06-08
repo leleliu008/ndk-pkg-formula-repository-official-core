@@ -7,14 +7,11 @@ pkg_set license "BSD-3-Clause"
 pkg_set dep.cmd "git ninja"
 
 prepare() {
-    set -e
-
-    unset -f fetch
-
     run cd ..
     run git clone https://chromium.googlesource.com/chromium/tools/depot_tools
     run export PATH="'$PWD/depot_tools:$PATH'"
-    run fetch v8
+
+    run command fetch v8
     run "echo \"target_os = ['android']\" >> .gclient"
     run cd v8
     run git checkout $PACKAGE_VERSION
@@ -31,8 +28,6 @@ prepare() {
 }
 
 build() {
-    set -e
-
     case $TARGET_OS_ABI in
         armeabi-v7a)
             GN_ARG_TARGET_CPU=arm
