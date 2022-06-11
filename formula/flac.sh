@@ -8,11 +8,6 @@ pkg_set dep.cmd "glibtoolize:libtoolize libtool"
 pkg_set dep.pkg "libogg libiconv"
 pkg_set bsystem "autogen"
 
-# https://github.com/android/ndk/issues/702
-# iconv_t iconv_open(const char* __src_encoding, const char* __dst_encoding) __INTRODUCED_IN(28);
-# size_t  iconv(iconv_t __converter, char** __src_buf, size_t* __src_bytes_left, char** __dst_buf, size_t* __dst_bytes_left) __INTRODUCED_IN(28);
-# int iconv_close(iconv_t __converter) __INTRODUCED_IN(28);
-
 prepare() {
     sed_in_place 's/printf(usage)/printf("%s", usage)/g'                   src/utils/flacdiff/main.cpp &&
     sed_in_place 's/fprintf(stderr, usage)/fprintf(stderr, "%s", usage)/g' src/utils/flacdiff/main.cpp &&

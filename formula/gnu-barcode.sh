@@ -13,6 +13,5 @@ prepare() {
 
 build() {
     export CPPFLAGS="$CPPFLAGS -I$gettext_INSTALL_DIR/share/gettext"
-    export ac_cv_func_calloc_0_nonnull=yes
     configure
 }

@@ -33,7 +33,6 @@ build() {
         ac_cv_file__dev_ptc=no \
         ac_cv_func_wcsftime=no \
         ac_cv_func_ftime=no \
-        ac_cv_func_faccessat=no \
         ac_cv_func_gethostbyname_r=no \
         ac_cv_func_linkat=no \
         ac_cv_posix_semaphores_enabled=no \

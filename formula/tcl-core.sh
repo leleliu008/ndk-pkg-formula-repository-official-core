@@ -14,13 +14,6 @@ prepare() {
 build() {
     unset EXTRA_CONFIGURE_FLAGS
     
-    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
-    if [ $TARGET_OS_VERS -lt 26 ] ; then
-        EXTRA_CONFIGURE_FLAGS="tcl_cv_langinfo_h=no"
-    else
-        EXTRA_CONFIGURE_FLAGS="tcl_cv_langinfo_h=yes"
-    fi
-    
     if echo "$TARGET_OS_ARCH" | grep -q '64' ; then
         EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --enable-64bit"
     else

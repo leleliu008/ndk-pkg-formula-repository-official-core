@@ -3,17 +3,13 @@ pkg_set webpage "http://mama.indstate.edu/users/ice/tree"
 pkg_set src.url "http://mama.indstate.edu/users/ice/tree/src/tree-2.0.2.tgz"
 pkg_set src.sha "7d693a1d88d3c4e70a73e03b8dbbdc12c2945d482647494f2f5bd83a479eeeaf"
 pkg_set license "GPL-2.0-or-later"
+pkg_set dep.pkg "liblanginfo"
 pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
     sed_in_place 's|ifndef __linux__|if 1|' strverscmp.c || return 1
     sed_in_place 's|ifndef __linux__|if 1|' tree.h       || return 1
-
-    # char* nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
-    if [ "$TARGET_OS_VERS" -lt 26 ] ; then
-        sed_in_place 's|nl_langinfo(CODESET)|"UTF-8"|' tree.c
-    fi
 }
 
 build() {

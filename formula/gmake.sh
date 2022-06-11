@@ -12,6 +12,5 @@ prepare() {
 build() {
     configure \
         --without-guile \
-        --without-dmalloc \
-        ac_cv_func_sigsetmask=no
+        --without-dmalloc
 }

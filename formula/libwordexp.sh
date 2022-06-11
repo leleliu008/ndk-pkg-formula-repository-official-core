@@ -1,5 +1,5 @@
 pkg_set summary "wordexp(3) implementation"
-pkg_set webpage "https://linux.die.net/man/3/wordexp"
+pkg_set webpage "https://pubs.opengroup.org/onlinepubs/9699919799/functions/wordexp.html"
 pkg_set git.url "https://github.com/leleliu008/libwordexp.git"
 pkg_set license "||https://raw.githubusercontent.com/freebsd/freebsd-src/main/COPYRIGHT"
 pkg_set bsystem "cmake"

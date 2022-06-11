@@ -19,28 +19,27 @@ prepare() {
     run cd src
     run git checkout main
     run "yes | gclient sync"
+
+    GN="$PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn"
 }
 
 build() {
     case $TARGET_OS_ABI in
-        armeabi-v7a)
-            GN_ARG_TARGET_CPU=arm
-            GN_ARG_V8_TARGET_CPU=arm
-            ;;
-        arm64-v8a)
-            GN_ARG_TARGET_CPU=arm64
-            GN_ARG_V8_TARGET_CPU=arm64
-            ;;
-        x86)
-            GN_ARG_TARGET_CPU=x86
-            GN_ARG_V8_TARGET_CPU=x86
-            ;;
-        x86_64)
-            GN_ARG_TARGET_CPU=x64
-            GN_ARG_V8_TARGET_CPU=x64
+        armeabi-v7a) GN_ARG_TARGET_CPU=arm   ;;  
+        arm64-v8a)   GN_ARG_TARGET_CPU=arm64 ;;
+        x86)         GN_ARG_TARGET_CPU=x86   ;;  
+        x86_64)      GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run $PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn gen . --root="$PACKAGE_BSCRIPT_DIR" --args="'is_debug=false target_os=\"android\" target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_V8_TARGET_CPU\"'"
+    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
+
+    cat >> args.gn <<EOF
+is_debug=false
+target_os="android"
+target_cpu="$GN_ARG_TARGET_CPU"
+v8_target_cpu="$GN_ARG_TARGET_CPU"
+EOF
+
     run ninja
     run install_libs *.so
 }

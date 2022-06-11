@@ -4,16 +4,14 @@ pkg_set git.url "https://github.com/lsof-org/lsof.git"
 pkg_set src.url "https://github.com/lsof-org/lsof/archive/4.95.0.tar.gz"
 pkg_set src.sha "8ff4c77736cc7d9556da9e2c7614cc4292a12f1979f20bd520d3c6f64b66a4d7"
 pkg_set license "Zlib"
+pkg_set dep.pkg "libtirpc libgetdtablesize"
 pkg_set bsystem "gmake"
-pkg_set dep.pkg "libtirpc"
 pkg_set binbstd "yes"
+
 pkg_set sdk.api 26
-# int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 
 
 build() {
-    include_stub_getdtablesize
-
     export LSOF_MAKE="make"
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
