@@ -5,7 +5,12 @@ pkg_set src.sha "820d9724f020a3e69cb337893a0b63c2db161dadcb0e06fc11dc29eb1e84a32
 pkg_set license "GPL-2.0-or-later"
 pkg_set bsystem "configure"
 pkg_set dep.pkg "isl gmp libmpc mpfr"
-pkg_set ldflags "-lm"
+#pkg_set ldflags "-lm"
+
+prepare() {
+    sed_in_place '/rindex/d' ../include.h
+    sed_in_place '/memcmp/d' ../include.h
+}
 
 build() {
     configure \
