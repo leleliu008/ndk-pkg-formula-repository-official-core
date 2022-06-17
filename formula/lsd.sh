@@ -1,7 +1,7 @@
 pkg_set summary "Next generation ls command"
 pkg_set git.url "https://github.com/Peltoche/lsd.git"
-pkg_set src.url "https://github.com/Peltoche/lsd/archive/0.21.0.tar.gz"
-pkg_set src.sha "f500c18221f9c3fd45f88f6f764001e99cf9d6d74af9172cbb9a9ff32f3e5c7d"
+pkg_set src.url "https://github.com/Peltoche/lsd/archive/0.22.0.tar.gz"
+pkg_set src.sha "30ad1b1d014c7b6a2fca44c6de3b17198c84168d34fc946245d67094ebc0f7ed"
 pkg_set license "Apache-2.0"
 pkg_set bsystem "cargo"
 
