@@ -3,7 +3,17 @@ pkg_set webpage "https://linux.die.net/man/2/getdtablesize"
 pkg_set src.url "dir:///dev/null"
 
 build() {
-    echo "int getdtablesize();" > getdtablesize.h &&
+    cat > getdtablesize.h <<EOF
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+        int getdtablesize();
+
+#ifdef __cplusplus
+    }   
+#endif
+EOF
 
     # https://android.googlesource.com/platform/bionic/+/72dc1c22dc6a92dea925398c9e3880364ab29c1c/libc/bionic/getdtablesize.c
     cat > getdtablesize.c <<EOF
@@ -19,8 +29,7 @@ int getdtablesize() {
 }
 EOF
     run $CC $CFLAGS $CPPFLAGS -c -o getdtablesize.o getdtablesize.c
-    run $CC $LDFLAGS -shared -o libgetdtablesize.so getdtablesize.o &&
     run $AR rsc libgetdtablesize.a  getdtablesize.o &&
     run install_incs getdtablesize.h &&
-    run install_libs libgetdtablesize.a libgetdtablesize.so
+    run install_libs libgetdtablesize.a
 }

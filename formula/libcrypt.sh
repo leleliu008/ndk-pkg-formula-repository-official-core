@@ -6,10 +6,20 @@ pkg_set license "Unlicense"
 pkg_set version "1"
 
 build() {
+    cat > crypt.h <<EOF
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+        char* crypt(char* key, char* salt);
+
+#ifdef __cplusplus
+    }   
+#endif
+EOF
+
     run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_BSCRIPT_DIR/libcrypt-${PACKAGE_VERSION}.c &&
-    run $CC $LDFLAGS -shared -o libcrypt.so crypt.o &&
     run $AR rsc libcrypt.a crypt.o &&
-    echo "char* crypt(char* key, char* salt);" > crypt.h &&
     run install_incs crypt.h &&
-    run install_libs libcrypt.a libcrypt.so
+    run install_libs libcrypt.a
 }

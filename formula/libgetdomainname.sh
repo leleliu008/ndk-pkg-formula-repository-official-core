@@ -3,7 +3,17 @@ pkg_set webpage "https://linux.die.net/man/2/getdomainname"
 pkg_set src.url "dir:///dev/null"
 
 build() {
-    echo "int getdomainname(char *name, size_t len);" > getdomainname.h &&
+    cat > getdomainname.h <<EOF
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+        int getdomainname(char *name, size_t len);
+
+#ifdef __cplusplus
+    }   
+#endif
+EOF
 
     # https://android.googlesource.com/platform/bionic/+/master/libc/include/unistd.h#313
     # https://android.googlesource.com/platform/bionic/+/master/libc/bionic/getdomainname.cpp
@@ -29,8 +39,7 @@ int getdomainname(char* name, size_t len) {
 }
 EOF
     run $CC $CFLAGS $CPPFLAGS -c -o getdomainname.o getdomainname.c
-    run $CC $LDFLAGS -shared -o libgetdomainname.so getdomainname.o &&
     run $AR rsc libgetdomainname.a  getdomainname.o &&
     run install_incs getdomainname.h &&
-    run install_libs libgetdomainname.a libgetdomainname.so
+    run install_libs libgetdomainname.a
 }

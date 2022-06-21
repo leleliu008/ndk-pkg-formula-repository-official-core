@@ -3,7 +3,17 @@ pkg_set webpage "https://linux.die.net/man/3/strchrnul"
 pkg_set src.url "dir:///dev/null"
 
 build() {
-    echo "char* strchrnul(const char *s, int c);" > strchrnul.h &&
+    cat > strchrnul.h <<EOF
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+        char* strchrnul(const char *s, int c);
+
+#ifdef __cplusplus
+    }   
+#endif
+EOF
 
     # http://git.musl-libc.org/cgit/musl/plain/src/string/strchrnul.c
     cat > strchrnul.c <<EOF
@@ -35,8 +45,7 @@ char* strchrnul(const char *s, int c)
 }
 EOF
     run $CC $CFLAGS $CPPFLAGS -c -o strchrnul.o strchrnul.c
-    run $CC $LDFLAGS -shared -o libstrchrnul.so strchrnul.o &&
     run $AR rsc libstrchrnul.a  strchrnul.o &&
     run install_incs strchrnul.h &&
-    run install_libs libstrchrnul.a libstrchrnul.so
+    run install_libs libstrchrnul.a
 }

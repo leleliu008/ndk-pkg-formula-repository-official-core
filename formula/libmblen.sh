@@ -3,7 +3,17 @@ pkg_set webpage "https://pubs.opengroup.org/onlinepubs/9699919799/functions/mble
 pkg_set src.url "dir:///dev/null"
 
 build() {
-    echo "int mblen(const char* s, size_t n);" > mblen.h &&
+    cat > mblen.h <<EOF
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+        int mblen(const char* s, size_t n);
+
+#ifdef __cplusplus
+    }   
+#endif
+EOF
 
     cat > mblen.c <<EOF
 #include <stdlib.h>
@@ -15,8 +25,7 @@ int mblen(const char* s, size_t n) {
 }
 EOF
     run $CC $CFLAGS $CPPFLAGS -c -o mblen.o mblen.c
-    run $CC $LDFLAGS -shared -o libmblen.so mblen.o &&
     run $AR rsc libmblen.a  mblen.o &&
     run install_incs mblen.h &&
-    run install_libs libmblen.a libmblen.so
+    run install_libs libmblen.a
 }
