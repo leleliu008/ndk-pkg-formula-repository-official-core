@@ -23,8 +23,8 @@ prepare() {
         die "gn command not found."
     fi
 
-    PACKAGE_SRC_TOP_DIR="$PWD"
-    PACKAGE_BSCRIPT_DIR="$PWD"
+    PACKAGE_INSTALLING_SRC_DIR="$PWD"
+    PACKAGE_INSTALLING_BST_DIR="$PWD"
 }
 
 build() {
@@ -35,7 +35,7 @@ build() {
         x86_64)      GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
+    run $GN gen . --root="$PACKAGE_INSTALLING_BST_DIR"
 
     cat >> args.gn <<EOF
 is_debug=false
@@ -60,6 +60,6 @@ EOF
 
     run install_bins skia_diff
     run install_libs *.so
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp
+    run install_incs $PACKAGE_INSTALLING_BST_DIR/public/*.h
+    run install_incs $PACKAGE_INSTALLING_BST_DIR/public/cpp/*.h:cpp
 }

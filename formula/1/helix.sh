@@ -7,5 +7,5 @@ pkg_set license "MPL-2.0"
 pkg_set bsystem "cargo"
 
 build() {
-    cargow install --path "$PACKAGE_BSCRIPT_DIR/helix-term"
+    cargow install --path "$PACKAGE_INSTALLING_BST_DIR/helix-term"
 }

@@ -9,6 +9,6 @@ pkg_set bsystem "configure"
 pkg_set ldflags "-lcharset"
 
 build0() {
-    sed_in_place '/$(LN_S) trietool/d' "$PACKAGE_BSCRIPT_DIR/tools/Makefile.in" &&
+    sed_in_place '/$(LN_S) trietool/d' "$PACKAGE_INSTALLING_BST_DIR/tools/Makefile.in" &&
     configure
 }

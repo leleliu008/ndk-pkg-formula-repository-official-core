@@ -13,7 +13,7 @@ build() {
         x86_64)  export AS=yasm ;;
     esac
 
-    run $PACKAGE_BSCRIPT_DIR/configure \
+    run $PACKAGE_INSTALLING_BST_DIR/configure \
         --prefix="$TARGET_INSTALL_DIR" \
         --target="$(target)" \
         --disable-examples \

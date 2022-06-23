@@ -6,6 +6,6 @@ pkg_set src.sha "1d88c395ac79ca9365aa5af71afe4ad136a4ed45099ca398168d4a2014dc0fc
 pkg_set license "ISC"
 
 build() {
-    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o darkhttpd $PACKAGE_BSCRIPT_DIR/darkhttpd.c &&
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o darkhttpd $PACKAGE_INSTALLING_BST_DIR/darkhttpd.c &&
     install_bins darkhttpd
 }

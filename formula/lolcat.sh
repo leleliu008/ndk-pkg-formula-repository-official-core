@@ -7,7 +7,7 @@ pkg_set license "|LICENSE|https://raw.githubusercontent.com/jaseg/lolcat/main/LI
 build() {
     run rm -rf lolcat &&
     run rm -rf censor &&
-    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -fPIE -lm -o lolcat "$PACKAGE_BSCRIPT_DIR/lolcat.c" &&
-    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -fPIE     -o censor "$PACKAGE_BSCRIPT_DIR/censor.c" &&
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -fPIE -lm -o lolcat "$PACKAGE_INSTALLING_SRC_DIR/lolcat.c" &&
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -fPIE     -o censor "$PACKAGE_INSTALLING_SRC_DIR/censor.c" &&
     run install_bins lolcat censor
 }

@@ -8,7 +8,7 @@ pkg_set dep.pkg "libpcap"
 pkg_set bsystem "cmake"
 
 build() {
-    cat > "$PACKAGE_BSCRIPT_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
+    cat > "$PACKAGE_INSTALLING_BST_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
 set(PCAP_FOUND TRUE)
 set(PCAP_INCLUDE_DIRS "$libpcap_INCLUDE_DIR")
 set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.so")

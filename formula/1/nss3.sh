@@ -12,7 +12,7 @@ prepare() {
 }
 
 build() {
-    "$PACKAGE_BSCRIPT_DIR/build.sh" \
+    "$PACKAGE_INSTALLING_BST_DIR/build.sh" \
         -DOS=android \
         -DSHARED_LIB_SUFFIX=.so \
         -c \

@@ -8,5 +8,5 @@ pkg_set license "BSD-3-Clause"
 pkg_set bsystem "gmake"
 
 build() {
-    gmakew -C "$PACKAGE_BSCRIPT_DIR" -f Bootstrap.mak linux-clean
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" -f Bootstrap.mak linux-clean
 }

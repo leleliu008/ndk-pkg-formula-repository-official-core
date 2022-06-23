@@ -11,8 +11,8 @@ pkg_set bscript "source"
 build0() {
     # https://www.talkwithdevices.com/archives/260
     case $NATIVE_OS_KIND in
-        darwin) run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" MacOSX && make ;;
-        *)      run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" Linux  && make ;;
+        darwin) run "$PACKAGE_INSTALLING_BST_DIR/runConfigureICU" MacOSX && make ;;
+        *)      run "$PACKAGE_INSTALLING_BST_DIR/runConfigureICU" Linux  && make ;;
     esac
 }
 

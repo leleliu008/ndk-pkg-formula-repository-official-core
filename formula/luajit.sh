@@ -25,12 +25,16 @@ prepare() {
 }
 
 build() {
+    if [ -d /usr/include/x86_64-linux-gnu ] ; then
+        export CPPFLAGS_FOR_BUILD="$CPPFLAGS_FOR_BUILD -I/usr/include/x86_64-linux-gnu"
+    fi
+
     if [ "$TARGET_INDEX" -ne 1 ] ; then
         run cd
-        run rm -rf "$PACKAGE_SRC_TOP_DIR"
-        run mkdir  "$PACKAGE_SRC_TOP_DIR"
-        run cp -r  "$PACKAGE_SRC_PATH/." "$PACKAGE_SRC_TOP_DIR"
-        run cd "$PACKAGE_SRC_TOP_DIR"
+        run rm -rf "$PACKAGE_INSTALLING_SRC_DIR"
+        run mkdir  "$PACKAGE_INSTALLING_SRC_DIR"
+        run cp -r  "$PACKAGE_SRC_PATH/." "$PACKAGE_INSTALLING_SRC_DIR"
+        run cd "$PACKAGE_INSTALLING_SRC_DIR"
     fi
 
     gmakew clean install \

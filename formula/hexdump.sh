@@ -14,10 +14,10 @@ prepare() {
 build() {
     if [ "$TARGET_INDEX" -ne 1 ] ; then
         run cd
-        run rm -rf  "$PACKAGE_SRC_TOP_DIR"
-        run mkdir   "$PACKAGE_SRC_TOP_DIR"
-        run tar vxf "$PACKAGE_SRC_PATH" -C "$PACKAGE_SRC_TOP_DIR" --strip-components=1
-        run cd "$PACKAGE_SRC_TOP_DIR"
+        run rm -rf  "$PACKAGE_INSTALLING_SRC_DIR"
+        run mkdir   "$PACKAGE_INSTALLING_SRC_DIR"
+        run tar vxf "$PACKAGE_SRC_PATH" -C "$PACKAGE_INSTALLING_SRC_DIR" --strip-components=1
+        run cd "$PACKAGE_INSTALLING_SRC_DIR"
     fi
 
     gmakew distclean &&

@@ -11,8 +11,8 @@ prepare() {
 }
 
 build() {
-    run "$PACKAGE_BSCRIPT_DIR/configure" \
-        --source-path="$PACKAGE_BSCRIPT_DIR" \
+    run "$PACKAGE_INSTALLING_BST_DIR/configure" \
+        --source-path="$PACKAGE_INSTALLING_BST_DIR" \
         --prefix="$TARGET_INSTALL_DIR" \
         --cpu=$TARGET_OS_ARCH \
         --cc=$CC \

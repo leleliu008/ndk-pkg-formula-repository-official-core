@@ -18,7 +18,7 @@ build() {
 #endif
 EOF
 
-    run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_BSCRIPT_DIR/libcrypt-${PACKAGE_VERSION}.c &&
+    run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_INSTALLING_BST_DIR/libcrypt-${PACKAGE_VERSION}.c &&
     run $AR rsc libcrypt.a crypt.o &&
     run install_incs crypt.h &&
     run install_libs libcrypt.a

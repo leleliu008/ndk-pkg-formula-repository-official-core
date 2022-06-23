@@ -30,13 +30,13 @@ build() {
                 blake3_avx2.c)   export CFLAGS="$CFLAGS -mavx2"   ;;
                 blake3_avx512.c) export CFLAGS="$CFLAGS -mavx512f -mavx512vl"
             esac
-            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $PACKAGE_BSCRIPT_DIR/$item || return 1
+            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $PACKAGE_INSTALLING_BST_DIR/$item || return 1
         )
         OBJS="$item.o $OBJS"
     done
     
     run $CC $LDFLAGS -shared -o libblake3.so $OBJS &&
     run $AR rsc libblake3.a $OBJS &&
-    run install_incs "$PACKAGE_BSCRIPT_DIR/blake3.h" &&
+    run install_incs "$PACKAGE_INSTALLING_BST_DIR/blake3.h" &&
     run install_libs libblake3.a libblake3.so
 }

@@ -13,5 +13,5 @@ build() {
     export RUST_BACKTRACE=full
     export CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS"
     export CXXFLAGS="$CFLAGS"
-    cargow install --path "$PACKAGE_BSCRIPT_DIR/cli"
+    cargow install --path "$PACKAGE_INSTALLING_BST_DIR/cli"
 }

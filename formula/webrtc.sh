@@ -20,7 +20,7 @@ prepare() {
     run git checkout main
     run "yes | gclient sync"
 
-    GN="$PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn"
+    GN="$PACKAGE_INSTALLING_BST_DIR/buildtools/linux64/gn"
 }
 
 build() {
@@ -31,7 +31,7 @@ build() {
         x86_64)      GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
+    run $GN gen . --root="$PACKAGE_INSTALLING_BST_DIR"
 
     cat >> args.gn <<EOF
 is_debug=false

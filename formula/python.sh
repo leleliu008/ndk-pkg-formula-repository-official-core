@@ -20,7 +20,7 @@ build() {
     unset PYTHONPATH
 
     configure \
-        --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \
+        --build=$($PACKAGE_INSTALLING_BST_DIR/config.guess) \
         --with-system-expat \
         --with-system-ffi \
         --with-openssl="$openssl_INSTALL_DIR" \

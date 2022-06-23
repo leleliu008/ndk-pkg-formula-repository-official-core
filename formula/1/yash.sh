@@ -6,7 +6,7 @@ pkg_set src.sha "6f15e68eeb63fd42e91c3ce75eccf325f2c938fa1dc248e7213af37c043aeaf
 pkg_set license "GPL-2.0-or-later"
 
 build() {
-    "$PACKAGE_BSCRIPT_DIR"/configure \
+    "$PACKAGE_INSTALLING_BST_DIR"/configure \
         --prefix="$TARGET_INSTALL_DIR" \
         --enable-array \
         --enable-dirstack \

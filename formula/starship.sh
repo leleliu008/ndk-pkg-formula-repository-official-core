@@ -1,10 +1,10 @@
 pkg_set summary "Cross-shell prompt for astronauts"
 pkg_set webpage "https://starship.rs"
 pkg_set git.url "https://github.com/starship/starship.git"
-pkg_set src.url "https://github.com/starship/starship/archive/v1.4.2.tar.gz"
-pkg_set src.sha "d7d1a4fb661c1612617306f4a99bacccdffca4210a51cb1b91e87fb005bbd32e"
+pkg_set src.url "https://github.com/starship/starship/archive/v1.8.0.tar.gz"
+pkg_set src.sha "398bf5b413ce5dfe4d3c5acceb0025f773478f28016609869821cf385448dcf5"
 pkg_set license "ISC"
-pkg_set dep.pkg "openssl"
+pkg_set dep.pkg "openssl libgetloadavg"
 pkg_set dep.cmd "pkg-config"
 pkg_set bsystem "cargo"
 

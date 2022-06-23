@@ -14,7 +14,7 @@ prepare() {
 
 build() {
     gmakew clean &&
-    gmakew default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$PACKAGE_BSCRIPT_DIR/src'" AR="$AR" RANLIB="$RANLIB" &&
+    gmakew default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$PACKAGE_INSTALLING_BST_DIR/src'" AR="$AR" RANLIB="$RANLIB" &&
     install -d "$TARGET_INSTALL_DIR/include" &&
     install -d "$TARGET_INSTALL_DIR/lib" &&
     gmakew install prefix="$TARGET_INSTALL_DIR"

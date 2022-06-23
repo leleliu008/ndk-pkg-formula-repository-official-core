@@ -3,6 +3,6 @@ pkg_set git.url "https://github.com/enechaev/packcc.git"
 pkg_set license "MIT"
 
 build() {
-    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o packcc $PACKAGE_BSCRIPT_DIR/packcc.c &&
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -pie -fPIE -o packcc $PACKAGE_INSTALLING_BST_DIR/packcc.c &&
     install_bins packcc
 }
