@@ -1,7 +1,7 @@
 pkg_set summary "TIFF library and utilities"
 pkg_set webpage "https://libtiff.gitlab.io/libtiff"
 pkg_set git.url "https://gitlab.com/libtiff/libtiff.git"
-pkg_set src.url "https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz"
+pkg_set src.url "https://fossies.org/linux/misc/tiff-4.4.0.tar.gz"
 pkg_set src.sha "917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed"
 pkg_set dep.pkg "zstd"
 pkg_set bsystem "cmake"
