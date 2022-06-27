@@ -2,7 +2,7 @@
 the offical formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
 
 ## what's formula
-formula is a POSIX sh script used to describe how to compile a package for [ndk-pkg](https://github.com/leleliu008/ndk-pkg).
+formula is a POSIX sh script that is used to describe how to compile a package for [ndk-pkg](https://github.com/leleliu008/ndk-pkg).
 
 ## the function must be invoked on top of the formula
 ```
@@ -13,8 +13,8 @@ pkg_set <KEY> <VALUE>
 |`summary`|required|the summary of this package.|
 |`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git.url` must be present.|
 |`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
-|`license`|optional|value has form: `[LICENSE-NAME][;LICENSE-FILEPATH-IN-SRC][;LICENSE-URL]`. if `LICENSE-FILEPATH-IN-SRC` and `LICENSE-URL` are not given, `LICENSE-NAME` should be found in [SPDX license list](https://spdx.github.io/spdx-spec/SPDX-license-list/). if value is not given, package can not be deployed to maven central.|
-|`developer`|optional|value has form: `[DEVELOPER-NAME][;DEVELOPER-EMAIL][;DEVELOPER-ORGANIZATION-NAME][;DEVELOPER-ORGANIZATION-URL]`.|
+|`license`|optional|a list of space-separated licenses. each list item has form: `[LICENSE-NAME][;LICENSE-FILEPATH-IN-SRC][;LICENSE-URL]`. if `LICENSE-FILEPATH-IN-SRC` and `LICENSE-URL` are not given, `LICENSE-NAME` should be found in [SPDX license list](https://spdx.github.io/spdx-spec/SPDX-license-list/). if value is not given, package can not be deployed to maven central.|
+|`developer`|optional|a list of space-separated developers, each list item has form: `[DEVELOPER-NAME][;DEVELOPER-EMAIL][;DEVELOPER-ORGANIZATION-NAME][;DEVELOPER-ORGANIZATION-URL]`.|
 ||||
 |`git.url`|optional|the source code git repository.<br>must end with `.git`|
 |`git.sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
@@ -26,17 +26,18 @@ pkg_set <KEY> <VALUE>
 |`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
 |`fix.sha`|optional|the `sha256sum` of patch file.|
 ||||
-|`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
-|`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+|`dep.cmd`|optional|a list of space-separated commands which will be used when installing.|
+|`dep.pkg`|optional|a list of space-separated packages which will be used when installing and runtime.|
 ||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|append to `CFLAGS`|
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go` `ndk-build`|
-|`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
+|`bsystem`|optional|a list of space-separated build-systems which will be used when installing. list item shall be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go` `ndk-build`|
+|`bscript`|optional|where the build script is located in, relative to `PACKAGE_WORKING_DIR`. the build script (such as `autogen.sh`, `configure.ac`, `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, `xmake.lua`, etc.)|
+|`binbstd`|optional|whether build in build script directory or not. value shall be `yes` or `no`. If `no`, this package would be built in build directory.|
+|`parallel`|optional|whether build in parallel or not. value shall be `yes` or `no`. default value is `yes`.|
 
 ## the function can be declared in a formula
 |function|required?|overview|
@@ -48,7 +49,6 @@ pkg_set <KEY> <VALUE>
 ## the function can be invoked in a formula at anywhere
 |function|example|
 |-|-|
-|`print`|`print 'your message.'`|
 |`echo`|`echo 'your message.'`|
 |`info`|`info 'your infomation.'`|
 |`warn`|`warn "--min-sdk-api-level=INTEGER argument is not specified. so, use the default value [21]."`|
@@ -109,6 +109,9 @@ pkg_set <KEY> <VALUE>
 |`LDFLAGS`|the flags of `LD`.|
 |`NM`|a command line tool to list symbols from object files.|
 |`STRIP`|a command line tool to discard symbols and other data from object files.|
+|`OBJDUMP`|a command line tool to display information from object files.|
+|`OBJCOPY`|a command line tool to copies a binary file.|
+|`READELF`|a command line tool to display information about the contents of ELF format files.|
 
 ## the variable can be used in build function only
 |variable|overview|
@@ -121,9 +124,9 @@ pkg_set <KEY> <VALUE>
 |`x_INCLUDE_DIR`|the `include` directory of x package of this abi.|
 |`x_LIBRARY_DIR`|the `lib` directory of x package of this abi.|
 |||
-|`TARGET_OS_ABI`|it's value may be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
-|`TARGET_OS_ARCH`|it's value may be one of `armv7a` `aarch64` `i686` `x86_64`|
-|`TARGET_TRIPLE`|it's value may be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
+|`TARGET_OS_ABI`|it's value shall be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
+|`TARGET_OS_ARCH`|it's value shall be one of `armv7a` `aarch64` `i686` `x86_64`|
+|`TARGET_TRIPLE`|it's value shall be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
 |||
 |`SYSROOT`||
 |`SYSTEM_INCLUDE_DIR`||

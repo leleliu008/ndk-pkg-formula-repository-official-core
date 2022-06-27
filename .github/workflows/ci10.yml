@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [libdeflate,libexecinfo,libexif,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,librsvg]
+        pkg: [libcerf,libcroco,libdeflate,libexecinfo,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate]
 
     runs-on: ${{ matrix.os }}
 
