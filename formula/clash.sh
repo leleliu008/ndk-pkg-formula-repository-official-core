@@ -6,5 +6,7 @@ pkg_set license "GPL-3.0-only"
 pkg_set bsystem "go"
 
 build() {
-    gow -X github.com/Dreamacro/clash/constant.Version=$PACKAGE_VERSION -X "\"github.com/Dreamacro/clash/constant.BuildTime=$(date -u)\""
+    gow \
+        -X "\"github.com/Dreamacro/clash/constant.Version=$PACKAGE_VERSION\"" \
+        -X "\"github.com/Dreamacro/clash/constant.BuildTime=$(date -u)\""
 }

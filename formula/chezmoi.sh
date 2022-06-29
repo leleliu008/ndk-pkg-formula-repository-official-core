@@ -1,8 +1,8 @@
 pkg_set summary "Manage your dotfiles across multiple diverse machines, securely"
 pkg_set webpage "https://chezmoi.io/"
 pkg_set git.url "https://github.com/twpayne/chezmoi.git"
-pkg_set src.url "https://github.com/twpayne/chezmoi/archive/refs/tags/v2.18.0.tar.gz"
-pkg_set src.sha "539c33e9b8fb39ff7de8229e383ee430d4ec216ab9c48a5b3a0e5634abb4eb83"
+pkg_set src.url "https://github.com/twpayne/chezmoi/archive/refs/tags/v2.18.1.tar.gz"
+pkg_set src.sha "c832686ba7dad80fa5887d6e6a3ba9e3b910820eb3a2fcc2cb00f65e8d30ce68"
 pkg_set license "MIT"
 pkg_set bsystem "go"
 
