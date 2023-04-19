@@ -1,0 +1,17 @@
+summary: Graph visualization software from AT&T and Bell Labs
+web-url: https://www.graphviz.org
+git-url: https://gitlab.com/graphviz/graphviz
+src-url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/3.0.0/graphviz-3.0.0.tar.xz
+src-sha: ddda3cd0e9bc60c9fb56b4bf4a02eb60ecbfb4405c6758553f7d2668633b4262
+license: EPL-1.0
+dep-upp: pkg-config libtool python3 flex bison>=3.0 git awk
+dep-pkg: fontconfig libpng expat libglob
+bsystem: autotools
+
+dopatch: |
+    sed_in_place 's|install-exec-hook|xxxxxxxxxxxx|' cmd/dot/Makefile.am &&
+    autoreconf -ivf
+
+install: |
+    export HOSTCC="$CC_FOR_BUILD"
+    configure --enable-swig=no

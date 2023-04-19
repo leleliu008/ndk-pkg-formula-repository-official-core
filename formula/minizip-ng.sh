@@ -1,8 +1,0 @@
-pkg_set summary "Zip file manipulation library with minizip 1.x compatibility layer"
-pkg_set git.url "https://github.com/zlib-ng/minizip-ng.git"
-pkg_set src.url "https://github.com/zlib-ng/minizip-ng/archive/3.0.6.tar.gz"
-pkg_set src.sha "383fa1bdc28c482828a8a8db53f758dbd44291b641182724fda5df5b59cce543"
-pkg_set license "Zlib"
-pkg_set dep.pkg "zlib xz zstd bzip2"
-pkg_set dep.cmd "pkg-config"
-pkg_set bsystem "cmake"

@@ -1,6 +1,0 @@
-pkg_set summary "System information fetcher, with an emphasis on performance and minimalism"
-pkg_set git.url "https://github.com/Macchina-CLI/macchina.git"
-pkg_set src.url "https://github.com/Macchina-CLI/macchina/archive/v6.0.5.tar.gz"
-pkg_set src.sha "88de2c9718e071dcd9486cf1e7d87d46533100e589d99cd7b18ff43c21a8a053"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

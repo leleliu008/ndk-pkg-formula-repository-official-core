@@ -1,0 +1,9 @@
+summary: Modern replacement for ps written by Rust
+git-url: https://github.com/dalance/procs
+src-url: https://github.com/dalance/procs/archive/v0.12.3.tar.gz
+src-sha: 59720db4abdff1878492929b1c015dedff7cdc0ea2352b1360084e3bb4fbff33
+license: MIT
+bsystem: cargo
+
+# int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
+sdk-api: 24

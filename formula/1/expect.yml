@@ -1,0 +1,12 @@
+summary: Program that can automate interactive applications
+web-url: https://expect.sourceforge.io
+version: 5.45.4
+src-url: https://downloads.sourceforge.net/project/expect/Expect/${PACKAGE_VERSION}/expect${PACKAGE_VERSION}.tar.gz
+src-sha: 49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34
+dep-pkg: tcl-core
+bsystem: configure
+
+install: |
+    configure \
+        --with-tclinclude="$tcl_core_INCLUDE_DIR" \
+        --with-tcl="$tcl_core_LIBRARY_DIR"

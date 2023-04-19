@@ -1,0 +1,10 @@
+summary: CPU INFOrmation library
+git-url: https://github.com/pytorch/cpuinfo
+license: BSD-2-Clause
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DCPUINFO_BUILD_UNIT_TESTS=OFF \
+        -DCPUINFO_BUILD_MOCK_TESTS=OFF \
+        -DCPUINFO_BUILD_BENCHMARKS=OFF

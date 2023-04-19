@@ -1,0 +1,14 @@
+summary: Simple, modern, secure file encryption
+web-url: https://filippo.io/age
+git-url: https://github.com/FiloSottile/age
+src-url: https://github.com/FiloSottile/age/archive/v1.0.0.tar.gz
+src-sha: 8d27684f62f9dc74014035e31619e2e07f8b56257b1075560456cbf05ddbcfce
+license: BSD-3-Clause
+bsystem: go
+
+install: |
+    for item in age age-keygen
+    do
+        gow -X main.Version=v$PACKAGE_VERSION ./cmd/$item || return 1
+        run install_mans doc/$item.1 || return 1
+    done

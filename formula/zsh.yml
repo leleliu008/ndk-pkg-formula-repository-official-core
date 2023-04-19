@@ -1,0 +1,14 @@
+summary: Z Shell
+web-url: https://www.zsh.org
+git-url: https://github.com/zsh-users/zsh
+src-url: https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz
+src-sha: 9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5
+dep-pkg: ncurses pcre
+
+install: |
+    configure \
+        --enable-multibyte \
+        --enable-cap \
+        --enable-pcre \
+        --enable-unicode9 \
+        --enable-zsh-secure-free

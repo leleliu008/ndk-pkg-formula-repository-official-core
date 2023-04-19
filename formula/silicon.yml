@@ -1,0 +1,14 @@
+summary: Create beautiful image of your source code
+git-url: https://github.com/Aloxaf/silicon
+src-url: https://github.com/Aloxaf/silicon/archive/v0.4.3.tar.gz
+src-sha: 68d64ade34ac571cf2d092f9a6f124e2c7d0441a91e3ba00ca1c8edcdd008630
+license: MIT
+bsystem: cargo cmake
+
+install: |
+    # https://github.com/servo/libfontconfig/issues/62
+    if [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] ; then
+        run install -d "$PACKAGE_INSTALL_DIR/bin"
+    else
+        cargow install
+    fi

@@ -1,6 +1,0 @@
-pkg_set summary "Terminal Epub reader"
-pkg_set git.url "https://github.com/aeosynth/bk.git"
-pkg_set src.url "https://github.com/aeosynth/bk/archive/refs/tags/v0.5.3.tar.gz"
-pkg_set src.sha "c9c54fa2cd60f3ca0576cab8bdd95b74da4d80c109eb91b5426e7ee0575b54f1"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

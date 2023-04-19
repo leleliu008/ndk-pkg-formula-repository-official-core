@@ -1,7 +1,0 @@
-pkg_set summary "C/C++ implementation of a Sass compiler"
-pkg_set git.url "https://github.com/sass/libsass.git"
-pkg_set src.url "https://github.com/sass/libsass/archive/refs/tags/3.6.5.tar.gz"
-pkg_set src.sha "89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582"
-pkg_set license "MIT"
-pkg_set dep.cmd "glibtoolize:libtoolize"
-pkg_set bsystem "autotools"

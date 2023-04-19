@@ -1,0 +1,7 @@
+summary: Go-style concurrency in C
+git-url: https://github.com/sustrik/libmill
+license: MIT
+bsystem: cmake
+
+# ifaddrs.h: int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+sdk-api: 24

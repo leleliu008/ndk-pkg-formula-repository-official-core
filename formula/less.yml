@@ -1,0 +1,12 @@
+summary: Pager program similar to more
+web-url: http://www.greenwoodsoftware.com/less/index.html
+src-url: http://www.greenwoodsoftware.com/less/less-590.tar.gz
+src-sha: 6aadf54be8bf57d0e2999a3c5d67b1de63808bb90deb8f77b028eafae3a08e10
+license: GPL-3.0-or-later
+dep-pkg: ncurses pcre2 liblanginfo
+bsystem: configure
+
+install: |
+    configure \
+        --with-regex='pcre2' \
+        --with-secure

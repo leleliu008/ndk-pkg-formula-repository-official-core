@@ -1,6 +1,0 @@
-pkg_set summary "Simple golang utility helping to discover large files/folders."
-pkg_set git.url "https://github.com/viktomas/godu.git"
-pkg_set src.url "https://github.com/viktomas/godu/archive/refs/tags/v1.3.tar.gz"
-pkg_set src.sha "aec09355c2cf8b44da8b8694326b158563b6b05587f6c2de996a1b52bb523ca0"
-pkg_set license "MIT"
-pkg_set bsystem "go"

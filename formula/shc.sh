@@ -1,7 +1,0 @@
-pkg_set summary "Shell Script Compiler"
-pkg_set webpage "https://neurobin.github.io/shc"
-pkg_set git.url "https://github.com/neurobin/shc.git"
-pkg_set src.url "https://github.com/neurobin/shc/archive/refs/tags/4.0.3.tar.gz"
-pkg_set src.sha "7d7fa6a9f5f53d607ab851d739ae3d3b99ca86e2cb1425a6cab9299f673aee16"
-pkg_set license "GPL-3.0-or-later"
-pkg_set bsystem "configure"

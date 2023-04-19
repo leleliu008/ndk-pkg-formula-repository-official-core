@@ -1,0 +1,4 @@
+summary: The tiny JavaScript runtime built with QuickJS
+git-url: https://github.com/saghul/txiki.js.git
+#dep-pkg: quickjs
+bsystem: cmake

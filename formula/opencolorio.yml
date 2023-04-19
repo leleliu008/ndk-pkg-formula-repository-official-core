@@ -1,0 +1,21 @@
+summary: Color management solution geared towards motion picture production
+web-url: https://opencolorio.org/
+license: BSD-3-Clause
+git-url: https://github.com/AcademySoftwareFoundation/OpenColorIO
+src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v2.1.2.tar.gz
+src-sha: 6c6d153470a7dbe56136073e7abea42fa34d06edc519ffc0a159daf9f9962b0b
+dep-pkg: imath lcms2 expat yaml-cpp pystring
+dep-upp: pkg-config
+bsystem: cmake
+
+dopatch: |
+    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH"
+
+install: |
+    cmakew \
+        -DOCIO_BUILD_APPS=ON \
+        -DOCIO_BUILD_DOCS=OFF \
+        -DOCIO_BUILD_TESTS=OFF \
+        -DOCIO_BUILD_JAVA=OFF \
+        -DOCIO_BUILD_PYTHON=OFF \
+        -DOCIO_WARNING_AS_ERROR=OFF

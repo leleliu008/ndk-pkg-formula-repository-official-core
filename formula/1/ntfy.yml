@@ -1,0 +1,16 @@
+summary: HTTP-based pub-sub notification service
+web-url: https://ntfy.sh/
+git-url: https://github.com/binwiederhier/ntfy.git
+src-url: https://github.com/binwiederhier/ntfy/archive/refs/tags/v1.16.0.tar.gz
+src-sha: 1f18248eb98f895696b85cc4c0c73b34ab76aa4954e2bc9efc7891ab3431c059
+license: Apache-2.0
+bsystem: go
+
+# server/server.go:116:13: pattern docs: no matching files found
+# https://github.com/binwiederhier/ntfy/issues/72
+
+prepare2() {
+    make docs
+
+install: |
+    gow -X main.version=$PACKAGE_VERSION

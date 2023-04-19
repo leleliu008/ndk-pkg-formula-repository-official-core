@@ -1,6 +1,0 @@
-pkg_set summary "Simple bookmark manager built with Go"
-pkg_set git.url "https://github.com/go-shiori/shiori.git"
-pkg_set src.url "https://github.com/go-shiori/shiori/archive/refs/tags/v1.5.0.tar.gz"
-pkg_set src.sha "c2ebc0f009feb22f891c7ab0fa7b8c0d71e1cfc34a974c7503a702ec07d8e9ee"
-pkg_set license "MIT"
-pkg_set bsystem "go"

@@ -1,0 +1,12 @@
+summary: Open source programming language to build simple/reliable/efficient software
+web-url: https://go.dev/
+version: 1.17.3
+src-url: https://go.dev/dl/go${PACKAGE_VERSION}.src.tar.gz
+src-sha: 705c64251e5b25d5d55ede1039c6aa22bea40a7a931d14c370339853643c3df0
+license: BSD-3-Clause
+bscript: src/cmd
+bsystem: go
+
+install: |
+    gow
+    exit 1

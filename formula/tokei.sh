@@ -1,6 +1,0 @@
-pkg_set summary "Program that allows you to count code, quickly"
-pkg_set git.url "https://github.com/XAMPPRocky/tokei.git"
-pkg_set src.url "https://github.com/XAMPPRocky/tokei/archive/v12.1.2.tar.gz"
-pkg_set src.sha "81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

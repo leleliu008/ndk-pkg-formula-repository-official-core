@@ -1,6 +1,0 @@
-pkg_set summary "More intuitive version of du in rust"
-pkg_set git.url "https://github.com/bootandy/dust.git"
-pkg_set src.url "https://github.com/bootandy/dust/archive/v0.8.0.tar.gz"
-pkg_set src.sha "dc033a6fb4f31520ab1bb403dd910aed04037964ab1406363cce2185a8bd3d3b"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cargo"

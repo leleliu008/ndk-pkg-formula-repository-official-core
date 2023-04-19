@@ -1,0 +1,14 @@
+summary: Coreutils progress viewer
+git-url: https://github.com/Xfennec/progress
+src-url: https://github.com/Xfennec/progress/archive/v0.16.tar.gz
+src-sha: 59944ee35f8ae6d62ed4f9b643eee2ae6d03825da288d9779dc43de41164c834
+license: GPL-3.0-or-later
+dep-upp: pkg-config
+dep-pkg: ncurses libwordexp
+bsystem: gmake
+binbstd: yes
+
+install: |
+    gmakew clean &&
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS $libwordexp_LIBRARY_DIR/libwordexp.a'" UNAME=Linux &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

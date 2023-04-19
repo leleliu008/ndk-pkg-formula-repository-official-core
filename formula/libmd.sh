@@ -1,7 +1,0 @@
-pkg_set summary "library provides message digest functions found on BSD systems"
-pkg_set webpage "https://www.hadrons.org/software/libmd"
-pkg_set git.url "https://git.hadrons.org/git/libmd.git"
-pkg_set src.url "https://libbsd.freedesktop.org/releases/libmd-1.0.4.tar.xz"
-pkg_set src.sha "f51c921042e34beddeded4b75557656559cf5b1f2448033b4c1eec11c07e530f"
-pkg_set license "BSD-3-Clause|COPYING|https://git.hadrons.org/git/libmd.git/plain/COPYING"
-pkg_set bsystem "configure"

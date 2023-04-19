@@ -1,0 +1,25 @@
+summary: High-performance C logging library
+git-url: https://github.com/HardySimpson/zlog
+src-url: https://github.com/HardySimpson/zlog/archive/1.2.15.tar.gz
+src-sha: 00037ab8d52772a95d645f1dcfd2c292b7cea326b54e63e219a5b7fdcb7e6508
+license: LGPL-2.1-or-later|COPYING|https://raw.githubusercontent.com/HardySimpson/zlog/master/COPYING
+dep-pkg: libglob
+bsystem: gmake
+bscript: src
+binbstd: yes
+
+dopatch: |
+    sed_in_place '/cp -f/d' makefile
+
+install: |
+    gmakew clean &&
+    gmakew all \
+        CC="$CC" \
+        REAL_CFLAGS="'$CPPFLAGS $CFLAGS'" \
+        REAL_LDFLAGS="'$LDFLAGS'" \
+        DYLIB_MINOR_NAME=libzlog.so \
+        DYLIB_MAJOR_NAME=libzlog.so \
+        STLIB_MAKE_CMD="'$AR rcs libzlog.a'" &&
+    install_libs libzlog.a libzlog.so &&
+    install_incs zlog.h &&
+    install_bins zlog-chk-conf

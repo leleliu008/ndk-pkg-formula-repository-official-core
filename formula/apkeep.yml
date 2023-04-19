@@ -1,0 +1,7 @@
+summary: A command-line tool for downloading APK files from various sources
+git-url: https://github.com/EFForg/apkeep
+src-url: https://github.com/EFForg/apkeep/archive/refs/tags/0.8.0.tar.gz
+src-sha: 2b3ca13fc23f5e08ef52de76d02b3f6e0a9d39a02496b5a895c618c99264ddbe
+license: MIT
+dep-pkg: openssl
+bsystem: cargo

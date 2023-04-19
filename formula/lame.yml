@@ -1,0 +1,11 @@
+summary: High quality MPEG Audio Layer III (MP3) encoder
+web-url: https://lame.sourceforge.io
+src-url: https://downloads.sourceforge.net/sourceforge/lame/lame-3.100.tar.gz
+src-sha: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+license: LGPL-2.0-or-later|COPYING|http://svn.code.sf.net/p/lame/svn/trunk/lame/COPYING
+
+install: |
+    configure \
+        --without-dmalloc \
+        --disable-frontend \
+        --enable-nasm

@@ -1,6 +1,0 @@
-pkg_set summary "A file server that supports static serving, uploading, searching, accessing control, webdav..."
-pkg_set git.url "https://github.com/sigoden/dufs.git"
-pkg_set src.url "https://github.com/sigoden/dufs/archive/refs/tags/v0.22.0.tar.gz"
-pkg_set src.sha "1235c6e60eeaa20c491609ef4c18342819c014850c50ef9eac638b7274bcdbc0"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

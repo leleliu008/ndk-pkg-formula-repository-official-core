@@ -1,0 +1,6 @@
+summary: A Fast and Reliable ARQ Protocol
+git-url: https://github.com/skywind3000/kcp
+src-url: https://github.com/skywind3000/kcp/archive/refs/tags/1.7.tar.gz
+src-sha: b4d26994d95599ab0c44e1f93002f9fda275094a879d66c192d79d596529199e
+license: MIT
+bsystem: cmake

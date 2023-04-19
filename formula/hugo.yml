@@ -1,0 +1,7 @@
+summary: Configurable static site generator
+web-url: https://gohugo.io
+git-url: https://github.com/gohugoio/hugo
+src-url: https://github.com/gohugoio/hugo/archive/v0.101.0.tar.gz
+src-sha: ce5e2c37d9980428cfbfb22cabedc29aebe8f1142ce261777d0435f9f2d6d1cb
+license: Apache-2.0
+bsystem: go

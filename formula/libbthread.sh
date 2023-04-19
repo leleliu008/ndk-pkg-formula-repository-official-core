@@ -1,6 +1,0 @@
-pkg_set summary "provide some missing posix threading functions for NDK"
-pkg_set git.url "https://github.com/tux-mind/libbthread.git"
-pkg_set src.url "https://github.com/tux-mind/libbthread/releases/download/v0.2/libbthread-0.2.tar.gz"
-pkg_set src.sha "a59ec841f383dbaf2f141e953b827702d73b0b0b24d7b8a64a95868f58808493"
-pkg_set license "LGPL-2.1-or-later||https://raw.githubusercontent.com/tux-mind/libbthread/master/LICENSE"
-pkg_set bsystem "configure"

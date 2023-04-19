@@ -1,0 +1,14 @@
+summary: Manage your dotfiles across multiple diverse machines, securely
+web-url: https://chezmoi.io/
+git-url: https://github.com/twpayne/chezmoi
+src-url: https://github.com/twpayne/chezmoi/archive/refs/tags/v2.18.1.tar.gz
+src-sha: c832686ba7dad80fa5887d6e6a3ba9e3b910820eb3a2fcc2cb00f65e8d30ce68
+license: MIT
+bsystem: go
+
+install: |
+    gow \
+        -X main.version=$PACKAGE_VERSION \
+        -X main.commit=$PACKAGE_GIT_REV \
+        -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+        -X main.builtBy=ndk-pkg

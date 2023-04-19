@@ -1,0 +1,14 @@
+summary: Super fast C++ logging library
+git-url: https://github.com/gabime/spdlog
+src-url: https://github.com/gabime/spdlog/archive/v1.10.0.tar.gz
+src-sha: 697f91700237dbae2326b90469be32b876b2b44888302afbc7aceb68bcfe8224
+license: MIT
+dep-pkg: fmt
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DSPDLOG_BUILD_BENCH=OFF \
+        -DSPDLOG_BUILD_TESTS=OFF \
+        -DSPDLOG_BUILD_SHARED=ON \
+        -DSPDLOG_FMT_EXTERNAL=ON

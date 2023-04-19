@@ -1,0 +1,13 @@
+summary: JSON parser/generator for C++ with SAX and DOM style APIs
+web-url: http://rapidjson.org/
+git-url: https://github.com/Tencent/rapidjson
+src-url: https://github.com/Tencent/rapidjson/archive/refs/tags/v1.1.0.tar.gz
+src-sha: bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e
+license: MIT
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DRAPIDJSON_BUILD_DOC=OFF \
+        -DRAPIDJSON_BUILD_TESTS=OFF \
+        -DRAPIDJSON_BUILD_EXAMPLES=OFF

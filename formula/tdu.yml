@@ -1,0 +1,6 @@
+summary: Top Disk Usage
+git-url: https://bitbucket.org/josephpaul0/tdu
+src-url: https://bitbucket.org/josephpaul0/tdu/get/v1.36.tar.bz2
+src-sha: edeb5831ca0c547d4ff2e7011805b821a748b0fc287eb236e01b274e16e4e85a
+license: GPL-2.0-or-later
+bsystem: go

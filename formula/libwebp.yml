@@ -1,0 +1,9 @@
+summary: Image format providing lossless and lossy compression for web images
+web-url: https://developers.google.com/speed/webp
+git-url: https://github.com/webmproject/libwebp
+src-url: http://downloads.webmproject.org/releases/webp/libwebp-1.2.2.tar.gz
+src-sha: 7656532f837af5f4cec3ff6bafe552c044dc39bf453587bd5b77450802f4aee6
+license: BSD-3-Clause|COPYING|https://raw.githubusercontent.com/webmproject/libwebp/main/COPYING
+dep-pkg: libpng libtiff libjpeg-turbo giflib
+dep-upp: pkg-config
+bsystem: cmake

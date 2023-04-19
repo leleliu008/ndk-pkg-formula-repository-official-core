@@ -1,0 +1,18 @@
+summary: Utility to determine file types
+web-url: https://www.darwinsys.com/file
+git-url: https://github.com/file/file
+src-url: https://astron.com/pub/file/file-5.42.tar.gz
+src-sha: c076fb4d029c74073f15c43361ef572cfb868407d347190ba834af3b1639b0e4
+license: BSD-2-Clause
+dep-pkg: zlib
+bsystem: configure
+
+build0: |
+    configure
+
+install: |
+    export PATH="$NATIVE_INSTALL_DIR/bin:$PATH"
+    configure \
+        --enable-zlib \
+        --disable-bzlib \
+        --disable-xzlib

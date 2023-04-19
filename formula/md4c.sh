@@ -1,6 +1,0 @@
-pkg_set summary "C Markdown parser. Fast. SAX-like interface"
-pkg_set git.url "https://github.com/mity/md4c.git"
-pkg_set src.url "https://github.com/mity/md4c/archive/release-0.4.8.tar.gz"
-pkg_set src.sha "4a457df853425b6bb6e3457aa1d1a13bccec587a04c38c622b1013a0da41439f"
-pkg_set license "MIT"
-pkg_set bsystem "cmake"

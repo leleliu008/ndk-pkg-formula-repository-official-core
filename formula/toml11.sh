@@ -1,6 +1,0 @@
-pkg_set summary "TOML for Modern C++"
-pkg_set webpage "https://github.com/ToruNiina/toml11"
-pkg_set src.url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.7.1.tar.gz"
-pkg_set src.sha "afeaa9aa0416d4b6b2cd3897ca55d9317084103077b32a852247d8efd4cf6068"
-pkg_set license "MIT"
-pkg_set bsystem "cmake"

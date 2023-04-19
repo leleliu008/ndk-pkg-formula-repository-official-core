@@ -1,7 +1,0 @@
-pkg_set summary "Library to extract data from Excel .xls files"
-pkg_set webpage "https://www.gaia-gis.it/fossil/freexl/index"
-pkg_set src.url "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.6.tar.gz"
-pkg_set src.sha "3de8b57a3d130cb2881ea52d3aa9ce1feedb1b57b7daa4eb37f751404f90fc22"
-pkg_set license "MPL-1.1"
-pkg_set dep.pkg "libiconv"
-pkg_set bsystem "configure"

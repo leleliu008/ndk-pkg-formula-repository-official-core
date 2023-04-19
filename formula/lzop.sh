@@ -1,7 +1,0 @@
-pkg_set summary "File compressor"
-pkg_set webpage "https://www.lzop.org/"
-pkg_set src.url "https://www.lzop.org/download/lzop-1.04.tar.gz"
-pkg_set src.sha "7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41"
-pkg_set license "GPL-2.0-or-later"
-pkg_set dep.pkg "lzo"
-pkg_set bsystem "cmake"

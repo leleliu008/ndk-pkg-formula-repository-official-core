@@ -1,0 +1,15 @@
+summary: Spell checker and morphological analyzer
+web-url: https://hunspell.github.io
+git-url: https://github.com/hunspell/hunspell
+src-url: https://github.com/hunspell/hunspell/archive/v1.7.0.tar.gz
+src-sha: bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a
+license: GPL-2.0-or-later
+dep-upp: libtool
+dep-pkg: gettext readline liblanginfo
+bsystem: autotools
+
+install: |
+    configure \
+        --with-ui \
+        --with-readline \
+        --with-warnings

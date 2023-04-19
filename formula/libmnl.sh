@@ -1,6 +1,0 @@
-pkg_set summary "Minimalistic Netlink Library based Linux kernel interfaces"
-pkg_set webpage "https://netfilter.org/projects/libmnl"
-pkg_set src.url "https://netfilter.org/projects/libmnl/files/libmnl-1.0.5.tar.bz2"
-pkg_set src.sha "274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525"
-pkg_set license "LGPL-2.1-or-later"
-pkg_set bsystem "configure"

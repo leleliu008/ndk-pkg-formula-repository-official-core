@@ -1,0 +1,24 @@
+summary: crypt(3) implementation
+web-url: http://michael.dipperstein.com/crypt
+src-url: http://michael.dipperstein.com/crypt/crypt3.c
+src-sha: 75b16b6ef7f1c0c7c4172ed346b2b91b6f1be72c824b6671a059de2b2da554ff
+license: Unlicense
+version: 1
+
+install: |
+    cat > crypt.h <<EOF
+    #ifdef __cplusplus
+        extern "C" {
+    #endif
+
+            char* crypt(char* key, char* salt);
+
+    #ifdef __cplusplus
+        }   
+    #endif
+    EOF
+
+    run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_INSTALLING_BST_DIR/libcrypt-${PACKAGE_VERSION}.c &&
+    run $AR rsc libcrypt.a crypt.o &&
+    run install_incs crypt.h &&
+    run install_libs libcrypt.a

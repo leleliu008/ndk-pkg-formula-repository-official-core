@@ -1,0 +1,20 @@
+summary: Multiple Precision Integers and Rationals (fork of GMP)
+web-url: http://mpir.org
+git-url: https://github.com/wbhart/mpir
+src-url: http://mpir.org/mpir-3.0.0.tar.bz2
+src-sha: 52f63459cf3f9478859de29e00357f004050ead70b45913f2c2269d9708675bb
+license: GPL-3.0-or-later
+dep-upp: yasm
+bsystem: configure
+
+dopatch: |
+    sed_in_place '/cat >conftest.c <<EOF/a #include<stdlib.h>' configure
+
+install: |
+    configure \
+        --disable-profiling \
+        --disable-assert \
+        --disable-fat \
+        --enable-cxx \
+        --enable-fft \
+        --enable-gmpcompat

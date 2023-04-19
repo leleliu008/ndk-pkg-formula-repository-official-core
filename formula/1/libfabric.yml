@@ -1,0 +1,10 @@
+summary: OpenFabrics libfabric
+web-url: https://ofiwg.github.io/libfabric/
+git-url: https://github.com/ofiwg/libfabric.git
+src-url: https://github.com/ofiwg/libfabric/releases/download/v1.13.0/libfabric-1.13.0.tar.bz2
+src-sha: 0c68264ae18de5c31857724c754023351614330bd61a50b40cef2b5e8f63ab28
+license: BSD-2-Clause GPL-2.0-only
+bsystem: configure
+
+dopatch: |
+    sed_in_place 's|-lpthread||g' configure

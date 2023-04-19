@@ -1,0 +1,10 @@
+summary: JBIG2 decoder and library (for monochrome documents)
+web-url: https://jbig2dec.com/
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/jbig2dec-0.19.tar.gz
+src-sha: 279476695b38f04939aa59d041be56f6bade3422003a406a85e9792c27118a37
+license: AGPL-3.0-or-later
+dep-pkg: libpng
+bsystem: configure
+
+install: |
+    configure  --with-libpng="$libpng_INSTALL_DIR"

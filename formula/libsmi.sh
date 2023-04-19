@@ -1,6 +1,0 @@
-pkg_set summary "Library to Access SMI MIB Information"
-pkg_set webpage "https://www.ibr.cs.tu-bs.de/projects/libsmi"
-pkg_set src.url "https://www.ibr.cs.tu-bs.de/projects/libsmi/download/libsmi-0.5.0.tar.gz"
-pkg_set src.sha "f21accdadb1bb328ea3f8a13fc34d715baac6e2db66065898346322c725754d3"
-pkg_set license "TCL BSD-3-Clause Beerware"
-pkg_set bsystem "configure"

@@ -1,0 +1,18 @@
+summary: H.264/AVC encoder
+web-url: https://www.videolan.org/developers/x264.html
+git-url: https://code.videolan.org/videolan/x264
+git-sha: baee400fa9ced6f5481a728138fed6e867b0ff7f
+version: r3095
+license: GPL-2.0-only|COPYING|https://code.videolan.org/videolan/x264/-/raw/master/COPYING
+
+dopatch: |
+    sed_in_place 's/define fseek fseeko/true/' configure &&
+    sed_in_place 's/define ftell ftello/true/' configure
+
+install: |
+    configure \
+        --disable-asm \
+        --enable-cli \
+        --enable-pic \
+        --enable-lto \
+        --enable-strip

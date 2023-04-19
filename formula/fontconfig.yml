@@ -1,0 +1,18 @@
+summary: XML-based font configuration tools
+web-url: https://wiki.freedesktop.org/www/Software/fontconfig
+git-url: https://gitlab.freedesktop.org/fontconfig/fontconfig
+src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz
+src-sha: dcbeb84c9c74bbfdb133d535fe1c7bedc9f2221a8daf3914b984c44c520e9bac
+license: MIT
+bsystem: configure
+dep-upp: pkg-config gperf
+dep-pkg: gettext libiconv util-linux json-c expat freetype2-with-harfbuzz
+ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lglib-2.0 -liconv -lintl -lpcre -lfreetype
+
+install: |
+    configure \
+        --enable-iconv \
+        --disable-docs \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
+        --with-libintl-prefix="$gettext_INSTALL_DIR" \
+        --with-expat="$expat_INSTALL_DIR"

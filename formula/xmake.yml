@@ -1,0 +1,11 @@
+summary: Cross-platform build utility based on Lua
+web-url: https://xmake.io/
+git-url: https://github.com/xmake-io/xmake
+src-url: https://github.com/xmake-io/xmake/releases/download/v2.6.8/xmake-v2.6.8.tar.gz
+src-sha: 2f74698abbb009dfe0e80399a94e7a903f2fb12c2fec503cd6152a52a1469013
+license: Apache-2.0
+bscript: core
+bsystem: xmake
+
+install: |
+    xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$TARGET_BUILDIN_DIR/xmake"

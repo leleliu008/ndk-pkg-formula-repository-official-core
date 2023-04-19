@@ -1,6 +1,0 @@
-pkg_set summary "A graphical tool to visualize binary data"
-pkg_set git.url "https://github.com/sharkdp/binocle.git"
-pkg_set src.url "https://github.com/sharkdp/binocle/archive/refs/tags/v0.3.0.tar.gz"
-pkg_set src.sha "4bbdc12e38e44a85a1d7ddd4008998d559e2e525cc6079784d62898da4596321"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cargo"

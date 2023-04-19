@@ -1,0 +1,17 @@
+summary: utilities used to display information about USB buses in the system and the devices connected to them
+web-url: http://www.linux-usb.org
+git-url: https://github.com/gregkh/usbutils.git
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-012.tar.xz
+src-sha: 88634625f91840bc1993d2731cc081ee8d3b13d56069a95bdd6ac6ef0e063e46
+dep-upp: autoreconf
+dep-pkg: libusb
+
+dopatch: |
+    (cd usbhid-dump && autoreconf -ivf) &&
+    autoreconf -ivf
+
+install: |
+    export CPPFLAGS="$CPPFLAGS -Drindex=strrchr"
+    export UDEV_CFLAGS=' '
+    export UDEV_LIBS=' '
+    configure 

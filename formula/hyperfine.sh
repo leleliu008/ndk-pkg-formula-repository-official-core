@@ -1,6 +1,0 @@
-pkg_set summary "Command-line benchmarking tool"
-pkg_set git.url "https://github.com/sharkdp/hyperfine.git"
-pkg_set src.url "https://github.com/sharkdp/hyperfine/archive/v1.14.0.tar.gz"
-pkg_set src.sha "59018c22242dd2ad2bd5fb4a34c0524948b7921d02aa79419ccec4c1ffd3da14"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cargo"

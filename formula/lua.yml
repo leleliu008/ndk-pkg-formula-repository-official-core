@@ -1,0 +1,14 @@
+summary: Powerful, lightweight programming language
+web-url: https://www.lua.org/
+git-url: https://github.com/lua/lua
+src-url: https://www.lua.org/ftp/lua-5.4.4.tar.gz
+src-sha: 164c7849653b80ae67bec4b7473b884bf5cc8d2dca05653475ec2ed27b9ebf61
+license: MIT
+dep-pkg: readline
+bsystem: gmake
+binbstd: yes
+
+install: |
+    gmakew clean &&
+    gmakew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS -pie -fPIE'" MYLIBS=-lreadline &&
+    gmakew install INSTALL_TOP="$PACKAGE_INSTALL_DIR"

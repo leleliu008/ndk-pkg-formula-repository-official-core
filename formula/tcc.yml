@@ -1,0 +1,24 @@
+summary: Tiny C compiler
+web-url: http://www.tinycc.org/
+git-url: https://repo.or.cz/tinycc
+src-url: https://download.savannah.nongnu.org/releases/tinycc/tcc-0.9.27.tar.bz2
+src-sha: de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c
+license: LGPL-2.1-or-later|COPYING|https://repo.or.cz/tinycc.git/blob_plain/HEAD:/COPYING
+bsystem: gmake
+
+dopatch: |
+    printf 'clean:\n\n' > lib/Makefile
+
+install: |
+    run "$PACKAGE_INSTALLING_BST_DIR/configure" \
+        --source-path="$PACKAGE_INSTALLING_BST_DIR" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --cpu=$TARGET_OS_ARCH \
+        --cc=$CC \
+        --ar=$AR \
+        --extra-cflags="'$CPPFLAGS $CFLAGS'" \
+        --extra-ldflags="'$LDFLAGS'" \
+        --enable-cross &&
+    gmakew clean &&
+    gmakew ONE_SOURCE=yes &&
+    gmakew install

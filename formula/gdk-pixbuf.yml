@@ -1,0 +1,20 @@
+summary: Toolkit for image loading and pixel buffer manipulation
+web-url: https://gtk.org
+src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.8.tar.xz
+src-sha: 84acea3acb2411b29134b32015a5b1aaa62844b19c4b1ef8b8971c6b0759f4c6
+license: LGPL-2.1-or-later
+dep-pkg: glib libjpeg-turbo libpng libtiff
+dep-upp: pkg-config glib-compile-resources glib-mkenums
+bsystem: meson
+
+install: |
+    mesonw \
+        -Drelocatable=false \
+        -Dnative_windows_loaders=false \
+        -Dinstalled_tests=false \
+        -Dgtk_doc=false \
+        -Dman=false \
+        -Dpng=enabled \
+        -Djpeg=enabled \
+        -Dtiff=enabled \
+        -Dintrospection=disabled

@@ -1,0 +1,9 @@
+summary: Syntax-highlighting pager for git and diff output
+git-url: https://github.com/dandavison/delta
+src-url: https://github.com/dandavison/delta/archive/0.13.0.tar.gz
+src-sha: 5a0ba70a094a7884beb6f1efd4d155861e4b3e3584c452cabbce1607f8eb0f30
+license: MIT
+bsystem: cargo
+
+# stdlib.h: int getloadavg(double __averages[], int __n) __INTRODUCED_IN(29);
+sdk-api: 29

@@ -1,0 +1,10 @@
+summary: Yet another cross-platform graphical process/system monitor
+web-url: https://clementtsang.github.io/bottom/
+git-url: https://github.com/ClementTsang/bottom.git
+src-url: https://github.com/ClementTsang/bottom/archive/0.6.8.tar.gz
+src-sha: 4e4eb251972a7af8c46dd36bcf1335fea334fb670569434fbfd594208905b2d9
+license: MIT
+bsystem: cargo
+
+dopatch: |
+    sed_in_place '/default =/c default = ["fern", "log"]' Cargo.toml

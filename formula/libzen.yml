@@ -1,0 +1,11 @@
+summary: Unified display of technical and tag data for audio/video
+web-url: https://mediaarea.net
+src-url: https://mediaarea.net/download/source/libzen/0.4.39/libzen_0.4.39.tar.bz2
+src-sha: bd2772ab1ae4e375cdbbbdd114ad8471ebe67bf78c76e3812d66c7d462ed8ae7
+license: BSD-2-Clause
+dep-upp: libtool
+bscript: Project/GNU/Library
+bsystem: autogen
+binbstd: yes
+
+# https://mediaarea.net/en/MediaInfo/Download/Source

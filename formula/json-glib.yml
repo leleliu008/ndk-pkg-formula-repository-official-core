@@ -1,0 +1,16 @@
+summary: Library for JSON, based on GLib
+web-url: https://wiki.gnome.org/Projects/JsonGlib
+git-url: https://gitlab.gnome.org/GNOME/json-glib
+src-url: https://download.gnome.org/sources/json-glib/1.6/json-glib-1.6.6.tar.xz
+src-sha: 96ec98be7a91f6dde33636720e3da2ff6ecbb90e76ccaa49497f31a6855a490e
+license: LGPL-2.1-or-later
+dep-upp: pkg-config glib-mkenums
+dep-pkg: glib
+bsystem: meson
+
+install: |
+    mesonw \
+        -Dtests=false \
+        -Dman=false \
+        -Dgtk_doc=disabled \
+        -Dintrospection=disabled

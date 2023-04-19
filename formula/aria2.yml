@@ -1,0 +1,12 @@
+summary: Download with resuming and segmented downloading
+web-url: https://aria2.github.io
+src-url: https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz
+src-sha: 58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5
+license: GPL-2.0-or-later
+bsystem: configure
+dep-upp: pkg-config
+dep-pkg: zlib openssl libssh2 libxml2
+ldflags: -lz -lm -lxml2 -liconv -lssl -lcrypto -lssh2
+
+install: |
+    configure --enable-libaria2

@@ -1,0 +1,28 @@
+summary: HTTP/2 C Library
+web-url: https://nghttp2.org
+git-url: https://github.com/nghttp2/nghttp2
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.47.0/nghttp2-1.47.0.tar.gz
+src-sha: 62f50f0e9fc479e48b34e1526df8dd2e94136de4c426b7680048181606832b7c
+license: MIT
+dep-pkg: libevent libev openssl jansson libxml2 c-ares cunit
+bsystem: configure
+
+dopatch: |
+    sed_in_place 's/ -lsupc++//' configure
+
+install: |
+    configure \
+        --enable-threads \
+        --enable-app \
+        --enable-examples \
+        --enable-hpack-tools \
+        --disable-asio-lib \
+        --disable-python-bindings \
+        --disable-lib-only \
+        --disable-werror \
+        --disable-assert \
+        --without-systemd \
+        --without-jemalloc \
+        --with-libxml2 \
+        ZLIB_CFLAGS='-lz' \
+        ZLIB_LIBS='-lz'

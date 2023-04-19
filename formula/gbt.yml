@@ -1,0 +1,11 @@
+summary: Highly configurable prompt builder for Bash and ZSH written in Go
+git-url: https://github.com/jtyr/gbt
+src-url: https://github.com/jtyr/gbt/archive/refs/tags/v2.0.0.tar.gz
+src-sha: b324695dc432e8e22bc257f7a6ec576f482ec418fb9c9a8301f47bfdf7766998
+license: MIT
+
+bsystem: go
+install: |
+    run go mod init gbt
+    run go mod tidy
+    gow -X main.version=$PACKAGE_VERSION -X main.build=$PACKAGE_GIT_SHA ./cmd/gbt

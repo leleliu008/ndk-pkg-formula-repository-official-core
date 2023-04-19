@@ -1,6 +1,0 @@
-pkg_set summary "A Minimal, Header only Modern c++ library for terminal goodies"
-pkg_set git.url "https://github.com/agauniyal/rang.git"
-pkg_set src.url "https://github.com/agauniyal/rang/archive/refs/tags/v3.2.tar.gz"
-pkg_set src.sha "8b42d9c33a6529a6c283a4f4c73c26326561ccc67fbb3e6a3225edd688b39973"
-pkg_set license "Unlicense"
-pkg_set bsystem "cmake"

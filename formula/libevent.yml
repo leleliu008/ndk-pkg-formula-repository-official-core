@@ -1,0 +1,20 @@
+summary: Asynchronous event library
+web-url: https://libevent.org
+git-url: https://github.com/libevent/libevent
+src-url: https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
+src-sha: 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb
+license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/libevent/libevent/master/LICENSE
+dep-pkg: openssl
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DEVENT__DISABLE_DEBUG_MODE=ON \
+        -DEVENT__DISABLE_TESTS=ON \
+        -DEVENT__DISABLE_REGRESS=ON \
+        -DEVENT__DISABLE_BENCHMARK=ON \
+        -DEVENT__DISABLE_SAMPLES=ON \
+        -DEVENT__DISABLE_OPENSSL=OFF \
+        -DEVENT__DOXYGEN=OFF \
+        -DEVENT__COVERAGE=OFF \
+        -DEVENT__LIBRARY_TYPE=BOTH

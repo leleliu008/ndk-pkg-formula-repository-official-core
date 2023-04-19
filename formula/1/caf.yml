@@ -1,0 +1,12 @@
+summary: Implementation of the Actor Model for C++
+web-url: https://www.actor-framework.org/
+git-url: https://github.com/actor-framework/actor-framework.git
+src-url: https://github.com/actor-framework/actor-framework/archive/0.18.5.tar.gz
+src-sha: 4c96f896f000218bb65890b4d7175451834add73750d5f33b0c7fe82b7d5a679
+license: BSD-3-Clause
+dep-pkg: openssl
+bsystem: cmake
+xxflags: -std=c++17
+
+install: |
+    cmakew -DCAF_ENABLE_TESTING=OFF

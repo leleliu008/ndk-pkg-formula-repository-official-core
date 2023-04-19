@@ -1,7 +1,0 @@
-pkg_set summary "C++ geography library"
-pkg_set webpage "https://geographiclib.sourceforge.io/"
-pkg_set git.url "https://github.com/geographiclib/geographiclib.git"
-pkg_set src.url "https://downloads.sourceforge.net/project/geographiclib/distrib-C++/GeographicLib-2.1.tar.gz"
-pkg_set src.sha "7a4bdbcfe76c7848960f177b597187e16abd30140da067ff5221cee900cfc029"
-pkg_set license "MIT"
-pkg_set bsystem "cmake"

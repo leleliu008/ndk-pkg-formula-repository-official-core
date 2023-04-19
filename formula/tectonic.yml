@@ -1,0 +1,12 @@
+summary: Modernized, complete, self-contained TeX/LaTeX engine
+web-url: https://tectonic-typesetting.github.io/
+git-url: https://github.com/tectonic-typesetting/tectonic
+src-url: https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.9.0.tar.gz
+src-sha: a239ca85bff1955792b2842fabfa201ba9576d916ece281278781f42c7547b9f
+license: MIT
+dep-pkg: fontconfig openssl
+dep-upp: pkg-config
+bsystem: cargo
+
+install: |
+    cargow install --features external-harfbuzz

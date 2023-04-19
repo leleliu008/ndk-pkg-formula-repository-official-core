@@ -1,0 +1,16 @@
+summary: GNU multiple precision arithmetic library
+web-url: https://gmplib.org
+src-url: https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz
+src-sha: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
+license: LGPL-3.0-or-later
+dep-upp: m4
+bsystem: configure
+
+install: |
+    configure \
+        --without-readline \
+        --disable-profiling \
+        --disable-assert \
+        --disable-cxx \
+        --enable-assembly \
+        --enable-fft

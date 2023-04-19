@@ -1,0 +1,14 @@
+summary: QR Code generation
+web-url: https://fukuchi.org/works/qrencode
+git-url: https://github.com/fukuchi/libqrencode
+src-url: https://fukuchi.org/works/qrencode/qrencode-4.1.1.tar.gz
+src-sha: da448ed4f52aba6bcb0cd48cac0dd51b8692bccc4cd127431402fca6f8171e8e
+license: LGPL-2.1-or-later
+dep-pkg: libpng
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DWITH_TOOLS=ON \
+        -DWITH_TESTS=OFF \
+        -DWITHOUT_PNG=OFF

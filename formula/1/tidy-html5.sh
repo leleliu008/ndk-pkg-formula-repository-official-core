@@ -1,7 +1,0 @@
-pkg_set summary "Granddaddy of HTML tools, with support for modern standards"
-pkg_set webpage "https://www.html-tidy.org/"
-pkg_set git.url "https://github.com/htacg/tidy-html5.git"
-pkg_set src.url "https://github.com/htacg/tidy-html5/archive/5.8.0.tar.gz"
-pkg_set src.sha "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e"
-pkg_set license "Zlib"
-pkg_set bsystem "cmake"

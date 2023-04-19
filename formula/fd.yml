@@ -1,0 +1,10 @@
+summary: Simple, fast and user-friendly alternative to find
+git-url: https://github.com/sharkdp/fd
+src-url: https://github.com/sharkdp/fd/archive/v8.4.0.tar.gz
+src-sha: d0c2fc7ddbe74e3fd88bf5bb02e0f69078ee6d2aeea3d8df42f508543c9db05d
+license: Apache-2.0
+bsystem: cargo
+
+# error: undefined reference to 'getgrnam_r'
+# https://github.com/sharkdp/fd/issues/642
+sdk-api: 24

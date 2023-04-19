@@ -1,0 +1,33 @@
+summary: Tool Command Language
+web-url: https://www.tcl-lang.org
+version: 8.6.12
+src-url: https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz
+src-sha: 26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6
+license: TCL
+bsystem: configure
+bscript: unix
+
+dopatch: |
+    sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure
+
+install: |
+    unset EXTRA_CONFIGURE_FLAGS
+    
+    if echo "$TARGET_OS_ARCH" | grep -q '64' ; then
+        EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --enable-64bit"
+    else
+        EXTRA_CONFIGURE_FLAGS="$EXTRA_CONFIGURE_FLAGS --disable-64bit"
+    fi
+
+    configure \
+        --enable-dtrace \
+        --enable-zipfs \
+        --enable-load \
+        --enable-dll-unloading \
+        --enable-threads \
+        --disable-symbols \
+        --disable-corefoundation \
+        --disable-framework \
+        --with-tzdata \
+        $EXTRA_CONFIGURE_FLAGS \
+        tcl_cv_sys_version=Linux

@@ -1,7 +1,0 @@
-pkg_set summary "Power of curl, ease of use of httpie"
-pkg_set webpage "https://curlie.io"
-pkg_set git.url "https://github.com/rs/curlie.git"
-pkg_set src.url "https://github.com/rs/curlie/archive/v1.6.9.tar.gz"
-pkg_set src.sha "95b7061861aa8d608f9df0d63a11206f8cd532295ca13dd39ed37e0136bdcc5f"
-pkg_set license "MIT"
-pkg_set bsystem "go"

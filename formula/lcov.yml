@@ -1,0 +1,12 @@
+summary: Graphical front-end for GCC coverage testing tool - gcov
+web-url: http://ltp.sourceforge.net/coverage/lcov.php
+git-url: https://github.com/linux-test-project/lcov
+src-url: https://github.com/linux-test-project/lcov/releases/download/v1.16/lcov-1.16.tar.gz
+src-sha: 987031ad5528c8a746d4b52b380bc1bffe412de1f2b9c2ba5224995668e3240b
+license: GPL-2.0-or-later
+bsystem: gmake
+binbstd: yes
+
+install: |
+    gmakew clean &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

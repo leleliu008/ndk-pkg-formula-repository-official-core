@@ -1,6 +1,0 @@
-pkg_set summary "F-Droid client"
-pkg_set git.url "https://github.com/mvdan/fdroidcl.git"
-pkg_set src.url "https://github.com/mvdan/fdroidcl/archive/refs/tags/v0.5.0.tar.gz"
-pkg_set src.sha "532a8c4c93216cbf13378ff409c06a08d48e8baee6119a50ed43dc0ce9ec7879"
-pkg_set license "BSD-3-Clause"
-pkg_set bsystem "go"

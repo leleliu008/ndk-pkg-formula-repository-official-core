@@ -1,0 +1,16 @@
+summary: Persistent key-value database, with built-in net interface
+web-url: https://redis.io
+git-url: https://github.com/redis/redis.git
+src-url: https://download.redis.io/releases/redis-6.2.1.tar.gz
+src-sha: cd222505012cce20b25682fca931ec93bd21ae92cb4abfe742cf7b76aa907520
+license: BSD-3-Clause
+bscript: src
+bsystem: gmake
+dep-upp: pkg-config
+dep-pkg: openssl libbthread
+ldflags: -lbthread
+
+install: |
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" clean &&
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" uname_S=Linux uname_M="$TARGET_OS_ARCH" BUILD_TLS=yes USE_JEMALLOC=no &&
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" install PREFIX="$TARGET_INSTALL_DIR"

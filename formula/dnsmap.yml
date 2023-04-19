@@ -1,0 +1,6 @@
+summary: Passive DNS network mapper (a.k.a. subdomains bruteforcer)
+git-url: https://github.com/resurrecting-open-source-projects/dnsmap
+src-url: https://github.com/resurrecting-open-source-projects/dnsmap/archive/refs/tags/0.36.tar.gz
+src-sha: f52d6d49cbf9a60f601c919f99457f108d51ecd011c63e669d58f38d50ad853c
+license: GPL-3.0-or-later
+bsystem: autogen

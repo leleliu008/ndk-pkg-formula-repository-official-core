@@ -1,0 +1,7 @@
+summary: a lightweight and portable command-line YAML processor
+web-url: https://mikefarah.gitbook.io/yq
+git-url: https://github.com/mikefarah/yq
+src-url: https://github.com/mikefarah/yq/archive/v4.30.6.tar.gz
+src-sha: 320d0ce36d1dbe703b4cbdb28e9a927c1e87b157e8c05aeb078d6c9c1b0138ea
+license: MIT
+install: gow -tags release

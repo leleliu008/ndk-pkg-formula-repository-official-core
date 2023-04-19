@@ -1,0 +1,11 @@
+summary: Lua-based build system
+web-url: https://premake.github.io/
+git-url: https://github.com/premake/premake-core.git
+version: 4.4
+src-url: https://downloads.sourceforge.net/project/premake/Premake/$PACKAGE_VERSION/premake-$PACKAGE_VERSION-beta5-src.zip
+src-sha: 0fa1ed02c5229d931e87995123cdb11d44fcc8bd99bba8e8bb1bbc0aaa798161
+license: BSD-3-Clause
+bsystem: gmake
+
+install: |
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" -f Bootstrap.mak linux-clean

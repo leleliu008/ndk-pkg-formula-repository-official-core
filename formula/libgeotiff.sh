@@ -1,8 +1,0 @@
-pkg_set summary "Library and tools for dealing with GeoTIFF"
-pkg_set git.url "https://github.com/OSGeo/libgeotiff.git"
-pkg_set src.url "https://github.com/OSGeo/libgeotiff/releases/download/1.7.1/libgeotiff-1.7.1.tar.gz"
-pkg_set src.sha "05ab1347aaa471fc97347d8d4269ff0c00f30fa666d956baba37948ec87e55d6"
-pkg_set license "MIT"
-pkg_set dep.pkg "libjpeg-turbo proj7"
-pkg_set dep.cmd "pkg-config"
-pkg_set bsystem "configure"

@@ -1,0 +1,15 @@
+summary: General-purpose data compression with high compression ratio
+web-url: https://tukaani.org/xz
+git-url: https://github.com/xz-mirror/xz
+src-url: https://github.com/xz-mirror/xz/releases/download/v5.4.0/xz-5.4.0.tar.xz
+src-sha: 5f260e3b43f75cf43ca43d107dd18209f7d516782956a74ddd53288e02a83a31
+
+license: LGPL-2.1-or-later|COPYING.LGPLv2.1|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.LGPLv2.1 GPL-2.0-or-later|COPYING.GPLv2|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.GPLv2 GPL-3.0-or-later|COPYING.GPLv3|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.GPLv3
+developer: Lasse+Collin|lasse.collin@tukaani.org
+
+install: |
+    configure \
+        --disable-external-sha256 \
+        --disable-werror \
+        --enable-assembler \
+        --enable-threads=posix

@@ -1,0 +1,9 @@
+summary: Terminal based graphical activity monitor inspired by gtop and vtop
+git-url: https://github.com/xxxserxxx/gotop
+src-url: https://github.com/xxxserxxx/gotop/archive/v4.1.3.tar.gz
+src-sha: c0a02276e718b988d1220dc452063759c8634d42e1c01a04c021486c1e61612d
+license: BSD-3-Clause
+bsystem: go
+
+install: |
+    gow -X main.Version=v$PACKAGE_VERSION -X main.BuildDate=$(date +%Y%m%dT%H%M%S) ./cmd/gotop

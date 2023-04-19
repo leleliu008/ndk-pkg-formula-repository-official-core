@@ -11,8 +11,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        pkg: [cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,cmake,cppcheck,cpprestsdk,cppunit,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts]
+        #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
+        os: [ubuntu-22.04]
+        pkg: [json-glib,jsoncpp,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libarchive,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexecinfo,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,22 +23,27 @@ jobs:
     steps:
       - run: export -p
 
-      - name: install ndk-pkg
-        run: |
-          curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/bin/ndk-pkg
-          chmod u+x ndk-pkg
-          mv ndk-pkg $(brew --prefix)/bin
+      - uses: actions/checkout@v3
 
-      - run: ndk-pkg env
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
 
-      - uses: actions/checkout@v2
+      - run: ./ndk-pkg env
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg ndkinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical
-      - run: mv *       ~/.ndk-pkg/repos.d/offical
-
+      - run: install -d ~/.ndk-pkg/repos.d/offical-core
       - run: |
-            MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} sdk.api)
-            if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-            MIN_SDK_API_LEVEL=$(ndk-pkg ls-target-levels | head -n 1)
-            fi
-            ndk-pkg install ${{ matrix.pkg }} --min-sdk-api-level=$MIN_SDK_API_LEVEL
+            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            timestamp-created: 1673675503
+            timestamp-updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+
+      - run: ./ndk-pkg install ${{ matrix.pkg }}

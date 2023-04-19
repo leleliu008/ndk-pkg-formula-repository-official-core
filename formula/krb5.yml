@@ -1,0 +1,38 @@
+summary: Network authentication protocol
+web-url: https://web.mit.edu/kerberos
+git-url: https://github.com/krb5/krb5
+src-url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
+src-sha: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
+bscript: src
+bsystem: configure
+dep-pkg: readline openssl berkeley-db libglob
+ldflags: -lncurses
+
+dopatch: |
+    sed_in_place '/search_paths_first"/d' configure && {
+        for item in $(grep '<db.h>' -rl plugins/kdb/db2)
+        do
+            sed_in_place 's|<db.h>|<db_185.h>|g' "$item" || return 1
+        done
+    }
+
+install: |
+    # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+    if [ "$TARGET_OS_VERS" -lt 24 ] ; then
+        ac_cv_header_ifaddrs_h=no
+    else
+        ac_cv_header_ifaddrs_h=yes
+    fi
+    configure \
+        --disable-static \
+        --enable-dns-for-realm \
+        --without-system-verto \
+        --with-readline \
+        --with-netlib=-lc \
+        --with-size-optimizations \
+        --with-system-db \
+        krb5_cv_attr_constructor_destructor='yes,yes' \
+        ac_cv_func_regcomp=yes \
+        ac_cv_printf_positional=yes \
+        ac_cv_lib_readline_main=yes \
+        ac_cv_header_ifaddrs_h="$ac_cv_header_ifaddrs_h"

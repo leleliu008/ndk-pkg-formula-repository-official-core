@@ -1,6 +1,0 @@
-pkg_set summary "Automatic Language-Agnostic Subtitle Synchronization"
-pkg_set git.url "https://github.com/kaegi/alass.git"
-pkg_set license "GPL-3.0-or-later"
-pkg_set dep.pkg "ffmpeg"
-pkg_set bsystem "cargo"
-pkg_set bscript "alass-cli"

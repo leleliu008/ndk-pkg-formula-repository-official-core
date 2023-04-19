@@ -1,8 +1,0 @@
-pkg_set summary "Fast, async, resource-friendly link checker"
-pkg_set git.url "https://github.com/lycheeverse/lychee.git"
-pkg_set src.url "https://github.com/lycheeverse/lychee/archive/v0.10.0.tar.gz"
-pkg_set src.sha "e7f8ae04c0d4714c4116f5cfccc41fef4b469d22c568a4f509c949378b30cafb"
-pkg_set license "MIT"
-pkg_set dep.pkg "openssl"
-pkg_set bsystem "cargo"
-pkg_set bscript "lychee-bin"

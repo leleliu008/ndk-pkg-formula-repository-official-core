@@ -1,7 +1,0 @@
-pkg_set summary "GPU-accelerated terminal emulator"
-pkg_set webpage "https://alacritty.org/"
-pkg_set git.url "https://github.com/alacritty/alacritty.git"
-pkg_set src.url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.10.1.tar.gz"
-pkg_set src.sha "e48d4b10762c2707bb17fd8f89bd98f0dcccc450d223cade706fdd9cfaefb308"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cargo"

@@ -1,0 +1,6 @@
+summary: Terminal Epub reader
+git-url: https://github.com/aeosynth/bk
+src-url: https://github.com/aeosynth/bk/archive/refs/tags/v0.5.3.tar.gz
+src-sha: c9c54fa2cd60f3ca0576cab8bdd95b74da4d80c109eb91b5426e7ee0575b54f1
+license: MIT
+bsystem: cargo

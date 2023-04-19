@@ -1,6 +1,0 @@
-pkg_set summary "Regular expressions library"
-pkg_set git.url "https://github.com/kkos/oniguruma.git"
-pkg_set src.url "https://github.com/kkos/oniguruma/releases/download/v6.9.8/onig-6.9.8.tar.gz"
-pkg_set src.sha "28cd62c1464623c7910565fb1ccaaa0104b2fe8b12bcd646e81f73b47535213e"
-pkg_set license "BSD-2-Clause"
-pkg_set bsystem "configure"

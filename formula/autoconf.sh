@@ -1,8 +1,0 @@
-pkg_set summary "Automatic configure script builder"
-pkg_set webpage "https://www.gnu.org/software/autoconf"
-pkg_set src.url "https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz"
-pkg_set src.sha "431075ad0bf529ef13cb41e9042c542381103e80015686222b8a9d4abef42a1c"
-pkg_set git.url "https://github.com/autotools-mirror/autoconf.git"
-pkg_set license "GPL-2.0-or-later"
-pkg_set dep.cmd "m4 perl"
-pkg_set bsystem "configure"

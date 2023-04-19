@@ -1,0 +1,12 @@
+summary: C++ Common Libraries
+web-url: https://abseil.io
+git-url: https://github.com/abseil/abseil-cpp
+src-url: https://github.com/abseil/abseil-cpp/archive/20211102.0.tar.gz
+src-sha: dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4
+license: Apache-2.0
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DCMAKE_CXX_STANDARD_REQUIRED=TRUE

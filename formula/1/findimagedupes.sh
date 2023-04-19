@@ -1,5 +1,0 @@
-pkg_set summary "Find visually similar or duplicate images"
-pkg_set git.url "https://gitlab.com/opennota/findimagedupes.git"
-pkg_set license "GPL-3.0-or-later"
-pkg_set dep.pkg "file libjpeg-turbo libpng libtiff"
-pkg_set bsystem "go"

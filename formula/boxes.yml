@@ -1,0 +1,21 @@
+summary: Draw boxes around text
+web-url: https://boxes.thomasjensen.com/
+git-url: https://github.com/ascii-boxes/boxes
+src-url: https://github.com/ascii-boxes/boxes/archive/v2.1.1.tar.gz
+src-sha: 95ae6b46e057a79c6414b8c0b5b561c3e9d886ab8123a4085d256edccce625f9
+license: GPL-2.0-only
+dep-pkg: pcre2 libunistring
+dep-upp: flex bison>=2.5
+bsystem: gmake
+binbstd: yes
+
+dopatch: |
+    sed_in_place 's|STRIP=true||' src/Makefile
+
+install: |
+    export CPPFLAGS="$CPPFLAGS -I. -I../src"
+    gmakew clean &&
+    gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    run install_bins out/boxes &&
+    run install_mans doc/boxes.1 &&
+    run install_etcs boxes-config

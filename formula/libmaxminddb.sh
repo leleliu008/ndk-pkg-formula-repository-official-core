@@ -1,6 +1,0 @@
-pkg_set summary "C library for the MaxMind DB file format"
-pkg_set git.url "https://github.com/maxmind/libmaxminddb.git"
-pkg_set src.url "https://github.com/maxmind/libmaxminddb/releases/download/1.6.0/libmaxminddb-1.6.0.tar.gz"
-pkg_set src.sha "7620ac187c591ce21bcd7bf352376a3c56a933e684558a1f6bef4bd4f3f98267"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cmake"

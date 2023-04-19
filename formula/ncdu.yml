@@ -1,0 +1,8 @@
+summary: NCurses Disk Usage
+web-url: https://dev.yorhel.nl/ncdu
+src-url: https://dev.yorhel.nl/download/ncdu-1.16.tar.gz
+src-sha: 2b915752a183fae014b5e5b1f0a135b4b408de7488c716e325217c2513980fd4
+license: MIT
+dep-pkg: ncurses
+dep-upp: pkg-config
+bsystem: configure

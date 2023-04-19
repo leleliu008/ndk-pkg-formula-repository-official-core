@@ -1,0 +1,15 @@
+summary: Library for processing command-line flags
+web-url: https://gflags.github.io/gflags
+src-url: https://github.com/gflags/gflags/archive/v2.2.2.tar.gz
+src-sha: 34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf
+license: BSD-3-Clause
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DGFLAGS_BUILD_SHARED_LIBS=ON \
+        -DGFLAGS_BUILD_STATIC_LIBS=ON \
+        -DGFLAGS_BUILD_gflags_LIB=ON \
+        -DGFLAGS_BUILD_gflags_nothreads_LIB=ON \
+        -DGFLAGS_BUILD_TESTING=OFF \
+        -DGFLAGS_BUILD_PACKAGING=OFF

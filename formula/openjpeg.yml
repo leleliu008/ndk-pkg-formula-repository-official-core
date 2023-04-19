@@ -1,0 +1,22 @@
+summary: Library for JPEG-2000 image manipulation
+web-url: https://www.openjpeg.org/
+git-url: https://github.com/uclouvain/openjpeg
+src-url: https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz
+src-sha: 0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a
+license: BSD-2-Clause
+dep-pkg: libpng lcms2
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DBUILD_DOC=OFF \
+        -DBUILD_CODEC=ON \
+        -DBUILD_JPIP=OFF \
+        -DBUILD_JPIP_SERVER=OFF \
+        -DBUILD_VIEWER=OFF \
+        -DBUILD_JAVA=OFF \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_STATIC_LIBS=ON \
+        -DBUILD_UNIT_TESTS=OFF \
+        -DBUILD_LUTS_GENERATOR=OFF \
+        -DBUILD_PKGCONFIG_FILES=ON

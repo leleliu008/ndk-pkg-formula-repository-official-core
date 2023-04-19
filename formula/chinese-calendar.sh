@@ -1,7 +1,0 @@
-pkg_set summary "chinese festival/jieqi algorthm"
-pkg_set git.url "https://github.com/leleliu008/C-examples.git"
-pkg_set version "2022.06.24"
-pkg_set bsystem "cmake"
-pkg_set bscript "algorithm/chinese-calendar"
-pkg_set license "Apache-2.0|LICENSE|https://raw.githubusercontent.com/leleliu008/C-examples/master/LICENSE"
-pkg_set developer "leleliu008|leleliu008@gmail.com|leleliu008|https://github.com/leleliu008"

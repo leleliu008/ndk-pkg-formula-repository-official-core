@@ -1,6 +1,0 @@
-pkg_set summary "Git extension for versioning large files"
-pkg_set git.url "https://github.com/git-lfs/git-lfs.git"
-pkg_set src.url "https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-v3.2.0.tar.gz"
-pkg_set src.sha "f8e6bbe043b97db8a5c16da7289e149a3fed9f4d4f11cffcc6e517c7870cd9e5"
-pkg_set license "MIT"
-pkg_set bsystem "go"

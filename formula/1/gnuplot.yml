@@ -1,0 +1,18 @@
+summary: Command-driven, interactive function plotting
+web-url: http://www.gnuplot.info/
+src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.2/gnuplot-5.4.2.tar.gz
+src-sha: e57c75e1318133951d32a83bcdc4aff17fed28722c4e71f2305cfc2ae1cae7ba
+license: gnuplot
+dep-pkg: gd libcerf lua pango readline
+dep-upp: pkg-config lua
+bsystem: autotools
+
+dopatch: |
+    sed_in_place 's|docs||g' Makefile.am &&
+    run autoreconf -ivf
+
+install: |
+    configure \
+        --without-x \
+        --without-qt \
+        --disable-wxwidgets

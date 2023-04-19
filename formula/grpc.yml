@@ -1,0 +1,26 @@
+summary: Next generation open source RPC library and framework
+web-url: https://grpc.io
+git-url: https://github.com/grpc/grpc
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.46.3.tar.gz
+src-sha: d6cbf22cb5007af71b61c6be316a79397469c58c82a942552a62e708bce60964
+license: Apache-2.0
+dep-pkg: abseil c-ares openssl protobuf re2
+dep-upp: pkg-config grpc_cpp_plugin
+bsystem: cmake
+
+dopatch: |
+    sed_in_place 's|GPR_MUSL_LIBC_COMPAT|__ANDROID__|' src/core/lib/gpr/wrap_memcpy.cc
+
+install: |
+    cmakew \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DCMAKE_CXX_STANDARD_REQUIRED=TRUE \
+        -DBUILD_SHARED_LIBS=ON \
+        -DgRPC_BUILD_TESTS=OFF \
+        -DgRPC_INSTALL=ON \
+        -DgRPC_ABSL_PROVIDER=package \
+        -DgRPC_CARES_PROVIDER=package \
+        -DgRPC_PROTOBUF_PROVIDER=package \
+        -DgRPC_SSL_PROVIDER=package \
+        -DgRPC_ZLIB_PROVIDER=package \
+        -DgRPC_RE2_PROVIDER=package

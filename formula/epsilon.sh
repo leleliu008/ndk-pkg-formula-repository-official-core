@@ -1,7 +1,0 @@
-pkg_set summary "Powerful wavelet image compressor"
-pkg_set webpage "https://epsilon-project.sourceforge.io"
-pkg_set src.url "https://downloads.sourceforge.net/project/epsilon-project/epsilon/0.9.2/epsilon-0.9.2.tar.gz"
-pkg_set src.sha "5421a15969d4d7af0ac0a11d519ba8d1d2147dc28d8c062bf0c52f3a0d4c54c4"
-pkg_set license "GPL-3.0-or-later"
-pkg_set dep.pkg "popt"
-pkg_set bsystem "configure"

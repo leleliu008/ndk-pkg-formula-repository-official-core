@@ -1,6 +1,0 @@
-pkg_set summary "high-performance audio library for Android"
-pkg_set git.url "https://github.com/google/oboe.git"
-pkg_set src.url "https://github.com/google/oboe/archive/refs/tags/1.6.1.tar.gz"
-pkg_set src.sha "466e249346bbfdebc6122b47c51b4384689b49230db82ab1f59911a370656fc3"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cmake"

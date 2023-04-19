@@ -1,0 +1,4 @@
+summary: glob(3) implementation
+web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/glob.html
+git-url: https://github.com/leleliu008/libglob
+bsystem: cmake

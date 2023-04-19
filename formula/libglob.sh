@@ -1,5 +1,0 @@
-pkg_set summary "glob(3) implementation"
-pkg_set webpage "https://pubs.opengroup.org/onlinepubs/9699919799/functions/glob.html"
-pkg_set git.url "https://github.com/leleliu008/libglob.git"
-pkg_set license "|LICENSE|https://raw.githubusercontent.com/leleliu008/libglob/master/LICENSE"
-pkg_set bsystem "cmake"

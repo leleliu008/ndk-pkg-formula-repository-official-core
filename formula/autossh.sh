@@ -1,7 +1,0 @@
-pkg_set summary "Automatically restart SSH sessions and tunnels"
-pkg_set webpage "https://www.harding.motd.ca/autossh/"
-pkg_set src.url "https://www.harding.motd.ca/autossh/autossh-1.4g.tgz"
-pkg_set src.sha "5fc3cee3361ca1615af862364c480593171d0c54ec156de79fc421e31ae21277"
-pkg_set license "Unlicense"
-pkg_set bsystem "configure"
-pkg_set binbstd "yes"

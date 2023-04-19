@@ -1,0 +1,6 @@
+summary: XML parser
+git-url: https://github.com/timniederhausen/rapidxml.git
+bsystem: cmake
+
+install: |
+    cmakew -DRAPIDXML_BUILD_TESTS=OFF

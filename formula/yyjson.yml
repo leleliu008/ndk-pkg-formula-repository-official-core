@@ -1,0 +1,6 @@
+summary: The fastest JSON library in C
+git-url: https://github.com/ibireme/yyjson
+src-url: https://github.com/ibireme/yyjson/archive/refs/tags/0.4.0.tar.gz
+src-sha: 061fe713391d7f3f85f13e8bb2752a4cdeb8e70ce20d68e1e9e4332bd0bf64fa
+license: MIT
+bsystem: cmake

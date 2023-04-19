@@ -1,6 +1,0 @@
-pkg_set summary "Perfect hash function generator"
-pkg_set webpage "https://www.gnu.org/software/gperf"
-pkg_set src.url "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz"
-pkg_set src.sha "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2"
-pkg_set license "GPL-3.0-or-later"
-pkg_set bsystem "configure"

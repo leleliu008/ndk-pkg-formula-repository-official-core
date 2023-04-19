@@ -1,0 +1,6 @@
+summary: Command-line benchmarking tool
+git-url: https://github.com/sharkdp/hyperfine
+src-url: https://github.com/sharkdp/hyperfine/archive/v1.14.0.tar.gz
+src-sha: 59018c22242dd2ad2bd5fb4a34c0524948b7921d02aa79419ccec4c1ffd3da14
+license: Apache-2.0
+bsystem: cargo

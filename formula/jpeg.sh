@@ -1,7 +1,0 @@
-pkg_set summary "Image manipulation library"
-pkg_set webpage "https://www.ijg.org/"
-pkg_set version "9e"
-pkg_set src.url "https://www.ijg.org/files/jpegsrc.v9e.tar.gz"
-pkg_set src.sha "4077d6a6a75aeb01884f708919d25934c93305e49f7e3f36db9129320e6f4f3d"
-pkg_set license "IJG"
-pkg_set bsystem "configure"

@@ -1,0 +1,28 @@
+summary: Decentralized, peer to peer payment network
+web-url: https://bitcoincore.org/
+git-url: https://github.com/bitcoin/bitcoin
+src-url: https://bitcoincore.org/bin/bitcoin-core-22.0/bitcoin-22.0.tar.gz
+src-sha: d0e9d089b57048b1555efa7cd5a63a7ed042482045f6f33402b1df425bf9613b
+license: MIT
+dep-pkg: libevent libzmq boost
+dep-upp: libtoolize:glibtoolize pkg-config
+bsystem: autotools
+
+install: |
+    # error: "Cannot compile without assertions!"
+    export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-DNDEBUG||g')"
+    export CXXFLAGS="$(printf '%s\n' "$CXXFLAGS" | sed 's|-DNDEBUG||g')"
+
+    export ac_cv_path_ac_pt_AR="$TOOLCHAIN_BIND/$AR"
+    export ac_cv_path_ac_pt_RANLIB="$TOOLCHAIN_BIND/$RANLIB"
+    export ac_cv_path_ac_pt_OBJCOPY="$TOOLCHAIN_BIND/$OBJCOPY"
+    export ac_cv_path_ac_pt_STRIP="$TOOLCHAIN_BIND/$STRIP"
+
+    configure \
+        --with-boost="$boost_INSTALL_DIR" \
+        --with-daemon \
+        --without-gui \
+        --without-bdb \
+        --disable-tests
+
+        #--without-libs

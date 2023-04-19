@@ -1,0 +1,6 @@
+summary: Automatic Language-Agnostic Subtitle Synchronization
+git-url: https://github.com/kaegi/alass
+license: GPL-3.0-or-later
+dep-pkg: ffmpeg
+bsystem: cargo
+bscript: alass-cli

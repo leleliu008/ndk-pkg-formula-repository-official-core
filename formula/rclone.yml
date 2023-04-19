@@ -1,0 +1,11 @@
+summary: Rsync for cloud storage
+web-url: https://rclone.org/
+git-url: https://github.com/rclone/rclone
+src-url: https://github.com/rclone/rclone/archive/v1.58.1.tar.gz
+src-sha: b1fe94642547d63ce52cdc49a06696e8b478a04ca100ab4ab1c92ff7157177a9
+license: MIT
+bsystem: go
+
+install: |
+    gow -X github.com/rclone/rclone/fs.Version=v$PACKAGE_VERSION &&
+    run install_mans rclone.1

@@ -1,0 +1,8 @@
+summary: Audio processing library
+web-url: https://www.surina.net/soundtouch/
+git-url: https://codeberg.org/soundtouch/soundtouch
+src-url: https://www.surina.net/soundtouch/soundtouch-2.3.1.tar.gz
+src-sha: 6900996607258496ce126924a19fe9d598af9d892cf3f33d1e4daaa9b42ae0b1
+license: LGPL-2.1-or-later|COPYING.TXT|https://codeberg.org/soundtouch/soundtouch/raw/branch/master/COPYING.TXT
+dep-upp: libtool
+bsystem: autotools

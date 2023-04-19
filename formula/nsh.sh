@@ -1,6 +1,0 @@
-pkg_set summary "Fish-like, POSIX-compatible shell"
-pkg_set git.url "https://github.com/nuta/nsh.git"
-pkg_set src.url "https://github.com/nuta/nsh/archive/refs/tags/v0.4.2.tar.gz"
-pkg_set src.sha "b0c656e194e2d3fe31dc1c6ee15fd5808db3b2428d79adf786c6900ebbba0849"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

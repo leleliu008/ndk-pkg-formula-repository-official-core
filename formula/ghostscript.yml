@@ -1,0 +1,35 @@
+summary: Interpreter for PostScript and PDF
+web-url: https://www.ghostscript.com/
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz
+src-sha: 05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299
+license: AGPL-3.0-or-later
+dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract liblanginfo
+dep-upp: pkg-config
+bsystem: configure
+binbstd: yes
+
+dopatch: |
+    rm -rf expat
+    rm -rf freetype
+    rm -rf jbig2dec
+    rm -rf jpeg
+    rm -rf lcms2mt
+    rm -rf libpng
+    rm -rf openjpeg
+    rm -rf tiff
+    rm -rf zlib
+    rm -rf tesseract
+
+install: |
+    run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config" || return 1
+    export PATH="$PWD:$PATH"
+    export CPPFLAGS="$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2"
+    export ac_cv_lib_pthread_pthread_create=yes
+    configure \
+        --disable-compile-inits \
+        --disable-cups \
+        --disable-gtk \
+        --with-system-libtiff \
+        --without-x &&
+    run make soclean &&
+    run make install-so

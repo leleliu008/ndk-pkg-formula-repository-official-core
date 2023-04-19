@@ -1,6 +1,0 @@
-pkg_set summary "Command-line tool for generating regular expressions"
-pkg_set git.url "https://github.com/pemistahl/grex.git"
-pkg_set src.url "https://github.com/pemistahl/grex/archive/v1.3.0.tar.gz"
-pkg_set src.sha "a330ce004fcfdd8958d057a5ae07a85b6546de585fe7d9060d05f0ada7f7686b"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "cargo"

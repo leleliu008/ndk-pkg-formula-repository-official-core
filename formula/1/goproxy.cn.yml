@@ -1,0 +1,4 @@
+summary: The most trusted Go module proxy in China.
+git-url: https://github.com/goproxy/goproxy.cn.git
+license: MIT
+bsystem: go

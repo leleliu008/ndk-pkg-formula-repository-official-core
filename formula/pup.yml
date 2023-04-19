@@ -1,0 +1,4 @@
+summary: Parse HTML at the command-line
+git-url: https://github.com/EricChiang/pup
+license: MIT
+bsystem: go

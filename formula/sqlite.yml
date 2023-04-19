@@ -1,0 +1,17 @@
+summary: command-line interface for SQLite
+git-url: https://github.com/sqlite/sqlite
+web-url: https://www.sqlite.org/
+src-url: https://www.sqlite.org/2023/sqlite-autoconf-3410100.tar.gz
+src-sha: 4dadfbeab9f8e16c695d4fbbc51c16b2f77fb97ff4c1c3d139919dfc038c9e33
+version: 3.41.1
+dep-pkg: readline zlib
+
+license: blessing||https://raw.githubusercontent.com/sqlite/sqlite/master/LICENSE.md
+developer: D.+Richard+Hipp
+
+install: |
+    configure \
+        --enable-readline \
+        --disable-tcl \
+        --disable-editline \
+        --disable-load-extension

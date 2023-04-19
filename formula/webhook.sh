@@ -1,6 +1,0 @@
-pkg_set summary "HTTP-server to execute shell commands."
-pkg_set git.url "https://github.com/adnanh/webhook.git"
-pkg_set src.url "https://github.com/adnanh/webhook/archive/2.8.0.tar.gz"
-pkg_set src.sha "c521558083f96bcefef16575a6f3f98ac79c0160fd0073be5e76d6645e068398"
-pkg_set license "MIT"
-pkg_set bsystem "go"

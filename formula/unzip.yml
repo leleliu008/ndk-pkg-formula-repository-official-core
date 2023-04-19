@@ -1,0 +1,35 @@
+summary: Extraction utility for .zip compressed archives
+web-url: https://infozip.sourceforge.io/UnZip.html
+
+src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
+src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
+
+# https://packages.debian.org/buster/unzip
+fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-26.debian.tar.xz
+fix-sha: 88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599
+
+version: 6.0.26
+
+license: Info-ZIP
+dep-pkg: zip bzip2
+bsystem: gmake
+binbstd: yes
+
+dopatch: |
+    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_INSTALLING_BST_DIR" || return 1
+    while read PATCH
+    do
+        patch -p1 < "debian/patches/$PATCH" || return 1
+    done < debian/patches/series
+
+install: |
+    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile generic \
+        CC="$CC" \
+        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        AS="$AS" \
+        STRIP="$STRIP" \
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
+    gmakew -f unix/Makefile install \
+        prefix="$PACKAGE_INSTALL_DIR" \
+        MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

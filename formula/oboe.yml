@@ -1,0 +1,6 @@
+summary: high-performance audio library for Android
+git-url: https://github.com/google/oboe
+src-url: https://github.com/google/oboe/archive/refs/tags/1.6.1.tar.gz
+src-sha: 466e249346bbfdebc6122b47c51b4384689b49230db82ab1f59911a370656fc3
+license: Apache-2.0
+bsystem: cmake

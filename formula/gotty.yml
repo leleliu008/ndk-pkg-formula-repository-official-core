@@ -1,0 +1,6 @@
+summary: Share your terminal as a web application
+git-url: https://github.com/sorenisanerd/gotty
+src-url: https://github.com/sorenisanerd/gotty/archive/refs/tags/v1.3.0.tar.gz
+src-sha: 09cc4fe278fa866df895527047ce83f009de97c01bab729651adac9db306f273
+license: MIT
+bsystem: go

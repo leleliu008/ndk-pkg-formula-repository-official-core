@@ -1,7 +1,0 @@
-pkg_set summary "Reimplementation of pkg-config"
-pkg_set webpage "http://pkgconf.org"
-pkg_set git.url "https://github.com/pkgconf/pkgconf.git"
-pkg_set src.url "http://distfiles.dereferenced.org/pkgconf/pkgconf-1.8.0.tar.xz"
-pkg_set src.sha "ef9c7e61822b7cb8356e6e9e1dca58d9556f3200d78acab35e4347e9d4c2bbaf"
-pkg_set license "ISC"
-pkg_set bsystem "configure"

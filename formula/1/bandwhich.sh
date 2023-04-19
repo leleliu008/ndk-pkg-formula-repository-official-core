@@ -1,6 +1,0 @@
-pkg_set summary "Terminal bandwidth utilization tool"
-pkg_set git.url "https://github.com/imsnif/bandwhich.git"
-pkg_set src.url "https://github.com/imsnif/bandwhich/archive/0.20.0.tar.gz"
-pkg_set src.sha "4bbf05be32439049edd50bd1e4d5a2a95b0be8d36782e4100732f0cc9f19ba12"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

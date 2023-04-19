@@ -1,7 +1,0 @@
-pkg_set summary "Command line tools for fly.io services"
-pkg_set webpage "https://fly.io/"
-pkg_set git.url "https://github.com/superfly/flyctl.git"
-pkg_set src.url "https://github.com/superfly/flyctl/archive/refs/tags/v0.0.283.tar.gz"
-pkg_set src.sha "e91c6e23cb2d656c8cf3b25f68e682f89e3e8fec82e3dbaf89816738c6a22b4c"
-pkg_set license "Apache-2.0"
-pkg_set bsystem "go"

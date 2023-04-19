@@ -1,0 +1,15 @@
+summary: GNU debugger
+web-url: https://www.gnu.org/software/gdb/
+git-url: https://sourceware.org/git/binutils-gdb.git
+src-url: https://ftp.gnu.org/gnu/gdb/gdb-11.2.tar.xz
+src-sha: 1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32
+license: GPL-3.0-or-later
+dep-pkg: ncurses xz gmp
+dep-upp: makeinfo
+bsystem: configure
+
+install: |
+    configure \
+        -with-lzma \
+        --enable-targets=all \
+        --disable-binutils

@@ -1,6 +1,0 @@
-pkg_set summary "Automatically generate simple man pages"
-pkg_set webpage "https://www.gnu.org/software/help2man"
-pkg_set src.url "https://ftp.gnu.org/gnu/help2man/help2man-1.49.2.tar.xz"
-pkg_set src.sha "9e2e0e213a7e0a36244eed6204d902b6504602a578b6ecd15268b1454deadd36"
-pkg_set license "GPL-3.0-or-later"
-pkg_set bsystem "configure"

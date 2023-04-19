@@ -1,5 +1,0 @@
-pkg_set summary "Postgres C API library"
-pkg_set webpage "https://www.postgresql.org/docs/14/libpq.html"
-pkg_set src.url "https://ftp.postgresql.org/pub/source/v14.1/postgresql-14.1.tar.bz2"
-pkg_set src.sha "4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f"
-pkg_set license "PostgreSQL"

@@ -1,8 +1,0 @@
-pkg_set summary "New way to see and navigate directory trees"
-pkg_set webpage "https://dystroy.org/broot/"
-pkg_set git.url "https://github.com/Canop/broot.git"
-pkg_set src.url "https://github.com/Canop/broot/archive/v1.6.1.tar.gz"
-pkg_set src.sha "5f97d876aa554be4c67bfd161ef762425f6083da583775c13cc75bf9882f1085"
-pkg_set dep.pkg "libgit2"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

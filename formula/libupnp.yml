@@ -1,0 +1,15 @@
+summary: Portable UPnP development kit
+web-url: https://pupnp.sourceforge.io/
+git-url: https://github.com/pupnp/pupnp
+src-url: https://github.com/pupnp/pupnp/releases/download/release-1.14.12/libupnp-1.14.12.tar.bz2
+src-sha: 091c80aada1e939c2294245c122be2f5e337cc932af7f7d40504751680b5b5ac
+license: BSD-3-Clause
+dep-pkg: openssl
+bsystem: cmake
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+sdk-api: 24
+
+install: |
+    cmakew -Dopen_ssl=ON

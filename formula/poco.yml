@@ -1,0 +1,14 @@
+summary: C++ class libraries for building network and internet-based applications
+web-url: https://pocoproject.org/
+git-url: https://github.com/pocoproject/poco
+version: 1.11.3
+src-url: https://pocoproject.org/releases/poco-$PACKAGE_VERSION/poco-$PACKAGE_VERSION-all.tar.gz
+src-sha: a7aabd1323963b8b7078b5baa08a6dd100bc336287cae02fae14b02b18ec0aa3
+license: BSL-1.0
+dep-pkg: openssl
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DENABLE_DATA_ODBC=OFF \
+        -DENABLE_DATA_MYSQL=OFF

@@ -1,6 +1,0 @@
-pkg_set summary "Go cross compile tool"
-pkg_set git.url "https://github.com/mitchellh/gox.git"
-pkg_set src.url "https://github.com/mitchellh/gox/archive/v1.0.1.tar.gz"
-pkg_set src.sha "25aab55a4ba75653931be2a2b95e29216b54bd8fecc7931bd416efe49a388229"
-pkg_set license "MPL-2.0"
-pkg_set bsystem "go"

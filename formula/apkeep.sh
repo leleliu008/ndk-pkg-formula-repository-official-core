@@ -1,7 +1,0 @@
-pkg_set summary "A command-line tool for downloading APK files from various sources"
-pkg_set git.url "https://github.com/EFForg/apkeep.git"
-pkg_set src.url "https://github.com/EFForg/apkeep/archive/refs/tags/0.8.0.tar.gz"
-pkg_set src.sha "2b3ca13fc23f5e08ef52de76d02b3f6e0a9d39a02496b5a895c618c99264ddbe"
-pkg_set license "MIT"
-pkg_set dep.pkg "openssl"
-pkg_set bsystem "cargo"

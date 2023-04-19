@@ -1,0 +1,11 @@
+summary: High-speed packet processing framework
+web-url: https://www.ntop.org/
+git-url: https://github.com/ntop/PF_RING.git
+src-url: https://github.com/ntop/PF_RING/archive/refs/tags/8.0.0.tar.gz
+src-sha: 8e733899b736fe2536ef785b2b7d719abe652297fe7fe3a03fc495a87a9b6e82
+license: LGPL-2.1-or-later
+bsystem: gmake
+
+install: |
+    gmakew clean &&
+    gmakew install

@@ -1,8 +1,0 @@
-pkg_set summary "Light UNIX download accelerator"
-pkg_set git.url "https://github.com/axel-download-accelerator/axel.git"
-pkg_set src.url "https://github.com/axel-download-accelerator/axel/releases/download/v2.17.11/axel-2.17.11.tar.xz"
-pkg_set src.sha "580b2c18692482fd7f1e2b2819159484311ffc50f6d18924dceb80fd41d4ccf9"
-pkg_set license "GPL-2.0-or-later"
-pkg_set dep.pkg "openssl"
-pkg_set dep.cmd "pkg-config"
-pkg_set bsystem "configure"

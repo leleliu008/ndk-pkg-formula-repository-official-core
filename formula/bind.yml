@@ -1,0 +1,32 @@
+summary: Implementation of the DNS protocols
+web-url: https://www.isc.org/downloads/bind
+git-url: https://github.com/isc-projects/bind9
+src-url: https://downloads.isc.org/isc/bind9/9.18.4/bind-9.18.4.tar.xz
+src-sha: f277ae50159a00c300eb926a9c5d51953038a936bd8242d6913dfb6eac42761d
+license: MPL-2.0
+dep-pkg: nghttp2 json-c libxml2 libidn2 libuv libglob
+dep-upp: pkg-config
+bsystem: configure
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+# void endpwent(void) __INTRODUCED_IN(26);
+sdk-api: 26
+
+dopatch: |
+    for MAKEFILE_AM in $(find lib -name "Makefile.in")
+    do
+        sed_in_place 's|-release "$(PACKAGE_VERSION)"||' "$MAKEFILE_AM"
+    done
+
+install: |
+    configure \
+        --disable-linux-caps \
+        --disable-static \
+        --without-python \
+        --without-gssapi \
+        --with-zlib \
+        --with-json-c \
+        --with-libxml2 \
+        --with-libidn2="$libidn2_INSTALL_DIR" \
+        --with-openssl="$openssl_INSTALL_DIR"

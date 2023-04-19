@@ -1,8 +1,0 @@
-pkg_set summary "GNU triangulated surface library"
-pkg_set webpage "https://gts.sourceforge.io/"
-pkg_set src.url "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz"
-pkg_set src.sha "059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e"
-pkg_set license "LGPL-2.0-or-later|COPYING|ttp://gerris.dalembert.upmc.fr/darcs/gts-stable/COPYING"
-pkg_set dep.pkg "glib netpbm"
-pkg_set dep.cmd "pkg-config"
-pkg_set bsystem "configure"

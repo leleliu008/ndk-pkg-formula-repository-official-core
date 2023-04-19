@@ -1,7 +1,0 @@
-pkg_set summary "Ping, but with a graph"
-pkg_set git.url "https://github.com/orf/gping.git"
-pkg_set src.url "https://github.com/orf/gping/archive/refs/tags/gping-v1.3.2.tar.gz"
-pkg_set src.sha "1ab71ca45cb5da317d77774eff96d5868486d03ea1cedff008cbafcaf880332b"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"
-pkg_set bscript "gping"

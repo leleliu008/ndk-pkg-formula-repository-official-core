@@ -1,0 +1,13 @@
+summary: Static reflection for enums (to string, from string, iteration) for modern C++
+git-url: https://github.com/Neargye/magic_enum
+src-url: https://github.com/Neargye/magic_enum/archive/v0.8.0.tar.gz
+src-sha: 5e7680e877dd4cf68d9d0c0e3c2a683b432a9ba84fc1993c4da3de70db894c3c
+license: MIT
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DMAGIC_ENUM_OPT_BUILD_TESTS=OFF \
+        -DMAGIC_ENUM_OPT_BUILD_EXAMPLES=ON \
+        -DMAGIC_ENUM_OPT_ENABLE_NONASCII=ON \
+        -DMAGIC_ENUM_OPT_INSTALL=ON

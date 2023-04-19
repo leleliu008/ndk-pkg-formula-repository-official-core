@@ -1,0 +1,23 @@
+summary: GNU binary tools for native development
+web-url: https://www.gnu.org/software/binutils/binutils.html
+src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz
+src-sha: e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024
+license: GPL-2.0-or-later
+dep-pkg: isl gmp libmpc mpfr
+bsystem: configure
+
+dopatch: |
+    sed_in_place '/rindex/d' ../include.h
+    sed_in_place '/memcmp/d' ../include.h
+
+install: |
+    configure \
+        --with-isl="$isl_INSTALL_DIR" \
+        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-mpc="$libmpc_INSTALL_DIR" \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-system-zlib \
+        --disable-werror \
+        --enable-interwork \
+        --enable-multilib \
+        --enable-targets=all

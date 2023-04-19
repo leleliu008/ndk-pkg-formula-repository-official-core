@@ -1,7 +1,0 @@
-pkg_set summary "Version of the SSL/TLS protocol forked from OpenSSL"
-pkg_set webpage "https://www.libressl.org/"
-pkg_set git.url "https://github.com/libressl-portable/portable.git"
-pkg_set src.url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.3.tar.gz"
-pkg_set src.sha "3ab5e5eaef69ce20c6b170ee64d785b42235f48f2e62b095fca5d7b6672b8b28"
-pkg_set license "OpenSSL"
-pkg_set bsystem "configure"

@@ -1,7 +1,0 @@
-pkg_set summary "Create modern online books from Markdown files"
-pkg_set webpage "https://rust-lang.github.io/mdBook/"
-pkg_set git.url "https://github.com/rust-lang/mdBook.git"
-pkg_set src.url "https://github.com/rust-lang/mdBook/archive/v0.4.18.tar.gz"
-pkg_set src.sha "ce357327f4443189fde307103f8008f43410ca8b738c5c61401ada9a54b8b5b5"
-pkg_set license "MPL-2.0"
-pkg_set bsystem "cargo"

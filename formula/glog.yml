@@ -1,0 +1,13 @@
+summary: Application-level logging library
+git-url: https://github.com/google/glog
+src-url: https://github.com/google/glog/archive/v0.6.0.tar.gz
+src-sha: 8a83bf982f37bb70825df71a9709fa90ea9f4447fb3c099e1d720a439d88bad6
+license: BSD-3-Clause
+dep-pkg: gflags
+bsystem: cmake
+
+install: |
+    cmakew \
+        -DWITH_TLS=ON \
+        -DWITH_THREADS=ON \
+        -DWITH_GFLAGS=ON

@@ -1,0 +1,4 @@
+summary: A compile-time reflection library for C++ with support for overloads, templates, attributes and proxies
+git-url: https://github.com/veselink1/refl-cpp.git
+license: MIT
+bsystem: cmake

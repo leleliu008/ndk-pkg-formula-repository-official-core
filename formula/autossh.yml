@@ -1,0 +1,7 @@
+summary: Automatically restart SSH sessions and tunnels
+web-url: https://www.harding.motd.ca/autossh/
+src-url: https://www.harding.motd.ca/autossh/autossh-1.4g.tgz
+src-sha: 5fc3cee3361ca1615af862364c480593171d0c54ec156de79fc421e31ae21277
+license: Unlicense
+bsystem: configure
+binbstd: yes

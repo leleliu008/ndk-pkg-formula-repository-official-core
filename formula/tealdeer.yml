@@ -1,0 +1,9 @@
+summary: Very fast implementation of tldr in Rust
+git-url: https://github.com/dbrgn/tealdeer
+#src-url: https://github.com/dbrgn/tealdeer/archive/v1.5.0.tar.gz
+#src-sha: 00902a50373ab75fedec4578c6c2c02523fad435486918ad9a86ed01f804358a
+license: Apache-2.0
+dep-pkg: openssl
+dep-upp: base64 patch
+bsystem: cargo
+dopatch: sed_in_place '/app_dirs = /c app_dirs = { version = "1.2.1" }' Cargo.toml

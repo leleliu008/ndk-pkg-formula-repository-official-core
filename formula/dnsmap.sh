@@ -1,6 +1,0 @@
-pkg_set summary "Passive DNS network mapper (a.k.a. subdomains bruteforcer)"
-pkg_set git.url "https://github.com/resurrecting-open-source-projects/dnsmap.git"
-pkg_set src.url "https://github.com/resurrecting-open-source-projects/dnsmap/archive/refs/tags/0.36.tar.gz"
-pkg_set src.sha "f52d6d49cbf9a60f601c919f99457f108d51ecd011c63e669d58f38d50ad853c"
-pkg_set license "GPL-3.0-or-later"
-pkg_set bsystem "autogen"

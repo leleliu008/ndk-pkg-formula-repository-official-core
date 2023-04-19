@@ -1,0 +1,4 @@
+summary: langinfo.h and its implementation from android ndk source code
+web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/nl_langinfo.html
+git-url: https://github.com/leleliu008/liblanginfo
+bsystem: cmake

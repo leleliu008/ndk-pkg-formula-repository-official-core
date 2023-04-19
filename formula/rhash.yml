@@ -1,0 +1,27 @@
+summary: Utility for computing and verifying hash sums of files
+web-url: http://rhash.sourceforge.net
+git-url: https://github.com/rhash/RHash
+src-url: https://github.com/rhash/RHash/archive/v1.4.3.tar.gz
+src-sha: 1e40fa66966306920f043866cbe8612f4b939b033ba5e2708c3f41be257c8a3e
+license: 0BSD
+bsystem: gmake
+binbstd: yes
+
+dopatch: |
+    sed_in_place '/SHARED_EXT=/c SHARED_EXT=".so"' configure
+    sed_in_place 's/LD_STATIC=-static/LD_STATIC=/' configure
+
+install: |
+    run ./configure \
+        --cc="$CC" \
+        --ar="$AR" \
+        --extra-cflags="'$CFLAGS $CPPFLAGS'" \
+        --extra-ldflags="'$LDFLAGS'" \
+        --target="$TARGET_TRIPLE" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --enable-static \
+        --enable-lib-static \
+        --enable-lib-shared &&
+    gmakew clean &&
+    gmakew &&
+    gmakew install

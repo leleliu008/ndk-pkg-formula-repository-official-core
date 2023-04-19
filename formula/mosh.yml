@@ -1,0 +1,18 @@
+summary: Remote terminal application
+web-url: https://mosh.org
+src-url: https://mosh.org/mosh-1.3.2.tar.gz
+src-sha: da600573dfa827d88ce114e0fed30210689381bbdcff543c931e4d6a2e851216
+git-url: https://github.com/mobile-shell/mosh
+license: GPL-3.0-or-later
+dep-pkg: zlib openssl ncurses protobuf liblanginfo
+dep-upp: pkg-config
+bsystem: configure
+
+sdk-api: 23
+# pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
+
+dopatch: |
+    sed_in_place 's|if ( bind|if (::bind|' src/network/network.cc
+
+install: |
+    configure --with-ncurses

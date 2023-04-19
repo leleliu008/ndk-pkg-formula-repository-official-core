@@ -1,0 +1,15 @@
+summary: Cross-shell prompt for astronauts
+web-url: https://starship.rs
+git-url: https://github.com/starship/starship
+src-url: https://github.com/starship/starship/archive/v1.9.1.tar.gz
+src-sha: 2b54bee07bf67504a1bb170d37dc8d6accab4594d35731bbdf0e8a631c8d1585
+license: ISC
+dep-pkg: openssl libgetloadavg
+dep-upp: pkg-config
+bsystem: cargo
+
+# sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
+sdk-api: 24
+
+install: |
+    cargow install --locked --no-default-features

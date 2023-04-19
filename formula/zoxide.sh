@@ -1,6 +1,0 @@
-pkg_set summary "Shell extension to navigate your filesystem faster"
-pkg_set git.url "https://github.com/ajeetdsouza/zoxide.git"
-pkg_set src.url "https://github.com/ajeetdsouza/zoxide/archive/v0.8.2.tar.gz"
-pkg_set src.sha "3a977960284bc06f3c7f02ec93b6f269fd9f5bf933115828e6f46cf6c2601f5e"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

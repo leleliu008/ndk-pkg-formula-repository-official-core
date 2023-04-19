@@ -1,0 +1,10 @@
+summary: Generate type safe Go from SQL
+web-url: https://sqlc.dev/
+git-url: https://github.com/kyleconroy/sqlc.git
+src-url: https://github.com/kyleconroy/sqlc/archive/v1.11.0.tar.gz
+src-sha: 6e18562a066ea70687e7abb642e3dde48a128633f71d29788c4df6a886eac1d1
+license: MIT
+bsystem: go
+
+install: |
+    gow ./cmd/sqlc

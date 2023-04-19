@@ -1,0 +1,5 @@
+summary: C test project
+git-url: https://github.com/leleliu008/C
+license: Unlicense
+version: 20.5
+bsystem: cmake
