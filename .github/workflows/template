@@ -46,4 +46,9 @@ jobs:
 
       - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
 
-      - run: ./ndk-pkg install ${{ matrix.pkg }}
+      - run: |
+          MIN_SDK_API_LEVEL=$(./ndk-pkg info ${{ matrix.pkg }} sdk.api)
+          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=21
+          fi
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/arm64-v8a/${{ matrix.pkg }}
