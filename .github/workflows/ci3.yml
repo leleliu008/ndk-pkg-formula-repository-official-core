@@ -28,8 +28,8 @@ jobs:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
-      - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
+      - run: ./ndk-pkg env
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg ndkinfo
 
