@@ -26,6 +26,7 @@ install: |
             return sysconf(_SC_OPEN_MAX);
         }
         return r.rlim_cur;
+    }
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o getdtablesize.o getdtablesize.c

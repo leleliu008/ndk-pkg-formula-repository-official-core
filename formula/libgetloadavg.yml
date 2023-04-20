@@ -30,6 +30,7 @@ install: |
             averages[i] = (double)(si.loads[i]) / (double)(1 << SI_LOAD_SHIFT);
         }
         return n;
+    }
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o getloadavg.o getloadavg.c

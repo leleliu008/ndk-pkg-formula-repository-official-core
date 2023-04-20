@@ -4,7 +4,7 @@ git-url: https://github.com/ccache/ccache
 src-url: https://github.com/ccache/ccache/releases/download/v4.6.1/ccache-4.6.1.tar.xz
 src-sha: e5d47bd3cbb504ada864124690e7c0d28ecb1f9aeac22a9976025aed9633f3d1
 license: GPL-3.0-or-later
-dep-pkg: hiredis zstd blake3
+dep-pkg: hiredis libzstd blake3
 bsystem: cmake
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);

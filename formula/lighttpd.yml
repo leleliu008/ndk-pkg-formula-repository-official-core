@@ -4,7 +4,7 @@ src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.65.t
 src-sha: bf0fa68a629fbc404023a912b377e70049331d6797bcbb4b3e8df4c3b42328be
 license: BSD-3-Clause
 dep-upp: pkg-config
-dep-pkg: openssl zlib bzip2 pcre libglob
+dep-pkg: openssl zlib libbz2 pcre libglob
 bsystem: autogen
 
 install: |

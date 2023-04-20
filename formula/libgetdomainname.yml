@@ -36,6 +36,7 @@ install: |
         }
         strncpy(name, uts.domainname, len);
         return 0;
+    }
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o getdomainname.o getdomainname.c

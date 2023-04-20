@@ -42,6 +42,7 @@ install: |
     #endif
         for (; *s && *(unsigned char *)s != c; s++);
         return (char *)s;
+    }
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o strchrnul.o strchrnul.c

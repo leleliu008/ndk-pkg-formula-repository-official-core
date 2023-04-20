@@ -4,8 +4,6 @@ src-url: https://git.osgeo.org/gitea/rttopo/librttopo/archive/librttopo-1.1.0.ta
 src-sha: 2e2fcabb48193a712a6c76ac9a9be2a53f82e32f91a2bc834d9f1b4fa9cd879f
 license: GPL-2.0-or-later
 dep-pkg: geos
-dep-upp: libtoolize
+dep-upp: libtool
 bsystem: autogen
-
-install: |
-    configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config"
+install: configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config"

@@ -4,7 +4,7 @@ git-url: https://github.com/samtools/htslib
 src-url: https://github.com/samtools/htslib/releases/download/1.15.1/htslib-1.15.1.tar.bz2
 src-sha: 8d7f8bf9658226942eeab70af2a22aca618577eaa8fe2ed9416ee306d5351aa1
 license: MIT
-dep-pkg: zlib bzip2 xz curl
+dep-pkg: zlib libbz2 liblzma curl
 bsystem: configure
 
 install: |

@@ -4,7 +4,7 @@ git-url: https://github.com/crosstool-ng/crosstool-ng
 src-url: http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.25.0.tar.xz
 src-sha: 68162f342243cd4189ed7c1f4e3bb1302caa3f2cbbf8331879bd01fe06c60cd3
 license: LGPL-2.1-or-later|COPYING|https://raw.githubusercontent.com/crosstool-ng/crosstool-ng/master/COPYING
-dep-upp: libtool libtool help2man objcopy makeinfo gawk
+dep-upp: libtool help2man texinfo gawk
 dep-pkg: ncurses libiconv gettext
 
 install: |

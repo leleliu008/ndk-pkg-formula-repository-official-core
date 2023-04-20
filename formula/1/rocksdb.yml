@@ -4,7 +4,7 @@ git-url: https://github.com/facebook/rocksdb.git
 src-url: https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz
 src-sha: ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58
 license: GPL-2.0-only
-dep-pkg: gflags snappy lz4 zstd bzip2
+dep-pkg: gflags snappy lz4 libzstd libbz2
 bsystem: cmake
 
 install: |

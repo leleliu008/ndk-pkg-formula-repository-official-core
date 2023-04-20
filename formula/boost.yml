@@ -5,7 +5,7 @@ src-url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_
 src-sha: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
 version: 1.76.0
 license: BSL-1.0
-dep-pkg: zstd icu4c libiconv python
+dep-pkg: libzstd icu4c libiconv python
 binbstd: yes
 
 # https://boostorg.github.io/build/manual/master/index.html

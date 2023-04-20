@@ -23,7 +23,7 @@ dopatch: |
 
         PATCH_ITEM_FILEPATH="$MY_HOME_DIR/patch.d/$PACKAGE_NAME/bash51-$PATCH_ITEM_INDEX"
 
-        fetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --sha256="$PATCH_ITEM_SHA256" --output-path="$PATCH_ITEM_FILEPATH"
+        wfetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --sha256="$PATCH_ITEM_SHA256" --output-path="$PATCH_ITEM_FILEPATH"
     
         run "patch -p0 < $PATCH_ITEM_FILEPATH"
     done <<EOF

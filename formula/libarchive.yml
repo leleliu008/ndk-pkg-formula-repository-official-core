@@ -4,7 +4,7 @@ web-url: https://www.libarchive.org/
 src-url: https://www.libarchive.org/downloads/libarchive-3.6.2.tar.xz
 src-sha: 9e2c1b80d5fbe59b61308fdfab6c79b5021d7ff4ff2489fb12daf0a96a83551d
 license: BSD-2-Clause
-dep-pkg: libiconv expat openssl lz4 lzo libzstd libbz2
+dep-pkg: libiconv expat openssl lz4 lzo liblibzstd libbz2
 
 install: |
     export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)

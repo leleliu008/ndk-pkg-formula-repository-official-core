@@ -4,7 +4,7 @@ git-url: https://gitlab.freedesktop.org/freetype/freetype
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.12.1/freetype-2.12.1.tar.xz
 src-sha: 4766f20157cc4cf0cd292f80bf917f92d1c439b243ac3018debf6b9140c41a7f
 license: FTL
-dep-pkg: brotli bzip2 libpng
+dep-pkg: brotli libbz2 libpng
 bsystem: cmake
 
 install: |

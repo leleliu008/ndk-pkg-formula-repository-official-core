@@ -3,7 +3,7 @@ web-url: http://links.twibright.com
 src-url: http://links.twibright.com/download/links-2.27.tar.gz
 src-sha: b3e7f302e748f6394806aaac28ea878dbfa2af38745d96507adf68a0a541ba8b
 license: GPL-2.0-or-later
-dep-pkg: xz bzip2 libtiff libjpeg-turbo openssl
+dep-pkg: liblzma libbz2 libtiff libjpeg-turbo openssl
 bsystem: gmake
 binbstd: yes
 

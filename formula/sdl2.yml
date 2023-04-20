@@ -1,16 +1,13 @@
 summary: Low-level access to audio, keyboard, mouse, joystick and graphics
-web-url: https://www.libsdl.org
 git-url: https://github.com/libsdl-org/SDL
-src-url: https://libsdl.org/release/SDL2-2.0.22.tar.gz
-src-sha: fe7cbf3127882e3fc7259a75a0cb585620272c51745d3852ab9dd87960697f2e
+web-url: https://www.libsdl.org/
+src-url: https://www.libsdl.org/release/SDL2-2.24.2.tar.gz
+src-sha: b35ef0a802b09d90ed3add0dcac0e95820804202914f5bb7b0feb710f1a1329f
 license: Zlib|LICENSE.txt|https://raw.githubusercontent.com/libsdl-org/SDL/main/LICENSE.txt
 bsystem: ndk-build
 binbstd: yes
-
-dopatch: |
-    ndk_build
-
 install: |
+    ndk_build
     install -d                 "$PACKAGE_INSTALL_DIR" &&
     cp -rv include             "$PACKAGE_INSTALL_DIR" &&
     cp -rv libs/$TARGET_OS_ABI "$PACKAGE_INSTALL_DIR/lib"

@@ -22,6 +22,7 @@ install: |
     int mblen(const char* s, size_t n) {
         mbstate_t state = {};
         return mbrlen(s, n, &state);
+    }
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o mblen.o mblen.c

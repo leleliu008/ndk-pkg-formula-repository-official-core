@@ -5,7 +5,6 @@ src-url: https://github.com/unicode-org/icu/releases/download/release-70-1/icu4c
 version: 70.1
 src-sha: 8d205428c17bf13bb535300669ed28b338a157b1c01ae66d31d0d3e2d47c3fd5
 license: ICU
-bsystem: configure
 bscript: source
 
 build0: |
@@ -17,7 +16,7 @@ build0: |
 
 install: |
     configure \
-        --with-cross-build="$NATIVE_BUILDIN_DIR" \
+        --with-cross-build="$NATIVE_BCACHED_DIR" \
         --enable-release \
         --enable-tools \
         --enable-fuzzer \
