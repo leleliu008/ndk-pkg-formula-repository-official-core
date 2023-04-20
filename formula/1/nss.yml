@@ -62,19 +62,19 @@ install: |
         install_pc_files
 
 install_files() {
-    mkdir -p $TARGET_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}              || return 1
+    mkdir -p $PACKAGE_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}              || return 1
     
-    install -v -m755 Linux*/lib/*.so                $TARGET_INSTALL_DIR/lib   || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $TARGET_INSTALL_DIR/lib   || return 1
+    install -v -m755 Linux*/lib/*.so                $PACKAGE_INSTALL_DIR/lib   || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $PACKAGE_INSTALL_DIR/lib   || return 1
     
-    cp -v -RL {public,private}/nss/*                $TARGET_INSTALL_DIR/include/nss   || return 1
-    chmod -v 644                                    $TARGET_INSTALL_DIR/include/nss/* || return 1
+    cp -v -RL {public,private}/nss/*                $PACKAGE_INSTALL_DIR/include/nss   || return 1
+    chmod -v 644                                    $PACKAGE_INSTALL_DIR/include/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $TARGET_INSTALL_DIR/bin   || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $PACKAGE_INSTALL_DIR/bin   || return 1
 
 install_pc_files() {
     install_pc_file 'nss' <<EOF
-prefix=$TARGET_INSTALL_DIR
+prefix=$PACKAGE_INSTALL_DIR
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include/nss

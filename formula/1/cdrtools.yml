@@ -13,4 +13,4 @@ install: |
     export CONFIG_RMTHOST=NONE
     
      gmakew ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
-     gmakew install INS_BASE="$TARGET_INSTALL_DIR"
+     gmakew install INS_BASE="$PACKAGE_INSTALL_DIR"

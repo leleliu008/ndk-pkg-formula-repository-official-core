@@ -3,7 +3,7 @@ git-url: https://github.com/thom311/libnl
 src-url: https://github.com/thom311/libnl/releases/download/libnl3_5_0/libnl-3.5.0.tar.gz
 src-sha: 352133ec9545da76f77e70ccb48c9d7e5324d67f6474744647a7ed382b5e05fa
 license: LGPL-2.1-or-later|COPYING|https://raw.githubusercontent.com/thom311/libnl/main/COPYING
-dep-upp: flex bison>=2.4.1 libtool
+dep-upp: flex bison libtool
 bsystem: autotools
 
 # int getsubopt(char** __option, char* const* __tokens, char** __value_ptr) __INTRODUCED_IN(26);

@@ -7,7 +7,7 @@ binbstd: yes
 
 install: |
     ./configure \
-        --prefix="$TARGET_INSTALL_DIR" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --without-debug \
         --enable-static \
         --with-cc="$CC" \

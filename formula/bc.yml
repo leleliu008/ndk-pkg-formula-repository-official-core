@@ -13,7 +13,7 @@ build0: |
     install bc/libmath.h "$NATIVE_INSTALL_DIR/include"
 
 install: |
-    run install -d "$TARGET_BUILDIN_DIR/bc" &&
-    run cp "$NATIVE_INSTALL_DIR/include/libmath.h" "$TARGET_BUILDIN_DIR/bc"
-    run touch -t 190001010000 $TARGET_BUILDIN_DIR/bc/libmath.h &&
+    run install -d "$PACKAGE_BCACHED_DIR/bc" &&
+    run cp "$NATIVE_INSTALL_DIR/include/libmath.h" "$PACKAGE_BCACHED_DIR/bc"
+    run touch -t 190001010000 $PACKAGE_BCACHED_DIR/bc/libmath.h &&
     configure --without-libedit --with-readline="$readline_INSTALL_DIR"

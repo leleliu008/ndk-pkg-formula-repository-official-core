@@ -10,8 +10,8 @@ dopatch: |
     printf 'clean:\n\n' > lib/Makefile
 
 install: |
-    run "$PACKAGE_INSTALLING_BST_DIR/configure" \
-        --source-path="$PACKAGE_INSTALLING_BST_DIR" \
+    run "$PACKAGE_BSCRIPT_DIR/configure" \
+        --source-path="$PACKAGE_BSCRIPT_DIR" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --cpu=$TARGET_OS_ARCH \
         --cc=$CC \

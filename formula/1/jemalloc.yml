@@ -23,7 +23,7 @@ modify_code()    {
 install: |
     ./configure \
         --host="$TARGET_TRIPLE" \
-        --prefix="$TARGET_INSTALL_DIR" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --disable-debug \
         --disable-prof \
         --enable-libdl \

@@ -1,0 +1,20 @@
+summary: Zstandard is a real-time compression algorithm
+web-url: https://facebook.github.io/zstd
+git-url: https://github.com/facebook/zstd
+src-url: https://github.com/facebook/zstd/archive/v1.5.2.tar.gz
+src-sha: f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e
+license: BSD-3-Clause
+dep-pkg: zlib liblzma
+
+bscript: build/cmake
+install: |
+    cmakew \
+        -DZSTD_BUILD_TESTS=OFF \
+        -DZSTD_BUILD_CONTRIB=OFF \
+        -DZSTD_BUILD_PROGRAMS=OFF \
+        -DZSTD_BUILD_STATIC=ON \
+        -DZSTD_BUILD_SHARED=ON \
+        -DZSTD_ZLIB_SUPPORT=ON \
+        -DZSTD_LZMA_SUPPORT=ON \
+        -DZSTD_LZ4_SUPPORT=OFF \
+        -DZSTD_MULTITHREAD_SUPPORT=ON

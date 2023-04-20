@@ -8,4 +8,4 @@ bscript: core
 bsystem: xmake
 
 install: |
-    xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$TARGET_BUILDIN_DIR/xmake"
+    xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$PACKAGE_BCACHED_DIR/xmake"

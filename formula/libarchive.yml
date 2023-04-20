@@ -1,15 +1,14 @@
 summary: Multi-format archive and compression library
-web-url: https://www.libarchive.org
 git-url: https://github.com/libarchive/libarchive
-src-url: https://www.libarchive.org/downloads/libarchive-3.6.1.tar.xz
-src-sha: 5a411aceb978f43e626f0c2d1812ddd8807b645ed892453acabd532376c148e6
+web-url: https://www.libarchive.org/
+src-url: https://www.libarchive.org/downloads/libarchive-3.6.2.tar.xz
+src-sha: 9e2c1b80d5fbe59b61308fdfab6c79b5021d7ff4ff2489fb12daf0a96a83551d
 license: BSD-2-Clause
-dep-pkg: libiconv expat openssl bzip2 lz4 lzo zstd
-bsystem: configure
+dep-pkg: libiconv expat openssl lz4 lzo libzstd libbz2
 
 install: |
     export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)
-    export CPPFLAGS="$CPPFLAGS -I$PACKAGE_INSTALLING_BST_DIR/contrib/android/include"
+    export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
     configure \
         --enable-xattr \
         --enable-acl \

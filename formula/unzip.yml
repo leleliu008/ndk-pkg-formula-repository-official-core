@@ -16,7 +16,7 @@ bsystem: gmake
 binbstd: yes
 
 dopatch: |
-    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_INSTALLING_BST_DIR" || return 1
+    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
     while read PATCH
     do
         patch -p1 < "debian/patches/$PATCH" || return 1

@@ -55,7 +55,7 @@ install: |
     esac
  
     cat > project-config.jam <<EOF
-    using clang : $TARGET_OS_ARCH : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+    using clang : $TARGET_OS_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
     using python : 3.10 : $MY_HOME_DIR/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.10 : $python_INSTALL_DIR/lib ;
     EOF
 
@@ -67,7 +67,7 @@ install: |
         --prefix="$PACKAGE_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$TARGET_INDEX \
+        toolset=clang-$TARGET_OS_ABI \
         link=static,shared \
         variant=release \
         threading=multi \

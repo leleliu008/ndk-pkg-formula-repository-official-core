@@ -20,7 +20,7 @@ install: |
     esac
     
     run ./configure \
-        --prefix="$TARGET_INSTALL_DIR" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --static \
         "$CONFIGURE_EXTRA_FLAGS" \
         --cc=$CC \

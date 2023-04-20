@@ -8,7 +8,7 @@ dep-pkg: ncurses libiconv
 bsystem: configure
 
 install: |
-    export LDFLAGS="$LDFLAGS -L$TARGET_BUILDIN_DIR/gettext-tools/gnulib-lib/.libs/"
+    export LDFLAGS="$LDFLAGS -L$PACKAGE_BCACHED_DIR/gettext-tools/gnulib-lib/.libs/"
     configure \
         --with-included-regex \
         --with-included-libxml \

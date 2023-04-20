@@ -12,4 +12,4 @@ dopatch: |
 install: |
     gmakew clean
     gmakew CXX=$CXX STRIP=false PLATFORM=Linux ARCH=$TARGET_OS_ARCH
-    gmakew install PREFIX=$TARGET_INSTALL_DIR
+    gmakew install PREFIX=$PACKAGE_INSTALL_DIR

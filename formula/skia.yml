@@ -24,7 +24,7 @@ dopatch: |
     fi
 
     PACKAGE_INSTALLING_SRC_DIR="$PWD"
-    PACKAGE_INSTALLING_BST_DIR="$PWD"
+    PACKAGE_BSCRIPT_DIR="$PWD"
 
 install: |
     case $TARGET_OS_ABI in
@@ -34,7 +34,7 @@ install: |
         x86_64)      GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run $GN gen . --root="$PACKAGE_INSTALLING_BST_DIR"
+    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
 
     cat >> args.gn <<EOF
     is_debug=false
@@ -59,5 +59,5 @@ install: |
 
     run install_bins skia_diff
     run install_libs *.so
-    run install_incs $PACKAGE_INSTALLING_BST_DIR/public/*.h
-    run install_incs $PACKAGE_INSTALLING_BST_DIR/public/cpp/*.h:cpp
+    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
+    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp

@@ -19,7 +19,7 @@ install: |
     export LSOF_ARCH="$TARGET_OS_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
-    export LSOF_CFGL="$LDFLAGS -L$PACKAGE_INSTALLING_BST_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"
+    export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.so"
     
     run ./Configure -clean &&
     run ./Configure -n linux &&

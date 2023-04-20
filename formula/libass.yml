@@ -4,8 +4,7 @@ src-url: https://github.com/libass/libass/releases/download/0.16.0/libass-0.16.0
 src-sha: 5dbde9e22339119cf8eed59eea6c623a0746ef5a90b689e68a090109078e3c08
 license: ISC
 dep-pkg: fontconfig fribidi freetype2-with-harfbuzz
-dep-upp: pkg-config nasm>=2.10
-bsystem: configure
+dep-upp: pkg-config nasm
 
 install: |
     configure \
