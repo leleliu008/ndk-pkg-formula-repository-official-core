@@ -4,8 +4,7 @@ src-url: https://ftp.gnu.org/gnu/sed/sed-4.8.tar.xz
 src-sha: f79b0cfea71b37a8eeec8490db6c5f7ae7719c35587f21edb0617f370eeff633
 git-url: https://git.savannah.gnu.org/git/sed
 license: GPL-3.0-or-later
-bsystem: configure
-cdefine: __USE_FORTIFY_LEVEL=0
+ppflags: -D__USE_FORTIFY_LEVEL=0
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

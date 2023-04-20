@@ -7,7 +7,7 @@ license: WTFPL
 bsystem: configure
 dep-upp: pkg-config
 dep-pkg: imlib2
-cdefine: X_DISPLAY_MISSING
+ppflags: -DX_DISPLAY_MISSING
 ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype
 
 install: |

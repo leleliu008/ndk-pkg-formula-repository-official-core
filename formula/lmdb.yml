@@ -3,11 +3,9 @@ web-url: https://symas.com/lmdb
 src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.29/openldap-LMDB_0.9.29.tar.bz2
 src-sha: 182e69af99788b445585b8075bbca89ae8101069fbeee25b2756fb9590e833f8
 license: OLDAP-2.8
-cdefine: MDB_USE_ROBUST=0
+ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
-bsystem: gmake
 binbstd: yes
-
 install: |
     gmakew clean &&
     gmakew CC="$CC" XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" &&

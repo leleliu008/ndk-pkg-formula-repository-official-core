@@ -21,7 +21,7 @@ dopatch: |
         PATCH_ITEM_INDEX="$( printf '%s\n' "$patchitem" | cut -d ' ' -f1)"
         PATCH_ITEM_SHA256="$(printf '%s\n' "$patchitem" | cut -d ' ' -f2)"
 
-        PATCH_ITEM_FILEPATH="$MY_HOME_DIR/patch.d/$PACKAGE_NAME/bash51-$PATCH_ITEM_INDEX"
+        PATCH_ITEM_FILEPATH="$NDKPKG_DOWNLOADS_DIR/$PATCH_ITEM_SHA256.diff"
 
         wfetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --sha256="$PATCH_ITEM_SHA256" --output-path="$PATCH_ITEM_FILEPATH"
     

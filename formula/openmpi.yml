@@ -7,7 +7,7 @@ license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/open-mpi/ompi/ma
 dep-pkg: libevent
 dep-upp: perl
 bsystem: configure
-cdefine: POSIX_MADV_DONTNEED=MADV_DONTNEED
+ppflags: -DPOSIX_MADV_DONTNEED=MADV_DONTNEED
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
 sdk-api: 26
@@ -32,6 +32,7 @@ dopatch: |
             return sysconf(_SC_OPEN_MAX);
         }
         return r.rlim_cur;
+    }
     EOF
 
 install: |

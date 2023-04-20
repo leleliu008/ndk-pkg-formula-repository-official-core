@@ -56,7 +56,7 @@ install: |
  
     cat > project-config.jam <<EOF
     using clang : $TARGET_OS_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
-    using python : 3.10 : $MY_HOME_DIR/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.10 : $python_INSTALL_DIR/lib ;
+    using python : 3.10 : $NDKPKG_HOME/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.10 : $python_INSTALL_DIR/lib ;
     EOF
 
     run ./b2 install \

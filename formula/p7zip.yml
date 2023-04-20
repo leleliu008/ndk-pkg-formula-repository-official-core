@@ -6,7 +6,7 @@ license: LGPL-2.1-or-later
 bsystem: cmake
 dep-pkg: libiconv
 ldflags: -liconv
-cdefine: _UINT64_T_DECLARED
+ppflags: -D_UINT64_T_DECLARED
 bscript: CPP/7zip/CMAKE
 
 dopatch: |

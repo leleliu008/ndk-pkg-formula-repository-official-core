@@ -16,20 +16,18 @@ dopatch: |
     sed_in_place '/-gcc-toolchain/d'      Configurations/15-android.conf &&
     sed_in_place '/tritools-4.9/d'        Configurations/15-android.conf
 
-#注意：1.0.2以上的openssl不支持openssl-fips，从openssl3.0开始支持新设计的openssl-fips
-#https://github.com/openssl/openssl/issues/7582
+# 注意：1.0.2以上的openssl不支持openssl-fips，从openssl3.0开始支持新设计的openssl-fips
+# https://github.com/openssl/openssl/issues/7582
 install: |
-    os_compiler() {
-        # ./configure LIST | grep android
-        case $TARGET_OS_ARCH in
-            armv7a)  echo "android-arm"    ;;
-            aarch64) echo "android-arm64"  ;;
-            i686)    echo "android-x86"    ;;
-            x86_64)  echo "android-x86_64" ;;
-        esac
-    }
+    # ./configure LIST | grep android
+    case $TARGET_OS_ARCH in
+        armv7a)  TARGET='android-arm'    ;;
+        aarch64) TARGET='android-arm64'  ;;
+        i686)    TARGET='android-x86'    ;;
+        x86_64)  TARGET='android-x86_64' ;;
+    esac
 
-    export CROSS_SYSROOT=$SYSROOT
+    export CROSS_SYSROOT="$SYSROOT"
 
     run ./Configure \
         shared \
@@ -42,7 +40,7 @@ install: |
         no-asm \
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        "$(os_compiler)" &&
+        "$TARGET" &&
     gmakew clean &&
     gmakew CROSS_COMPILE= &&
     gmakew CROSS_COMPILE= install
