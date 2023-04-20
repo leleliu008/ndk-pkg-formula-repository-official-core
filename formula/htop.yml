@@ -4,8 +4,6 @@ git-url: https://github.com/htop-dev/htop
 src-url: https://github.com/htop-dev/htop/archive/3.2.1.tar.gz
 src-sha: b5ffac1949a8daaabcffa659c0964360b5008782aae4dfa7702d2323cfb4f438
 license: GPL-2.0-or-later
-dep-pkg: ncurses libstrchrnul liblanginfo
+dep-pkg: ncurses libstrchrnul liblanginfo libexecinfo
 bsystem: autogen
-
-install: |
-    configure --disable-static --enable-unicode LIBS=$ncurses_LIBRARY_DIR/libncursesw.a
+install: configure --disable-static --enable-unicode LIBS="$ncurses_LIBRARY_DIR/libncursesw.a"

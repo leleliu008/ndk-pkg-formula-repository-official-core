@@ -11,6 +11,9 @@ binbstd: yes
 dopatch: sed_in_place 's|STRIP=true||' src/Makefile
 
 install: |
+    cat >> ../lib/libunistring.a <<EOF
+    INPUT($libunistring_LIBRARY_DIR/libunistring.a $libiconv_LIBRARY_DIR/libiconv.a)
+    EOF
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
     gmakew clean &&
     gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&

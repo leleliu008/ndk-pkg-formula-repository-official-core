@@ -2,7 +2,7 @@ summary: C++ functions matching the interface and behavior of python string meth
 git-url: https://github.com/imageworks/pystring
 binbstd: yes
 
-dopatch: sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH"
+dopatch: sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH"
 
 install: |
     run rm -f pystring.o &&

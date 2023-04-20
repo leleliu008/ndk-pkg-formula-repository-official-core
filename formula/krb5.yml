@@ -24,7 +24,6 @@ install: |
         ac_cv_header_ifaddrs_h=yes
     fi
     configure \
-        --disable-static \
         --enable-dns-for-realm \
         --without-system-verto \
         --with-readline \

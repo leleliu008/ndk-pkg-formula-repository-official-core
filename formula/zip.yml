@@ -6,20 +6,20 @@ src-sha: f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369
 
 # https://packages.debian.org/sid/zip
 fix-url: https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-11.debian.tar.xz
-fix-sha: "c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed"
+fix-sha: c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed
 
 version: 3.0.11
 
 license: Info-ZIP
-bsystem: gmake
+dep-pkg: libbz2
 binbstd: yes
 
 dopatch: |
-    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
-    while read PATCH
-    do
-        patch -p1 < "debian/patches/$PATCH" || return 1
-    done < debian/patches/series
+    for patchfile in $(cat ../fix/patches/series)
+    do  
+        patch -p1 < ../fix/patches/$patchfile || return 1
+    done
+
     sed_in_place 's|$(AS) _match.s|$(AS) -o _match.o _match.s|'          unix/Makefile &&
     sed_in_place 's|$(AS) _crc_i386.s|$(AS) -o _crc_i386.o _crc_i386.s|' unix/Makefile
 
@@ -30,7 +30,8 @@ install: |
         CPP="'$CPP'" \
         AS="$AS" \
         AR="$AR" \
-        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
+        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
+        LFLAGS2="'$LDFLAGS'" &&
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

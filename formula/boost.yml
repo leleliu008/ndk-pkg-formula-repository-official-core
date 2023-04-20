@@ -5,7 +5,7 @@ src-url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_
 src-sha: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
 version: 1.76.0
 license: BSL-1.0
-dep-pkg: libzstd icu4c libiconv python
+dep-pkg: libzstd icu4c libiconv python3
 binbstd: yes
 
 # https://boostorg.github.io/build/manual/master/index.html
@@ -18,9 +18,9 @@ build0: |
     run ./bootstrap.sh
 
 dopatch: |
-    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
-    sed_in_place '/ftello/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
-    sed_in_place '/fseeko/d' "$COMMON_INCLUDE_H_FILEPATH" || return 1
+    sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH" || return 1
+    sed_in_place '/ftello/d' "$NDKPKG_COMMON_H_FILEPATH" || return 1
+    sed_in_place '/fseeko/d' "$NDKPKG_COMMON_H_FILEPATH" || return 1
 
     # https://stackoverflow.com/questions/32826175/ftello-and-fseeko-android-build-errors
     # https://linux.die.net/man/3/ftello

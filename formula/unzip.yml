@@ -1,35 +1,40 @@
-summary: Extraction utility for .zip compressed archives
+summary: a command-line tool for extracting zip-compressed archives(.zip files)
 web-url: https://infozip.sourceforge.io/UnZip.html
 
 src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
 src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 
 # https://packages.debian.org/buster/unzip
-fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-26.debian.tar.xz
-fix-sha: 88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599
+fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-28.debian.tar.xz
+fix-sha: e51364116c84739c591728ecc841113a914fa11358fd10ff0d6813524d811bb9
 
-version: 6.0.26
-
+version: 6.0.28
 license: Info-ZIP
-dep-pkg: zip libbz2
-bsystem: gmake
+dep-pkg: libbz2
 binbstd: yes
-
+ccflags: -include time.h
 dopatch: |
-    run tar xf $PACKAGE_FIX_PATH -C "$PACKAGE_BSCRIPT_DIR" || return 1
-    while read PATCH
+    for patchfile in $(cat ../fix/patches/series)
     do
-        patch -p1 < "debian/patches/$PATCH" || return 1
-    done < debian/patches/series
+        patch -p1 < ../fix/patches/$patchfile || return 1
+    done
 
 install: |
+    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
+        sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
+    fi
+
     gmakew -f unix/Makefile clean &&
     gmakew -f unix/Makefile generic \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         AS="$AS" \
+        LD="'$CC'" \
         STRIP="$STRIP" \
-        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        LOC=-DLARGE_FILE_SUPPORT \
+        D_USE_BZ2=-DUSE_BZIP2 \
+        L_BZ2=-lbz2 &&
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

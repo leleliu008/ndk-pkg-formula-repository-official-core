@@ -1,18 +1,21 @@
 summary: Perl compatible regular expressions library with a new API
-web-url: https://www.pcre.org
+web-url: https://www.pcre.org/
 git-url: https://github.com/PhilipHazel/pcre2
 src-url: https://github.com/PhilipHazel/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.bz2
 src-sha: 14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68
 dep-pkg: zlib libbz2
-bsystem: cmake
 license: BSD-3-Clause|LICENCE|https://raw.githubusercontent.com/PCRE2Project/pcre2/master/LICENCE
 developer: Philip+Hazel|Philip.Hazel@gmail.com Zoltan+Herczeg|hzmester@reemail.hu
 
 dopatch: |
+    sed_in_place 's|man/man1|share/man/man1|' CMakeLists.txt
+    sed_in_place 's|man/man3|share/man/man3|' CMakeLists.txt
     sed_in_place 's|DESTINATION cmake|DESTINATION ${CMAKE_INSTALL_LIBDIR}/pcre2/cmake|' CMakeLists.txt
 
 install: |
     cmakew \
+        -DCMAKE_C_STANDARD=99 \
+        -DCMAKE_C_STANDARD_REQUIRED=ON \
         -DPCRE2_BUILD_PCRE2_8=ON \
         -DPCRE2_BUILD_PCRE2_16=ON \
         -DPCRE2_BUILD_PCRE2_32=ON \

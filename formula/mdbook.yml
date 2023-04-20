@@ -1,7 +1,7 @@
 summary: Create modern online books from Markdown files
 web-url: https://rust-lang.github.io/mdBook/
 git-url: https://github.com/rust-lang/mdBook
-src-url: https://github.com/rust-lang/mdBook/archive/v0.4.18.tar.gz
-src-sha: ce357327f4443189fde307103f8008f43410ca8b738c5c61401ada9a54b8b5b5
+src-url: https://github.com/rust-lang/mdBook/archive/v0.4.28.tar.gz
+src-sha: b7785a0e69a6628bedebb31257113ae659de3b561458cc635d30d07794284b14
 license: MPL-2.0
 bsystem: cargo

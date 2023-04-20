@@ -3,7 +3,6 @@ web-url: https://luajit.org/
 git-url: https://github.com/LuaJIT/LuaJIT
 git-sha: a91d0d9d3bba1a936669cfac3244509a0f2ac0e3
 version: 2.1.0
-dep-upp: cc
 bsystem: gmake
 binbstd: yes
 license: MIT|COPYRIGHT|https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT

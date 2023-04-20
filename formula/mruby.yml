@@ -5,7 +5,7 @@ src-url: https://github.com/mruby/mruby/archive/3.0.0.tar.gz
 src-sha: 95b798cdd931ef29d388e2b0b267cba4dc469e8722c37d4ef8ee5248bc9075b0
 license: MIT
 dep-pkg: readline
-dep-upp: bison cc
+dep-upp: bison
 bsystem: rake
 binbstd: yes
 

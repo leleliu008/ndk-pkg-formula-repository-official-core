@@ -11,7 +11,7 @@ install: |
     cat > "$PACKAGE_BSCRIPT_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
     set(PCAP_FOUND TRUE)
     set(PCAP_INCLUDE_DIRS "$libpcap_INCLUDE_DIR")
-    set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.a")
+    set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.a;$openssl_LIBRARY_DIR/libssl.a;$openssl_LIBRARY_DIR/libcrypto.a")
 
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(PCAP REQUIRED_VARS PCAP_LIBRARIES PCAP_INCLUDE_DIRS)

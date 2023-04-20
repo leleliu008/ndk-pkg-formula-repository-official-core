@@ -1,15 +1,12 @@
 summary: Multiple Precision Integers and Rationals (fork of GMP)
-web-url: http://mpir.org
 git-url: https://github.com/wbhart/mpir
-src-url: http://mpir.org/mpir-3.0.0.tar.bz2
-src-sha: 52f63459cf3f9478859de29e00357f004050ead70b45913f2c2269d9708675bb
+version: 3.0.0
+    #src-url: https://distfiles.macports.org/mpir/mpir-3.0.0.tar.gz
+    #src-uri: https://mirrors.aliyun.com/macports/distfiles/mpir/mpir-3.0.0.tar.gz
+    #src-sha: b0a4088134fb25f25725a04243f83039897c51139a0b5f1dcac1395963483c38
 license: GPL-3.0-or-later
-dep-upp: yasm
-bsystem: configure
-
-dopatch: |
-    sed_in_place '/cat >conftest.c <<EOF/a #include<stdlib.h>' configure
-
+dep-upp: yasm gm4 libtool
+bsystem: autotools
 install: |
     configure \
         --disable-profiling \

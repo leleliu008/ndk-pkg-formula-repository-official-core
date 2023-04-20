@@ -9,7 +9,7 @@ dep-upp: pkg-config
 bsystem: cmake
 
 dopatch: |
-    sed_in_place '/rindex/d' "$COMMON_INCLUDE_H_FILEPATH"
+    sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH"
 
 install: |
     cmakew \
