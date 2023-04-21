@@ -1,12 +1,10 @@
 summary: Experimental Rust compiler front-end for IDEs
 web-url: https://rust-analyzer.github.io/
 git-url: https://github.com/rust-analyzer/rust-analyzer
-version: 2022-06-27
-src-url: https://github.com/rust-analyzer/rust-analyzer/archive/refs/tags/$PACKAGE_VERSION.tar.gz
-src-sha: e7c124f34f7cea2125957362f666512943c72112de2c69b2577fcddf1e749dd1
+src-url: https://github.com/rust-analyzer/rust-analyzer/archive/refs/tags/2022-10-24.tar.gz
+src-sha: a839dfdc399246249300686e457c2afe3ce51f421dcfcf009e7c6ab4084cebe6
+version: 2022.10.24
 license: Apache-2.0
-bsystem: cargo
-bscript: crates/rust-analyzer
 
-install: |
-    cargow install --locked
+bscript: crates/rust-analyzer
+install: cargow install --locked

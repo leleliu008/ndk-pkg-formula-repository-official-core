@@ -1,11 +1,10 @@
 summary: Small and embeddable JavaScript engine
-web-url: https://bellard.org/quickjs
-version: 2021-03-27
 git-url: https://github.com/bellard/quickjs
-src-url: https://bellard.org/quickjs/quickjs-${PACKAGE_VERSION}.tar.xz
+web-url: https://bellard.org/quickjs
+src-url: https://bellard.org/quickjs/quickjs-2021-03-27.tar.xz
 src-sha: a45bface4c3379538dea8533878d694e289330488ea7028b105f72572fe7fe1a
+version: 2021.03.27
 license: MIT
-bsystem: gmake
 binbstd: yes
 
 dopatch: |

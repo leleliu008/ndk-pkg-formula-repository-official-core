@@ -20,7 +20,7 @@ dopatch: |
     GN="$(find "$PWD/buildtools" -name gn)"
 
     if [ -z "$GN" ] ; then
-        die "gn command not found."
+        abort 1 "gn command not found."
     fi
 
     PACKAGE_INSTALLING_SRC_DIR="$PWD"

@@ -1,7 +1,7 @@
 summary: Tool Command Language
 web-url: https://www.tcl-lang.org
 version: 8.6.12
-src-url: https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz
+src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tcl8.6.12-src.tar.gz
 src-sha: 26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6
 license: TCL
 bsystem: configure
