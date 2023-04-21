@@ -5,7 +5,6 @@ src-url: https://github.com/arvidn/libtorrent/releases/download/v2.0.6/libtorren
 src-sha: 438e29272ff41ccc68ec7530f1b98d639f6d01ec8bf680766336ae202a065722
 license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/arvidn/libtorrent/RC_2_0/LICENSE
 dep-pkg: openssl boost
-bsystem: cmake
 
 install: |
     cmakew \

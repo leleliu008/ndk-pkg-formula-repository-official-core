@@ -6,7 +6,7 @@ src-sha: 9717ffc52120861136e478155c2ff3a9c21740e2244de52fa966f376d7471adf
 license: Apache-2.0
 dep-upp: pkg-config grpc-plugins
 dep-pkg: abseil c-ares openssl protobuf re2
-
+ldflags: -llog
 dopatch: sed_in_place 's|GPR_MUSL_LIBC_COMPAT|__ANDROID__|' src/core/lib/gpr/wrap_memcpy.cc
 
 install: |

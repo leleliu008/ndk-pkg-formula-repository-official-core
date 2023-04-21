@@ -1,18 +1,15 @@
 summary: C++ Phone Number library by Google
 git-url: https://github.com/google/libphonenumber
-src-url: https://github.com/google/libphonenumber/archive/v8.12.49.tar.gz
-src-sha: e328b46ca043fb6b3f1044b1e639967845bfb24c823ae6345ad54a1d50cdf187
+src-url: https://github.com/google/libphonenumber/archive/v8.13.6.tar.gz
+src-sha: 5c27ee33739981f87d77d1525a59a1358aebea045fea8cc00540662fcae8f62c
 dep-pkg: boost icu4c protobuf googletest abseil
-dep-upp: pkg-config protoc
+license: Apache-2.0
 bscript: cpp
-license: Apache-2.0|LICENSE|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE BSD-3-Clause|LICENSE.Chromium|https://raw.githubusercontent.com/google/libphonenumber/master/LICENSE.Chromium
-
-dopatch: |
-    sed_in_place '/absl::/i find_package(absl REQUIRED)' CMakeLists.txt
-    sed_in_place 's|CMAKE_CXX_STANDARD 11|CMAKE_CXX_STANDARD 17|' CMakeLists.txt
 
 install: |
     cmakew \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DREGENERATE_METADATA=OFF \
         -DBUILD_GEOCODER=OFF \
         -DBUILD_STATIC_LIB=ON \
         -DUSE_POSIX_THREAD=ON \

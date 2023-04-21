@@ -1,9 +1,69 @@
 summary: Cartographic Projections Library
 web-url: https://proj.org/
 git-url: https://github.com/OSGeo/PROJ
-src-url: https://github.com/OSGeo/PROJ/releases/download/9.0.1/proj-9.0.1.tar.gz
-src-sha: 737eaacbe7906d0d6ff43f0d9ebedc5c734cccc9e6b8d7beefdec3ab22d9a6a3
+src-url: https://github.com/OSGeo/PROJ/releases/download/9.1.0/proj-9.1.0.tar.gz
+src-sha: 81b2239b94cad0886222cde4f53cb49d34905aad2a1317244a0c30a553db2315
 license: MIT
-dep-upp: sqlite
 dep-pkg: libtiff curl sqlite nlohmann-json
-bsystem: cmake
+dopatch: |
+    # https://cmake.org/cmake/help/latest/module/FindTIFF.html
+
+    cat > cmake/FindTIFF.cmake <<EOF
+    if (TIFF_INCLUDE_DIRS AND TIFF_LIBRARIES)
+        set(TIFF_FOUND TRUE)
+    else()
+        include(FindPkgConfig)
+        pkg_check_modules(PKG_CONFIG_TIFF QUIET libtiff-4)
+
+        if (PKG_CONFIG_TIFF_FOUND)
+            if (PKG_CONFIG_TIFF_INCLUDE_DIRS)
+                set(TIFF_INCLUDE_DIRS "\${PKG_CONFIG_TIFF_INCLUDE_DIRS}")
+            elseif (PKG_CONFIG_TIFF_INCLUDEDIR)
+                set(TIFF_INCLUDE_DIRS "\${PKG_CONFIG_TIFF_INCLUDEDIR}")
+            else()
+                find_path(TIFF_INCLUDE_DIRS tiff.h)
+            endif()
+
+            set(TIFF_LIBRARIES )
+
+            message("PKG_CONFIG_TIFF_LINK_LIBRARIES=\${PKG_CONFIG_TIFF_LINK_LIBRARIES}")
+
+            foreach(item \${PKG_CONFIG_TIFF_LINK_LIBRARIES})
+                # https://sourceware.org/bugzilla/show_bug.cgi?id=21264
+                    if(item MATCHES ".*libm\\.a")
+                elseif(item MATCHES ".*libpthread\\.a")
+                elseif(item MATCHES "/.*")
+                    get_filename_component(LIBRARIE_FILENAME \${item} NAME)
+
+                    if (NOT TARGET  TIFF::\${LIBRARIE_FILENAME})
+                        add_library(TIFF::\${LIBRARIE_FILENAME} UNKNOWN IMPORTED)
+                        set_target_properties(TIFF::\${LIBRARIE_FILENAME} PROPERTIES IMPORTED_LOCATION "\${item}")
+                    endif()
+
+                    list(APPEND TIFF_LIBRARIES TIFF::\${LIBRARIE_FILENAME})
+                endif()
+            endforeach()
+
+            if (NOT TARGET  TIFF::TIFF)
+                add_library(TIFF::TIFF INTERFACE IMPORTED)
+                set_target_properties(TIFF::TIFF PROPERTIES
+                    INTERFACE_INCLUDE_DIRECTORIES "\${TIFF_INCLUDE_DIRS}"
+                    INTERFACE_LINK_LIBRARIES      "\${TIFF_LIBRARIES}"
+                )
+            endif()
+
+            if (PKG_CONFIG_TIFF_VERSION)
+                set(TIFF_VERSION \${PKG_CONFIG_TIFF_VERSION})
+            endif()
+        endif()
+    endif()
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(TIFF REQUIRED_VARS TIFF_LIBRARIES TIFF_INCLUDE_DIRS VERSION_VAR TIFF_VERSION)
+
+    mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
+    EOF
+
+    sed_in_place 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
+
+install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF

@@ -5,7 +5,7 @@ src-url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_
 src-sha: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
 version: 1.76.0
 license: BSL-1.0
-dep-pkg: libzstd icu4c libiconv python3
+dep-pkg: libbz2 liblzma libzstd libiconv icu4c
 binbstd: yes
 
 # https://boostorg.github.io/build/manual/master/index.html
@@ -56,7 +56,6 @@ install: |
  
     cat > project-config.jam <<EOF
     using clang : $TARGET_OS_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
-    using python : 3.10 : $NDKPKG_HOME/native/python/bin/python3 : $python_INSTALL_DIR/include/python3.10 : $python_INSTALL_DIR/lib ;
     EOF
 
     run ./b2 install \

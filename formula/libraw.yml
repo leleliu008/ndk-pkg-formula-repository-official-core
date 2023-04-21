@@ -4,9 +4,8 @@ src-url: https://www.libraw.org/data/LibRaw-0.20.2.tar.gz
 src-sha: dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6
 license: LGPL-2.1-only
 dep-pkg: jasper lcms2
-dep-upp: pkg-config libtool
+dep-upp: libtool
 bsystem: autotools
-
 install: |
     configure \
         --enable-zlib \

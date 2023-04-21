@@ -6,7 +6,7 @@ src-sha: dcbeb84c9c74bbfdb133d535fe1c7bedc9f2221a8daf3914b984c44c520e9bac
 license: MIT
 dep-upp: pkg-config gperf
 dep-pkg: gettext libiconv util-linux json-c expat freetype2-with-harfbuzz
-ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lgraphite2 -lglib-2.0 -liconv -lintl -lpcre -lfreetype
+ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lgraphite2 -lglib-2.0 -liconv -lintl -lpcre2-8 -lfreetype -lc++_shared
 
 install: |
     configure \

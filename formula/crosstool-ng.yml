@@ -8,7 +8,7 @@ dep-upp: libtool help2man texinfo gawk
 dep-pkg: ncurses libiconv gettext
 
 install: |
-    export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.so $libiconv_LIBRARY_DIR/libiconv.so"
+    export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.a $libiconv_LIBRARY_DIR/libiconv.a"
     configure \
         --with-bash-completion \
         --with-ncurses \
