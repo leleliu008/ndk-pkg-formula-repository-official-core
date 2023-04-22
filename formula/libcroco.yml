@@ -9,4 +9,4 @@ install: |
     configure \
         --disable-gtk-doc \
         --disable-Bsymbolic \
-        --enable-checks LIBS=-lpcre2
+        --enable-checks LIBS=-lpcre2-8

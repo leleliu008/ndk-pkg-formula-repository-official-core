@@ -63,6 +63,7 @@ install: |
         -d+2 \
         -j$BUILD_NJOBS \
         --reconfigure \
+        --without-python \
         --prefix="$PACKAGE_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
