@@ -55,7 +55,7 @@ install: |
     esac
  
     cat > project-config.jam <<EOF
-    using clang : $TARGET_OS_ABI : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+    using clang : $TARGET_OS_ARCH : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
     EOF
 
     run ./b2 install \
@@ -66,7 +66,7 @@ install: |
         --prefix="$PACKAGE_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$TARGET_OS_ABI \
+        toolset=clang-$TARGET_OS_ARCH \
         link=static,shared \
         variant=release \
         threading=multi \

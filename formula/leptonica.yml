@@ -1,9 +1,9 @@
 summary: Image processing and image analysis library
-web-url: http://www.leptonica.org/
 git-url: https://github.com/DanBloomberg/leptonica
+web-url: http://www.leptonica.org/
 src-url: http://www.leptonica.org/source/leptonica-1.82.0.tar.gz
 src-sha: 155302ee914668c27b6fe3ca9ff2da63b245f6d62f3061c8f27563774b8ae2d6
 license: BSD-2-Clause
-dep-pkg: libwebp openjpeg
 dep-upp: pkg-config
-bsystem: configure
+dep-pkg: libwebp openjpeg
+install: configure LIBS="'-lzstd -llzma'"
