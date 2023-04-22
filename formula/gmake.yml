@@ -1,14 +1,16 @@
 summary: Utility for directing compilation
+git-url: https://git.savannah.gnu.org/git/make
 web-url: https://www.gnu.org/software/make
 src-url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
 src-sha: e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19
 license: GPL-3.0-or-later
-bsystem: configure
 
 dopatch: |
     sed_in_place '/sigsetmask (siggetmask (0) & ~fatal_signal_mask)/a ;' src/job.c
 
 install: |
-    configure \
-        --without-guile \
-        --without-dmalloc
+    configure --program-prefix=g --without-guile --without-dmalloc
+    (
+        run cd $PACKAGE_INSTALL_DIR/bin
+        ln -s gmake make
+    )

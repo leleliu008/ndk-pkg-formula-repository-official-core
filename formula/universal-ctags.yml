@@ -4,6 +4,4 @@ license: GPL-2.0-or-later
 dep-pkg: jansson libyaml libxml2
 dep-upp: pkg-config
 bsystem: autogen
-
-install: |
-    configure --disable-static
+install: configure --disable-static

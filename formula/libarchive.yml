@@ -7,7 +7,7 @@ license: BSD-2-Clause
 dep-pkg: libiconv expat openssl lz4 lzo libzstd libbz2
 
 install: |
-    export ac_cv_sizeof_wchar_t=$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)
+    export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"
     export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
     configure \
         --enable-xattr \
@@ -28,4 +28,6 @@ install: |
         --with-lzo2 \
         --with-zstd \
         --without-libb2 \
-        --with-iconv
+        --with-iconv &&
+    sed_in_place '/Libs: /s|$| -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc" &&
+    sed_in_place '/Requires.private:/d'  "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc"

@@ -1,17 +1,10 @@
 summary: C library implementing the SSH2 protocol
-web-url: https://www.libssh2.org
 git-url: https://github.com/libssh2/libssh2
-src-url: https://www.libssh2.org/download/libssh2-1.10.0.tar.gz
+web-url: https://libssh2.org/
+src-url: https://libssh2.org/download/libssh2-1.10.0.tar.gz
 src-sha: 2d64e90f3ded394b91d3a2e774ca203a4179f69aebee03003e5a6fa621e41d51
-license: BSD-3-Clause|COPYING|https://github.com/libssh2/libssh2/blob/master/COPYING
+license: BSD-3-Clause
 dep-pkg: zlib openssl
-bsystem: configure
-
 install: |
-    configure \
-        --disable-examples-build \
-        --disable-werror \
-        --with-crypto=openssl \
-        --with-libssl-prefix="$openssl_INSTALL_DIR" \
-        --with-libz \
-        --with-libz-prefix="$zlib_INSTALL_DIR"
+    cmakew -DLINT=OFF -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON -DBUILD_SHARED_LIBS=ON &&
+    cmakew -DLINT=OFF -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON -DBUILD_SHARED_LIBS=OFF
