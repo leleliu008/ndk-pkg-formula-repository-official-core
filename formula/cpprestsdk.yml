@@ -10,6 +10,7 @@ ldflags: -llog
 dopatch: sed_in_place 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 
 install: |
+    export OPENSSL_ROOT_DIR="$openssl_INSTALL_DIR"
     cmakew \
         -DBUILD_TESTS=OFF \
         -DBUILD_SAMPLES=OFF

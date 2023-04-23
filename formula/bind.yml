@@ -1,12 +1,11 @@
 summary: Implementation of the DNS protocols
 web-url: https://www.isc.org/downloads/bind
 git-url: https://github.com/isc-projects/bind9
-src-url: https://downloads.isc.org/isc/bind9/9.18.4/bind-9.18.4.tar.xz
-src-sha: f277ae50159a00c300eb926a9c5d51953038a936bd8242d6913dfb6eac42761d
+src-url: https://downloads.isc.org/isc/bind9/9.18.14/bind-9.18.14.tar.xz
+src-sha: 9ae12edf6ac3c430b33ecd1a7c0c0c60875d255185eb87850fa9a5e794a64a09
 license: MPL-2.0
-dep-pkg: nghttp2 json-c libxml2 libidn2 libuv libglob
 dep-upp: pkg-config
-bsystem: configure
+dep-pkg: libnghttp2 openssl json-c libxml2 libidn2 libuv libglob
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
@@ -23,10 +22,13 @@ install: |
     configure \
         --disable-linux-caps \
         --disable-static \
+        --enable-shared \
         --without-python \
         --without-gssapi \
+        --without-lmdb \
         --with-zlib \
         --with-json-c \
         --with-libxml2 \
         --with-libidn2="$libidn2_INSTALL_DIR" \
-        --with-openssl="$openssl_INSTALL_DIR"
+        --with-openssl="$openssl_INSTALL_DIR" \
+        ac_cv_search_idn2_to_ascii_lz="'-lidn2 -lunistring -liconv'"

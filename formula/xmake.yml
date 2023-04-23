@@ -5,5 +5,12 @@ src-url: https://github.com/xmake-io/xmake/releases/download/v2.7.8/xmake-v2.7.8
 src-sha: d4112587fb0e74037ff1ac32d2f1000591ac1a297fbd74645f9b031cb079585e
 license: Apache-2.0
 bscript: core
-ccflags: -Wno-unused-but-set-variable
-install: xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$PACKAGE_BCACHED_DIR/xmake"
+bsystem: xmake
+install: |
+    CLANG_VERSION_MAJOR="$("$CC" -E -dM - < /dev/null | sed -n '/__clang_major__/p' | cut -d ' ' -f3)"
+
+    if [ "$CLANG_VERSION_MAJOR" -ge 13 ] ; then
+        export CFLAGS="$CFLAGS -Wno-error=unused-but-set-variable"
+    fi
+
+    xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$PACKAGE_BCACHED_DIR/xmake"

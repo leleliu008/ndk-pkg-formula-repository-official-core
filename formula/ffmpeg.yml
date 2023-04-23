@@ -1,34 +1,14 @@
 summary: Play, record, convert, and stream audio and video
-web-url: https://ffmpeg.org
 git-url: https://github.com/FFmpeg/FFmpeg
-src-url: https://ffmpeg.org/releases/ffmpeg-5.0.1.tar.xz
-src-sha: ef2efae259ce80a240de48ec85ecb062cecca26e4352ffb3fda562c21a93007b
-license: GPL-2.0-or-later|LICENSE.md|https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/LICENSE.md
+web-url: https://ffmpeg.org/
+src-url: https://ffmpeg.org/releases/ffmpeg-5.1.3.tar.xz
+src-sha: 1b113593ff907293be7aed95acdda5e785dd73616d7d4ec90a0f6adbc5a0312e
+license: GPL-2.0-or-later
 dep-pkg: sdl2 opus libwebp libvorbis theora speex x264 x265 lame
 bsystem: gmake
 binbstd: yes
 
 install: |
-    change_config_h() {
-        #注释掉#define getenv(x) NULL，没有用，会报错
-        sed_in_place "s/#define getenv(x) NULL/\\/\\/ #define getenv(x) NULL/" config.h
-        sed_in_place "s/#define HAVE_TRUNC 0/#define HAVE_TRUNC 1/" config.h
-        sed_in_place "s/#define HAVE_TRUNCF 0/#define HAVE_TRUNCF 1/" config.h
-        sed_in_place "s/#define HAVE_RINT 0/#define HAVE_RINT 1/" config.h
-        sed_in_place "s/#define HAVE_LRINT 0/#define HAVE_LRINT 1/" config.h
-        sed_in_place "s/#define HAVE_LRINTF 0/#define HAVE_LRINTF 1/" config.h
-        sed_in_place "s/#define HAVE_ROUND 0/#define HAVE_ROUND 1/" config.h
-        sed_in_place "s/#define HAVE_ROUNDF 0/#define HAVE_ROUNDF 1/" config.h
-        sed_in_place "s/#define HAVE_CBRT 0/#define HAVE_CBRT 1/" config.h
-        sed_in_place "s/#define HAVE_CBRTF 0/#define HAVE_CBRTF 1/" config.h
-        sed_in_place "s/#define HAVE_COPYSIGN 0/#define HAVE_COPYSIGN 1/" config.h
-        sed_in_place "s/#define HAVE_ERF 0/#define HAVE_ERF 1/" config.h
-        sed_in_place "s/#define HAVE_HYPOT 0/#define HAVE_HYPOT 1/" config.h
-        sed_in_place "s/#define HAVE_ISNAN 0/#define HAVE_ISNAN 1/" config.h
-        sed_in_place "s/#define HAVE_ISFINITE 0/#define HAVE_ISFINITE 1/" config.h
-        sed_in_place "s/#define HAVE_INET_ATON 0/#define HAVE_INET_ATON 1/" config.h
-    }
-
     if run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
@@ -49,8 +29,27 @@ install: |
         --disable-asm \
         --disable-doc \
         --disable-debug \
+        --disable-vulkan \
         --extra-cflags='-DANDROID' ; then
-        change_config_h &&
+        {
+            #注释掉#define getenv(x) NULL，没有用，会报错
+            sed_in_place "s/#define getenv(x) NULL/\\/\\/ #define getenv(x) NULL/" config.h
+            sed_in_place "s/#define HAVE_TRUNC 0/#define HAVE_TRUNC 1/" config.h
+            sed_in_place "s/#define HAVE_TRUNCF 0/#define HAVE_TRUNCF 1/" config.h
+            sed_in_place "s/#define HAVE_RINT 0/#define HAVE_RINT 1/" config.h
+            sed_in_place "s/#define HAVE_LRINT 0/#define HAVE_LRINT 1/" config.h
+            sed_in_place "s/#define HAVE_LRINTF 0/#define HAVE_LRINTF 1/" config.h
+            sed_in_place "s/#define HAVE_ROUND 0/#define HAVE_ROUND 1/" config.h
+            sed_in_place "s/#define HAVE_ROUNDF 0/#define HAVE_ROUNDF 1/" config.h
+            sed_in_place "s/#define HAVE_CBRT 0/#define HAVE_CBRT 1/" config.h
+            sed_in_place "s/#define HAVE_CBRTF 0/#define HAVE_CBRTF 1/" config.h
+            sed_in_place "s/#define HAVE_COPYSIGN 0/#define HAVE_COPYSIGN 1/" config.h
+            sed_in_place "s/#define HAVE_ERF 0/#define HAVE_ERF 1/" config.h
+            sed_in_place "s/#define HAVE_HYPOT 0/#define HAVE_HYPOT 1/" config.h
+            sed_in_place "s/#define HAVE_ISNAN 0/#define HAVE_ISNAN 1/" config.h
+            sed_in_place "s/#define HAVE_ISFINITE 0/#define HAVE_ISFINITE 1/" config.h
+            sed_in_place "s/#define HAVE_INET_ATON 0/#define HAVE_INET_ATON 1/" config.h
+        } &&
         gmakew clean &&
         gmakew install &&
         run cp ffbuild/config.log .

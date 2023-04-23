@@ -15,3 +15,4 @@ install: |
         --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
         --with-libintl-prefix="$gettext_INSTALL_DIR" \
         --with-expat="$expat_INSTALL_DIR"
+    sed_in_place 's|-lfontconfig|-lfontconfig -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/fontconfig.pc"

@@ -10,8 +10,7 @@ bsystem: autotools
 
 install: |
     # error: "Cannot compile without assertions!"
-    export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-DNDEBUG||g')"
-    export CXXFLAGS="$(printf '%s\n' "$CXXFLAGS" | sed 's|-DNDEBUG||g')"
+    export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||g')"
 
     export ac_cv_path_ac_pt_AR="$TOOLCHAIN_BIND/$AR"
     export ac_cv_path_ac_pt_RANLIB="$TOOLCHAIN_BIND/$RANLIB"

@@ -1,18 +1,17 @@
 summary: Parallel gzip
-web-url: https://zlib.net/pigz/
 git-url: https://github.com/madler/pigz
+web-url: https://zlib.net/pigz/
 src-url: https://zlib.net/pigz/pigz-2.7.tar.gz
 src-sha: b4c9e60344a08d5db37ca7ad00a5b2c76ccb9556354b722d56d55ca7e8b1c707
 license: Zlib
-bsystem: gmake
+dep-pkg: zlib
 binbstd: yes
 
-dopatch: |
-    sed_in_place 's|ln -f|ln -sf|' Makefile
+dopatch: sed_in_place 's|ln -f|ln -sf|' Makefile
 
 install: |
     gmakew clean &&
-    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -pie -fPIE'" &&
+    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -static'" &&
     install_bins pigz &&
     install_mans pigz.1 &&
     cd "$PACKAGE_INSTALL_DIR/bin" &&
