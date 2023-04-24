@@ -1,8 +1,8 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata
-src-url: https://www.openinfosecfoundation.org/download/suricata-6.0.5.tar.gz
-src-sha: 0d4197047c84ba070dfc6b1d9f9ee92f52a71403bfac0e29b2554bb21fe00754
+src-url: https://www.openinfosecfoundation.org/download/suricata-6.0.11.tar.gz
+src-sha: 4da5e4e91e49992633a6024ce10afe6441255b2775a8f20f1ef188bd1129ac66
 license: GPL-2.0-or-later
 dep-pkg: jansson file libnet libpcap libyaml lz4 pcre libiconv libglob
 bsystem: configure cargo
@@ -11,6 +11,9 @@ bsystem: configure cargo
 sdk-api: 26
 
 install: |
+    export CARGO_BUILD_TARGET="$RUST_TARGET"
+    export RUST_TARGET="$RUST_TARGET"
+
     sed_in_place "/host_triplet = /c host_triplet = $RUST_TARGET" "$PACKAGE_BSCRIPT_DIR/rust/Makefile.in" &&
     sed_in_place '/RUST_LDADD="${RUST_SURICATA_LIB}/i RUST_SURICATA_LIB=$(echo "$RUST_SURICATA_LIB" | sed "s/armv7a/armv7/")' "$PACKAGE_BSCRIPT_DIR/configure" &&
     configure \

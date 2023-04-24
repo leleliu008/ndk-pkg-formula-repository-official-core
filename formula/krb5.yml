@@ -23,6 +23,7 @@ install: |
     else
         ac_cv_header_ifaddrs_h=yes
     fi
+
     configure \
         --enable-dns-for-realm \
         --without-system-verto \
@@ -34,4 +35,4 @@ install: |
         ac_cv_func_regcomp=yes \
         ac_cv_printf_positional=yes \
         ac_cv_lib_readline_main=yes \
-        ac_cv_header_ifaddrs_h="$ac_cv_header_ifaddrs_h"
+        ac_cv_header_ifaddrs_h="$ac_cv_header_ifaddrs_h" LIBS=-ldb

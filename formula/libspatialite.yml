@@ -4,8 +4,12 @@ src-url: https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5
 src-sha: eecbc94311c78012d059ebc0fae86ea5ef6eecb13303e6e82b3753c1b3409e98
 license: MPL-1.1
 dep-pkg: freexl librttopo libxml2 minizip proj7
-dep-upp: pkg-config
-bsystem: configure
-
 install: |
-    configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config"
+    LIBS_GEOS="$(pkg-config --libs geos)"
+    configure \
+        --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" \
+        LIBS="'$(pkg-config --libs proj) -llog'" \
+        ac_cv_search_GEOSCoveredBy="'$LIBS_GEOS'" \
+        ac_cv_search_GEOSDelaunayTriangulation="'$LIBS_GEOS'" \
+        ac_cv_search_GEOSContext_setErrorMessageHandler_r="'$LIBS_GEOS'" \
+        ac_cv_search_GEOSFrechetDistance_r="'$LIBS_GEOS'"
