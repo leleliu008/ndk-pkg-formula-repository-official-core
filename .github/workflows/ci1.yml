@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,binaryen,bind,binocle,binutils,bison,bitcoin,bk,boxes,brook,broot,bullet,caddy,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,cmake,cppcheck,cpprestsdk,cppunit,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp,fd,fdk-aac]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,binaryen,bind,binocle,binutils,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,cmake,cppcheck,cpprestsdk,cppunit,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp,fd,fdk-aac]
 
     runs-on: ${{ matrix.os }}
 

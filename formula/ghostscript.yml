@@ -21,6 +21,8 @@ dopatch: |
     rm -rf tesseract
 
 install: |
+    HARFBUZZ_LIBS="$(pkg-config --libs-only-l harfbuzz)"
+    printf 'INPUT(%s -lc++_shared)\n' "$HARFBUZZ_LIBS" > ../lib/libpthread.a
     run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config" || return 1
     export PATH="$PWD:$PATH"
     export CPPFLAGS="$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2"

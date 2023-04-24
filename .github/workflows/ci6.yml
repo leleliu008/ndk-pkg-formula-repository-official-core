@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,yasm,youtubedr,yq,yyjson,zeromq,zlib-ng,zlog,zoxide,zsh,zsync]
+        pkg: [tectonic,tengo,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,unbound,universal-ctags,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zoxide,zsh,zstd,zsync]
 
     runs-on: ${{ matrix.os }}
 
