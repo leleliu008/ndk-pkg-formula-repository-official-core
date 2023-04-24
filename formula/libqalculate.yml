@@ -7,5 +7,5 @@ license: GPL-2.0-or-later
 dep-upp: gettext-tools intltool
 dep-pkg: gettext readline icu4c libxml2 curl gmp mpfr libbthread
 xxflags: -include pthread.h -include bthread.h
-dopatch: printf '%s\n' 'INPUT(-l:libbthread.a)'  > ../lib/libpthread.a
+dopatch: printf '%s\n' 'INPUT(-lbthread)'  > ../lib/libpthread.a
 bsystem: configure
