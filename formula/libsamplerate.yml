@@ -5,12 +5,5 @@ src-sha: 0a7eb168e2f21353fb6d84da152e4512126f7dc48ccb0be80578c565413444c1
 license: BSD-2-Clause
 dep-pkg: libsndfile fftw
 dep-upp: libtool
-bsystem: autogen
-
-dopatch: |
-    autoreconf -ivf &&
-    sed_in_place '$d' autogen.sh &&
-    ./autogen.sh &&
-    sed_in_place 's|sys/soundcard.h|linux/soundcard.h|' examples/audio_out.c
-
+dopatch: sed_in_place 's|sys/soundcard.h|linux/soundcard.h|' examples/audio_out.c
 install: configure LIBS="'-logg -lm -lvorbis -lvorbisenc -lFLAC -lsqlite3'"

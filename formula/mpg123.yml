@@ -5,10 +5,14 @@ src-url: https://www.mpg123.de/download/mpg123-1.31.3.tar.bz2
 src-sha: 1ca77d3a69a5ff845b7a0536f783fee554e1041139a6b978f6afe14f5814ad1a
 license: LGPL-2.1-only
 dep-pkg: sdl2
-dep-upp: pkg-config
 bsystem: configure
 
 install: |
+    # https://github.com/android/ndk/issues/1862
+    if [ "$ANDROID_NDK_VERS" = '25.2.9519653' ] ; then
+        export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os|-O3|g')"
+    fi
+
     unset CPU
 
     case $TARGET_OS_ARCH in

@@ -18,9 +18,7 @@ dopatch: |
     sed_in_place 's|/var/run|/data/local/tmp|' src/usbmuxd-proto.h &&
     sed_in_place 's|/var/run|/data/local/tmp|' src/main.c &&
     sed_in_place 's|/var/run|/data/local/tmp|' docs/usbmuxd.8 &&
-    sed_in_place 's|/var/run|/data/local/tmp|' udev/39-usbmuxd.rules.in &&
-    NOCONFIGURE=yes ./autogen.sh
-
+    sed_in_place 's|/var/run|/data/local/tmp|' udev/39-usbmuxd.rules.in
 
 install: |
     configure \
