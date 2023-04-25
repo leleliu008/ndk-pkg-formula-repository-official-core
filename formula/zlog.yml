@@ -8,8 +8,7 @@ bsystem: gmake
 bscript: src
 binbstd: yes
 
-dopatch: |
-    sed_in_place '/cp -f/d' makefile
+dopatch: sed_in_place '/cp -f/d' makefile
 
 install: |
     gmakew clean &&

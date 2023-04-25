@@ -11,6 +11,12 @@ binbstd: yes
 sdk-api: 26
 
 install: |
+    if [ -f "$libtirpc_LIBRARY_DIR/libtirpc.a" ] ; then
+        LIBTIRPC="$libtirpc_LIBRARY_DIR/libtirpc.a"
+    else
+        LIBTIRPC="$libtirpc_LIBRARY_DIR/libtirpc.so"
+    fi
+
     export LSOF_MAKE="make"
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
@@ -18,7 +24,7 @@ install: |
     export LSOF_ARCH="$TARGET_OS_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
-    export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $libtirpc_LIBRARY_DIR/libtirpc.a"
+    export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $LIBTIRPC"
     
     run ./Configure -clean &&
     run ./Configure -n linux &&

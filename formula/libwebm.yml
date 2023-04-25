@@ -7,5 +7,5 @@ license: BSD-3-Clause
 
 install: |
     cmakew &&
-    run install_libs libwebm.a &&
+    run install_libs libwebm.* &&
     run install_bins mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
