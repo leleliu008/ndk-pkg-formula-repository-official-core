@@ -7,6 +7,7 @@ license: LGPL-2.0-or-later
 dep-upp: glib-tools
 dep-pkg: cairo fribidi harfbuzz
     #dopatch: printf 'INPUT(%s -lc++_shared)\n' "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libiconv.a
+dopatch: sed_in_place '/subdir.*tests/d' meson.build
 install: |
     mesonw \
         -Dgtk_doc=false \
