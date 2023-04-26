@@ -1,0 +1,22 @@
+summary: Get a file from an HTTP, HTTPS or FTP server
+git-url: https://github.com/curl/curl
+web-url: https://curl.haxx.se/
+src-url: https://curl.haxx.se/download/curl-7.86.0.tar.bz2
+src-sha: f5ca69db03eea17fa8705bdfb1a9f58d76a46c9010518109bb38f313137e0a28
+dep-pkg: libnghttp2 openssl libzstd brotli
+license: curl
+dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+install: |
+    configure \
+        --enable-optimize \
+        --enable-pthreads \
+        --with-default-ssl-backend=openssl \
+        --with-ssl=$openssl_INSTALL_DIR \
+        --with-nghttp2 \
+        --without-nghttp3 \
+        --without-ngtcp2 \
+        --without-quiche \
+        --without-librtmp \
+        --without-libidn2
+    rm -rfv "$PACKAGE_INSTALL_DIR/bin/curl"
+    rm -rfv "$PACKAGE_INSTALL_DIR/bin/share/man/man1/curl.1"

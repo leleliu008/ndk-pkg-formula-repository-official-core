@@ -4,7 +4,7 @@ src-url: https://github.com/rakshasa/libtorrent/archive/v0.13.8.tar.gz
 src-sha: 0f6c2e7ffd3a1723ab47fdac785ec40f85c0a5b5a42c1d002272205b988be722
 license: GPL-2.0-or-later
 dep-pkg: zlib openssl libexecinfo
-dep-upp: pkg-config libtool
+dep-upp: libtool
 bsystem: autogen
 
 install: |
@@ -13,3 +13,4 @@ install: |
         --enable-aligned=true \
         --without-fastcgi \
         --with-zlib="$zlib_INSTALL_DIR"
+    sed_in_place 's|-ltorrent|-ltorrent -lexecinfo|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libtorrent.pc"

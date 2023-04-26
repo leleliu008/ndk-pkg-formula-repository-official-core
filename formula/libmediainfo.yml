@@ -3,10 +3,13 @@ web-url: https://mediaarea.net/
 src-url: https://mediaarea.net/download/source/libmediainfo/22.06/libmediainfo_22.06.tar.bz2
 src-sha: 0dc2fb882ded1a1b2908d903fd9c390c732cf1e9e08468de5d324684bcefdfe0
 license: BSD-2-Clause
-dep-upp: pkg-config libtool
-dep-pkg: libzen zlib curl
-bscript: Project/GNU/Library
+dep-pkg: libzen libcurl zlib
+dep-upp: libtool
 bsystem: autogen
+bscript: Project/GNU/Library
 binbstd: yes
-dopatch: sed_in_place 's|${libdir}/libzen.a||' libmediainfo.pc.in
-install: configure --with-libcurl="$curl_INSTALL_DIR"
+dopatch: |
+    sed_in_place 's|${libdir}/libzen.a||'   libmediainfo.pc.in
+    sed_in_place '/Requires.private:/d'     libmediainfo.pc.in
+    sed_in_place 's|libzen|libzen libcurl|' libmediainfo.pc.in
+install: configure --with-libcurl="$libcurl_INSTALL_DIR"

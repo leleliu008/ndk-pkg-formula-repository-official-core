@@ -6,6 +6,6 @@ binbstd: yes
 install: |
     run rm -rf lolcat &&
     run rm -rf censor &&
-    run $CC $LDFLAGS -fPIE -o lolcat lolcat.c -lm &&
-    run $CC $LDFLAGS -fPIE -o censor censor.c &&
+    run $CC $LDFLAGS -static -o lolcat lolcat.c -lm &&
+    run $CC $LDFLAGS -static -o censor censor.c &&
     run install_bins lolcat censor
