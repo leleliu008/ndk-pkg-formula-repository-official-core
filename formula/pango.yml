@@ -6,8 +6,10 @@ src-sha: 1d67f205bfc318c27a29cfdfb6828568df566795df0cb51d2189cde7f2d581e8
 license: LGPL-2.0-or-later
 dep-upp: glib-tools
 dep-pkg: cairo fribidi harfbuzz
-    #dopatch: printf 'INPUT(%s -lc++_shared)\n' "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libiconv.a
-dopatch: sed_in_place '/subdir.*tests/d' meson.build
+dopatch: |
+    if [ -f ../lib/libiconv.a ] ; then
+        printf 'INPUT(%s -lc++_shared)\n' "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libiconv.a
+    fi
 install: |
     mesonw \
         -Dgtk_doc=false \
