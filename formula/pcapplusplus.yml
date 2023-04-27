@@ -7,14 +7,17 @@ license: Unlicense
 dep-pkg: libpcap
 bsystem: gmake
 binbstd: yes
-
+dopatch: |
+    if [ -f ../lib/libpcap.a ] ; then
+        printf 'INPUT(%s -lssl -lcrypto)\n' "$libpcap_INSTALL_DIR/lib/libpcap.a" > ../lib/libpcap.a
+    fi
 install: |
     run ./configure-android.sh \
         --ndk-path "$ANDROID_NDK_ROOT" \
         --target "$TARGET_OS_ABI" \
         --api "$TARGET_OS_VERS" \
         --libpcap-include-dir "$libpcap_INCLUDE_DIR" \
-        --libpcap-lib-dir "$libpcap_LIBRARY_DIR" &&
+        --libpcap-lib-dir "$PACKAGE_WORKING_DIR/lib" &&
     gmakew clean &&
     gmakew all &&
     run install_libs Dist/*.a &&
