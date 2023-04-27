@@ -1,11 +1,14 @@
 summary: Core application library for C
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
-src-url: https://download.gnome.org/sources/glib/2.74/glib-2.74.0.tar.xz
-src-sha: 3652c7f072d7b031a6b5edd623f77ebc5dcd2ae698598abcc89ff39ca75add30
+src-url: https://download.gnome.org/sources/glib/2.76/glib-2.76.1.tar.xz
+src-sha: 43dc0f6a126958f5b454136c4398eab420249c16171a769784486e25f2fda19f
 license: LGPL-2.1-or-later
 dep-pkg: gettext libffi pcre2
-
+dopatch: |
+    if [ -f ../lib/libintl.a ] ; then
+        printf 'INPUT(%s %s)\n' "$gettext_INSTALL_DIR/lib/libintl.a" "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libintl.a
+    fi
 install: |
     mesonw \
         -Dnls=disabled \

@@ -11,7 +11,7 @@ binbstd: yes
 dopatch: |
     sed_in_place 's|STRIP=true||' src/Makefile
 
-    if [ -L ../lib/libunistring.a ] ; then
+    if [ -f ../lib/libunistring.a ] ; then
         "$AR" x ../lib/libiconv.a
         "$AR" x ../lib/libunistring.a
         "$AR" crs ../lib/libunistring.a *.o

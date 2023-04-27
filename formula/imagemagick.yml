@@ -5,10 +5,8 @@ git-url: https://github.com/ImageMagick/ImageMagick
 version: 7.1.0.39
 src-sha: a82c632449a790b6ad78d281b94bdb17a6054ed8afd4f2f21e8304b1f2d2416f
 license: ImageMagick
-dep-pkg: ghostscript libheif liblqr libtool openexr libwebp liblzma libbz2
-dep-upp: pkg-config
-bsystem: configure
-
+dep-pkg: ghostscript openexr libheif liblqr libwebp liblzma libbz2
+dep-upp: libtool
 install: |
     configure \
         --with-freetype=yes \
@@ -24,4 +22,4 @@ install: |
         --without-x \
         --without-wmf \
         --without-fftw \
-        --disable-opencl
+        --disable-opencl LIBS=-lc++_shared
