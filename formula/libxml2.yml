@@ -1,11 +1,11 @@
 summary: GNOME XML library
 web-url: http://xmlsoft.org
 git-url: https://gitlab.gnome.org/GNOME/libxml2
-src-url: https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz
-src-sha: 60d74a257d1ccec0475e749cba2f21559e48139efba6ff28224357c7c798dfee
+src-url: https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.3.tar.xz
+src-uri: http://distfiles.macports.org/libxml2/libxml2-2.10.3.tar.xz
+src-sha: 5d2cc3d78bec3dbe212a9d7fa629ada25a7da928af432c93060ff5c17ee28a9c
 license: MIT
 dep-pkg: libiconv zlib
-bsystem: configure
 
 install: |
     configure \
@@ -14,6 +14,6 @@ install: |
         --without-lzma \
         --without-python \
         --without-readline \
-        --without-debug \
         --without-coverage \
+        --without-debug \
         --enable-ipv6

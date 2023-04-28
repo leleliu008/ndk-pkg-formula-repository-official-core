@@ -37,13 +37,13 @@ install: |
     run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
 
     cat >> args.gn <<EOF
-is_debug=false
-is_component_build=true
-target_os="android"
-target_cpu="$GN_ARG_TARGET_CPU"
-v8_target_cpu="$GN_ARG_TARGET_CPU"
-v8_enable_i18n_support=false
-EOF
+    is_debug=false
+    is_component_build=true
+    target_os="android"
+    target_cpu="$GN_ARG_TARGET_CPU"
+    v8_target_cpu="$GN_ARG_TARGET_CPU"
+    v8_enable_i18n_support=false
+    EOF
 
     run ninja
     run install_bins d8
