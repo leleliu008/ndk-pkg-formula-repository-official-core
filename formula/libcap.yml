@@ -1,10 +1,9 @@
 summary: Linux Capability Library
-git-url: https://git.kernel.org/pub/scm/libs/libcap/libcap
-src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.64.tar.gz
-src-sha: 0e47f5a88d0a296db279793d1ff525d7cc9b77887e50a0faf764b44f8cd7e85d
-license: BSD-3-Clause&&GPL-2.0-or-later|License|https://git.kernel.org/pub/scm/libs/libcap/libcap.git/plain/License
+git-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git
+src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.68.tar.gz
+src-sha: d5ce4e4af052e66e0aa760ee09ccc6d5b4721143053ba7ac2ac122e6609e0902
+license: BSD-3-Clause
 dep-upp: gperf
-bsystem: gmake
 
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
