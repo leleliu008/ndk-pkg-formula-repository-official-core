@@ -4,7 +4,7 @@ web-url: https://libssh2.org/
 src-url: https://libssh2.org/download/libssh2-1.10.0.tar.gz
 src-sha: 2d64e90f3ded394b91d3a2e774ca203a4179f69aebee03003e5a6fa621e41d51
 license: BSD-3-Clause
-dep-pkg: zlib openssl@1.1
+dep-pkg: zlib openssl
 install: |
     cmakew -DLINT=OFF -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON -DBUILD_SHARED_LIBS=ON &&
     cmakew -DLINT=OFF -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON -DBUILD_SHARED_LIBS=OFF

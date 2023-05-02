@@ -85,14 +85,13 @@ install: |
     export CROSS_SYSROOT="$SYSROOT"
 
     run ./Configure \
-        shared \
-        no-makedepend \
+        no-engine \
+        no-tests \
         no-ssl2 \
         no-ssl3 \
         no-comp \
-        no-hw \
-        no-engine \
         no-asm \
+        no-hw \
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
