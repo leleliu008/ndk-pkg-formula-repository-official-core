@@ -1,0 +1,103 @@
+summary: Cryptography and SSL/TLS Toolkit
+git-url: https://github.com/openssl/openssl
+web-url: https://www.openssl.org/
+src-url: https://www.openssl.org/source/openssl-3.1.0.tar.gz
+src-sha: aaa925ad9828745c4cad9d9efeb273deca820f2cdcf2c3ac7d7c1212b7c497b4
+license: Apache-2.0
+dep-upp: perl
+bsystem: gmake
+binbstd: yes
+
+dopatch: |
+    sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&
+    sed_in_place '/ndk is invalid/d'      Configurations/15-android.conf &&
+    sed_in_place '/no NDK $triarch-gcc/d' Configurations/15-android.conf &&
+    sed_in_place '/-target/d'             Configurations/15-android.conf &&
+    sed_in_place '/-gcc-toolchain/d'      Configurations/15-android.conf &&
+    sed_in_place '/tritools-4.9/d'        Configurations/15-android.conf
+
+install: |
+    # if -static option is given, only static libs are created, but we want both static and shared libs, so we remove the -static option
+    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
+        export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+        #sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
+    fi
+
+    if [ "$LINK_TYPE" = static-only ] || [ "$LINK_TYPE" = static-prefered ] ; then
+        cat > proxy-ld.c <<EOF
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <unistd.h>
+
+    int main(int argc, char* argv[]) {
+        for (int i = 1; i < argc; i++) {
+            if (strcmp(argv[i], "-lssl") == 0) {
+                argv[i] = (char*)"./libssl.a";
+            } else if (strcmp(argv[i], "-lcrypto") == 0) {
+                argv[i] = (char*)"./libcrypto.a";
+            } else if (strcmp(argv[i], "-fPIC") == 0) {
+                argv[i] = (char*)"-static";
+            }
+        }
+
+        char * const LD = getenv("CC");
+
+        if (LD == NULL) {
+            fprintf(stderr, "CC environment variable is not set.");
+            return 1;
+        }
+
+        if (LD[0] == '\0') {
+            fprintf(stderr, "CC environment variable is not set.");
+            return 1;
+        }
+
+        argv[0] = LD;
+
+        for (int i = 0; i < argc; i++) {
+            printf("%s ", argv[i]);
+        }
+
+        printf("\n");
+
+        execv(LD, argv);
+
+        perror(LD);
+
+        return 127;
+    }
+    EOF
+
+        run $CC_FOR_BUILD $CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD -std=c99 -o proxy-ld proxy-ld.c
+
+        run export LDCMD=./proxy-ld
+    fi
+
+    # ./configure LIST | grep android
+    case $TARGET_OS_ARCH in
+        armv7a)  TARGET='android-arm'    ;;
+        aarch64) TARGET='android-arm64'  ;;
+        i686)    TARGET='android-x86'    ;;
+        x86_64)  TARGET='android-x86_64' ;;
+    esac
+
+    export CROSS_SYSROOT="$SYSROOT"
+
+    run ./Configure \
+        shared \
+        no-makedepend \
+        no-ssl2 \
+        no-ssl3 \
+        no-comp \
+        no-hw \
+        no-engine \
+        no-asm \
+        -D__ANDROID_API__="$TARGET_OS_VERS" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --libdir=$PACKAGE_INSTALL_DIR/lib \
+        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl \
+        "$TARGET" &&
+    gmakew clean &&
+    gmakew CROSS_COMPILE= &&
+    gmakew CROSS_COMPILE= install
