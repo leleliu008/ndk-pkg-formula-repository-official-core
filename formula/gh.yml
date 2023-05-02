@@ -1,12 +1,10 @@
 summary: GitHub command-line tool
 git-url: https://github.com/cli/cli
-src-url: https://github.com/cli/cli/archive/v2.13.0.tar.gz
-src-sha: f8bc46bda990bc9947a26f5505533b86903c96f95047b2dacf7c9534e5b86760
+src-url: https://github.com/cli/cli/archive/v2.28.0.tar.gz
+src-sha: cf3c0fb7f601d717d8b5177707a197c49fd426f5dc3c9aa52a932e96ba7166af
 license: MIT
-bsystem: go
 
 install: |
-    gow \
-        -X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) \
+    gow -X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) \
         -X github.com/cli/cli/internal/build.Version=$PACKAGE_VERSION \
         ./cmd/gh

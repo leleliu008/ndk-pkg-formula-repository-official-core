@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,pup,putty,pybind11,qrencode,quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,skia,sl,soundtouch,spdlog,starship,stylua,supervisord,suricata,svn-lite,swig,syncthing,szip,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer]
+        pkg: [nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,pup,putty,pybind11,qrencode,quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,skia,sl,soundtouch,spdlog,starship,stylua,supervisord,suricata,svn-lite,swig,syncthing,szip,taglib,tbox,tcc]
 
     runs-on: ${{ matrix.os }}
 

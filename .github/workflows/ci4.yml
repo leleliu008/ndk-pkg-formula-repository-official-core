@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [libspectre,libspng,libthai,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell]
+        pkg: [libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nginx,ngtcp2,ninja,nng,nnn]
 
     runs-on: ${{ matrix.os }}
 

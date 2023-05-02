@@ -1,0 +1,10 @@
+summary: a meta-build system that generates build files for ninja
+git-url: https://gn.googlesource.com/gn
+shallow: no
+dep-upp: python3
+binbstd: yes
+bsystem: ninja
+install: |
+    run python3 build/gen.py &&
+    run ninja -C out/ &&
+    run install_bins out/gn

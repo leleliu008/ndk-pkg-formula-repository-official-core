@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [json-glib,jsoncpp,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi]
+        pkg: [jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate]
 
     runs-on: ${{ matrix.os }}
 

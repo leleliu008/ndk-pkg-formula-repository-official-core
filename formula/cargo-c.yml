@@ -1,0 +1,11 @@
+summary: Helper program to build and install c-like libraries
+git-url: https://github.com/lu-zero/cargo-c
+src-url: https://github.com/lu-zero/cargo-c/archive/v0.9.18.tar.gz
+src-sha: 1839c3e31f19eae346c47dcf2084bda80d875a8bb01fb2c55489802c7793c2d8
+license: MIT
+dep-upp: git curl pkg-config
+    #dep-pkg: libgit2
+install: |
+    #export LIBGIT2_SYS_USE_PKG_CONFIG=1
+    #export LIBSSH2_SYS_USE_PKG_CONFIG=1
+    cargow install --features=vendored-openssl

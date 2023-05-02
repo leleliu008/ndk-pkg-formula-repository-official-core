@@ -1,6 +1,6 @@
 summary: Command-line fuzzy finder written in Go
 git-url: https://github.com/junegunn/fzf
-src-url: https://github.com/junegunn/fzf/archive/0.30.0.tar.gz
-src-sha: a3428f510b7136e39104a002f19b2e563090496cb5205fa2e4c5967d34a20124
+src-url: https://github.com/junegunn/fzf/archive/0.40.0.tar.gz
+src-sha: 9597f297a6811d300f619fff5aadab8003adbcc1566199a43886d2ea09109a65
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION -X main.revision=ndk-pkg

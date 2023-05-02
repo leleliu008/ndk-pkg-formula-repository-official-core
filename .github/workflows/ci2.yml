@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os: [ubuntu-22.04]
-        pkg: [fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd,gdbm,gdu,geographiclib,germanium,geth,gh,git-lfs,glog,glow,glslang,gmake,gnu-barcode,gnu-coreutils,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,ixwebsocket,jfrog-cli,jpeg,jq]
+        pkg: [fd,fdk-aac,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd,gdbm,gdu,geographiclib,germanium,geth,gh,git-lfs,gitui,glog,glow,glslang,gmake,gn,gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,ixwebsocket]
 
     runs-on: ${{ matrix.os }}
 
