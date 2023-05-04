@@ -1,11 +1,11 @@
 summary: Library for Qalculate! program
 web-url: https://qalculate.github.io/
 git-url: https://github.com/Qalculate/libqalculate
-src-url: https://github.com/Qalculate/libqalculate/releases/download/v4.2.0/libqalculate-4.2.0.tar.gz
-src-sha: 2b86e656508f0b1c55236b08fd579b676563e1500b3db8304580de69c5693e4b
+src-url: https://github.com/Qalculate/libqalculate/releases/download/v4.6.1/libqalculate-4.6.1.tar.gz
+src-sha: ed087bfdedea0fd0eb26eb37a25e4c55caccfe96d83933a3573c93241458cab3
 license: GPL-2.0-or-later
 dep-upp: gettext-tools intltool
 dep-pkg: gettext readline icu4c libxml2 curl gmp mpfr libbthread
 xxflags: -include pthread.h -include bthread.h
-dopatch: printf '%s\n' 'INPUT(-lbthread)'  > ../lib/libpthread.a
+dopatch: printf '%s\n' 'INPUT(-l:libbthread.a)'  > ../lib/libpthread.a
 bsystem: configure

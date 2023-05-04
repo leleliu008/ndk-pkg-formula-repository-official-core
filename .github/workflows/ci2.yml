@@ -12,13 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
-        os: [ubuntu-22.04]
-        pkg: [fd,fdk-aac,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd,gdbm,gdu,geographiclib,germanium,geth,gh,git-lfs,gitui,glog,glow,glslang,gmake,gn,gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,ixwebsocket]
+        os:  [ubuntu-22.04]
+        abi: [armeabi-v7a, arm64-v8a]
+        pkg: [cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,cmake,coreutils,cpprestsdk,cppunit,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp,fd,fdk-aac]
 
     runs-on: ${{ matrix.os }}
-
-    env:
-      HOMEBREW_NO_INSTALL_CLEANUP: set
 
     steps:
       - run: export -p
@@ -28,8 +26,8 @@ jobs:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
-      - run: ./ndk-pkg setup
       - run: ./ndk-pkg env
+      - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg ndkinfo
 
@@ -51,4 +49,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/arm64-v8a/${{ matrix.pkg }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}

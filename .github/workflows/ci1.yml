@@ -12,13 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
-        os: [ubuntu-22.04]
-        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,binaryen,bind,binocle,binutils,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,cmake,coreutils,cppcheck,cpprestsdk,cppunit,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp]
+        os:  [ubuntu-22.04]
+        abi: [armeabi-v7a, arm64-v8a]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif]
 
     runs-on: ${{ matrix.os }}
-
-    env:
-      HOMEBREW_NO_INSTALL_CLEANUP: set
 
     steps:
       - run: export -p
@@ -28,8 +26,8 @@ jobs:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
-      - run: ./ndk-pkg setup
       - run: ./ndk-pkg env
+      - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg ndkinfo
 
@@ -51,4 +49,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/arm64-v8a/${{ matrix.pkg }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}

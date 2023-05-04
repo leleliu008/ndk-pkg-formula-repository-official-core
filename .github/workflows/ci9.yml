@@ -1,4 +1,4 @@
-name: workflow6
+name: workflow9
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv]
+        pkg: [nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,pup,putty,pybind11]
 
     runs-on: ${{ matrix.os }}
 

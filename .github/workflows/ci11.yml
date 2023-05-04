@@ -1,4 +1,4 @@
-name: workflow6
+name: workflow11
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv]
+        pkg: [tdu,tealdeer,tectonic,tengo,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz]
 
     runs-on: ${{ matrix.os }}
 

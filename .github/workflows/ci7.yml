@@ -1,4 +1,4 @@
-name: workflow6
+name: workflow7
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
         os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv]
+        pkg: [libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof]
 
     runs-on: ${{ matrix.os }}
 
