@@ -1,12 +1,11 @@
 summary: Validating, recursive, caching DNS resolver
 web-url: https://www.unbound.net
 git-url: https://github.com/NLnetLabs/unbound
-src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.16.0.tar.gz
-src-sha: 6701534c938eb019626601191edc6d012fc534c09d2418d5b92827db0cbe48a5
+src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.17.1.tar.gz
+src-sha: ee4085cecce12584e600f3d814a28fa822dfaacec1f94c84bfd67f8a5571a5f4
 license: BSD-3-Clause
-dep-pkg: openssl libmnl libevent expat nghttp2
-dep-upp: libtool
-bsystem: configure
+dep-pkg: libnghttp2 libevent libmnl openssl expat
+dep-upp: gm4 flex bison libtool
 
 install: |
     configure \
@@ -18,7 +17,7 @@ install: |
         --with-pthreads \
         --with-ssl="$openssl_INSTALL_DIR" \
         --with-libmnl="$libmnl_INSTALL_DIR" \
-        --with-libevent="$libevent_INSTALL_DIR" \
         --with-libexpat="$expat_INSTALL_DIR" \
-        --with-libnghttp2="$nghttp2_INSTALL_DIR" \
+        --with-libevent="$libevent_INSTALL_DIR" \
+        --with-libnghttp2="$libnghttp2_INSTALL_DIR" \
         ac_cv_prog_AR="$AR"

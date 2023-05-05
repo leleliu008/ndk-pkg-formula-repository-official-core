@@ -1,34 +1,29 @@
 summary: VP8/VP9 video codec
 web-url: https://www.webmproject.org/code/
 git-url: https://github.com/webmproject/libvpx
-src-url: https://github.com/webmproject/libvpx/archive/v1.11.0.tar.gz
-src-sha: 965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83
-license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/webmproject/libvpx/main/LICENSE
+src-url: https://github.com/webmproject/libvpx/archive/v1.13.0.tar.gz
+src-sha: cb2a393c9c1fae7aba76b950bb0ad393ba105409fe1a147ccd61b0aaa1501066
+license: BSD-3-Clause
 dep-upp: yasm
 bsystem: configure
 
 install: |
+    unset CONFIGURE_EXTRA_ARGS
+
     case $TARGET_OS_ARCH in
-        i686)    export AS=yasm ;;
-        x86_64)  export AS=yasm ;;
+        armv7a)  TARGET=armv7-android-gcc ; CONFIGURE_EXTRA_ARGS=--disable-neon-asm ;;
+        aarch64) TARGET=arm64-android-gcc ;;
+        i686)    TARGET=x86-android-gcc    ; export AS=yasm ;;
+        x86_64)  TARGET=x86_64-android-gcc ; export AS=yasm ;;
     esac
 
-    target() {
-        case $TARGET_OS_ARCH in
-            armv7a)  echo  armv7-android-gcc ;;
-            aarch64) echo  arm64-android-gcc ;;
-            i686)    echo    x86-android-gcc ;;
-            x86_64)  echo x86_64-android-gcc ;;
-        esac
-    }
-
-    run $PACKAGE_BSCRIPT_DIR/configure \
+    run "$PACKAGE_BSCRIPT_DIR/configure" \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --target="$(target)" \
+        --target="$TARGET" \
         --disable-examples \
         --disable-unit-tests \
         --disable-realtime-only \
         --enable-pic \
-        --enable-vp9-highbitdepth &&
+        --enable-vp9-highbitdepth $CONFIGURE_EXTRA_ARGS &&
     gmakew
     gmakew install
