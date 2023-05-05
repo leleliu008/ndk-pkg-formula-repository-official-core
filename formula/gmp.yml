@@ -12,6 +12,4 @@ install: |
         --disable-assert \
         --disable-cxx \
         --enable-assembly \
-        --enable-fft \
-        --enable-shared \
-        --enable-static
+        --enable-fft
