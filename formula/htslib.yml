@@ -5,4 +5,53 @@ src-url: https://github.com/samtools/htslib/releases/download/1.17/htslib-1.17.t
 src-sha: 763779288c40f07646ec7ad98b96c378c739171d162ad98398868783b721839f
 license: MIT
 dep-pkg: zlib liblzma libbz2 curl
+
+# will be removed in next release
+# https://github.com/samtools/htscodecs/commit/479b5be2fec9584ed3e1faf70c1527468d5f44bb
+dopatch: |
+    [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] || return 0
+
+    cd htscodecs
+
+    patch -p1 <<EOF
+    diff --git a/htscodecs/rANS_static32x16pr.h b/htscodecs/rANS_static32x16pr.h
+    index 0ca1c32..0aa2dcd 100644
+    --- a/htscodecs/rANS_static32x16pr.h
+    +++ b/htscodecs/rANS_static32x16pr.h
+    @@ -146,7 +146,7 @@ unsigned char *rans_uncompress_O1_32x16_avx512(unsigned char *in,
+
+     //----------------------------------------------------------------------
+     // Arm Neon implementation
+    -#ifdef __ARM_NEON
+    +#if defined(__ARM_NEON) && defined(__aarch64__)
+     unsigned char *rans_compress_O0_32x16_neon(unsigned char *in,
+                                                unsigned int in_size,
+                                                unsigned char *out,
+    diff --git a/htscodecs/rANS_static32x16pr_neon.c b/htscodecs/rANS_static32x16pr_neon.c
+    index e5312da..bb6b268 100644
+    --- a/htscodecs/rANS_static32x16pr_neon.c
+    +++ b/htscodecs/rANS_static32x16pr_neon.c
+    @@ -32,7 +32,7 @@
+      */
+
+     #include "config.h"
+    -#ifdef __ARM_NEON
+    +#if defined(__ARM_NEON) && defined(__aarch64__)
+     #include <arm_neon.h>
+
+     #include <limits.h>
+    diff --git a/htscodecs/rANS_static4x16pr.c b/htscodecs/rANS_static4x16pr.c
+    index b6d5580..c16edda 100644
+    --- a/htscodecs/rANS_static4x16pr.c
+    +++ b/htscodecs/rANS_static4x16pr.c
+    @@ -1006,7 +1006,7 @@ unsigned char *(*rans_dec_func(int do_simd, int order))
+         }
+     }
+
+    -#elif defined(__ARM_NEON)
+    +#elif defined(__ARM_NEON) && defined(__aarch64__)
+
+     #if defined(__linux__) || defined(__FreeBSD__)
+     #include <sys/auxv.h>
+    EOF
 install: configure --enable-libcurl LIBS="'$(pkg-config --libs libcurl)'"

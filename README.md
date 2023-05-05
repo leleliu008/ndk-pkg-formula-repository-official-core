@@ -1,100 +1,129 @@
-# ndk-pkg-formula-repository
+# ndk-pkg-formula-repository-offical-core
+
 the offical formula repository for [ndk-pkg](https://github.com/leleliu008/ndk-pkg)
 
-## what's formula
-formula is a POSIX sh script that is used to describe how to compile a package for [ndk-pkg](https://github.com/leleliu008/ndk-pkg).
+## ndk-pkg formula
 
-## the function must be invoked on top of the formula
-```
-pkg_set <KEY> <VALUE>
-```
+a ndk-pkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to config a ndk-pkg package's meta-information including one sentence description, package version, installation instructions, etc.
+
+## ndk-pkg formula scheme
+
 |KEY|required?|overview|
 |-|-|-|
-|`summary`|required|the summary of this package.|
-|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git.url` must be present.|
-|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
-|`license`|optional|a list of space-separated licenses. each list item has form: `[LICENSE-NAME][;LICENSE-FILEPATH-IN-SRC][;LICENSE-URL]`. if `LICENSE-FILEPATH-IN-SRC` and `LICENSE-URL` are not given, `LICENSE-NAME` should be found in [SPDX license list](https://spdx.github.io/spdx-spec/SPDX-license-list/). if value is not given, package can not be deployed to maven central.|
-|`developer`|optional|a list of space-separated developers, each list item has form: `[DEVELOPER-NAME][;DEVELOPER-EMAIL][;DEVELOPER-ORGANIZATION-NAME][;DEVELOPER-ORGANIZATION-URL]`.|
+|`summary`|required|describe what is this package used for in one sentence.|
+|`license`|optional|a space-separated list of [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
+|`version`|optional|the version of this package.<br>If this mapping is not present, it will be calculated from `src-url`, if `src-url` is also not present, it will be calculated from running time as format `date +%Y.%m.%d`|
 ||||
-|`git.url`|optional|the source code git repository.<br>must end with `.git`|
-|`git.sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
-|`git.tag`|optional|the git tag name, which to be fetched as source code|
+|`web-url`|optional|the home webpage of this package.<br>If this mapping is not present, `git-url` must be present.|
 ||||
-|`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
-|`src.sha`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+|`git-url`|optional|the source code git repository.<br>If `src-url` is not present, this mapping must be present.|
+|`git-ref`|optional|reference: <https://git-scm.com/book/en/v2/Git-Internals-Git-References> <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
+|`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are present, `git-sha` takes precedence over `git-ref`|
+|`shallow`|optional|indicates whether do a git shallow fetch. value can be `yes` or `no`. default value is `yes`.|
 ||||
-|`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
-|`fix.sha`|optional|the `sha256sum` of patch file.|
+|`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR` for local test and debug purpose|
+|`src-uri`|optional|the mirror of `src-url`.|
+|`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear together.|
 ||||
-|`dep.cmd`|optional|a list of space-separated commands which will be used when installing.|
-|`dep.pkg`|optional|a list of space-separated packages which will be used when installing and runtime.|
+|`fix-url`|optional|the patch file download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/fix` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/fix`.|
+|`fix-sha`|optional|the `sha256sum` of patch file.<br>`fix-sha` and `fix-url` must appear together.|
 ||||
-|`cdefine`|optional|append to `CPPFLAGS`|
+|`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/res` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/res`.|
+|`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear together.|
+||||
+|`dep-pkg`|optional|a space-separated list of   `ndk-pkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ndk-pkg](https://github.com/leleliu008/ndk-pkg).|
+|`dep-upp`|optional|a space-separated list of   `uppm packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
+|`dep-pym`|optional|a space-separated list of `python packages` that are depended by this package when installing and/or runtime, which will be installed via [pip3](https://github.com/pypa/pip).|
+|`dep-plm`|optional|a space-separated list of    `perl modules` that are depended by this package when installing and/or runtime, which will be installed via [cpan](https://metacpan.org/dist/CPAN/view/scripts/cpan).|
+||||
+|`ppflags`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|append to `CFLAGS`|
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`bsystem`|optional|a list of space-separated build-systems which will be used when installing. list item shall be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go` `ndk-build`|
-|`bscript`|optional|where the build script is located in, relative to `PACKAGE_WORKING_DIR`. the build script (such as `autogen.sh`, `configure.ac`, `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, `xmake.lua`, etc.)|
-|`binbstd`|optional|whether build in build script directory or not. value shall be `yes` or `no`. If `no`, this package would be built in build directory.|
-|`parallel`|optional|whether build in parallel or not. value shall be `yes` or `no`. default value is `yes`.|
+|`exetype`|optional|indicates whether can be built as statically-linked executable.<br>value can be one of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
+||||
+|`bsystem`|optional|build system.<br>values can be some of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
+|`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. value can be `yes` or `no`. default value is `no`.|
+||||
+|`build0`|optional|POSIX shell code to be run when user run `ndk-pkg install <PKG>`. used to describe how to build for native.|
+|`dopatch`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
+|`install`|optional|POSIX shell code to be run when user run `ndk-pkg install <PKG>`. If this mapping is not present, `ndk-pkg` will run default install code according to `bsystem`|
+||||
+|`sdk-api`|optional|specify which minimum Android SDK API level is supported for this package.|
 
-## the function can be declared in a formula
-|function|required?|overview|
-|-|-|-|
-|`prepare(){}`|optional|this function only run once.|
-|`build0(){}`|optional|this function only run once. build for native.|
-|`build(){}`|required|this function will run 4 times. each time build for one abi ( `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` ).|
+### Appendix1: commands that can be used right out of the box
 
-## the function can be invoked in a formula at anywhere
-|function|example|
+|command|usage-example|
 |-|-|
 |`echo`|`echo 'your message.'`|
-|`info`|`info 'your infomation.'`|
-|`warn`|`warn "--min-sdk-api-level=INTEGER argument is not specified. so, use the default value [21]."`|
+|`info`|`info 'your information.'`|
+|`warn`|`warn "no package manager found."`|
 |`error`|`error 'error message.'`|
-|`die`|`die "please specify a package name."`|
+|`abort`|`abort 1 "please specify a package name."`|
 |`success`|`success "build success."`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
-|`getvalue`|`VALUE=$(getvalue --min-sdk-api-level=21)`|
-|`sha256sum`|`VALUE=$(sha256sum FILEPATH)`|
-|`is_sha256sum_match`|`is_sha256sum_match FILEPATH SHA256SUM`|
-|`fetch`|`fetch URL [--sha256=SHA256] --output-path=PATH`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`fetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
-
-## the function can be invoked in build function only
-|function|example|
-|-|-|
+|`wfetch`|`wfetch URL [--sha256=SHA256] --output-path=PATH`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`wfetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
+|||
 |`configure`|`configure --enable-pic`|
 |`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
 |`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
-|`xmakew`|`xmakew`|
 |`gmakew`|`gmakew`|
+|`xmakew`|`xmakew`|
 |`cargow`|`cargow`|
 |`gow`|`gow`|
 
-## the variable can be used in a formula at anywhere
-|variable|overview|
-|-|-|
-|`MY_VERSION`|the version of `ndk-pkg`.|
-|`MY_HOME_DIR`|the home directory of `ndk-pkg`.|
-|`MY_HOME_PAGE`|the home webpage of `ndk-pkg`.|
-|`MY_SOURCE_DIR`|the source code store directory of `ndk-pkg`.|
-|`MY_INSTALL_DIR`|the installed packages directory of `ndk-pkg`.|
-|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
+- [yq](https://mikefarah.gitbook.io/yq/)
+- [jq](https://stedolan.github.io/jq/manual/)
+- [curl](https://curl.se/docs/manpage.html)
+- [git](https://git-scm.com/docs/git)
+- [gtar](https://www.gnu.org/software/tar/manual/tar.html)
+- [gzip](https://www.gnu.org/software/gzip/manual/gzip.html)
+- [gsed](https://www.gnu.org/software/sed/manual/sed.html)
+- [gawk](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [grep](https://www.gnu.org/software/grep/manual/grep.html)
+- [find](https://www.gnu.org/software/findutils/manual/html_mono/find.html)
+- [xargs](https://www.gnu.org/software/findutils/manual/html_node/find_html/Invoking-xargs.html)
+- [tree](https://linux.die.net/man/1/tree)
+- [bzip2](https://linux.die.net/man/1/bzip2)
+- [xz](https://linux.die.net/man/1/xz)
+- [zip](https://linux.die.net/man/1/zip)
+- [unzip](https://linux.die.net/man/1/unzip)
+- [bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [commands provided by GNU CoreUtils](https://www.gnu.org/software/coreutils/manual/coreutils.html)
 
-## the variable can be used in prepare and build function
+### Appendix2: shell variables can be used in dopatch and install block
+
 |variable|overview|
 |-|-|
-|`ANDROID_NDK_VERS`|the version of `Android NDK`.|
+|`TIMESTAMP_UNIX`|the unix timestamp of this action.|
+|||
+|`NDKPKG_VERSION`|the version of `ndk-pkg`.|
+|`NDKPKG_HOME`|the home directory of `ndk-pkg`.|
+|`NDKPKG`|the executable filepath of `ndk-pkg`.|
+|||
 |`ANDROID_NDK_HOME`|the home directory of `Android NDK`.|
 |`ANDROID_NDK_ROOT`|the home directory of `Android NDK`.|
+|`ANDROID_NDK_VERSION`|the version of `Android NDK`.|
+|`ANDROID_NDK_VERSION_MAJOR`|the major part of version of `Android NDK`.|
+|`ANDROID_NDK_TOOLCHAIN_BIND`|the `bin` directory of `Android NDK`.|
+|`ANDROID_NDK_SYSROOT`|the `sysroot` directory of `Android NDK`.|
+|||
+|`NATIVE_OS_KIND`|kind of your current running operation system.|
+|`NATIVE_OS_TYPE`|type of your current running operation system.|
+|`NATIVE_OS_CODE`|code of your current running operation system.|
+|`NATIVE_OS_NAME`|name of your current running operation system.|
+|`NATIVE_OS_VERS`|version of your current running operation system.|
+|`NATIVE_OS_ARCH`|arch of your current running operation system.|
+|`NATIVE_OS_NCPU`|cpu core count of your current running machine.|
 |||
 |`TARGET_OS_VERS`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
-|||
-|`PACKAGE_WORKING_DIR`|the direcotory where for installing.|
-|`PACKAGE_SRC_TOP_DIR`|the direcotory where the source code tarball will be uncompressed to or copied to.|
-|`PACKAGE_BSCRIPT_DIR`|the direcotory where the build script is located(build script filename: `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`)|
+|`TARGET_OS_ABI`|it's value shall be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
+|`TARGET_OS_ARCH`|it's value shall be one of `armv7a` `aarch64` `i686` `x86_64`|
+|`TARGET_OS_NBIT`|it's value shall be one of `32` `64`|
+|`TARGET_TRIPLE`|it's value shall be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
 |||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
@@ -109,25 +138,13 @@ pkg_set <KEY> <VALUE>
 |`LDFLAGS`|the flags of `LD`.|
 |`NM`|a command line tool to list symbols from object files.|
 |`STRIP`|a command line tool to discard symbols and other data from object files.|
-|`OBJDUMP`|a command line tool to display information from object files.|
-|`OBJCOPY`|a command line tool to copies a binary file.|
-|`READELF`|a command line tool to display information about the contents of ELF format files.|
-
-## the variable can be used in build function only
-|variable|overview|
-|-|-|
-|`TARGET_WORKING_DIR`|the working directory of this abi.|
-|`TARGET_BUILDIN_DIR`|the directory where to store the temp files when building.|
-|`TARGET_INSTALL_DIR`|the installation directory of this package of this abi.|
+|`READELF`|a command line tool to display information about ELF files.|
 |||
-|`x_INSTALL_DIR`|the installation directory of x package of this abi.|
-|`x_INCLUDE_DIR`|the `include` directory of x package of this abi.|
-|`x_LIBRARY_DIR`|the `lib` directory of x package of this abi.|
+|`PACKAGE_WORKING_DIR`|the working directory when installing.|
+|`PACKAGE_BSCRIPT_DIR`|the directory where the build script (e.g. `Makefile`, `configure`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc) is located in.|
+|`PACKAGE_BCACHED_DIR`|the directory where the temporary files are stored in when building.|
+|`PACKAGE_INSTALL_DIR`|the directory where the final files will be installed to.|
 |||
-|`TARGET_OS_ABI`|it's value shall be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
-|`TARGET_OS_ARCH`|it's value shall be one of `armv7a` `aarch64` `i686` `x86_64`|
-|`TARGET_TRIPLE`|it's value shall be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
-|||
-|`SYSROOT`||
-|`SYSTEM_INCLUDE_DIR`||
-|`SYSTEM_LIBRARY_DIR`||
+|`x_INSTALL_DIR`|the installation directory of x package.|
+|`x_INCLUDE_DIR`|`$x_INSTALL_DIR/include`|
+|`x_LIBRARY_DIR`|`$x_INSTALL_DIR/lib`|
