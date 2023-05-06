@@ -1,8 +1,8 @@
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org
-src-url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
-src-sha: 3c0ede893011319f9b0a56b44953a3d52c7abf9657c23fb4bc9ced93b86e9c97
+src-url: https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
+src-sha: 2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849
 license: Python-2.0
 dep-pkg: gdbm expat libffi openssl sqlite libbz2 liblzma
 dep-upp: python3
@@ -29,6 +29,7 @@ install: |
 
     configure \
         --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \
+        --with-build-python=python3 \
         --with-system-expat \
         --with-system-ffi \
         --with-openssl="$openssl_INSTALL_DIR" \

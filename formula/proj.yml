@@ -4,7 +4,8 @@ git-url: https://github.com/OSGeo/PROJ
 src-url: https://github.com/OSGeo/PROJ/releases/download/9.2.0/proj-9.2.0.tar.gz
 src-sha: dea816f5aa732ae6b2ee3977b9bdb28b1d848cf56a1aad8faf6708b89f0ed50e
 license: MIT
-dep-pkg: libtiff curl sqlite nlohmann-json
+dep-upp: sqlite
+dep-pkg: sqlite libtiff curl nlohmann-json
 dopatch: |
     # https://cmake.org/cmake/help/latest/module/FindCURL.html
     printf '%s\n' '
