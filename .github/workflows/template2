@@ -1,4 +1,4 @@
-name: workflow7
+name: workflowINDEX
 
 on:
   push:
@@ -11,12 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
+        os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd]
+        pkg: [PKGLIST]
 
-    runs-on: ubuntu-latest
-
-    container: fpliu/ndk-pkg
+    runs-on: ${{ matrix.os }}
 
     steps:
       - run: export -p
@@ -29,6 +29,7 @@ jobs:
       - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg ndkinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
       - run: |

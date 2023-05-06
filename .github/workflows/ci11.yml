@@ -11,12 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
-        os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [tdu,tealdeer,tectonic,tengo,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz]
+        pkg: [tcpdump,tdu,tealdeer,tectonic,tengo,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
 
     steps:
       - run: export -p
@@ -29,7 +29,6 @@ jobs:
       - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg ndkinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
       - run: |

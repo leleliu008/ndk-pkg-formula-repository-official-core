@@ -11,12 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
-        os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autoconf,automake,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
 
     steps:
       - run: export -p
@@ -29,7 +29,6 @@ jobs:
       - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg ndkinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
       - run: |

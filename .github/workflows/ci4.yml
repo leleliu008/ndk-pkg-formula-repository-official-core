@@ -11,12 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #os: [ubuntu-22.04, ubuntu-20.04, macos-12, macos-11]
-        os:  [ubuntu-22.04]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli,jpeg]
+        pkg: [gnutls,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
 
     steps:
       - run: export -p
@@ -29,7 +29,6 @@ jobs:
       - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg ndkinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
       - run: |
