@@ -1,10 +1,8 @@
 summary: Generic library support script
+git-url: https://git.savannah.gnu.org/git/libtool
 web-url: https://www.gnu.org/software/libtool
 src-url: https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz
 src-sha: 4f7f217f057ce655ff22559ad221a0fd8ef84ad1fc5fcb6990cecc333aa1635d
-git-url: https://github.com/autotools-mirror/libtool
 license: GPL-2.0-or-later
-bsystem: configure
-
-install: |
-    configure --enable-ltdl-install
+dep-upp: gm4
+install: configure --enable-ltdl-install

@@ -1,19 +1,17 @@
 summary: Compression program with a very high compression ratio
 web-url: http://lrzip.kolivas.org
 git-url: https://github.com/ckolivas/lrzip
-src-url: http://ck.kolivas.org/apps/lrzip/lrzip-0.641.tar.xz
-src-sha: 2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e
+src-url: http://ck.kolivas.org/apps/lrzip/lrzip-0.651.tar.xz
+src-sha: 48bd8decb097c1596c9b3777959cd3e332819434ed77a2823e65aa436f1602f9
 license: GPL-2.0-or-later
 dep-pkg: zlib libbz2 lz4 lzo
-dep-upp: pkg-config
-bsystem: configure
-ldflags: -lc++_shared
+dep-upp: libtool
+bsystem: autotools
 
 # stdio.h:326:FILE* fmemopen(void* __buf, size_t __size, const char* __mode) __INTRODUCED_IN(23);
 sdk-api: 23
 
-dopatch: |
-    sed_in_place 's/PAGE_SIZE/XXXXXXXXXXXXXXXXXXXXXX/' lrzip_private.h util.c
+dopatch: sed_in_place 's/PAGE_SIZE/XXXXXXXXXXXXXXXXXXXXXX/' lrzip_private.h util.c
 
 install: |
     configure \

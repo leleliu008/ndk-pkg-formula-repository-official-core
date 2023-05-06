@@ -4,7 +4,7 @@ src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.73.38/
 src-sha: 0bbf8ef88413ed286e9b040685c44758857e86ccb266ccf9643ee29807e961de
 license: GPL-3.0-or-later
 dep-pkg: jasper libxml2 libtiff libpng libjpeg-turbo
-dep-upp: flex
+dep-upp: gm4 flex
 binbstd: yes
 parallel: no
 

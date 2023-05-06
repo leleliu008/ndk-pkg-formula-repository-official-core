@@ -1,22 +1,31 @@
 summary: Interpreted, interactive, object-oriented programming language
-web-url: https://www.python.org
 git-url: https://github.com/python/cpython
+web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
 src-sha: 3c0ede893011319f9b0a56b44953a3d52c7abf9657c23fb4bc9ced93b86e9c97
 license: Python-2.0
-dep-pkg: expat libffi openssl sqlite libbz2 liblzma
-dep-upp: pkg-config
+dep-pkg: gdbm expat libffi openssl sqlite libbz2 liblzma
+dep-upp: python3
 bsystem: configure
-
-build0: |
-    unset PYTHONHOME
-    unset PYTHONPATH
-
-    configure
 
 install: |
     unset PYTHONHOME
     unset PYTHONPATH
+
+    export ZLIB_CFLAGS="-I$zlib_INCLUDE_DIR"
+    export ZLIB_LIBS="-L$zlib_LIBRARY_DIR -lz"
+
+    export BZIP2_CFLAGS="-I$libbz2_INCLUDE_DIR"
+    export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -lbz2"
+
+    export LIBLZMA_CFLAGS="-I$liblzma_INCLUDE_DIR"
+    export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -llzma"
+
+    export LIBSQLITE3_CFLAGS="-I$sqlite_INCLUDE_DIR"
+    export LIBSQLITE3_LIBS="-L$sqlite_LIBRARY_DIR -llzma"
+
+    export GDBM_CFLAGS="-I$gdbm_INCLUDE_DIR"
+    export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -lz"
 
     configure \
         --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \

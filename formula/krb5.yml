@@ -5,6 +5,7 @@ src-url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
 src-sha: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
 bscript: src
 bsystem: configure
+dep-upp: gm4 bison
 dep-pkg: readline openssl@1.1 berkeley-db libglob
 ldflags: -lncurses
 

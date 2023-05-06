@@ -1,10 +1,9 @@
 summary: Serialization library for C++, supporting Java, C#, and Go
 web-url: https://google.github.io/flatbuffers
 git-url: https://github.com/google/flatbuffers
-src-url: https://github.com/google/flatbuffers/archive/v2.0.6.tar.gz
-src-sha: e2dc24985a85b278dd06313481a9ca051d048f9474e0f199e372fea3ea4248c9
+src-url: https://github.com/google/flatbuffers/archive/v23.3.3.tar.gz
+src-sha: 8aff985da30aaab37edf8e5b02fda33ed4cbdd962699a8e2af98fdef306f4e4d
 license: Apache-2.0
-bsystem: cmake
 
 build0: |
     cmakew \

@@ -4,8 +4,7 @@ git-url: https://github.com/KhronosGroup/glslang
 src-url: https://github.com/KhronosGroup/glslang/archive/11.10.0.tar.gz
 src-sha: 8ffc19c435232d09299dd2c91e247292b3508c1b826a3497c60682e4bbf2d602
 license: BSD-3-Clause GPL-3.0-or-later MIT Apache-2.0
-bsystem: cmake
-
+dep-upp: python3
 install: |
     cmakew \
         -DBUILD_EXTERNAL=OFF \

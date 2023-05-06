@@ -5,4 +5,5 @@ src-url: https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.tar.xz
 src-sha: 20744b82531ce7a04d8cee34b07143ad59777612c3695d5855f29fba40fbe3e0
 license: GPL-3.0-or-later
 dep-pkg: perl
+dep-plm: Data::Dumper Encode
 install: configure --with-included-regex --enable-threads=posix

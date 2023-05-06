@@ -1,7 +1,7 @@
 summary: Savoury implementation of the QUIC transport protocol and HTTP/3
 git-url: https://github.com/cloudflare/quiche
 license: BSD-2-Clause
-bsystem: cargo
+bsystem: cargo cmake
 binbstd: yes
 
 install: |

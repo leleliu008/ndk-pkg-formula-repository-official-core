@@ -4,8 +4,8 @@ git-url: https://github.com/libimobiledevice/usbmuxd
 src-url: https://github.com/libimobiledevice/usbmuxd/archive/refs/tags/1.1.1.tar.gz
 src-sha: e7ce30143e69d77fc5aa6fb0cb5f0cfcdbeff47eb1ac7fd90ac259a90de9fadd
 license: LGPL-2.1-or-later|COPYING.GPLv2|https://raw.githubusercontent.com/libimobiledevice/libusbmuxd/master/COPYING
-dep-upp: pkg-config
-dep-pkg: libusb libplist
+dep-upp: libtool
+dep-pkg: libplist libusb
 ldflags: -lm -llog
 bsystem: autogen
 

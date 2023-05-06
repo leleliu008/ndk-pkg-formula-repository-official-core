@@ -5,7 +5,7 @@ src-url: https://github.com/nushell/nushell/archive/0.64.0.tar.gz
 src-sha: 7adcc49bca0748dba680a2e118e158faae7bc14fb2e32b0056866d356b48d879
 license: MIT
 dep-pkg: openssl
-dep-upp: pkg-config
+dep-upp: pkg-config patch
 bsystem: cargo
 binbstd: yes
 

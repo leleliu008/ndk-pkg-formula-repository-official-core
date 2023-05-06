@@ -1,14 +1,8 @@
 summary: C library for the Public Suffix List
 web-url: https://rockdaboot.github.io/libpsl
+git-url: https://github.com/rockdaboot/libpsl
 src-url: https://github.com/rockdaboot/libpsl/releases/download/0.21.1/libpsl-0.21.1.tar.gz
 src-sha: ac6ce1e1fbd4d0254c4ddb9d37f1fa99dec83619c1253328155206b896210d4c
 license: MIT
-bsystem: configure
 dep-pkg: libidn2
-ldflags: -lunistring -liconv
-
-install: |
-    configure \
-        --disable-valgrind-tests \
-        --enable-runtime=libidn2 \
-        --enable-builtin=libidn2
+install: mesonw -Druntime=libidn2
