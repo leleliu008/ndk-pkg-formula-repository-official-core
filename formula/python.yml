@@ -13,19 +13,19 @@ install: |
     unset PYTHONPATH
 
     export ZLIB_CFLAGS="-I$zlib_INCLUDE_DIR"
-    export ZLIB_LIBS="-L$zlib_LIBRARY_DIR -lz"
+    export ZLIB_LIBS="-L$zlib_LIBRARY_DIR -l:libz.a"
 
     export BZIP2_CFLAGS="-I$libbz2_INCLUDE_DIR"
-    export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -lbz2"
+    export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -l:libbz2.a"
 
     export LIBLZMA_CFLAGS="-I$liblzma_INCLUDE_DIR"
-    export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -llzma"
+    export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -l:liblzma.a"
 
     export LIBSQLITE3_CFLAGS="-I$sqlite_INCLUDE_DIR"
-    export LIBSQLITE3_LIBS="-L$sqlite_LIBRARY_DIR -llzma"
+    export LIBSQLITE3_LIBS="-L$sqlite_LIBRARY_DIR -l:libsqlite3.a"
 
     export GDBM_CFLAGS="-I$gdbm_INCLUDE_DIR"
-    export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -lz"
+    export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -l:libgdbm_compat.a -l:libgdbm.a"
 
     configure \
         --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \

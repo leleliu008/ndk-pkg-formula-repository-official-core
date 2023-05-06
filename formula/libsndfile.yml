@@ -1,15 +1,14 @@
 summary: C library for files containing sampled sound
 web-url: http://libsndfile.github.io/libsndfile/
 git-url: https://github.com/libsndfile/libsndfile
-src-url: https://github.com/libsndfile/libsndfile/releases/download/1.0.31/libsndfile-1.0.31.tar.bz2
-src-sha: a8cfb1c09ea6e90eff4ca87322d4168cdbe5035cb48717b40bf77e751cc02163
+src-url: https://github.com/libsndfile/libsndfile/releases/download/1.2.0/libsndfile-1.2.0.tar.xz
+src-sha: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a
 license: LGPL-2.1-or-later
-dep-pkg: libogg libvorbis flac sqlite
-bsystem: configure
-
+dep-pkg: opus libvorbis flac sqlite
+dep-upp: python3
 install: |
-    configure \
-        --disable-test-coverage \
-        --disable-octave \
-        --enable-sqlite \
-        --enable-external-libs
+    cmakew \
+        -DBUILD_PROGRAMS=ON \
+        -DBUILD_EXAMPLES=OFF \
+        -DENABLE_PACKAGE_CONFIG=ON \
+        -DINSTALL_PKGCONFIG_MODULE=ON

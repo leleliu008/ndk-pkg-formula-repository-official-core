@@ -1,9 +1,8 @@
 summary: Numeric library for complex error functions
 git-url: https://jugit.fz-juelich.de/mlz/libcerf
-src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.1/libcerf-v2.1.tar.gz
-src-sha: 8a1cd8b7fae04b82a95168252129b8c1baca098a285ff8d3f25781dead14b75a
+src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.3/libcerf-v2.3.tar.gz
+src-sha: cceefee46e84ce88d075103390b4f9d04c34e4bc3b96d733292c36836d4f7065
 license: MIT
-bsystem: cmake
 
 # complex.h: double complex cexp(double complex __z) __INTRODUCED_IN(23);
 sdk-api: 23
