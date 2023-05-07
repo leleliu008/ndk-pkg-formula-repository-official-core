@@ -1,7 +1,7 @@
 summary: Interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
-src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz
-src-sha: 05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostpdl-10.01.1.tar.xz
+src-sha: e6a6c39a36e6b6ffe4960f4e2bfb85420ed157ac14a202ccdd0df4e4e2a7e392
 license: AGPL-3.0-or-later
 dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract liblanginfo
 bsystem: configure
@@ -19,13 +19,31 @@ dopatch: |
     rm -rf zlib
     rm -rf tesseract
 
+    printf '%s' '
+    LS0tIC4vYmFzZS9nc2Vycm9ycy5oCTIwMTctMDMtMTYgMDk6MjA6MTEuMDAwMDAwMDAwICswMDAw
+    CisrKyAuL2Jhc2UvZ3NlcnJvcnMuaAkyMDE3LTAzLTE4IDIxOjAyOjQ2LjU4NjczNzYyOSArMDAw
+    MApAQCAtMTQ4LDE0ICsxNDgsMTQgQEAKICAqCiAgKi8KIAotI2lmbmRlZiBfX3ByaW50Zmxpa2UK
+    Ky8qIFJlZGVmaW5lIGNkZWZzLmgncyBfX3ByaW50Zmxpa2UgZnVuY3Rpb246ICovCisjdW5kZWYg
+    X19wcmludGZsaWtlCiAjaWYgX19HTlVDX18gPiAyIHx8IF9fR05VQ19fID09IDIgJiYgX19HTlVD
+    X01JTk9SX18gPj0gNwogI2RlZmluZSBfX3ByaW50Zmxpa2UoZm10YXJnLCBmaXJzdHZhcmFyZykg
+    XAogICAgIF9fYXR0cmlidXRlX18oKF9fZm9ybWF0X18gKF9fcHJpbnRmX18sIGZtdGFyZywgZmly
+    c3R2YXJhcmcpKSkKICNlbHNlCiAjZGVmaW5lIF9fcHJpbnRmbGlrZShmbXRhcmcsIGZpcnN0dmFy
+    YXJnKQogI2VuZGlmCi0jZW5kaWYKIAogY29uc3QgY2hhciAqZ3NfZXJyc3RyKGludCBjb2RlKTsK
+    IAo=' | base64 -d | patch -p0
+
 install: |
     HARFBUZZ_LIBS="$(pkg-config --libs-only-l harfbuzz)"
+
     printf 'INPUT(%s -lc++_shared)\n' "$HARFBUZZ_LIBS" > ../lib/libpthread.a
+
     run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config" || return 1
+
     export PATH="$PWD:$PATH"
+
     export CPPFLAGS="$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2"
+
     export ac_cv_lib_pthread_pthread_create=yes
+
     configure \
         --disable-compile-inits \
         --disable-cups \
