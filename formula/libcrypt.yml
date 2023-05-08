@@ -1,7 +1,7 @@
 summary: crypt(3) implementation
 web-url: http://michael.dipperstein.com/crypt
-src-url: http://michael.dipperstein.com/crypt/crypt3.c
-src-sha: 75b16b6ef7f1c0c7c4172ed346b2b91b6f1be72c824b6671a059de2b2da554ff
+src-url: https://raw.githubusercontent.com/madsbuvi/MTY_CL/master/Src/crypt3.c
+src-sha: 40370aa3ef2e47ed0acf46aee7ded775d65f35c0d4d224633c3ae6e2a4cfe702
 license: Unlicense
 version: 1
 

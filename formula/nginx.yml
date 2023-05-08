@@ -1,10 +1,10 @@
 summary: HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-web-url: https://nginx.org
 git-url: https://github.com/nginx/nginx
+web-url: https://nginx.org
 src-url: https://nginx.org/download/nginx-1.23.0.tar.gz
 src-sha: 820acaa35b9272be9e9e72f6defa4a5f2921824709f8aa4772c78ab31ed94cd1
 license: BSD-2-Clause
-dep-pkg: openssl pcre libcrypt libglob
+dep-pkg: openssl pcre2 libcrypt libglob
 bsystem: gmake
 binbstd: yes
 
@@ -37,7 +37,7 @@ install: |
     export NGX_RELEASE=unkown
     export NGX_MACHINE=$TARGET_OS_ARCH
 
-    if echo "$TARGET_OS_ARCH" | grep -q '64' ; then
+    if [ "$TARGET_OS_NBIT" -eq '64' ] ; then
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
     else
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof

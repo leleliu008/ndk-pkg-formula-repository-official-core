@@ -26,14 +26,12 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
-      - run: chmod u+x ndk-pkg
-
-      - run: ./ndk-pkg env
-      - run: ./ndk-pkg setup
-      - run: ./ndk-pkg sysinfo
+      - run: ndk-pkg env
+      - run: ndk-pkg setup
+      - run: ndk-pkg sysinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
+
       - run: |
             cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
             url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
@@ -51,12 +49,10 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}
-
+          ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}
 
 
   macos:
-    if: false
     strategy:
 
       fail-fast: false
