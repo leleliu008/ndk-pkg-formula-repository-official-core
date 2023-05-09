@@ -9,11 +9,11 @@ dep-pkg: ncurses openssl libbz2
 
 install: |
     configure \
-        --enable-echo \
-        --enable-warnings \
-        --enable-ipv6 \
-        --enable-ftp \
-        --disable-trace \
+        --with-build-cc="'$CC_FOR_BUILD'" \
+        --with-build-cpp="'$CPP_FOR_BUILD'" \
+        --with-build-cppflags="'$CPPFLAGS_FOR_BUILD'" \
+        --with-build-cflags="'$CFLAGS_FOR_BUILD'" \
+        --with-build-ldflags="'$LDFLAGS_FOR_BUILD'" \
         --with-screen=ncurses \
         --with-curses-dir=$ncurses_INSTALL_DIR \
         --with-zlib \
@@ -22,4 +22,9 @@ install: |
         --without-x \
         --without-gnutls \
         --without-socks \
-        --without-socks5
+        --without-socks5 \
+        --enable-echo \
+        --enable-warnings \
+        --enable-ipv6 \
+        --enable-ftp \
+        --disable-trace

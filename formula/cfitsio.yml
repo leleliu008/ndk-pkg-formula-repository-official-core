@@ -6,5 +6,6 @@ license: Unlicense
 dep-pkg: curl
 binbstd: yes
 install: |
+    export ac_cv_prog_CURLCONFIG="$curl_INSTALL_DIR/bin/curl-config"
     export CFLAGS="$CFLAGS $LDFLAGS"
     configure --enable-reentrant
