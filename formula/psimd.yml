@@ -1,0 +1,4 @@
+summary: Portable 128-bit SIMD intrinsics
+git-url: https://github.com/Maratyszcza/psimd
+license: MIT
+bsystem: cmake
