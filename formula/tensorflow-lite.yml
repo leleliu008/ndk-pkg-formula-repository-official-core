@@ -1,0 +1,46 @@
+summary: C interface for Machine Intelligence
+web-url: https://www.tensorflow.org/
+git-url: https://github.com/tensorflow/tensorflow
+src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.12.0.tar.gz
+src-sha: c030cb1905bff1d2446615992aad8d8d85cbe90c4fb625cee458c63bf466bc8e
+license: Apache-2.0
+dep-upp: python3
+dep-pkg: abseil ruy xnnpack flatbuffers eigen3 ARM_NEON_2_x86_SSE
+bscript: tensorflow/lite
+
+dopatch: |
+    sed_in_place 's|NOT DEFINED PTHREADPOOL_SOURCE_DIR|FALSE|' CMakeLists.txt
+    sed_in_place '/find_package(ruy REQUIRED)/a include(./pthreadpool.cmake)' CMakeLists.txt
+
+    cat > pthreadpool.cmake <<EOF
+    add_library(pthreadpool STATIC IMPORTED)
+    set_target_properties(pthreadpool PROPERTIES
+    IMPORTED_LOCATION             "${pthreadpool_LIBRARY_DIR}/libpthreadpool.a"
+    INTERFACE_INCLUDE_DIRECTORIES "${pthreadpool_INCLUDE_DIR}"
+    )
+    EOF
+
+    cat > tools/cmake/modules/FindXNNPACK.cmake <<EOF
+    add_library(xnnpack STATIC IMPORTED)
+    set_target_properties(xnnpack PROPERTIES
+    IMPORTED_LOCATION             "${xnnpack_LIBRARY_DIR}/libxnnpack.a"
+    INTERFACE_INCLUDE_DIRECTORIES "${xnnpack_INCLUDE_DIR}"
+    )
+    EOF
+
+# https://www.tensorflow.org/lite/guide/build_cmake#specifics_of_android_cross-compilation
+install: |
+    cmakew \
+        -DTFLITE_ENABLE_GPU=OFF \
+        -DTFLITE_ENABLE_RUY=ON \
+        -DTFLITE_ENABLE_MMAP=ON \
+        -DTFLITE_ENABLE_NNAPI=ON \
+        -DTFLITE_ENABLE_XNNPACK=ON \
+        -DTFLITE_ENABLE_INSTALL=ON \
+        -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON \
+        -Druy_DIR=$ruy_INSTALL_DIR/lib/cmake/ruy \
+        -Dabsl_DIR=$abseil_INSTALL_DIR/lib/cmake/absl \
+        -DEigen3_DIR=$eigen3_INSTALL_DIR/lib/cmake/eigen3 \
+        -Dcpuinfo_DIR=$cpuinfo_INSTALL_DIR/lib/cmake/cpuinfo \
+        -DNEON_2_SSE_DIR=$ARM_NEON_2_x86_SSE/lib/cmake/NEON_2_SSE \
+        -DFlatbuffers_DIR=$flatbuffers_INSTALL_DIR/lib/cmake/flatbuffers

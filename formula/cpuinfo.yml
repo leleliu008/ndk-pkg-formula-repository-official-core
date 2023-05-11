@@ -1,8 +1,7 @@
 summary: CPU INFOrmation library
 git-url: https://github.com/pytorch/cpuinfo
 license: BSD-2-Clause
-bsystem: cmake
-
+dopatch: sed_in_place 's|${CMAKE_INSTALL_DATAROOTDIR}|${CMAKE_INSTALL_LIBDIR}/cmake|g' CMakeLists.txt
 install: |
     cmakew \
         -DCPUINFO_BUILD_UNIT_TESTS=OFF \
