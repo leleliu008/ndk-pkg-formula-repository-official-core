@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate]
+        pkg: [libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng]
 
     runs-on: ubuntu-latest
 
@@ -60,7 +60,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-11]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate]
+        pkg: [libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxslt,libyuv,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng]
 
     runs-on: ${{ matrix.os }}
 

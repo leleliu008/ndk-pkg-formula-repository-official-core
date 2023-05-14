@@ -1,0 +1,94 @@
+#!/bin/sh
+
+set -e
+
+version_sort() {
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sort.html
+    # https://man.netbsd.org/NetBSD-8.1/i386/sort.1
+    #
+    # sort: unrecognized option: V
+    # BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+    # Usage: sort [-nrugMcszbdfiokt] [-o FILE] [-k start[.offset][opts][,end[.offset][opts]] [-t CHAR] [FILE]...
+    if  printf '\n' | (sort -V > /dev/null 2>&1) ; then
+        printf '%s\n' "$*" | tr ' ' '\n' | sort -V
+    else
+        printf '%s\n' "$*" | tr ' ' '\n' | sort -t. -n -k1,1 -k2,2 -k3,3 -k4,4
+    fi
+}
+
+# check if match the condition
+#
+# condition:
+# eq  equal
+# ne  not equal
+# gt  greater than
+# lt  less than
+# ge  greater than or equal
+# le  less than or equal
+#
+# examples:
+# version_match 1.15.3 eq 1.16.0
+# version_match 1.15.3 lt 1.16.0
+# version_match 1.15.3 gt 1.16.0
+# version_match 1.15.3 le 1.16.0
+# version_match 1.15.3 ge 1.16.0
+version_match() {
+    case $2 in
+        eq)  [ "$1"  = "$3" ] ;;
+        ne)  [ "$1" != "$3" ] ;;
+        le)
+            if [ "$1" = "$3" ] ; then
+                return 0
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | head -n 1)" ]
+            ;;
+        ge)
+            if [ "$1" = "$3" ] ; then
+                return 0
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | tail -n 1)" ]
+            ;;
+        lt)
+            if [ "$1" = "$3" ] ; then
+                return 1
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | head -n 1)" ]
+            ;;
+        gt)
+            if [ "$1" = "$3" ] ; then
+                return 1
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | tail -n 1)" ]
+            ;;
+        *)  printf '%s\n' "version_compare: $2: not supported operator." >&2
+            return 1
+    esac
+}
+
+main() {
+    WORKING_DIR="$(mktemp -d)"
+
+    cd "$WORKING_DIR"
+
+    curl -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
+
+    for artifactId in $(sed -n '/<a href=.* title=/p' artifacts.html | sed 's|<a href="\(.*\)/" .*|\1|')
+    do
+        rm -f maven-metadata.xml
+
+        curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
+
+        LATEST_VERSION_IN_MAVEN_CENTRAL=$(sed -n '/latest/p' maven-metadata.xml | sed -e 's|[[:space:]]||g' -e 's|<latest>\(.*\)</latest>|\1|')
+        AVAILABLE_VERSION_IN_FORMULA_REPO=$(ndk-pkg info "$artifactId" version)
+
+        if version_match "$AVAILABLE_VERSION_IN_FORMULA_REPO" gt "$LATEST_VERSION_IN_MAVEN_CENTRAL" ; then
+            printf "${COLOR_RED}%-15s %-10s %-10s${COLOR_OFF}\n" "$artifactId" "$AVAILABLE_VERSION_IN_FORMULA_REPO" "$LATEST_VERSION_IN_MAVEN_CENTRAL"
+        else
+            :
+        fi
+    done
+
+    rm -rf "$WORKING_DIR"
+}
+
+main "$@"

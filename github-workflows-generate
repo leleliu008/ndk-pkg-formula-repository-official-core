@@ -1,0 +1,145 @@
+#!/bin/sh
+
+set -e
+
+COLOR_RED='\033[0;31m'          # Red
+COLOR_GREEN='\033[0;32m'        # Green
+COLOR_YELLOW='\033[0;33m'       # Yellow
+COLOR_BLUE='\033[0;94m'         # Blue
+COLOR_PURPLE='\033[0;35m'       # Purple
+COLOR_OFF='\033[0m'             # Reset
+
+print() {
+    printf '%b' "$*"
+}
+
+echo() {
+    printf '%b\n' "$*"
+}
+
+note() {
+    printf '%b\n' "${COLOR_YELLOW}🔔  $*${COLOR_OFF}" >&2
+}
+
+warn() {
+    printf '%b\n' "${COLOR_YELLOW}🔥  $*${COLOR_OFF}" >&2
+}
+
+success() {
+    printf '%b\n' "${COLOR_GREEN}[✔] $*${COLOR_OFF}" >&2
+}
+
+error() {
+    printf '%b\n' "${COLOR_RED}💔  $*${COLOR_OFF}" >&2
+}
+
+abort() {
+    EXIT_STATUS_CODE="$1"
+    shift
+    printf '%b\n' "${COLOR_RED}💔  $*${COLOR_OFF}" >&2
+    exit "$EXIT_STATUS_CODE"
+}
+
+run() {
+    echo "${COLOR_PURPLE}==>${COLOR_OFF} ${COLOR_GREEN}$@${COLOR_OFF}"
+    eval "$@"
+}
+
+
+list_size() {
+    printf '%s\n' "$#"
+}
+
+is_integer() {
+    case "${1#[+-]}" in
+        (*[!0123456789]*) return 1 ;;
+        ('')              return 1 ;;
+        (*)               return 0 ;;
+    esac
+}
+
+sed_in_place() {
+    echo "${COLOR_PURPLE}==>${COLOR_OFF} ${COLOR_GREEN}sed -i $@${COLOR_OFF}"
+    sed -i "$@"
+}
+
+main() {
+    unset GROUP_SIZE
+
+    for arg in "$@"
+    do
+        case $arg in
+            --group-size=*)
+                GROUP_SIZE="${1#*=}"
+                is_integer "$GROUP_SIZE" || abort 1 "--group-size=<INTEGER>, <INTEGER> must be an integer."
+                ;;
+        esac
+    done
+
+    if [ -z "$GROUP_SIZE" ] ; then
+        abort 1 "--group-size=<INTEGER> option must be given."
+    fi
+
+    unset AVAILABLE_PACKAGES
+    unset YDEPENDED_PACKAGES
+    unset NDEPENDED_PACKAGES
+
+    AVAILABLE_PACKAGES=$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \; | sort)
+
+    for item in test v8 webrtc
+    do
+        AVAILABLE_PACKAGES=$(printf '%s\n' "$AVAILABLE_PACKAGES" | sed "s|^$item$||")
+    done
+
+    YDEPENDED_PACKAGES="$(sed -n '/^dep-pkg:/p' formula/*.yml | cut -c10- | tr ' ' '\n' | sort| uniq)"
+
+    printf '%s\n' "YDEPENDED_PACKAGES=$YDEPENDED_PACKAGES"
+
+    AVAILABLE_PACKAGES_COUNT="$(list_size $AVAILABLE_PACKAGES)"
+
+    printf '%s\n' "$AVAILABLE_PACKAGES_COUNT"
+
+    I=0
+    J=0
+    K=0
+
+    for x in $AVAILABLE_PACKAGES
+    do
+        I=$(expr "$I" + 1)
+
+        for y in $YDEPENDED_PACKAGES
+        do
+            if [ "$x" = "$y" ] ; then
+                continue 2
+            fi
+        done
+
+        if [ -z "$NDEPENDED_PACKAGES" ] ; then
+            NDEPENDED_PACKAGES="$x"
+        else
+            NDEPENDED_PACKAGES="$NDEPENDED_PACKAGES $x"
+        fi
+
+        K=$(expr "$K" + 1)
+
+        if [ "$I" -eq "$AVAILABLE_PACKAGES_COUNT" ] || [ "$K" -eq "$GROUP_SIZE" ] ; then
+            J=$(expr "$J" + 1)
+
+            OUTPUT_FILEPATH=".github/workflows/ci$J.yml"
+
+            NDEPENDED_PACKAGES=$(printf '%s\n' "$NDEPENDED_PACKAGES" | tr ' ' ',')
+
+            printf '\n'
+
+            run cp github-workflows-template              "$OUTPUT_FILEPATH"
+            sed_in_place "s/INDEX/$J/"                    "$OUTPUT_FILEPATH"
+            sed_in_place "s/PKGLIST/$NDEPENDED_PACKAGES/" "$OUTPUT_FILEPATH"
+
+            unset NDEPENDED_PACKAGES
+
+            K=0
+        fi
+    done
+}
+
+main "$@"

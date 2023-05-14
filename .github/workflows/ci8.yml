@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja]
+        pkg: [tealdeer,tectonic,tengo,tensorflow-lite,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog]
 
     runs-on: ubuntu-latest
 
@@ -60,7 +60,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-11]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja]
+        pkg: [tealdeer,tectonic,tengo,tensorflow-lite,texinfo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog]
 
     runs-on: ${{ matrix.os }}
 

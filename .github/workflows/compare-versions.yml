@@ -1,0 +1,26 @@
+name: compare-versions
+
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+  schedule:
+    - cron: '0 20 * * *'
+
+jobs:
+  schedule:
+
+    runs-on: macos-12
+
+    steps:
+      - run: brew update
+
+      - uses: actions/checkout@v3
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/bin/ndk-pkg
+      - run: chmod a+x ndk-pkg
+      - run: mv ndk-pkg /usr/local/bin/
+
+      - run: compare-versions-with-brew
+      - run: compare-versions-with-maven

@@ -1,8 +1,8 @@
 summary: Get a file from an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-7.86.0.tar.bz2
-src-sha: f5ca69db03eea17fa8705bdfb1a9f58d76a46c9010518109bb38f313137e0a28
+src-url: https://curl.haxx.se/download/curl-8.0.1.tar.bz2
+src-sha: 9b6b1e96b748d04b968786b6bdf407aa5c75ab53a3d37c1c8c81cdb736555ccf
 dep-pkg: libnghttp2 openssl libzstd brotli
 license: curl
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure

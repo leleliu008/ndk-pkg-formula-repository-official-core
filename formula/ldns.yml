@@ -1,0 +1,16 @@
+summary: DNS library written in C
+git-url: https://github.com/NLnetLabs/ldns
+web-url: https://nlnetlabs.nl/projects/ldns/
+src-url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.3.tar.gz
+src-sha: c3f72dd1036b2907e3a56e6acf9dfb2e551256b3c1bbd9787942deeeb70e7860
+license: BSD-3-Clause
+dep-upp: swig
+dep-pkg: libpcap
+
+install: |
+    configure \
+        --with-drill \
+        --with-examples \
+        --with-ssl=$openssl_INSTALL_DIR \
+        --without-pyldns \
+        --disable-dane-verify LIBS="'-lssl -lcrypto'"
