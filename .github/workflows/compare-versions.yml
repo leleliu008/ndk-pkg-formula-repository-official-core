@@ -22,5 +22,5 @@ jobs:
       - run: chmod a+x ndk-pkg
       - run: mv ndk-pkg /usr/local/bin/
 
-      - run: compare-versions-with-brew
-      - run: compare-versions-with-maven
+      - run: ./compare-versions-with-brew
+      - run: ./compare-versions-with-maven
