@@ -88,12 +88,29 @@ package_name_transform_from_uppm_to_brew() {
     esac
 }
 
+package_version() {
+    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+
+    if [ -n "$PACKAGE_VERSION" ] ; then
+        printf '%s\n' "$PACKAGE_VERSION"
+        return 0
+    fi
+
+    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+
+    if [ -z "$PACKAGE_SRC_URL" ] ; then
+        return 0
+    else
+        basename "$PACKAGE_SRC_URL" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
+    fi
+}
+
 main() {
-    AVAILABLE_PACKAGE_NAMES=$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \;)
+    AVAILABLE_PACKAGE_NAMES="$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \;)"
 
     for PACKAGE_NAME in $AVAILABLE_PACKAGE_NAMES
     do
-        PACKAGE_VERSION="$(ndk-pkg info "$PACKAGE_NAME" version)"
+        PACKAGE_VERSION="$(package_version "$PACKAGE_NAME")"
 
         BREW_PACKAGE_NMAE="$(package_name_transform_from_uppm_to_brew "$PACKAGE_NAME")"
 

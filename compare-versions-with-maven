@@ -65,6 +65,23 @@ version_match() {
     esac
 }
 
+package_version() {
+    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+
+    if [ -n "$PACKAGE_VERSION" ] ; then
+        printf '%s\n' "$PACKAGE_VERSION"
+        return 0
+    fi
+
+    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+
+    if [ -z "$PACKAGE_SRC_URL" ] ; then
+        return 0
+    else
+        basename "$PACKAGE_SRC_URL" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
+    fi
+}
+
 main() {
     WORKING_DIR="$(mktemp -d)"
 
@@ -79,7 +96,7 @@ main() {
         curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
 
         LATEST_VERSION_IN_MAVEN_CENTRAL=$(sed -n '/latest/p' maven-metadata.xml | sed -e 's|[[:space:]]||g' -e 's|<latest>\(.*\)</latest>|\1|')
-        AVAILABLE_VERSION_IN_FORMULA_REPO=$(ndk-pkg info "$artifactId" version)
+        AVAILABLE_VERSION_IN_FORMULA_REPO=$(package_version "$artifactId")
 
         if version_match "$AVAILABLE_VERSION_IN_FORMULA_REPO" gt "$LATEST_VERSION_IN_MAVEN_CENTRAL" ; then
             printf "${COLOR_RED}%-15s %-10s %-10s${COLOR_OFF}\n" "$artifactId" "$AVAILABLE_VERSION_IN_FORMULA_REPO" "$LATEST_VERSION_IN_MAVEN_CENTRAL"
