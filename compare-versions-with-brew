@@ -89,14 +89,14 @@ package_name_transform_from_uppm_to_brew() {
 }
 
 package_version() {
-    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$1.yml | cut -c10-)"
 
     if [ -n "$PACKAGE_VERSION" ] ; then
         printf '%s\n' "$PACKAGE_VERSION"
         return 0
     fi
 
-    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$PACKAGE_VERSION.yml | cut -c10-)"
+    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$1.yml | cut -c10-)"
 
     if [ -z "$PACKAGE_SRC_URL" ] ; then
         return 0
