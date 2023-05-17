@@ -11,8 +11,8 @@ install: |
     unset CONFIGURE_EXTRA_ARGS
 
     case $TARGET_OS_ARCH in
-        armv7a)  TARGET=armv7-android-gcc ; CONFIGURE_EXTRA_ARGS=--disable-neon-asm ;;
-        aarch64) TARGET=arm64-android-gcc ;;
+        armv7a)  TARGET=armv7-android-gcc  ; export AS="$CC -c" ; CONFIGURE_EXTRA_ARGS=--enable-neon-asm ;;
+        aarch64) TARGET=arm64-android-gcc  ; export AS="$CC -c" ;;
         i686)    TARGET=x86-android-gcc    ; export AS=yasm ;;
         x86_64)  TARGET=x86_64-android-gcc ; export AS=yasm ;;
     esac
