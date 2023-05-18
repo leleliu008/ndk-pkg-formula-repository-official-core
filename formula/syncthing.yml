@@ -6,14 +6,21 @@ src-sha: 4b68cee85b63fbb197a4e5401b3983a2a2358e1098ff91755f47925a1ee17f58
 license: MPL-2.0
 bsystem: go
 
+build0:  run go build build.go
 install: |
-    _GOARCH=$GOARCH
+    TARGET_CC="$CC"
+    TARGET_GOARCH="$GOARCH"
+
+    unset CC
+    unset CFLAGS
+    unset CPPFLAGS
+    unset LDFLAGS
 
     unset GOOS
     unset GOARCH
 
     run rm -f syncthing &&
-    run go build build.go &&
-    run ./build -goos android -goarch $_GOARCH -version v$PACKAGE_VERSION build &&
+    run ./build -cc "$TARGET_CC" -goos android -goarch "$TARGET_GOARCH" -version "v$PACKAGE_VERSION" -no-upgrade build &&
+    ls &&
     run install_bins syncthing &&
     run install_mans man/*.1 man/*.5 man/*.7

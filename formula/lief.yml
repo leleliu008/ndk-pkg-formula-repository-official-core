@@ -1,0 +1,9 @@
+summary: Library to Instrument Executable Formats
+git-url: https://github.com/lief-project/LIEF
+license: Apache-2.0
+install: |
+    cmakew \
+        -DLIEF_DOC=OFF \
+        -DLIEF_TESTS=OFF \
+        -DLIEF_EXAMPLES=OFF \
+        -DLIEF_COVERAGE=OFF
