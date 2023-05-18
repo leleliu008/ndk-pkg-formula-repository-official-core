@@ -1,9 +1,0 @@
-summary: Official documentation format of the GNU project
-git-url: https://git.savannah.gnu.org/git/texinfo
-web-url: https://www.gnu.org/software/texinfo
-src-url: https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.tar.xz
-src-sha: 20744b82531ce7a04d8cee34b07143ad59777612c3695d5855f29fba40fbe3e0
-license: GPL-3.0-or-later
-dep-pkg: perl
-dep-plm: Data::Dumper Encode
-install: configure --with-included-regex --enable-threads=posix
