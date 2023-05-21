@@ -3,6 +3,7 @@ git-url: https://github.com/lief-project/LIEF
 license: Apache-2.0
 install: |
     cmakew \
+        -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \
         -DLIEF_DOC=OFF \
         -DLIEF_TESTS=OFF \
         -DLIEF_EXAMPLES=OFF \

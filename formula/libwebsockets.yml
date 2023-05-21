@@ -4,15 +4,11 @@ git-url: https://github.com/warmcat/libwebsockets
 src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.2.tar.gz
 src-sha: 6a85a1bccf25acc7e8e5383e4934c9b32a102880d1e4c37c70b27ae2a42406e1
 license: MIT
-dep-pkg: zlib libevent libuv
-dep-upp: pkg-config
-bsystem: cmake
-
-dopatch: |
-    sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
-
+dep-pkg: zlib libuv libevent
+dopatch: sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
 install: |
     cmakew \
+        -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \
         -DLWS_IPV6=ON \
         -DLWS_UNIX_SOCK=ON \
         -DLWS_WITH_HTTP2=ON \
