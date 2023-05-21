@@ -4,8 +4,25 @@ git-url: https://github.com/Qalculate/libqalculate
 src-url: https://github.com/Qalculate/libqalculate/releases/download/v4.6.1/libqalculate-4.6.1.tar.gz
 src-sha: ed087bfdedea0fd0eb26eb37a25e4c55caccfe96d83933a3573c93241458cab3
 license: GPL-2.0-or-later
-dep-upp: gettext-tools intltool
+dep-upp: gettext-tools intltool patch
 dep-pkg: gettext readline icu4c libxml2 curl gmp mpfr libbthread
-xxflags: -include pthread.h -include bthread.h
-dopatch: printf '%s\n' 'INPUT(-l:libbthread.a)'  > ../lib/libpthread.a
 bsystem: configure
+dopatch: |
+    printf '%s' '
+    LS0tIGEvbGlicWFsY3VsYXRlL3V0aWwuY2MKKysrIGIvbGlicWFsY3VsYXRlL3V0aWwuY2MKQEAg
+    LTEwNjUsOSArMTA2NSwyNSBAQCB2b2lkIFRocmVhZDo6ZG9DbGVhbnVwKHZvaWQgKmRhdGEpIHsK
+    IAl0aHJlYWQtPnJ1bm5pbmcgPSBmYWxzZTsKIH0KIAorI2lmZGVmIF9fQU5EUk9JRF9fCitzdGF0
+    aWMgdm9pZCB0aHJlYWRTaWduYWxIYW5kbGVyKGludCBzaWdudW0pCit7CisJcHRocmVhZF9leGl0
+    KDApOworfQorI2VuZGlmCisKIHZvaWQgVGhyZWFkOjplbmFibGVBc3luY2hyb25vdXNDYW5jZWwo
+    KSB7CisjaWZuZGVmIF9fQU5EUk9JRF9fCiAJcHRocmVhZF9zZXRjYW5jZWxzdGF0ZShQVEhSRUFE
+    X0NBTkNFTF9FTkFCTEUsIE5VTEwpOwogCXB0aHJlYWRfc2V0Y2FuY2VsdHlwZShQVEhSRUFEX0NB
+    TkNFTF9BU1lOQ0hST05PVVMsIE5VTEwpOworI2Vsc2UKKwlzdHJ1Y3Qgc2lnYWN0aW9uIGFjdGlv
+    bnM7CisJbWVtc2V0KCZhY3Rpb25zLCAwLCBzaXplb2YoYWN0aW9ucykpOworCXNpZ2VtcHR5c2V0
+    KCZhY3Rpb25zLnNhX21hc2spOworCWFjdGlvbnMuc2FfZmxhZ3MgPSAwOworCWFjdGlvbnMuc2Ff
+    aGFuZGxlciA9IHRocmVhZFNpZ25hbEhhbmRsZXI7CisJc2lnYWN0aW9uKFNJR1VTUjIsICZhY3Rp
+    b25zLCBOVUxMKTsKKyNlbmRpZgogfQogCiB2b2lkICpUaHJlYWQ6OmRvUnVuKHZvaWQgKmRhdGEp
+    IHsKQEAgLTEwOTAsNyArMTEwNiwxMSBAQCBib29sIFRocmVhZDo6c3RhcnQoKSB7CiAKIGJvb2wg
+    VGhyZWFkOjpjYW5jZWwoKSB7CiAJaWYoIXJ1bm5pbmcpIHJldHVybiB0cnVlOworI2lmbmRlZiBf
+    X0FORFJPSURfXwogCXJ1bm5pbmcgPSBwdGhyZWFkX2NhbmNlbChtX3RocmVhZCkgIT0gMDsKKyNl
+    bHNlCisJcnVubmluZyA9IHB0aHJlYWRfa2lsbChtX3RocmVhZCwgU0lHVVNSMikgIT0gMDsKKyNl
+    bmRpZgogCXJldHVybiAhcnVubmluZzsKIH0KIAo=' | base64 -d | patch -p1
