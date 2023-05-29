@@ -1,8 +1,8 @@
 summary: C++ network sniffing, packet parsing and crafting framework
 web-url: https://pcapplusplus.github.io
 git-url: https://github.com/seladb/PcapPlusPlus
-src-url: https://github.com/seladb/PcapPlusPlus/archive/v21.11.tar.gz
-src-sha: 56b8566b14b2586b8afc358e7c98268bc1dd6192197b29a3917b9df2120c51b0
+src-url: https://github.com/seladb/PcapPlusPlus/archive/v22.11.tar.gz
+src-sha: 3172f12f2f8a8902ae1ad6be5d65c3059c42c49c1a28e97e5d8d25a48b05e44f
 license: Unlicense
 dep-pkg: libpcap
 bsystem: gmake
