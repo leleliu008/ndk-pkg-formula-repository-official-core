@@ -7,7 +7,7 @@ version: 3.41.1
 dep-pkg: readline zlib
 
 license: blessing||https://raw.githubusercontent.com/sqlite/sqlite/master/LICENSE.md
-developer: D.+Richard+Hipp
+developers: D.+Richard+Hipp
 
 install: |
     configure \

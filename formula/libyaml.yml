@@ -2,6 +2,6 @@ summary: YAML Parser
 git-url: https://github.com/yaml/libyaml
 src-url: https://github.com/yaml/libyaml/releases/download/0.2.5/yaml-0.2.5.tar.gz
 src-sha: c642ae9b75fee120b2d96c712538bd2cf283228d2337df2cf2988e3c02678ef4
-license: MIT|License|https://raw.githubusercontent.com/yaml/libyaml/master/License
-developer: Kirill+Simonov|xi@resolvent.net
 bsystem: configure
+license: MIT|License|https://raw.githubusercontent.com/yaml/libyaml/master/License
+developers: Kirill+Simonov|xi@resolvent.net

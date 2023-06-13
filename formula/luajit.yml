@@ -6,7 +6,7 @@ version: 2.1.0
 bsystem: gmake
 binbstd: yes
 license: MIT|COPYRIGHT|https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT
-developer: Mike+Pall|luajit@freelists.org|LuaJIT|https://github.com/LuaJIT
+developers: Mike+Pall|luajit@freelists.org|LuaJIT|https://github.com/LuaJIT
 
 dopatch: |
     printf '%s\n' 'int main() {return 0;}' > test.c

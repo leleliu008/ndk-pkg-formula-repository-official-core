@@ -5,4 +5,4 @@ src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8.tar.gz
 src-sha: 0100da0b55f552134d732acdd0325e84a0ef731a305c15f6a2ea24308de09759
 license: bzip2-1.0.8
 install: cmakew -DINSTALL_EXECUTABLES=ON -DINSTALL_LIBRARIES=ON
-developer: Julian+Seward|jseward@acm.org
+developers: Julian+Seward|jseward@acm.org

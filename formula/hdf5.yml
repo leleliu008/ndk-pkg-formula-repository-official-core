@@ -1,16 +1,16 @@
 summary: File format designed to store large amounts of data
 web-url: https://www.hdfgroup.org/HDF5
 git-url: https://github.com/HDFGroup/hdf5.git
-src-url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.13/hdf5-1.13.0/src/hdf5-1.13.0.tar.bz2
-src-sha: 1826e198df8dac679f0d3dc703aba02af4c614fd6b7ec936cf4a55e6aa0646ec
+    #src-url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_1-2.tar.gz
+    #src-sha: c05846ca3f5ab1b2673f4ac1c0ff7b2f5285ab8ab99d25368dce1fdf25ad0a4a
+version: 1.14.1.2
 license: BSD-3-Clause
 dep-pkg: szip zlib
-bsystem: cmake
 
 install: |
     cmakew \
         -DHDF5_BUILD_DOC=OFF \
         -DBUILD_SHARED_LIBS=ON \
         -DBUILD_STATIC_LIBS=ON \
-        -DBUILD_STATIC_EXECS=ON \
+        -DBUILD_STATIC_EXECS=OFF \
         -DTEST_LFS_WORKS_RUN=ON

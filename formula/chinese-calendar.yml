@@ -4,4 +4,4 @@ version: 2022.06.24
 bsystem: cmake
 bscript: algorithm/chinese-calendar
 license: Apache-2.0|LICENSE|https://raw.githubusercontent.com/leleliu008/C-examples/master/LICENSE
-developer: leleliu008|leleliu008@gmail.com|leleliu008|https://github.com/leleliu008
+developers: leleliu008|leleliu008@gmail.com|leleliu008|https://github.com/leleliu008

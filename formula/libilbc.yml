@@ -4,4 +4,4 @@ src-url: https://github.com/TimothyGu/libilbc/releases/download/v3.0.4/libilbc-3
 src-sha: 6820081a5fc58f86c119890f62cac53f957adb40d580761947a0871cea5e728f
 bsystem: cmake
 license: BSD-3-Clause|COPYING|https://raw.githubusercontent.com/TimothyGu/libilbc/main/COPYING
-developer: WebRTC+project+authors||WebRTC|https://webrtc.org/
+developers: WebRTC+project+authors||WebRTC|https://webrtc.org/

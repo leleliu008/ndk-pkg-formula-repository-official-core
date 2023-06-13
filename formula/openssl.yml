@@ -85,13 +85,10 @@ install: |
     export CROSS_SYSROOT="$SYSROOT"
 
     run ./Configure \
-        no-engine \
         no-tests \
         no-ssl2 \
         no-ssl3 \
         no-comp \
-        no-asm \
-        no-hw \
         -D__ANDROID_API__="$TARGET_OS_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \

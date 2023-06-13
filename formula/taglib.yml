@@ -5,9 +5,6 @@ src-url: https://taglib.github.io/releases/taglib-1.12.tar.gz
 src-sha: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
 dep-pkg: zlib
 bsystem: cmake
-license: LGPL-2.1-or-later|COPYING.LGPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.LGPL MPL-1.1|COPYING.MPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.MPL
-developer: Scott+Wheeler|wheeler@kde.org Lukas+Lalinsky|lalinsky@gmail.com Tsuda+Kageyu|tsuda.kageyu@gmail.com Stephen+F.+Booth|me@sbooth.org Ismael+Orenstein|orenstein@kde.org Allan+Sandfeld+Jensen|kde@carewolf.org Teemu+Tervo|teemu.tervo@gmx.net Mathias+Panzenböck|grosser.meister.morti@gmx.net Damien+Plisson|damien78@audirvana.com Urs+Fleisch|ufleisch@users.sourceforge.net
-
 install: |
     case $INSTALL_LIB in
         yes)    cmakew                         -DWITH_MP4=ON -DWITH_ASF=ON ;;
@@ -16,3 +13,21 @@ install: |
         both)   cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
                 cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON
     esac
+
+license: |
+    LGPL-2.1-or-later|COPYING.LGPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.LGPL
+    MPL-1.1|COPYING.MPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.MPL
+
+developers: |
+    Scott+Wheeler|wheeler@kde.org
+    Lukas+Lalinsky|lalinsky@gmail.com
+    Tsuda+Kageyu|tsuda.kageyu@gmail.com
+    Stephen+F.+Booth|me@sbooth.org
+    Ismael+Orenstein|orenstein@kde.org
+    Allan+Sandfeld+Jensen|kde@carewolf.org
+    Teemu+Tervo|teemu.tervo@gmx.net
+    Mathias+Panzenböck|grosser.meister.morti@gmx.net
+    Damien+Plisson|damien78@audirvana.com
+    Urs+Fleisch|ufleisch@users.sourceforge.net
+
+
