@@ -1,0 +1,104 @@
+name: workflow5
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  container:
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a]
+        pkg: [libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz]
+
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v3
+
+      - if:  ${{ github.ref_name == 'dev' }}
+        run: |
+            curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/dev/ndk-pkg
+            chmod +x ndk-pkg
+            mv ndk-pkg /usr/bin/ndk-pkg
+
+      - run: ndk-pkg env
+      - run: ndk-pkg setup
+      - run: ndk-pkg sysinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            timestamp-created: 1673675503
+            timestamp-updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+
+      - run: |
+          MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} sdk.api)
+          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=21
+          fi
+          ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}
+
+
+  macos:
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        os:  [macos-12, macos-11]
+        abi: [armeabi-v7a, arm64-v8a]
+        pkg: [libqalculate,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libspectre,libspng,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libvpx,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v3
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
+
+      - run: ./ndk-pkg env
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg ndkinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            timestamp-created: 1673675503
+            timestamp-updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+
+      - run: |
+          MIN_SDK_API_LEVEL=$(./ndk-pkg info ${{ matrix.pkg }} sdk.api)
+          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=21
+          fi
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}/${{ matrix.pkg }}
