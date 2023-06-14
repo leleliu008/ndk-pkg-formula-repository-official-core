@@ -10,10 +10,6 @@ install: |
         --enable-assembler \
         --enable-threads=posix
 
-license: |
-    LGPL-2.1-or-later|COPYING.LGPLv2.1|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.LGPLv2.1
-    GPL-2.0-or-later|COPYING.GPLv2|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.GPLv2
-    GPL-3.0-or-later|COPYING.GPLv3|https://raw.githubusercontent.com/xz-mirror/xz/master/COPYING.GPLv3
 developers: Lasse+Collin|lasse.collin@tukaani.org
 
 

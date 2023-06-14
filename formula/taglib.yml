@@ -13,11 +13,6 @@ install: |
         both)   cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
                 cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON
     esac
-
-license: |
-    LGPL-2.1-or-later|COPYING.LGPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.LGPL
-    MPL-1.1|COPYING.MPL|https://raw.githubusercontent.com/taglib/taglib/master/COPYING.MPL
-
 developers: |
     Scott+Wheeler|wheeler@kde.org
     Lukas+Lalinsky|lalinsky@gmail.com
