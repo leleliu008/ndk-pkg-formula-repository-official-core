@@ -1,0 +1,32 @@
+summary: Distributed revision control system
+web-url: https://git-scm.com/
+git-url: https://github.com/git/git
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
+src-sha: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
+license: GPL-2.0-only
+dep-pkg: gettext expat curl pcre2
+
+bsystem: configure
+binbstd: yes
+install: |
+    # to bypass git error: cannot run test program while cross compiling
+    export ac_cv_fread_reads_directories=yes
+    export ac_cv_header_libintl_h=yes
+    export ac_cv_iconv_omits_bom=no
+    export ac_cv_snprintf_returns_bogus=no
+
+    export ac_cv_lib_curl_curl_global_init=yes
+
+    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
+    printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
+
+    export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
+
+    configure \
+        --with-zlib="$zlib_INSTALL_DIR" \
+        --with-curl="$curl_INSTALL_DIR" \
+        --with-expat="$expat_INSTALL_DIR" \
+        --with-iconv="$libiconv_INSTALL_DIR" \
+        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-libpcre2="$pcre2_INSTALL_DIR" \
+        --without-tcltk

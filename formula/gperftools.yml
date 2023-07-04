@@ -1,0 +1,12 @@
+summary: a collection of a high-performance multi-threaded malloc() implementation, plus some pretty nifty performance analysis tools.
+git-url: https://github.com/gperftools/gperftools
+    #src-url: https://github.com/gperftools/gperftools/releases/download/gperftools-2.10/gperftools-2.10.tar.gz
+    #src-sha: 83e3bfdd28b8bcf53222c3798d4d395d52dadbbae59e8730c4a6d31a9c3732d8
+license: BSD-3-Clause
+dep-pkg: liblzma libexecinfo
+dep-upp: libtool
+bsystem: autotools
+
+# grp.h: struct group* getgrent(void) __INTRODUCED_IN(26);
+# spawn.h: int posix_spawn(pid_t* __pid, const char* __path, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], c    har* const __env[]) __INTRODUCED_IN(28);
+sdk-api: 28
