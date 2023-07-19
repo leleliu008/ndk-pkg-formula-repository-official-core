@@ -1,9 +1,6 @@
-summary: Command-line interface for VirusTotal
+summary: command-line interface for VirusTotal
 git-url: https://github.com/VirusTotal/vt-cli
-src-url: https://github.com/VirusTotal/vt-cli/archive/0.10.2.tar.gz
-src-sha: 09953ce45c2fbf872f70294d5fb58e856c0167ed6a7e1312f770e45bab18356b
+src-url: https://github.com/VirusTotal/vt-cli/archive/0.13.0.tar.gz
+src-sha: 0908250bf659cb73be748da7a1c5d2d402aba0c9da0fc21a1ad629deb4f24a73
 license: Apache-2.0
-bsystem: go
-
-install: |
-    gow -X cmd.Version=$PACKAGE_VERSION ./vt
+install: gow -X cmd.Version=$PACKAGE_VERSION ./vt

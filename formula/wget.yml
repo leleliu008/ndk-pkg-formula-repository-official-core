@@ -1,12 +1,10 @@
 summary: Internet file retriever
+git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
-git-url: https://git.savannah.gnu.org/git/wget
-src-url: https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz
-src-sha: 5726bb8bc5ca0f6dc7110f6416e4bb7019e2d2ff5bf93d1ca2ffcc6656f220e5
-license: GPL-3.0-or-later
+src-url: https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
+src-sha: 81542f5cefb8faacc39bbbc6c82ded80e3e4a88505ae72ea51df27525bcde04c
 dep-pkg: openssl libidn2 util-linux
-dep-upp: pkg-config
-bsystem: configure
+license: GPL-3.0-or-later
 
 install: |
     configure \

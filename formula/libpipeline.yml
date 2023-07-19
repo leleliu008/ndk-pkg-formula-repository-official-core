@@ -1,9 +1,8 @@
 summary: Library for manipulating pipelines of subprocesses in a flexible and convenient way
 web-url: http://libpipeline.nongnu.org
-src-url: http://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.6.tar.gz
-src-sha: 60fbb9e7dc398528e5f3a776af57bb28ca3fe5d9f0cd8a961ac6cebfe6e9b797
+src-url: http://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.7.tar.gz
+src-sha: b8b45194989022a79ec1317f64a2a75b1551b2a55bea06f67704cb2a2e4690b0
 license: GPL-3.0-or-later
-bsystem: configure
 
 install: |
     configure \

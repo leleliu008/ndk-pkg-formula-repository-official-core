@@ -1,13 +1,17 @@
 summary: Lynx-like WWW browser that supports tables, menus, etc.
 web-url: http://links.twibright.com
-src-url: http://links.twibright.com/download/links-2.27.tar.gz
-src-sha: b3e7f302e748f6394806aaac28ea878dbfa2af38745d96507adf68a0a541ba8b
+src-url: http://links.twibright.com/download/links-2.29.tar.bz2
+src-sha: 22aa96c0b38e1a6f8f7ed9d7a4167a47fc37246097759ef6059ecf8f9ead7998
+dep-pkg: libbz2 libtiff libjpeg-turbo openssl
 license: GPL-2.0-or-later
-dep-pkg: liblzma libbz2 libtiff libjpeg-turbo openssl
+
 bsystem: gmake
 binbstd: yes
-
 install: |
+    OPENSSL_LIBS="$(pkg-config --libs openssl)"
+    printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
+    sed_in_place "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure || return 1
+
     # configure [options] [host]
     run ./configure \
         --host="$TARGET_TRIPLE" \
@@ -24,5 +28,4 @@ install: |
         --with-ssl="$openssl_INSTALL_DIR" &&
     gmakew clean &&
     gmakew &&
-    gmakew install &&
-    gmakew distclean
+    gmakew install

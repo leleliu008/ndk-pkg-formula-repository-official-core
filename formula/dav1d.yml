@@ -1,12 +1,9 @@
 summary: AV1 decoder targeted to be small and fast
 git-url: https://code.videolan.org/videolan/dav1d
-src-url: https://code.videolan.org/videolan/dav1d/-/archive/1.0.0/dav1d-1.0.0.tar.bz2
-src-sha: 4a4eb6cecbc8c26916ef58886d478243de8bcc46710b369c04d6891b0155ac0f
-license: BSD-2-Clause|COPYING|https://code.videolan.org/videolan/dav1d/-/raw/master/COPYING
-developers: VideoLAN+and+dav1d+authors
+src-url: https://code.videolan.org/videolan/dav1d/-/archive/1.2.1/dav1d-1.2.1.tar.bz2
+src-sha: a4003623cdc0109dec3aac8435520aa3fb12c4d69454fa227f2658cdb6dab5fa
+license: BSD-2-Clause
 dep-upp: nasm
-bsystem: meson
-
 install: |
     mesonw \
         -Denable_asm=true \

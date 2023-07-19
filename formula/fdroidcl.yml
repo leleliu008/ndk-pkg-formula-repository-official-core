@@ -1,6 +1,6 @@
 summary: F-Droid client
 git-url: https://github.com/mvdan/fdroidcl
-src-url: https://github.com/mvdan/fdroidcl/archive/refs/tags/v0.5.0.tar.gz
-src-sha: 532a8c4c93216cbf13378ff409c06a08d48e8baee6119a50ed43dc0ce9ec7879
+src-url: https://github.com/mvdan/fdroidcl/archive/refs/tags/v0.7.0.tar.gz
+src-sha: 4dbbb2106c23564a19cdde912d3f06cd258f02eccd6382a0532ef64e7e61f2fd
 license: BSD-3-Clause
 bsystem: go

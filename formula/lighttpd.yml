@@ -1,7 +1,7 @@
 summary: Small memory footprint, flexible web-server
 web-url: https://www.lighttpd.net/
-src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.66.tar.xz
-src-sha: 47ac6e60271aa0196e65472d02d019556dc7c6d09df3b65df2c1ab6866348e3b
+src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.71.tar.xz
+src-sha: b8b6915da20396fdc354df3324d5e440169b2e5ea7859e3a775213841325afac
 license: BSD-3-Clause
 dep-pkg: openssl zlib libbz2 pcre libglob
 dep-upp: libtool

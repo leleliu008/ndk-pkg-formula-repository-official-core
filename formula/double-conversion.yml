@@ -1,6 +1,6 @@
 summary: Binary-decimal and decimal-binary routines for IEEE doubles
 git-url: https://github.com/google/double-conversion
-src-url: https://github.com/google/double-conversion/archive/v3.2.0.tar.gz
-src-sha: 3dbcdf186ad092a8b71228a5962009b5c96abde9a315257a3452eb988414ea3b
+src-url: https://github.com/google/double-conversion/archive/v3.3.0.tar.gz
+src-sha: 04ec44461850abbf33824da84978043b22554896b552c5fd11a9c5ae4b4d296e
 license: BSD-3-Clause
 bsystem: cmake
