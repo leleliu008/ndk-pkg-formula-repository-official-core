@@ -1,15 +1,13 @@
 summary: Library for manipulating JPEG-2000 images
 web-url: https://ece.engr.uvic.ca/~frodo/jasper/
 git-url: https://github.com/jasper-software/jasper
-src-url: https://github.com/jasper-software/jasper/releases/download/version-3.0.5/jasper-3.0.5.tar.gz
-src-sha: 3e600d98f41d3b08124bd24c558ed0c171fe5fd705fa90d56baf2b814c58483a
+src-url: https://github.com/jasper-software/jasper/releases/download/version-4.0.0/jasper-4.0.0.tar.gz
+src-sha: 39514e1b53a5333fcff817e19565371f016ea536c36fd2d13a9c4d8da8f0be0c
 license: JasPer-2.0
 dep-pkg: libjpeg-turbo
 install: |
-    STDC_VERSION="$("$CC" -std=c11 -E -dM - < /dev/null | sed -n '/__STDC_VERSION__/p' | cut -d ' ' -f3)"
     cmakew \
-        -DJAS_ENABLE_CXX=OFF \
         -DJAS_ENABLE_DOC=OFF \
         -DJAS_ENABLE_SHARED=ON \
         -DJAS_ENABLE_PROGRAMS=ON \
-        -DJAS_STDC_VERSION="$STDC_VERSION"
+        -DJAS_STDC_VERSION=$("$CC" -E -dM - < /dev/null | sed -n '/__STDC_VERSION__/p' | cut -d ' ' -f3)

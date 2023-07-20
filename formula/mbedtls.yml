@@ -1,10 +1,10 @@
 summary: Cryptographic and SSL/TLS library
 web-url: https://tls.mbed.org
 git-url: https://github.com/Mbed-TLS/mbedtls
-src-url: https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.tar.gz
-src-sha: 525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55
-dep-pkg: zlib
+src-url: https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.4.0.tar.gz
+src-sha: a5dac98592b1ac2232de0aed8f4ee62dffaa99e843e6f41dca2958095c737afd
 license: Apache-2.0
+dep-pkg: zlib
 
 install: |
     cmakew \

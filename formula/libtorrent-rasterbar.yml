@@ -1,9 +1,9 @@
 summary: an efficient feature complete C++ bittorrent implementation focusing on efficiency and scalability.
 web-url: http://libtorrent.org
 git-url: https://github.com/arvidn/libtorrent
-src-url: https://github.com/arvidn/libtorrent/releases/download/v2.0.6/libtorrent-rasterbar-2.0.6.tar.gz
-src-sha: 438e29272ff41ccc68ec7530f1b98d639f6d01ec8bf680766336ae202a065722
-license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/arvidn/libtorrent/RC_2_0/LICENSE
+src-url: https://github.com/arvidn/libtorrent/releases/download/v2.0.9/libtorrent-rasterbar-2.0.9.tar.gz
+src-sha: 90cd92b6061c5b664840c3d5e151d43fedb24f5b2b24e14425ffbb884ef1798e
+license: BSD-3-Clause
 dep-pkg: openssl boost
 
 install: |

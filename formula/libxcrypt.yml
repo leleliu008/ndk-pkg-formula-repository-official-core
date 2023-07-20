@@ -9,4 +9,5 @@ install: |
         --disable-obsolete-api \
         --disable-xcrypt-compat-files \
         --disable-failure-tokens \
-        --disable-valgrind
+        --disable-valgrind \
+        --disable-werror

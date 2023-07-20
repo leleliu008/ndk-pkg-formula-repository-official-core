@@ -1,11 +1,9 @@
 summary: Tiny, lightning fast, feature-packed file manager
 git-url: https://github.com/jarun/nnn
-src-url: https://github.com/jarun/nnn/archive/v4.5.tar.gz
-src-sha: fadc15bd6d4400c06e5ccc47845b42e60774f368570e475bd882767ee18749aa
+src-url: https://github.com/jarun/nnn/archive/v4.8.tar.gz
+src-sha: 0a744e67a0ce8b5e1e04961f542d2c33ddb6ceed46ba760dd35c4922b21f1146
 license: BSD-2-Clause
 dep-pkg: readline
-dep-upp: pkg-config
-bsystem: gmake
 binbstd: yes
 
 # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);

@@ -1,10 +1,11 @@
-summary: C++ microbenchmark support library
+summary: A C++ library to benchmark code snippets, similar to unit tests.
 git-url: https://github.com/google/benchmark
-src-url: https://github.com/google/benchmark/archive/v1.6.1.tar.gz
-src-sha: 6132883bc8c9b0df5375b16ab520fac1a85dc9e4cf5be59480448ece74b278d4
+src-url: https://github.com/google/benchmark/archive/v1.8.2.tar.gz
+src-sha: 2aab2980d0376137f969d92848fbb68216abb07633034534fc8c65cc4e7a0e93
 license: Apache-2.0
-bsystem: cmake
 
+# https://github.com/google/benchmark/issues/315
+#-DBENCHMARK_USE_LIBCXX=ON \
 install: |
     cmakew \
         -DBENCHMARK_ENABLE_TESTING=OFF \
@@ -13,5 +14,4 @@ install: |
         -DBENCHMARK_ENABLE_EXCEPTIONS=ON \
         -DBENCHMARK_ENABLE_INSTALL=ON \
         -DBENCHMARK_ENABLE_LTO=ON \
-        -DBENCHMARK_USE_LIBCXX=ON \
         -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF

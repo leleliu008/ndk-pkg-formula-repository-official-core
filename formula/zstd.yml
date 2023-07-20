@@ -1,12 +1,12 @@
 summary: Zstandard is a real-time compression algorithm
 web-url: https://facebook.github.io/zstd
 git-url: https://github.com/facebook/zstd
-src-url: https://github.com/facebook/zstd/archive/v1.5.2.tar.gz
-src-sha: f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e
-dep-pkg: liblzma zlib
-bscript: build/cmake
-license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/facebook/zstd/master/LICENSE GPL-2.0-or-later|COPYING|https://raw.githubusercontent.com/facebook/zstd/dev/COPYING
+src-url: https://github.com/facebook/zstd/archive/v1.5.5.tar.gz
+src-sha: 98e9c3d949d1b924e28e01eccb7deed865eefebf25c2f21c702e5cd5b63b85e1
+license: BSD-3-Clause
+dep-pkg: zlib liblzma
 
+bscript: build/cmake
 install: |
     cmakew \
         -DZSTD_MULTITHREAD_SUPPORT=ON \
@@ -14,7 +14,9 @@ install: |
         -DZSTD_BUILD_CONTRIB=OFF \
         -DZSTD_BUILD_PROGRAMS=ON \
         -DZSTD_BUILD_STATIC=ON \
-        -DZSTD_BUILD_SHARED=ON \
+        -DZSTD_BUILD_SHARED=OFF \
         -DZSTD_ZLIB_SUPPORT=ON \
         -DZSTD_LZMA_SUPPORT=ON \
-        -DZSTD_LZ4_SUPPORT=OFF
+        -DZSTD_LZ4_SUPPORT=OFF &&
+    rm -rf "$PACKAGE_INSTALL_DIR/include" &&
+    rm -rf "$PACKAGE_INSTALL_DIR/lib"

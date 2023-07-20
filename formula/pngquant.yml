@@ -1,9 +1,9 @@
 summary: PNG image optimizing utility
 git-url: https://github.com/kornelski/pngquant
 web-url: https://pngquant.org
-src-url: https://pngquant.org/pngquant-2.17.0-src.tar.gz
-src-uri: https://fossies.org/linux/misc/pngquant-2.17.0-src.tar.gz
-src-sha: a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802fcda66
+src-url: https://pngquant.org/pngquant-2.18.0-src.tar.gz
+src-uri: https://fossies.org/linux/misc/pngquant-2.18.0-src.tar.gz
+src-sha: e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4
 dep-pkg: libpng lcms2
 dep-upp: pkg-config
 bsystem: gmake

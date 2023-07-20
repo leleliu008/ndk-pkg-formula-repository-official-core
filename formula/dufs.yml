@@ -4,3 +4,7 @@ src-url: https://github.com/sigoden/dufs/archive/refs/tags/v0.34.2.tar.gz
 src-sha: d01f05744dca57b7dfc2d70c994b2532bf9fa4790d6fd1a5f87486eec2f2d95d
 license: MIT
 bsystem: cargo
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+sdk-api: 24

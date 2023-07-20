@@ -4,4 +4,5 @@ src-url: https://github.com/extrawurst/gitui/archive/v0.23.0.tar.gz
 src-sha: 5180d5d8fd2fe6400148d6078b4b318c7530ca6c27ea8d8c0882f2e4d9064a80
 license: MIT
 dep-pkg: zlib openssl@1.1
+dep-upp: gmake
 bsystem: cargo

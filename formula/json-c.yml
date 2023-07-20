@@ -3,8 +3,8 @@ git-url: https://github.com/json-c/json-c
 src-url: https://github.com/json-c/json-c/archive/json-c-0.16.tar.gz
 src-sha: c169436bd63a30fce4f9560befccb6bad3d375c8c7e9905ceb4e1f28f2cb24f7
 license: MIT
-bsystem: cmake
 
+dopatch: sed_in_place 's|set(APPS_LINK_LIBS "${PROJECT_NAME}")|set(APPS_LINK_LIBS "${PROJECT_NAME}-static")|' apps/CMakeLists.txt
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=ON \

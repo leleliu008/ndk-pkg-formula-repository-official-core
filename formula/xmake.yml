@@ -1,16 +1,14 @@
 summary: Cross-platform build utility based on Lua
 web-url: https://xmake.io/
 git-url: https://github.com/xmake-io/xmake
-src-url: https://github.com/xmake-io/xmake/releases/download/v2.7.8/xmake-v2.7.8.tar.gz
-src-sha: d4112587fb0e74037ff1ac32d2f1000591ac1a297fbd74645f9b031cb079585e
+src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.1/xmake-v2.8.1.tar.gz
+src-sha: 9ccd0b57709568b35b07510a8dcf98c22af6690ff15a0113d82bbe921f74f25f
 license: Apache-2.0
-bscript: core
-bsystem: xmake
+binbstd: yes
 install: |
-    CLANG_VERSION_MAJOR="$("$CC" -E -dM - < /dev/null | sed -n '/__clang_major__/p' | cut -d ' ' -f3)"
-
-    if [ "$CLANG_VERSION_MAJOR" -ge 13 ] ; then
-        export CFLAGS="$CFLAGS -Wno-error=unused-but-set-variable"
-    fi
-
-    xmakew && run rm -rf "$PACKAGE_INSTALL_DIR" && run install_bins "$PACKAGE_BCACHED_DIR/xmake"
+    sed_in_place 's|\*/cc|*-cc|' configure
+    sed_in_place 's|\*/c++|*-c++|' configure
+    run ./configure &&
+    gmakew clean &&
+    gmakew &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

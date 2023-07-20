@@ -1,20 +1,21 @@
 summary: Cross-platform make
-web-url: https://www.cmake.org
-git-url: https://gitlab.kitware.com/cmake/cmake
-src-url: https://github.com/Kitware/CMake/releases/download/v3.23.2/cmake-3.23.2.tar.gz
-src-sha: f316b40053466f9a416adf981efda41b160ca859e97f6a484b447ea299ff26aa
-license: BSD-3-Clause|Copyright.txt|https://gitlab.kitware.com/cmake/cmake/-/raw/master/Copyright.txt
-dep-pkg: libuv ncurses
-bsystem: cmake
-
-dopatch: |
-    sed_in_place 's/defined(__linux__) || defined(_WIN32)/0/g' Source/cmake.cxx
-
+web-url: https://www.cmake.org/
+git-url: https://github.com/Kitware/CMake
+src-url: https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0.tar.gz
+src-sha: aaeddb6b28b993d0a6e32c88123d728a17561336ab90e0bf45032383564d3cb8
+license: BSD-3-Clause
+dep-pkg: libarchive libcurl libuv jsoncpp expat rhash zlib ncurses openssl
 install: |
-    touch android_lf.h &&
-    export CPPFLAGS="$CPPFLAGS -I$PWD" &&
     cmakew \
         -DBUILD_QtDialog=OFF \
         -DBUILD_CursesDialog=ON \
-        -DCMake_BUILD_LTO=OFF \
-        -DCMAKE_USE_SYSTEM_LIBUV=ON
+        -DCMake_BUILD_LTO=ON \
+        -DCMAKE_USE_OPENSSL=ON \
+        -DCMAKE_USE_SYSTEM_CURL=ON \
+        -DCMAKE_USE_SYSTEM_EXPAT=ON \
+        -DCMAKE_USE_SYSTEM_FORM=ON \
+        -DCMAKE_USE_SYSTEM_JSONCPP=ON \
+        -DCMAKE_USE_SYSTEM_LIBARCHIVE=ON \
+        -DCMAKE_USE_SYSTEM_LIBRHASH=ON \
+        -DCMAKE_USE_SYSTEM_LIBUV=ON \
+        -DCMAKE_USE_SYSTEM_ZLIB=ON

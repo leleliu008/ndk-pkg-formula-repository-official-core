@@ -1,10 +1,8 @@
 summary: Lightweight C++ command-line option parser
-web-url: https://github.com/jarro2783/cxxopts.git
-src-url: https://github.com/jarro2783/cxxopts/archive/v3.0.0.tar.gz
-src-sha: 36f41fa2a46b3c1466613b63f3fa73dc24d912bc90d667147f1e43215a8c6d00
+git-url: https://github.com/jarro2783/cxxopts
+src-url: https://github.com/jarro2783/cxxopts/archive/v3.1.1.tar.gz
+src-sha: 523175f792eb0ff04f9e653c90746c12655f10cb70f1d5e6d6d9491420298a08
 license: MIT
-bsystem: cmake
-
 install: |
     cmakew \
         -DCXXOPTS_BUILD_TESTS=OFF \

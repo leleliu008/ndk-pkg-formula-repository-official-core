@@ -1,19 +1,21 @@
 summary: GNU grep, egrep and fgrep
+git-url: https://git.savannah.gnu.org/git/grep.git
 web-url: https://www.gnu.org/software/grep
-src-url: https://ftp.gnu.org/gnu/grep/grep-3.7.tar.xz
-src-sha: 5c10da312460aec721984d5d83246d24520ec438dd48d7ab5a05dbc0d6d6823c
+src-url: https://ftp.gnu.org/gnu/grep/grep-3.11.tar.xz
+src-sha: 1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab
 license: GPL-3.0-or-later
-bsystem: configure
-
-# no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
-# https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
-# https://github.com/android/ndk/issues/513
-# https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
-sdk-api: 23
 
 install: |
     configure \
         --enable-threads=posix \
         --disable-assert \
         --disable-gcc-warnings \
-        --with-included-regex
+        --with-included-regex &&
+    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/egrep &&
+    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/fgrep
+
+# no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
+# https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
+# https://github.com/android/ndk/issues/513
+# https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
+sdk-api: 23

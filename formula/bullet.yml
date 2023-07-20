@@ -1,11 +1,10 @@
 summary: Physics SDK
 web-url: https://bulletphysics.org/
 git-url: https://github.com/bulletphysics/bullet3
-src-url: https://github.com/bulletphysics/bullet3/archive/3.24.tar.gz
-src-sha: 6b1e987d6f8156fa8a6468652f4eaad17b3e11252c9870359e5bca693e35780b
+src-url: https://github.com/bulletphysics/bullet3/archive/3.25.tar.gz
+src-sha: c45afb6399e3f68036ddb641c6bf6f552bf332d5ab6be62f7e6c54eda05ceb77
 license: Zlib
-dep-upp: pkg-config python3
-
+dep-upp: python3
 install: |
     cmakew \
         -DBUILD_UNIT_TESTS=OFF \

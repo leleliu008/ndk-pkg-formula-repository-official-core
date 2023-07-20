@@ -1,11 +1,11 @@
 summary: Unified display of technical and tag data for audio/video
+git-url: https://github.com/MediaArea/MediaInfo
 web-url: https://mediaarea.net/
-src-url: https://mediaarea.net/download/source/mediainfo/22.06/mediainfo_22.06.tar.bz2
-src-sha: 9ccb156787bae78cd303f0979e074ab64811bc7cbd3c49db9a3961cfb841d81e
-license: BSD-2-Clause
-dep-upp: libtool
+src-url: https://mediaarea.net/download/source/mediainfo/23.07/mediainfo_23.07.tar.bz2
+src-sha: 8e193f09972d8f70dd797cb2d34fe647e95e01f47b3f48c77d1dbed31359c5bf
 dep-pkg: libmediainfo
+license: BSD-2-Clause
+
 bscript: Project/GNU/CLI
 bsystem: autogen
 binbstd: yes
-install: configure LIBS="'$(pkg-config --libs libmediainfo)'"

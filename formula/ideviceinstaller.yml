@@ -1,8 +1,14 @@
 summary: a command-line tool to manage apps on iOS devices
 web-url: https://www.libimobiledevice.org
+git-url: https://github.com/libimobiledevice/ideviceinstaller
 src-url: https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2
 src-sha: deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063
 license: GPL-2.0-or-later
 dep-pkg: libimobiledevice libzip
 bsystem: configure
 sdk-api: 24
+
+# https://github.com/libimobiledevice/ideviceinstaller/issues/154
+fix-url: https://github.com/libimobiledevice/ideviceinstaller/commit/9f9de528fe930f5248ed996659fdf5c22974928e.patch
+fix-sha: 238467ee71e77763abb1309d9c863076ced942d61331791d4b626a6b1807856e
+dopatch: patch -p1 < ../fix/238467ee71e77763abb1309d9c863076ced942d61331791d4b626a6b1807856e.patch

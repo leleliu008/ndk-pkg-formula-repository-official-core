@@ -1,8 +1,9 @@
 summary: Simple, fast and user-friendly alternative to find
 git-url: https://github.com/sharkdp/fd
-src-url: https://github.com/sharkdp/fd/archive/v8.4.0.tar.gz
-src-sha: d0c2fc7ddbe74e3fd88bf5bb02e0f69078ee6d2aeea3d8df42f508543c9db05d
+src-url: https://github.com/sharkdp/fd/archive/v8.7.0.tar.gz
+src-sha: 13da15f3197d58a54768aaad0099c80ad2e9756dd1b0c7df68c413ad2d5238c9
 license: Apache-2.0
+dep-upp: gmake
 bsystem: cargo
 
 # error: undefined reference to 'getgrnam_r'

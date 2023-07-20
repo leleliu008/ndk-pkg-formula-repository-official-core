@@ -1,8 +1,8 @@
 summary: C XSLT library for GNOME
 web-url: http://xmlsoft.org/XSLT
 git-url: https://github.com/GNOME/libxslt
-src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz
-src-sha: 3a4b27dc8027ccd6146725950336f1ec520928f320f144eb5fa7990ae6123ab4
+src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.38.tar.xz
+src-sha: 1f32450425819a09acaff2ab7a5a7f8a2ec7956e505d7beeb45e843d0e1ecab1
 license: X11
 dep-pkg: libxml2
 

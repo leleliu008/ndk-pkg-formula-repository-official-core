@@ -1,10 +1,10 @@
 summary: WebM container
 web-url: https://www.webmproject.org/
 git-url: https://github.com/webmproject/libwebm
-src-url: https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.28.tar.gz
-src-sha: 4df11d93260d3cd9f17c3697b0828d38400a8f87082183368df6a1ae7a9fc635
+src-url: https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.30.tar.gz
+src-sha: 6c1381fd1a66e86e095b76028ede696724e198ea0e39957c9649af5f0718b96a
 license: BSD-3-Clause
-
+xxflags: -std=c++11
 install: |
     cmakew &&
     run install_libs libwebm.* &&

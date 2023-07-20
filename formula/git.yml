@@ -5,10 +5,23 @@ src-url: https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
 src-sha: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
 license: GPL-2.0-only
 dep-pkg: gettext expat curl pcre2
-
+dep-upp: patch
 bsystem: configure
 binbstd: yes
 install: |
+    printf '%s' '
+    LS0tIHJ1bi1jb21tYW5kLmMJMjAyMy0wNi0wMSAxNTowMzowNS4wMDAwMDAwMDAgKzA4MDAKKysr
+    IHJ1bi1jb21tYW5kLmNoYW5nZWQJMjAyMy0wNy0yMSAwMToxMToxNy41MjcxNDY0NzcgKzA4MDAK
+    QEAgLTUxNyw4ICs1MTcsNiBAQAogI2Vsc2UKIAlDSEVDS19CVUcocHRocmVhZF9zaWdtYXNrKFNJ
+    R19TRVRNQVNLLCAmYWxsLCAmYXMtPm9sZCksCiAJCSJibG9ja2luZyBhbGwgc2lnbmFscyIpOwot
+    CUNIRUNLX0JVRyhwdGhyZWFkX3NldGNhbmNlbHN0YXRlKFBUSFJFQURfQ0FOQ0VMX0RJU0FCTEUs
+    ICZhcy0+Y3MpLAotCQkiZGlzYWJsaW5nIGNhbmNlbGxhdGlvbiIpOwogI2VuZGlmCiB9CiAKQEAg
+    LTUyOCw4ICs1MjYsNiBAQAogCWlmIChzaWdwcm9jbWFzayhTSUdfU0VUTUFTSywgJmFzLT5vbGQs
+    IE5VTEwpKQogCQlkaWVfZXJybm8oInNpZ3Byb2NtYXNrIik7CiAjZWxzZQotCUNIRUNLX0JVRyhw
+    dGhyZWFkX3NldGNhbmNlbHN0YXRlKGFzLT5jcywgTlVMTCksCi0JCSJyZS1lbmFibGluZyBjYW5j
+    ZWxsYXRpb24iKTsKIAlDSEVDS19CVUcocHRocmVhZF9zaWdtYXNrKFNJR19TRVRNQVNLLCAmYXMt
+    Pm9sZCwgTlVMTCksCiAJCSJyZXN0b3Jpbmcgc2lnbmFsIG1hc2siKTsKICNlbmRpZgo=' | base64 -d | patch -p0
+
     # to bypass git error: cannot run test program while cross compiling
     export ac_cv_fread_reads_directories=yes
     export ac_cv_header_libintl_h=yes
