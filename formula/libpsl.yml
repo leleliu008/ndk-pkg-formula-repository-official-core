@@ -1,8 +1,11 @@
 summary: C library for the Public Suffix List
 web-url: https://rockdaboot.github.io/libpsl
 git-url: https://github.com/rockdaboot/libpsl
-src-url: https://github.com/rockdaboot/libpsl/releases/download/0.21.1/libpsl-0.21.1.tar.gz
-src-sha: ac6ce1e1fbd4d0254c4ddb9d37f1fa99dec83619c1253328155206b896210d4c
+src-url: https://github.com/rockdaboot/libpsl/releases/download/0.21.2/libpsl-0.21.2.tar.gz
+src-sha: e35991b6e17001afa2c0ca3b10c357650602b92596209b7492802f3768a6285f
 license: MIT
 dep-pkg: libidn2
+dopatch: |
+    sed_in_place "/libiconv_dep = dependency/c      libiconv_dep = dependency('libiconv', method : 'pkg-config')" meson.build
+    sed_in_place "/libunistring = cc.find_library/c libunistring = cc.find_library('unistring', dirs : ['$libunistring_LIBRARY_DIR'])" meson.build
 install: mesonw -Druntime=libidn2

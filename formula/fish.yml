@@ -1,14 +1,11 @@
 summary: User-friendly command-line shell for UNIX-like operating systems
-web-url: https://fishshell.com
+web-url: https://fishshell.com/
 git-url: https://github.com/fish-shell/fish-shell
-src-url: https://github.com/fish-shell/fish-shell/releases/download/3.5.0/fish-3.5.0.tar.xz
-src-sha: 291e4ec7c6c3fea54dc1aed057ce3d42b356fa6f70865627b2c7dfcecaefd210
+src-url: https://github.com/fish-shell/fish-shell/releases/download/3.6.1/fish-3.6.1.tar.xz
+src-sha: 55402bb47ca6739d8aba25e41780905b5ce1bce0a5e0dd17dca908b5bc0b49b2
 license: GPL-2.0-or-later
 dep-pkg: pcre2 readline
-bsystem: cmake
+install: cmakew -DWITH_GETTEXT=OFF
 
 # int posix_spawn(pid_t* __pid, const char* __path, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
 sdk-api: 28
-
-install: |
-    cmakew -DWITH_GETTEXT=OFF

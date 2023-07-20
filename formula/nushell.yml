@@ -8,4 +8,8 @@ license: MIT
 bsystem: cargo
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
-sdk-api: 24
+
+# struct passwd* getpwent(void) __INTRODUCED_IN(26);
+#           void setpwent(void) __INTRODUCED_IN(26);
+#           void endpwent(void) __INTRODUCED_IN(26);
+sdk-api: 26

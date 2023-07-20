@@ -1,6 +1,6 @@
 summary: Modern, C++-native, header-only, test framework
 git-url: https://github.com/catchorg/Catch2
-src-url: https://github.com/catchorg/Catch2/archive/v3.0.1.tar.gz
-src-sha: 8c4173c68ae7da1b5b505194a0c2d6f1b2aef4ec1e3e7463bde451f26bbaf4e7
+src-url: https://github.com/catchorg/Catch2/archive/v3.4.0.tar.gz
+src-sha: 122928b814b75717316c71af69bd2b43387643ba076a6ec16e7882bfb2dfacbb
 license: BSL-1.0
-bsystem: cmake
+install: cmakew -DCMAKE_CXX_STANDARD=17

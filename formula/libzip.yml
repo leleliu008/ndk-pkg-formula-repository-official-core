@@ -1,12 +1,9 @@
 summary: C library for reading, creating, and modifying zip archives
-web-url: https://libzip.org
 git-url: https://github.com/nih-at/libzip
-src-url: https://libzip.org/download/libzip-1.9.0.tar.xz
-src-sha: a17240ee88f0705a9067bb0087fde1cee73948b3cf6c3978a21a58fdb73b76a2
-license: BSD-3-Clause|LICENSE|https://raw.githubusercontent.com/nih-at/libzip/master/LICENSE
+web-url: https://libzip.org/
+src-url: https://libzip.org/download/libzip-1.10.0.tar.xz
+src-sha: cd2a7ac9f1fb5bfa6218272d9929955dc7237515bba6e14b5ad0e1d1e2212b43
 dep-pkg: libzstd libbz2
-dep-upp: pkg-config
-bsystem: cmake
 
 install: |
     cmakew \
@@ -21,5 +18,4 @@ install: |
         -DBUILD_DOC=OFF \
         -DBUILD_TOOLS=OFF \
         -DBUILD_REGRESS=OFF \
-        -DBUILD_EXAMPLES=OFF &&
-    sed_in_place 's|-lZstd|-lzstd|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libzip.pc"
+        -DBUILD_EXAMPLES=OFF

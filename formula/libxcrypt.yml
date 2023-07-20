@@ -1,7 +1,7 @@
 summary: Extended crypt library for descrypt, md5crypt, bcrypt, and others
 git-url: https://github.com/besser82/libxcrypt
-src-url: https://github.com/besser82/libxcrypt/releases/download/v4.4.28/libxcrypt-4.4.28.tar.xz
-src-sha: 9e936811f9fad11dbca33ca19bd97c55c52eb3ca15901f27ade046cc79e69e87
+src-url: https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz
+src-sha: e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943
 license: LGPL-2.1-or-later
 dep-upp: perl
 install: |
@@ -9,5 +9,4 @@ install: |
         --disable-obsolete-api \
         --disable-xcrypt-compat-files \
         --disable-failure-tokens \
-        --disable-valgrind \
-        --disable-werror
+        --disable-valgrind

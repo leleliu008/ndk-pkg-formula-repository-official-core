@@ -3,14 +3,7 @@ web-url: https://www.gnu.org/software/gawk
 src-url: https://ftp.gnu.org/gnu/gawk/gawk-5.1.1.tar.xz
 src-sha: d87629386e894bbea11a5e00515fc909dc9b7249529dad9e6a3a2c77085f7ea2
 license: GPL-3.0-or-later
-bsystem: configure
 dep-pkg: readline mpfr
-
-# struct passwd* getpwent(void) __INTRODUCED_IN(26);
-#           void setpwent(void) __INTRODUCED_IN(26);
-#           void endpwent(void) __INTRODUCED_IN(26);
-sdk-api: 26
-
 install: |
     configure \
         --with-readline="$readline_INSTALL_DIR" \
@@ -19,3 +12,8 @@ install: |
         --enable-lint \
         --enable-mpfr \
         --disable-builtin-intdiv0
+
+# struct passwd* getpwent(void) __INTRODUCED_IN(26);
+#           void setpwent(void) __INTRODUCED_IN(26);
+#           void endpwent(void) __INTRODUCED_IN(26);
+sdk-api: 26

@@ -1,6 +1,6 @@
 summary: Shell extension to navigate your filesystem faster
 git-url: https://github.com/ajeetdsouza/zoxide
-src-url: https://github.com/ajeetdsouza/zoxide/archive/v0.8.2.tar.gz
-src-sha: 3a977960284bc06f3c7f02ec93b6f269fd9f5bf933115828e6f46cf6c2601f5e
+src-url: https://github.com/ajeetdsouza/zoxide/archive/v0.9.1.tar.gz
+src-sha: 7af5965e0f0779a5ea9135ee03c51b1bb1d84b578af0a7eb2bd13dbf34a342dd
 license: MIT
 bsystem: cargo

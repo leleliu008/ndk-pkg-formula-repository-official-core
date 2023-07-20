@@ -1,17 +1,21 @@
-summary: Core application library for C
+summary: a general-purpose, portable utility library which provides many useful data types, macros, type conversions, string utilities, file utilities, a mainloop abstraction, and so on.
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
-src-url: https://download.gnome.org/sources/glib/2.76/glib-2.76.1.tar.xz
-src-sha: 43dc0f6a126958f5b454136c4398eab420249c16171a769784486e25f2fda19f
+src-url: https://download.gnome.org/sources/glib/2.76/glib-2.76.4.tar.xz
+src-sha: 5a5a191c96836e166a7771f7ea6ca2b0069c603c7da3cba1cd38d1694a395dda
 license: LGPL-2.1-or-later
 dep-pkg: gettext libffi pcre2
-dopatch: |
-    sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
 
-    if [ -f ../lib/libintl.a ] ; then
-        printf 'INPUT(%s %s)\n' "$gettext_INSTALL_DIR/lib/libintl.a" "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libintl.a
-    fi
+dopatch: |
+    sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
+    sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
+    sed_in_place '2087,2114d'  meson.build
+    sed_in_place "2086a libintl = cc.find_library('intl',  dirs: ['$gettext_LIBRARY_DIR'])" meson.build
+    sed_in_place '2087a libintl_deps = [libintl, libiconv]' meson.build
+
 install: |
+    # gobject-inspection needs shared libraries: gobject-2.0, glib-2.0
+    INSTALL_LIB=both
     mesonw \
         -Dnls=disabled \
         -Dman=false \

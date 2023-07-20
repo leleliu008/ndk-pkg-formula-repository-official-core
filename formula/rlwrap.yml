@@ -1,7 +1,7 @@
 summary: Readline wrapper, adds readline support to tools that lack it
 git-url: https://github.com/hanslub42/rlwrap
-src-url: https://github.com/hanslub42/rlwrap/archive/v0.45.2.tar.gz
-src-sha: 7197559f193918cc8782421b5b1313abbde5e3b965a5f91f9ee25aee9b172ec5
+src-url: https://github.com/hanslub42/rlwrap/archive/refs/tags/0.46.1.tar.gz
+src-sha: c537e8a53df36f1f996601d776203478ad56fab1d67b3c1a63057badb0851cec
 license: GPL-2.0-or-later
 dep-pkg: readline
 bsystem: autotools

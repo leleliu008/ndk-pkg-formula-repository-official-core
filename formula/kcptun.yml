@@ -1,14 +1,10 @@
-summary: Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC
+summary: Stable & Secure Tunnel based on KCP with N/M multiplexing and FEC
 git-url: https://github.com/xtaci/kcptun
-src-url: https://github.com/xtaci/kcptun/archive/v20210922.tar.gz
-src-sha: f6a08f0fe75fa85d15f9c0c28182c69a5ad909229b4c230a8cbe38f91ba2d038
+src-url: https://github.com/xtaci/kcptun/archive/v20230214.tar.gz
+src-sha: 3ab7b2cc3cdf1705faa76d474419a2d9e8868c8b46a24c93a218bd6a5acb2de3
 license: MIT
-bsystem: go
 
 install: |
-    for item in server client
-    do
-        gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_$item ./$item || return 1
-    done
-
+    gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_server ./server &&
+    gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_client ./client &&
     run install_etcs examples/local.json

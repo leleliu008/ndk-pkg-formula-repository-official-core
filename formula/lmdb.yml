@@ -1,12 +1,13 @@
 summary: Lightning memory-mapped database, key-value data store
 web-url: https://symas.com/lmdb
-src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.29/openldap-LMDB_0.9.29.tar.bz2
-src-sha: 182e69af99788b445585b8075bbca89ae8101069fbeee25b2756fb9590e833f8
+src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.31/openldap-LMDB_0.9.31.tar.bz2
+src-sha: 2132b8261d241876ce5fe10a243b2f7e0127eecaaff30039573eadc09e3acee6
 license: OLDAP-2.8
+
 ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
 binbstd: yes
 install: |
     gmakew clean &&
-    gmakew CC="$CC" XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" &&
-    gmakew install prefix="$PACKAGE_INSTALL_DIR"
+    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR &&
+    gmakew install prefix=$PACKAGE_INSTALL_DIR

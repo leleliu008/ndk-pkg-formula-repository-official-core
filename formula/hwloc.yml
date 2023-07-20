@@ -1,8 +1,8 @@
 summary: Portable abstraction of the hierarchical topology of modern architectures
-web-url: https://www.open-mpi.org/projects/hwloc
 git-url: https://github.com/open-mpi/hwloc
-src-url: https://www.open-mpi.org/software/hwloc/v2.7/downloads/hwloc-2.7.1.tar.bz2
-src-sha: 0d4e1d36c3a72c5d61901bfd477337f5a4c7e0a975da57165237d00e35ef528d
-license: BSD-3-Clause|COPYING|https://raw.githubusercontent.com/open-mpi/hwloc/master/COPYING
+web-url: https://www.open-mpi.org/projects/hwloc
+src-url: https://www.open-mpi.org/software/hwloc/v2.9/downloads/hwloc-2.9.2.tar.bz2
+src-sha: 0a87fdf677f8b00b567d229b6320bf6b25c693edaa43e0b85268d999d6b060cf
+license: BSD-3-Clause
 dep-pkg: libxml2
-bsystem: configure
+install: configure --disable-cairo --without-x

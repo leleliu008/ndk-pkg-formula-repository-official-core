@@ -1,5 +1,5 @@
 summary: Utility for directing compilation
-git-url: https://git.savannah.gnu.org/git/make
+git-url: https://git.savannah.gnu.org/git/make.git
 web-url: https://www.gnu.org/software/make
 src-url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
 src-sha: e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19

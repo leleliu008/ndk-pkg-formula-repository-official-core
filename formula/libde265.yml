@@ -1,10 +1,8 @@
 summary: Open h.265 video codec implementation
 git-url: https://github.com/strukturag/libde265
-src-url: https://github.com/strukturag/libde265/releases/download/v1.0.8/libde265-1.0.8.tar.gz
-src-sha: 24c791dd334fa521762320ff54f0febfd3c09fc978880a8c5fbc40a88f21d905
+src-url: https://github.com/strukturag/libde265/releases/download/v1.0.12/libde265-1.0.12.tar.gz
+src-sha: 62185ea2182e68cf68bba20cc6eb4c287407b509cf0a827d7ddb75614db77b5c
 license: LGPL-3.0-or-later
-bsystem: cmake
-
 install: |
     cmakew \
         -DENABLE_SDL=OFF \
