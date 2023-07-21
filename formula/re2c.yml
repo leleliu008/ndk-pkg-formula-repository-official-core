@@ -1,8 +1,9 @@
 summary: Generate C-based recognizers from regular expressions
 web-url: https://re2c.org/
 git-url: https://github.com/skvadrik/re2c
-src-url: https://github.com/skvadrik/re2c/releases/download/3.0/re2c-3.0.tar.xz
-src-sha: b3babbbb1461e13fe22c630a40c43885efcfbbbb585830c6f4c0d791cf82ba0b
+src-url: https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz
+src-sha: 0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029
+dep-upp: python3
 install: |
     cmakew \
         -DRE2C_REBUILD_DOCS=OFF \

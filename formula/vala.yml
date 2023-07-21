@@ -1,8 +1,8 @@
 summary: Compiler for the GObject type system
 web-url: https://wiki.gnome.org/Projects/Vala
 git-url: https://github.com/GNOME/vala
-src-url: https://download.gnome.org/sources/vala/0.56/vala-0.56.7.tar.xz
-src-sha: 3d39c7596d5fa9ae8bfeae476669f811f7057b7f7b9308478a27b68443d8b003
+src-url: https://download.gnome.org/sources/vala/0.56/vala-0.56.9.tar.xz
+src-sha: 55578c7c4f067ace028e541806af240f8084cb6ff0cc554caa8ac08cbf8bce2f
 license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison
 dep-pkg: glib graphviz

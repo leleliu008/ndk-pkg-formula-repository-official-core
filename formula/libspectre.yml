@@ -1,10 +1,9 @@
 summary: Small library for rendering Postscript documents
 web-url: https://wiki.freedesktop.org/www/Software/libspectre/
 git-url: https://gitlab.freedesktop.org/libspectre/libspectre
-src-url: https://libspectre.freedesktop.org/releases/libspectre-0.2.10.tar.gz
-src-sha: cf60b2a80f6bfc9a6b110e18f08309040ceaa755210bf94c465a969da7524d07
+src-url: https://libspectre.freedesktop.org/releases/libspectre-0.2.12.tar.gz
+src-sha: 55a7517cd3572bd2565df0cf450944a04d5273b279ebb369a895391957f0f960
 license: GPL-2.0-or-later
 dep-pkg: ghostscript
-dep-upp: pkg-config
 bsystem: configure
 binbstd: yes

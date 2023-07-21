@@ -1,8 +1,8 @@
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org
-src-url: https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
-src-sha: 2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849
+src-url: https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz
+src-sha: 85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63
 license: Python-2.0
 dep-pkg: gdbm expat libffi openssl sqlite libbz2 liblzma
 dep-upp: python3

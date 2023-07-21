@@ -1,9 +1,9 @@
 summary: Tool Command Language
 web-url: https://www.tcl-lang.org
-src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tcl8.6.12-src.tar.gz
-src-sha: 26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6
+src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz
+src-sha: 43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066
 dep-pkg: liblanginfo
-version: 8.6.12
+version: 8.6.13
 license: TCL
 bsystem: configure
 bscript: unix

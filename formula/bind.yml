@@ -1,8 +1,8 @@
 summary: Implementation of the DNS protocols
 web-url: https://www.isc.org/downloads/bind
 git-url: https://github.com/isc-projects/bind9
-src-url: https://downloads.isc.org/isc/bind9/9.18.14/bind-9.18.14.tar.xz
-src-sha: 9ae12edf6ac3c430b33ecd1a7c0c0c60875d255185eb87850fa9a5e794a64a09
+src-url: https://downloads.isc.org/isc/bind9/9.18.16/bind-9.18.16.tar.xz
+src-sha: c88234fe07ee75c3c8a9e59152fee64b714643de8e22cf98da3db4d0b57e0775
 license: MPL-2.0
 dep-upp: pkg-config
 dep-pkg: libnghttp2 openssl json-c libxml2 libidn2 libuv libglob
