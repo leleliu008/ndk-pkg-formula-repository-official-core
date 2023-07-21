@@ -6,10 +6,10 @@ src-sha: 3751c7fba8dbc831cb8d7cc8aff21035459b8ce5155ef8b0880a27d028475f3b
 license: BSD-2-Clause
 dep-pkg: zlib
 
+build0:  configure --disable-zlib --disable-bzlib --disable-xzlib
+
 install: |
-    configure \
-        --enable-zlib \
-        --disable-bzlib \
-        --disable-xzlib &&
-    rm -rf "$PACKAGE_INSTALL_DIR/bin" &&
+    export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
+    configure --enable-zlib --disable-bzlib --disable-xzlib
+    rm -rf "$PACKAGE_INSTALL_DIR/bin"
     rm -rf "$PACKAGE_INSTALL_DIR/share/man/man1"

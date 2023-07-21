@@ -1,11 +1,10 @@
-summary: Software library to render fonts
+summary: A C library to render fonts.
 web-url: https://www.freetype.org
 git-url: https://gitlab.freedesktop.org/freetype/freetype
-src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.12.1/freetype-2.12.1.tar.xz
-src-sha: 4766f20157cc4cf0cd292f80bf917f92d1c439b243ac3018debf6b9140c41a7f
-license: FTL
+src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.1/freetype-2.13.1.tar.xz
+src-sha: ea67e3b019b1104d1667aa274f5dc307d8cbd606b399bc32df308a77f1a564bf
 dep-pkg: brotli libbz2 libpng harfbuzz
-bsystem: cmake
+license: FTL
 
 install: |
     cmakew \

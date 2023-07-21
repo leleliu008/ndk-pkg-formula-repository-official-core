@@ -1,8 +1,8 @@
 summary: Optimized BLAS library
 web-url: https://www.openblas.net
 git-url: https://github.com/xianyi/OpenBLAS
-src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.20.tar.gz
-src-sha: 8495c9affc536253648e942908e88e097f2ec7753ede55aca52e5dead3029e3c
+src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.23.tar.gz
+src-sha: 5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114
 license: BSD-3-Clause
 bsystem: gmake
 binbstd: yes

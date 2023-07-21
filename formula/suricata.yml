@@ -4,11 +4,8 @@ git-url: https://github.com/OISF/suricata
 src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.0.tar.gz
 src-sha: 7bcd1313118366451465dc3f8385a3f6aadd084ffe44dd257dda8105863bb769
 license: GPL-2.0-or-later
-dep-pkg: jansson file libnet libpcap libyaml lz4 pcre libiconv libglob
+dep-pkg: jansson libmagic libnet libpcap libyaml lz4 pcre2 libiconv libglob
 bsystem: configure cargo
-
-# void endgrent(void) __INTRODUCED_IN(26);
-sdk-api: 26
 
 install: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
@@ -18,6 +15,11 @@ install: |
     run rustup target add "$RUST_TARGET" &&
     configure \
         --enable-pie \
+        --with-libpcap-includes="$libpcap_INCLUDE_DIR" \
+        --with-libpcap-libraries="$libpcap_LIBRARY_DIR" \
         ac_cv_lib_pthread_pthread_create=yes \
         ac_cv_lib_jansson_json_dump_callback=yes \
-        ac_cv_lib_pcap_pcap_open_live=yes
+        ac_cv_lib_pcap_pcap_open_dead=yes
+
+# void endgrent(void) __INTRODUCED_IN(26);
+sdk-api: 26

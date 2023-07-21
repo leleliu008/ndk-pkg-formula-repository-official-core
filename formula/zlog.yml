@@ -1,7 +1,7 @@
 summary: High-performance C logging library
 git-url: https://github.com/HardySimpson/zlog
-src-url: https://github.com/HardySimpson/zlog/archive/1.2.15.tar.gz
-src-sha: 00037ab8d52772a95d645f1dcfd2c292b7cea326b54e63e219a5b7fdcb7e6508
+src-url: https://github.com/HardySimpson/zlog/archive/1.2.16.tar.gz
+src-sha: 742401902f2134eb272c49631fe5c38d7aeb9a2ad56fa3ec3d15219b371ba655
 license: LGPL-2.1-or-later|COPYING|https://raw.githubusercontent.com/HardySimpson/zlog/master/COPYING
 dep-pkg: libglob
 bsystem: gmake

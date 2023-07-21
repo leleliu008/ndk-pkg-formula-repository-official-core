@@ -1,7 +1,7 @@
 summary: Create beautiful image of your source code
 git-url: https://github.com/Aloxaf/silicon
-src-url: https://github.com/Aloxaf/silicon/archive/v0.4.3.tar.gz
-src-sha: 68d64ade34ac571cf2d092f9a6f124e2c7d0441a91e3ba00ca1c8edcdd008630
+src-url: https://github.com/Aloxaf/silicon/archive/v0.5.1.tar.gz
+src-sha: 784a6f99001f2000422b676e637fe83a5dc27f5fc55ad33e227c882ce20e6439
 license: MIT
 bsystem: cargo cmake-gmake
 
