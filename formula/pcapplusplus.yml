@@ -9,6 +9,7 @@ bsystem: gmake
 binbstd: yes
 dopatch: |
     if [ -f ../lib/libpcap.a ] ; then
+        rm  ../lib/libpcap.a
         printf 'INPUT(%s -lssl -lcrypto)\n' "$libpcap_INSTALL_DIR/lib/libpcap.a" > ../lib/libpcap.a
     fi
 install: |

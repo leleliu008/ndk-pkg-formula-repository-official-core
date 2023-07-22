@@ -1,13 +1,12 @@
 summary: Common error values for all GnuPG components
 web-url: https://www.gnupg.org/related_software/libgpg-error
 git-url: https://dev.gnupg.org/source/libgpg-error
-src-url: https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.bz2
-src-sha: 570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26
-license: LGPL-2.1-or-later|COPYING|https://dev.gnupg.org/source/libgpg-error/browse/master/COPYING
+src-url: https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2                                                                         
+src-sha: 9e3c670966b96ecc746c28c2c419541e3bcb787d1a73930f5e5f5e1bcbbb9bdb
+license: LGPL-2.1-or-later
 dep-pkg: libbthread
 ldflags: -lbthread
 ccflags: -include pthread.h -include bthread.h
-bsystem: configure
 
 dopatch: |
     cp src/syscfg/lock-obj-pub.arm-unknown-linux-androideabi.h src/syscfg/lock-obj-pub.armv7a-unknown-linux-androideabi.h &&

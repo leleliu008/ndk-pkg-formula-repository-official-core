@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow2
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [coreutils,cpprestsdk,cppunit,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,fftw,figlet,file,findutils,fish,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [coreutils,cpprestsdk,cppunit,croc,crosstool-ng,crowbook,ctop,cue,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,exa,exhale,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,fftw,figlet,file,findutils,fish,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd]
 
     runs-on: ${{ matrix.os }}
 

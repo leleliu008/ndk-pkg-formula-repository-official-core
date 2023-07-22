@@ -1,8 +1,8 @@
 summary: GNU awk utility
 git-url: https://git.savannah.gnu.org/git/gawk.git
 web-url: https://www.gnu.org/software/gawk
-src-url: https://ftp.gnu.org/gnu/gawk/gawk-5.2.2.tar.xz
-src-sha: 3c1fce1446b4cbee1cd273bd7ec64bc87d89f61537471cd3e05e33a965a250e9
+src-url: https://ftp.gnu.org/gnu/gawk/gawk-5.1.1.tar.xz
+src-sha: d87629386e894bbea11a5e00515fc909dc9b7249529dad9e6a3a2c77085f7ea2
 license: GPL-3.0-or-later
 dep-pkg: readline mpfr
 

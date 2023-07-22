@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow1
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,clog,cmake]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,clash,cli11,clog,cmake]
 
     runs-on: ${{ matrix.os }}
 
