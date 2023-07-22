@@ -6,7 +6,7 @@ src-sha: 2e74a397fa797c2902d7467d500de904907666afb4ff80f6464f6efd5afb114a
 license: GPL-2.0-or-later
 dep-upp: libtool
 bsystem: autogen
-
+dopatch: sed_in_place '8725,8733d' configure.ac
 install: |
     configure \
         --disable-asm \

@@ -5,7 +5,7 @@ src-url: https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
 src-sha: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
 license: GPL-2.0-only
 dep-pkg: gettext expat curl pcre2
-dep-upp: patch
+dep-upp: gettext-tools patch
 bsystem: configure
 binbstd: yes
 install: |
