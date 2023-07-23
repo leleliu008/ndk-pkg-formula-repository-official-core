@@ -31,4 +31,5 @@ install: |
         --disable-gcc-warnings \
         --disable-acl \
         --enable-xattr \
-        --enable-threads=posix
+        --enable-threads=posix \
+        ac_year2038_required=no

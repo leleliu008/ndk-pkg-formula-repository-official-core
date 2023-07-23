@@ -3,4 +3,13 @@ git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se
 src-url: https://c-ares.haxx.se/download/c-ares-1.19.1.tar.gz
 src-sha: 321700399b72ed0e037d0074c629e7741f6b2ec2dda92956abe3e9671d3e268e
-bsystem: cmake
+install: |
+    cmakew \
+        -DCARES_INSTALL=ON \
+        -DCARES_SHARED=ON \
+        -DCARES_STATIC=ON \
+        -DCARES_STATIC_PIC=ON \
+        -DCARES_BUILD_TOOLS=OFF \
+        -DCARES_BUILD_TESTS=OFF
+    cd "$PACKAGE_INSTALL_DIR/lib"
+    cp libcares_static.a libcares.a

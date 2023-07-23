@@ -5,6 +5,11 @@ src-url: https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0
 src-sha: aaeddb6b28b993d0a6e32c88123d728a17561336ab90e0bf45032383564d3cb8
 license: BSD-3-Clause
 dep-pkg: libarchive libcurl libuv jsoncpp expat rhash zlib ncurses openssl
+dopatch: |
+    LIBCURL="$(pkg-config --libs-only-l libcurl)"
+    LIBARCHIVE="$(pkg-config --libs-only-l libarchive)"
+    printf 'INPUT(%s %s)\n' "$LIBCURL" "$LIBARCHIVE" > ../lib/libpthread.a
+
 install: |
     cmakew \
         -DBUILD_QtDialog=OFF \

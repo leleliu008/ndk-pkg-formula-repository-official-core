@@ -3,6 +3,7 @@ git-url: https://github.com/Aloxaf/silicon
 src-url: https://github.com/Aloxaf/silicon/archive/v0.5.1.tar.gz
 src-sha: 784a6f99001f2000422b676e637fe83a5dc27f5fc55ad33e227c882ce20e6439
 license: MIT
+dep-pkg: fontconfig
 bsystem: cargo cmake-gmake
 
 install: |

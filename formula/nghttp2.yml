@@ -5,7 +5,7 @@ src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.55.1/nghttp2-1.
 src-sha: e12fddb65ae3218b4edc083501519379928eba153e71a1673b185570f08beb96
 dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
-
+dopatch: sed_in_place '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
 install: |
     cmakew \
         -DENABLE_DEBUG=OFF \
