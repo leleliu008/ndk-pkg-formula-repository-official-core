@@ -1,8 +1,8 @@
 summary: Utility to list open files
 web-url: https://people.freebsd.org/~abe
 git-url: https://github.com/lsof-org/lsof
-src-url: https://github.com/lsof-org/lsof/archive/4.95.0.tar.gz
-src-sha: 8ff4c77736cc7d9556da9e2c7614cc4292a12f1979f20bd520d3c6f64b66a4d7
+src-url: https://github.com/lsof-org/lsof/archive/4.98.0.tar.gz
+src-sha: 80308a614508814ac70eb2ae1ed2c4344dcf6076fa60afc7734d6b1a79e62b16
 license: Zlib
 dep-pkg: libtirpc libgetdtablesize
 bsystem: gmake
