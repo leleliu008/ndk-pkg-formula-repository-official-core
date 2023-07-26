@@ -6,6 +6,7 @@ src-sha: 9ccd0b57709568b35b07510a8dcf98c22af6690ff15a0113d82bbe921f74f25f
 license: Apache-2.0
 binbstd: yes
 install: |
+    sed_in_place 's|if is_host "macosx"|if false|' configure
     sed_in_place 's|\*/cc|*-cc|' configure
     sed_in_place 's|\*/c++|*-c++|' configure
     run ./configure &&
