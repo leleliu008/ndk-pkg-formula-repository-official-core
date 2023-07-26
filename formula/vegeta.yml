@@ -1,6 +1,6 @@
 summary: HTTP load testing tool and library
 git-url: https://github.com/tsenart/vegeta
-src-url: https://github.com/tsenart/vegeta/archive/v12.10.0.tar.gz
-src-sha: 4ea951258d041887a2cbdd0b87bf87023c304033d804eca1bfa0a1091b3124c6
+src-url: https://github.com/tsenart/vegeta/archive/v12.11.0.tar.gz
+src-sha: 5167a71c956e5fb022a173534adbee07fdfc08476802e2d855b8c13fe3276ce6
 license: MIT
-install: gow -X main.Version=$PACKAGE_VERSION
+install: gow -X main.Version="$PACKAGE_VERSION" -X main.Date="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
