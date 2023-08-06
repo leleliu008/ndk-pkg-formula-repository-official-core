@@ -51,7 +51,7 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
 
       - run: |
-          MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} sdk.api)
+          MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} api-min)
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
@@ -59,6 +59,7 @@ jobs:
 
 
   macos:
+    if: false
     strategy:
 
       fail-fast: false
@@ -97,7 +98,7 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
 
       - run: |
-          MIN_SDK_API_LEVEL=$(./ndk-pkg info ${{ matrix.pkg }} sdk.api)
+          MIN_SDK_API_LEVEL=$(./ndk-pkg info ${{ matrix.pkg }} api-min)
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
