@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow4
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc,libnl,libphonenumber]
 
     runs-on: ubuntu-latest
 
@@ -66,7 +66,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf,libaec,libaio,libao,libass,libatomic_ops,libavif,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcerf,libcroco,libdeflate,libexif,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc,libnl,libphonenumber]
 
     runs-on: ${{ matrix.os }}
 

@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow3
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [gdu,geographiclib,germanium,geth,gh,git,git-lfs,gitui,glog,glow,glslang,gmake,gn,gnu-barcode,gnupg,gnutls,gnu-which,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,hdf5,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide]
 
     runs-on: ubuntu-latest
 
@@ -66,7 +66,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [gdu,geographiclib,germanium,geth,gh,git,git-lfs,gitui,glog,glow,glslang,gmake,gn,gnu-barcode,gnupg,gnutls,gnu-which,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,hdf5,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide]
 
     runs-on: ${{ matrix.os }}
 

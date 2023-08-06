@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide]
 
     runs-on: ubuntu-latest
 
@@ -66,7 +66,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [PKGLIST]
+        pkg: [tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,usbmuxd,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xvid,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide]
 
     runs-on: ${{ matrix.os }}
 
