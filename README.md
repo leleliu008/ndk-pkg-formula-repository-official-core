@@ -21,14 +21,14 @@ a ndk-pkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are present, `git-sha` takes precedence over `git-ref`|
 |`shallow`|optional|indicates whether do a git shallow fetch. value can be `yes` or `no`. default value is `yes`.|
 ||||
-|`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR` for local test and debug purpose|
+|`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with any one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR` for local test and debug purpose|
 |`src-uri`|optional|the mirror of `src-url`.|
 |`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear together.|
 ||||
-|`fix-url`|optional|the patch file download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/fix` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/fix`.|
+|`fix-url`|optional|the patch file download url of this package.<br>If value of this mapping ends with any one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/fix` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/fix`.|
 |`fix-sha`|optional|the `sha256sum` of patch file.<br>`fix-sha` and `fix-url` must appear together.|
 ||||
-|`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/res` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/res`.|
+|`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with any one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/res` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/res`.|
 |`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear together.|
 ||||
 |`dep-pkg`|optional|a space-separated list of   `ndk-pkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ndk-pkg](https://github.com/leleliu008/ndk-pkg).|
@@ -41,17 +41,15 @@ a ndk-pkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`exetype`|optional|indicates whether can be built as statically-linked executable.<br>value can be one of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
-||||
 |`bsystem`|optional|build system.<br>values can be some of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
-|`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`bscript`|optional|the directory where the build script (e.g. `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.) is located in, relative to `PACKAGE_WORKING_DIR`.|
 |`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. value can be `yes` or `no`. default value is `no`.|
 ||||
 |`build0`|optional|POSIX shell code to be run when user run `ndk-pkg install <PKG>`. used to describe how to build for native.|
 |`dopatch`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
 |`install`|optional|POSIX shell code to be run when user run `ndk-pkg install <PKG>`. If this mapping is not present, `ndk-pkg` will run default install code according to `bsystem`|
 ||||
-|`sdk-api`|optional|specify which minimum Android SDK API level is supported for this package.|
+|`api-min`|optional|specify which minimum Android SDK API level is supported for this package.|
 
 ### Appendix1: commands that can be used right out of the box
 
@@ -119,11 +117,11 @@ a ndk-pkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is
 |`NATIVE_OS_ARCH`|arch of your current running operation system.|
 |`NATIVE_OS_NCPU`|cpu core count of your current running machine.|
 |||
-|`TARGET_OS_VERS`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
-|`TARGET_OS_ABI`|it's value shall be one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
-|`TARGET_OS_ARCH`|it's value shall be one of `armv7a` `aarch64` `i686` `x86_64`|
-|`TARGET_OS_NBIT`|it's value shall be one of `32` `64`|
-|`TARGET_TRIPLE`|it's value shall be one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
+|`TARGET_ANDROID_API`|[android sdk api-level table](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#api-level-table)|
+|`TARGET_ANDROID_ABI`|it's value shall be any one of `armeabi-v7a` `arm64-v8a` `x86` `x86_64`|
+|`TARGET_ANDROID_ARCH`|it's value shall be any one of `armv7a` `aarch64` `i686` `x86_64`|
+|`TARGET_ANDROID_NBIT`|it's value shall be any one of `32` `64`|
+|`TARGET_TRIPLE`|it's value shall be any one of `armv7a-linux-androideabi` `aarch64-linux-android` `i686-linux-android` `x86_64-linux-android`|
 |||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
