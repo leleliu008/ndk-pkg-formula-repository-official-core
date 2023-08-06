@@ -12,7 +12,7 @@ dopatch: |
     sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure
 
 install: |
-    if [ "$TARGET_OS_NBIT" -eq 64 ] ; then
+    if [ "$TARGET_ANDROID_NBIT" -eq 64 ] ; then
         EXTRA_CONFIGURE_FLAGS='--enable-64bit'
     else
         EXTRA_CONFIGURE_FLAGS='--disable-64bit'

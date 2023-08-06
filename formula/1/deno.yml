@@ -7,7 +7,7 @@ src-sha: dd3f8a2f072530aba3d67bc9cc14eb3ee48418ae263ac9dbe37612c16300bd4b
 license: MIT
 bsystem: cargo
 
-sdk-api: 23
+api-min: 23
 
 install: |
     export RUST_BACKTRACE=full

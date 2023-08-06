@@ -11,7 +11,7 @@ dopatch: |
     sed_in_place 's|-mhard-float||g' Make.inc
 
 install: |
-    if [ "$TARGET_OS_ARCH" = 'x86_64' ] ; then
+    if [ "$TARGET_ANDROID_ARCH" = 'x86_64' ] ; then
         LONG_DOUBLE_NOT_DOUBLE=1
     else
         LONG_DOUBLE_NOT_DOUBLE=0
@@ -26,5 +26,5 @@ install: |
         LDFLAGS="'$LDFLAGS'" \
         AR="$AR" \
         OS=Linux \
-        ARCH="$TARGET_OS_ARCH" \
+        ARCH="$TARGET_ANDROID_ARCH" \
         LONG_DOUBLE_NOT_DOUBLE="$LONG_DOUBLE_NOT_DOUBLE"

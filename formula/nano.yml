@@ -9,12 +9,12 @@ bsystem: configure
 
 install: |
     # pwd.h: struct passwd* getpwent(void) __INTRODUCED_IN(26);
-    if [ $TARGET_OS_VERS -lt 26 ] ; then
+    if [ $TARGET_ANDROID_API -lt 26 ] ; then
         export ac_cv_header_pwd_h=no
     fi
 
     # glob.h: void globfree(glob_t* __result_ptr) __INTRODUCED_IN(28);
-    if [ $TARGET_OS_VERS -lt 28 ] ; then
+    if [ $TARGET_ANDROID_API -lt 28 ] ; then
         export ac_cv_header_glob_h=no
     fi
 

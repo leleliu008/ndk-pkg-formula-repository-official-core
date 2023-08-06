@@ -3,6 +3,7 @@ web-url: https://www.pcre.org/
 git-url: https://github.com/PCRE2Project/pcre2
 src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.bz2
 src-sha: 8d36cd8cb6ea2a4c2bb358ff6411b0c788633a2a45dabbf1aeb4b701d1b5e840
+license: BSD-3-Clause
 dep-pkg: zlib libbz2 readline
 
 dopatch: |

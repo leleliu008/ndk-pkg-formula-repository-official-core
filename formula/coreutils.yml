@@ -10,12 +10,12 @@ bsystem: configure
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513
 # https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
-sdk-api: 23
+api-min: 23
 
 install: |
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
     {
-        if [ "$TARGET_OS_ARCH" = 'aarch64' ] ; then
+        if [ "$TARGET_ANDROID_ARCH" = 'aarch64' ] ; then
             export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
         fi
     } &&

@@ -9,7 +9,7 @@ dep-upp: libtool
 bsystem: autotools
 
 # stdio.h:326:FILE* fmemopen(void* __buf, size_t __size, const char* __mode) __INTRODUCED_IN(23);
-sdk-api: 23
+api-min: 23
 
 dopatch: sed_in_place 's/PAGE_SIZE/XXXXXXXXXXXXXXXXXXXXXX/' lrzip_private.h util.c
 

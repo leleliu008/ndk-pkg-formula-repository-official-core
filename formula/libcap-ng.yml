@@ -3,12 +3,12 @@ web-url: https://people.redhat.com/sgrubb/libcap-ng
 git-url: https://github.com/stevegrubb/libcap-ng
 src-url: https://github.com/stevegrubb/libcap-ng/archive/v0.8.3.tar.gz
 src-sha: e542e9139961f0915ab5878427890cdc7762949fbe216bd0cb4ceedb309bb854
-license: LGPL-2.1-or-later|LICENSE|https://raw.githubusercontent.com/stevegrubb/libcap-ng/master/LICENSE
+license: LGPL-2.1-or-later
 dep-upp: libtool
 bsystem: autogen
 
 # stdio_ext.h: int __fsetlocking(FILE* __fp, int __type) __INTRODUCED_IN(23);
-sdk-api: 23
+api-min: 23
 
 install: |
     configure \

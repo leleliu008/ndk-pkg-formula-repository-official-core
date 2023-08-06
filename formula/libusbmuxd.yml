@@ -3,14 +3,14 @@ web-url: https://www.libimobiledevice.org
 git-url: https://github.com/libimobiledevice/libusbmuxd
 src-url: https://github.com/libimobiledevice/libusbmuxd/archive/2.0.2.tar.gz
 src-sha: 8ae3e1d9340177f8f3a785be276435869363de79f491d05d8a84a59efc8a8fdc
-license: LGPL-2.1-or-later|COPYING|https://raw.githubusercontent.com/libimobiledevice/libusbmuxd/master/COPYING
+license: LGPL-2.1-or-later
 dep-pkg: libplist
 dep-upp: libtool
 bsystem: autogen
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
-sdk-api: 24
+api-min: 24
 
 dopatch: |
     sed_in_place 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h &&

@@ -8,7 +8,7 @@ bsystem: cmake
 dopatch: |
     sed_in_place '/strip/c message("--")' CMakeLists.txt
 
-    if [ "$TARGET_OS_VERS" -lt 24 ] ; then
+    if [ "$TARGET_ANDROID_API" -lt 24 ] ; then
         sed_in_place '/#include <vector>/a #define ftello(f) ftell(f)' encoder/basisu_enc.cpp &&
         sed_in_place '/class png_cfile : public png_file/i #define ftello(f) ftell(f)' encoder/pvpngreader.cpp
         sed_in_place '/class png_cfile : public png_file/i #define fseeko fseek' encoder/pvpngreader.cpp

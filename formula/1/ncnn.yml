@@ -7,7 +7,7 @@ dep-pkg: glslang
 bsystem: cmake
 
 # https://github.com/Tencent/ncnn/wiki/how-to-build#build-for-android
-sdk-api: 24
+api-min: 24
 
 dopatch: |
     sed_in_place 's|glslang/glslang|glslang|' src/gpu.cpp

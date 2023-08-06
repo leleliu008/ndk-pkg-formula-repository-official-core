@@ -3,10 +3,9 @@ web-url: https://luajit.org/
 git-url: https://github.com/LuaJIT/LuaJIT
 git-sha: a91d0d9d3bba1a936669cfac3244509a0f2ac0e3
 version: 2.1.0
+license: MIT
 bsystem: gmake
 binbstd: yes
-license: MIT|COPYRIGHT|https://raw.githubusercontent.com/LuaJIT/LuaJIT/v2.1/COPYRIGHT
-developers: Mike+Pall|luajit@freelists.org|LuaJIT|https://github.com/LuaJIT
 
 dopatch: |
     printf '%s\n' 'int main() {return 0;}' > test.c
@@ -30,7 +29,7 @@ install: |
     gmakew clean install \
         PREFIX="$PACKAGE_INSTALL_DIR" \
         HOST_SYS=$(uname -s) \
-        HOST_CC="'$CC_FOR_BUILD -m$TARGET_OS_NBIT'" \
+        HOST_CC="'$CC_FOR_BUILD -m$TARGET_ANDROID_NBIT'" \
         HOST_LD="$CC_FOR_BUILD" \
         HOST_CFLAGS="'$CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD'" \
         HOST_LDFLAGS="'$LDFLAGS_FOR_BUILD'" \
@@ -46,3 +45,5 @@ install: |
         STATIC_CC="$CC" \
         DYNAMIC_CC="'$CC -fPIC'" \
         Q=
+
+developer: Mike Pall <luajit@freelists.org>

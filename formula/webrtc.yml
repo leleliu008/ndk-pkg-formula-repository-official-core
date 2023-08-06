@@ -3,7 +3,7 @@ web-url: https://webrtc.org/
 git-url: https://webrtc.googlesource.com/src
 src-url: dir:///dev/null
 version: 1
-license: BSD-3-Clause||https://webrtc.googlesource.com/src.git/+/refs/heads/main/LICENSE?format=TEXT
+license: BSD-3-Clause
 dep-upp: git gclient ninja
 
 # https://webrtc.github.io/webrtc-org/native-code/android/
@@ -23,7 +23,7 @@ dopatch: |
     GN="$PACKAGE_BSCRIPT_DIR/buildtools/linux64/gn"
 
 install: |
-    case $TARGET_OS_ABI in
+    case $TARGET_ANDROID_ABI in
         armeabi-v7a) GN_ARG_TARGET_CPU=arm   ;;  
         arm64-v8a)   GN_ARG_TARGET_CPU=arm64 ;;
         x86)         GN_ARG_TARGET_CPU=x86   ;;  

@@ -22,4 +22,4 @@ install: |
         ac_cv_lib_pcap_pcap_open_dead=yes
 
 # void endgrent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26

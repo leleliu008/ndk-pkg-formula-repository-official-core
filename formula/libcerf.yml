@@ -5,7 +5,7 @@ src-sha: cceefee46e84ce88d075103390b4f9d04c34e4bc3b96d733292c36836d4f7065
 license: MIT
 
 # complex.h: double complex cexp(double complex __z) __INTRODUCED_IN(23);
-sdk-api: 23
+api-min: 23
 
 install: |
     cmakew \

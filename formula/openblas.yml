@@ -9,7 +9,7 @@ binbstd: yes
 
 install: |
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a)  ARCH=arm   ; TARGET='ARMV7' ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;
         aarch64) ARCH=arm64 ; TARGET='ARMV8' ; BINARY=64 ; ARM_SOFTFP_ABI=1 ;;
         i686)    ARCH=x86   ; TARGET='ATOM'  ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;

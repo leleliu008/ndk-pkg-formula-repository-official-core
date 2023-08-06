@@ -55,6 +55,6 @@ install: |
     gmakew clean &&
     gmakew &&
     gmakew install &&
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so" &&
+    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_ANDROID_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so" &&
     run install -d "$PACKAGE_INSTALL_DIR/include" &&
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_OS_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"
+    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_ANDROID_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"

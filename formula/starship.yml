@@ -8,4 +8,4 @@ dep-pkg: openssl libgetloadavg
 install: cargow install --locked --no-default-features
 
 # sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
-sdk-api: 24
+api-min: 24

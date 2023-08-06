@@ -15,7 +15,7 @@ install: |
 
     unset CPU
 
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a)  CPU=neon   ;;
         aarch64) CPU=neon64 ;;
         i686)    CPU=x86    ;;

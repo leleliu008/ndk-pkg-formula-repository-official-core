@@ -8,5 +8,5 @@ dep-pkg: openssl
 bsystem: cmake
 
 # ifaddrs.h: int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
-sdk-api: 24
+api-min: 24
 ccflags: -fno-asynchronous-unwind-tables

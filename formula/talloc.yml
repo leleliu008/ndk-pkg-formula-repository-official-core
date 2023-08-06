@@ -8,7 +8,7 @@ binbstd: yes
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);
-sdk-api: 23
+api-min: 23
 
 dopatch: |
     sed_in_place 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py &&

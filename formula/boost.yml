@@ -25,13 +25,13 @@ dopatch: |
     # https://linux.die.net/man/3/ftello
     # int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
     # off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
-    if [ "$TARGET_OS_VERS" -lt 24 ] ; then
+    if [ "$TARGET_ANDROID_API" -lt 24 ] ; then
         sed_in_place 's|BOOST_NOWIDE_FTELL ftello|BOOST_NOWIDE_FTELL ::ftell|' libs/nowide/src/filebuf.cpp &&
         sed_in_place 's|BOOST_NOWIDE_FTELL fseeko|BOOST_NOWIDE_FTELL ::fseek|' libs/nowide/src/filebuf.cpp
     fi
 
 install: |
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a)
             address_model=32
             architecture=arm
@@ -54,7 +54,7 @@ install: |
     esac
  
     cat > project-config.jam <<EOF
-    using clang : $TARGET_OS_ARCH : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
+    using clang : $TARGET_ANDROID_ARCH : $CXX : <compileflags>"$CXXFLAGS $CPPFLAGS" <linkflags>"$LDFLAGS -shared" <archiver>$AR <ranlib>$RANLIB ;
     EOF
 
     run ./b2 install \
@@ -66,7 +66,7 @@ install: |
         --prefix="$PACKAGE_INSTALL_DIR" \
         -sICU_PATH="$icu4c_INSTALL_DIR" \
         -sICONV_PATH="$libiconv_INSTALL_DIR" \
-        toolset=clang-$TARGET_OS_ARCH \
+        toolset=clang-$TARGET_ANDROID_ARCH \
         link=static,shared \
         variant=release \
         threading=multi \

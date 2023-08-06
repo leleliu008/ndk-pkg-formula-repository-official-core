@@ -7,7 +7,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libgpg-error
 
 install: |
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         *86*) EXTRA_OPT='--disable-asm' ;;
         *)    EXTRA_OPT='--enable-asm'  ;;
     esac

@@ -8,4 +8,4 @@ bsystem: cargo
 
 # error: undefined reference to 'getgrnam_r'
 # https://github.com/sharkdp/fd/issues/642
-sdk-api: 24
+api-min: 24

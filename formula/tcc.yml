@@ -3,7 +3,7 @@ web-url: http://www.tinycc.org/
 git-url: https://repo.or.cz/tinycc
 src-url: https://download.savannah.nongnu.org/releases/tinycc/tcc-0.9.27.tar.bz2
 src-sha: de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c
-license: LGPL-2.1-or-later|COPYING|https://repo.or.cz/tinycc.git/blob_plain/HEAD:/COPYING
+license: LGPL-2.1-or-later
 bsystem: gmake
 
 dopatch: |
@@ -13,7 +13,7 @@ install: |
     run "$PACKAGE_BSCRIPT_DIR/configure" \
         --source-path="$PACKAGE_BSCRIPT_DIR" \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --cpu=$TARGET_OS_ARCH \
+        --cpu=$TARGET_ANDROID_ARCH \
         --cc=$CC \
         --ar=$AR \
         --extra-cflags="'$CPPFLAGS $CFLAGS'" \

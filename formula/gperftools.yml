@@ -9,4 +9,4 @@ bsystem: autotools
 
 # grp.h: struct group* getgrent(void) __INTRODUCED_IN(26);
 # spawn.h: int posix_spawn(pid_t* __pid, const char* __path, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], c    har* const __env[]) __INTRODUCED_IN(28);
-sdk-api: 28
+api-min: 28

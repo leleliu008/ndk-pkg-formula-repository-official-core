@@ -10,4 +10,4 @@ install: |
     ndk_build
     install -d                 "$PACKAGE_INSTALL_DIR" &&
     cp -rv include             "$PACKAGE_INSTALL_DIR" &&
-    cp -rv libs/$TARGET_OS_ABI "$PACKAGE_INSTALL_DIR/lib"
+    cp -rv libs/$TARGET_ANDROID_ABI "$PACKAGE_INSTALL_DIR/lib"

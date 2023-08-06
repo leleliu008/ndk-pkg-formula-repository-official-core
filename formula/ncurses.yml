@@ -3,7 +3,7 @@ git-url: https://github.com/mirror/ncurses
 web-url: https://www.gnu.org/software/ncurses
 src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
 src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
-license: MIT|COPYING|https://raw.githubusercontent.com/mirror/ncurses/master/COPYING
+license: MIT
 dep-upp: gsed grep
 bsystem: configure
 

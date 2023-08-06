@@ -75,7 +75,7 @@ install: |
     fi
 
     # ./configure LIST | grep android
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a)  TARGET='android-arm'    ;;
         aarch64) TARGET='android-arm64'  ;;
         i686)    TARGET='android-x86'    ;;
@@ -89,7 +89,7 @@ install: |
         no-ssl2 \
         no-ssl3 \
         no-comp \
-        -D__ANDROID_API__="$TARGET_OS_VERS" \
+        -D__ANDROID_API__="$TARGET_ANDROID_API" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
         --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl \

@@ -9,7 +9,7 @@ bsystem: configure
 # https://github.com/android/ndk/issues/513
 # https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
 # https://github.com/android/ndk/issues/295
-sdk-api: 23
+api-min: 23
 
 install: |
     configure --disable-mt

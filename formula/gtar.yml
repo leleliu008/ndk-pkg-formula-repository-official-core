@@ -8,7 +8,7 @@ dep-pkg: libglob
 
 # no member named '_p' in 'struct __sFILE'
 #  return fp->_p - fp->_bf._base;
-sdk-api: 24
+api-min: 24
 
 install: |
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0 -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE"

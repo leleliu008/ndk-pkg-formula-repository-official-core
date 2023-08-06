@@ -15,8 +15,8 @@ dopatch: |
 install: |
     run ./configure-android.sh \
         --ndk-path "$ANDROID_NDK_ROOT" \
-        --target "$TARGET_OS_ABI" \
-        --api "$TARGET_OS_VERS" \
+        --target "$TARGET_ANDROID_ABI" \
+        --api "$TARGET_ANDROID_API" \
         --libpcap-include-dir "$libpcap_INCLUDE_DIR" \
         --libpcap-lib-dir "$PACKAGE_WORKING_DIR/lib" &&
     gmakew clean &&

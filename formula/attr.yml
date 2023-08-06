@@ -8,4 +8,4 @@ bsystem: configure
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);
-sdk-api: 23
+api-min: 23

@@ -4,7 +4,7 @@ src-url: https://ftp.gnu.org/gnu/findutils/findutils-4.9.0.tar.xz
 src-sha: a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe
 license: GPL-3.0-or-later
 bsystem: configure
-sdk-api: 26
+api-min: 26
 
 # void endgrent(void) __INTRODUCED_IN(26);
 

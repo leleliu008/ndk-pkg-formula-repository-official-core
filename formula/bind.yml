@@ -30,4 +30,4 @@ install: |
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
 # void endpwent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26

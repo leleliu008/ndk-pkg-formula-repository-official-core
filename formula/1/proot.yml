@@ -9,7 +9,7 @@ dep-upp: pkg-config python3 git
 dep-pkg: libarchive talloc
 bsystem: gmake
 
-sdk-api: 23
+api-min: 23
 
 dopatch: |
     cd src &&

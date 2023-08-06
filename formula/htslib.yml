@@ -10,7 +10,7 @@ dep-pkg: zlib liblzma libbz2 curl
 # will be removed in next release
 # https://github.com/samtools/htscodecs/commit/479b5be2fec9584ed3e1faf70c1527468d5f44bb
 dopatch: |
-    [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] || return 0
+    [ "$TARGET_ANDROID_ABI" = 'armeabi-v7a' ] || return 0
 
     cd htscodecs
 

@@ -8,7 +8,7 @@ binbstd: yes
 parallel: no
 
 # int lutimes(const char* __path, const struct timeval __times[2]) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26
 
 dopatch: |
     sed_in_place 's|getpass("")|""|g' consio.cpp &&

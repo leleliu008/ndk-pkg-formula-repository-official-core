@@ -5,7 +5,7 @@ src-url: https://nodejs.org/dist/v15.8.0/node-v15.8.0.tar.xz
 src-sha: e23ae2f6181444066cf74e03c3e30e650fbc63764c2b89829928cddf3e4230a9
 license: MIT
 dep-upp: gmake pkg-config
-sdk-api: 23
+api-min: 23
 
 dopatch: |
     sed_in_place 's|-Wl,--start-group||g' tools/gyp/pylib/gyp/generator/make.py &&
@@ -27,10 +27,10 @@ install: |
     gmakew -C "$PACKAGE_INSTALLING_BST_DIR" install
 
 dest_cpu() {
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a)  echo arm  ;;
         i686)    echo ia32 ;;
         x86_64)  echo x64  ;;
         aarch64) echo arm64 ;;
-        *) die "$TARGET_OS_ARCH: not support."
+        *) die "$TARGET_ANDROID_ARCH: not support."
     esac

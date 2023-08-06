@@ -6,7 +6,7 @@ license: GPL-3.0-or-later
 bsystem: configure
 
 # void endgrent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26
 
 install: |
     configure --disable-iberty

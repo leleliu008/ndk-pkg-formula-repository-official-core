@@ -8,4 +8,4 @@ bsystem: configure
 
 # https://github.com/android/ndk/issues/964
 # __register_atfork; # introduced=23
-sdk-api: 23
+api-min: 23

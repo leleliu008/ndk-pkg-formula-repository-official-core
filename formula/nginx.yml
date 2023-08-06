@@ -35,9 +35,9 @@ dopatch: |
 install: |
     export NGX_SYSTEM=Linux
     export NGX_RELEASE=unkown
-    export NGX_MACHINE=$TARGET_OS_ARCH
+    export NGX_MACHINE=$TARGET_ANDROID_ARCH
 
-    if [ "$TARGET_OS_NBIT" -eq '64' ] ; then
+    if [ "$TARGET_ANDROID_NBIT" -eq '64' ] ; then
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
     else
         sed_in_place 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
@@ -55,7 +55,7 @@ install: |
 
     run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --crossbuild=Linux:unkown:$TARGET_OS_ARCH \
+        --crossbuild=Linux:unkown:$TARGET_ANDROID_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt\"" \

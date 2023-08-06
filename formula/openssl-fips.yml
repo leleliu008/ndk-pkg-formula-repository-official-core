@@ -16,7 +16,7 @@ dopatch: |
 
 install: |
     get_os_compiler() {
-        case $TARGET_OS_ARCH in
+        case $TARGET_ANDROID_ARCH in
             armv7a)  echo "android-armv7"     ;;
             aarch64) echo "android64-aarch64" ;;
             i686)    echo "android-x86"       ;;
@@ -32,7 +32,7 @@ install: |
         no-hw \
         no-engine \
         no-asm \
-        -D__ANDROID_API__="$TARGET_OS_VERS" \
+        -D__ANDROID_API__="$TARGET_ANDROID_API" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         "$(get_os_compiler)" &&
     gmakew clean &&

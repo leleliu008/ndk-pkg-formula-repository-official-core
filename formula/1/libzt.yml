@@ -3,5 +3,5 @@ web-url: https://www.zerotier.com
 git-url: https://github.com/zerotier/libzt.git
 src-url: https://github.com/zerotier/libzt/archive/refs/tags/1.8.4.tar.gz
 src-sha: c0e2d04ad533c95c8772d5b11717bfc7325d95d16145ca7fc36aa53a02c9308e
-license: Business+Source+License+1.1|LICENSE.txt|https://raw.githubusercontent.com/zerotier/libzt/master/LICENSE.txt
+license: BUSL-1.1
 bsystem: cmake

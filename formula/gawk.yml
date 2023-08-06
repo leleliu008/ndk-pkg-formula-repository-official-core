@@ -18,4 +18,4 @@ install: |
 # struct passwd* getpwent(void) __INTRODUCED_IN(26);
 #           void setpwent(void) __INTRODUCED_IN(26);
 #           void endpwent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26

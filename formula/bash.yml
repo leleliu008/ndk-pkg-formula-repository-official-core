@@ -17,4 +17,4 @@ install: |
 
 # int mblen(const char* __s, size_t __n) __INTRODUCED_IN(26)
 # void endgrent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26

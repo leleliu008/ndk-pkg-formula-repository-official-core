@@ -12,5 +12,5 @@ install: |
     export CONFIG_RMTCALL=""
     export CONFIG_RMTHOST=NONE
     
-     gmakew ARCH="$TARGET_OS_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
+     gmakew ARCH="$TARGET_ANDROID_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
      gmakew install INS_BASE="$PACKAGE_INSTALL_DIR"

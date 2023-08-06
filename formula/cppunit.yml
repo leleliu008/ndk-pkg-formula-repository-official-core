@@ -3,5 +3,5 @@ web-url: https://wiki.freedesktop.org/www/Software/cppunit/
 git-url: https://cgit.freedesktop.org/libreoffice/cppunit/
 src-url: https://dev-www.libreoffice.org/src/cppunit-1.15.1.tar.gz
 src-sha: 89c5c6665337f56fd2db36bc3805a5619709d51fb136e51937072f63fcc717a7
-license: LGPL-2.1-or-later|COPYING|https://cgit.freedesktop.org/libreoffice/cppunit/plain/COPYING
+license: LGPL-2.1-or-later
 bsystem: configure

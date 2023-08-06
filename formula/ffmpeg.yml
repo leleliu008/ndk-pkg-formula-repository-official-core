@@ -20,7 +20,7 @@ install: |
         --nm="$NM" \
         --ranlib="$RANLIB" \
         --strip="$STRIP" \
-        --arch="$TARGET_OS_ARCH" \
+        --arch="$TARGET_ANDROID_ARCH" \
         --target-os=android \
         --enable-cross-compile \
         --enable-static \

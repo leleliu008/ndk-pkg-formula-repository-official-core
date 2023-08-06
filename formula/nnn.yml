@@ -7,7 +7,7 @@ dep-pkg: readline
 binbstd: yes
 
 # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26
 
 install: |
     gmakew clean &&

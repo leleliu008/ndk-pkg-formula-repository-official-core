@@ -12,7 +12,7 @@ ppflags: -D_GNU_SOURCE -Dquad_t=int64_t -Du_quad_t=uint64_t -DNGROUPS=20
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
 # void endgrent(void) __INTRODUCED_IN(26);
-sdk-api: 26
+api-min: 26
 
 install: |
     configure \

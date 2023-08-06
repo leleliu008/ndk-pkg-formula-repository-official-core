@@ -7,7 +7,7 @@ bsystem: configure
 
 # int   getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
-sdk-api: 24
+api-min: 24
 
 install: |
     configure --enable-samples

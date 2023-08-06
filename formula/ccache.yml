@@ -8,7 +8,7 @@ dep-pkg: hiredis libzstd blake3
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
-sdk-api: 24
+api-min: 24
 
 dopatch: |
     sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&

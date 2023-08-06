@@ -13,8 +13,8 @@ dopatch: |
     cat > build_config/android.rb <<EOF
     MRuby::CrossBuild.new('android') do |conf|
       params = {
-        :arch => ENV['TARGET_OS_ABI'],
-        :platform => 'android-' + ENV['TARGET_OS_VERS'],
+        :arch => ENV['TARGET_ANDROID_ABI'],
+        :platform => 'android-' + ENV['TARGET_ANDROID_API'],
         :toolchain => :clang,
       }
       toolchain :android, params
@@ -117,8 +117,8 @@ install: |
     export CC="$CC_FOR_BUILD"
     export LD="$CC_FOR_BUILD"
 
-    export TARGET_OS_ABI
-    export TARGET_OS_VERS
+    export TARGET_ANDROID_ABI
+    export TARGET_ANDROID_API
 
     export MRUBY_CONFIG=android
 

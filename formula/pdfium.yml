@@ -29,7 +29,7 @@ dopatch: |
     PACKAGE_BSCRIPT_DIR="$PWD"
 
 install: |
-    case $TARGET_OS_ABI in
+    case $TARGET_ANDROID_ABI in
         armeabi-v7a) GN_ARG_TARGET_CPU=arm   ;;
         arm64-v8a)   GN_ARG_TARGET_CPU=arm64 ;;
         x86)         GN_ARG_TARGET_CPU=x86   ;;
@@ -51,7 +51,7 @@ install: |
     target_cpu="$GN_ARG_TARGET_CPU"
     EOF
 
-    if [ "$TARGET_OS_ABI" = 'armeabi-v7a' ] ; then
+    if [ "$TARGET_ANDROID_ABI" = 'armeabi-v7a' ] ; then
         printf '%s\n' 'arm_version=7' >> args.gn
     fi
 

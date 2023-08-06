@@ -8,7 +8,7 @@ dep-pkg: zlib libgit2
 bsystem: cargo
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
-sdk-api: 24
+api-min: 24
 
 install: |
     cargow install --locked

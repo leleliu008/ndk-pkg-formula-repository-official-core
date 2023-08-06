@@ -9,7 +9,7 @@ license: LGPL-2.1-or-later GPL-3.0-only
 # since: 8cb2c37d1b9116219636379bfb7efd823e4c8e9a
 # no member named '_p' in 'struct __sFILE'
 #  return fp->_p - fp->_bf._base;
-sdk-api: 24
+api-min: 24
 
 install: |
     configure \

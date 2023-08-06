@@ -9,5 +9,5 @@ xxflags: -std=gnu++17
 install: configure --with-ncurses LIBS=-llog
 
 
-sdk-api: 23
+api-min: 23
 # pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);

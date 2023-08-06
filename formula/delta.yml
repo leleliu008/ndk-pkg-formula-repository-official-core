@@ -6,4 +6,4 @@ license: MIT
 bsystem: cargo
 
 # stdlib.h: int getloadavg(double __averages[], int __n) __INTRODUCED_IN(29);
-sdk-api: 29
+api-min: 29

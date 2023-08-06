@@ -8,7 +8,7 @@ bscript: c
 install: |
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'
 
-    case $TARGET_OS_ARCH in
+    case $TARGET_ANDROID_ARCH in
         armv7a|aarch64)
             CPPFLAGS="$CPPFLAGS -DBLAKE3_USE_NEON"
             SRCS="$SRCS blake3_neon.c"

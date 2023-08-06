@@ -2,7 +2,7 @@ summary: GNU triangulated surface library
 web-url: https://gts.sourceforge.io/
 src-url: https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz
 src-sha: 059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e
-license: LGPL-2.0-or-later|COPYING|ttp://gerris.dalembert.upmc.fr/darcs/gts-stable/COPYING
+license: LGPL-2.0-or-later
 dep-pkg: glib netpbm
 dep-upp: pkg-config
 bsystem: configure

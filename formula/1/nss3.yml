@@ -17,7 +17,7 @@ install: |
         -c \
         -v \
         --opt \
-        --target="$TARGET_OS_ARCH" \
+        --target="$TARGET_ANDROID_ARCH" \
         --disable-tests \
         --with-nspr="$nspr_INCLUDE_DIR/nspr:$nspr_LIBRARY_DIR"
 
