@@ -55,7 +55,7 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ndk-pkg install ${{ matrix.pkg }}/android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}
+          ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}
 
 
   macos:
@@ -102,4 +102,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install ${{ matrix.pkg }}/android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}
+          ./ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}

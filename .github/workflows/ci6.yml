@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [mesalink,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog]
+        pkg: [mediainfo,mesalink,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config]
 
     runs-on: ubuntu-latest
 
@@ -55,7 +55,7 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ndk-pkg install ${{ matrix.pkg }}/android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}
+          ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}
 
 
   macos:
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a]
-        pkg: [mesalink,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog]
+        pkg: [mediainfo,mesalink,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,openblas,opencolorio,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config]
 
     runs-on: ${{ matrix.os }}
 
@@ -102,4 +102,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install ${{ matrix.pkg }}/android-$MIN_SDK_API_LEVEL/${{ matrix.abi }}
+          ./ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}
