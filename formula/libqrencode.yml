@@ -4,10 +4,6 @@ web-url: https://fukuchi.org/works/qrencode
 src-url: https://fukuchi.org/works/qrencode/qrencode-4.1.1.tar.gz
 src-sha: da448ed4f52aba6bcb0cd48cac0dd51b8692bccc4cd127431402fca6f8171e8e
 license: LGPL-2.1-or-later
-dep-pkg: libpng
-
 install: |
-    cmakew \
-        -DWITH_TOOLS=ON \
-        -DWITH_TESTS=OFF \
-        -DWITHOUT_PNG=OFF
+    cmakew -DWITH_TOOLS=OFF -DWITH_TESTS=OFF -DBUILD_SHARED_LIBS=OFF
+    cmakew -DWITH_TOOLS=OFF -DWITH_TESTS=OFF -DBUILD_SHARED_LIBS=ON

@@ -14,8 +14,6 @@ dopatch: |
     sed_in_place '2087a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
-    # gobject-inspection needs shared libraries: gobject-2.0, glib-2.0
-    INSTALL_LIB=both
     mesonw \
         -Dnls=disabled \
         -Dman=false \

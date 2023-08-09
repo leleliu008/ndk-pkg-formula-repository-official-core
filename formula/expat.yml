@@ -4,18 +4,8 @@ git-url: https://github.com/libexpat/libexpat
 src-url: https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.xz
 src-sha: ef2420f0232c087801abf705e89ae65f6257df6b7931d37846a193ef2e8cdcbe
 license: MIT
-bsystem: cmake
 install: |
-    CMAKE_COMMON_OPTIONS="
-        -DEXPAT_BUILD_DOCS=OFF
-        -DEXPAT_BUILD_TESTS=OFF
-        -DEXPAT_BUILD_FUZZERS=OFF
-        -DEXPAT_BUILD_EXAMPLES=OFF
-        -DEXPAT_BUILD_TOOLS=OFF"
+    CMAKE_COMMON_OPTIONS="-DEXPAT_BUILD_DOCS=OFF -DEXPAT_BUILD_TESTS=OFF -DEXPAT_BUILD_FUZZERS=OFF -DEXPAT_BUILD_EXAMPLES=OFF -DEXPAT_BUILD_TOOLS=OFF"
 
-    case $INSTALL_LIB in
-        static) cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=OFF ;;
-        shared) cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=ON  ;;
-        both)   cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=OFF
-                cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=ON
-    esac
+    cmakew "$CMAKE_COMMON_OPTIONS" -DEXPAT_SHARED_LIBS=OFF
+    cmakew "$CMAKE_COMMON_OPTIONS" -DEXPAT_SHARED_LIBS=ON

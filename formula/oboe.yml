@@ -3,13 +3,7 @@ git-url: https://github.com/google/oboe
 src-url: https://github.com/google/oboe/archive/refs/tags/1.7.0.tar.gz
 src-sha: b01896f9180f725a38806cfef73a29b36b2ea37f91389ed4e69d664ce83b79b6
 license: Apache-2.0
-bsystem: cmake
 dopatch: sed_in_place 's|/${ANDROID_ABI}||' CMakeLists.txt
 install: |
-    case $INSTALL_LIB in
-        yes)    cmakew                         -DWITH_MP4=ON -DWITH_ASF=ON ;;
-        static) cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON ;;
-        shared) cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON ;;
-        both)   cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
-                cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON
-    esac
+    cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
+    cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON

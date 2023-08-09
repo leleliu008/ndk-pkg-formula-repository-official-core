@@ -5,10 +5,8 @@ src-url: https://downloads.sourceforge.net/project/libjpeg-turbo/2.1.5.1/libjpeg
 src-sha: 2fdc3feb6e9deb17adec9bafa3321419aa19f8f4e5dea7bf8486844ca22207bf
 license: IJG
 dep-upp: nasm
-
 install: |
     cmakew \
-        -DCMAKE_INSTALL_LIBDIR="$PACKAGE_INSTALL_DIR/lib" \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=OFF \
+        -DENABLE_SHARED=ON \
         -DWITH_JAVA=OFF
