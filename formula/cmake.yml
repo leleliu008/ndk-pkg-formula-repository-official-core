@@ -1,8 +1,8 @@
 summary: Cross-platform make
 web-url: https://www.cmake.org/
 git-url: https://github.com/Kitware/CMake
-src-url: https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0.tar.gz
-src-sha: aaeddb6b28b993d0a6e32c88123d728a17561336ab90e0bf45032383564d3cb8
+src-url: https://github.com/Kitware/CMake/releases/download/v3.27.1/cmake-3.27.1.tar.gz
+src-sha: b1a6b0135fa11b94476e90f5b32c4c8fad480bf91cf22d0ded98ce22c5132004
 license: BSD-3-Clause
 dep-pkg: libarchive libcurl libuv jsoncpp expat rhash zlib ncurses openssl
 dopatch: |

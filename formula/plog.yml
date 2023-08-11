@@ -1,7 +1,6 @@
 summary: Portable, simple and extensible C++ logging library
 git-url: https://github.com/SergiusTheBest/plog
-license: MPL-2.0
-bsystem: cmake
-
-install: |
-    cmakew -DPLOG_BUILD_SAMPLES=OFF
+src-url: https://github.com/SergiusTheBest/plog/archive/refs/tags/1.1.9.tar.gz
+src-sha: 058315b9ec9611b659337d4333519ab4783fad3f2f23b1cc7bb84d977ea38055
+license: MIT
+install: cmakew -DPLOG_BUILD_SAMPLES=OFF -DPLOG_BUILD_TESTS=OFF -DPLOG_INSTALL=ON

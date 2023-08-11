@@ -7,6 +7,7 @@ dep-pkg: cpuinfo fp16 fxdiv pthreadpool
 dopatch: |
     sed_in_place 's|CMAKE_C_STANDARD 99|CMAKE_C_STANDARD 11|' CMakeLists.txt
     sed_in_place 's|-march=armv6 -mfpu=vfp|-march=armv7-a -mfpu=neon|' CMakeLists.txt
+    printf 'INPUT(-llog)\n' > ../lib/libm.a
 
 install: |
     cmakew \

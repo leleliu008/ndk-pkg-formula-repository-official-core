@@ -32,5 +32,5 @@ dest_cpu() {
         i686)    echo ia32 ;;
         x86_64)  echo x64  ;;
         aarch64) echo arm64 ;;
-        *) die "$TARGET_ANDROID_ARCH: not support."
+        *) abort 1 "$TARGET_ANDROID_ARCH: not support."
     esac

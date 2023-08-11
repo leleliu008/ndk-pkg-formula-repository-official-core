@@ -1,7 +1,9 @@
 summary: Zip file manipulation library with minizip 1.x compatibility layer
 git-url: https://github.com/zlib-ng/minizip-ng
-src-url: https://github.com/zlib-ng/minizip-ng/archive/4.0.0.tar.gz
-src-sha: f9062e576de026fd5026d65597de3b05263cd4d91400cacdbbe36dfa8a642fff
+src-url: https://github.com/zlib-ng/minizip-ng/archive/4.0.1.tar.gz
+src-sha: 63e47a2b4dbac0da501f43f4da74f118dfb3ef0dee0ffbbe89428271002260f8
 license: Zlib
 dep-pkg: libzstd libbz2
-bsystem: cmake
+install: |
+    cmakew -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_SHARED_LIBS=ON

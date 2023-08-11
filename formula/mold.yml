@@ -1,7 +1,7 @@
 summary: Modern Linker
 git-url: https://github.com/rui314/mold
-src-url: https://github.com/rui314/mold/archive/v1.11.0.tar.gz
-src-sha: 99318eced81b09a77e4c657011076cc8ec3d4b6867bd324b8677974545bc4d6f
+src-url: https://github.com/rui314/mold/archive/v2.0.0.tar.gz
+src-sha: 2ae8a22db09cbff626df74c945079fa29c1e5f60bbe02502dcf69191cf43527b
 license: AGPL-3.0-only
 dep-pkg: mimalloc tbb xxhash zlib libzstd openssl
 dopatch: sed_in_place '/find_package(ZLIB/a find_package(Threads)' CMakeLists.txt
@@ -14,3 +14,6 @@ install: |
         -DMOLD_USE_SYSTEM_MIMALLOC=ON \
         -DMOLD_USE_SYSTEM_TBB=ON \
         -DCMAKE_SKIP_INSTALL_RULES=OFF
+
+#bits/lockf.h:61:int lockf(int __fd, int __cmd, off_t __length) __RENAME_IF_FILE_OFFSET64(lockf64) __INTRODUCED_IN(24);
+api-min: 24
