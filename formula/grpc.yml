@@ -5,7 +5,7 @@ src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.56.2.tar.gz
 src-sha: 931f07db9d48cff6a6007c1033ba6d691fe655bea2765444bc1ad974dfc840aa
 license: Apache-2.0
 dep-upp: grpc-plugins
-dep-pkg: abseil c-ares openssl protobuf re2
+dep-pkg: abseil c-ares openssl libprotobuf re2
 ldflags: -llog
 dopatch: sed_in_place 's|GPR_MUSL_LIBC_COMPAT|__ANDROID__|' src/core/lib/gpr/wrap_memcpy.cc
 

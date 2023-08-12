@@ -3,4 +3,6 @@ git-url: https://github.com/google/cpu_features
 src-url: https://github.com/google/cpu_features/archive/v0.8.0.tar.gz
 src-sha: 7021729f2db97aa34f218d12727314f23e8b11eaa2d5a907e8426bcb41d7eaac
 license: Apache-2.0
-install: cmakew -DBUILD_PIC=ON -DBUILD_SHARED_LIBS=OFF
+install: |
+    cmakew -DBUILD_PIC=ON -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_PIC=ON -DBUILD_SHARED_LIBS=ON
