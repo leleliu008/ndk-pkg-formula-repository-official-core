@@ -6,11 +6,10 @@ src-sha: 5ca3403c08de4716719575ec56c686b1eb55b078c0fe50a064dcf1ac20af1618
 license: GPL-2.0-only
 bscript: source
 
-dopatch: sed_in_place 's/list(APPEND PLATFORM_LIBS pthread)//g' CMakeLists.txt
-
 install: |
     cmakew \
         -DENABLE_PIC=ON \
         -DENABLE_CLI=ON \
         -DENABLE_SHARED=ON \
         -DENABLE_ASSEMBLY=OFF
+    sed_in_place '/^Libs.private:/s|-l-l||' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/x265.pc"

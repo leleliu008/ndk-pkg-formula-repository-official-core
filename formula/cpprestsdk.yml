@@ -3,7 +3,7 @@ git-url: https://github.com/Microsoft/cpprestsdk
 src-url: https://github.com/microsoft/cpprestsdk/archive/refs/tags/2.10.18.tar.gz
 src-sha: 6bd74a637ff182144b6a4271227ea8b6b3ea92389f88b25b215e6f94fd4d41cb
 license: MIT
-dep-pkg: websocketpp openssl@1.1 boost
+dep-pkg: websocketpp openssl boost zlib
 dep-upp: pkg-config
 ldflags: -llog
 
@@ -11,6 +11,4 @@ dopatch: sed_in_place 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 
 install: |
     export OPENSSL_ROOT_DIR="$openssl_INSTALL_DIR"
-    cmakew \
-        -DBUILD_TESTS=OFF \
-        -DBUILD_SAMPLES=OFF
+    cmakew -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF
