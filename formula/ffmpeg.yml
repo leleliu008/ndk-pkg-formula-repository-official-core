@@ -5,6 +5,7 @@ src-url: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
 src-sha: 57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
 license: GPL-2.0-or-later
 dep-pkg: speex theora x264 x265 xvid lame opus rav1e dav1d libvpx liblzma libwebp libxml2
+dep-upp: nasm
 bsystem: gmake
 binbstd: yes
 
