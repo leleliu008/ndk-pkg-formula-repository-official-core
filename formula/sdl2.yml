@@ -4,35 +4,4 @@ web-url: https://www.libsdl.org/
 src-url: https://www.libsdl.org/release/SDL2-2.28.2.tar.gz
 src-sha: 64b1102fa22093515b02ef33dd8739dee1ba57e9dbba6a092942b8bbed1a1c5e
 license: Zlib
-
-bsystem: ndk-build
-binbstd: yes
-install: |
-    ndk_build
-    install -d                      "$PACKAGE_INSTALL_DIR"
-    cp -rv include                  "$PACKAGE_INSTALL_DIR"
-    cp -rv libs/$TARGET_ANDROID_ABI "$PACKAGE_INSTALL_DIR/lib"
-
-    cat > sdl2-config <<EOF
-    #!/bin/sh
-    set -e
-    CWD="\$(dirname "\$0")"
-    cd "\$CWD/.."
-    PACKAGE_INSTALL_DIR="\$PWD"
-
-    case \$1 in
-        --version)
-            printf '%s\n' '$PACKAGE_VERSION'
-            ;;
-        --cflags)
-            printf '%s\n' "-I\$PACKAGE_INSTALL_DIR/include -D_REENTRANT"
-            ;;
-        --libs)
-            printf '%s\n' "-L\$PACKAGE_INSTALL_DIR/lib -lSDL2 -lm -llog -landroid -ldl -lOpenSLES -lGLESv1_CM -lGLESv2 -lstdc++"
-            ;;
-    esac
-    EOF
-
-    chmod +x sdl2-config
-    install -d -v        "$PACKAGE_INSTALL_DIR/bin/"
-    cp -v    sdl2-config "$PACKAGE_INSTALL_DIR/bin/"
+install: cmakew -DSDL_STATIC=ON -DSDL_SHARED=ON
