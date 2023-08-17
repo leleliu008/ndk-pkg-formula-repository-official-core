@@ -1,4 +1,4 @@
-summary: Generic-purpose lossless compression algorithm by Google
+summary: A generic-purpose lossless compression algorithm by Google
 git-url: https://github.com/google/brotli
 src-url: https://github.com/google/brotli/archive/v1.0.9.tar.gz
 src-sha: f9e8d81d0405ba66d181529af42a3354f838c939095ff99930da6aa9cdf6fe46

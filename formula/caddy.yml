@@ -1,4 +1,4 @@
-summary: Powerful, enterprise-ready, open source web server with automatic HTTPS
+summary: A powerful, enterprise-ready, open source web server with automatic HTTPS
 web-url: https://caddyserver.com/
 git-url: https://github.com/caddyserver/caddy
 src-url: https://github.com/caddyserver/caddy/archive/v2.7.3.tar.gz

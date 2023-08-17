@@ -1,4 +1,4 @@
-summary: command-line interface for SQLite
+summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
 git-url: https://github.com/sqlite/sqlite
 web-url: https://www.sqlite.org/
 src-url: https://www.sqlite.org/2023/sqlite-autoconf-3420000.tar.gz

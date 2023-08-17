@@ -1,4 +1,4 @@
-summary: a simple terminal UI for git commands.
+summary: A simple terminal UI for git commands
 git-url: https://github.com/jesseduffield/lazygit
 src-url: https://github.com/jesseduffield/lazygit/archive/v0.40.2.tar.gz
 src-sha: 146bd63995fcf2f2373bbc2143b3565b7a2be49a1d4e385496265ac0f69e4128

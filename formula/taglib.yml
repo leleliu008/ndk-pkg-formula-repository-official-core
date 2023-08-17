@@ -1,4 +1,4 @@
-summary: a library for reading and editing the metadata of several popular audio formats.
+summary: A library for reading and editing the metadata of several popular audio formats
 web-url: https://taglib.org/
 git-url: https://github.com/taglib/taglib
 src-url: https://github.com/taglib/taglib/archive/refs/tags/v1.13.1.tar.gz

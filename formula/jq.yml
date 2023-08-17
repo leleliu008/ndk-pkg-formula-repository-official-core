@@ -1,4 +1,4 @@
-summary: Lightweight and flexible command-line JSON processor
+summary: A lightweight and flexible command-line JSON processor
 web-url: https://stedolan.github.io/jq
 git-url: https://github.com/stedolan/jq
 src-url: https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz

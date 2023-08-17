@@ -1,4 +1,4 @@
-summary: a command-line tool to manage apps on iOS devices
+summary: A command-line tool to manage apps on iOS devices
 web-url: https://www.libimobiledevice.org
 git-url: https://github.com/libimobiledevice/ideviceinstaller
 src-url: https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2

@@ -1,4 +1,4 @@
-summary: a tool for building and running mobile apps written in Go
+summary: A tool for building and running mobile apps written in Go
 git-url: https://github.com/golang/mobile
 bsystem: go
 

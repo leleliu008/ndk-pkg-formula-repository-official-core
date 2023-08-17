@@ -1,4 +1,4 @@
-summary: HTTP-server to execute shell commands.
+summary: A HTTP server to execute shell commands
 git-url: https://github.com/msoap/shell2http
 license: MIT
 bsystem: go

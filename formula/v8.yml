@@ -1,4 +1,4 @@
-summary: Google JavaScript engine
+summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 git-url: https://github.com/v8/v8
 src-url: dir:///dev/null

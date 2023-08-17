@@ -1,4 +1,4 @@
-summary: a command-line tool for extracting zip-compressed archives(.zip files)
+summary: A command-line tool for extracting zip-compressed archives(.zip files)
 web-url: https://infozip.sourceforge.io/UnZip.html
 
 src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz

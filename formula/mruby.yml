@@ -1,4 +1,4 @@
-summary: Lightweight implementation of the Ruby language
+summary: A lightweight implementation of the Ruby language
 web-url: https://mruby.org/
 git-url: https://github.com/mruby/mruby
 src-url: https://github.com/mruby/mruby/archive/3.0.0.tar.gz

@@ -1,4 +1,4 @@
-summary: Embedded SSL Library written in C
+summary: A lightweight, portable SSL library written in C
 web-url: https://www.wolfssl.com
 git-url: https://github.com/wolfSSL/wolfssl
 src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.6.3-stable.tar.gz

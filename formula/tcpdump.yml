@@ -1,4 +1,4 @@
-summary: a command-line tool to analyze packet(TCP/IP)
+summary: A command-line tool to analyze packet(TCP/IP)
 git-url: https://github.com/the-tcpdump-group/tcpdump
 web-url: https://www.tcpdump.org/
 src-url: https://www.tcpdump.org/release/tcpdump-4.99.4.tar.gz

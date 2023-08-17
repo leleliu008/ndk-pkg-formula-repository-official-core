@@ -1,4 +1,4 @@
-summary: A C library to render fonts.
+summary: A C library to render fonts
 web-url: https://freetype.org/
 git-url: https://gitlab.freedesktop.org/freetype/freetype
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.1/freetype-2.13.1.tar.xz

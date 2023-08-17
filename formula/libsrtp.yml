@@ -1,0 +1,7 @@
+summary: Implementation of the Secure Real-time Transport Protocol
+git-url: https://github.com/cisco/libsrtp
+src-url: https://github.com/cisco/libsrtp/archive/v2.4.2.tar.gz
+src-sha: 3b1bcb14ebda572b04b9bdf07574a449c84cb924905414e4d94e62837d22b628
+license: BSD-3-Clause
+dep-pkg: openssl
+bsystem: configure

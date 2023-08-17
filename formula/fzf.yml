@@ -1,4 +1,4 @@
-summary: Command-line fuzzy finder written in Go
+summary: A general-purpose command-line fuzzy finder written in Go
 git-url: https://github.com/junegunn/fzf
 src-url: https://github.com/junegunn/fzf/archive/0.42.0.tar.gz
 src-sha: 743c1bfc7851b0796ab73c6da7db09d915c2b54c0dd3e8611308985af8ed3df2

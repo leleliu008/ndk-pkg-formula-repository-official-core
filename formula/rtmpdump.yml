@@ -1,4 +1,4 @@
-summary: a command-line tool for downloading RTMP streaming media
+summary: A command-line tool for downloading RTMP streaming media
 web-url: https://rtmpdump.mplayerhq.hu
 git-url: https://git.ffmpeg.org/rtmpdump
 

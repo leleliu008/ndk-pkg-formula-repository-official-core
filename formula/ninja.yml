@@ -1,4 +1,4 @@
-summary: a small build system with a focus on speed.
+summary: A small build system with a focus on speed
 web-url: https://ninja-build.org
 git-url: https://github.com/ninja-build/ninja
 src-url: https://github.com/ninja-build/ninja/archive/v1.11.1.tar.gz

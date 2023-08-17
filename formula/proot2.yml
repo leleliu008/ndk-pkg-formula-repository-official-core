@@ -1,4 +1,4 @@
-summary: a user-space implementation of chroot, mount --bind, and binfmt_misc.
+summary: A user-space implementation of chroot, mount --bind, and binfmt_misc
 web-url: https://proot-me.github.io
 git-url: https://github.com/proot-me/proot
 src-url: https://github.com/termux/proot/archive/8f67d6c7fadb445b7a528020d05e72dba717c5b9.tar.gz

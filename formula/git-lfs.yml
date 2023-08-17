@@ -1,4 +1,4 @@
-summary: a git extension for versioning large files.
+summary: A git extension for versioning large files
 git-url: https://github.com/git-lfs/git-lfs
 src-url: https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-v3.4.0.tar.gz
 src-sha: d65795242550a9ed823979282cc3572a7b221f9be3440b9bf3a1d6d81c51a416

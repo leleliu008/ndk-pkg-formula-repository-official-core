@@ -1,4 +1,4 @@
-summary: Web-based, zero-config, dependency-free database schema change and version control tool for teams.
+summary: Web-based, zero-config, dependency-free database schema change and version control tool for teams
 web-url: https://bytebase.com/
 git-url: https://github.com/bytebase/bytebase.git
 src-url: https://github.com/bytebase/bytebase/archive/refs/tags/0.12.0.tar.gz

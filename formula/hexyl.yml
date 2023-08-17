@@ -1,4 +1,4 @@
-summary: a simple hex viewer for the terminal.
+summary: A simple hex viewer for the terminal
 git-url: https://github.com/sharkdp/hexyl
 src-url: https://github.com/sharkdp/hexyl/archive/v0.13.1.tar.gz
 src-sha: a4b3009aa7210f7d80f91d6b01543d1544586c4509247f01e028f1a56781056d

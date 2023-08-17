@@ -1,4 +1,4 @@
-summary: Small and embeddable JavaScript engine
+summary: A small and embeddable JavaScript engine
 git-url: https://github.com/bellard/quickjs
 web-url: https://bellard.org/quickjs
 src-url: https://bellard.org/quickjs/quickjs-2021-03-27.tar.xz

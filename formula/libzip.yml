@@ -1,4 +1,4 @@
-summary: C library for reading, creating, and modifying zip archives
+summary: A C library for reading, creating, and modifying zip archives
 git-url: https://github.com/nih-at/libzip
 web-url: https://libzip.org/
 src-url: https://libzip.org/download/libzip-1.10.0.tar.xz

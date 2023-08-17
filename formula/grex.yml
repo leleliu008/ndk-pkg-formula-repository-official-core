@@ -1,4 +1,4 @@
-summary: a command-line tool for generating regular expressions from user-provided test cases.
+summary: A command-line tool for generating regular expressions from user-provided test cases
 git-url: https://github.com/pemistahl/grex
 src-url: https://github.com/pemistahl/grex/archive/v1.4.2.tar.gz
 src-sha: bdf8476433be13d2307fc2829cd68b15f71391f537adfc6d90d04092573d7bc4

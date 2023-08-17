@@ -1,4 +1,4 @@
-summary: a collection of Linux utilities
+summary: A collection of Linux utilities
 git-url: https://github.com/util-linux/util-linux
 src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.1.tar.xz
 src-sha: 890ae8ff810247bd19e274df76e8371d202cda01ad277681b0ea88eeaa00286b

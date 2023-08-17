@@ -1,4 +1,4 @@
-summary: portable package manager for Unix-like system.
+summary: A portable package manager for Unix-like systems
 git-url: https://github.com/leleliu008/ppkg
 git-ref: dev
 #src-url: dir:///home/leleliu008/ppkg

@@ -1,4 +1,4 @@
-summary: Next generation ls command
+summary: A rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options, etc
 git-url: https://github.com/Peltoche/lsd
 src-url: https://github.com/Peltoche/lsd/archive/0.23.1.tar.gz
 src-sha: 9698919689178cc095f39dcb6a8a41ce32d5a1283e6fe62755e9a861232c307d

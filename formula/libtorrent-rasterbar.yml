@@ -1,4 +1,4 @@
-summary: an efficient feature complete C++ bittorrent implementation focusing on efficiency and scalability.
+summary: An efficient feature complete C++ bittorrent implementation focusing on efficiency and scalability
 web-url: http://libtorrent.org
 git-url: https://github.com/arvidn/libtorrent
 src-url: https://github.com/arvidn/libtorrent/releases/download/v2.0.9/libtorrent-rasterbar-2.0.9.tar.gz

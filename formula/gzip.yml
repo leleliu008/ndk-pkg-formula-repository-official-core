@@ -1,4 +1,4 @@
-summary: Popular GNU data compression program
+summary: A popular data compression program developed by GNU
 git-url: https://git.savannah.gnu.org/git/gzip.git
 web-url: https://www.gnu.org/software/gzip
 src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.gz

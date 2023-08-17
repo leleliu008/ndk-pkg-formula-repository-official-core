@@ -1,4 +1,4 @@
-summary: File comparison utilities
+summary: A package of several programs related to finding differences between files
 git-url: https://git.savannah.gnu.org/git/diffutils.git
 web-url: https://www.gnu.org/software/diffutils
 src-url: https://ftp.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz

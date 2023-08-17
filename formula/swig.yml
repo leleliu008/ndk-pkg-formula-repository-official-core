@@ -1,4 +1,4 @@
-summary: Generate scripting interfaces to C/C++ code
+summary: A command-line tool for generating scripting interfaces to C/C++ code
 web-url: https://www.swig.org/
 git-url: https://github.com/swig/swig
 src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz

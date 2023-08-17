@@ -1,4 +1,4 @@
-summary: GIF encoder written in C
+summary: A fast and lightweight GIF encoder written in C
 git-url: https://github.com/dloebl/cgif
 src-url: https://github.com/dloebl/cgif/archive/refs/tags/V0.3.0.tar.gz
 src-sha: c4f70bbae4c6afee3a524e65be31ae495201fd26687cb8429d7aded8be96306a

@@ -1,4 +1,4 @@
-summary: a POSIX-compliant implementation of /bin/sh that aims to be as small as possible
+summary: A POSIX-compliant implementation of /bin/sh that aims to be as small as possible
 git-url: https://git.kernel.org/pub/scm/utils/dash/dash
 web-url: http://gondor.apana.org.au/~herbert/dash
 src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz

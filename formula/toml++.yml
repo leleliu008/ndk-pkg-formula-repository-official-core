@@ -1,4 +1,4 @@
-summary: TOML config file parser and serializer for C++
+summary: A header-only C++17 (or later) library for parsing TOML
 web-url: https://marzer.github.io/tomlplusplus/
 git-url: https://github.com/marzer/tomlplusplus
 src-url: https://github.com/marzer/tomlplusplus/archive/refs/tags/v2.5.0.tar.gz

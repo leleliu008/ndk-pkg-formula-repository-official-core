@@ -1,4 +1,4 @@
-summary: H.264/AVC encoder
+summary: A free library for encoding video streams into the H.264/MPEG-4 AVC compression format
 web-url: https://www.videolan.org/developers/x264.html
 git-url: https://code.videolan.org/videolan/x264
 git-sha: baee400fa9ced6f5481a728138fed6e867b0ff7f

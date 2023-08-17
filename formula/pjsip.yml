@@ -1,4 +1,4 @@
-summary: C library for multimedia protocols such as SIP, SDP, RTP and more
+summary: A C library for multimedia protocols such as SIP, SDP, RTP and more
 web-url: https://www.pjsip.org/
 git-url: https://github.com/pjsip/pjproject
 src-url: https://github.com/pjsip/pjproject/archive/2.11.1.tar.gz

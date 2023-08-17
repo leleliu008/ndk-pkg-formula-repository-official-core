@@ -1,4 +1,4 @@
-summary: Tool for building toolchains
+summary: A toolchain generator
 web-url: https://crosstool-ng.github.io
 git-url: https://github.com/crosstool-ng/crosstool-ng
 src-url: http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.25.0.tar.xz

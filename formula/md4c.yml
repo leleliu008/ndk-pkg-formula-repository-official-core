@@ -1,4 +1,4 @@
-summary: C Markdown parser. Fast. SAX-like interface
+summary: A fast, SAX-like Markdown parser for C
 git-url: https://github.com/mity/md4c
 src-url: https://github.com/mity/md4c/archive/release-0.4.8.tar.gz
 src-sha: 4a457df853425b6bb6e3457aa1d1a13bccec587a04c38c622b1013a0da41439f

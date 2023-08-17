@@ -1,4 +1,4 @@
-summary: Collection of portable C++ source libraries
+summary: A collection of portable C++ source libraries
 web-url: https://www.boost.org
 git-url: https://github.com/boostorg/boost
 src-url: https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz

@@ -1,4 +1,4 @@
-summary: C unit testing framework
+summary: A unit testing framework for C
 web-url: https://libcheck.github.io/check
 git-url: https://github.com/libcheck/check
 src-url: https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz

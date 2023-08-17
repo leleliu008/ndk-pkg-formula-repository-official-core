@@ -1,4 +1,4 @@
-summary: High-performance C logging library
+summary: A reliable, high-performance, thread-safe, flexible, clear-model logging library written in pure C
 git-url: https://github.com/HardySimpson/zlog
 src-url: https://github.com/HardySimpson/zlog/archive/1.2.16.tar.gz
 src-sha: 742401902f2134eb272c49631fe5c38d7aeb9a2ad56fa3ec3d15219b371ba655

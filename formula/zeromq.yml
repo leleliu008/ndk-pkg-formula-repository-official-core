@@ -1,4 +1,4 @@
-summary: High-performance, asynchronous messaging library
+summary: An open-source universal messaging library
 web-url: https://zeromq.org/
 git-url: https://github.com/zeromq/libzmq
 src-url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz

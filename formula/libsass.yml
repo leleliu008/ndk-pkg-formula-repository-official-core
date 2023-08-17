@@ -1,4 +1,4 @@
-summary: C/C++ implementation of a Sass compiler
+summary: A C/C++ implementation of a Sass compiler
 git-url: https://github.com/sass/libsass
 src-url: https://github.com/sass/libsass/archive/refs/tags/3.6.5.tar.gz
 src-sha: 89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582

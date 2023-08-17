@@ -1,4 +1,4 @@
-summary: General-purpose data compression with high compression ratio
+summary: A free, general-purpose data compression with a high compression ratio
 git-url: https://github.com/xz-mirror/xz
 web-url: https://tukaani.org/xz
 src-url: https://tukaani.org/xz/xz-5.4.4.tar.xz

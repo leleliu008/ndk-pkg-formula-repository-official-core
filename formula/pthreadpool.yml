@@ -1,4 +1,4 @@
-summary: a portable and efficient thread pool implementation
+summary: A portable and efficient thread pool implementation
 git-url: https://github.com/Maratyszcza/pthreadpool
 license: BSD-2-Clause
 install: |

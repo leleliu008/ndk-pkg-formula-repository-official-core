@@ -1,4 +1,4 @@
-summary: C++ library and cmdline tools for parsing and manipulating VCF files.
+summary: C++ library and cmdline tools for parsing and manipulating VCF files
 git-url: https://github.com/vcflib/vcflib.git
 #src-url: https://github.com/vcflib/vcflib/archive/refs/tags/v1.0.2.tar.gz
 #src-url: dir:///tmp/tmp.AQJ4eClDrE

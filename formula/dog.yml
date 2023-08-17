@@ -1,4 +1,4 @@
-summary: Command-line DNS client
+summary: A command-line DNS client
 web-url: https://dns.lookup.dog/
 git-url: https://github.com/ogham/dog
 src-url: https://github.com/ogham/dog/archive/v0.1.0.tar.gz

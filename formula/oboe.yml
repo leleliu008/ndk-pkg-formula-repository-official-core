@@ -1,4 +1,4 @@
-summary: an easy-to-use, high-performance audio library for Android.
+summary: An easy-to-use, high-performance audio library for Android
 git-url: https://github.com/google/oboe
 src-url: https://github.com/google/oboe/archive/refs/tags/1.7.0.tar.gz
 src-sha: b01896f9180f725a38806cfef73a29b36b2ea37f91389ed4e69d664ce83b79b6

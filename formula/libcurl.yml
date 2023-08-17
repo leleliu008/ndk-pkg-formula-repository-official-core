@@ -1,4 +1,4 @@
-summary: Get a file from an HTTP, HTTPS or FTP server
+summary: A free and easy-to-use client-side URL transfer library
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.2.1.tar.bz2                                                                                                

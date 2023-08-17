@@ -1,4 +1,4 @@
-summary: a packrat parser generator for C
+summary: A packrat parser generator for C
 git-url: https://github.com/enechaev/packcc
 license: MIT
 

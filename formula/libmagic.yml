@@ -1,4 +1,4 @@
-summary: Library to determine file types
+summary: A C library to determine file types
 web-url: https://www.darwinsys.com/file
 git-url: https://github.com/file/file
 src-url: https://astron.com/pub/file/file-5.45.tar.gz

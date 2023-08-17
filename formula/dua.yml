@@ -1,9 +1,6 @@
-summary: View disk space usage and delete unwanted data, fast.
+summary: A fast disk usage analyzer
 git-url: https://github.com/Byron/dua-cli
 src-url: https://github.com/Byron/dua-cli/archive/refs/tags/v2.14.11.tar.gz
 src-sha: 31c95fc4e9e034f9ba892397dc3d3844635c6b03852983fcf3b0cc326b751c83
 license: MIT
-bsystem: cargo
-
-install: |
-    cargow install --no-default-features
+install: cargow install --no-default-features

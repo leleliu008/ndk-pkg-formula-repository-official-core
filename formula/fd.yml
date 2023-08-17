@@ -1,4 +1,4 @@
-summary: Simple, fast and user-friendly alternative to find
+summary: A simple, fast and user-friendly alternative to find(1)
 git-url: https://github.com/sharkdp/fd
 src-url: https://github.com/sharkdp/fd/archive/v8.7.0.tar.gz
 src-sha: 13da15f3197d58a54768aaad0099c80ad2e9756dd1b0c7df68c413ad2d5238c9

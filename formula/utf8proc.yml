@@ -1,4 +1,4 @@
-summary: Clean C library for processing UTF-8 Unicode data
+summary: A small, clean C library for processing UTF-8 Unicode data
 web-url: https://juliastrings.github.io/utf8proc
 git-url: https://github.com/JuliaStrings/utf8proc
 src-url: https://github.com/JuliaStrings/utf8proc/archive/v2.8.0.tar.gz

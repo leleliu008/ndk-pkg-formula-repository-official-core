@@ -1,4 +1,4 @@
-summary: Next generation open source RPC library and framework
+summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.56.2.tar.gz

@@ -1,4 +1,4 @@
-summary: A modern, portable, easy to use crypto library.
+summary: A modern, portable, easy to use crypto library
 web-url: https://libsodium.org
 git-url: https://github.com/jedisct1/libsodium
 src-url: https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz

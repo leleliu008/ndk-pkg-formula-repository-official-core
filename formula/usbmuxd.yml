@@ -1,4 +1,4 @@
-summary: A socket daemon to multiplex connections from and to iOS devices.
+summary: A socket daemon to multiplex connections from and to iOS devices
 web-url: https://libimobiledevice.org/
 git-url: https://github.com/libimobiledevice/usbmuxd
 src-url: https://github.com/libimobiledevice/usbmuxd/archive/refs/tags/1.1.1.tar.gz

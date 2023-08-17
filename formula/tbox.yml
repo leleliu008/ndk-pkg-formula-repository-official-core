@@ -1,4 +1,4 @@
-summary: Glib-like multi-platform C library
+summary: A glib-like multi-platform c library
 web-url: https://tboox.org/
 git-url: https://github.com/tboox/tbox
 src-url: https://github.com/tboox/tbox/archive/v1.7.3.tar.gz

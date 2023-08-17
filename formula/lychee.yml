@@ -1,4 +1,4 @@
-summary: Fast, async, resource-friendly link checker
+summary: A fast, async, resource-friendly link checker
 git-url: https://github.com/lycheeverse/lychee
 src-url: https://github.com/lycheeverse/lychee/archive/v0.13.0.tar.gz
 src-sha: 5df8610e4bbf657bd5094305ccc2e1febff70b4f470acc3eb2e782d518fa962f

@@ -1,4 +1,4 @@
-summary: Cross-platform build utility based on Lua
+summary: A cross-platform build utility based on Lua
 web-url: https://xmake.io/
 git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.1/xmake-v2.8.1.tar.gz
