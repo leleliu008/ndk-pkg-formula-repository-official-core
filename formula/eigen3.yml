@@ -1,4 +1,4 @@
-summary: A C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms
+summary: A C++ template library for linear algebra:matrices, vectors, numerical solvers, and related algorithms
 web-url: https://eigen.tuxfamily.org/
 git-url: https://gitlab.com/libeigen/eigen
 src-url: https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz

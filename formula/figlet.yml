@@ -4,7 +4,6 @@ git-url: https://github.com/cmatsuoka/figlet
 src-url: http://ftp.figlet.org/pub/figlet/program/unix/figlet-2.2.5.tar.gz
 src-sha: bf88c40fd0f077dab2712f54f8d39ac952e4e9f2e1882f1195be9e5e4257417d
 license: BSD-3-Clause
-bsystem: gmake
 binbstd: yes
 
 install: |
