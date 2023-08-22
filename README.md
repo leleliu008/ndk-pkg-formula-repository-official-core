@@ -19,7 +19,7 @@ a ndk-pkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is
 |`git-url`|optional|the source code git repository.<br>If `src-url` is not present, this mapping must be present.|
 |`git-ref`|optional|reference: <https://git-scm.com/book/en/v2/Git-Internals-Git-References> <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are present, `git-sha` takes precedence over `git-ref`|
-|`shallow`|optional|indicates whether do a git shallow fetch. value can be `yes` or `no`. default value is `yes`.|
+|`git-dep`|optional|tell `ndk-pkg` that how many depth commits would you like to be fetched. default is `1`, this would save your time and storage. If you want to fetch all commits, set this to `0`|
 ||||
 |`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with any one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR` for local test and debug purpose|
 |`src-uri`|optional|the mirror of `src-url`.|
