@@ -9,6 +9,7 @@ dep-upp: yasm gm4 libtool texinfo
 bsystem: autotools
 install: |
     configure \
+        --with-pic \
         --disable-profiling \
         --disable-assert \
         --disable-fat \

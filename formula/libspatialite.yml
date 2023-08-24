@@ -5,10 +5,12 @@ src-sha: eecbc94311c78012d059ebc0fae86ea5ef6eecb13303e6e82b3753c1b3409e98
 license: MPL-1.1
 dep-pkg: freexl librttopo libxml2 minizip proj7
 install: |
+    LIBS_PROJ="$(pkg-config --libs proj)"
     LIBS_GEOS="$(pkg-config --libs geos)"
+    LIBS_FREEXL="$(pkg-config --libs freexl)"
     configure \
         --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" \
-        LIBS="'$(pkg-config --libs proj) -llog'" \
+        LIBS="'$LIBS_PROJ $LIBS_FREEXL -llog'" \
         ac_cv_search_GEOSCoveredBy="'$LIBS_GEOS'" \
         ac_cv_search_GEOSDelaunayTriangulation="'$LIBS_GEOS'" \
         ac_cv_search_GEOSContext_setErrorMessageHandler_r="'$LIBS_GEOS'" \

@@ -8,6 +8,7 @@ dep-pkg: readline mpfr
 
 install: |
     configure \
+        --with-pic \
         --with-readline="$readline_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --enable-extensions \
