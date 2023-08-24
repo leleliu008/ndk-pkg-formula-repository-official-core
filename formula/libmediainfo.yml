@@ -4,6 +4,7 @@ web-url: https://mediaarea.net/
 src-url: https://mediaarea.net/download/source/libmediainfo/23.07/libmediainfo_23.07.tar.xz
 src-sha: 60456c8b2ab8769a6081d96fd7be86db4fe32520e4a022397cb22cacf47ce820
 dep-pkg: libzen zlib curl
+dep-upp: libtool
 license: BSD-2-Clause
 
 bscript: Project/GNU/Library

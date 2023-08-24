@@ -32,6 +32,8 @@ install: |
         --with-netlib=-lc \
         --with-size-optimizations \
         --with-system-db \
+        --enable-static \
+        --disable-shared \
         krb5_cv_attr_constructor_destructor='yes,yes' \
         ac_cv_func_regcomp=yes \
         ac_cv_printf_positional=yes \
