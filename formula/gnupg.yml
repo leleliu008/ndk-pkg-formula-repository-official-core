@@ -12,7 +12,7 @@ install: |
         --disable-gcc-warnings \
         --enable-threads=posix \
         --with-included-regex \
-        --with-gpg-error-prefix="$libgpg_error_INSTALL_DIR" \
+        --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR" \
         --with-libgcrypt-prefix="$libgcrypt_INSTALL_DIR" \
         --with-libassuan-prefix="$libassuan_INSTALL_DIR" \
         --with-ksba-prefix="$libksba_INSTALL_DIR" \
