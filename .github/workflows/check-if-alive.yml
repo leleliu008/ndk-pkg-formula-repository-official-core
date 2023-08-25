@@ -1,0 +1,23 @@
+name: check if formula urls alive
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+  schedule:
+    - cron: '0 22 * * *'
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
+
+    steps:
+      - run: ndk-pkg env
+      - run: ndk-pkg setup
+      - run: ndk-pkg sysinfo
+      - run: ndk-pkg update
+      - run: ndk-pkg fetch @all
