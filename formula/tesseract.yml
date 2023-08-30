@@ -10,7 +10,7 @@ license: Apache-2.0
 dep-pkg: leptonica icu4c pango libglob cpu_features
 dep-upp: pkg-config patch
 ppflags: -DANDROID
-dopatch: patch < ../fix/ceaa5afa66b8ae714cb6668bcb7363e7fe9defce72fedc5ee48d14b93c04d610.diff
+dopatch: patch -p1 < ../fix/ceaa5afa66b8ae714cb6668bcb7363e7fe9defce72fedc5ee48d14b93c04d610.diff
 install: |
     export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"
     export LDFLAGS="$LDFLAGS $cpu_features_LIBRARY_DIR/libndk_compat.a"
