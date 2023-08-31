@@ -1,7 +1,7 @@
 summary: A popular data compression program developed by GNU
 git-url: https://git.savannah.gnu.org/git/gzip.git
 web-url: https://www.gnu.org/software/gzip
-src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.gz
-src-sha: 5b4fb14d38314e09f2fc8a1c510e7cd540a3ea0e3eb9b0420046b82c3bf41085
+src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.13.tar.gz
+src-sha: 20fc818aeebae87cdbf209d35141ad9d3cf312b35a5e6be61bfcfbf9eddd212a
 license: GPL-3.0-or-later
 install: configure

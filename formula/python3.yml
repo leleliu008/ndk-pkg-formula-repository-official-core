@@ -4,7 +4,7 @@ web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz
 src-sha: 85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63
 license: Python-2.0
-dep-pkg: gdbm expat libffi openssl sqlite libbz2 liblzma
+dep-pkg: gdbm expat libffi openssl libsqlite3 libbz2 liblzma
 dep-upp: python3
 bsystem: configure
 
@@ -21,8 +21,8 @@ install: |
     export LIBLZMA_CFLAGS="-I$liblzma_INCLUDE_DIR"
     export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -l:liblzma.a"
 
-    export LIBSQLITE3_CFLAGS="-I$sqlite_INCLUDE_DIR"
-    export LIBSQLITE3_LIBS="-L$sqlite_LIBRARY_DIR -l:libsqlite3.a"
+    export LIBSQLITE3_CFLAGS="-I$libsqlite3_INCLUDE_DIR"
+    export LIBSQLITE3_LIBS="-L$libsqlite3_LIBRARY_DIR -l:libsqlite3.a"
 
     export GDBM_CFLAGS="-I$gdbm_INCLUDE_DIR"
     export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -l:libgdbm_compat.a -l:libgdbm.a"

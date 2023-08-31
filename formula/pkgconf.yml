@@ -1,7 +1,7 @@
 summary: Reimplementation of pkg-config
 web-url: http://pkgconf.org
 git-url: https://github.com/pkgconf/pkgconf
-src-url: http://distfiles.dereferenced.org/pkgconf/pkgconf-2.0.0.tar.xz
-src-sha: c247eda6cdaa14b04da001785b5c3b07f9bdda2e37b72ea7248b7fb8be3168b3
+src-url: http://distfiles.dereferenced.org/pkgconf/pkgconf-2.0.2.tar.xz
+src-sha: ea5a25ef8f251eb5377ec0e21c75fb61894433cfbdbf0b2559ba33e4c2664401
 license: ISC
 install: configure && cd "$PACKAGE_INSTALL_DIR/bin" && ln -s pkgconf pkg-config

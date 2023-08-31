@@ -1,0 +1,34 @@
+summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
+git-url: https://github.com/sqlite/sqlite
+web-url: https://www.sqlite.org/
+src-url: https://www.sqlite.org/2023/sqlite-amalgamation-3430000.zip
+src-sha: bb5849ae4d7129c09d20596379a0b3f7b1ac59cf9998eba5ef283ea9b6c000a5
+license: blessing
+version: 3.43.0
+binbstd: yes
+install: |
+    run mv sqlite-amalgamation-*/* .
+    run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
+    run "$AR" rsc libsqlite3.a sqlite3.o
+    run "$CC" "$LDFLAGS" -shared -Wl,-soname,libsqlite3.so -o libsqlite3.so sqlite3.o
+
+    run install -d      "$PACKAGE_INSTALL_DIR/include"
+    run mv *.h          "$PACKAGE_INSTALL_DIR/include/"
+
+    run install -d      "$PACKAGE_INSTALL_DIR/lib"
+    run mv libsqlite3.* "$PACKAGE_INSTALL_DIR/lib/"
+
+    run install -d      "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+
+    cat > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/sqlite3.pc" <<EOF
+    prefix=${pcfiledir}/../..
+    exec_prefix=${prefix}
+    libdir=${exec_prefix}/lib
+    includedir=${prefix}/include
+
+    Name: SQLite
+    Description: SQL database engine
+    Version: $PACKAGE_VERSION
+    Cflags: -I${includedir}
+    Libs: -L${libdir} -lsqlite3 -lm 
+    EOF

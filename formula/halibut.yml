@@ -1,0 +1,7 @@
+summary: Yet another free document preparation system
+git-url: https://git.tartarus.org/simon/halibut.git
+web-url: https://www.chiark.greenend.org.uk/~sgtatham/halibut/
+src-url: https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-1.3/halibut-1.3.tar.gz
+src-sha: aaa0f7696f17f74f42d97d0880aa088f5d68ed3079f3ed15d13b6e74909d3132
+license: MIT
+bsystem: cmake

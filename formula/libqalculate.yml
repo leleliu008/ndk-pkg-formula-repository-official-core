@@ -5,7 +5,7 @@ src-url: https://github.com/Qalculate/libqalculate/releases/download/v4.7.0/libq
 src-sha: 16135bcd07a905ffc27a3f1abe5e6feb6cda6c40e5f6bb35127fefdb50ccfd02 
 license: GPL-2.0-or-later
 dep-upp: gettext-tools perl intltool patch
-dep-pkg: gettext readline icu4c libxml2 curl gmp mpfr libbthread
+dep-pkg: gettext readline icu4c libxml2 libcurl gmp mpfr libbthread
 bsystem: configure
 dopatch: |
     printf '%s' '

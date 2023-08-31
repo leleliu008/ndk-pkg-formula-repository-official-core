@@ -4,7 +4,7 @@ git-url: https://github.com/libsndfile/libsndfile
 src-url: https://github.com/libsndfile/libsndfile/releases/download/1.2.0/libsndfile-1.2.0.tar.xz
 src-sha: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a
 license: LGPL-2.1-or-later
-dep-pkg: opus libvorbis flac sqlite
+dep-pkg: opus flac libvorbis libsqlite3
 dep-upp: python3
 install: |
     cmakew \

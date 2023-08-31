@@ -4,7 +4,7 @@ git-url: https://github.com/git/git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
 src-sha: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
 license: GPL-2.0-only
-dep-pkg: gettext expat curl pcre2
+dep-pkg: gettext expat libcurl pcre2
 dep-upp: gettext-tools patch
 bsystem: configure
 binbstd: yes
@@ -37,7 +37,7 @@ install: |
 
     configure \
         --with-zlib="$zlib_INSTALL_DIR" \
-        --with-curl="$curl_INSTALL_DIR" \
+        --with-curl="$libcurl_INSTALL_DIR" \
         --with-expat="$expat_INSTALL_DIR" \
         --with-iconv="$libiconv_INSTALL_DIR" \
         --with-openssl="$openssl_INSTALL_DIR" \

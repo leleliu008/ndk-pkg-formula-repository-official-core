@@ -1,7 +1,7 @@
 summary: An extremely fast JavaScript bundler and minifier
 web-url: https://esbuild.github.io
 git-url: https://github.com/evanw/esbuild
-src-url: https://github.com/evanw/esbuild/archive/v0.19.0.tar.gz
-src-sha: a0646e13620b104271567985f440ce3e067bc51073bb5ec1411e88b650db4b3e
+src-url: https://github.com/evanw/esbuild/archive/v0.19.2.tar.gz
+src-sha: d6964ec77e6ae36cde17f754c6edf30a55a69160c041221b2c5b7fb8144abe94
 license: MIT
 install: gow ./cmd/esbuild
