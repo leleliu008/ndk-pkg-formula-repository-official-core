@@ -1,8 +1,8 @@
 summary: GNU File, Shell, and Text utilities
 git-url: https://github.com/coreutils/coreutils
 web-url: https://www.gnu.org/software/coreutils
-src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.3.tar.xz
-src-sha: adbcfcfe899235b71e8768dcf07cd532520b7f54f9a8064843f8d199a904bbaa
+src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.4.tar.xz
+src-sha: ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52
 license: GPL-3.0-or-later
 bsystem: configure
 
@@ -14,11 +14,11 @@ api-min: 23
 
 install: |
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
-    {
-        if [ "$TARGET_ANDROID_ARCH" = 'aarch64' ] ; then
-            export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
-        fi
-    } &&
+
+    if [ "$TARGET_ANDROID_ARCH" = 'aarch64' ] ; then
+        export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
+    fi
+
     configure \
         --with-included-regex \
         --with-linux-crypto \
