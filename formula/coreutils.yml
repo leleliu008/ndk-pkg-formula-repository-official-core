@@ -19,6 +19,12 @@ install: |
         export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
     fi
 
+    if [ "$TARGET_ANDROID_NBIT" = '64' ] ; then
+        CONFIGURE_EXTRA_OPTIONS=
+    else
+        CONFIGURE_EXTRA_OPTIONS='--disable-year2038'
+    fi
+
     configure \
         --with-included-regex \
         --with-linux-crypto \
@@ -32,4 +38,4 @@ install: |
         --disable-acl \
         --enable-xattr \
         --enable-threads=posix \
-        ac_year2038_required=no
+        "$CONFIGURE_EXTRA_OPTIONS"
