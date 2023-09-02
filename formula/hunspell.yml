@@ -1,4 +1,4 @@
-summary: Spell checker and morphological analyzer
+summary: A free spell checker and morphological analyzer
 web-url: https://hunspell.github.io
 git-url: https://github.com/hunspell/hunspell
 src-url: https://github.com/hunspell/hunspell/archive/v1.7.2.tar.gz
