@@ -1,0 +1,7 @@
+summary: Optimized MPEG Audio Layer 2 (MP2) encoder
+web-url: https://www.twolame.org/
+git-url: https://github.com/njh/twolame
+src-url: https://github.com/njh/twolame/releases/download/0.4.0/twolame-0.4.0.tar.gz
+src-sha: cc35424f6019a88c6f52570b63e1baf50f62963a3eac52a03a800bb070d7c87d
+license: LGPL-2.1
+install: configure && install_bins simplefrontend/.libs/stwolame
