@@ -1,8 +1,8 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
 git-url: https://github.com/libgit2/libgit2
-src-url: https://github.com/libgit2/libgit2/archive/v1.6.4.tar.gz
-src-sha: d25866a4ee275a64f65be2d9a663680a5cf1ed87b7ee4c534997562c828e500d
+src-url: https://github.com/libgit2/libgit2/archive/v1.7.1.tar.gz
+src-sha: 17d2b292f21be3892b704dddff29327b3564f96099a1c53b00edc23160c71327
 dep-pkg: libssh2 pcre2 libiconv
 license: GPL-2.0-only
 dopatch: find . -name 'CMakeLists.txt' -exec sed -i 's|C_STANDARD 90|C_STANDARD 99|' {} \;
