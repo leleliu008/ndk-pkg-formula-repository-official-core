@@ -1,6 +1,6 @@
-summary: Opinionated Lua code formatter
+summary: An opinionated Lua code formatter
 git-url: https://github.com/JohnnyMorganz/StyLua
-src-url: https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.18.1.tar.gz
-src-sha: e06bd0e2befcfebfa312930f282acdc6e2cffff7c1cabce648be4d88e7e5f7c0
+src-url: https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.18.2.tar.gz
+src-sha: 25a81ffaba54479ca7ddaa6ebb7611d60f8849004b5d6c50ec1b31edb2295c8e
 license: MPL-2.0
 bsystem: cargo

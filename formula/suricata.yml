@@ -1,18 +1,20 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata
-src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.0.tar.gz
-src-sha: 7bcd1313118366451465dc3f8385a3f6aadd084ffe44dd257dda8105863bb769
+src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.1.tar.gz
+src-sha: 6047c75f9e79a9b0cc6d6c7632024a4126812bc212f52acf5d3c813cc7c9fb0b
 license: GPL-2.0-or-later
 dep-pkg: jansson libmagic libnet libpcap libyaml lz4 pcre2 libiconv libglob
-bsystem: configure cargo
+bsystem: autotools cargo
 
 install: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
 
-    sed_in_place "/host_triplet = /c host_triplet = $RUST_TARGET" "$PACKAGE_BSCRIPT_DIR/rust/Makefile.in" &&
-    sed_in_place '/RUST_LDADD="${RUST_SURICATA_LIB}/i RUST_SURICATA_LIB=$(echo "$RUST_SURICATA_LIB" | sed "s/armv7a/armv7/")' "$PACKAGE_BSCRIPT_DIR/configure" &&
-    run rustup target add "$RUST_TARGET" &&
+    sed_in_place "s|RUST_TARGET = .*|RUST_TARGET = --target $RUST_TARGET|" rust/Makefile.am
+    sed_in_place "s|RUST_SURICATA_LIB_XC_DIR=.*|RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/|" configure.ac
+
+    run rustup target add "$RUST_TARGET"
+
     configure \
         --enable-pie \
         --with-libpcap-includes="$libpcap_INCLUDE_DIR" \
