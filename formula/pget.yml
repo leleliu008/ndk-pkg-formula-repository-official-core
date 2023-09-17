@@ -1,7 +1,4 @@
 summary: The fastest file download client
 git-url: https://github.com/Code-Hex/pget
 license: MIT
-bsystem: go
-
-install: |
-    gow -X main.version=$PACKAGE_VERSION ./cmd/pget
+install: gow -X main.version=$PACKAGE_VERSION ./cmd/pget

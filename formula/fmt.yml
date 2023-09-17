@@ -1,8 +1,8 @@
 summary: An open-source C/C++ library for formatting that provides a fast and safe alternative to C stdio and C++ iostreams
 web-url: https://fmt.dev
 git-url: https://github.com/fmtlib/fmt
-src-url: https://github.com/fmtlib/fmt/archive/10.0.0.tar.gz
-src-sha: ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8
+src-url: https://github.com/fmtlib/fmt/archive/10.1.1.tar.gz
+src-sha: 78b8c0a72b1c35e4443a7e308df52498252d1cefc2b08c9a97bc9ee6cfe61f8b
 license: MIT
 
 install: |

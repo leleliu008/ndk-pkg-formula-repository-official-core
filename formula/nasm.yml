@@ -1,16 +1,17 @@
 summary: Netwide Assembler (NASM) is an 80x86 assembler
+git-url: https://github.com/netwide-assembler/nasm
 web-url: https://www.nasm.us
-src-url: https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.xz
-src-sha: 3caf6729c1073bf96629b57cee31eeb54f4f8129b01902c73428836550b30a3f
+src-url: https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/nasm-2.16.01.tar.xz
+src-sha: c77745f4802375efeee2ec5c0ad6b7f037ea9c87c92b149a9637ff099f162558
 license: BSD-2-Clause
-bsystem: configure
-
+bsystem: autogen
+binbstd: yes
 install: |
     configure \
         --disable-profiling \
         --enable-lto \
-        --enable-sanitizer \
         --enable-suggestions \
+        --disable-sanitizer \
         --disable-pedantic \
         --disable-werror \
         --disable-pdf-compression
