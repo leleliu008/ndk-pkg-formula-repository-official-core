@@ -5,5 +5,7 @@ src-url: https://github.com/ArtifexSoftware/jbig2dec/archive/refs/tags/0.20.tar.
 src-sha: a9705369a6633aba532693450ec802c562397e1b824662de809ede92f67aff21
 license: AGPL-3.0-or-later
 dep-pkg: libpng
+dep-upp: libtool
+bsystem: autogen
 dopatch: sed_in_place '$d' autogen.sh && ./autogen.sh
 install: configure  --with-libpng="$libpng_INSTALL_DIR"
