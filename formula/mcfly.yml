@@ -8,7 +8,7 @@ bsystem: cargo
 install: |
     if [ "$TARGET_ANDROID_ARCH" = "x86_64" ] ; then
         LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
-        run "echo 'INPUT($LIBCLANG_RT_BUILTINS_FILEPATH -l:libunwind.a)' > '$PACKAGE_WORKING_DIR/lib/libgcc.a'"
+        export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
     fi
 
     cargow install

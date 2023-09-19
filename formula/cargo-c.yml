@@ -4,4 +4,10 @@ src-url: https://github.com/lu-zero/cargo-c/archive/v0.9.24.tar.gz
 src-sha: 32f2f5c802c01c51cf93471fcf876d0cc68edbc31d22005b9f07e4549d5b98b1
 license: MIT
 dep-upp: git perl gmake
-install: cargow install --features=vendored-openssl
+install: |
+    if [ "$TARGET_ANDROID_ARCH" = "i686" ] ; then
+        LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
+        export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
+    fi
+
+    cargow install --features=vendored-openssl
