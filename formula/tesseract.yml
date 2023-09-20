@@ -2,15 +2,9 @@ summary: OCR (Optical Character Recognition) engine
 git-url: https://github.com/tesseract-ocr/tesseract
 src-url: https://github.com/tesseract-ocr/tesseract/archive/5.3.2.tar.gz
 src-sha: b99d30fed47360d7168c3e25d194a7416ceb1d9e4b232c7f121cc5f77084d3e7
-
-fix-url: https://github.com/tesseract-ocr/tesseract/commit/54b9fe4de9f0aa3af15f52a6f27ffaf758b43769.diff
-fix-sha: ceaa5afa66b8ae714cb6668bcb7363e7fe9defce72fedc5ee48d14b93c04d610
-
 license: Apache-2.0
 dep-pkg: leptonica icu4c pango libglob cpu_features
-dep-upp: pkg-config patch
-ppflags: -DANDROID
-dopatch: patch -p1 < ../fix/ceaa5afa66b8ae714cb6668bcb7363e7fe9defce72fedc5ee48d14b93c04d610.diff
+dopatch: sed_in_place '/check_leptonica_tiff_support/d' CMakeLists.txt
 install: |
     export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"
     export LDFLAGS="$LDFLAGS $cpu_features_LIBRARY_DIR/libndk_compat.a"
@@ -20,4 +14,6 @@ install: |
         -DDISABLE_ARCHIVE=OFF \
         -DDISABLE_CURL=OFF \
         -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=ON
+        -DBUILD_TRAINING_TOOLS=ON \
+        -DOPENMP_BUILD=ON \
+        -DLEPT_TIFF_RESULT=0
