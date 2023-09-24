@@ -1,6 +1,6 @@
 summary: Download Youtube Video in Golang
 git-url: https://github.com/kkdai/youtube
-src-url: https://github.com/kkdai/youtube/archive/v2.8.4.tar.gz
-src-sha: 48efe037d9a599471439f43faa1e83a17c6c0a4afff10864f2451220c1631181
+src-url: https://github.com/kkdai/youtube/archive/v2.9.0.tar.gz
+src-sha: f8d60ac8ea16f2fd0e58c12d4502b1b1c5ad46325912cc29fe2031aa897b53a2
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') ./cmd/youtubedr

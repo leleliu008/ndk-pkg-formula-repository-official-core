@@ -1,10 +1,15 @@
 summary: Library for command-line editing
 git-url: https://git.savannah.gnu.org/git/readline.git
 web-url: https://www.gnu.org/software/readline
-src-url: https://ftp.gnu.org/gnu/readline/readline-8.1.2.tar.gz
-src-sha: 7589a2381a8419e68654a47623ce7dfcb756815c8fee726b98f90bf668af7bc6
+src-url: https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz
+src-sha: 3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35
 license: GPL-3.0-or-later
 dep-pkg: ncurses
+
+fix-url: https://ftp.gnu.org/gnu/readline/readline-8.2-patches/readline82-001
+fix-sha: bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7
+dep-upp: patch
+dopatch: patch -p0 < ../fix/bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7
 
 install: |
     configure \

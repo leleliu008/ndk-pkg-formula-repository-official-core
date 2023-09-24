@@ -6,6 +6,13 @@ src-sha: 19e327b23fc08b519f5077e33908afa7967d98139a516c180d029b3ca0618da3
 dep-pkg: zlib openssl
 license: MIT
 bsystem: cargo
+install: |
+    if [ "$TARGET_ANDROID_ARCH" = "x86_64" ] ; then
+        LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
+        export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
+    fi
+
+    cargow install
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 

@@ -1,7 +1,7 @@
 summary: A C++ library for parsing, formatting, and validating international phone numbers
 git-url: https://github.com/google/libphonenumber
-src-url: https://github.com/google/libphonenumber/archive/v8.13.20.tar.gz
-src-sha: 81ac6371367912463c612a4b4a6942ab10b7faf800b8dc026d6db3d157bed9b5
+src-url: https://github.com/google/libphonenumber/archive/v8.13.21.tar.gz
+src-sha: bca757a8e04849c8158bbbc243c500699daa7601d1fd23a1277fc2643188b44b
 dep-pkg: boost icu4c libprotobuf googletest abseil
 license: Apache-2.0
 bscript: cpp

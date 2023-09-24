@@ -34,6 +34,7 @@ install: |
         no-ssl2 \
         no-ssl3 \
         no-comp \
+        no-asm \
         -D__ANDROID_API__="$TARGET_ANDROID_API" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \

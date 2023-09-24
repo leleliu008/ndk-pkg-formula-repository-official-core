@@ -1,8 +1,8 @@
 summary: C++ Common Libraries
 web-url: https://abseil.io
 git-url: https://github.com/abseil/abseil-cpp
-src-url: https://github.com/abseil/abseil-cpp/archive/20230802.0.tar.gz
-src-sha: 59d2976af9d6ecf001a81a35749a6e551a335b949d34918cfade07737b9d93c5
+src-url: https://github.com/abseil/abseil-cpp/archive/20230802.1.tar.gz
+src-sha: 987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed
 license: Apache-2.0
 
 install: |
