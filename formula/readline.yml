@@ -3,6 +3,7 @@ git-url: https://git.savannah.gnu.org/git/readline.git
 web-url: https://www.gnu.org/software/readline
 src-url: https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz
 src-sha: 3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35
+version: 8.2.1
 license: GPL-3.0-or-later
 dep-pkg: ncurses
 

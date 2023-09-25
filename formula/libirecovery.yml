@@ -4,6 +4,6 @@ git-url: https://github.com/libimobiledevice/libirecovery
 src-url: https://github.com/libimobiledevice/libirecovery/releases/download/1.1.0/libirecovery-1.1.0.tar.bz2
 src-sha: ee3b1afbc0cab5309492cfcf3e132c6cc002617a57664ee0120ae918318e25f9
 license: LGPL-2.1-only
-dep-pkg: libusb readline
+dep-pkg: libusb readline libimobiledevice-glue
 bsystem: configure
 ldflags: -lncurses

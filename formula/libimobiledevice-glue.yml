@@ -1,0 +1,12 @@
+summary: Library with common system API code for libimobiledevice projects
+web-url: https://libimobiledevice.org/
+git-url: https://github.com/libimobiledevice/libimobiledevice-glue
+src-url: https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.0.0/libimobiledevice-glue-1.0.0.tar.bz2
+src-sha: 160a70e2edc318312fc40b6a71f85bfdfabdfba10bcfc5bb6fb40ed95088f4a0
+license: LGPL-2.1-or-later
+dep-pkg: libplist
+bsystem: configure
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24

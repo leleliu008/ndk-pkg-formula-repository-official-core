@@ -1,8 +1,8 @@
 summary: MP3 player
 git-url: https://github.com/madebr/mpg123
 web-url: https://www.mpg123.de/
-src-url: https://www.mpg123.de/download/mpg123-1.31.3.tar.bz2
-src-sha: 1ca77d3a69a5ff845b7a0536f783fee554e1041139a6b978f6afe14f5814ad1a
+src-url: https://www.mpg123.de/download/mpg123-1.32.0.tar.bz2
+src-sha: 23d4629e30a59a6b0e05b39283f78b8e261e70e9c2673b3c1179718b393aec01
 license: LGPL-2.1-only
 dep-pkg: sdl2
 bsystem: configure
