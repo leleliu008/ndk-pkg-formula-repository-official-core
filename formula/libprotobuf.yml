@@ -1,9 +1,7 @@
 summary: Protocol Buffers(data interchange format) compiler and library developed by Google
 git-url: https://github.com/protocolbuffers/protobuf
-git-sha: 2c5fa078d8e86e5f4bd34e6f4c9ea9e8d7d4d44a
-version: 23.4
-#src-url: https://github.com/protocolbuffers/protobuf/releases/download/v23.4/protobuf-23.4.tar.gz
-#src-sha: a700a49470d301f1190a487a923b5095bf60f08f4ae4cac9f5f7c36883d17971
+git-sha: ee1355459c9ce7ffe264bc40cfdc7b7623d37e99
+version: 24.3
 license: BSD-3-Clause
 dep-pkg: zlib jsoncpp abseil
 
@@ -16,6 +14,10 @@ build0: |
         -Dprotobuf_BUILD_EXAMPLES=OFF \
         -Dprotobuf_BUILD_LIBPROTOC=ON \
         -Dprotobuf_BUILD_SHARED_LIBS=OFF
+
+dopatch: |
+    sed_in_place 's|__NDK_MAJOR__|__ANDROID_API__|g' src/google/protobuf/port_def.inc
+    sed_in_place 's|__NDK_MAJOR|__ANDROID_API__|g' src/google/protobuf/port_def.inc
 
 install: |
     cmakew \

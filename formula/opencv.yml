@@ -4,13 +4,53 @@ git-url: https://github.com/opencv/opencv
 src-url: https://github.com/opencv/opencv/archive/refs/tags/4.8.0.tar.gz
 src-sha: cbf47ecc336d2bff36b0dcd7d6c179a9bb59e805136af6b9670ca944aef889bd
 license: Apache-2.0
-dep-pkg: ffmpeg openjpeg openblas libprotobuf
+dep-pkg: ffmpeg eigen3 tbb openexr openjpeg openblas
+dep-upp: python3 android-sdk
+dopatch: |
+    # bundled third-party libraries are removed, we want to use our own
+    for d in ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg tbb zlib
+    do
+        rm -rf "3rdparty/$d"
+    done
 install: |
     cmakew \
-        -DANDROID_NO_TERMUX=OFF \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DBUILD_ANDROID_PROJECTS=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_PERF_TESTS=OFF \
+        -DBUILD_PROTOBUF=ON \
+        -DBUILD_OPENJPEG=OFF \
+        -DBUILD_OPENEXR=OFF \
+        -DBUILD_JASPER=OFF \
+        -DBUILD_JPEG=OFF \
+        -DBUILD_TIFF=OFF \
+        -DBUILD_WEBP=OFF \
+        -DBUILD_ZLIB=OFF \
+        -DBUILD_PNG=OFF \
+        -DBUILD_TBB=OFF \
+        -DBUILD_opencv_hdf=OFF \
+        -DBUILD_opencv_java=OFF \
+        -DBUILD_opencv_text=ON \
+        -DBUILD_opencv_python2=OFF \
+        -DBUILD_opencv_python3=ON \
         -DWITH_GSTREAMER=OFF \
-        -DWITH_OPENEXR=OFF \
-        -DBUILD_PROTOBUF=OFF \
-        -DPROTOBUF_UPDATE_FILES=ON \
+        -DWITH_OPENVINO=OFF \
+        -DWITH_OPENEXR=ON \
+        -DWITH_GPHOTO2=OFF \
+        -DWITH_JASPER=OFF \
+        -DWITH_OPENGL=ON \
+        -DWITH_FFMPEG=ON \
+        -DWITH_EIGEN=ON \
+        -DWITH_1394=OFF \
+        -DWITH_CUDA=OFF \
+        -DWITH_TBB=ON \
+        -DWITH_VTK=ON \
+        -DWITH_QT=OFF \
+        -DPROTOBUF_UPDATE_FILES=OFF \
+        -DOPENCV_ENABLE_NONFREE=OFF \
         -DOPENCV_GENERATE_PKGCONFIG=ON \
-        -DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON
+        -DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
+        -DANDROID_NO_TERMUX=OFF \
+        -DANDROID_SDK_ROOT="$(uppm info android-sdk installed-dir)"
+    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/jni/include" "$PACKAGE_INSTALL_DIR/"
+    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/libs/$TARGET_ANDROID_ABI" "$PACKAGE_INSTALL_DIR/lib"

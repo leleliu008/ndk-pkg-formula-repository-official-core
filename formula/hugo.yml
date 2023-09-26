@@ -1,8 +1,12 @@
 summary: A fast and flexible static site generator
 web-url: https://gohugo.io
 git-url: https://github.com/gohugoio/hugo
-src-url: https://github.com/gohugoio/hugo/archive/v0.118.2.tar.gz
-src-sha: 915d7dcb44fba949c80858f9c2a55a11256162ba28a9067752f808cfe8faedaa
+src-url: https://github.com/gohugoio/hugo/archive/v0.119.0.tar.gz
+src-sha: 0b98124c72fbd9a8179d3576abb3dd720f69584b47f70ec5be82b7238b825ea2
 license: Apache-2.0
-dopatch: export CGO_ENABLED=1
-install: gow -tags extended
+install: |
+    export CGO_ENABLED=1
+    gow \
+        -X github.com/gohugoio/hugo/common/hugo.buildDate=$(date +%Y%m%dT%H%M%S) \
+        -X github.com/gohugoio/hugo/common/hugo.vendorInfo=ndk-pkg \
+        -tags extended
