@@ -1,19 +1,11 @@
 summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.58.1.tar.gz
-src-sha: 860bf758a1437a03318bf09db8e87cb8149a2f578954110ce8549e147f868b62
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.59.0.tar.gz
+src-sha: 585e219faaaa1ef82392d27f7ff41982c0dbf72a19abd0070eddd3df927c48f5
 license: Apache-2.0
-dep-upp: grpc-plugins patch
+dep-upp: grpc-plugins
 dep-pkg: abseil c-ares openssl libprotobuf re2
-    #ldflags: -llog
-
-fix-url: https://github.com/grpc/grpc/commit/117dc80eb43021dd5619023ef6d02d0d6ec7ae7a.patch?full_index=1
-fix-sha: 826896efc97e6c3bd3c38fc5e09642db4c6c4ec54597624ee8905da89e1ba7b6
-
-dopatch: |
-    patch -p1 < ../fix/826896efc97e6c3bd3c38fc5e09642db4c6c4ec54597624ee8905da89e1ba7b6.patch
-    #sed_in_place 's|GPR_MUSL_LIBC_COMPAT|__ANDROID__|' src/core/lib/gpr/wrap_memcpy.cc
 
 install: |
     cmakew \

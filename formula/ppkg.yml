@@ -1,7 +1,6 @@
 summary: A portable package manager for Unix-like systems
 git-url: https://github.com/leleliu008/ppkg
-git-ref: dev
-#src-url: dir:///home/leleliu008/ppkg
+git-ref: refs/heads/c
 license: Apache-2.0
 dep-pkg: libcurl libgit2 libarchive libyaml jansson
 dopatch: PACKAGE_VERSION=$(sed -n '/set(PROJECT_VERSION /p' CMakeLists.txt | sed 's|set(PROJECT_VERSION[[:space:]]*\(.*\))|\1|')

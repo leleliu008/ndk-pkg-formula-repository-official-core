@@ -3,8 +3,8 @@ web-url: https://cairographics.org/
 git-url: https://gitlab.freedesktop.org/cairo/cairo
 src-url: https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
 src-sha: ead4724423eb969f98b456fe1e3ee1e1741fe1c8dfb1a41ca12afa81a6c1665f
-dep-pkg: libxml2 libpng pixman lzo glib fontconfig libexecinfo
 license: LGPL-2.1-or-later MPL-1.1
+dep-pkg: libxml2 libpng pixman lzo glib fontconfig libexecinfo
 
 install: |
     mesonw \
