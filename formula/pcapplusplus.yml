@@ -1,26 +1,8 @@
 summary: C++ network sniffing, packet parsing and crafting framework
 web-url: https://pcapplusplus.github.io
 git-url: https://github.com/seladb/PcapPlusPlus
-src-url: https://github.com/seladb/PcapPlusPlus/archive/v22.11.tar.gz
-src-sha: 3172f12f2f8a8902ae1ad6be5d65c3059c42c49c1a28e97e5d8d25a48b05e44f
+src-url: https://github.com/seladb/PcapPlusPlus/archive/v23.09.tar.gz
+src-sha: 608292f7d2a2e1b7af26adf89347597a6131547eea4e513194bc4f584a40fe74
 license: Unlicense
 dep-pkg: libpcap
-bsystem: gmake
-binbstd: yes
-dopatch: |
-    if [ -f ../lib/libpcap.a ] ; then
-        rm  ../lib/libpcap.a
-        printf 'INPUT(%s -lssl -lcrypto)\n' "$libpcap_INSTALL_DIR/lib/libpcap.a" > ../lib/libpcap.a
-    fi
-install: |
-    run ./configure-android.sh \
-        --ndk-path "$ANDROID_NDK_ROOT" \
-        --target "$TARGET_ANDROID_ABI" \
-        --api "$TARGET_ANDROID_API" \
-        --libpcap-include-dir "$libpcap_INCLUDE_DIR" \
-        --libpcap-lib-dir "$PACKAGE_WORKING_DIR/lib" &&
-    gmakew clean &&
-    gmakew all &&
-    run install_libs Dist/*.a &&
-    run install_incs Dist/header/*.h:pcapplusplus &&
-    run install_bins Dist/examples/*
+bsystem: cmake

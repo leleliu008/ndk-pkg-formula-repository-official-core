@@ -1,8 +1,8 @@
 summary: An extremely fast Python linter, written in Rust
 web-url: https://beta.ruff.rs/
 git-url: https://github.com/astral-sh/ruff
-src-url: https://github.com/astral-sh/ruff/archive/refs/tags/v0.0.291.tar.gz
-src-sha: b7358133498febbfdc0d119de4dd9c7659b866c7ab8b65e1dcef387e1e2766dc
+src-url: https://github.com/astral-sh/ruff/archive/refs/tags/v0.0.292.tar.gz
+src-sha: 901d418e195e035fe38641c22400df09ef4712ff4ef1dd872951323eb0e0b59d
 license: MIT
 bscript: crates/ruff_cli
 install: cargow install --no-default-features
