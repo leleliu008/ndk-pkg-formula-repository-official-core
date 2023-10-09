@@ -11,4 +11,5 @@ api-min: 24
 # https://github.com/libimobiledevice/ideviceinstaller/issues/154
 fix-url: https://github.com/libimobiledevice/ideviceinstaller/commit/9f9de528fe930f5248ed996659fdf5c22974928e.patch
 fix-sha: 238467ee71e77763abb1309d9c863076ced942d61331791d4b626a6b1807856e
+dep-upp: patch
 dopatch: patch -p1 < ../fix/238467ee71e77763abb1309d9c863076ced942d61331791d4b626a6b1807856e.patch

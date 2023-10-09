@@ -7,7 +7,6 @@ license: blessing
 version: 3.43.0
 binbstd: yes
 install: |
-    run mv sqlite-amalgamation-*/* .
     run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
     run "$AR" rsc libsqlite3.a sqlite3.o
     run "$CC" "$LDFLAGS" -shared -Wl,-soname,libsqlite3.so -o libsqlite3.so sqlite3.o

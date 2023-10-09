@@ -4,7 +4,7 @@ git-url: https://github.com/libjpeg-turbo/libjpeg-turbo
 src-url: https://downloads.sourceforge.net/project/libjpeg-turbo/3.0.0/libjpeg-turbo-3.0.0.tar.gz
 src-sha: c77c65fcce3d33417b2e90432e7a0eb05f59a7fff884022a9d931775d583bfaa
 license: IJG
-dep-upp: nasm
+dep-upp: nasm patch
 
 fix-url: https://github.com/libjpeg-turbo/libjpeg-turbo/commit/035ea386d1b6a99a8a1e2ab57cc1fc903569136c.patch?full_index=1
 fix-sha: 7389d29c16be16ae23e40f6ac31e78ca366550644ab96810f1e21bece71919bb

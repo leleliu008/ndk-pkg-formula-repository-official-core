@@ -15,9 +15,10 @@ dopatch: |
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
+        -DBUILD_SHARED_LIBS=OFF \
         -DBUILD_ANDROID_PROJECTS=OFF \
-        -DBUILD_TESTS=OFF \
         -DBUILD_PERF_TESTS=OFF \
+        -DBUILD_TESTS=OFF \
         -DBUILD_PROTOBUF=ON \
         -DBUILD_OPENJPEG=OFF \
         -DBUILD_OPENEXR=OFF \
@@ -53,4 +54,4 @@ install: |
         -DANDROID_NO_TERMUX=OFF \
         -DANDROID_SDK_ROOT="$(uppm info android-sdk installed-dir)"
     run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/jni/include" "$PACKAGE_INSTALL_DIR/"
-    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/libs/$TARGET_ANDROID_ABI" "$PACKAGE_INSTALL_DIR/lib"
+    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/*/$TARGET_ANDROID_ABI" "$PACKAGE_INSTALL_DIR/lib"
