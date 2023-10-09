@@ -13,6 +13,8 @@ license: Info-ZIP
 dep-pkg: libbz2
 binbstd: yes
 ccflags: -include time.h
+
+dep-upp: patch
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
     do
