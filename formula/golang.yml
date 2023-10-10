@@ -16,6 +16,10 @@ install: |
     run ./make.bash &&
     run cd .. &&
     run rm -rf _ &&
+    run rm bin/go* &&
+    run mv bin/android_*/* bin/ &&
+    run rm -rf bin/android_* &&
+    run rm -rf src/debug/elf/testdata &&
     run rm -rf pkg/obj && {
         for item in $(ls pkg/tool)
         do

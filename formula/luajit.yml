@@ -21,13 +21,14 @@ dopatch: |
         export CFLAGS="$CFLAGS -arch=$NATIVE_OS_ARCH"
     fi
 
+    sed_in_place '/TARGET_SONAME=/c TARGET_SONAME=libluajit.so' src/Makefile
+
 install: |
     if [ -d /usr/include/x86_64-linux-gnu ] ; then
         export CPPFLAGS_FOR_BUILD="$CPPFLAGS_FOR_BUILD -I/usr/include/x86_64-linux-gnu"
     fi
 
-    gmakew clean install \
-        PREFIX="$PACKAGE_INSTALL_DIR" \
+    gmakew clean all \
         HOST_SYS=$(uname -s) \
         HOST_CC="'$CC_FOR_BUILD -m$TARGET_ANDROID_NBIT'" \
         HOST_LD="$CC_FOR_BUILD" \
@@ -45,5 +46,9 @@ install: |
         STATIC_CC="$CC" \
         DYNAMIC_CC="'$CC -fPIC'" \
         Q=
+    cd src
+    install_bins luajit
+    install_incs lua.h lualib.h lauxlib.h luaconf.h lua.hpp luajit.h
+    install_libs libluajit.a libluajit.so
 
 developer: Mike Pall <luajit@freelists.org>
