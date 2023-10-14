@@ -1,7 +1,7 @@
 summary: Clone of cat(1) with syntax highlighting and Git integration
 git-url: https://github.com/sharkdp/bat
-src-url: https://github.com/sharkdp/bat/archive/v0.23.0.tar.gz
-src-sha: 30b6256bea0143caebd08256e0a605280afbbc5eef7ce692f84621eb232a9b31
+src-url: https://github.com/sharkdp/bat/archive/v0.24.0.tar.gz
+src-sha: 907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 license: Apache-2.0
 dep-pkg: libgetloadavg
 

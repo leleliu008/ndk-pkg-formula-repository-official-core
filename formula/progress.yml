@@ -1,7 +1,7 @@
 summary: Coreutils progress viewer
 git-url: https://github.com/Xfennec/progress
-src-url: https://github.com/Xfennec/progress/archive/v0.16.tar.gz
-src-sha: 59944ee35f8ae6d62ed4f9b643eee2ae6d03825da288d9779dc43de41164c834
+src-url: https://github.com/Xfennec/progress/archive/v0.17.tar.gz
+src-sha: ee9538fce98895dcf0d108087d3ee2e13f5c08ed94c983f0218a7a3d153b725d
 license: GPL-3.0-or-later
 dep-upp: pkg-config
 dep-pkg: ncurses libwordexp
