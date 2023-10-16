@@ -17,7 +17,7 @@ dopatch: |
     MRuby::CrossBuild.new('android') do |conf|
       params = {
         :arch => ENV['TARGET_ANDROID_ABI'],
-        :platform => 'android-' + ENV['TARGET_ANDROID_API'],
+        :sdk_version => ENV['TARGET_ANDROID_API'],
         :toolchain => :clang,
       }
       toolchain :android, params
