@@ -1,7 +1,7 @@
 summary: A modern, portable, easy to use crypto library
 web-url: https://libsodium.org
 git-url: https://github.com/jedisct1/libsodium
-src-url: https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz
-src-sha: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
+src-url: https://download.libsodium.org/libsodium/releases/libsodium-1.0.19.tar.gz
+src-sha: 018d79fe0a045cca07331d37bd0cb57b2e838c51bc48fd837a1472e50068bbea
 license: ISC
 bsystem: configure

@@ -1,7 +1,7 @@
 summary: Simulator for Microchip PIC microcontrollers
 web-url: https://gpsim.sourceforge.io/
-src-url: https://downloads.sourceforge.net/project/gpsim/gpsim/0.31.0/gpsim-0.31.0.tar.gz
-src-sha: 110ee6be3a5d02b32803a91e480cbfc9d423ef72e0830703fc0bc97b9569923f
+src-url: https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.1.tar.gz
+src-sha: c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69
 license: GPL-2.0-or-later
 dep-pkg: glib popt readline
 binbstd: yes
