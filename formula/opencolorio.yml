@@ -4,11 +4,13 @@ git-url: https://github.com/AcademySoftwareFoundation/OpenColorIO
 src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v2.2.1.tar.gz
 src-sha: 36f27c5887fc4e5c241805c29b8b8e68725aa05520bcaa7c7ec84c0422b8580e
 license: BSD-3-Clause
-dep-pkg: imath lcms2 expat yaml-cpp pystring
-dopatch: sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH"
+dep-pkg: openexr lcms2 expat pystring minizip-ng
+dep-upp: git
+dopatch: sed_in_place 's| CONFIG QUIET)| CONFIG)|' share/cmake/modules/FindOpenEXR.cmake
 install: |
     cmakew \
-        -DOCIO_BUILD_APPS=ON \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DOCIO_BUILD_APPS=OFF \
         -DOCIO_BUILD_DOCS=OFF \
         -DOCIO_BUILD_TESTS=OFF \
         -DOCIO_BUILD_JAVA=OFF \

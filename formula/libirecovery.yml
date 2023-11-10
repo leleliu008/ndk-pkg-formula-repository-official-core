@@ -7,3 +7,4 @@ license: LGPL-2.1-only
 dep-pkg: libusb readline libimobiledevice-glue
 bsystem: configure
 ldflags: -lncurses
+api-min: 24
