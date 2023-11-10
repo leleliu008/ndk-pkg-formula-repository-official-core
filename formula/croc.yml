@@ -1,6 +1,6 @@
 summary: Securely send things from one computer to another
 git-url: https://github.com/schollz/croc
-src-url: https://github.com/schollz/croc/archive/v9.6.5.tar.gz
-src-sha: 2d3ba7bae3c49e3870e2f8523c6be00e92fe6e46828269a8cea34d4034102cad
+src-url: https://github.com/schollz/croc/archive/refs/tags/v9.6.6.tar.gz
+src-sha: 9dd954e0068df2be416c71161665bfc283f150d30ba0bf96cee723701e93616f
 license: MIT
 bsystem: go

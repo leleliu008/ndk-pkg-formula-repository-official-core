@@ -1,7 +1,7 @@
 summary: Stable & Secure Tunnel based on KCP with N/M multiplexing and FEC
 git-url: https://github.com/xtaci/kcptun
-src-url: https://github.com/xtaci/kcptun/archive/v20230214.tar.gz
-src-sha: 3ab7b2cc3cdf1705faa76d474419a2d9e8868c8b46a24c93a218bd6a5acb2de3
+src-url: https://github.com/xtaci/kcptun/archive/refs/tags/v20231012.tar.gz
+src-sha: 130a0936c3b1e226aa062d957bc420d7d1b90c7a4c71ac1a314c0074cc2fbdc6
 license: MIT
 
 install: |
