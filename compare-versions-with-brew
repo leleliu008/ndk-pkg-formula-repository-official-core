@@ -92,6 +92,8 @@ package_name_transform_from_uppm_to_brew() {
         libmediainfo|mediainfo)
                   printf '%s\n' 'media-info';;
         tcl-core) printf '%s\n' 'tcl-tk'    ;;
+        liblzma)  printf '%s\n' 'xz'        ;;
+        xxd)      printf '%s\n' 'vim'       ;;
         *)        printf '%s\n' "$1"
     esac
 }
