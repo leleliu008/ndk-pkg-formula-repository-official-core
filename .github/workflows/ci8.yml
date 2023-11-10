@@ -1,0 +1,105 @@
+name: workflow8
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  container:
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        pkg: [supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh]
+
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v3
+
+      - if:  ${{ github.ref_name == 'dev' }}
+        run: |
+            curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/dev/ndk-pkg
+            chmod +x ndk-pkg
+            mv ndk-pkg /usr/bin/ndk-pkg
+
+      - run: ndk-pkg env
+      - run: ndk-pkg setup
+      - run: ndk-pkg sysinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            timestamp-created: 1673675503
+            timestamp-updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+
+      - run: |
+          MIN_SDK_API_LEVEL=$(ndk-pkg info ${{ matrix.pkg }} api-min)
+          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=21
+          fi
+          ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}
+
+
+  macos:
+    if: false
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        os:  [macos-12, macos-13]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        pkg: [supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v3
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
+
+      - run: ./ndk-pkg env
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg ndkinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            timestamp-created: 1673675503
+            timestamp-updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+
+      - run: |
+          MIN_SDK_API_LEVEL=$(./ndk-pkg info ${{ matrix.pkg }} api-min)
+          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+            MIN_SDK_API_LEVEL=21
+          fi
+          ./ndk-pkg install ${{ matrix.pkg }}:android-$MIN_SDK_API_LEVEL:${{ matrix.abi }}
