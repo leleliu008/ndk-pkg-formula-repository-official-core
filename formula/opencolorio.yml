@@ -6,7 +6,9 @@ src-sha: 36f27c5887fc4e5c241805c29b8b8e68725aa05520bcaa7c7ec84c0422b8580e
 license: BSD-3-Clause
 dep-pkg: openexr lcms2 expat pystring minizip-ng
 dep-upp: git
-dopatch: sed_in_place 's| CONFIG QUIET)| CONFIG)|' share/cmake/modules/FindOpenEXR.cmake
+dopatch: |
+    sed_in_place 's| CONFIG QUIET)| CONFIG)|' share/cmake/modules/FindOpenEXR.cmake
+    sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH"
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \

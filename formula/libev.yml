@@ -1,6 +1,6 @@
 summary: Asynchronous event library
 web-url: http://software.schmorp.de/pkg/libev.html
-src-url: http://dist.schmorp.de/libev/Attic/libev-4.33.tar.gz
-src-uri: https://fossies.org/linux/misc/libev-4.33.tar.gz
+src-uri: http://dist.schmorp.de/libev/Attic/libev-4.33.tar.gz
+src-url: https://fossies.org/linux/misc/libev-4.33.tar.gz
 src-sha: 507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea
 bsystem: configure
