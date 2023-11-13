@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua]
+        pkg: [physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua,supervisord]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua]
+        pkg: [physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua,supervisord]
 
     runs-on: ${{ matrix.os }}
 

@@ -5,7 +5,6 @@ src-url: https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2
 src-sha: bbb43f032b9164d86c781ffe42213a83bf4f2fee91455edfa4654521b8b03b6b
 license: LGPL-3.0-or-later
 dep-pkg: libgpg-error
-
 install: |
     configure \
         --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR" \

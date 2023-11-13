@@ -1,8 +1,8 @@
 summary: Vi IMproved - enhanced vi editor
 web-url: https://www.vim.org/
 git-url: https://github.com/vim/vim
-src-url: https://github.com/vim/vim/archive/refs/tags/v9.0.2050.tar.gz
-src-sha: 0387014cba4283d55e3b6611b7b574c81670fbb5d195d0fc7b264b94e95592e3
+src-url: https://github.com/vim/vim/archive/refs/tags/v9.0.2100.tar.gz
+src-sha: 01e08b3234a357f6b17e80a695390ed537b50d10b9c95bf5b1ec9182e2c0725c
 license: Vim
 dep-pkg: gettext python3 lua
 bsystem: configure
