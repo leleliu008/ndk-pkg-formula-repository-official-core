@@ -7,7 +7,7 @@ src-sha: e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4
 dep-pkg: libpng lcms2
 dep-upp: pkg-config
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 install: |
     export OSTYPE=Linux

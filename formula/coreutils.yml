@@ -15,11 +15,11 @@ api-min: 23
 install: |
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
 
-    if [ "$TARGET_ANDROID_ARCH" = 'aarch64' ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = 'aarch64' ] ; then
         export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
     fi
 
-    if [ "$TARGET_ANDROID_NBIT" = '64' ] ; then
+    if [ "$TARGET_PLATFORM_NBIT" = '64' ] ; then
         CONFIGURE_EXTRA_OPTIONS=
     else
         CONFIGURE_EXTRA_OPTIONS='--disable-year2038'

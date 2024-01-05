@@ -4,7 +4,7 @@ src-url: https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.3.1.tar.g
 src-sha: 47a7c8ee05687be1e1d8eeeb94fb88f060fbf3cd8a4df52ccb88d5eb0f5062be
 license: Unlicense
 dep-pkg: libcurl
-binbstd: yes
+binbstd: 1
 install: |
     export CFLAGS="$CFLAGS $LDFLAGS"
     configure --enable-reentrant

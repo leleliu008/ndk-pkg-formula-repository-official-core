@@ -5,8 +5,8 @@ src-sha: a3cd13d0521d22dd939063d3b4a0d4ce24494374b91408a05bdaca8b681c63d4
 license: OpenSSL
 bsystem: gmake
 dep-upp: perl
-binbstd: yes
-parallel: no
+binbstd: 1
+parallel: 0
 
 dopatch: |
     export LC_COLLATE='C'
@@ -16,7 +16,7 @@ dopatch: |
 
 install: |
     get_os_compiler() {
-        case $TARGET_ANDROID_ARCH in
+        case $TARGET_PLATFORM_ARCH in
             armv7a)  echo "android-armv7"     ;;
             aarch64) echo "android64-aarch64" ;;
             i686)    echo "android-x86"       ;;
@@ -32,7 +32,7 @@ install: |
         no-hw \
         no-engine \
         no-asm \
-        -D__ANDROID_API__="$TARGET_ANDROID_API" \
+        -D__ANDROID_API__="$TARGET_PLATFORM_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         "$(get_os_compiler)" &&
     gmakew clean &&

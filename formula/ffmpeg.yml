@@ -7,12 +7,12 @@ license: GPL-2.0-or-later
 dep-pkg: speex theora libvorbis sdl2 x264 x265 xvid lame opus rav1e dav1d libvpx liblzma libwebp libxml2
 dep-upp: nasm
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 install: |
     unset CONFIGURE_EXTRA_ARGS
 
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         aarch64) CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
         armv7a)  CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
         i686)    CONFIGURE_EXTRA_ARGS='--disable-asm' ;;
@@ -33,7 +33,7 @@ install: |
         --ranlib="$RANLIB" \
         --strip="$STRIP" \
         --pkg-config="$PKG_CONFIG" \
-        --arch="$TARGET_ANDROID_ARCH" \
+        --arch="$TARGET_PLATFORM_ARCH" \
         --target-os=android \
         --enable-cross-compile \
         --enable-pic \

@@ -7,4 +7,4 @@ license: GPL-2.0-or-later
 dep-pkg: readline libiconv liblanginfo
 dep-upp: pkg-config
 bsystem: configure
-binbstd: yes
+binbstd: 1

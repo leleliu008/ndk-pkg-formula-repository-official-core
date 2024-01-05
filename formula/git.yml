@@ -7,7 +7,7 @@ license: GPL-2.0-only
 dep-pkg: gettext expat libcurl libpcre2 zlib
 dep-upp: gettext-tools patch
 bsystem: configure
-binbstd: yes
+binbstd: 1
 install: |
     printf '%s' '
     LS0tIHJ1bi1jb21tYW5kLmMJMjAyMy0wNi0wMSAxNTowMzowNS4wMDAwMDAwMDAgKzA4MDAKKysr

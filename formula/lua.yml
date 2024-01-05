@@ -5,7 +5,7 @@ src-url: https://www.lua.org/ftp/lua-5.4.6.tar.gz
 src-sha: 7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88
 license: MIT
 dep-pkg: readline
-binbstd: yes
+binbstd: 1
 
 install: |
     gmakew clean &&

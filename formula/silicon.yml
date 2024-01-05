@@ -8,7 +8,7 @@ bsystem: cargo cmake-gmake
 
 install: |
     # https://github.com/servo/libfontconfig/issues/62
-    if [ "$TARGET_ANDROID_ABI" = 'armeabi-v7a' ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = 'armv7a' ] ; then
         run install -d "$PACKAGE_INSTALL_DIR/bin"
     else
         cargow install

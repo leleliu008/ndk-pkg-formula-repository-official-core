@@ -5,7 +5,7 @@ src-url: https://www.sqlite.org/2023/sqlite-amalgamation-3440000.zip
 src-sha: 93299c8d2c8397622fe00bd807204b1f58815f45bda8097bf93b3bf759a3ebad
 version: 3.44.0
 license: blessing
-binbstd: yes
+binbstd: 1
 install: |
     run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
     run "$AR" rsc libsqlite3.a sqlite3.o

@@ -7,12 +7,12 @@ src-sha: a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724
 license: MIT
 bsystem: gmake
 bscript: trunk
-binbstd: yes
+binbstd: 1
 
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
 
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         armv7a)  CONFIGURE_EXTRA_FLAGS=--arm ;;
         aarch64) CONFIGURE_EXTRA_FLAGS=--arm ;;
         i686)    CONFIGURE_EXTRA_FLAGS=--x86-64  ;;

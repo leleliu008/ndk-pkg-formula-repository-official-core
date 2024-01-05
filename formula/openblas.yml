@@ -5,7 +5,7 @@ src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz
 src-sha: ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132
 license: BSD-3-Clause
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 install: |
     sed_in_place '/LIBDLLNAME   =/i LIBNAME = $(LIBPREFIX).$(LIBSUFFIX)' Makefile.system
@@ -13,7 +13,7 @@ install: |
     sed_in_place 's|ln -fs|true|g' Makefile.install
 
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         armv7a)  ARCH=arm   ; TARGET='ARMV7' ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;
         aarch64) ARCH=arm64 ; TARGET='ARMV8' ; BINARY=64 ; ARM_SOFTFP_ABI=1 ;;
         i686)    ARCH=x86   ; TARGET='ATOM'  ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;

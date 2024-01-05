@@ -4,7 +4,7 @@ src-url: https://github.com/p7zip-project/p7zip/archive/v17.05.tar.gz
 src-sha: d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6
 license: LGPL-2.1-or-later
 dep-pkg: libiconv
-binbstd: yes
+binbstd: 1
 dopatch: |
     run mv makefile.linux_any_cpu makefile.machine
     sed_in_place 's|getpass("")|""|g' CPP/7zip/UI/Console/UserInputUtils.cpp

@@ -12,7 +12,7 @@ fix-sha: 4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5
 dep-upp: patch
 license: GPL-1.0-or-later
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     TARGET_CC=$CC
     TARGET_CXX=$CXX
@@ -56,6 +56,6 @@ install: |
     gmakew clean &&
     gmakew &&
     gmakew install &&
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_ANDROID_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so" &&
+    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so" &&
     run install -d "$PACKAGE_INSTALL_DIR/include" &&
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_ANDROID_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"
+    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"

@@ -5,4 +5,4 @@ src-sha: c537e8a53df36f1f996601d776203478ad56fab1d67b3c1a63057badb0851cec
 license: GPL-2.0-or-later
 dep-pkg: readline
 bsystem: autotools
-binbstd: yes
+binbstd: 1

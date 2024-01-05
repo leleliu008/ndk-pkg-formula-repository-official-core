@@ -11,7 +11,7 @@ ppflags: -DX_DISPLAY_MISSING
 ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype
 
 install: |
-    if [ "$TARGET_ANDROID_ARCH" = 'x86_64' ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
         sed_in_place '/HAVE_FLDLN2/d' "$PACKAGE_BSCRIPT_DIR/configure" || return 1
     fi
 

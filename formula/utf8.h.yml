@@ -1,7 +1,7 @@
 summary: single header utf8 string functions for C and C++
 git-url: https://github.com/sheredom/utf8.h
 license: Unlicense
-binbstd: yes
+binbstd: 1
 
 install: |
     install_incs utf8.h

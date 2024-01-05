@@ -5,7 +5,7 @@ git-sha: a91d0d9d3bba1a936669cfac3244509a0f2ac0e3
 version: 2.1.0
 license: MIT
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     printf '%s\n' 'int main() {return 0;}' > test.c
@@ -30,7 +30,7 @@ install: |
 
     gmakew clean all \
         HOST_SYS=$(uname -s) \
-        HOST_CC="'$CC_FOR_BUILD -m$TARGET_ANDROID_NBIT'" \
+        HOST_CC="'$CC_FOR_BUILD -m$TARGET_PLATFORM_NBIT'" \
         HOST_LD="$CC_FOR_BUILD" \
         HOST_CFLAGS="'$CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD'" \
         HOST_LDFLAGS="'$LDFLAGS_FOR_BUILD'" \

@@ -29,11 +29,11 @@ dopatch: |
     PACKAGE_BSCRIPT_DIR="$PWD"
 
 install: |
-    case $TARGET_ANDROID_ABI in
-        armeabi-v7a) GN_ARG_TARGET_CPU=arm   ;;
-        arm64-v8a)   GN_ARG_TARGET_CPU=arm64 ;;
-        x86)         GN_ARG_TARGET_CPU=x86   ;;
-        x86_64)      GN_ARG_TARGET_CPU=x64   ;;
+    case $TARGET_PLATFORM_ARCH in
+        armv7a)  GN_ARG_TARGET_CPU=arm   ;;
+        aarch64) GN_ARG_TARGET_CPU=arm64 ;;
+        i686)    GN_ARG_TARGET_CPU=x86   ;;
+        x86_64)  GN_ARG_TARGET_CPU=x64   ;;
     esac
 
     run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
@@ -51,7 +51,7 @@ install: |
     target_cpu="$GN_ARG_TARGET_CPU"
     EOF
 
-    if [ "$TARGET_ANDROID_ABI" = 'armeabi-v7a' ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = 'armv7a' ] ; then
         printf '%s\n' 'arm_version=7' >> args.gn
     fi
 

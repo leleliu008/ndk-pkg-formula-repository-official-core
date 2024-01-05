@@ -6,7 +6,7 @@ src-sha: cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8
 license: OpenSSL
 dep-upp: perl
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&
@@ -20,7 +20,7 @@ dopatch: |
 # https://github.com/openssl/openssl/issues/7582
 install: |
     # ./configure LIST | grep android
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         armv7a)  TARGET='android-arm'    ;;
         aarch64) TARGET='android-arm64'  ;;
         i686)    TARGET='android-x86'    ;;
@@ -35,7 +35,7 @@ install: |
         no-ssl3 \
         no-comp \
         no-asm \
-        -D__ANDROID_API__="$TARGET_ANDROID_API" \
+        -D__ANDROID_API__="$TARGET_PLATFORM_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
         --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl \

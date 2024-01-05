@@ -8,4 +8,4 @@ dep-pkg: libmediainfo
 dep-upp: libtool
 bsystem: autogen
 bscript: Project/GNU/CLI
-binbstd: yes
+binbstd: 1

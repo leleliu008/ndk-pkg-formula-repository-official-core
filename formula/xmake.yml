@@ -4,7 +4,7 @@ git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.5/xmake-v2.8.5.tar.gz
 src-sha: 19c67be3bcfcbda96ca87a18effac39bfccc443fbb3754c7bbc01511decd24af
 license: Apache-2.0
-binbstd: yes
+binbstd: 1
 install: |
     sed_in_place 's|if is_host "macosx"|if false|' configure
     sed_in_place 's|\*/cc|*-cc|' configure

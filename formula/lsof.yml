@@ -6,7 +6,7 @@ src-sha: 80308a614508814ac70eb2ae1ed2c4344dcf6076fa60afc7734d6b1a79e62b16
 license: Zlib
 dep-pkg: libtirpc libgetdtablesize
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 api-min: 26
 
@@ -21,7 +21,7 @@ install: |
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
     export LSOF_RANLIB="$RANLIB"
-    export LSOF_ARCH="$TARGET_ANDROID_ARCH"
+    export LSOF_ARCH="$TARGET_PLATFORM_ARCH"
     export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $LIBTIRPC"

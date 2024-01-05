@@ -6,7 +6,7 @@ license: MIT
 bsystem: cargo
 
 install: |
-    if [ "$TARGET_ANDROID_ARCH" = "x86_64" ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = "x86_64" ] ; then
         LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
         export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
     fi

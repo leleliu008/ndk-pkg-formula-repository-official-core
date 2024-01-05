@@ -6,7 +6,7 @@ license: OLDAP-2.8
 
 ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
-binbstd: yes
+binbstd: 1
 install: |
     gmakew clean &&
     gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR &&

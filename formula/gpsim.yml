@@ -4,6 +4,6 @@ src-url: https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32
 src-sha: c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69
 license: GPL-2.0-or-later
 dep-pkg: glib popt readline
-binbstd: yes
+binbstd: 1
 dopatch: ln -sfv "$glib_INSTALL_DIR/lib/libintl.a" ../lib/libintl.a
 install: configure --disable-gui

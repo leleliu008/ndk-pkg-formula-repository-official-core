@@ -6,7 +6,7 @@ dep-pkg: libbz2 libtiff libjpeg-turbo openssl
 license: GPL-2.0-or-later
 
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     OPENSSL_LIBS="$(pkg-config --libs openssl)"
     printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"

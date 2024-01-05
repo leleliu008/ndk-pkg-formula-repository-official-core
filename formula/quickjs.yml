@@ -5,7 +5,7 @@ src-url: https://bellard.org/quickjs/quickjs-2021-03-27.tar.xz
 src-sha: a45bface4c3379538dea8533878d694e289330488ea7028b105f72572fe7fe1a
 version: 2021.03.27
 license: MIT
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     sed_in_place 's|-g||' Makefile &&

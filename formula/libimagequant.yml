@@ -6,7 +6,7 @@ src-sha: ff1a34d3df9a1a5e5c1fa3895c036a885dc7b9740d7fccdf57e9ed678b8fb3a3
 license: GPL-3.0-or-later
 
 bscript: imagequant-sys
-binbstd: yes
+binbstd: 1
 install: |
     cargow build &&
     install_incs libimagequant.h &&

@@ -4,7 +4,7 @@ src-url: https://github.com/jarun/nnn/archive/v4.9.tar.gz
 src-sha: 9e25465a856d3ba626d6163046669c0d4010d520f2fb848b0d611e1ec6af1b22
 license: BSD-2-Clause
 dep-pkg: readline
-binbstd: yes
+binbstd: 1
 
 # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
 api-min: 26

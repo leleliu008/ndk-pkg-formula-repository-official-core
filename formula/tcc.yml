@@ -13,7 +13,7 @@ install: |
     run "$PACKAGE_BSCRIPT_DIR/configure" \
         --source-path="$PACKAGE_BSCRIPT_DIR" \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --cpu=$TARGET_ANDROID_ARCH \
+        --cpu=$TARGET_PLATFORM_ARCH \
         --cc=$CC \
         --ar=$AR \
         --extra-cflags="'$CPPFLAGS $CFLAGS'" \

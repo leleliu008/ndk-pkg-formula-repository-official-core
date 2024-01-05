@@ -7,7 +7,7 @@ license: MIT
 dep-pkg: readline
 dep-upp: bison patch
 bsystem: rake
-binbstd: yes
+binbstd: 1
 
 # double complex clog(double complex __z) __INTRODUCED_IN(26);
 api-min: 26
@@ -16,8 +16,8 @@ dopatch: |
     cat > build_config/android.rb <<EOF
     MRuby::CrossBuild.new('android') do |conf|
       params = {
-        :arch => ENV['TARGET_ANDROID_ABI'],
-        :sdk_version => ENV['TARGET_ANDROID_API'],
+        :arch => ENV['TARGET_PLATFORM_ABI'],
+        :sdk_version => ENV['TARGET_PLATFORM_VERS'],
         :toolchain => :clang,
       }
       toolchain :android, params
@@ -96,8 +96,8 @@ install: |
     export CC="$CC_FOR_BUILD"
     export LD="$CC_FOR_BUILD"
 
-    export TARGET_ANDROID_ABI
-    export TARGET_ANDROID_API
+    export TARGET_PLATFORM_ABI
+    export TARGET_PLATFORM_VERS
 
     export MRUBY_CONFIG=android
 

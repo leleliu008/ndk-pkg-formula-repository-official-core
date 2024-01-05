@@ -6,7 +6,7 @@ src-sha: 840af5366ab9b522bde525826be3ef0fb0af81c6a9ebd84caa600fea1731eee3
 license: Apache-2.0
 dep-upp: perl
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf &&
@@ -75,7 +75,7 @@ install: |
     fi
 
     # ./configure LIST | grep android
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         armv7a)  TARGET='android-arm'    ;;
         aarch64) TARGET='android-arm64'  ;;
         i686)    TARGET='android-x86'    ;;
@@ -90,7 +90,7 @@ install: |
         no-ssl3 \
         no-comp \
         no-asm \
-        -D__ANDROID_API__="$TARGET_ANDROID_API" \
+        -D__ANDROID_API__="$TARGET_PLATFORM_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
         --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl \

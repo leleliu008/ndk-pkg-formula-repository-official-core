@@ -7,7 +7,7 @@ dep-pkg: zlib openssl
 dep-upp: gmake perl
 bsystem: cargo
 install: |
-    if [ "$TARGET_ANDROID_ARCH" = "i686" ] ; then
+    if [ "$TARGET_PLATFORM_ARCH" = "i686" ] ; then
         LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
         export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
     fi

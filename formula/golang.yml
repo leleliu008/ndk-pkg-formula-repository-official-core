@@ -7,7 +7,7 @@ src-sha: 47b26a83d2b65a3c1c1bcace273b69bee49a7a7b5168a7604ded3d26a37bd787
 license: BSD-3-Clause
 version: 1.21.4
 dep-upp: bash
-binbstd: yes
+binbstd: 1
 bscript: src
 bsystem: go
 install: |

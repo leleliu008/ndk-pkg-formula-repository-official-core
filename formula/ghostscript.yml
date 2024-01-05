@@ -6,7 +6,7 @@ license: AGPL-3.0-or-later
 dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract liblanginfo
 dep-upp: patch
 bsystem: configure
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     rm -rf expat

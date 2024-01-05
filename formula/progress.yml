@@ -6,7 +6,7 @@ license: GPL-3.0-or-later
 dep-upp: pkg-config
 dep-pkg: ncurses libwordexp
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 
 install: |
     gmakew clean &&

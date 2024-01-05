@@ -5,7 +5,7 @@ src-url: https://fossies.org/linux/misc/xvidcore-1.3.7.tar.bz2
 src-sha: aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7
 license: GPL-2.0-or-later
 bscript: build/generic
-binbstd: yes
+binbstd: 1
 
 install: |
     configure \

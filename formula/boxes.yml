@@ -6,7 +6,7 @@ src-sha: fa4f7cd1876e4b22e950b4ca7c90776eb8edcf137316bdfd9c1780cf7cfb5d73
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
 dep-pkg: pcre2 libunistring
-binbstd: yes
+binbstd: 1
 
 dopatch: |
     sed_in_place 's|STRIP=true||' src/Makefile

@@ -18,7 +18,7 @@ dopatch: |
 # https://llvm.org/docs/GettingStarted.html
 # https://llvm.org/docs/HowToCrossCompileLLVM.html
 install: |
-    case $TARGET_ANDROID_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         armv7a)  LLVM_TARGETS_TO_BUILD=ARM     ;;
         aarch64) LLVM_TARGETS_TO_BUILD=AArch64 ;;
         i686)    LLVM_TARGETS_TO_BUILD=X86     ;;

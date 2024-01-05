@@ -3,8 +3,8 @@ web-url: https://giflib.sourceforge.io
 git-url: https://git.code.sf.net/p/giflib/code
 src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.1.tar.gz
 src-sha: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd
-binbstd: yes
-parallel: no
+binbstd: 1
+parallel: 0
 
 dopatch: |
     sed_in_place 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile

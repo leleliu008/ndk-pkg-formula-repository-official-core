@@ -6,7 +6,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libglob
 bsystem: gmake
 bscript: src
-binbstd: yes
+binbstd: 1
 
 dopatch: sed_in_place '/cp -f/d' makefile
 

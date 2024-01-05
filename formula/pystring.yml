@@ -1,6 +1,6 @@
 summary: C++ functions matching the interface and behavior of python string methods with std::string
 git-url: https://github.com/imageworks/pystring
-binbstd: yes
+binbstd: 1
 
 dopatch: sed_in_place '/rindex/d' "$NDKPKG_COMMON_H_FILEPATH"
 
