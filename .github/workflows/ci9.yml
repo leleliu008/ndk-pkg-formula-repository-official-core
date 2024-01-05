@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow9
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [PKGLIST]
+        pkg: [xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [PKGLIST]
+        pkg: [xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
 
     runs-on: ${{ matrix.os }}
 

@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [PKGLIST]
+        pkg: [suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [PKGLIST]
+        pkg: [suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake]
 
     runs-on: ${{ matrix.os }}
 
