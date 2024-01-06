@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget]
+        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium,pget]
+        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium]
 
     runs-on: ${{ matrix.os }}
 

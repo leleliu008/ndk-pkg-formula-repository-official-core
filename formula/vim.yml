@@ -4,7 +4,7 @@ git-url: https://github.com/vim/vim
 src-url: https://github.com/vim/vim/archive/refs/tags/v9.0.2100.tar.gz
 src-sha: 01e08b3234a357f6b17e80a695390ed537b50d10b9c95bf5b1ec9182e2c0725c
 license: Vim
-dep-pkg: gettext python3 lua
+dep-pkg: gettext-runtime python3 lua
 bsystem: configure
 binbstd: 1
 

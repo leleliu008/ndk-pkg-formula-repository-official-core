@@ -4,7 +4,7 @@ web-url: https://www.nano-editor.org/
 src-url: https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz
 src-sha: 86f3442768bd2873cec693f83cdf80b4b444ad3cc14760b74361474fc87a4526
 license: GPL-3.0-or-later
-dep-pkg: gettext libmagic
+dep-pkg: gettext-runtime libmagic
 bsystem: configure
 
 install: |

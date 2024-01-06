@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip]
+        pkg: [libmd,libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip]
+        pkg: [libmd,libmetalink,libmill,libmpc,libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtool,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx]
 
     runs-on: ${{ matrix.os }}
 

@@ -4,7 +4,7 @@ git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
 src-sha: 44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
 license: LGPL-2.1-or-later
-dep-pkg: gettext libffi pcre2
+dep-pkg: gettext-runtime libffi pcre2
 
 dopatch: |
     sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build

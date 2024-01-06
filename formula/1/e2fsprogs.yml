@@ -5,7 +5,7 @@ src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.45.6/e
 src-sha: 5f64ac50a2b60b8e67c5b382bb137dec39344017103caffc3a61554424f2d693
 license: GPL-2.0-or-later
 dep-upp: pkg-config
-dep-pkg: gettext libiconv
+dep-pkg: gettext-runtime libiconv
 
 # mntent.h: char* hasmntopt(const struct mntent* __entry, const char* __option) __INTRODUCED_IN(26);
 
