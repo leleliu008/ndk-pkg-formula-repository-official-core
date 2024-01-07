@@ -12,7 +12,7 @@ version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
 binbstd: 1
-ccflags: -include time.h
+ccflags: -include time.h -include strings.h
 
 dep-upp: patch
 dopatch: |
