@@ -4,7 +4,7 @@ web-url: https://nginx.org
 src-url: https://nginx.org/download/nginx-1.25.3.tar.gz
 src-sha: 64c5b975ca287939e828303fa857d22f142b251f17808dfe41733512d9cded86
 license: BSD-2-Clause
-dep-pkg: openssl pcre2 libcrypt libglob
+dep-pkg: openssl libpcre2 libcrypt libglob
 bsystem: gmake
 binbstd: 1
 
@@ -59,6 +59,6 @@ install: |
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt\"" \
-        --with-pcre &&
-    write_NGX_SYS_NERR &&
+        --with-pcre
+    write_NGX_SYS_NERR
     gmakew install

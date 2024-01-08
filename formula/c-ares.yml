@@ -1,8 +1,8 @@
 summary: Asynchronous DNS library
 git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se
-src-url: https://c-ares.haxx.se/download/c-ares-1.22.1.tar.gz
-src-sha: f67c180deb799c670d9dda995a18ce06f6c7320b6c6363ff8fa85b77d0da9db8
+src-url: https://c-ares.haxx.se/download/c-ares-1.25.0.tar.gz
+src-sha: 71832b93a48f5ff579c505f4869120c14e57b783275367207f1a98314aa724e5
 install: |
     cmakew \
         -DCARES_INSTALL=ON \

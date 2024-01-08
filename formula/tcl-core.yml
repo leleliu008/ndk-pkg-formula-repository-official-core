@@ -10,6 +10,7 @@ bscript: unix
 
 dopatch: |
     sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure
+    sed_in_place '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' ../pkgs/sqlite3.40.0/generic/../compat/sqlite3/sqlite3.c
 
 install: |
     if [ "$TARGET_PLATFORM_NBIT" -eq 64 ] ; then

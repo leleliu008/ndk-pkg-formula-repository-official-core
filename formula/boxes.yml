@@ -5,7 +5,7 @@ src-url: https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.2.1.tar.gz
 src-sha: fa4f7cd1876e4b22e950b4ca7c90776eb8edcf137316bdfd9c1780cf7cfb5d73
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
-dep-pkg: pcre2 libunistring
+dep-pkg: libpcre2 libunistring
 binbstd: 1
 
 dopatch: |
@@ -20,8 +20,8 @@ dopatch: |
 
 install: |
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
-    gmakew clean &&
-    gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    run install_bins out/boxes &&
-    run install_mans doc/boxes.1 &&
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"
+    run install_bins out/boxes
+    run install_mans doc/boxes.1
     run install_etcs boxes-config

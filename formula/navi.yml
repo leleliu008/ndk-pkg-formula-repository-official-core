@@ -1,6 +1,6 @@
 summary: Interactive cheatsheet tool for the command-line
 git-url: https://github.com/denisidoro/navi
-src-url: https://github.com/denisidoro/navi/archive/v2.22.1.tar.gz
-src-sha: a728ad6b6e18abe27ca2190983bedca719e46462007e61bedbc50fc9d15b89a5
+src-url: https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz
+src-sha: 579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799
 license: Apache-2.0
 install: cargow install --locked

@@ -4,7 +4,7 @@ git-url: https://github.com/swig/swig
 src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz
 src-sha: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
 license: GPL-3.0-or-later
-dep-pkg: pcre2
+dep-pkg: libpcre2
 
 install: |
     configure \
@@ -31,4 +31,4 @@ install: |
         --without-r \
         --without-d \
         --without-go \
-        PCRE2_CONFIG="$pcre2_INSTALL_DIR/bin/pcre2-config"
+        PCRE2_CONFIG="$libpcre2_INSTALL_DIR/bin/pcre2-config"

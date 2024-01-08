@@ -1,23 +1,7 @@
 summary: PNG image optimizing utility
-git-url: https://github.com/kornelski/pngquant
 web-url: https://pngquant.org
-src-url: https://pngquant.org/pngquant-2.18.0-src.tar.gz
-src-uri: https://fossies.org/linux/misc/pngquant-2.18.0-src.tar.gz
-src-sha: e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4
+git-url: https://github.com/kornelski/pngquant
+src-url: https://github.com/kornelski/pngquant/archive/refs/tags/3.0.3.tar.gz
+src-sha: ddd8889a9c269ba454d0c5e4f7167948d55d77c4570b23f671809fd3a68b6822
 dep-pkg: libpng lcms2
-dep-upp: pkg-config
-bsystem: gmake
-binbstd: 1
-
-install: |
-    export OSTYPE=Linux
-    
-    run ./configure \
-        --prefix="$PACKAGE_INSTALL_DIR" \
-        --disable-sse \
-        --with-libpng="$libpng_INSTALL_DIR" \
-        CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS'" \
-        LDFLAGS="'$LDFLAGS'" &&
-    gmakew clean &&
-    gmakew install
+bsystem: cargo

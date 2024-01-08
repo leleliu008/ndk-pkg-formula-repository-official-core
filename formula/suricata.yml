@@ -4,7 +4,7 @@ git-url: https://github.com/OISF/suricata
 src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.2.tar.gz
 src-sha: b4eb604838ef99a8396bc8b7bb54cad11f2442cbd7cbb300e7f5aab19097bc4d
 license: GPL-2.0-or-later
-dep-pkg: jansson libmagic libnet libpcap libyaml lz4 pcre2 libiconv libglob
+dep-pkg: jansson libmagic libnet libpcap libyaml lz4 libpcre2 libiconv libglob
 bsystem: autotools cargo
 
 install: |

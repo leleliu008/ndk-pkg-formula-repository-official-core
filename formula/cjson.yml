@@ -1,9 +1,8 @@
 summary: Ultralightweight JSON parser in ANSI C
 git-url: https://github.com/DaveGamble/cJSON
-src-url: https://github.com/DaveGamble/cJSON/archive/v1.7.16.tar.gz
-src-sha: 451131a92c55efc5457276807fc0c4c2c2707c9ee96ef90c47d68852d5384c6c
+src-url: https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.17.tar.gz
+src-sha: c91d1eeb7175c50d49f6ba2a25e69b46bd05cffb798382c19bfb202e467ec51c
 license: MIT
-
 install: |
     cmakew \
         -DENABLE_CJSON_UTILS=ON \

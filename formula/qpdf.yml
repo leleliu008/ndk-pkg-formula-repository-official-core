@@ -1,7 +1,7 @@
 summary: a command-line tool and C++ library that performs content-preserving transformations on PDF files
 git-url: https://github.com/qpdf/qpdf
-src-url: https://github.com/qpdf/qpdf/releases/download/v11.6.3/qpdf-11.6.3.tar.gz
-src-sha: c394b1b0cff4cd9d13b0f5e16bdf3cf54da424dc434f9d40264b7fe67acd90bc
+src-url: https://github.com/qpdf/qpdf/releases/download/v11.7.0/qpdf-11.7.0.tar.gz
+src-sha: f14a6ede3b7deb6bec1e327beeeb2e508e1a74aa7e62fbaa6f62d09c96627541
 license: Apache-2.0
 dep-pkg: libjpeg-turbo openssl zlib
 install: |

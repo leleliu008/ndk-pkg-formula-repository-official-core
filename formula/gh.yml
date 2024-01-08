@@ -1,7 +1,7 @@
 summary: GitHub official command-line tool
 git-url: https://github.com/cli/cli
-src-url: https://github.com/cli/cli/archive/refs/tags/v2.39.1.tar.gz
-src-sha: 14f4de2d1e8ec465b61315df13274f928364b9d9445675b475faa35c81330b4f
+src-url: https://github.com/cli/cli/archive/refs/tags/v2.40.1.tar.gz
+src-sha: 0bb2af951b4716067747184b5b5bbd90c270edee5b45a84e62a5a803bf7ef467
 license: MIT
 install: |
     gow -X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) \

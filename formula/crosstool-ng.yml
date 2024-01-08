@@ -8,12 +8,12 @@ dep-upp: gm4 flex bison patch libtool help2man texinfo file gawk gtar gzip bzip2
 dep-pkg: ncurses libiconv gettext-runtime
 
 install: |
-    export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.a $libiconv_LIBRARY_DIR/libiconv.a"
+    export LDFLAGS="$LDFLAGS $gettext_runtime_LIBRARY_DIR/libintl.a $libiconv_LIBRARY_DIR/libiconv.a"
     configure \
         --with-bash-completion \
         --with-ncurses \
         --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
-        --with-libintl-prefix="$gettext_INSTALL_DIR" \
+        --with-libintl-prefix="$gettext_runtime_INSTALL_DIR" \
         CURSES_LIBS="$ncurses_LIBRARY_DIR/libncurses.a" \
         PANEL_LIBS="$ncurses_LIBRARY_DIR/libpanel.a" \
         MENU_LIBS="$ncurses_LIBRARY_DIR/libmenu.a"

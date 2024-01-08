@@ -41,5 +41,5 @@ install: |
         --with-expat="$expat_INSTALL_DIR" \
         --with-iconv="$libiconv_INSTALL_DIR" \
         --with-openssl="$openssl_INSTALL_DIR" \
-        --with-libpcre2="$pcre2_INSTALL_DIR" \
+        --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
