@@ -10,7 +10,8 @@ binbstd: 1
 install: |
     OPENSSL_LIBS="$(pkg-config --libs openssl)"
     printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
-    sed_in_place "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure || return 1
+    sed_in_place "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure
+    sed_in_place 's|^main()|int main()|' configure
 
     # configure [options] [host]
     run ./configure \
@@ -25,7 +26,7 @@ install: |
         --with-bzip2 \
         --with-libtiff \
         --with-libjpeg \
-        --with-ssl="$openssl_INSTALL_DIR" &&
-    gmakew clean &&
-    gmakew &&
+        --with-ssl="$openssl_INSTALL_DIR"
+    gmakew clean
+    gmakew
     gmakew install

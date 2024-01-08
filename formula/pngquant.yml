@@ -1,7 +1,8 @@
 summary: PNG image optimizing utility
 web-url: https://pngquant.org
 git-url: https://github.com/kornelski/pngquant
-src-url: https://github.com/kornelski/pngquant/archive/refs/tags/3.0.3.tar.gz
-src-sha: ddd8889a9c269ba454d0c5e4f7167948d55d77c4570b23f671809fd3a68b6822
+src-url: https://static.crates.io/crates/pngquant/pngquant-3.0.3.crate
+src-sha: 68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232
 dep-pkg: libpng lcms2
 bsystem: cargo
+dopatch: run bsdtar vxf 68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232.crate --strip-components=1

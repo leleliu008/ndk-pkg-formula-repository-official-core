@@ -4,12 +4,4 @@ src-url: https://github.com/BinomialLLC/basis_universal/archive/refs/tags/1.16.4
 src-sha: e5740fd623a2f8472c9700b9447a8725a6f27d65b0b47c3e3926a60db41b8a64
 license: Apache-2.0
 bsystem: cmake
-
-dopatch: |
-    sed_in_place '/strip/c message("--")' CMakeLists.txt
-
-    if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
-        sed_in_place '/#include <vector>/a #define ftello(f) ftell(f)' encoder/basisu_enc.cpp &&
-        sed_in_place '/class png_cfile : public png_file/i #define ftello(f) ftell(f)' encoder/pvpngreader.cpp
-        sed_in_place '/class png_cfile : public png_file/i #define fseeko fseek' encoder/pvpngreader.cpp
-    fi
+dopatch: sed_in_place '/strip/c message("--")' CMakeLists.txt

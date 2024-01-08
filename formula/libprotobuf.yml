@@ -6,7 +6,7 @@ license: BSD-3-Clause
 dep-pkg: zlib jsoncpp abseil
 
 # used by other package. make sure protoc and libprotoc have the same version
-build0: |
+do12345: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
         -Dprotobuf_WITH_ZLIB=ON \

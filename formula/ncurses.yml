@@ -7,7 +7,7 @@ license: MIT
 dep-upp: gsed grep
 bsystem: configure
 
-build0: |
+do12345: |
     {
         # https://github.com/termux/termux-packages/issues/4487
         if command -v tic > /dev/null ; then

@@ -5,5 +5,5 @@ src-url: https://github.com/tlwg/libdatrie/releases/download/v0.2.13/libdatrie-0
 src-sha: 12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be
 license: LGPL-2.1-or-later
 dep-pkg: libiconv
-build0:  sed_in_place '/$(LN_S) trietool/d' "$PACKAGE_BSCRIPT_DIR/tools/Makefile.in" && configure
+do12345: sed_in_place '/$(LN_S) trietool/d' "$PACKAGE_BSCRIPT_DIR/tools/Makefile.in" && configure
 install: configure LIBS=-lcharset

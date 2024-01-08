@@ -7,6 +7,7 @@ license: BSD-3-Clause
 dep-pkg: libevent
 dep-upp: perl
 ppflags: -DPOSIX_MADV_DONTNEED=MADV_DONTNEED
+ccflags: -Wno-implicit-function-declaration
 
 # int shmctl(int __shm_id, int __cmd, struct shmid_ds* __buf) __INTRODUCED_IN(26);
 api-min: 26

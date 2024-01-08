@@ -7,6 +7,7 @@ dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 sfslink: 0
 
+dep-upp: patch
 fix-url: https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1
 fix-sha: c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e
 dopatch: |

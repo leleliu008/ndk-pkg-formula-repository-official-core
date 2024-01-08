@@ -7,7 +7,7 @@ license: ICU
 version: 73.2
 bscript: source
 
-build0: |
+do12345: |
     # https://www.talkwithdevices.com/archives/260
     case $NATIVE_OS_KIND in
         darwin) run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" MacOSX && make ;;

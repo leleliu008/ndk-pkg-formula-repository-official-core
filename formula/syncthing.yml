@@ -5,8 +5,7 @@ src-url: https://github.com/syncthing/syncthing/archive/refs/tags/v1.26.1.tar.gz
 src-sha: fcb6933f0e6cd3825f40f59986ab19a1a9fdd3f1a65c0fad935c71a32bc441d5
 license: MPL-2.0
 bsystem: go
-
-build0:  run go build build.go
+do12345: run go build build.go
 install: |
     TARGET_CC="$CC"
     TARGET_GOARCH="$GOARCH"

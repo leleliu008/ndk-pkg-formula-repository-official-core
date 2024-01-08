@@ -5,10 +5,6 @@ git-sha: 31e19f92f00c7003fa115047ce50978bc98c3a0d
 version: r3108
 license: GPL-2.0-only
 
-dopatch: |
-    sed_in_place 's/define fseek fseeko/true/' configure &&
-    sed_in_place 's/define ftell ftello/true/' configure
-
 install: |
     configure \
         --disable-asm \

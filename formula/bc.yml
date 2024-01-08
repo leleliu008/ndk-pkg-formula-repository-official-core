@@ -6,7 +6,7 @@ license: GPL-3.0-or-later
 dep-upp: bison flex ed texinfo
 dep-pkg: readline
 
-build0: |
+do12345: |
     configure --without-readline --without-libedit
     install -d           "$NATIVE_INSTALL_DIR/include"
     install bc/libmath.h "$NATIVE_INSTALL_DIR/include"
