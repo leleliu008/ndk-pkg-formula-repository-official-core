@@ -7,10 +7,3 @@ license: GPL-2.0-or-later
 dep-pkg: libssh2 libxml2
 ldflags: -liconv
 install: configure --enable-libaria2
-include: |
-    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
-    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
-    #if __ANDROID_API__ < 24
-    #define ftello(f) ftell(f)
-    #define fseeko    fseek
-    #endif

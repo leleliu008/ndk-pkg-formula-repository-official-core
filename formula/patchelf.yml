@@ -4,11 +4,3 @@ src-url: https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.1
 src-sha: 1952b2a782ba576279c211ee942e341748fdb44997f704dd53def46cd055470b
 license: GPL-3.0-or-later
 bsystem: configure
-
-include: |
-    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
-    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
-    #if __ANDROID_API__ < 24
-    #define ftello(f) ftell(f)
-    #define fseeko    fseek
-    #endif

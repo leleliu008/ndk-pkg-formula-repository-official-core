@@ -11,11 +11,3 @@ install: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
     cmakew -DBUILD_SHARED_LIBS=OFF -DCURL_INCLUDE_DIRS="$libcurl_INCLUDE_DIR" -DCURL_LIBRARIES="'$CURL_LIBRARIES'"
     cmakew -DBUILD_SHARED_LIBS=ON  -DCURL_INCLUDE_DIRS="$libcurl_INCLUDE_DIR" -DCURL_LIBRARIES="'$CURL_LIBRARIES'"
-
-include: |
-    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
-    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
-    #if __ANDROID_API__ < 24
-    #define ftello(f) ftell(f)
-    #define fseeko    fseek
-    #endif
