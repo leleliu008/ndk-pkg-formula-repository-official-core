@@ -1,4 +1,6 @@
 summary: The fastest file download client
 git-url: https://github.com/Code-Hex/pget
+src-url: https://github.com/Code-Hex/pget/archive/refs/tags/v0.2.1.tar.gz
+src-sha: fa7646bec975dd3995fb45d6b1f190565d6c4fae03c46c4eda34716c83ede03e
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION ./cmd/pget

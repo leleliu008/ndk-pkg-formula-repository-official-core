@@ -8,6 +8,15 @@ dep-pkg: gettext-runtime expat libcurl libpcre2 zlib
 dep-upp: gettext-tools patch
 bsystem: configure
 binbstd: 1
+
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif
+
 install: |
     printf '%s' '
     LS0tIHJ1bi1jb21tYW5kLmMJMjAyMy0wNi0wMSAxNTowMzowNS4wMDAwMDAwMDAgKzA4MDAKKysr

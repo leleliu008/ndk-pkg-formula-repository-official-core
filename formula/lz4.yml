@@ -4,8 +4,14 @@ git-url: https://github.com/lz4/lz4
 src-url: https://github.com/lz4/lz4/archive/v1.9.4.tar.gz
 src-sha: 0b0e3aa07c8c063ddf40b082bdf7e37a1562bda40a0ff5272957f3e987e0e54b
 license: BSD-2-Clause
-
 binbstd: 1
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif
 install: |
     gmakew clean   TARGET_OS=Linux
     gmakew install TARGET_OS=Linux \

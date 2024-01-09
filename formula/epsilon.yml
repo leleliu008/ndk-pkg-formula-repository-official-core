@@ -5,3 +5,11 @@ src-sha: 5421a15969d4d7af0ac0a11d519ba8d1d2147dc28d8c062bf0c52f3a0d4c54c4
 license: GPL-3.0-or-later
 dep-pkg: popt
 bsystem: configure
+
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif

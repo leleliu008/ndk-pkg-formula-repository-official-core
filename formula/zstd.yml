@@ -6,6 +6,15 @@ src-sha: 98e9c3d949d1b924e28e01eccb7deed865eefebf25c2f21c702e5cd5b63b85e1
 license: BSD-3-Clause
 dep-pkg: zlib liblzma
 bscript: build/cmake
+
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif
+
 install: |
     cmakew \
         -DZSTD_MULTITHREAD_SUPPORT=ON \

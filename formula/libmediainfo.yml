@@ -1,8 +1,8 @@
 summary: Unified display of technical and tag data for audio/video
 git-url: https://github.com/MediaArea/MediaInfoLib
 web-url: https://mediaarea.net/
-src-url: https://mediaarea.net/download/source/libmediainfo/23.10/libmediainfo_23.10.tar.xz
-src-sha: 76ebe502e0f310b559d5dd90727d9aafd5fabaaeca3442f38e629dfc07da0d22
+src-url: https://mediaarea.net/download/source/libmediainfo/23.11/libmediainfo_23.11.tar.xz
+src-sha: 197e54fcc79e3c0d5df44a8f58dc4e018bc2f85d13fa3bed54af3dc56d5e853d
 license: BSD-2-Clause
 dep-pkg: libzen libcurl zlib
 bscript: Project/CMake
@@ -11,3 +11,11 @@ install: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
     cmakew -DBUILD_SHARED_LIBS=OFF -DCURL_INCLUDE_DIRS="$libcurl_INCLUDE_DIR" -DCURL_LIBRARIES="'$CURL_LIBRARIES'"
     cmakew -DBUILD_SHARED_LIBS=ON  -DCURL_INCLUDE_DIRS="$libcurl_INCLUDE_DIR" -DCURL_LIBRARIES="'$CURL_LIBRARIES'"
+
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif

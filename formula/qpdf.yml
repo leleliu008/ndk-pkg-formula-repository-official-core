@@ -10,3 +10,11 @@ install: |
         -DBUILD_STATIC_LIBS=ON \
         -DUSE_IMPLICIT_CRYPTO=OFF \
         -DREQUIRE_CRYPTO_OPENSSL=ON
+
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif

@@ -1,7 +1,7 @@
 summary: Library for reading RAW files from digital photo cameras
 web-url: https://www.libraw.org/
-src-url: https://www.libraw.org/data/LibRaw-0.21.1.tar.gz
-src-sha: 630a6bcf5e65d1b1b40cdb8608bdb922316759bfb981c65091fec8682d1543cd
+src-url: https://www.libraw.org/data/LibRaw-0.21.2.tar.gz
+src-sha: fe7288013206854baf6e4417d0fb63ba4ed7227bf36fff021992671c2dd34b03
 license: LGPL-2.1-only
 dep-pkg: jasper lcms2
 dep-upp: libtool
@@ -13,3 +13,10 @@ install: |
         --enable-lcms \
         --enable-jasper \
         --enable-examples LIBS=-lc++_shared
+include: |
+    // int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
+    // off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
+    #if __ANDROID_API__ < 24
+    #define ftello(f) ftell(f)
+    #define fseeko    fseek
+    #endif

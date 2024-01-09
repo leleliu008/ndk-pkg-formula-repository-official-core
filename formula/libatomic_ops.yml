@@ -1,7 +1,7 @@
 summary: Implementations for atomic memory update operations
 git-url: https://github.com/ivmai/libatomic_ops
-src-url: https://github.com/ivmai/libatomic_ops/releases/download/v7.8.0/libatomic_ops-7.8.0.tar.gz
-src-sha: 15676e7674e11bda5a7e50a73f4d9e7d60452271b8acf6fd39a71fefdf89fa31
+src-url: https://github.com/ivmai/libatomic_ops/releases/download/v7.8.2/libatomic_ops-7.8.2.tar.gz
+src-sha: d305207fe207f2b3fb5cb4c019da12b44ce3fcbc593dfd5080d867b1a2419b51
 license: GPL-2.0-or-later
 install: |
     configure \

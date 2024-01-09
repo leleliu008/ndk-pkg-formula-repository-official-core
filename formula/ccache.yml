@@ -1,8 +1,8 @@
 summary: Object-file caching compiler wrapper
 web-url: https://ccache.dev
 git-url: https://github.com/ccache/ccache
-src-url: https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.xz
-src-sha: e47374c810b248cfca3665ee1d86c7c763ffd68d9944bc422d9c1872611f2b11
+src-url: https://github.com/ccache/ccache/releases/download/v4.9/ccache-4.9.tar.xz
+src-sha: 1ebc72324e3ab52af0b562bf54189d108e85eef6478d6304a345a3c2dc4018e0
 license: GPL-3.0-or-later
 dep-pkg: hiredis libzstd blake3
 
@@ -11,8 +11,8 @@ dep-pkg: hiredis libzstd blake3
 api-min: 24
 
 dopatch: |
-    sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&
-    sed_in_place 's|third_party/blake3/||'     src/Hash.hpp &&
+    sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp
+    sed_in_place 's|third_party/blake3/||'     src/Hash.hpp
     sed_in_place '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
 
 install: |
