@@ -6,6 +6,9 @@ src-sha: c1e0bb2a4427a9024390c662cd532d664c4b36b8ff444ed5e54b115fdb7a1aea
 license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
 
+dopatch: |
+    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
+    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 install: |
     export LDFLAGS="$LDFLAGS -L$PWD/gettext-tools/gnulib-lib/.libs/"
     configure \

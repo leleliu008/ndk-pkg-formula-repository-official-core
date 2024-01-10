@@ -4,4 +4,7 @@ web-url: https://www.libsdl.org/
 src-url: https://www.libsdl.org/release/SDL2-2.28.5.tar.gz
 src-sha: 332cb37d0be20cb9541739c61f79bae5a477427d79ae85e352089afdaf6666e4
 license: Zlib
+dopatch: |
+    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
+    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 install: cmakew -DSDL_STATIC=ON -DSDL_SHARED=ON

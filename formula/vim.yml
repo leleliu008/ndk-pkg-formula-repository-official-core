@@ -8,6 +8,9 @@ dep-pkg: gettext-runtime python3 lua
 bsystem: configure
 binbstd: 1
 
+dopatch: |
+    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
+    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 install: |
     printf '\n' > ../include.h
 
