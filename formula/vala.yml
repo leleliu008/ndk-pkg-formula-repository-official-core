@@ -5,5 +5,6 @@ src-url: https://download.gnome.org/sources/vala/0.56/vala-0.56.14.tar.xz
 src-sha: 9382c268ca9bdc02aaedc8152a9818bf3935273041f629c56de410e360a3f557
 license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison
-dep-pkg: glib graphviz
+dep-pkg: libxml2 glib graphviz
+ldflags: -Wl,--allow-shlib-undefined
 install: configure --with-cgraph

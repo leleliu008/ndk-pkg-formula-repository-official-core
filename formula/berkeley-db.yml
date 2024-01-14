@@ -9,8 +9,8 @@ bscript: dist
 dopatch: sed_in_place 's| install_docs||' Makefile.in
 install: |
     configure \
-        --enable-cxx \
-        --enable-stl \
+        --enable-cxx=no \
+        --enable-stl=no \
         --enable-dbm \
         --enable-hash \
         --enable-compat185 \

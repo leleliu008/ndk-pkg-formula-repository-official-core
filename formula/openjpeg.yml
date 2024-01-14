@@ -5,6 +5,10 @@ src-url: https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz
 src-sha: 0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a
 license: BSD-2-Clause
 dep-pkg: libpng lcms2
+
+dopatch: |
+    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
+    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 install: |
     cmakew \
         -DBUILD_DOC=OFF \

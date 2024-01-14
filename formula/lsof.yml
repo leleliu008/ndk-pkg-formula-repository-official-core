@@ -26,8 +26,8 @@ install: |
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $LIBTIRPC"
     
-    run ./Configure -clean &&
-    run ./Configure -n linux &&
-    gmakew &&
-    run install_bins lsof &&
+    run ./Configure -clean
+    run ./Configure -n linux
+    gmakew
+    run install_bins lsof
     run install_mans Lsof.8

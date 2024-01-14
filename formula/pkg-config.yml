@@ -5,7 +5,7 @@ src-sha: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 license: GPL-2.0-or-later
 dep-pkg: libiconv
 bsystem: configure
-
+ccflags: -Wno-implicit-function-declaration
 dopatch: |
     CACHE_FILE="$PACKAGE_BSCRIPT_DIR/glib/configure.cache"
     sed_in_place '/HAVE_PTHREAD_COND_TIMEDWAIT_MONOTONIC/d' glib/configure

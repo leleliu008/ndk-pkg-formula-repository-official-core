@@ -4,7 +4,7 @@ src-url: https://github.com/sharkdp/bat/archive/v0.24.0.tar.gz
 src-sha: 907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 license: Apache-2.0
 dep-pkg: libgetloadavg
-
+ccflags: -Dindex=strchr
 install: |
     cargow install
     install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
