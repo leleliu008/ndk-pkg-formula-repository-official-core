@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium]
+        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2]
 
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - if:  ${{ github.ref_name == 'dev' }}
         run: |
@@ -67,14 +67,14 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pdfium]
+        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2]
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg

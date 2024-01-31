@@ -1,10 +1,10 @@
-summary: Small static webserver without CGI
+summary: A small static web server without CGI
 web-url: https://unix4lyfe.org/darkhttpd/
 git-url: https://github.com/emikulic/darkhttpd
-src-url: https://github.com/emikulic/darkhttpd/archive/v1.14.tar.gz
-src-sha: e063de9efa5635260c8def00a4d41ec6145226a492d53fa1dac436967670d195
+src-url: https://github.com/emikulic/darkhttpd/archive/refs/tags/v1.15.tar.gz
+src-sha: ea48cedafbf43186f4a8d1afc99b33b671adee99519658446022e6f63bd9eda9
 license: ISC
 
 install: |
-    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -static -o darkhttpd "$PACKAGE_BSCRIPT_DIR/darkhttpd.c" &&
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -static -o darkhttpd "$PACKAGE_BSCRIPT_DIR/darkhttpd.c"
     install_bins darkhttpd

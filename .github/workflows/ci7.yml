@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua]
+        pkg: [pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship]
 
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - if:  ${{ github.ref_name == 'dev' }}
         run: |
@@ -67,14 +67,14 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua]
+        pkg: [pdfium,pget,physfs,pigz,pjsip,pkgconf,pkg-config,plog,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship]
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg

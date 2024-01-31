@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh]
+        pkg: [stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz]
 
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - if:  ${{ github.ref_name == 'dev' }}
         run: |
@@ -67,14 +67,14 @@ jobs:
       matrix:
         os:  [macos-12, macos-13]
         arch: [armv7a, aarch64, i686, x86_64]
-        pkg: [supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh]
+        pkg: [stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz]
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - run: export -p
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg

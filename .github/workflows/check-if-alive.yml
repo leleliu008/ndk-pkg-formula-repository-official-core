@@ -16,7 +16,7 @@ jobs:
     container: fpliu/ndk-pkg
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: install -d ~/.ndk-pkg/repos.d/offical-core
 

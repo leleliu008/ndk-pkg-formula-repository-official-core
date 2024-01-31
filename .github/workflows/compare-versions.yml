@@ -16,7 +16,7 @@ jobs:
     steps:
       - run: brew update
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: ./compare-versions-with-brew
       - run: ./compare-versions-with-maven
