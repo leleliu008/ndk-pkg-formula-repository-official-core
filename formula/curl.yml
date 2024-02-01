@@ -1,8 +1,8 @@
-summary: Get a file from an HTTP, HTTPS or FTP server
+summary: A free and easy-to-use command-line tool to get a file from an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.5.0.tar.bz2
-src-sha: ce4b6a6655431147624aaf582632a36fe1ade262d5fab385c60f78942dd8d87b
+src-url: https://curl.haxx.se/download/curl-8.6.0.tar.bz2
+src-sha: b4785f2d8877fa92c0e45d7155cf8cc6750dbda961f4b1a45bcbec990cf2fa9b
 dep-pkg: libnghttp2 openssl libzstd brotli
 license: curl
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
@@ -17,4 +17,5 @@ install: |
         --without-ngtcp2 \
         --without-quiche \
         --without-librtmp \
-        --without-libidn2
+        --without-libidn2 \
+        --without-libpsl

@@ -1,8 +1,8 @@
 summary: Decentralized, peer to peer payment network
 git-url: https://github.com/bitcoin/bitcoin
 web-url: https://bitcoincore.org/
-src-url: https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz
-src-sha: bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9
+src-url: https://bitcoincore.org/bin/bitcoin-core-26.0/bitcoin-26.0.tar.gz
+src-sha: ab1d99276e28db62d1d9f3901e85ac358d7f1ebcb942d348a9c4e46f0fcdc0a1
 license: MIT
 dep-pkg: libevent libzmq boost
 dep-upp: libtool

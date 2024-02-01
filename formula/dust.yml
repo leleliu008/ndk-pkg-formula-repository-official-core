@@ -1,6 +1,10 @@
-summary: More intuitive version of du(1) in rust
+summary: A more intuitive version of du(1) in rust
 git-url: https://github.com/bootandy/dust
-src-url: https://github.com/bootandy/dust/archive/v0.8.6.tar.gz
-src-sha: feede818e814011207c5bfeaf06dd9fc95825c59ab70942aa9b9314791c5d6b6
+src-url: https://github.com/bootandy/dust/archive/refs/tags/v0.9.0.tar.gz
+src-sha: 70efd66e662fcd93bbc6cf2f8c3104a1de7e52090f709e9040a34bdc7c72ea9c
 license: Apache-2.0
 bsystem: cargo
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24

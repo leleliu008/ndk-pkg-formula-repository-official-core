@@ -1,12 +1,13 @@
 summary: Run and Test HTTP Requests with plain text and curl
 web-url: https://hurl.dev
 git-url: https://github.com/Orange-OpenSource/hurl
-src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/4.1.0.tar.gz
-src-sha: 3356f64158e6dc5f2e29c37eee80a43332b1734baa7380356affeb5160ffca09
+src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/4.2.0.tar.gz
+src-sha: 8ede2b3e9e1e1fb80000362750814b0fd07911506c1ea13e38e6c2fe80f447f0
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 install: |
-    cargow install --path packages/hurl &&
-    cargow install --path packages/hurlfmt &&
-    install_mans docs/manual/hurl.1 &&
-    install_mans docs/manual/hurlfmt.1
+    for item in hurl hurlfmt
+    do
+        cargow install --path packages/$item
+        install_mans docs/manual/$item.1
+    done
