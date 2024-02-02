@@ -1,11 +1,12 @@
 summary: C library and utilities for Manipulating POSIX Access Control Lists
 web-url: https://savannah.nongnu.org/projects/acl
-src-url: https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.gz
-src-sha: 760c61c68901b37fdd5eefeeaf4c0c7a26bdfdd8ac747a1edff1ce0e243c11af
+src-url: https://download.savannah.nongnu.org/releases/acl/acl-2.3.2.tar.gz
+src-sha: 5f2bdbad629707aa7d85c623f994aa8a1d2dec55a73de5205bac0bf6058a2f7c
 license: GPL-2.0-or-later
 dep-pkg: attr
 bsystem: configure
 
 # https://github.com/android/ndk/issues/964
 # __register_atfork; # introduced=23
-api-min: 23
+# int getgrnam_r(const char* _Nonnull __name, struct group* __BIONIC_COMPLICATED_NULLNESS __group, char* _Nonnull __buf, size_t __n, struct group* _Nullable *_Nonnull __result) __INTRODUCED_IN(24);
+api-min: 24

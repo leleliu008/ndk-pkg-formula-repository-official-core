@@ -1,8 +1,8 @@
 summary: New file format for still image compression
 web-url: https://jpeg.org/jpegxl/index.html
 git-url: https://github.com/libjxl/libjxl
-src-url: https://github.com/libjxl/libjxl/archive/v0.8.2.tar.gz
-src-sha: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
+src-url: https://github.com/libjxl/libjxl/archive/refs/tags/v0.9.1.tar.gz
+src-sha: a0e72e9ece26878147069ad4888ac3382021d4bbee71c2e1b687d5bde7fd7e01
 license: BSD-3-Clause
 dep-pkg: brotli libwebp openexr
 
@@ -17,4 +17,5 @@ install: |
         -DJPEGXL_ENABLE_BENCHMARK=OFF \
         -DJPEGXL_WARNINGS_AS_ERRORS=OFF \
         -DJPEGXL_FORCE_SYSTEM_BROTLI=ON \
-        -DJPEGXL_VERSION=$PACKAGE_VERSION
+        -DJPEGXL_VERSION=$PACKAGE_VERSION \
+        -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"

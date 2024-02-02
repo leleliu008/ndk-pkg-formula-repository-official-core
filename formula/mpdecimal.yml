@@ -1,7 +1,7 @@
 summary: Library for decimal floating point arithmetic
 web-url: https://www.bytereef.org/mpdecimal/
-src-url: https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-2.5.1.tar.gz
-src-sha: 9f9cd4c041f99b5c49ffb7b59d9f12d95b683d88585608aa56a6307667b2b21f
+src-url: https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.0.tar.gz
+src-sha: 942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c
 license: BSD-2-Clause
 bsystem: configure
 binbstd: 1
