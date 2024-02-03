@@ -1,6 +1,6 @@
 summary: A C library for the MaxMind DB file format
 git-url: https://github.com/maxmind/libmaxminddb
-src-url: https://github.com/maxmind/libmaxminddb/releases/download/1.8.0/libmaxminddb-1.8.0.tar.gz
-src-sha: 1107799f77be6aa3b9796ad0eed8ffcc334bf45f8bd18e6a984d8adf3e719c6d
+src-url: https://github.com/maxmind/libmaxminddb/releases/download/1.9.1/libmaxminddb-1.9.1.tar.gz
+src-sha: a80682a89d915fdf60b35d316232fb04ebf36fff27fda9bd39fe8a38d3cd3f12
 license: Apache-2.0
 bsystem: cmake

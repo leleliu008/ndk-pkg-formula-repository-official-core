@@ -1,7 +1,7 @@
 summary: Hierarchical, reference-counted memory pool with destructors
 web-url: https://talloc.samba.org/
-src-url: https://www.samba.org/ftp/talloc/talloc-2.4.1.tar.gz
-src-sha: 410a547f08557007be0e88194f218868358edc0ab98c98ba8c167930db3d33f9
+src-url: https://www.samba.org/ftp/talloc/talloc-2.4.2.tar.gz
+src-sha: 85ecf9e465e20f98f9950a52e9a411e14320bc555fa257d87697b7e7a9b1d8a6
 license: GPL-3.0-or-later
 dep-upp: python3
 binbstd: 1
@@ -11,8 +11,9 @@ binbstd: 1
 api-min: 23
 
 dopatch: |
-    sed_in_place 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py &&
-    cat <<EOF > cross-answers.txt
+    sed_in_place 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py
+
+    cat > cross-answers.txt <<EOF
     Checking uname sysname type: "Linux"
     Checking uname machine type: "dontcare"
     Checking uname release type: "dontcare"
@@ -46,6 +47,6 @@ install: |
         --disable-rpath \
         --disable-python \
         --cross-compile \
-        --cross-answers=cross-answers.txt -v &&
-    $AR rcu libtalloc.a bin/default/talloc*.o &&
+        --cross-answers=cross-answers.txt -v
+    $AR rcu libtalloc.a bin/default/talloc*.o
     install_libs libtalloc.a
