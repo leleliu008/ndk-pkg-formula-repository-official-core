@@ -6,5 +6,7 @@ src-sha: e9fd27218d5394904e4e39788f9b1742711c3e6b41689a31aa3380bd5aa4f426
 license: GPL-3.0-or-later
 dep-pkg: libgpg-error
 install: |
-    export ac_cv_path_GPGRT_CONFIG="$libgpg_error_INSTALL_DIR/bin/gpgrt-config"
-    configure --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR"
+    configure \
+        --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR" \
+        ac_cv_path_GPG_ERROR_CONFIG=no \
+        ac_cv_path_GPGRT_CONFIG="$libgpg_error_INSTALL_DIR/bin/gpgrt-config"
