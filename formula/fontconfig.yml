@@ -1,8 +1,8 @@
 summary: XML-based font configuration tools
 web-url: https://wiki.freedesktop.org/www/Software/fontconfig
 git-url: https://gitlab.freedesktop.org/fontconfig/fontconfig
-src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.2.tar.xz
-src-sha: dba695b57bce15023d2ceedef82062c2b925e51f5d4cc4aef736cf13f60a468b
+src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz
+src-sha: 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
 license: MIT
 dep-upp: pkg-config gperf python3
 dep-pkg: gettext-runtime libiconv util-linux json-c expat freetype2-with-harfbuzz
