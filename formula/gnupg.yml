@@ -19,4 +19,7 @@ install: |
         --with-npth-prefix="$npth_INSTALL_DIR" \
         --with-bzip2="$bzip2_INSTALL_DIR" \
         --with-readline="$readline_INSTALL_DIR" \
-        --with-libiconv-prefix="$libincov_INSTALL_DIR"
+        --with-libiconv-prefix="$libincov_INSTALL_DIR" \
+        ac_cv_path_KSBA_CONFIG="$libksba_INSTALL_DIR/bin/ksba-config" \
+        ac_cv_path_GPG_ERROR_CONFIG=no \
+        ac_cv_path_GPGRT_CONFIG="$libgpg_error_INSTALL_DIR/bin/gpgrt-config"

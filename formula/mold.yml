@@ -7,7 +7,7 @@ dep-pkg: mimalloc tbb xxhash zlib libzstd openssl
 dopatch: sed_in_place '/find_package(ZLIB/a find_package(Threads)' CMakeLists.txt
 install: |
     cmakew \
-        -DMOLD_LTO=ON \
+        -DMOLD_LTO=OFF \
         -DMOLD_USE_ASAN=OFF \
         -DMOLD_USE_TSAN=OFF \
         -DMOLD_USE_MIMALLOC=ON \
