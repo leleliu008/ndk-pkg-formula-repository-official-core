@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        arch: [armv7a, aarch64, i686, x86_64]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,coreutils]
 
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.arch }}/${{ matrix.pkg }}
+          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }}
 
 
   macos:
@@ -66,7 +66,7 @@ jobs:
 
       matrix:
         os:  [macos-12, macos-13]
-        arch: [armv7a, aarch64, i686, x86_64]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook,broot,bullet,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,coreutils]
 
     runs-on: ${{ matrix.os }}
@@ -102,4 +102,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.arch }}/${{ matrix.pkg }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }}
