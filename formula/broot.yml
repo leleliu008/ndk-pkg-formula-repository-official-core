@@ -1,3 +1,4 @@
+pkgtype: exe
 summary: New way to see and navigate directory trees
 web-url: https://dystroy.org/broot/
 git-url: https://github.com/Canop/broot

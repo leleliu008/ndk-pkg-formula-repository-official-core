@@ -1,4 +1,4 @@
-pkgtype: bin
+pkgtype: exe
 summary: Compression and file packaging/archive utility
 web-url: https://infozip.sourceforge.io/Zip.html
 

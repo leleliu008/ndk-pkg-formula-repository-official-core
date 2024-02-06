@@ -1,3 +1,4 @@
+pkgtype: exe
 summary: Automatically generate simple man pages
 web-url: https://www.gnu.org/software/help2man
 src-url: https://ftp.gnu.org/gnu/help2man/help2man-1.49.3.tar.xz
