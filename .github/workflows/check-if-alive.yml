@@ -18,13 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
 
-      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
-            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
             branch: master
             pinned: 1
             enabled: 1
@@ -35,4 +35,8 @@ jobs:
       - run: ndk-pkg env
       - run: ndk-pkg setup
       - run: ndk-pkg sysinfo
-      - run: ndk-pkg fetch @all
+      - run: |
+          for item in $(ndk-pkg ls-available)
+          do
+            ndk-pkg fetch "$item"
+          done
