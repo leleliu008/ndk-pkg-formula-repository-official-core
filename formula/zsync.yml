@@ -1,6 +1,5 @@
 summary: A file transfer program
 web-url: http://zsync.moria.org.uk/
-    #src-url: http://zsync.moria.org.uk/download/zsync-0.6.2.tar.bz2
 src-url: https://distfiles.macports.org/zsync/zsync-0.6.2.tar.bz2
 src-sha: 0b9d53433387aa4f04634a6c63a5efa8203070f2298af72a705f9be3dda65af2
 license: Artistic-2.0
