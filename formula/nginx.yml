@@ -34,7 +34,7 @@ dopatch: |
 
 install: |
     export NGX_SYSTEM=Linux
-    export NGX_RELEASE=unkown
+    export NGX_RELEASE=unknown
     export NGX_MACHINE=$TARGET_PLATFORM_ARCH
 
     if [ "$TARGET_PLATFORM_NBIT" -eq '64' ] ; then
@@ -55,7 +55,7 @@ install: |
 
     run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --crossbuild=Linux:unkown:$TARGET_PLATFORM_ARCH \
+        --crossbuild=Linux:unknown:$TARGET_PLATFORM_ARCH \
         --with-cc="$CC" \
         --with-cc-opt="\"$CFLAGS $CPPFLAGS -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE=1 -D__USE_GNU\"" \
         --with-ld-opt="\"$LDFLAGS -lcrypto -lcrypt\"" \

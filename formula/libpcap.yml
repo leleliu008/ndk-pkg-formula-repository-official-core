@@ -1,4 +1,4 @@
-summary: Packet(TCP/IP) Capture libray
+summary: Packet(TCP/IP) Capture library
 git-url: https://github.com/the-tcpdump-group/libpcap
 web-url: https://www.tcpdump.org
 src-url: https://www.tcpdump.org/release/libpcap-1.10.4.tar.gz

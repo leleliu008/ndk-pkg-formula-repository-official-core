@@ -112,14 +112,14 @@ dopatch: |
                     if(item MATCHES ".*libm\\.a")
                 elseif(item MATCHES ".*libpthread\\.a")
                 elseif(item MATCHES "/.*")
-                    get_filename_component(LIBRARIE_FILENAME \${item} NAME)
+                    get_filename_component(LIBRARY_FILENAME \${item} NAME)
 
-                    if (NOT TARGET  TIFF::\${LIBRARIE_FILENAME})
-                        add_library(TIFF::\${LIBRARIE_FILENAME} UNKNOWN IMPORTED)
-                        set_target_properties(TIFF::\${LIBRARIE_FILENAME} PROPERTIES IMPORTED_LOCATION "\${item}")
+                    if (NOT TARGET  TIFF::\${LIBRARY_FILENAME})
+                        add_library(TIFF::\${LIBRARY_FILENAME} UNKNOWN IMPORTED)
+                        set_target_properties(TIFF::\${LIBRARY_FILENAME} PROPERTIES IMPORTED_LOCATION "\${item}")
                     endif()
 
-                    list(APPEND TIFF_LIBRARIES TIFF::\${LIBRARIE_FILENAME})
+                    list(APPEND TIFF_LIBRARIES TIFF::\${LIBRARY_FILENAME})
                 endif()
             endforeach()
 
