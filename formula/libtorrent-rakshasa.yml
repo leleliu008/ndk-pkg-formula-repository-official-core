@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: zlib openssl libexecinfo
 dep-upp: libtool
 bsystem: autogen
-
+xxflags: -std=c++11
 install: |
     configure \
         --disable-largefile \

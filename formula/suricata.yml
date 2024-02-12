@@ -1,8 +1,8 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata
-src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.2.tar.gz
-src-sha: b4eb604838ef99a8396bc8b7bb54cad11f2442cbd7cbb300e7f5aab19097bc4d
+src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.3.tar.gz
+src-sha: ea0742d7a98783f1af4a57661af6068bc2d850ac3eca04b3204d28ce165e35ff
 license: GPL-2.0-or-later
 dep-pkg: jansson libmagic libnet libpcap libyaml lz4 libpcre2 libiconv libglob
 bsystem: autotools cargo

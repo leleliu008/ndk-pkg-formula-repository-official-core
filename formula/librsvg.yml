@@ -9,11 +9,6 @@ dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
 dopatch: printf 'INPUT(%s)\n' "-lintl -lc++_shared $SYSTEM_LIBRARY_DIR/libm.a" > ../lib/libm.a
 install: |
-    if [ "$TARGET_PLATFORM_ARCH" = "x86_64" ] ; then
-        LIBCLANG_RT_BUILTINS_FILEPATH="$("$CC" -print-libgcc-file-name)"
-        export RUSTFLAGS="$RUSTFLAGS -Clink-arg=$LIBCLANG_RT_BUILTINS_FILEPATH"
-    fi
-
     configure \
         --enable-tools=yes \
         --enable-pixbuf-loader=yes \
