@@ -43,13 +43,20 @@ install: |
 
     export CPPFLAGS="$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2"
 
+    export LDFLAGS="$LDFLAGS -fopenmp -static-openmp"
+
     export ac_cv_lib_pthread_pthread_create=yes
+
+    export CCAUX="$CC_FOR_BUILD"
+    export CFLAGSAUX="$CFLAGS_FOR_BUILD"
+    export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
+    export LDFLAGSAUX="$LDFLAGS_FOR_BUILD"
 
     configure \
         --disable-compile-inits \
         --disable-cups \
         --disable-gtk \
         --with-system-libtiff \
-        --without-x &&
-    run make soclean &&
+        --without-x
+    run make soclean
     run make install-so

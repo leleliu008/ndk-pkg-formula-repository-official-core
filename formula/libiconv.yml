@@ -6,10 +6,11 @@ src-sha: 8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
 license: GPL-3.0-or-later LGPL-2.0-or-later
 
 install: |
-    configure --enable-extra-encodings && {
-        for item in iconv charset
-        do
-            install_pc_file lib$item <<EOF
+    configure --enable-extra-encodings
+
+    for item in iconv charset
+    do
+        install_pc_file "lib$item" <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
@@ -22,5 +23,4 @@ install: |
     Libs: -L\${libdir} -l$item
     Cflags: -I\${includedir}
     EOF
-        done
-    }
+    done
