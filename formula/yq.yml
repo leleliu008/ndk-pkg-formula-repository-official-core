@@ -2,7 +2,7 @@ pkgtype: exe
 summary: A lightweight and portable command-line YAML processor
 web-url: https://mikefarah.gitbook.io/yq
 git-url: https://github.com/mikefarah/yq
-src-url: https://github.com/mikefarah/yq/archive/refs/tags/v4.40.7.tar.gz
-src-sha: c38024d40ee37d26caba1824965d9ea1d65468f48b2bacd45647ff4f547fa59f
+src-url: https://github.com/mikefarah/yq/archive/refs/tags/v4.41.1.tar.gz
+src-sha: 25d61e72887f57510f88d1a30d515c7e2d79e7c6dce5c96aea7c069fcbc089e7
 license: MIT
 install: gow
