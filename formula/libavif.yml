@@ -1,7 +1,7 @@
 summary: Library for encoding and decoding .avif files
 git-url: https://github.com/AOMediaCodec/libavif
-src-url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.3.tar.gz
-src-sha: 35e3cb3cd7158209dcc31d3bf222036de5b9597e368a90e18449ecc89bb86a19
+src-url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.4.tar.gz
+src-sha: dc56708c83a4b934a8af2b78f67f866ba2fb568605c7cf94312acf51ee57d146
 license: BSD-2-Clause
 dep-pkg: aom
 dep-upp: nasm

@@ -21,7 +21,7 @@ install: |
         -DENABLE_THREADS=ON \
         -DENABLE_APP=ON \
         -DENABLE_HTTP3=OFF \
-        -DENABLE_EXAMPLES=ON \
+        -DENABLE_EXAMPLES=OFF \
         -DENABLE_HPACK_TOOLS=ON \
         -DENABLE_ASIO_LIB=OFF \
         -DENABLE_STATIC_LIB=ON \

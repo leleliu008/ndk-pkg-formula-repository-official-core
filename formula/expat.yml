@@ -1,8 +1,8 @@
 summary: XML 1.0 parser
 web-url: https://libexpat.github.io
 git-url: https://github.com/libexpat/libexpat
-src-url: https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.xz
-src-sha: ef2420f0232c087801abf705e89ae65f6257df6b7931d37846a193ef2e8cdcbe
+src-url: https://github.com/libexpat/libexpat/releases/download/R_2_6_0/expat-2.6.0.tar.lz
+src-sha: 138438bab8658b049e6eba74aac11dd71c7bdd6bb80b3bc4c18bfa5a65f08249
 license: MIT
 install: |
     CMAKE_COMMON_OPTIONS="-DEXPAT_BUILD_DOCS=OFF -DEXPAT_BUILD_TESTS=OFF -DEXPAT_BUILD_FUZZERS=OFF -DEXPAT_BUILD_EXAMPLES=OFF -DEXPAT_BUILD_TOOLS=OFF"

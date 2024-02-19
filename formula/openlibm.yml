@@ -1,14 +1,13 @@
 summary: High quality, portable, open source libm implementation
 web-url: https://openlibm.org
 git-url: https://github.com/JuliaMath/openlibm
-src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz
-src-sha: ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf
+src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.2.tar.gz
+src-sha: 7244f9aa468584744e260cef740d57d10eab6e9c05f62084f8f2ba457f4b4b1d
 license: MIT ISC BSD-2-Clause
 bsystem: gmake
 binbstd: 1
 
-dopatch: |
-    sed_in_place 's|-mhard-float||g' Make.inc
+dopatch: sed_in_place 's|-mhard-float||g' Make.inc
 
 install: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
@@ -17,7 +16,7 @@ install: |
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
 
-    gmakew clean &&
+    gmakew clean
     gmakew install \
         prefix="$PACKAGE_INSTALL_DIR" \
         CC="$CC" \
