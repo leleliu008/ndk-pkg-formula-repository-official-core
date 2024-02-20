@@ -1,8 +1,8 @@
 summary: HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 git-url: https://github.com/nginx/nginx
 web-url: https://nginx.org
-src-url: https://nginx.org/download/nginx-1.25.3.tar.gz
-src-sha: 64c5b975ca287939e828303fa857d22f142b251f17808dfe41733512d9cded86
+src-url: https://nginx.org/download/nginx-1.25.4.tar.gz
+src-sha: 760729901acbaa517996e681ee6ea259032985e37c2768beef80df3a877deed9
 license: BSD-2-Clause
 dep-pkg: openssl libpcre2 libcrypt libglob
 bsystem: gmake
@@ -28,8 +28,8 @@ dopatch: |
         sed_in_place '1i set -x' configure
     fi
 
-    sed_in_place 's/#if (NGX_READ_EVENT != EPOLLIN|EPOLLRDHUP)/#if 1/' src/event/modules/ngx_epoll_module.c &&
-    sed_in_place 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c &&
+    sed_in_place 's/#if (NGX_READ_EVENT != EPOLLIN|EPOLLRDHUP)/#if 1/' src/event/modules/ngx_epoll_module.c
+    sed_in_place 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c
     sed_in_place '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 
 install: |

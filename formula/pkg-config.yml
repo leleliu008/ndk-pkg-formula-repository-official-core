@@ -5,14 +5,11 @@ src-url: https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
 src-sha: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 license: GPL-2.0-or-later
 dep-pkg: libiconv
-bsystem: configure
-ccflags: -Wno-implicit-function-declaration
+ccflags: -Wno-int-conversion
 dopatch: |
-    CACHE_FILE="$PACKAGE_BSCRIPT_DIR/glib/configure.cache"
     sed_in_place '/HAVE_PTHREAD_COND_TIMEDWAIT_MONOTONIC/d' glib/configure
 
-install: |
-    cat > "$CACHE_FILE" <<EOF
+    cat > glib/configure.cache <<EOF
     glib_cv_stack_grows=no
     glib_cv_working_bcopy=no
     glib_cv_uscore=no
@@ -20,8 +17,9 @@ install: |
     ac_cv_func_posix_getgrgid_r=no
     EOF
 
+install: |
     configure \
         --with-internal-glib \
         --disable-host-tool \
-        --cache-file="$CACHE_FILE"
+        --cache-file="$PACKAGE_BSCRIPT_DIR/glib/configure.cache"
     # https://www.gnu.org/software/autoconf/manual/autoconf-2.67/html_node/Cache-Files.html

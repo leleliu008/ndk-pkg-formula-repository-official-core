@@ -48,7 +48,7 @@ install: |
     export ac_cv_lib_pthread_pthread_create=yes
 
     export CCAUX="$CC_FOR_BUILD"
-    export CFLAGSAUX="$CFLAGS_FOR_BUILD"
+    export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"
     export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
     export LDFLAGSAUX="$LDFLAGS_FOR_BUILD"
 
