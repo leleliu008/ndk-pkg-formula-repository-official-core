@@ -1,7 +1,7 @@
 pkgtype: exe
 summary: A command-line tool that allows you to easily and securely send files from one computer to another
 git-url: https://github.com/schollz/croc
-src-url: https://github.com/schollz/croc/archive/refs/tags/v9.6.11.tar.gz
-src-sha: 5bc56b184198f82d315c141c8e5d2fbd7e57bf2e84e92ee15e6dee99379cf490
+src-url: https://github.com/schollz/croc/archive/refs/tags/v9.6.12.tar.gz
+src-sha: d5e55d587021466d57d7d0fe4f9f2a5f9548063bf25b5af8ce275389951e059b
 license: MIT
 bsystem: go

@@ -5,8 +5,7 @@ src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-15.tar.xz
 version: 7.1.1.15
 src-sha: c8589ea233f678b0474daaba19a55ce783b52b25495fb5ba93ac1d377f65bb2f
 license: ImageMagick
-dep-pkg: ghostscript openexr libheif liblqr libwebp liblzma libbz2
-dep-upp: libtool
+dep-pkg: ghostscript openexr libheif liblqr libwebp liblzma libbz2 libtool
 install: |
     configure \
         --with-freetype=yes \
