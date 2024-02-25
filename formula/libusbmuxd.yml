@@ -13,5 +13,5 @@ bsystem: autogen
 api-min: 24
 
 dopatch: |
-    sed_in_place 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h &&
+    sed_in_place 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
     sed_in_place 's|/var/run|/data/local/tmp|' src/libusbmuxd.c

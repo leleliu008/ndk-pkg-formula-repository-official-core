@@ -1,14 +1,15 @@
-summary: Small memory footprint, flexible web-server
+summary: A secure, fast, compliant, and very flexible web server that has been optimized for high-performance environments
 web-url: https://www.lighttpd.net/
-src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.73.tar.xz
-src-sha: 818816d0b314b0aa8728a7076513435f6d5eb227f3b61323468e1f10dbe84ca8
+src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.74.tar.xz
+src-sha: 5c08736e83088f7e019797159f306e88ec729abe976dc98fb3bed71b9d3e53b5
 license: BSD-3-Clause
-dep-pkg: openssl zlib libbz2 pcre libglob
+dep-pkg: openssl zlib libbz2 libpcre2 libglob
 dep-upp: libtool
 bsystem: autogen
 install: |
     configure \
+        --without-pcre \
         --with-openssl \
-        --with-pcre="$pcre_INSTALL_DIR" \
-        --with-zlib \
-        --with-bzip2
+        --with-pcre2 \
+        --with-bzip2 \
+        --with-zlib

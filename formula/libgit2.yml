@@ -20,4 +20,3 @@ install: |
         -DUSE_HTTPS=OpenSSL \
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
-    sed_in_place '/Libs:/s|$| -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libgit2.pc"
