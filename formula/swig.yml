@@ -1,8 +1,8 @@
 summary: A command-line tool for generating scripting interfaces to C/C++ code
 web-url: https://www.swig.org/
 git-url: https://github.com/swig/swig
-src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.2.0/swig-4.2.0.tar.gz
-src-sha: 261ca2d7589e260762817b912c075831572b72ff2717942f75b3e51244829c97
+src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.2.1/swig-4.2.1.tar.gz
+src-sha: fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8
 license: GPL-3.0-or-later
 dep-pkg: libpcre2
 

@@ -2,8 +2,8 @@ pkgtype: exe
 summary: New way to see and navigate directory trees
 web-url: https://dystroy.org/broot/
 git-url: https://github.com/Canop/broot
-src-url: https://github.com/Canop/broot/archive/refs/tags/v1.33.1.tar.gz
-src-sha: d54f6f29caa12d1cb1e66dc83f1ed4671567c13535eecb4242b7e0210519fecc
+src-url: https://github.com/Canop/broot/archive/refs/tags/v1.34.0.tar.gz
+src-sha: a1a8e6f01abc135e587fc50664b38c58e1ee86203dcb7df1a1ab4f9b371b39c8
 license: MIT
 dep-pkg: zlib libgetloadavg
 bsystem: cargo

@@ -1,8 +1,8 @@
 summary: Validating, recursive, caching DNS resolver
 web-url: https://www.unbound.net
 git-url: https://github.com/NLnetLabs/unbound
-src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.19.0.tar.gz
-src-sha: a97532468854c61c2de48ca4170de854fd3bc95c8043bb0cfb0fe26605966624
+src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.19.1.tar.gz
+src-sha: bc1d576f3dd846a0739adc41ffaa702404c6767d2b6082deb9f2f97cbb24a3a9
 license: BSD-3-Clause
 dep-pkg: libnghttp2 libevent libmnl openssl expat
 dep-upp: gm4 flex bison libtool
