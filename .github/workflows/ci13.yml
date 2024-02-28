@@ -1,4 +1,4 @@
-name: workflow9
+name: workflow13
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg]
+        pkg: [tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg]
+        pkg: [tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim]
 
     runs-on: ${{ matrix.os }}
 

@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz]
+        pkg: [libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng]
 
     runs-on: ubuntu-latest
 
@@ -36,11 +36,11 @@ jobs:
       - run: /usr/bin/ndk-pkg setup
       - run: /usr/bin/ndk-pkg sysinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
 
       - run: |
-            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
             branch: master
             pinned: 1
             enabled: 1
@@ -48,7 +48,7 @@ jobs:
             updated: 1676399969
             EOF
 
-      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
           MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
@@ -59,15 +59,15 @@ jobs:
 
 
   macos:
-    if: false
+    # if: false
     strategy:
 
       fail-fast: false
 
       matrix:
-        os:  [macos-12, macos-13]
+        os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,uctags,unbound,unrar,unzip,uppm,usbmuxd,usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz]
+        pkg: [libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunibreak,libunwind,libupnp,libusbmuxd-server,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd,links,livego,llhttp,lmdb,lnd,lodepng]
 
     runs-on: ${{ matrix.os }}
 
@@ -84,10 +84,10 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg ndkinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
       - run: |
-            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
             branch: master
             pinned: 1
             enabled: 1
@@ -95,7 +95,7 @@ jobs:
             updated: 1676399969
             EOF
 
-      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
           MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)

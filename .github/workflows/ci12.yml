@@ -1,4 +1,4 @@
-name: workflow9
+name: workflow12
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg]
+        pkg: [rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg]
+        pkg: [rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,sjpeg,sl,soundtouch,spdlog,sqlite3,starship,stylua,supervisord,suricata,svn-lite,swig,syncthing,taglib,tbox,tcc,tcl-core]
 
     runs-on: ${{ matrix.os }}
 

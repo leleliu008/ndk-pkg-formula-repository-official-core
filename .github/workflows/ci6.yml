@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2]
+        pkg: [hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf,libaec,libaio,libao,libass]
 
     runs-on: ubuntu-latest
 
@@ -36,11 +36,11 @@ jobs:
       - run: /usr/bin/ndk-pkg setup
       - run: /usr/bin/ndk-pkg sysinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
 
       - run: |
-            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
             branch: master
             pinned: 1
             enabled: 1
@@ -48,7 +48,7 @@ jobs:
             updated: 1676399969
             EOF
 
-      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
           MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
@@ -59,15 +59,15 @@ jobs:
 
 
   macos:
-    if: false
+    # if: false
     strategy:
 
       fail-fast: false
 
       matrix:
-        os:  [macos-12, macos-13]
+        os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,miniz,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2]
+        pkg: [hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,imagemagick,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf,libaec,libaio,libao,libass]
 
     runs-on: ${{ matrix.os }}
 
@@ -84,10 +84,10 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg ndkinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/offical-core
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
       - run: |
-            cat > ~/.ndk-pkg/repos.d/offical-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
             branch: master
             pinned: 1
             enabled: 1
@@ -95,7 +95,7 @@ jobs:
             updated: 1676399969
             EOF
 
-      - run: mv formula ~/.ndk-pkg/repos.d/offical-core/
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
           MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
