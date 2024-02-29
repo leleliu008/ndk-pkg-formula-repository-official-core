@@ -7,6 +7,4 @@ version: 1.30
 license: LGPL-2.1-or-later
 dep-upp: libtool
 bsystem: autotools
-
-dopatch: |
-    ./bootstrap
+dopatch: run ./bootstrap

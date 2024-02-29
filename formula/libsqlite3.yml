@@ -9,7 +9,7 @@ binbstd: 1
 install: |
     run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
     run "$AR" rsc libsqlite3.a sqlite3.o
-    run "$CC" "$LDFLAGS" -shared -Wl,-soname,libsqlite3.so -o libsqlite3.so sqlite3.o
+    run "$CC" "$LDFLAGS" -shared -o libsqlite3.so sqlite3.o
 
     run install -d      "$PACKAGE_INSTALL_DIR/include"
     run mv *.h          "$PACKAGE_INSTALL_DIR/include/"

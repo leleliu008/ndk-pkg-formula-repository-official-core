@@ -4,14 +4,23 @@ git-url: https://github.com/BLAKE2/libb2
 src-url: https://github.com/BLAKE2/libb2/releases/download/v0.98.1/libb2-0.98.1.tar.gz
 src-sha: 53626fddce753c454a3fea581cbbc7fe9bbcf0bc70416d48fdbbf5d87ef6c72e
 license: CC0-1.0
-dep-upp: autoconf automake
-
-#https://github.com/quiet/quiet/issues/23
-#https://github.com/jgaeddert/liquid-dsp/pull/62/files#diff-4bb328fbe3180ab54cff2f63f71c3a77
+bsystem: autotools
+dep-upp: patch
 dopatch: |
-    sed_in_place '/AX_GCC_X86_CPUID(0x00000001)/a ecx=0\nedx=0\nif test "$ax_cv_gcc_x86_cpuid_0x00000001" != "unknown"; then' m4/ax_ext.m4 &&
-    sed_in_place '/AC_CACHE_CHECK(\[whether mmx is supported\]/i fi' m4/ax_ext.m4
-
+    # https://github.com/jgaeddert/liquid-dsp/pull/62/files#diff-4bb328fbe3180ab54cff2f63f71c3a77
+    printf '%s' '
+    LS0tIG00L2F4X2V4dC5tNAkyMDI0LTAyLTI4IDE4OjQ0OjU4LjIzMzUzNzMyOSArMDgwMAorKysg
+    bTQvYXhfZXh0Lm00LmZpeAkyMDI0LTAyLTI4IDE5OjA1OjA0LjY3NDY2NzE2MCArMDgwMApAQCAt
+    NTksOCArNTksMTQgQEAKICAgICAgIEFDX1JFUVVJUkUoW0FYX0dDQ19YODZfQ1BVSURdKQogCiAg
+    ICAgICBBWF9HQ0NfWDg2X0NQVUlEKDB4MDAwMDAwMDEpCi0gICAgICBlY3g9YGVjaG8gJGF4X2N2
+    X2djY194ODZfY3B1aWRfMHgwMDAwMDAwMSB8IGN1dCAtZCAiOiIgLWYgM2AKLSAgICAgIGVkeD1g
+    ZWNobyAkYXhfY3ZfZ2NjX3g4Nl9jcHVpZF8weDAwMDAwMDAxIHwgY3V0IC1kICI6IiAtZiA0YAor
+    CisgICAgICBlY3g9MAorICAgICAgZWR4PTAKKworICAgICAgaWYgdGVzdCAiJGF4X2N2X2djY194
+    ODZfY3B1aWRfMHgwMDAwMDAwMSIgIT0gInVua25vd24iIDsgdGhlbgorICAgICAgICAgZWN4PWBl
+    Y2hvICRheF9jdl9nY2NfeDg2X2NwdWlkXzB4MDAwMDAwMDEgfCBjdXQgLWQgIjoiIC1mIDNgCisg
+    ICAgICAgICBlZHg9YGVjaG8gJGF4X2N2X2djY194ODZfY3B1aWRfMHgwMDAwMDAwMSB8IGN1dCAt
+    ZCAiOiIgLWYgNGAKKyAgICAgIGZpCiAKICAgICAgIEFDX0NBQ0hFX0NIRUNLKFt3aGV0aGVyIG1t
+    eCBpcyBzdXBwb3J0ZWRdLCBbYXhfY3ZfaGF2ZV9tbXhfZXh0XSwKICAgICAgIFsK' | base64 -d | patch -p0
 install: |
     configure \
         --disable-openmp \

@@ -30,6 +30,6 @@ install: |
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o getdtablesize.o getdtablesize.c
-    run $AR rsc libgetdtablesize.a  getdtablesize.o &&
-    run install_incs getdtablesize.h &&
+    run $AR rsc libgetdtablesize.a  getdtablesize.o
+    run install_incs getdtablesize.h
     run install_libs libgetdtablesize.a
