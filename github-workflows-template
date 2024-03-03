@@ -82,7 +82,6 @@ jobs:
       - run: ./ndk-pkg env
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg ndkinfo
 
       - run: install -d ~/.ndk-pkg/repos.d/official-core
       - run: |
