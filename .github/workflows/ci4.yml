@@ -98,6 +98,11 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
+          if [ ${{ matrix.pkg }} = pdfium ] ; then
+            echo ${{ matrix.pkg }} package should be built on GNU/Linux
+            exit 0
+          fi
+
           MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
