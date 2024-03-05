@@ -7,6 +7,7 @@ src-sha: cb15559556311dea349a0f0b5fddeb3cc7a3adea9b0586753f0c632d69727084
 dep-pkg: zlib openssl
 license: MIT
 bsystem: cargo
+install: RUSTUP_TOOLCHAIN=1.74.0 cargow install
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 

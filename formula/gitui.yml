@@ -4,10 +4,14 @@ git-url: https://github.com/extrawurst/gitui
 src-url: https://github.com/extrawurst/gitui/archive/v0.25.1.tar.gz
 src-sha: 78d31ba66de1521477aef1642c798a385106ff4858f59e79775ba08a694d0ae4
 license: MIT
-dep-pkg: zlib openssl
+dep-pkg: libgit2 libssh2
 dep-upp: gmake
-bsystem: cargo
 ccflags: -Dindex=strchr
-dopatch: export OPENSSL_NO_VENDOR=1
+dopatch: |
+    export OPENSSL_NO_VENDOR=1
+    export LIBGIT2_SYS_USE_PKG_CONFIG=1
+    export LIBSSH2_SYS_USE_PKG_CONFIG=1
+    cargow install --locked
+
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
 api-min: 23

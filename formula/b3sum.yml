@@ -1,4 +1,4 @@
-summary: BLAKE3 cryptographic hash function
+summary: A command line utility for calculating BLAKE3 hashes
 git-url: https://github.com/BLAKE3-team/BLAKE3
 src-url: https://github.com/BLAKE3-team/BLAKE3/archive/1.5.0.tar.gz
 src-sha: f506140bc3af41d3432a4ce18b3b83b08eaa240e94ef161eb72b2e57cdc94c69

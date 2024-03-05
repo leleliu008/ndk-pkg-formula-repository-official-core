@@ -1,7 +1,7 @@
 summary: Modern Linker
 git-url: https://github.com/rui314/mold
-src-url: https://github.com/rui314/mold/archive/refs/tags/v2.4.0.tar.gz
-src-sha: be65f3d785d32ece7b3204ecaa57810847fdd25c232cf704cbfff2dafb1ac107
+src-url: https://github.com/rui314/mold/archive/refs/tags/v2.4.1.tar.gz
+src-sha: c9853d007d6a1b4f3e36b7314346751f4cc91bc43c76e30db51709b53b44dd68
 license: AGPL-3.0-only
 dep-pkg: mimalloc tbb xxhash zlib libzstd openssl
 dopatch: sed_in_place '/find_package(ZLIB/a find_package(Threads)' CMakeLists.txt
