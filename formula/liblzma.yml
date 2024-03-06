@@ -1,15 +1,15 @@
-summary: General-purpose data compression with high compression ratio
-git-url: https://github.com/xz-mirror/xz
+summary: A free, general-purpose data compression with a high compression ratio
 web-url: https://tukaani.org/xz
-src-uri: https://tukaani.org/xz/xz-5.4.5.tar.gz
-src-url: https://downloads.sourceforge.net/project/lzmautils/xz-5.4.5.tar.gz
-src-sha: 135c90b934aee8fbc0d467de87a05cb70d627da36abe518c357a873709e5b7d6
+git-url: https://github.com/tukaani-project/xz
+src-url: https://github.com/tukaani-project/xz/releases/download/v5.6.0/xz-5.6.0.tar.gz
+src-sha: 0f5c81f14171b74fcc9777d302304d964e63ffc2d7b634ef023a7249d9b5d875
 license: LGPL-2.1-or-later
 
 install: |
     configure \
         --disable-external-sha256 \
         --disable-werror \
+        --disable-nls \
         --enable-assembler \
         --enable-threads=posix \
         --disable-xz \
