@@ -14,7 +14,7 @@ install: |
         export ac_cv_func_nl_langinfo=no
     fi
 
-    configure
+    configure --enable-tmpdir=/data/local/tmp
 
 # int fgetpos(FILE* _Nonnull __fp, fpos_t* _Nonnull __pos) __RENAME(fgetpos64) __INTRODUCED_IN(24);
 api-min: 24
