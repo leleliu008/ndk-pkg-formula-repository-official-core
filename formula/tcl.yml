@@ -1,7 +1,7 @@
 summary: Tool Command Language
 web-url: https://www.tcl-lang.org
-src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz
-src-sha: 43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066
+src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.14/tcl8.6.14-src.tar.gz
+src-sha: 5880225babf7954c58d4fb0f5cf6279104ce1cd6aa9b71e9a6322540e1c4de66
 dep-pkg: liblanginfo
 version: 8.6.13
 license: TCL
@@ -10,7 +10,7 @@ bscript: unix
 
 dopatch: |
     sed_in_place 's/test "`uname -s`" = "Darwin"/false/g' configure
-    sed_in_place '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' ../pkgs/sqlite3.40.0/generic/../compat/sqlite3/sqlite3.c
+    sed_in_place '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' ../pkgs/sqlite3.44.2/generic/../compat/sqlite3/sqlite3.c
 
 install: |
     if [ "$TARGET_PLATFORM_NBIT" -eq 64 ] ; then

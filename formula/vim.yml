@@ -1,8 +1,8 @@
 summary: Vi IMproved - enhanced vi editor
 web-url: https://www.vim.org/
 git-url: https://github.com/vim/vim
-src-url: https://github.com/vim/vim/archive/refs/tags/v9.1.0100.tar.gz
-src-sha: b2fe9e2849eded2bf15603c032bcd7a4f375a743be686330b7fa8e598c416766
+src-url: https://github.com/vim/vim/archive/refs/tags/v9.1.0250.tar.gz
+src-sha: 3dab68543cd29666cdead4d1a032b8346beec722c72c20ccdafc7b25566b7047
 license: Vim
 dep-pkg: gettext-runtime python3 lua
 bsystem: configure
@@ -11,6 +11,7 @@ binbstd: 1
 dopatch: |
     sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+
 install: |
     printf '\n' > ../include.h
 

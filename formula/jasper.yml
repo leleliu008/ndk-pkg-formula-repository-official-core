@@ -1,8 +1,8 @@
 summary: Library for manipulating JPEG-2000 images
 web-url: https://ece.engr.uvic.ca/~frodo/jasper/
 git-url: https://github.com/jasper-software/jasper
-src-url: https://github.com/jasper-software/jasper/releases/download/version-4.1.2/jasper-4.1.2.tar.gz
-src-sha: 22392e439b87c79aaf8689ec79a286a7147e811c4bee34edf3d0b239798d672b
+src-url: https://github.com/jasper-software/jasper/releases/download/version-4.2.2/jasper-4.2.2.tar.gz
+src-sha: 5e397570b3110a8edef6d50127e20a2297939809cea25d29068823b442ecdd6d
 license: JasPer-2.0
 dep-pkg: libjpeg-turbo
 install: |

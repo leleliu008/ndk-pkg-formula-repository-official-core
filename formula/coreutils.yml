@@ -1,18 +1,11 @@
 summary: GNU File, Shell, and Text utilities
 git-url: https://github.com/coreutils/coreutils
 web-url: https://www.gnu.org/software/coreutils
-src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.4.tar.xz
-src-sha: ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52
+src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.5.tar.xz
+src-sha: cd328edeac92f6a665de9f323c93b712af1858bc2e0d88f3f7100469470a1b8a
 license: GPL-3.0-or-later
-bsystem: configure
 
-# no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
-# https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
-# https://github.com/android/ndk/issues/513
-# https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
-api-min: 23
-
-install: |
+prepare: |
     export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0"
 
     if [ "$TARGET_PLATFORM_ARCH" = 'aarch64' ] ; then
@@ -25,10 +18,11 @@ install: |
         CONFIGURE_EXTRA_OPTIONS='--disable-year2038'
     fi
 
+install: |
     configure \
         --with-included-regex \
         --with-linux-crypto \
-        --without-gmp \
+        --without-libgmp \
         --without-openssl \
         --without-selinux \
         --disable-libcap \
@@ -39,3 +33,9 @@ install: |
         --enable-xattr \
         --enable-threads=posix \
         "$CONFIGURE_EXTRA_OPTIONS"
+
+# no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
+# https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
+# https://github.com/android/ndk/issues/513
+# https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
+api-min: 23

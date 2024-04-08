@@ -1,13 +1,12 @@
 summary: MP3 player
 git-url: https://github.com/madebr/mpg123
 web-url: https://www.mpg123.de/
-src-url: https://www.mpg123.de/download/mpg123-1.32.5.tar.bz2
-src-sha: af908cdf6cdb6544b97bc706a799f79894e69468af5881bf454a0ebb9171ed63
+src-url: https://www.mpg123.de/download/mpg123-1.32.6.tar.bz2
+src-sha: ccdd1d0abc31d73d8b435fc658c79049d0a905b30669b6a42a03ad169dc609e6
 license: LGPL-2.1-only
 dep-pkg: sdl2
-bsystem: configure
 
-install: |
+prepare: |
     # https://github.com/android/ndk/issues/1862
     if [ "$ANDROID_NDK_VERSION" = '25.2.9519653' ] ; then
         export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os|-O3|g')"
@@ -22,6 +21,7 @@ install: |
         x86_64)  CPU=x86-64 ;;
     esac
 
+install: |
     configure \
         --enable-debug=no \
         --enable-ipv6=yes \

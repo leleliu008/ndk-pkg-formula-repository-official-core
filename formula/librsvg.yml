@@ -8,6 +8,7 @@ dep-upp: gdk-pixbuf
 dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
 sfslink: 0
+
 install: |
     configure \
         --enable-tools=yes \
@@ -15,6 +16,7 @@ install: |
         --enable-introspection=no \
         --disable-Bsymbolic \
         --disable-static
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    sed_in_place '/^Requires:/d'                                             librsvg-2.0.pc
-    printf 'Requires: gdk-pixbuf-2.0 libxml-2.0 pangocairo cairo-gobject' >> librsvg-2.0.pc
+
+dotweak: |
+    sed_in_place '/^Requires:/d'                                             lib/pkgconfig/librsvg-2.0.pc
+    printf 'Requires: gdk-pixbuf-2.0 libxml-2.0 pangocairo cairo-gobject' >> lib/pkgconfig/librsvg-2.0.pc

@@ -1,13 +1,13 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata
-src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.3.tar.gz
-src-sha: ea0742d7a98783f1af4a57661af6068bc2d850ac3eca04b3204d28ce165e35ff
+src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.4.tar.gz
+src-sha: 640060120024be70dbe81f6ec6efc72e46250fcb36219dff67e6417220ff21b7
 license: GPL-2.0-or-later
-dep-pkg: jansson libmagic libnet libpcap libyaml lz4 libpcre2 libiconv libglob
+dep-pkg: jansson lz4 libmagic libpcre2 libiconv libyaml libpcap libnet libglob
 bsystem: autotools cargo
 
-install: |
+prepare: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
 
     sed_in_place "s|RUST_TARGET = .*|RUST_TARGET = --target $RUST_TARGET|" rust/Makefile.am
@@ -15,6 +15,7 @@ install: |
 
     run rustup target add "$RUST_TARGET"
 
+install: |
     configure \
         --enable-pie \
         --with-libpcap-includes="$libpcap_INCLUDE_DIR" \

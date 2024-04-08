@@ -1,15 +1,17 @@
 summary: Framework for layout and rendering of i18n text
 web-url: https://www.pango.org/
 git-url: https://gitlab.gnome.org/GNOME/pango
-src-url: https://download.gnome.org/sources/pango/1.50/pango-1.50.14.tar.xz
-src-sha: 1d67f205bfc318c27a29cfdfb6828568df566795df0cb51d2189cde7f2d581e8
+src-url: https://download.gnome.org/sources/pango/1.52/pango-1.52.2.tar.xz
+src-sha: d0076afe01082814b853deec99f9349ece5f2ce83908b8e58ff736b41f78a96b
 license: LGPL-2.0-or-later
 dep-upp: glib-tools
 dep-pkg: cairo fribidi harfbuzz
+
 dopatch: |
     if [ -f ../lib/libiconv.a ] ; then
         printf 'INPUT(%s -lc++_shared)\n' "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libiconv.a
     fi
+
 install: |
     mesonw \
         -Dgtk_doc=false \
