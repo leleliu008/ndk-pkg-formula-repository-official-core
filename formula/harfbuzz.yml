@@ -1,10 +1,13 @@
 summary: A text shaping engine. It primarily supports OpenType, but also Apple Advanced Typography
 git-url: https://github.com/harfbuzz/harfbuzz
-src-url: https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.3.0.tar.gz
-src-sha: 6a093165442348d99f3307480ea87ed83bdabaf642cdd9548cff6b329e93bfac
-license: MIT
+src-url: https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.4.0.tar.gz
+src-sha: 9f1ca089813b05944ad1ce8c7e018213026d35dc9bab480a21eb876838396556
 dep-pkg: icu4c glib graphite2
+license: MIT
+sfslink: 0
+dopatch: sed_in_place "/subdir('util')/d" meson.build
 install: |
+    LINK_TYPE=shared-most
     mesonw \
         -Dicu=enabled \
         -Dglib=enabled \

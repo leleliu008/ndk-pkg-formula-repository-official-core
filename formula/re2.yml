@@ -1,8 +1,8 @@
 summary: Alternative to backtracking PCRE-style regular expression engines
 git-url: https://github.com/google/re2
-src-url: https://github.com/google/re2/archive/refs/tags/2024-02-01.tar.gz
-src-sha: cd191a311b84fcf37310e5cd876845b4bf5aee76fdd755008eef3b6478ce07bb
-version: 20240201
+src-url: https://github.com/google/re2/archive/refs/tags/2024-04-01.tar.gz
+src-sha: 3f6690c3393a613c3a0b566309cf04dc381d61470079b653afc47c67fb898198
+version: 20240401
 license: BSD-3-Clause
 dep-pkg: abseil
 install: |

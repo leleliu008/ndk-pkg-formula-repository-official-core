@@ -1,9 +1,8 @@
 summary: UTF-8 with C++ in a Portable Way
 git-url: https://github.com/nemtrif/utfcpp
-src-url: https://github.com/nemtrif/utfcpp/archive/refs/tags/v3.2.1.tar.gz
-src-sha: 8d6aa7d77ad0abb35bb6139cb9a33597ac4c5b33da6a004ae42429b8598c9605
+src-url: https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
+src-sha: ffc668a310e77607d393f3c18b32715f223da1eac4c4d6e0579a11df8e6b59cf
 license: BSL-1.0
-
 install: |
     cmakew \
         -DUTF8_TESTS=OFF \

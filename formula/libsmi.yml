@@ -3,9 +3,9 @@ web-url: https://www.ibr.cs.tu-bs.de/projects/libsmi
 src-url: https://www.ibr.cs.tu-bs.de/projects/libsmi/download/libsmi-0.5.0.tar.gz
 src-sha: f21accdadb1bb328ea3f8a13fc34d715baac6e2db66065898346322c725754d3
 license: TCL BSD-3-Clause Beerware
+dep-upp: gm4 flex bison
 bsystem: configure
 binbstd: 1
+
 fix-url: https://mirrors.dotsrc.org/gentoo-portage/net-libs/libsmi/files/libsmi-0.5.0-implicit-function-declarations.patch
 fix-sha: 24ef1808c21f166602348559d7ce1fa0ecea74199b3fbb644204210e0d169ee6
-dep-upp: patch gm4 flex bison
-dopatch: patch -p1 < ../fix/24ef1808c21f166602348559d7ce1fa0ecea74199b3fbb644204210e0d169ee6.patch

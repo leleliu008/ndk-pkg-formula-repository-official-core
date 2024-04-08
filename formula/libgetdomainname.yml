@@ -1,6 +1,5 @@
 summary: get NIS domain name
 web-url: https://linux.die.net/man/2/getdomainname
-src-url: dir:///dev/null
 
 install: |
     cat > getdomainname.h <<EOF
@@ -40,6 +39,6 @@ install: |
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o getdomainname.o getdomainname.c
-    run $AR rsc libgetdomainname.a  getdomainname.o &&
-    run install_incs getdomainname.h &&
+    run $AR rsc libgetdomainname.a  getdomainname.o
+    run install_incs getdomainname.h
     run install_libs libgetdomainname.a

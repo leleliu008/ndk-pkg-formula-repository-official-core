@@ -1,11 +1,10 @@
 summary: An open source 2D graphics library
 git-url: https://skia.googlesource.com/skia
-src-url: dir:///dev/null
 version: 1
 license: BSD-3-Clause
 dep-upp: git ninja
 
-dopatch: |
+prepare: |
     run cd ..
     run git clone https://chromium.googlesource.com/chromium/tools/depot_tools
     run export PATH="'$PWD/depot_tools:$PATH'"

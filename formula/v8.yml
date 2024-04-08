@@ -1,7 +1,6 @@
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 git-url: https://github.com/v8/v8
-src-url: dir:///dev/null
 version: 9.9.115.8
 license: BSD-3-Clause
 dep-upp: git ninja

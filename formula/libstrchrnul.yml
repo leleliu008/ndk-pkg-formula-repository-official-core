@@ -1,6 +1,5 @@
 summary: returns a pointer to the first occurrence of the character c in the string s
 web-url: https://linux.die.net/man/3/strchrnul
-src-url: dir:///dev/null
 
 install: |
     cat > strchrnul.h <<EOF
@@ -46,6 +45,6 @@ install: |
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o strchrnul.o strchrnul.c
-    run $AR rsc libstrchrnul.a  strchrnul.o &&
-    run install_incs strchrnul.h &&
+    run $AR rsc libstrchrnul.a  strchrnul.o
+    run install_incs strchrnul.h
     run install_libs libstrchrnul.a

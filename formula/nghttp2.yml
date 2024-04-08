@@ -7,12 +7,10 @@ dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 sfslink: 0
 
-dep-upp: patch
 fix-url: https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1
 fix-sha: c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e
-dopatch: |
-    patch -p1 < ../fix/c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e.patch
-    sed_in_place '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
+
+dopatch: sed_in_place '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
 
 install: |
     cmakew \

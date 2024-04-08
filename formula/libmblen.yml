@@ -1,6 +1,5 @@
 summary: get number of bytes in a character
 web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mblen.html
-src-url: dir:///dev/null
 
 install: |
     cat > mblen.h <<EOF
@@ -26,6 +25,6 @@ install: |
     EOF
 
     run $CC $CFLAGS $CPPFLAGS -c -o mblen.o mblen.c
-    run $AR rsc libmblen.a  mblen.o &&
-    run install_incs mblen.h &&
+    run $AR rsc libmblen.a  mblen.o
+    run install_incs mblen.h
     run install_libs libmblen.a

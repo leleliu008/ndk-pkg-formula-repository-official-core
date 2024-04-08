@@ -1,12 +1,11 @@
 summary: PDF read/write library by Google
 web-url: https://pdfium.googlesource.com/pdfium/
 git-url: https://pdfium.googlesource.com/pdfium
-src-url: dir:///dev/null
 version: 1
 license: BSD-3-Clause
 dep-upp: git ninja python3
 
-dopatch: |
+prepare: |
     run cd ..
     run git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
     run export PATH="'$PWD/depot_tools:$PATH'"

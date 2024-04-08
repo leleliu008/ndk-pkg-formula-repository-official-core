@@ -1,13 +1,12 @@
 summary: Real-Time Communication
 web-url: https://webrtc.org/
 git-url: https://webrtc.googlesource.com/src
-src-url: dir:///dev/null
 version: 1
 license: BSD-3-Clause
 dep-upp: git gclient ninja
 
 # https://webrtc.github.io/webrtc-org/native-code/android/
-dopatch: |
+prepare: |
     if [ "$NATIVE_OS_KIND" != linux ] ; then
         abort 1 "this library is only supported built on Linux"
     fi

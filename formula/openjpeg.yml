@@ -1,22 +1,26 @@
 summary: Library for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
 git-url: https://github.com/uclouvain/openjpeg
-src-url: https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz
-src-sha: 0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a
+src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
+src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
 license: BSD-2-Clause
 dep-pkg: libpng lcms2
 
 dopatch: |
     sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+    sed_in_place 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    sed_in_place 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    sed_in_place 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
+
 install: |
     cmakew \
         -DBUILD_DOC=OFF \
-        -DBUILD_CODEC=ON \
+        -DBUILD_JAVA=OFF \
         -DBUILD_JPIP=OFF \
         -DBUILD_JPIP_SERVER=OFF \
+        -DBUILD_CODEC=ON \
         -DBUILD_VIEWER=OFF \
-        -DBUILD_JAVA=OFF \
         -DBUILD_SHARED_LIBS=ON \
         -DBUILD_STATIC_LIBS=ON \
         -DBUILD_UNIT_TESTS=OFF \
