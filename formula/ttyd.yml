@@ -1,8 +1,8 @@
 summary: A simple command-line tool for sharing terminal over the web
 web-url: https://tsl0922.github.io/ttyd
 git-url: https://github.com/tsl0922/ttyd
-src-url: https://github.com/tsl0922/ttyd/archive/1.7.4.tar.gz
-src-sha: 300d8cef4b0b32b0ec30d7bf4d3721a5d180e22607f9467a95ab7b6d9652ca9b
+src-url: https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.7.tar.gz
+src-sha: 039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650
 license: MIT
 dep-pkg: json-c libwebsockets
 bsystem: cmake

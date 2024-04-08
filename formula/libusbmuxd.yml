@@ -1,8 +1,8 @@
 summary: USB multiplexor library for iOS devices
 web-url: https://www.libimobiledevice.org
 git-url: https://github.com/libimobiledevice/libusbmuxd
-src-url: https://github.com/libimobiledevice/libusbmuxd/archive/2.0.2.tar.gz
-src-sha: 8ae3e1d9340177f8f3a785be276435869363de79f491d05d8a84a59efc8a8fdc
+src-url: https://github.com/libimobiledevice/libusbmuxd/releases/download/2.1.0/libusbmuxd-2.1.0.tar.bz2
+src-sha: c35bf68f8e248434957bd5b234c389b02206a06ecd9303a7fb931ed7a5636b16
 license: LGPL-2.1-or-later
 dep-pkg: libplist
 dep-upp: libtool

@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog]
+        pkg: [usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog]
+        pkg: [usrsctp,utf8.h,utfcpp,vala,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,watchexec,wavpack,webhook,wget,wolfssl,wuzz,xh,xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng]
 
     runs-on: ${{ matrix.os }}
 

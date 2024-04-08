@@ -76,31 +76,76 @@ version_match() {
 package_name_transform_from_uppm_to_brew() {
     case $1 in
         gm4)      printf '%s\n' 'm4'        ;;
+        xxd)      printf '%s\n' 'vim'       ;;
         file)     printf '%s\n' 'file-formula' ;;
+        gtar)     printf '%s\n' 'gnu-tar'   ;;
+        gmake)    printf '%s\n' 'make'      ;;
+        gindent)  printf '%s\n' 'gnu-indent';;
         xattr)    printf '%s\n' 'attr'      ;;
         patch)    printf '%s\n' 'gpatch'    ;;
         delta)    printf '%s\n' 'git-delta' ;;
-        gmake)    printf '%s\n' 'make'      ;;
-        gtar)     printf '%s\n' 'gnu-tar'   ;;
-        libjxl)   printf '%s\n' 'jpeg-xl'   ;;
-        blake3)   printf '%s\n' 'b3sum'     ;;
-        libwebp)  printf '%s\n' 'webp'      ;;
         proj7)    printf '%s\n' 'proj@7'    ;;
+        bsdtar)   printf '%s\n' 'libarchive';;
+        blake3)   printf '%s\n' 'b3sum'     ;;
+        utfcpp)   printf '%s\n' 'utf8cpp'   ;;
+        tcl-core) printf '%s\n' 'tcl-tk'    ;;
+        openpmix) printf '%s\n' 'pmix'      ;;
+        xsltproc) printf '%s\n' 'libxslt'   ;;
+
         freetype2)printf '%s\n' 'freetype'  ;;
         freetype2-with-harfbuzz)
                   printf '%s\n' 'freetype'  ;;
+
+        golang@1.21)
+                  printf '%s\n' 'go@1.21'   ;;
+        golang)   printf '%s\n' 'go'        ;;
+
+        dot_static)
+                  printf '%s\n' 'graphviz'  ;;
+
+        glib-tools)
+                  printf '%s\n' 'glib'      ;;
+
+        gettext-tools)
+                  printf '%s\n' 'gettext'   ;;
+        gettext-runtime)
+                  printf '%s\n' 'gettext'   ;;
+
         libmediainfo|mediainfo)
                   printf '%s\n' 'media-info';;
-        tcl-core) printf '%s\n' 'tcl-tk'    ;;
-        libprotobuf) printf '%s\n' 'protobuf' ;;
-        libsqlite3) printf '%s\n' 'sqlite'  ;;
-        libzmq)   printf '%s\n' 'zeromq'    ;;
-        liblzma)  printf '%s\n' 'xz'        ;;
-        libzstd)  printf '%s\n' 'zstd'      ;;
+
+        libxml2-utils|libxml2-python3)
+                  printf '%s\n' 'libxml2'   ;;
+
+        libprotobuf)
+                  printf '%s\n' 'protobuf'  ;;
+
+        libsqlite3)printf '%s\n' 'sqlite'   ;;
+        libpcre2) printf '%s\n' 'pcre2'     ;;
+        libexpat) printf '%s\n' 'expat'     ;;
+        libpcre)  printf '%s\n' 'pcre'      ;;
         libcurl)  printf '%s\n' 'curl'      ;;
-        xxd)      printf '%s\n' 'vim'       ;;
+        libwebp)  printf '%s\n' 'webp'      ;;
+        libzstd)  printf '%s\n' 'zstd'      ;;
+        liblzma)  printf '%s\n' 'xz'        ;;
+        libopus)  printf '%s\n' 'opus'      ;;
+        libuuid)  printf '%s\n' 'util-linux';;
+        libz3.a)  printf '%s\n' 'z3'        ;;
+        libgmp)   printf '%s\n' 'gmp'       ;;
+        libbz2)   printf '%s\n' 'bzip2'     ;;
+        libzmq)   printf '%s\n' 'zeromq'    ;;
+        libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+
+        toml++)   printf '%s\n' 'tomlplusplus'  ;;
+
+        xorg-*)   printf '%s\n' "$1" | cut -c6- ;;
+
         *)        printf '%s\n' "$1"
     esac
+}
+
+get_version_from_url() {
+    basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
 }
 
 package_version() {

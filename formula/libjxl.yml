@@ -1,8 +1,8 @@
 summary: New file format for still image compression
 web-url: https://jpeg.org/jpegxl/index.html
 git-url: https://github.com/libjxl/libjxl
-src-url: https://github.com/libjxl/libjxl/archive/refs/tags/v0.9.1.tar.gz
-src-sha: a0e72e9ece26878147069ad4888ac3382021d4bbee71c2e1b687d5bde7fd7e01
+src-url: https://github.com/libjxl/libjxl/archive/refs/tags/v0.10.2.tar.gz
+src-sha: 95e807f63143856dc4d161c071cca01115d2c6405b3d3209854ac6989dc6bb91
 license: BSD-3-Clause
 dep-pkg: brotli libwebp openexr
 

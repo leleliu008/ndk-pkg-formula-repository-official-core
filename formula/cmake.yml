@@ -1,10 +1,11 @@
 summary: Cross-platform make
 web-url: https://www.cmake.org/
 git-url: https://github.com/Kitware/CMake
-src-url: https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3.tar.gz
-src-sha: 72b7570e5c8593de6ac4ab433b73eab18c5fb328880460c86ce32608141ad5c1
+src-url: https://github.com/Kitware/CMake/releases/download/v3.29.0/cmake-3.29.0.tar.gz
+src-sha: a0669630aae7baa4a8228048bf30b622f9e9fd8ee8cedb941754e9e38686c778
 license: BSD-3-Clause
-dep-pkg: libarchive libcurl libuv jsoncpp expat rhash zlib ncurses openssl
+dep-pkg: libarchive libexpat libcurl libuv jsoncpp rhash zlib ncurses openssl
+
 dopatch: |
     LIBCURL="$(pkg-config --libs-only-l libcurl)"
     LIBARCHIVE="$(pkg-config --libs-only-l libarchive)"

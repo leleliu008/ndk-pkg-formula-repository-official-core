@@ -1,0 +1,11 @@
+summary: C library for reading and writing MATLAB MAT files
+web-url: https://matio.sourceforge.net/
+src-url: https://downloads.sourceforge.net/project/matio/matio/1.5.26/matio-1.5.26.tar.gz
+src-sha: 8b47c29f58e468dba7a5555371c6a72ad4c6aa8b15f459b2b0b65a303c063933
+license: BSD-2-Clause
+dep-pkg: hdf5 zlib
+install: |
+    configure \
+        --enable-extended-sparse=yes \
+        --enable-mat73=yes \
+        --with-hdf5="$hdf5_INSTALL_DIR"

@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [fdk-aac,fdroidcl,fff,fftw,figlet,file,findutils,fish,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake,gn]
+        pkg: [fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [fdk-aac,fdroidcl,fff,fftw,figlet,file,findutils,fish,flex,fortune,fselect,fsmon,fzf,fzy,gawk,gbt,gd,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake,gn]
+        pkg: [fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake]
 
     runs-on: ${{ matrix.os }}
 

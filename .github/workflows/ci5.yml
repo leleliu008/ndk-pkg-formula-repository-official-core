@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,hdf5,helm]
+        pkg: [gn,gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,helm]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,hdf5,helm]
+        pkg: [gn,gnu-barcode,gnu-which,gnupg,gnutls,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gpatch,gperf,gperftools,gping,gpsim,gputils,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,helm]
 
     runs-on: ${{ matrix.os }}
 

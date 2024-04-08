@@ -1,10 +1,11 @@
 summary: A free and easy-to-use client-side URL transfer library
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.6.0.tar.bz2
-src-sha: b4785f2d8877fa92c0e45d7155cf8cc6750dbda961f4b1a45bcbec990cf2fa9b
-dep-pkg: libnghttp2 openssl libzstd brotli
+src-url: https://curl.haxx.se/download/curl-8.7.1.tar.bz2
+src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
+dep-pkg: libnghttp2 libzstd zlib brotli openssl
+dep-upp: perl
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 install: |
     configure \
@@ -16,8 +17,11 @@ install: |
         --without-nghttp3 \
         --without-ngtcp2 \
         --without-quiche \
+        --without-libpsl \
         --without-librtmp \
-        --without-libidn2 \
-        --without-libpsl
+        --without-libidn2
     rm -rfv "$PACKAGE_INSTALL_DIR/bin/curl"
-    rm -rfv "$PACKAGE_INSTALL_DIR/bin/share/man/man1/curl.1"
+    rm -rfv "$PACKAGE_INSTALL_DIR/share/man/man1/curl.1"
+    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
+    printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> libcurl.pc

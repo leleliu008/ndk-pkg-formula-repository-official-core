@@ -3,7 +3,7 @@ git-url: https://github.com/jhspetersson/fselect
 src-url: https://github.com/jhspetersson/fselect/archive/refs/tags/0.8.5.tar.gz
 src-sha: e5742da80606630e310bb1567f2d72d7874f0b2537440e2800507abd786d912d
 license: MIT
-bsystem: cargo
+install: cargow install --locked
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 api-min: 24

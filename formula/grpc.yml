@@ -1,16 +1,16 @@
 summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.59.3.tar.gz
-src-sha: ea281bb3489520ad4fb96ae84b45ed194a1f0b944d3e74f925f5e019d31ecd0f
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.1.tar.gz
+src-sha: c9f9ae6e4d6f40464ee9958be4068087881ed6aa37e30d0e64d40ed7be39dd01
 license: Apache-2.0
-dep-upp: grpc-plugins
-dep-pkg: abseil c-ares openssl libprotobuf re2
+dep-pkg: abseil c-ares openssl re2 libprotobuf
+
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE \
-        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_SHARED_LIBS=OFF \
         -DgRPC_BUILD_TESTS=OFF \
         -DgRPC_INSTALL=ON \
         -DgRPC_ABSL_PROVIDER=package \

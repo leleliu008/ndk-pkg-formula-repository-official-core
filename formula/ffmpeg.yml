@@ -4,7 +4,7 @@ web-url: https://ffmpeg.org/
 src-url: https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
 src-sha: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
 license: GPL-2.0-or-later
-dep-pkg: speex theora libvorbis sdl2 x264 x265 xvid lame opus rav1e dav1d libvpx liblzma libwebp libxml2
+dep-pkg: speex theora libvorbis sdl2 x264 x265 xvid lame libopus rav1e dav1d libvpx liblzma libwebp libxml2
 dep-upp: nasm
 bsystem: gmake
 binbstd: 1

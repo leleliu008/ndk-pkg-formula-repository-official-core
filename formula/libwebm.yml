@@ -6,6 +6,6 @@ src-sha: 616cfdca1c869222dc60d5a49d112c1464040390e3876afca4d385347c6ce55e
 license: BSD-3-Clause
 xxflags: -std=c++11
 install: |
-    cmakew &&
-    run install_libs libwebm.* &&
+    cmakew
+    run install_libs libwebm.*
     run install_bins mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info

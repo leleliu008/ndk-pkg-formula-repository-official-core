@@ -1,9 +1,9 @@
 summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
 git-url: https://github.com/sqlite/sqlite
 web-url: https://www.sqlite.org/
-src-url: https://www.sqlite.org/2024/sqlite-autoconf-3450100.tar.gz
-src-sha: cd9c27841b7a5932c9897651e20b86c701dd740556989b01ca596fcfa3d49a0a
-version: 3.45.1
+src-url: https://www.sqlite.org/2024/sqlite-autoconf-3450200.tar.gz
+src-sha: bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
+version: 3.45.2
 license: blessing
 binbstd: 1
 install: |
@@ -20,7 +20,7 @@ install: |
     run install -d      "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
 
     cat > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/sqlite3.pc" <<EOF
-    prefix=$PACKAGE_INSTALL_DIR
+    prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include

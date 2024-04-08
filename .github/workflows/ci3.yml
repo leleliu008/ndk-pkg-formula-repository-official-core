@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [crowbook,ctop,cue,curl,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale,faac,faad2,fcp,fd]
+        pkg: [crowbook,ctop,cue,curl,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,dot_static,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,faac,faad2]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [crowbook,ctop,cue,curl,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale,faac,faad2,fcp,fd]
+        pkg: [crowbook,ctop,cue,curl,curlie,cxxopts,darkhttpd,dasel,dash,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,dot_static,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,faac,faad2]
 
     runs-on: ${{ matrix.os }}
 

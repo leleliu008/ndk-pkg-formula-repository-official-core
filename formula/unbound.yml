@@ -4,7 +4,7 @@ git-url: https://github.com/NLnetLabs/unbound
 src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.19.1.tar.gz
 src-sha: bc1d576f3dd846a0739adc41ffaa702404c6767d2b6082deb9f2f97cbb24a3a9
 license: BSD-3-Clause
-dep-pkg: libnghttp2 libevent libmnl openssl expat
+dep-pkg: libnghttp2 libevent libexpat libmnl openssl
 dep-upp: gm4 flex bison libtool
 
 install: |
@@ -17,7 +17,7 @@ install: |
         --with-pthreads \
         --with-ssl="$openssl_INSTALL_DIR" \
         --with-libmnl="$libmnl_INSTALL_DIR" \
-        --with-libexpat="$expat_INSTALL_DIR" \
+        --with-libexpat="$libexpat_INSTALL_DIR" \
         --with-libevent="$libevent_INSTALL_DIR" \
         --with-libnghttp2="$libnghttp2_INSTALL_DIR" \
         ac_cv_prog_AR="$AR"

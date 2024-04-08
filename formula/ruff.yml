@@ -1,8 +1,8 @@
 summary: An extremely fast Python linter, written in Rust
 web-url: https://beta.ruff.rs/
 git-url: https://github.com/astral-sh/ruff
-src-url: https://github.com/astral-sh/ruff/archive/refs/tags/v0.3.0.tar.gz
-src-sha: 4b65339c295e30cbe50a9848eae45be2c4771cf4de7b22d9ed6ac016002ceca5
+src-url: https://github.com/astral-sh/ruff/archive/refs/tags/v0.3.5.tar.gz
+src-sha: 44ec048e84335eaafb435c50edec83dbd1cd818fad4fe41d9c6e12a9837f0484
 license: MIT
 dep-upp: gmake
 bscript: crates/ruff

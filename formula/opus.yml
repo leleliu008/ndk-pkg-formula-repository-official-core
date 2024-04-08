@@ -1,7 +1,0 @@
-summary: Audio codec
-web-url: https://www.opus-codec.org
-git-url: https://github.com/xiph/opus
-src-url: https://downloads.xiph.org/releases/opus/opus-1.4.tar.gz
-src-sha: c9b32b4253be5ae63d1ff16eea06b94b5f0f2951b7a02aceef58e3a3ce49c51f
-license: BSD-3-Clause
-install: configure
