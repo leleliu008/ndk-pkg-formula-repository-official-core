@@ -3,9 +3,6 @@ web-url: https://libgd.github.io/
 git-url: https://github.com/libgd/libgd
 src-url: https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz
 src-sha: 3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61
-dep-pkg: fontconfig libwebp
-dopatch: |
-    if [ -f ../lib/libfreetype.a ] ; then
-        printf 'INPUT(%s %s)\n' "$freetype2_INSTALL_DIR/lib/libfreetype.a" "$harfbuzz_INSTALL_DIR/lib/libharfbuzz.a" > ../lib/libfreetype.a
-    fi
+dep-pkg: fontconfig libavif
 install: configure --without-x --without-xpm
+dotweak: sed_in_place 's|-lgd|-lgd -liconv|' lib/pkgconfig/gdlib.pc

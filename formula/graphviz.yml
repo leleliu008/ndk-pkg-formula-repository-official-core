@@ -4,7 +4,7 @@ git-url: https://gitlab.com/graphviz/graphviz
 src-url: https://gitlab.com/graphviz/graphviz/-/archive/10.0.1/graphviz-10.0.1.tar.bz2
 src-sha: eaa60fea2b3ad904e3bf6919710c1ba3207ce31b5d7da1687dd3b734de8736f6
 license: EPL-1.0
-dep-pkg: gd pango
+dep-pkg: gd pango libglob
 dep-upp: gm4 flex bison gawk git python3 libtool
 bsystem: autogen
 install: configure --disable-swig

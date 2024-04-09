@@ -4,11 +4,11 @@ git-url: https://github.com/Meinersbur/isl
 src-url: https://libisl.sourceforge.io/isl-0.26.tar.xz
 src-sha: a0b5cb06d24f9fa9e77b55fabbe9a3c94a336190345c2555f9915bb38e976504
 license: MIT
-dep-pkg: gmp
+dep-pkg: libgmp
 
 ppflags: -D_GNU_SOURCE
 install: |
     configure \
         --with-int=gmp \
         --with-gmp=system \
-        --with-gmp-prefix="$gmp_INSTALL_DIR"
+        --with-gmp-prefix="$libgmp_INSTALL_DIR"

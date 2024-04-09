@@ -8,7 +8,7 @@ license: LGPL-3.0-or-later
 
 install: |
     configure \
-        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --disable-valgrind-tests \
         --disable-logging

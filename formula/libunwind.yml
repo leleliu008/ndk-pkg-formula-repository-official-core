@@ -1,8 +1,8 @@
-summary: C API for determining the call-chain of a program
+summary: A portable and efficient C library for determining the call-chain of a program
 web-url: https://www.nongnu.org/libunwind
 git-url: https://github.com/libunwind/libunwind
-src-url: https://github.com/libunwind/libunwind/releases/download/v1.8.1/libunwind-1.8.1.tar.gz
-src-sha: ddf0e32dd5fafe5283198d37e4bf9decf7ba1770b6e7e006c33e6df79e6a6157
+src-url: https://github.com/libunwind/libunwind/releases/download/v1.7.2/libunwind-1.7.2.tar.gz
+src-sha: a18a6a24307443a8ace7a8acc2ce79fbbe6826cd0edf98d6326d0225d6a5d6e6
 license: MIT
-dep-pkg: zlib liblzma
-install: configure --disable-tests
+dep-pkg: liblzma zlib
+install: configure --disable-tests --disable-coredump

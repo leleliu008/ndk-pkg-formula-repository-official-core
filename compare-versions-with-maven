@@ -73,47 +73,48 @@ version_match() {
     esac
 }
 
-package_version() {
-    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$1.yml | cut -c10-)"
-
-    if [ -n "$PACKAGE_VERSION" ] ; then
-        printf '%s\n' "$PACKAGE_VERSION"
-        return 0
-    fi
-
-    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$1.yml | cut -c10-)"
-
-    if [ -z "$PACKAGE_SRC_URL" ] ; then
-        return 0
-    else
-        basename "$PACKAGE_SRC_URL" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
-    fi
+get_version_from_formula() {
+    sed -n '/^version:/p' "$1" | cut -c10-
 }
 
-main() {
-    WORKING_DIR="$(mktemp -d)"
+get_src_url_from_formula() {
+    sed -n '/^src-url:/p' "$1" | cut -c10-
+}
 
-    cd "$WORKING_DIR"
+get_version_from_url() {
+    basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
+}
 
-    curl -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
+#########################################################################
 
-    for artifactId in $(sed -n '/<a href=.* title=/p' artifacts.html | sed 's|<a href="\(.*\)/" .*|\1|')
-    do
-        rm -f maven-metadata.xml
+curl -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
 
-        curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
+for artifactId in $(sed -n '/<a href=.* title=/p' artifacts.html | sed 's|<a href="\(.*\)/" .*|\1|')
+do
+    rm maven-metadata.xml
 
-        LATEST_VERSION_IN_MAVEN_CENTRAL=$(sed -n '/latest/p' maven-metadata.xml | sed -e 's|[[:space:]]||g' -e 's|<latest>\(.*\)</latest>|\1|')
-        AVAILABLE_VERSION_IN_FORMULA_REPO=$(package_version "$artifactId")
+    curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
 
-        if version_match "$AVAILABLE_VERSION_IN_FORMULA_REPO" gt "$LATEST_VERSION_IN_MAVEN_CENTRAL" ; then
-            printf "${COLOR_RED}%-15s %-10s %-10s${COLOR_OFF}\n" "$artifactId" "$AVAILABLE_VERSION_IN_FORMULA_REPO" "$LATEST_VERSION_IN_MAVEN_CENTRAL"
-        else
-            :
+    LATEST_VERSION_IN_MAVEN_CENTRAL=$(sed -n '/latest/p' maven-metadata.xml | sed -e 's|[[:space:]]||g' -e 's|<latest>\(.*\)</latest>|\1|')
+
+    FORMULA_FILEPATH="formula/$artifactId.yml"
+
+    PACKAGE_VERSION="$(get_version_from_formula "$FORMULA_FILEPATH")"
+
+    if [ -z "$PACKAGE_VERSION" ] ; then
+        PACKAGE_SRC_URL="$(get_src_url_from_formula "$FORMULA_FILEPATH")"
+
+        if [ -n "$PACKAGE_SRC_URL" ] ; then
+            PACKAGE_VERSION="$(get_version_from_url "$PACKAGE_SRC_URL")"
         fi
-    done
+    fi
 
-    rm -rf "$WORKING_DIR"
-}
+    if version_match "$PACKAGE_VERSION" gt "$LATEST_VERSION_IN_MAVEN_CENTRAL" ; then
+        printf "${COLOR_RED}%-15s %-10s %-10s${COLOR_OFF}\n" "$artifactId" "$PACKAGE_VERSION" "$LATEST_VERSION_IN_MAVEN_CENTRAL"
+    else
+        :
+    fi
+done
 
-main "$@"
+rm artifacts.html
+rm maven-metadata.xml

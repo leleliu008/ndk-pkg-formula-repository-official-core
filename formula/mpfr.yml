@@ -4,18 +4,19 @@ git-url: https://gitlab.inria.fr/mpfr/mpfr
 src-url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
 src-sha: 277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2
 license: LGPL-3.0-or-later
-dep-pkg: gmp
+dep-pkg: libgmp
+
 dopatch: |
     # https://github.com/wbhart/mpir/issues/286
     if [   -f ../lib/libgmp.a ] ; then
         rm -f ../lib/libgmp.a
-        cp "$gmp_LIBRARY_DIR/libgmp.so" ../lib/
+        cp "$libgmp_LIBRARY_DIR/libgmp.so" ../lib/
     fi
 
 install: |
     configure \
         --with-pic \
-        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
         --disable-logging \
         --disable-assert \
         --disable-lto \

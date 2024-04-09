@@ -5,13 +5,13 @@ src-url: https://ftp.gnu.org/gnu/nettle/nettle-3.9.1.tar.gz
 src-sha: ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
 license: GPL-2.0-or-later
 dep-upp: gm4
-dep-pkg: gmp
+dep-pkg: libgmp
 
 install: |
     configure \
         --libdir="$PACKAGE_INSTALL_DIR/lib" \
-        --with-include-path=$gmp_INCLUDE_DIR \
-        --with-lib-path=$gmp_LIBRARY_DIR \
+        --with-include-path=$libgmp_INCLUDE_DIR \
+        --with-lib-path=$libgmp_LIBRARY_DIR \
         --disable-fat \
         --disable-gcov \
         --disable-openssl \

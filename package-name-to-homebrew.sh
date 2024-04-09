@@ -26,7 +26,8 @@ case $1 in
     golang@1.21)
               printf '%s\n' 'go@1.21'   ;;
     golang)   printf '%s\n' 'go'        ;;
-
+    tensorflow-lite)
+              printf '%s\n' 'libtensorflow' ;;
     dot_static)
               printf '%s\n' 'graphviz'  ;;
     glib-tools)

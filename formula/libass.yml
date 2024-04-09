@@ -3,5 +3,5 @@ git-url: https://github.com/libass/libass
 src-url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.xz
 src-sha: f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784
 license: ISC
-dep-pkg: fontconfig fribidi freetype2
+dep-pkg: fontconfig harfbuzz fribidi libunibreak
 install: configure --enable-large-tiles
