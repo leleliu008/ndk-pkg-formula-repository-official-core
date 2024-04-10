@@ -91,7 +91,7 @@ curl -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/pref
 
 for artifactId in $(sed -n '/<a href=.* title=/p' artifacts.html | sed 's|<a href="\(.*\)/" .*|\1|')
 do
-    rm maven-metadata.xml
+    rm -f maven-metadata.xml
 
     curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
 

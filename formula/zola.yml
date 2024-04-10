@@ -5,14 +5,5 @@ git-url: https://github.com/getzola/zola
 src-url: https://github.com/getzola/zola/archive/refs/tags/v0.18.0.tar.gz
 src-sha: c0e1711a68bc005c2e0ecc76a468f3459739c9e54af34850cb725d04391e19b5
 license: MIT
-dep-pkg: openssl oniguruma
-install: |
-    # https://lib.rs/crates/onig_sys
-    export RUSTONIG_SYSTEM_LIBONIG=1
-    export RUSTONIG_STATIC_LIBONIG=1
-
-    # https://lib.rs/crates/libgit2-sys
-    export OPENSSL_STATIC=1
-    export OPENSSL_NO_VENDOR=1
-
-    cargow install --features native-tls
+dep-upp: openssl
+install: cargow install --locked

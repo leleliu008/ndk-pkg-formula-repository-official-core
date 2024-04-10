@@ -18,6 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - if:  ${{ github.ref_name == 'dev' }}
+        run: |
+            curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/dev/ndk-pkg
+            chmod +x ndk-pkg
+            mv ndk-pkg /usr/bin/ndk-pkg
+
       - run: install -d ~/.ndk-pkg/repos.d/official-core
 
       - run: mv formula ~/.ndk-pkg/repos.d/official-core/
@@ -28,8 +34,8 @@ jobs:
             branch: master
             pinned: 1
             enabled: 1
-            timestamp-created: 1673675503
-            timestamp-updated: 1676399969
+            created: 1673675503
+            updated: 1676399969
             EOF
 
       - run: ndk-pkg env
