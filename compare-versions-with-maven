@@ -87,13 +87,13 @@ get_version_from_url() {
 
 #########################################################################
 
-curl -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
+curl -s -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
 
 for artifactId in $(sed -n '/<a href=.* title=/p' artifacts.html | sed 's|<a href="\(.*\)/" .*|\1|')
 do
     rm -f maven-metadata.xml
 
-    curl -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
+    curl -s -L -o maven-metadata.xml "https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21/${artifactId}/maven-metadata.xml"
 
     LATEST_VERSION_IN_MAVEN_CENTRAL=$(sed -n '/latest/p' maven-metadata.xml | sed -e 's|[[:space:]]||g' -e 's|<latest>\(.*\)</latest>|\1|')
 

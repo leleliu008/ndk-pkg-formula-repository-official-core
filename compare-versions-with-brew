@@ -81,6 +81,10 @@ get_src_url_from_formula() {
     sed -n '/^src-url:/p' "$1" | cut -c10-
 }
 
+get_git_url_from_formula() {
+    sed -n '/^git-url:/p' "$1" | cut -c10-
+}
+
 get_version_from_url() {
     basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
 }
@@ -109,12 +113,27 @@ do
         BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | yq '.[0].versions.stable')
 
         if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
-            printf "${COLOR_RED}%-10s %-10s  |  %-10s %-10s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS"
-        else
-            :
-            #printf "${COLOR_GREEN}%-10s %-10s  |  %-10s %-10s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS"
+            case $BREW_PACKAGE_NMAE in
+                lib*) X=lib ;;
+                   *) X="$(printf '%.1s' "$BREW_PACKAGE_NMAE")"
+            esac
+
+            printf "${COLOR_RED}%-20s %-15s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION"
+            printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n\n" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NMAE.rb"
         fi
     else
-        printf "${COLOR_BLUE}%-10s %-10s  |${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION"
+        unset GITHUB_URL
+
+        PACKAGE_GIT_URL="$(get_git_url_from_formula "$FORMULA_FILEPATH")"
+
+        if [ -n "$PACKAGE_GIT_URL" ] ; then
+            case $PACKAGE_GIT_URL in
+                https://github.com/*)
+                    GITHUB_URL="$PACKAGE_GIT_URL"
+                    ;;
+            esac
+        fi
+
+        printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$GITHUB_URL"
     fi
 done
