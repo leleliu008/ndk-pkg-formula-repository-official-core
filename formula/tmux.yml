@@ -3,9 +3,13 @@ web-url: https://tmux.github.io
 src-url: https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
 src-sha: 551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa
 license: ISC
+dep-upp: bison
 dep-pkg: ncurses libevent utf8proc libglob liblanginfo libgetdtablesize
 
-dopatch: sed_in_place '1i int getdtablesize();' compat/imsg.c
+dopatch: |
+    sed_in_place '1i int getdtablesize();'   compat/imsg.c
+    sed_in_place '1i #include<sys/endian.h>' compat/htonll.c
+    sed_in_place '1i #include<sys/endian.h>' compat/ntohll.c
 
 install: |
     configure \

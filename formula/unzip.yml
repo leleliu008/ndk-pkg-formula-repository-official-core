@@ -12,7 +12,6 @@ version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
 binbstd: 1
-ccflags: -include time.h -include strings.h
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
@@ -25,17 +24,15 @@ install: |
         sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
     fi
 
-    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \
         CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         AS="$AS" \
         LD="'$CC'" \
         STRIP="$STRIP" \
-        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
-        LOC=-DLARGE_FILE_SUPPORT \
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS -DLARGE_FILE_SUPPOR -include time.h -include strings.h $LDFLAGS'" \
         D_USE_BZ2=-DUSE_BZIP2 \
-        L_BZ2=-lbz2 &&
+        L_BZ2=-lbz2
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
