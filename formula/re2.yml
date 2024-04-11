@@ -5,6 +5,10 @@ src-sha: 3f6690c3393a613c3a0b566309cf04dc381d61470079b653afc47c67fb898198
 version: 20240401
 license: BSD-3-Clause
 dep-pkg: abseil
+
 install: |
     cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=OFF
     cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
+
+# https://github.com/google/re2/commit/9ebe4a22cad8a025b68a9594bdff3c047a111333
+dotweak: sed_in_place '/re2_INCLUDE_DIR/d' lib/cmake/re2/re2Config.cmake

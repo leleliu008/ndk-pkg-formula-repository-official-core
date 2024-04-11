@@ -146,7 +146,7 @@ do
                    *) X="$(printf '%.1s' "$BREW_PACKAGE_NMAE")"
             esac
 
-            printf "${COLOR_RED}%-20s %-15s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION"
+            printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
             printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n\n" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NMAE.rb"
         fi
     else

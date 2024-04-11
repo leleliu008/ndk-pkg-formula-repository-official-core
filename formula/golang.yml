@@ -20,6 +20,11 @@ install: |
     run mv bin/android_*/* bin/
     run rm -rf bin/android_*
     run rm -rf src/debug/elf/testdata
+    run rm -rf src/debug/dwarf/testdata
+    run rm -rf src/runtime/pprof/testdata
+    run rm -rf src/runtime/race/race_linux*.syso
+    run rm -rf src/runtime/race/internal/amd64v1/race_*.syso
+    run rm -rf src/runtime/race/internal/amd64v3/race_*.syso
     run rm -rf pkg/obj 
 
     for item in $(ls pkg/tool)
