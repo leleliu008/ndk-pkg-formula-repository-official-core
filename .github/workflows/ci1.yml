@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,azcopy,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes,brook]
+        pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,azcopy,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,boxes]
 
     runs-on: ${{ matrix.os }}
 

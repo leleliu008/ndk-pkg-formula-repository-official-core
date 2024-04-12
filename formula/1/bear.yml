@@ -5,10 +5,10 @@ src-sha: 8314438428069ffeca15e2644eaa51284f884b7a1b2ddfdafe12152581b13398
 license: GPL-3.0-or-later
 dep-pkg: fmt grpc nlohmann-json spdlog
 
-# spawn.h: int posix_spawnp(pid_t* __pid, const char* __file, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
-api-min: 28
-
 install: |
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
+
+# spawn.h: int posix_spawnp(pid_t* __pid, const char* __file, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
+api-min: 28

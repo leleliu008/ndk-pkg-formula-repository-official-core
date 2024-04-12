@@ -8,8 +8,8 @@ dep-pkg: gd pango libglob
 dep-upp: gm4 flex bison gawk git python3 libtool
 bsystem: autogen
 install: |
+    export LDFLAGS="$LDFLAGS --static -static"
     configure_only --disable-swig
     gmakew
-    run cd cmd/dot
-    gmakew dot_static
-    #install_bins dot_static
+    gmakew -C cmd/dot dot_static
+    install_bins cmd/dot/dot_static

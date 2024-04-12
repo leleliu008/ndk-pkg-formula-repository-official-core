@@ -2,12 +2,12 @@ pkgtype: exe
 summary: New way to see and navigate directory trees
 web-url: https://dystroy.org/broot/
 git-url: https://github.com/Canop/broot
-src-url: https://github.com/Canop/broot/archive/refs/tags/v1.35.0.tar.gz
-src-sha: 1d3c2674a95c8c13ff66d356aab04da4f7e7695e2073c2d3a85842916f4d307e
+src-url: https://github.com/Canop/broot/archive/refs/tags/v1.36.1.tar.gz
+src-sha: b52e60a86e3ca38931cf8ed0ccbd4138f12b733c2459ea3088c267a98b8a555b
 license: MIT
 dep-pkg: libgetloadavg libgit2
-dep-upp: patch
 bsystem: cargo
+
 dopatch: |
     run cargo fetch --target "$RUST_TARGET"
 
@@ -17,64 +17,5 @@ dopatch: |
 
     sed_in_place '/trash/d' Cargo.toml
 
-    patch -p1 <<EOF
-    --- a/src/browser/browser_state.rs
-    +++ b/src/browser/browser_state.rs
-    @@ -598,17 +598,6 @@
-                         }
-                     }
-                 }
-    -            Internal::trash => {
-    -                let path = self.displayed_tree().selected_line().path.to_path_buf();
-    -                info!("trash {:?}", &path);
-    -                match trash::delete(&path) {
-    -                    Ok(()) => CmdResult::RefreshState { clear_cache: true },
-    -                    Err(e) => {
-    -                        warn!("trash error: {:?}", &e);
-    -                        CmdResult::DisplayError(format!("trash error: {:?}", &e))
-    -                    }
-    -                }
-    -            }
-                 Internal::quit => CmdResult::Quit,
-                 _ => self.on_internal_generic(
-                     w,
-    --- a/src/stage/stage_state.rs
-    +++ b/src/stage/stage_state.rs
-    @@ -493,16 +493,6 @@
-                         CmdResult::error("you must select a path to unstage")
-                     }
-                 }
-    -            Internal::trash => {
-    -                info!("trash {} staged files", app_state.stage.len());
-    -                match trash::delete_all(app_state.stage.paths()) {
-    -                    Ok(()) => CmdResult::RefreshState { clear_cache: true },
-    -                    Err(e) => {
-    -                        warn!("trash error: {:?}", &e);
-    -                        CmdResult::DisplayError(format!("trash error: {:?}", &e))
-    -                    }
-    -                }
-    -            }
-                 _ => self.on_internal_generic(
-                     w,
-                     internal_exec,
-    --- a/src/verb/internal.rs
-    +++ b/src/verb/internal.rs
-    @@ -145,7 +145,6 @@
-         toggle_tree: "toggle showing more than one level of the tree" true,
-         toggle_trim_root: "toggle removing nodes at first level too" false,
-         total_search: "search again but on all children" false,
-    -    trash: "move file to system trash" true,
-         unstage: "remove selection from staging area" true,
-         up_tree: "focus the parent of the current root" true,
-         //restore_pattern: "restore a pattern which was just removed" false,
-    --- a/src/verb/verb_store.rs
-    +++ b/src/verb/verb_store.rs
-    @@ -298,7 +298,6 @@
-             self.add_internal(toggle_perm).with_shortcut("perm");
-             self.add_internal(toggle_sizes).with_shortcut("sizes");
-             self.add_internal(toggle_trim_root);
-    -        self.add_internal(trash);
-             self.add_internal(total_search).with_key(key!(ctrl-s));
-             self.add_internal(up_tree).with_shortcut("up");
-         }
-    EOF
+fix-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/broot/disable-trash.patch
+fix-sha: e9d5acd2e7bfbe4c036c54bd24609aa8edaa40c9d00247fa7989742a06afb509

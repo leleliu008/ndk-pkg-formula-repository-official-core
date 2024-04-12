@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf]
+        pkg: [halibut,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less,leveldb,lf]
+        pkg: [halibut,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lazygit,lcov,ldns,less]
 
     runs-on: ${{ matrix.os }}
 
