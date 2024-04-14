@@ -14,15 +14,18 @@ install: |
         --disable-gnuprofile \
         --disable-assembly \
         --enable-pthread \
-        ac_cv_prog_ac_yasm=yasm &&
-    install_pc_file 'xvidcore' <<EOF
+        ac_cv_prog_ac_yasm=yasm
+
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/xvidcore.pc <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include
 
     Name: xvidcore
-    URL: ${PACKAGE_WEBPAGE}
+    URL: ${PACKAGE_WEB_URL}
     Description: ${PACKAGE_SUMMARY}
     Version: ${PACKAGE_VERSION}
     Libs: -L\${libdir} -lxvidcore -lm

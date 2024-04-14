@@ -9,6 +9,7 @@ license: GPL-3.0-or-later
 dopatch: |
     sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+
 install: |
     configure \
         --disable-pcre \

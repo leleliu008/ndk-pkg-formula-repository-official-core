@@ -7,11 +7,6 @@ license: LGPL-2.0-or-later
 dep-upp: glib-tools
 dep-pkg: cairo fribidi harfbuzz
 
-dopatch: |
-    if [ -f ../lib/libiconv.a ] ; then
-        printf 'INPUT(%s -lc++_shared)\n' "$libiconv_INSTALL_DIR/lib/libiconv.a" > ../lib/libiconv.a
-    fi
-
 install: |
     mesonw \
         -Dgtk_doc=false \

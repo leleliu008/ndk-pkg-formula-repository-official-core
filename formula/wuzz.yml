@@ -6,6 +6,6 @@ license: AGPL-3.0
 bsystem: go
 
 dopatch: |
-    run rm go.mod &&
-    run go mod init github.com/asciimoo/wuzz &&
+    run rm go.mod
+    run go mod init github.com/asciimoo/wuzz
     run go mod tidy

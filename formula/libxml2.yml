@@ -6,6 +6,7 @@ src-uri: https://distfiles.macports.org/libxml2/libxml2-2.12.6.tar.xz
 src-sha: 889c593a881a3db5fdd96cc9318c87df34eb648edfc458272ad46fd607353fbb
 license: MIT
 dep-pkg: libiconv zlib
+
 install: |
     configure \
         --with-iconv="$libiconv_INSTALL_DIR" \
@@ -16,7 +17,8 @@ install: |
         --without-coverage \
         --without-debug \
         --enable-ipv6 LIBS=-liconv
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    sed -i '/^Requires: /d' libxml-2.0.pc
-    sed -i -e 's|-liconv||g' -e 's|-lz||g' libxml-2.0.pc
-    printf 'Requires: libiconv zlib\n' >>  libxml-2.0.pc
+
+dotweak: |
+    sed -i '/^Requires: /d'                lib/pkgconfig/libxml-2.0.pc
+    sed -i -e 's|-liconv||g' -e 's|-lz||g' lib/pkgconfig/libxml-2.0.pc
+    printf 'Requires: libiconv zlib\n' >>  lib/pkgconfig/libxml-2.0.pc

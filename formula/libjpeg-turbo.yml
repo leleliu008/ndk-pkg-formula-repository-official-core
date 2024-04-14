@@ -10,4 +10,4 @@ install: |
     cmakew \
         -DWITH_JAVA=OFF \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=ON
+        -DENABLE_SHARED=OFF

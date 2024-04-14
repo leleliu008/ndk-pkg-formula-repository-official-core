@@ -10,9 +10,11 @@ install: |
         --enable-threads=posix \
         --disable-assert \
         --disable-gcc-warnings \
-        --with-included-regex &&
-    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/egrep &&
-    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/fgrep
+        --with-included-regex
+
+dotweak: |
+    sed_in_place 's|bash|sh|' bin/egrep
+    sed_in_place 's|bash|sh|' bin/fgrep
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

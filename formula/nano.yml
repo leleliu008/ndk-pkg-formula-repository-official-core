@@ -5,9 +5,8 @@ src-url: https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz
 src-sha: 86f3442768bd2873cec693f83cdf80b4b444ad3cc14760b74361474fc87a4526
 license: GPL-3.0-or-later
 dep-pkg: gettext-runtime libmagic
-bsystem: configure
 
-install: |
+prepare: |
     # pwd.h: struct passwd* getpwent(void) __INTRODUCED_IN(26);
     if [ $TARGET_PLATFORM_VERS -lt 26 ] ; then
         export ac_cv_header_pwd_h=no
@@ -18,6 +17,7 @@ install: |
         export ac_cv_header_glob_h=no
     fi
 
+install: |
     configure \
         --enable-utf8 \
         --enable-color \

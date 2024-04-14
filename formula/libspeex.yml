@@ -7,4 +7,4 @@ license: BSD-3-Clause
 dep-pkg: libogg libspeexdsp
 dep-upp: libtool
 bsystem: autogen
-install: configure --enable-binaries
+install: configure --disable-binaries

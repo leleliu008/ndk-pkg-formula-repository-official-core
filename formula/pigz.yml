@@ -10,11 +10,14 @@ binbstd: 1
 dopatch: sed_in_place 's|ln -f|ln -sf|' Makefile
 
 install: |
-    gmakew clean &&
-    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -static'" &&
-    install_bins pigz &&
-    install_mans pigz.1 &&
-    cd "$PACKAGE_INSTALL_DIR/bin" &&
-    ln -sf pigz unpigz &&
-    cd "$PACKAGE_INSTALL_DIR/share/man/man1" &&
+    gmakew clean
+    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -static'"
+    install_bins pigz
+    install_mans pigz.1
+
+dotweak: |
+    cd bin
+    ln -sf pigz unpigz
+    cd -
+    cd share/man/man1
     ln -sf pigz.1 unpigz.1

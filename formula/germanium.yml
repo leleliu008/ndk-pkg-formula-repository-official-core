@@ -3,7 +3,4 @@ git-url: https://github.com/matsuyoshi30/germanium
 src-url: https://github.com/matsuyoshi30/germanium/archive/refs/tags/v1.2.2.tar.gz
 src-sha: 859fed54957f46e25b4577b561a810186cc21c1f0dfd99d5226e99764df195d9
 license: MIT
-bsystem: go
-
-install: |
-    gow ./cmd/germanium
+install: gow ./cmd/germanium

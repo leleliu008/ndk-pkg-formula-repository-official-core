@@ -10,6 +10,6 @@ binbstd: 1
 api-min: 26
 
 install: |
-    gmakew clean &&
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" &&
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
     install_mans nnn.1

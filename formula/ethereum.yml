@@ -8,5 +8,5 @@ bsystem: go
 install: |
     for item in geth abigen bootnode ethkey evm rlpdump puppeth
     do
-        gow ./cmd/$item || return 1
+        gow ./cmd/$item
     done

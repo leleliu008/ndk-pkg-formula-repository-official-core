@@ -2,11 +2,11 @@ summary: A meta-build system for generating build files for ninja
 git-url: https://gn.googlesource.com/gn
 git-nth: 0
 dep-upp: python3
-binbstd: 1
 bsystem: ninja
+binbstd: 1
 install: |
-    run python3 build/gen.py &&
-    run ninja -C out/ &&
+    run python3 build/gen.py
+    run ninja -C out/
     run install_bins out/gn
 
 # int futimes(int __fd, const struct timeval __times[2]) __INTRODUCED_IN(26);

@@ -21,7 +21,7 @@ install: |
         --prefix="$PACKAGE_INSTALL_DIR" \
         --enable-static \
         --enable-lib-static \
-        --enable-lib-shared &&
-    gmakew clean &&
-    gmakew &&
+        --enable-lib-shared
+    gmakew clean
+    gmakew
     gmakew install

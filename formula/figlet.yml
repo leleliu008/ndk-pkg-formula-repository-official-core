@@ -7,5 +7,5 @@ license: BSD-3-Clause
 binbstd: 1
 
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install CC="$CC" LD="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix="$PACKAGE_INSTALL_DIR"

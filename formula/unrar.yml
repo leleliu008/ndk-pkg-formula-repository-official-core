@@ -3,7 +3,6 @@ web-url: https://www.rarlab.com
 src-url: https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz
 src-sha: 81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd3
 license: Unlicense
-bsystem: gmake
 binbstd: 1
 parallel: 0
 
@@ -11,13 +10,13 @@ parallel: 0
 api-min: 26
 
 dopatch: |
-    sed_in_place 's|getpass("")|""|g' consio.cpp &&
+    sed_in_place 's|getpass("")|""|g'     consio.cpp
     sed_in_place 's|install -D|install|g' makefile
 
 install: |
-    gmakew -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
-    install -d "$PACKAGE_INSTALL_DIR/bin" &&
-    gmakew -f makefile install-unrar DESTDIR="$PACKAGE_INSTALL_DIR" &&
-    gmakew -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'"
+    install -d "$PACKAGE_INSTALL_DIR/bin"
+    gmakew -f makefile install-unrar DESTDIR="$PACKAGE_INSTALL_DIR"
+    gmakew -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'"
     install -d "$PACKAGE_INSTALL_DIR/lib"
     gmakew -f makefile install-lib   DESTDIR="$PACKAGE_INSTALL_DIR"

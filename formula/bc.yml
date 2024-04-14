@@ -11,8 +11,9 @@ do12345: |
     install -d           "$NATIVE_INSTALL_DIR/include"
     install bc/libmath.h "$NATIVE_INSTALL_DIR/include"
 
-install: |
+prepare: |
     run install -d "$PACKAGE_BCACHED_DIR/bc"
     run cp "$NATIVE_INSTALL_DIR/include/libmath.h" "$PACKAGE_BCACHED_DIR/bc"
     run touch -t 190001010000 $PACKAGE_BCACHED_DIR/bc/libmath.h
-    configure --without-libedit --with-readline="$readline_INSTALL_DIR"
+
+install: configure --without-libedit --with-readline="$readline_INSTALL_DIR"

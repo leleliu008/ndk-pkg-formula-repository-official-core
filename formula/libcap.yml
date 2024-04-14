@@ -8,12 +8,12 @@ dep-upp: gperf
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
 dopatch: |
-    sed_in_place 's/indent -kr/indent -br/'    Make.Rules &&
-    sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile &&
+    sed_in_place 's/indent -kr/indent -br/'    Make.Rules
+    sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile
     sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile
 
 install: |
-    gmakew -C "$PACKAGE_BSCRIPT_DIR/libcap" clean &&
+    gmakew -C "$PACKAGE_BSCRIPT_DIR/libcap" clean
     gmakew -C "$PACKAGE_BSCRIPT_DIR/libcap" install \
         prefix="$PACKAGE_INSTALL_DIR" \
         lib=lib \
@@ -26,5 +26,5 @@ install: |
         LDFLAGS="'$LDFLAGS'" \
         AR="$AR" \
         RANLIB="$RANLIB" \
-        OBJCOPY="$OBJCOPY" &&
+        OBJCOPY="$OBJCOPY"
     cp "$PACKAGE_BSCRIPT_DIR/libcap/_caps_output.gperf" .

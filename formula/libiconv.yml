@@ -5,12 +5,20 @@ src-url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz
 src-sha: 8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
 license: GPL-3.0-or-later LGPL-2.0-or-later
 
-install: |
-    configure --enable-extra-encodings
+dopatch: |
+    if [ "$TARGET_PLATFORM_VERS" -lt 30 ] ; then
+        sed_in_place '1i void* mempcpy(void* dst, const void* src, size_t n) {return memcpy(dst, src, n) + n;}' srclib/canonicalize-lgpl.c
+        sed_in_place '1i #include <string.h>' srclib/canonicalize-lgpl.c
+    fi
+
+install: configure --enable-extra-encodings
+
+dotweak: |
+    install -d lib/pkgconfig
 
     for item in iconv charset
     do
-        install_pc_file "lib$item" <<EOF
+        cat > "lib/pkgconfig/lib$item.pc" <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

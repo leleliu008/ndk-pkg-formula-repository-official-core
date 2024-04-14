@@ -37,6 +37,4 @@ install: |
         AR="$AR" \
         LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
         LFLAGS2="'$LDFLAGS'"
-    gmakew -f unix/Makefile install \
-        prefix="$PACKAGE_INSTALL_DIR" \
-        MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
+    gmakew -f unix/Makefile install prefix="$PACKAGE_INSTALL_DIR"

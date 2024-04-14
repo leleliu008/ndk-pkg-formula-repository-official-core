@@ -8,4 +8,5 @@ license: BSD-3-Clause
 dopatch: |
     sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+
 install: configure --disable-tests --disable-apps --disable-man

@@ -21,4 +21,4 @@ install: |
 
     gmakew clean   SYS=posix
     gmakew         SYS=posix CC=$CC LD=$LD CRYPTO=OPENSSL LIB_OPENSSL="'$OPENSSL_LIBS -lz'" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
-    gmakew install SYS=posix prefix="$PACKAGE_INSTALL_DIR" mandir="$PACKAGE_INSTALL_DIR/share/man"
+    gmakew install SYS=posix prefix="$PACKAGE_INSTALL_DIR"

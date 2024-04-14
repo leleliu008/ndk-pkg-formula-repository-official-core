@@ -5,10 +5,9 @@ src-sha: ee9538fce98895dcf0d108087d3ee2e13f5c08ed94c983f0218a7a3d153b725d
 license: GPL-3.0-or-later
 dep-upp: pkg-config
 dep-pkg: ncurses libwordexp
-bsystem: gmake
 binbstd: 1
 
 install: |
-    gmakew clean &&
-    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS $libwordexp_LIBRARY_DIR/libwordexp.a'" UNAME=Linux &&
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS $libwordexp_LIBRARY_DIR/libwordexp.a'" UNAME=Linux
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

@@ -7,5 +7,5 @@ license: MIT
 binbstd: 1
 
 install: |
-    install_bins neofetch &&
+    install_bins neofetch
     install_mans neofetch.1

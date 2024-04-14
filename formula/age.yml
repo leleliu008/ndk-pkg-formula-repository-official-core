@@ -4,11 +4,10 @@ git-url: https://github.com/FiloSottile/age
 src-url: https://github.com/FiloSottile/age/archive/v1.1.1.tar.gz
 src-sha: f1f3dbade631976701cd295aa89308681318d73118f5673cced13f127a91178c
 license: BSD-3-Clause
-
 bsystem: go
 install: |
     for item in age age-keygen
     do
-        gow -X main.Version=v$PACKAGE_VERSION ./cmd/$item || return 1
-        run install_mans doc/$item.1 || return 1
+        gow -X main.Version=v$PACKAGE_VERSION ./cmd/$item
+        run install_mans doc/$item.1
     done

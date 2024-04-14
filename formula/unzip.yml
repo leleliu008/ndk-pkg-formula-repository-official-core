@@ -33,6 +33,4 @@ install: |
         LOCAL_UNZIP="'$CFLAGS $CPPFLAGS -DLARGE_FILE_SUPPOR -include time.h -include strings.h $LDFLAGS'" \
         D_USE_BZ2=-DUSE_BZIP2 \
         L_BZ2=-lbz2
-    gmakew -f unix/Makefile install \
-        prefix="$PACKAGE_INSTALL_DIR" \
-        MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
+    gmakew -f unix/Makefile install prefix="$PACKAGE_INSTALL_DIR"

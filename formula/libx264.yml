@@ -13,7 +13,7 @@ dopatch: |
 install: |
     configure \
         --disable-asm \
-        --enable-cli \
+        --disable-cli \
         --enable-pic \
         --enable-lto \
         --enable-strip

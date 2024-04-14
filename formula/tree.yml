@@ -11,7 +11,7 @@ dopatch: |
     sed_in_place 's|ifndef __linux__|if 1|' tree.h       || return 1
 
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install \
         PREFIX="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man" \

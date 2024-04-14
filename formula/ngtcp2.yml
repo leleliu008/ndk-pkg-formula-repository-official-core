@@ -2,7 +2,6 @@ summary: QUIC library written in C
 git-url: https://github.com/ngtcp2/ngtcp2
 license: MIT
 dep-pkg: libev nghttp3
-bsystem: cmake
 
 install: |
     cmakew \

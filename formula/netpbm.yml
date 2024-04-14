@@ -1,9 +1,9 @@
-summary: Image manipulation
+summary: A toolkit for manipulation of graphic images, including conversion of images between a variety of different formats
 web-url: http://netpbm.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.73.38/netpbm-10.73.38.tgz
-src-sha: 0bbf8ef88413ed286e9b040685c44758857e86ccb266ccf9643ee29807e961de
+src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.40/netpbm-10.86.40.tgz
+src-sha: 7098c0926474303c6fe2d17c0dfb88f24622d1b3a590b6d75495d62ea933b324
 license: GPL-3.0-or-later
-dep-pkg: jasper libxml2 libtiff libpng libjpeg-turbo
+dep-pkg: jasper libtiff libpng libjpeg-turbo libxml2
 dep-upp: gm4 flex perl
 binbstd: 1
 parallel: 0
@@ -20,17 +20,31 @@ dopatch: |
 
 install: |
     gmakew clean
-    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'-ljasper -ljpeg'" JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper"
+    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper"
     gmakew package pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so
-    run mv "$PACKAGE_INSTALL_DIR/link/libnetpbm.a" "$PACKAGE_INSTALL_DIR/lib"
-    run rm -rf "$PACKAGE_INSTALL_DIR/link"
-    sed_in_place "s|@VERSION@|$PACKAGE_VERSION|"                "$PACKAGE_INSTALL_DIR/pkgconfig_template"
-    sed_in_place "s|@LINKDIR@|$PACKAGE_INSTALL_DIR/lib|"        "$PACKAGE_INSTALL_DIR/pkgconfig_template"
-    sed_in_place "s|@INCLUDEDIR@|$PACKAGE_INSTALL_DIR/include|" "$PACKAGE_INSTALL_DIR/pkgconfig_template"
-    run install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    run mv "$PACKAGE_INSTALL_DIR/pkgconfig_template"    "$PACKAGE_INSTALL_DIR/lib/pkgconfig/netpbm.pc"
-    run rm "$PACKAGE_INSTALL_DIR/README"
-    run rm "$PACKAGE_INSTALL_DIR/VERSION"
-    run rm "$PACKAGE_INSTALL_DIR/pkginfo"
-    run rm "$PACKAGE_INSTALL_DIR/config_template"
-    run mv "$PACKAGE_INSTALL_DIR/man" "$PACKAGE_INSTALL_DIR/share"
+
+dotweak: |
+    run mv staticlink/libnetpbm.a lib/
+    run rm -rf staticlink
+    run rm -rf sharedlink
+    run rm pkgconfig_template
+    run rm config_template
+    run rm README
+    run rm VERSION
+    run rm pkginfo
+
+    run install -d lib/pkgconfig
+
+    cat > lib/pkgconfig/netpbm.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: Netpbm
+    Description: A toolkit for manipulation of graphic images
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lnetpbm
+    Requires: jasper libpng libjpeg libtiff-4 libxml-2.0
+    EOF

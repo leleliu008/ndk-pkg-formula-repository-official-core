@@ -6,5 +6,5 @@ license: MIT
 binbstd: 1
 
 install: |
-    install_bins fff &&
+    install_bins fff
     install_mans fff.1

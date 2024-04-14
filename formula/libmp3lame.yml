@@ -7,5 +7,7 @@ license: LGPL-2.0-or-later
 install: |
     configure \
         --without-dmalloc \
-        --enable-frontend \
+        --disable-frontend \
         --enable-nasm
+
+dotweak: rm -rf share/man

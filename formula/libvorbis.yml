@@ -7,5 +7,4 @@ license: BSD-3-Clause
 bsystem: configure
 dep-pkg: libogg
 
-dopatch: |
-    sed_in_place 's/-mno-ieee-fp//g' configure
+dopatch: sed_in_place 's/-mno-ieee-fp//g' configure

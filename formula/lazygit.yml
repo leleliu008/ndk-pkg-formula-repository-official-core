@@ -3,4 +3,9 @@ git-url: https://github.com/jesseduffield/lazygit
 src-url: https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.41.0.tar.gz
 src-sha: f2176fa253588fe4b7118bf83f4316ae3ecb914ae1e99aad8c474e23cea49fb8
 license: MIT
-install: gow -mod vendor -X main.version=$PACKAGE_VERSION -X main.buildSource=ndk-pkg -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+install: |
+    gow \
+        -mod vendor \
+        -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+        -X main.version=$PACKAGE_VERSION \
+        -X main.buildSource=ndk-pkg

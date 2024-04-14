@@ -11,8 +11,8 @@ dopatch: |
     sed_in_place '/#define VSF_SYSDEP_HAVE_USERSHELL/d' sysdeputil.c
 
 install: |
-    gmakew clean &&
-    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS="'-lssl -lcrypto -lcrypt -lcap'" &&
-    install_bins vsftpd &&
-    install_etcs vsftpd.conf &&
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS="'-lssl -lcrypto -lcrypt -lcap'"
+    install_bins vsftpd
+    install_etcs vsftpd.conf
     install_mans vsftpd.8 vsftpd.conf.5

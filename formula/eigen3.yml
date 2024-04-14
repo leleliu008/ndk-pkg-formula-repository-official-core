@@ -6,5 +6,5 @@ src-sha: 8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72
 license: MPL-2.0
 bsystem: cmake
 dopatch: |
-    sed_in_place 's|${CMAKE_INSTALL_DATADIR}/pkgconfig|${CMAKE_INSTALL_LIBDIR}/pkgconfig|'       CMakeLists.txt &&
+    sed_in_place 's|${CMAKE_INSTALL_DATADIR}/pkgconfig|${CMAKE_INSTALL_LIBDIR}/pkgconfig|'       CMakeLists.txt
     sed_in_place 's|${CMAKE_INSTALL_DATADIR}/eigen3/cmake|${CMAKE_INSTALL_LIBDIR}/cmake/eigen3|' CMakeLists.txt

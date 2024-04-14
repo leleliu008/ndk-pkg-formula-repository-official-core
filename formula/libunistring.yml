@@ -13,9 +13,9 @@ install: |
         --enable-relocatable \
         --enable-namespacing
 
-    run install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-
-    cat > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libunistring.pc" <<EOF
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/libunistring.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

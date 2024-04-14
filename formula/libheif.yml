@@ -4,5 +4,5 @@ git-url: https://github.com/strukturag/libheif
 src-url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
 src-sha: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
 license: LGPL-3.0-only
-dep-pkg: libde265 x265 aom rav1e dav1d svt-av1
+dep-pkg: libde265 libx265 librav1e libdav1d svt-av1 aom
 bsystem: cmake

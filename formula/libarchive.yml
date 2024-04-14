@@ -1,14 +1,16 @@
 summary: Multi-format archive and compression library
 git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
-src-url: https://www.libarchive.org/downloads/libarchive-3.7.2.tar.xz
-src-sha: 04357661e6717b6941682cde02ad741ae4819c67a260593dfb2431861b251acb
+src-url: https://www.libarchive.org/downloads/libarchive-3.7.3.tar.xz
+src-sha: 63e7a7174638fc7d6b79b4c8b0ad954e0f4f45abe7239c1ecb200232aa9a43d2
 license: BSD-2-Clause
 dep-pkg: openssl lz4 lzo libzstd liblzma libbz2 zlib libiconv libexpat
 
-install: |
+prepare: |
     export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"
     export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
+
+install: |
     configure \
         --enable-xattr \
         --enable-acl \

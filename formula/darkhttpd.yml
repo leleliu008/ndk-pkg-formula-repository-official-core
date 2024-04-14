@@ -4,7 +4,7 @@ git-url: https://github.com/emikulic/darkhttpd
 src-url: https://github.com/emikulic/darkhttpd/archive/refs/tags/v1.16.tar.gz
 src-sha: ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981
 license: ISC
-
+binbstd: 1
 install: |
-    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -static -o darkhttpd "$PACKAGE_BSCRIPT_DIR/darkhttpd.c"
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o darkhttpd darkhttpd.c
     install_bins darkhttpd

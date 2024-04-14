@@ -8,6 +8,6 @@ dep-pkg: readline
 binbstd: 1
 
 install: |
-    gmakew clean &&
-    gmakew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS -pie -fPIE'" MYLIBS=-lreadline &&
+    gmakew clean
+    gmakew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS -pie -fPIE'" MYLIBS=-lreadline
     gmakew install INSTALL_TOP="$PACKAGE_INSTALL_DIR"

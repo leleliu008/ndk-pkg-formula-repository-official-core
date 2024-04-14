@@ -10,10 +10,10 @@ bsystem: autotools
 api-min: 26
 
 dopatch: |
-    autoreconf -ivf &&
-    sed_in_place 's@linux-private/@@g' lib/mpls.c &&
-    sed_in_place 's@linux-private/@@g' lib/route/link/vrf.c &&
-    sed_in_place '/linux-private/d' Makefile.in &&
+    autoreconf -ivf
+    sed_in_place 's@linux-private/@@g' lib/mpls.c
+    sed_in_place 's@linux-private/@@g' lib/route/link/vrf.c
+    sed_in_place '/linux-private/d' Makefile.in
     sed_in_place '/linux-private/d' Makefile.am
 
 install: |

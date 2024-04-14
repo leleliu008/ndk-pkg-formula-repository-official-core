@@ -6,5 +6,5 @@ license: BSD-2-Clause
 binbstd: 1
 
 install: |
-    gmakew clean   UNAME=Linux &&
+    gmakew clean   UNAME=Linux
     gmakew install UNAME=Linux PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" SONAME_FLAGS=-shared AR="$AR" V=1

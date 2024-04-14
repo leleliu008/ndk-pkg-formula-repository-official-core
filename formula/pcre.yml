@@ -5,10 +5,6 @@ src-sha: 4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8
 license: BSD-3-Clause
 dep-pkg: zlib libbz2 readline
 
-dopatch: |
-    sed_in_place 's|DESTINATION man/man1|DESTINATION share/man/man1|' CMakeLists.txt &&
-    sed_in_place 's|DESTINATION man/man3|DESTINATION share/man/man3|' CMakeLists.txt
-
 install: |
     cmakew \
         -DPCRE_BUILD_PCRE8=ON \
@@ -20,22 +16,25 @@ install: |
         -DPCRE_SUPPORT_VALGRIND=OFF \
         -DPCRE_SUPPORT_LIBZ=ON \
         -DPCRE_SUPPORT_LIBBZ2=ON \
-        -DPCRE_SUPPORT_LIBREADLINE=ON && {
-        for item in pcre pcre16 pcre32 pcreposix
-        do
-            install_pc_file lib$item <<EOF
-    prefix=$PACKAGE_INSTALL_DIR
+        -DPCRE_SUPPORT_LIBREADLINE=ON
+
+dotweak: |
+    install -d lib/pkgconfig
+
+    for item in pcre pcre16 pcre32 pcreposix
+    do
+        cat > "lib/pkgconfig/lib$item.pc" <<EOF
+    prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include
 
     Name: lib$item
-    URL: ${PACKAGE_WEB_URL}
-    Description: ${PACKAGE_SUMMARY}
-    Version: ${PACKAGE_VERSION}
+    URL: $PACKAGE_WEB_URL
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
     Libs: -L\${libdir} -l$item
     Libs.private: -D_THREAD_SAFE -pthread
     Cflags: -I\${includedir}
     EOF
-        done
-    }
+    done

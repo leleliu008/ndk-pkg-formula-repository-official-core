@@ -3,8 +3,6 @@ git-url: https://github.com/Taywee/args
 src-url: https://github.com/Taywee/args/archive/refs/tags/6.3.0.tar.gz
 src-sha: e072c4a9d6990872b0ecb45480a5487db82e0dc3d27c3c3eb9fc0930c0d796ae
 license: MIT
-bsystem: cmake
-
 install: |
     cmakew \
         -DARGS_BUILD_EXAMPLE=OFF \

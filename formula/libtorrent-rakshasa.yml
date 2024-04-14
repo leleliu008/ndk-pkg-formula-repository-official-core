@@ -7,10 +7,12 @@ dep-pkg: zlib openssl libexecinfo
 dep-upp: libtool
 bsystem: autogen
 xxflags: -std=c++11
+
 install: |
     configure \
         --disable-largefile \
         --enable-aligned=true \
         --without-fastcgi \
         --with-zlib="$zlib_INSTALL_DIR"
-    sed_in_place 's|-ltorrent|-ltorrent -lexecinfo|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libtorrent.pc"
+
+dotweak: sed_in_place 's|-ltorrent|-ltorrent -lexecinfo|' lib/pkgconfig/libtorrent.pc

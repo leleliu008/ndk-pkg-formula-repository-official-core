@@ -4,8 +4,9 @@ git-url: https://github.com/OSGeo/PROJ
 src-url: https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz
 src-sha: b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14
 license: MIT
-dep-upp: sqlite
+dep-upp: sqlite3
 dep-pkg: libsqlite3 libtiff libcurl
+
 dopatch: |
     # https://cmake.org/cmake/help/latest/module/FindCURL.html
     printf '%s\n' '
@@ -143,20 +144,21 @@ dopatch: |
     sed_in_place 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
     sed_in_place 's|${CURL_LIBRARY}|CURL::libcurl|' src/lib_proj.cmake
 
-install: |
-    cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF
-    install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    printf '
-    prefix=${pcfiledir}/../..
-    libdir=${prefix}/lib
-    includedir=${prefix}/include
-    datarootdir=${prefix}/share
-    datadir=${datarootdir}/proj
+install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF
+
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/proj.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    libdir=\${prefix}/lib
+    includedir=\${prefix}/include
+    datarootdir=\${prefix}/share
+    datadir=\${datarootdir}/proj
 
     Name: PROJ
     Description: Coordinate transformation software library
+    Version: $PACKAGE_VERSION
     Requires: sqlite3 libtiff-4 libcurl
-    Version: %s
-    Libs: -L${libdir} -lproj -lc++_shared -lm -ldl
-    Cflags: -I${includedir}
-    ' "$PACKAGE_VERSION" > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/proj.pc"
+    Libs: -L\${libdir} -lproj -lc++ -ldl -lm
+    Cflags: -I\${includedir}
+    EOF

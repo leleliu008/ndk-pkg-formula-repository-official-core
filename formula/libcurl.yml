@@ -6,7 +6,9 @@ src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
 dep-pkg: libnghttp2 libzstd zlib brotli openssl
 dep-upp: perl
+
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+
 install: |
     configure \
         --enable-optimize \
@@ -20,8 +22,10 @@ install: |
         --without-libpsl \
         --without-librtmp \
         --without-libidn2
-    rm -rfv "$PACKAGE_INSTALL_DIR/bin/curl"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/man/man1/curl.1"
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+
+dotweak: |
+    rm -rf bin/curl
+    rm -rf share/man/man1/curl.1
+    cd lib/pkgconfig
     sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
     printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> libcurl.pc

@@ -11,3 +11,5 @@ dopatch: sed_in_place '/add_subdirectory(tests)/d' CMakeLists.txt
 install: |
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
+
+dotweak: sed_in_place 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc

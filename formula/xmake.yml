@@ -5,11 +5,14 @@ src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.9/xmake-v2.8.9
 src-sha: 5f793c393346ef80e47f083ade4d3c2fdfc448658a7917fda35ccd7bd2b911b8
 license: Apache-2.0
 binbstd: 1
-install: |
+
+dopatch: |
     sed_in_place 's|if is_host "macosx"|if false|' configure
-    sed_in_place 's|\*/cc|*-cc|' configure
+    sed_in_place 's|\*/cc|*-cc|'   configure
     sed_in_place 's|\*/c++|*-c++|' configure
-    run ./configure
+
+install: |
+    run ./configure --host="$TARGET_TRIPLE"
     gmakew clean
     gmakew
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

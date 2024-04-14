@@ -5,10 +5,9 @@ src-sha: ad93ba39acd383696ab6a9ebbed1259ecf2d3cf9f49d6b97038c66f80749e99a
 license: GPL-3.0-or-later
 dep-pkg: ncurses
 bsystem: autotools
-install: |
+
+prepare: |
     export ac_cv_file__usr_lib_kbd_consolefonts=no
     export ac_cv_file__usr_share_consolefonts=no
     export ac_cv_file__usr_lib_X11_fonts_misc=no
     export ac_cv_file__usr_X11R6_lib_X11_fonts_misc=no
-
-    configure "--mandir=$PACKAGE_INSTALL_DIR/share/man"

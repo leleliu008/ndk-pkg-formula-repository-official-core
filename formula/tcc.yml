@@ -18,7 +18,7 @@ install: |
         --ar=$AR \
         --extra-cflags="'$CPPFLAGS $CFLAGS'" \
         --extra-ldflags="'$LDFLAGS'" \
-        --enable-cross &&
-    gmakew clean &&
-    gmakew ONE_SOURCE=yes &&
+        --enable-cross
+    gmakew clean
+    gmakew ONE_SOURCE=yes
     gmakew install

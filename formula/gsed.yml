@@ -5,17 +5,16 @@ src-url: https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz
 src-sha: 6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
 license: GPL-3.0-or-later
 ppflags: -D__USE_FORTIFY_LEVEL=0
+
 install: |
     configure \
         --program-prefix=g \
         --without-selinux \
         --with-included-regex \
         --disable-acl \
-        --disable-assert &&
-    (
-        run cd $PACKAGE_INSTALL_DIR/bin
-        ln -s gsed sed
-    )
+        --disable-assert
+
+dotweak: cd bin && ln -s gsed sed
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
