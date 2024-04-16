@@ -6,20 +6,18 @@ src-sha: bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
 version: 3.45.2
 license: blessing
 binbstd: 1
+
 install: |
     run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
-    run "$AR" rsc libsqlite3.a sqlite3.o
     run "$CC" "$LDFLAGS" -shared -o libsqlite3.so sqlite3.o
+    run "$AR" rsc libsqlite3.a sqlite3.o
 
-    run install -d      "$PACKAGE_INSTALL_DIR/include"
-    run mv *.h          "$PACKAGE_INSTALL_DIR/include/"
+    install_incs *.h
+    install_libs libsqlite3.a libsqlite3.so
 
-    run install -d      "$PACKAGE_INSTALL_DIR/lib"
-    run mv libsqlite3.* "$PACKAGE_INSTALL_DIR/lib/"
-
-    run install -d      "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-
-    cat > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/sqlite3.pc" <<EOF
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/sqlite3.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

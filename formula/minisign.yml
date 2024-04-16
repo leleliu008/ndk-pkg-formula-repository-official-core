@@ -1,0 +1,8 @@
+summary: A dead simple tool to sign files and verify signatures
+web-url: https://jedisct1.github.io/minisign/
+git-url: https://github.com/jedisct1/minisign
+src-url: https://github.com/jedisct1/minisign/archive/refs/tags/0.11.tar.gz
+src-sha: 74c2c78a1cd51a43a6c98f46a4eabefbc8668074ca9aa14115544276b663fc55
+license: ISC
+dep-pkg: libsodium
+bsystem: cmake

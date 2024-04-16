@@ -3,7 +3,6 @@ git-url: https://github.com/cli/cli
 src-url: https://github.com/cli/cli/archive/refs/tags/v2.47.0.tar.gz
 src-sha: f87622443f143a84462a026534cf234b059c609a6053d7c9ff692c45b30e63f4
 license: MIT
-dopatch: sed_in_place 's|^go 1.22$|go 1.22.0|' go.mod
 install: |
     gow -X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) \
         -X github.com/cli/cli/internal/build.Version=$PACKAGE_VERSION \

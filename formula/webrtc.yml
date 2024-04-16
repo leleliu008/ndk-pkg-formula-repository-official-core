@@ -3,7 +3,7 @@ web-url: https://webrtc.org/
 git-url: https://webrtc.googlesource.com/src
 version: 1
 license: BSD-3-Clause
-dep-upp: git gclient ninja
+dep-upp: git ninja
 
 # https://webrtc.github.io/webrtc-org/native-code/android/
 prepare: |
@@ -11,7 +11,10 @@ prepare: |
         abort 1 "this library is only supported built on Linux"
     fi
 
-    cd ..
+    run cd ..
+    run git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    run export PATH="'$PWD/depot_tools:$PATH'"
+
     run command fetch --nohooks webrtc_android
     sed_in_place '/target_os = /d' .gclient
     run "echo \"target_os = ['android']\" >> .gclient"

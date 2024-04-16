@@ -6,7 +6,7 @@ src-sha: 629723fa82c629581ccada149c05d2fdbcbba04ad783042d4cabe59434c4759d
 license: LGPL-3.0-or-later
 bsystem: go
 install: |
-    for item in geth abigen bootnode ethkey evm rlpdump puppeth
+    for item in geth abigen bootnode ethkey evm rlpdump clef
     do
         gow ./cmd/$item
     done

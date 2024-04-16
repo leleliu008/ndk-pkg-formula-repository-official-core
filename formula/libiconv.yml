@@ -19,7 +19,7 @@ dotweak: |
     for item in iconv charset
     do
         cat > "lib/pkgconfig/lib$item.pc" <<EOF
-    prefix=$PACKAGE_INSTALL_DIR
+    prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include
