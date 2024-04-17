@@ -6,12 +6,16 @@ src-sha: ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c
 license: Apache-2.0
 dep-pkg: eigen3 tbb openjpeg openexr openblas ffmpeg
 dep-upp: python3 android-sdk
+
+doready: LINK_TYPE=shared-most
+
 dopatch: |
     # bundled third-party libraries are removed, we want to use our own
     for d in ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg tbb zlib
     do
         rm -rf "3rdparty/$d"
     done
+
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
@@ -53,5 +57,7 @@ install: |
         -DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
         -DANDROID_NO_TERMUX=OFF \
         -DANDROID_SDK_ROOT="$(uppm info android-sdk installed-dir)"
-    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/jni/include" "$PACKAGE_INSTALL_DIR/"
-    run cp -r "$PACKAGE_INSTALL_DIR/sdk/native/*/$TARGET_PLATFORM_ABI" "$PACKAGE_INSTALL_DIR/lib"
+
+dotweak: |
+    run cp -r sdk/native/jni/include ./
+    run cp -r sdk/native/*/$TARGET_PLATFORM_ABI lib/

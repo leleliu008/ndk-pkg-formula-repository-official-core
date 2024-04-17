@@ -19,6 +19,7 @@ install: |
         lib=lib \
         PAM_CAP=no \
         GOLANG=no \
+        SHARED=no \
         BUILD_CC="$CC_FOR_BUILD" \
         BUILD_CFLAGS='' \
         CC="$CC" \

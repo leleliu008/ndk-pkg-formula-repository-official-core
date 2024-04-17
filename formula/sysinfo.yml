@@ -1,0 +1,4 @@
+summary: A command-line tool to get your system information
+git-url: https://github.com/leleliu008/C-examples
+bscript: utils/sysinfo
+bsystem: cmake

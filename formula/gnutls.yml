@@ -3,9 +3,9 @@ git-url: https://github.com/gnutls/gnutls
 web-url: https://www.gnutls.org/
 src-url: https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.4.tar.xz
 src-sha: 2bea4e154794f3f00180fa2a5c51fe8b005ac7a31cd58bd44cdfa7f36ebc3a9b
-dep-pkg: libgmp libunistring nettle libtasn1 libidn2 p11-kit
+dep-pkg: libtasn1 libidn2 nettle p11-kit
 license: LGPL-2.1-or-later GPL-3.0-only
-
+ldflags: -liconv
 install: |
     configure \
         --without-gcov \
