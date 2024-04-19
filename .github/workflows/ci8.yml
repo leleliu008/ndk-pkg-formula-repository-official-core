@@ -14,9 +14,10 @@ jobs:
       fail-fast: false
 
       matrix:
-        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd]
+        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        abi: [arm64-v8a]
         exe: [fsle]
+        pkg: [libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd]
 
     runs-on: ubuntu-latest
 

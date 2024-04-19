@@ -8,3 +8,5 @@ license: GPL-3.0-or-later
 install: configure --program-prefix=g --without-guile --without-dmalloc
 
 dotweak: cd bin && ln -s gmake make
+
+api-min: 28

@@ -10,46 +10,6 @@ prepare: |
     export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"
     export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
 
-    # grp.h:65:int getgrnam_r(const char* _Nonnull __name, struct group* __BIONIC_COMPLICATED_NULLNESS __group, char* _Nonnull __buf, size_t __n, struct group* _Nullable *_Nonnull __result) __INTRODUCED_IN(24);
-    # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
-    if [ "$TARGET_PLATFORM_VERS" -ge 24 ] ; then
-        export ac_cv_func_getgrnam_r=yes
-        export ac_cv_func_getgrgid_r=yes
-    else
-        export ac_cv_func_getgrnam_r=no
-        export ac_cv_func_getgrgid_r=no
-    fi
-
-    # sys/time.h:74:int futimesat(int __dir_fd, const char* __BIONIC_COMPLICATED_NULLNESS __path, const struct timeval __times[_Nullable 2]) __INTRODUCED_IN(26);
-    # sys/time.h:53:int lutimes(const char* _Nonnull __path, const struct timeval __times[_Nullable 2]) __INTRODUCED_IN(26);
-    # langinfo.h:97:char* _Nonnull nl_langinfo(nl_item __item) __INTRODUCED_IN(26);
-    if [ "$TARGET_PLATFORM_VERS" -ge 26 ] ; then
-        export ac_cv_func_futimesat=yes
-        export ac_cv_func_futimes=yes
-        export ac_cv_func_lutimes=yes
-        export ac_cv_func_nl_langinfo=yes
-    else
-        export ac_cv_func_futimesat=no
-        export ac_cv_func_futimes=no
-        export ac_cv_func_lutimes=no
-        export ac_cv_func_nl_langinfo=no
-    fi
-
-    # spawn.h:58:int posix_spawnp(pid_t* _Nullable __pid, const char* _Nonnull __file, const posix_spawn_file_actions_t _Nullable * _Nullable __actions, const posix_spawnattr_t _Nullable * _Nullable __attr, char* const _Nonnull __argv[_Nonnull], char* const _Nullable __env[_Nullable]) __INTRODUCED_IN(28);
-    if [ "$TARGET_PLATFORM_VERS" -ge 28 ] ; then
-        export ac_cv_func_posix_spawnp=yes
-        export ac_cv_func_posix_spawn_file_actions_init=yes
-        export ac_cv_func_posix_spawn_file_actions_addclose=yes
-        export ac_cv_func_posix_spawn_file_actions_adddup2=yes
-        export ac_cv_func_posix_spawn_file_actions_destroy=yes
-    else
-        export ac_cv_func_posix_spawnp=no
-        export ac_cv_func_posix_spawn_file_actions_init=no
-        export ac_cv_func_posix_spawn_file_actions_addclose=no
-        export ac_cv_func_posix_spawn_file_actions_adddup2=no
-        export ac_cv_func_posix_spawn_file_actions_destroy=no
-    fi
-
 install: |
     configure \
         --enable-xattr \

@@ -1,11 +1,11 @@
+pkgtype: exe+lib
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
 git-url: https://github.com/nghttp2/nghttp2
 src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.61.0/nghttp2-1.61.0.tar.gz
 src-sha: aa7594c846e56a22fbf3d6e260e472268808d3b49d5e0ed339f589e9cc9d484c
-dep-pkg: libevent libev jansson libxml2 c-ares cunit
+dep-pkg: libevent libev libjansson libxml2 c-ares cunit
 license: MIT
-sfslink: 0
 
 fix-url: https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1
 fix-sha: c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e

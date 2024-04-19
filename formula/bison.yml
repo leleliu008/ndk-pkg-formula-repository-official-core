@@ -21,5 +21,4 @@ install: |
         --enable-relocatable \
         --enable-threads=posix \
         --disable-gcc-warnings \
-        --disable-assert \
-        ac_cv_func_ffsl=yes
+        --disable-assert

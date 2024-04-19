@@ -14,9 +14,10 @@ jobs:
       fail-fast: false
 
       matrix:
-        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship]
+        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        abi: [arm64-v8a]
         exe: [fsle]
+        pkg: [quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3]
 
     runs-on: ubuntu-latest
 
@@ -68,7 +69,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship]
+        pkg: [quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

@@ -7,9 +7,9 @@ license: BSD-3-Clause
 bscript: build/cmake
 install: |
     cmakew \
+        -DZSTD_BUILD_STATIC=ON \
+        -DZSTD_BUILD_SHARED=ON \
         -DZSTD_BUILD_TESTS=OFF \
         -DZSTD_BUILD_CONTRIB=OFF \
         -DZSTD_BUILD_PROGRAMS=OFF \
-        -DZSTD_BUILD_STATIC=ON \
-        -DZSTD_BUILD_SHARED=OFF \
         -DZSTD_MULTITHREAD_SUPPORT=ON

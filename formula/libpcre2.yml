@@ -12,6 +12,8 @@ install: |
     cmakew \
         -DCMAKE_C_STANDARD=99 \
         -DCMAKE_C_STANDARD_REQUIRED=ON \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_STATIC_LIBS=ON \
         -DPCRE2_BUILD_PCRE2_8=ON \
         -DPCRE2_BUILD_PCRE2_16=ON \
         -DPCRE2_BUILD_PCRE2_32=ON \

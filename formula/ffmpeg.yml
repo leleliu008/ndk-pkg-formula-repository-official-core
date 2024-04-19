@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: A complete, cross-platform solution to record, convert and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
@@ -8,7 +9,6 @@ dep-pkg: libmp3lame libtheora libvorbis libspeex librav1e libdav1d libx264 libx2
 dep-upp: nasm
 bsystem: gmake
 binbstd: 1
-sfslink: 0
 
 install: |
     unset CONFIGURE_EXTRA_ARGS

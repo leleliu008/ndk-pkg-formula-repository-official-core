@@ -16,7 +16,7 @@ install: |
         --without-readline \
         --without-coverage \
         --without-debug \
-        --enable-ipv6 LIBS=-liconv
+        --enable-ipv6 LIBS="'-liconv -lm'"
 
 dotweak: |
     sed -i '/^Requires: /d'                lib/pkgconfig/libxml-2.0.pc

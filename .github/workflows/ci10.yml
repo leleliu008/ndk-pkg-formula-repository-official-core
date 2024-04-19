@@ -14,9 +14,10 @@ jobs:
       fail-fast: false
 
       matrix:
-        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv]
+        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        abi: [arm64-v8a]
         exe: [fsle]
+        pkg: [mpdecimal,mpg123,mpir,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,open264,openal-soft,opencolorio,opencv]
 
     runs-on: ubuntu-latest
 

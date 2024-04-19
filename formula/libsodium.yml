@@ -11,8 +11,3 @@ dopatch: |
     if [ "$TARGET_PLATFORM_ARCH" = aarch64 ] ; then
         export CFLAGS="$CFLAGS -march=armv8-a+crypto"
     fi
-
-    # string.h:80:void* _Nonnull memset_explicit(void* _Nonnull __dst, int __ch, size_t __n) __INTRODUCED_IN(34);
-    if [ "$TARGET_PLATFORM_VERS" -lt 34 ] ; then
-        export ac_cv_func_memset_explicit=no
-    fi

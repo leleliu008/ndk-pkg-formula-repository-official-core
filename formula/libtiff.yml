@@ -7,24 +7,24 @@ dep-pkg: libzstd liblzma zlib
 
 install: |
     cmakew \
+        -Dlzw=ON \
         -Dzlib=ON \
         -Dzstd=ON \
         -Dlzma=ON \
-        -Dlzw=ON \
         -Dwebp=OFF \
         -Djpeg=OFF \
         -Djbig=OFF \
         -Dlerc=OFF \
         -Dtiff-docs=OFF \
-        -Dtiff-tools=ON \
+        -Dtiff-tools=OFF \
         -Dtiff-tests=OFF \
-        -Dtiff-contrib=ON \
+        -Dtiff-contrib=OFF \
         -DBUILD_SHARED_LIBS=OFF
     cmakew \
+        -Dlzw=ON \
         -Dzlib=ON \
         -Dzstd=ON \
         -Dlzma=ON \
-        -Dlzw=ON \
         -Dwebp=OFF \
         -Djpeg=OFF \
         -Djbig=OFF \
