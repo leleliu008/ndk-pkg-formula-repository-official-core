@@ -6,6 +6,7 @@ src-sha: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
 license: BSD-3-Clause
 bsystem: gmake
 binbstd: 1
+sfslink: 0
 
 install: |
     sed_in_place '/LIBDLLNAME   =/i LIBNAME = $(LIBPREFIX).$(LIBSUFFIX)' Makefile.system

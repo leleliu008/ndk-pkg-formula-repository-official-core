@@ -7,7 +7,6 @@ license: MIT
 sfslink: 0
 dopatch: sed_in_place "/subdir('util')/d" meson.build
 install: |
-    LINK_TYPE=shared-most
     mesonw \
         -Dicu=enabled \
         -Dglib=enabled \

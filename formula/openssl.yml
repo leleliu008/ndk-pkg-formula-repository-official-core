@@ -23,7 +23,7 @@ install: |
         #sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
     fi
 
-    if [ "$LINK_TYPE" = static-only ] || [ "$LINK_TYPE" = static-most ] ; then
+    if [ "$REQUEST_TO_CREATE_EXE_TYPE" = fsle ] || [ "$REQUEST_TO_CREATE_EXE_TYPE" = msle ] ; then
         cat > proxy-ld.c <<EOF
     #include <stdio.h>
     #include <stdlib.h>

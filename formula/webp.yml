@@ -1,0 +1,25 @@
+summary: Image format providing lossless and lossy compression for web images
+web-url: https://developers.google.com/speed/webp
+git-url: https://github.com/webmproject/libwebp
+src-url: http://downloads.webmproject.org/releases/webp/libwebp-1.3.2.tar.gz
+src-sha: 2a499607df669e40258e53d0ade8035ba4ec0175244869d1025d460562aa09b4
+dep-pkg: libpng libtiff libjpeg-turbo giflib
+license: BSD-3-Clause
+
+dopatch: sed_in_place 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
+
+install: |
+    cmakew \
+        -DWEBP_BUILD_CWEBP=ON \
+        -DWEBP_BUILD_DWEBP=ON \
+        -DWEBP_BUILD_VWEBP=ON \
+        -DWEBP_BUILD_WEBPMUX=ON \
+        -DWEBP_BUILD_WEBPINFO=ON \
+        -DWEBP_BUILD_GIF2WEBP=ON \
+        -DWEBP_BUILD_IMG2WEBP=ON \
+        -DWEBP_BUILD_ANIM_UTILS=ON \
+        -DWEBP_BUILD_EXTRAS=ON \
+        -DWEBP_LINK_STATIC=ON \
+        -DBUILD_SHARED_LIBS=OFF
+
+dotweak: sed_in_place '/^Libs:/s|$| -lm|' lib/pkgconfig/libsharpyuv.pc

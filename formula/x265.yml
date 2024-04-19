@@ -7,7 +7,7 @@ license: GPL-2.0-only
 bscript: source
 
 dopatch: |
-    if [ "$LINK_TYPE" = static-only ] ; then
+    if [ "$REQUEST_TO_CREATE_EXE_TYPE" = fsle ] ; then
         sed_in_place 's|cli x265-shared|cli x265-static|' CMakeLists.txt
     fi
 

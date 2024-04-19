@@ -8,8 +8,8 @@ license: blessing
 binbstd: 1
 
 install: |
-    run "$CC" "$CFLAGS" "$CPPFLAGS" -c -o sqlite3.o sqlite3.c
-    run "$CC" "$LDFLAGS" -shared -o libsqlite3.so sqlite3.o
+    run "$CC" -c "$CFLAGS" "$CPPFLAGS" -o sqlite3.o sqlite3.c
+    run "$CC" -shared "$LDFLAGS" -o libsqlite3.so sqlite3.o
     run "$AR" rsc libsqlite3.a sqlite3.o
 
     install_incs *.h

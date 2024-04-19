@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
+        pkg: [xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
 
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
+        pkg: [xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
 
     runs-on: ${{ matrix.os }}
 

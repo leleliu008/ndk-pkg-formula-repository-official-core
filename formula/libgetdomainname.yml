@@ -38,7 +38,7 @@ install: |
     }
     EOF
 
-    run $CC $CFLAGS $CPPFLAGS -c -o getdomainname.o getdomainname.c
+    run $CC -c $CFLAGS $CPPFLAGS -o getdomainname.o getdomainname.c
     run $AR rsc libgetdomainname.a  getdomainname.o
     run install_incs getdomainname.h
     run install_libs libgetdomainname.a
