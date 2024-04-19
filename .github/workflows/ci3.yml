@@ -16,6 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         pkg: [crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,dot_static,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale]
+        exe: [fsle]
 
     runs-on: ubuntu-latest
 
@@ -55,11 +56,11 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }}
+          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}
 
 
   macos:
-    # if: false
+    if: false
     strategy:
 
       fail-fast: false
@@ -68,6 +69,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         pkg: [crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,dot_static,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale]
+        exe: [fsle]
 
     runs-on: ${{ matrix.os }}
 
@@ -106,4 +108,4 @@ jobs:
           if [ -z "$MIN_SDK_API_LEVEL" ] ; then
             MIN_SDK_API_LEVEL=21
           fi
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}
