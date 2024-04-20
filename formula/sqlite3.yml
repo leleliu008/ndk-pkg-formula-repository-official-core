@@ -7,4 +7,4 @@ version: 3.45.2
 license: blessing
 dep-pkg: readline zlib
 dopatch: sed_in_place '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' sqlite3.c
-install: configure --disable-editline --enable-readline --enable-static-shell
+install: configure --disable-editline --enable-readline --enable-static-shell LIBS=-lm

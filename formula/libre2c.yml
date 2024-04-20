@@ -8,6 +8,16 @@ install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DRE2C_BUILD_LIBS=ON \
-        -DRE2C_BUILD_RE2GO=ON \
-        -DRE2C_BUILD_RE2RUST=ON \
+        -DRE2C_BUILD_RE2GO=OFF \
+        -DRE2C_BUILD_RE2RUST=OFF \
         -DRE2C_REBUILD_DOCS=OFF
+    cmakew \
+        -DBUILD_SHARED_LIBS=ON \
+        -DRE2C_BUILD_LIBS=ON \
+        -DRE2C_BUILD_RE2GO=OFF \
+        -DRE2C_BUILD_RE2RUST=OFF \
+        -DRE2C_REBUILD_DOCS=OFF
+
+dotweak: |
+    rm -rf bin
+    rm -rf share/man

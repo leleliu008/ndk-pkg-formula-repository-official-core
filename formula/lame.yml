@@ -8,4 +8,5 @@ install: |
     configure \
         --without-dmalloc \
         --enable-frontend \
-        --enable-nasm
+        --enable-nasm \
+        LIBS=-lm
