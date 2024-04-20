@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Cryptographic and SSL/TLS library
 web-url: https://tls.mbed.org
 git-url: https://github.com/Mbed-TLS/mbedtls

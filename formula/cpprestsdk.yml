@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A C++ library for cloud-based client-server communication
 git-url: https://github.com/Microsoft/cpprestsdk
 src-url: https://github.com/microsoft/cpprestsdk/archive/refs/tags/v2.10.19.tar.gz

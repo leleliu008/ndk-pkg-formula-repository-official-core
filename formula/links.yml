@@ -30,3 +30,6 @@ install: |
     gmakew clean
     gmakew
     gmakew install
+
+# string.h: char* _Nonnull strerror_l(int __errno_value, locale_t _Nonnull __l) __INTRODUCED_IN(23);
+api-min: 23

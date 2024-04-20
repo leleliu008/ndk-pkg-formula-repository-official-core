@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Socket library in C
 web-url: https://nanomsg.org/
 git-url: https://github.com/nanomsg/nanomsg

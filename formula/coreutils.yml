@@ -38,4 +38,6 @@ install: |
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513
 # https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
-api-min: 23
+
+# void endgrent(void) __INTRODUCED_IN(26);
+api-min: 26

@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: HTTP/3 library written in C
 git-url: https://github.com/ngtcp2/nghttp3
 license: MIT
