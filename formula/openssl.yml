@@ -1,3 +1,5 @@
+# if -static option is given, only static libs are created, but we want both static and shared libs
+pkgtype: exe+lib
 summary: Cryptography and SSL/TLS Toolkit
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
@@ -17,13 +19,7 @@ dopatch: |
     sed_in_place '/tritools-4.9/d'        Configurations/15-android.conf
 
 install: |
-    # if -static option is given, only static libs are created, but we want both static and shared libs, so we remove the -static option
-    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-        #sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
-    fi
-
-    if [ "$REQUEST_TO_CREATE_EXE_TYPE" = fsle ] || [ "$REQUEST_TO_CREATE_EXE_TYPE" = msle ] ; then
+    if [ "$REQUESTED_EXETYPE" = fsle ] || [ "$REQUESTED_EXETYPE" = msle ] ; then
         cat > proxy-ld.c <<EOF
     #include <stdio.h>
     #include <stdlib.h>
@@ -56,16 +52,14 @@ install: |
         argv[0] = LD;
 
         for (int i = 0; i < argc; i++) {
-            printf("%s ", argv[i]);
+            fprintf(stderr, "%s ", argv[i]);
         }
 
-        printf("\n");
+        fprintf(stderr, "\n");
 
         execv(LD, argv);
-
         perror(LD);
-
-        return 127;
+        return 255;
     }
     EOF
 

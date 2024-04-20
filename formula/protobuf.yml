@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Protocol Buffers(data interchange format) compiler and library developed by Google
 git-url: https://github.com/protocolbuffers/protobuf
 git-sha: 2434ef2adf0c74149b9d547ac5fb545a1ff8b6b5

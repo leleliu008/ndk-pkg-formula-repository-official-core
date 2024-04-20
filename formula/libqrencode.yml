@@ -10,4 +10,10 @@ install: |
     cmakew \
         -DWITH_TOOLS=OFF \
         -DWITH_TESTS=OFF \
-        -DWITHOUT_PNG=OFF
+        -DWITHOUT_PNG=OFF \
+        -DBUILD_SHARED_LIBS=ON
+    cmakew \
+        -DWITH_TOOLS=OFF \
+        -DWITH_TESTS=OFF \
+        -DWITHOUT_PNG=OFF \
+        -DBUILD_SHARED_LIBS=OFF
