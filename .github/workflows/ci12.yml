@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3]
+        pkg: [qrencode,quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3]
+        pkg: [qrencode,quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}
@@ -105,8 +105,28 @@ jobs:
             exit 0
           fi
 
-          MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
-          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-            MIN_SDK_API_LEVEL=21
+          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+
+          if [ "$PKGTYPE" = exe ] ; then
+            MIN_SDK_API_LEVEL=34
+          else
+              if [ -z "$PKGTYPE" ] ; then
+                  PKGNAME=${{ matrix.pkg }}
+
+                  case $PKGNAME in
+                    lib*)
+                        ;;
+                       *)
+                       MIN_SDK_API_LEVEL=34
+                       ;;
+                  esac
+              fi
+
+              if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                    MIN_SDK_API_LEVEL=21
+                  fi
+              fi
           fi
           ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}

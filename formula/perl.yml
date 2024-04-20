@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Highly capable, feature-rich programming language
 web-url: https://www.perl.org
 git-url: https://github.com/perl/perl5
@@ -52,10 +53,10 @@ install: |
         -Dar="$TARGET_AR" \
         -Dranlib="$TARGET_RANLIB" \
         -Duseshrplib \
-        -Dusethreads &&
-    gmakew clean &&
-    gmakew &&
-    gmakew install &&
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so" &&
-    run install -d "$PACKAGE_INSTALL_DIR/include" &&
+        -Dusethreads
+    gmakew clean
+    gmakew
+    gmakew install
+    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so"
+    run install -d "$PACKAGE_INSTALL_DIR/include"
     run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"

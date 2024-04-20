@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: C++ geography library
 web-url: https://geographiclib.sourceforge.io/
 git-url: https://github.com/geographiclib/geographiclib

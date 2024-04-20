@@ -46,6 +46,21 @@ case $1 in
               printf '%s\n' 'jpeg-turbo';;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
+    libmp3lame)
+              printf '%s\n' 'lame'      ;;
+    libtheora)
+              printf '%s\n' 'theora'    ;;
+    libvorbis)
+              printf '%s\n' 'vorbis'    ;;
+    libspeexdsp)
+              printf '%s\n' 'speexdsp'  ;;
+    libspeex) printf '%s\n' 'speex'     ;;
+    librav1e) printf '%s\n' 'rav1e'     ;;
+    libdav1d) printf '%s\n' 'dav1d'     ;;
+    libx264)  printf '%s\n' 'x264'      ;;
+    libx265)  printf '%s\n' 'x265'      ;;
+    libopus)  printf '%s\n' 'opus'      ;;
+    libxvid)  printf '%s\n' 'xvid'      ;;
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
@@ -53,13 +68,17 @@ case $1 in
     libwebp)  printf '%s\n' 'webp'      ;;
     libzstd)  printf '%s\n' 'zstd'      ;;
     liblzma)  printf '%s\n' 'xz'        ;;
-    libopus)  printf '%s\n' 'opus'      ;;
     libuuid)  printf '%s\n' 'util-linux';;
     libz3.a)  printf '%s\n' 'z3'        ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
+    libnng)   printf '%s\n' 'nng'       ;;
     libbz2)   printf '%s\n' 'bzip2'     ;;
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+
+    png)      printf '%s\n' 'libpng'    ;;
+    tiff)     printf '%s\n' 'libtiff'   ;;
+
     toml++)   printf '%s\n' 'tomlplusplus'  ;;
     xorg-*)   printf '%s\n' "$1" | cut -c6- ;;
     *)        printf '%s\n' "$1"

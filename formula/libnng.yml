@@ -1,0 +1,26 @@
+summary: Nanomsg-next-generation -- light-weight brokerless messaging
+web-url: https://nng.nanomsg.org
+git-url: https://github.com/nanomsg/nng
+src-url: https://github.com/nanomsg/nng/archive/refs/tags/v1.7.3.tar.gz
+src-sha: 035f2c3cad4e45fc0d978c54a338c197d1937527ae6feb82180d428a96b83474
+license: MIT
+dep-pkg: mbedtls
+
+dopatch2: |
+    if [ "$TARGET_PLATFORM_VERS" -ge 24 ] ; then
+        sed_in_place '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF TRUE)'  src/platform/posix/CMakeLists.txt
+    else
+        sed_in_place '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF FALSE)' src/platform/posix/CMakeLists.txt
+    fi
+
+install: |
+    cmakew \
+        -DNNG_TESTS=OFF \
+        -DNNG_ENABLE_TLS=ON \
+        -DNNG_ENABLE_HTTP=ON \
+        -DBUILD_SHARED_LIBS=ON
+    cmakew \
+        -DNNG_TESTS=OFF \
+        -DNNG_ENABLE_TLS=ON \
+        -DNNG_ENABLE_HTTP=ON \
+        -DBUILD_SHARED_LIBS=OFF

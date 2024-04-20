@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd]
+        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [libnl,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv,lief,lighttpd]
+        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}
@@ -105,8 +105,28 @@ jobs:
             exit 0
           fi
 
-          MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
-          if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-            MIN_SDK_API_LEVEL=21
+          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+
+          if [ "$PKGTYPE" = exe ] ; then
+            MIN_SDK_API_LEVEL=34
+          else
+              if [ -z "$PKGTYPE" ] ; then
+                  PKGNAME=${{ matrix.pkg }}
+
+                  case $PKGNAME in
+                    lib*)
+                        ;;
+                       *)
+                       MIN_SDK_API_LEVEL=34
+                       ;;
+                  esac
+              fi
+
+              if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                    MIN_SDK_API_LEVEL=21
+                  fi
+              fi
           fi
           ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}

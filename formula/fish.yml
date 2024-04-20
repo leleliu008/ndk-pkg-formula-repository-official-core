@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: User-friendly command-line shell for UNIX-like operating systems
 web-url: https://fishshell.com/
 git-url: https://github.com/fish-shell/fish-shell
