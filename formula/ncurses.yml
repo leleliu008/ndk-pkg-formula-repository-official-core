@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Text-based UI library
 git-url: https://github.com/mirror/ncurses
 web-url: https://www.gnu.org/software/ncurses

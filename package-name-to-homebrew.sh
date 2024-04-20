@@ -61,6 +61,7 @@ case $1 in
     libx265)  printf '%s\n' 'x265'      ;;
     libopus)  printf '%s\n' 'opus'      ;;
     libxvid)  printf '%s\n' 'xvid'      ;;
+    libpcre)  printf '%s\n' 'pcre'      ;;
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
@@ -78,6 +79,9 @@ case $1 in
 
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
+
+    libtwolame|stwolame)
+              printf '%s\n' 'two-lame'  ;;
 
     toml++)   printf '%s\n' 'tomlplusplus'  ;;
     xorg-*)   printf '%s\n' "$1" | cut -c6- ;;

@@ -66,6 +66,8 @@ jobs:
                   case $PKGNAME in
                     lib*)
                         ;;
+                    *lib)
+                        ;;
                        *)
                        MIN_SDK_API_LEVEL=34
                        ;;
@@ -140,6 +142,8 @@ jobs:
 
                   case $PKGNAME in
                     lib*)
+                        ;;
+                    *lib)
                         ;;
                        *)
                        MIN_SDK_API_LEVEL=34

@@ -4,5 +4,5 @@ git-url: https://github.com/danmar/cppcheck
 src-url: https://github.com/danmar/cppcheck/archive/2.12.1.tar.gz
 src-sha: 2a3d4ba1179419612183ab3d6aed6d3b18be75e98cd6f138ea8e2020905dced2
 license: GPL-3.0-or-later
-dep-pkg: pcre libxml2 libgetloadavg
+dep-pkg: libpcre libxml2 libgetloadavg
 bsystem: cmake

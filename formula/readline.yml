@@ -1,3 +1,4 @@
+pkgtype: readline
 summary: Library for command-line editing
 git-url: https://git.savannah.gnu.org/git/readline.git
 web-url: https://www.gnu.org/software/readline

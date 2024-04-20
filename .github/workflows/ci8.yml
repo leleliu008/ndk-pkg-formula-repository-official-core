@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv]
+        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libtwolame,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt]
 
     runs-on: ubuntu-latest
 
@@ -66,6 +66,8 @@ jobs:
                   case $PKGNAME in
                     lib*)
                         ;;
+                    *lib)
+                        ;;
                        *)
                        MIN_SDK_API_LEVEL=34
                        ;;
@@ -92,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt,libyuv]
+        pkg: [libnl,libnng,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtorrent-rasterbar,libtwolame,libunwind,libupnp,libusbmuxd-server,libvips,libwebm,libxcrypt,libxslt]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}
@@ -140,6 +142,8 @@ jobs:
 
                   case $PKGNAME in
                     lib*)
+                        ;;
+                    *lib)
                         ;;
                        *)
                        MIN_SDK_API_LEVEL=34
