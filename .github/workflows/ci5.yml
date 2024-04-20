@@ -55,7 +55,7 @@ jobs:
       - run: |
           set -ex
 
-          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+          PKGTYPE=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
 
           if [ "$PKGTYPE" = exe ] ; then
             MIN_SDK_API_LEVEL=34
@@ -73,13 +73,12 @@ jobs:
               fi
 
               if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
                   if [ -z "$MIN_SDK_API_LEVEL" ] ; then
                     MIN_SDK_API_LEVEL=21
                   fi
               fi
           fi
-
 
           /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}
 
