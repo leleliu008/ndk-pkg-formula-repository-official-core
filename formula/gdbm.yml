@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: GNU database manager
 git-url: https://git.savannah.gnu.org/git/gdbm.git
 web-url: https://www.gnu.org/software/gdbm

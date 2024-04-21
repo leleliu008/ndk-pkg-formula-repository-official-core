@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: C++ Testing and Mocking Framework by Google
 git-url: https://github.com/google/googletest
 src-url: https://github.com/google/googletest/archive/v1.14.0.tar.gz

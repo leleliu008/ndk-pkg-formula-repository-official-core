@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Vector graphics library with cross-device output support
 web-url: https://cairographics.org/
 git-url: https://gitlab.freedesktop.org/cairo/cairo

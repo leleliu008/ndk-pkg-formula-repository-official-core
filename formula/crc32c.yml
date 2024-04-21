@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Implementation of CRC32C with CPU-specific acceleration
 git-url: https://github.com/google/crc32c
 src-url: https://github.com/google/crc32c/archive/1.1.2.tar.gz

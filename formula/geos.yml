@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Geometry Engine
 web-url: https://trac.osgeo.org/geos
 git-url: https://github.com/libgeos/geos

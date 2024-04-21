@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: C library and utilities for Manipulating Filesystem Extended Attributes
 web-url: https://savannah.nongnu.org/projects/attr
 git-url: https://git.savannah.nongnu.org/git/attr.git

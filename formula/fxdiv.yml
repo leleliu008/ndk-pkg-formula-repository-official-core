@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A header-only library for division via fixed-point multiplication by inverse
 git-url: https://github.com/Maratyszcza/FXdiv
 license: MIT

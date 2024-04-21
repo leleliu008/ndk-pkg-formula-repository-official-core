@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Extremely fast non-cryptographic hash algorithm
 git-url: https://github.com/Cyan4973/xxHash
 src-url: https://github.com/Cyan4973/xxHash/archive/v0.8.2.tar.gz

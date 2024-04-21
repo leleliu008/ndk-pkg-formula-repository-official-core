@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: An open-source C/C++ library for formatting that provides a fast and safe alternative to C stdio and C++ iostreams
 web-url: https://fmt.dev
 git-url: https://github.com/fmtlib/fmt

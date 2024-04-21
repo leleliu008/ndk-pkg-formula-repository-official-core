@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: High-efficiency floating-point neural network inference operators for mobile, server, and web
 git-url: https://github.com/google/XNNPACK
 git-sha: 71f70de09ca17f125d3c24ccceeb12045a674d0c

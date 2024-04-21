@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A C++ library to benchmark code snippets, similar to unit tests
 git-url: https://github.com/google/benchmark
 src-url: https://github.com/google/benchmark/archive/v1.8.3.tar.gz

@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Powerful, lightweight programming language
 git-url: https://github.com/lua/lua
 web-url: https://www.lua.org/

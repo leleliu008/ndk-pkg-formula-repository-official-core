@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
 src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz

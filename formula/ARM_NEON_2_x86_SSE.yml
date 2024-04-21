@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: The platform independent header allowing to compile any C/C++ code containing ARM NEON intrinsic functions for x86 target systems using SIMD up to SSE4 intrinsic functions
 git-url: https://github.com/intel/ARM_NEON_2_x86_SSE
 bsystem: cmake

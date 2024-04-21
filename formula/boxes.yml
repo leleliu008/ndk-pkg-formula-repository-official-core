@@ -11,11 +11,12 @@ binbstd: 1
 dopatch: |
     sed_in_place 's|STRIP=true||' src/Makefile
 
-    if [ -f ../lib/libunistring.a ] ; then
-        "$AR" x ../lib/libiconv.a
-        "$AR" x ../lib/libunistring.a
-        "$AR" crs ../lib/libunistring.a *.o
-        rm -f *.o
+    if [ "$REQUESTED_EXETYPE" = fsle ] || [ "$REQUESTED_EXETYPE" = msle ] ; then
+        run cd ../lib/
+        run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"
+        run "$AR" x "$libunistring_INSTALL_DIR/lib/libunistring.a"
+        run "$AR" crs libunistring.a *.o
+        run rm -f *.o
     fi
 
 install: |

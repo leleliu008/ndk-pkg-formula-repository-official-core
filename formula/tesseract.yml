@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: OCR (Optical Character Recognition) engine
 git-url: https://github.com/tesseract-ocr/tesseract
 src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.4.tar.gz

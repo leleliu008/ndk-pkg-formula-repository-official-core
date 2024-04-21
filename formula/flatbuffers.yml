@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: An efficient cross platform serialization library for C++
 web-url: https://google.github.io/flatbuffers
 git-url: https://github.com/google/flatbuffers

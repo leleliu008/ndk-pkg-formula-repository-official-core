@@ -6,5 +6,4 @@ license: GPL-2.0-or-later
 dep-pkg: glib popt readline
 dep-upp: python3
 binbstd: 1
-dopatch: ln -sfv "$glib_INSTALL_DIR/lib/libintl.a" ../lib/libintl.a
 install: configure --disable-gui

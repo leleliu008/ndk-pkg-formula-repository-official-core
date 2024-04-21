@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Framework for layout and rendering of i18n text
 web-url: https://www.pango.org/
 git-url: https://gitlab.gnome.org/GNOME/pango

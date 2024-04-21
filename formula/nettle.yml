@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Low-level cryptographic library
 web-url: https://www.lysator.liu.se/~nisse/nettle
 git-url: https://git.lysator.liu.se/nettle/nettle
