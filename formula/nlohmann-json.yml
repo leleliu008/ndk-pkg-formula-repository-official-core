@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: JSON for modern C++
 git-url: https://github.com/nlohmann/json
 src-url: https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz

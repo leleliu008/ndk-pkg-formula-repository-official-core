@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Smart font renderer for non-Roman scripts
 web-url: https://graphite.sil.org
 git-url: https://github.com/silnrsi/graphite
