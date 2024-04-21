@@ -4,6 +4,7 @@ src-url: https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcry
 src-sha: e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943
 license: LGPL-2.1-or-later
 dep-upp: perl
+ldflags: -Wl,--undefined-version
 install: |
     configure \
         --disable-obsolete-api \

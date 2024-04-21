@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: GNU internationalization (i18n) and localization (l10n) library
 git-url: https://git.savannah.gnu.org/git/gettext.git
 web-url: https://www.gnu.org/software/gettext

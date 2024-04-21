@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: JBIG2 decoder and library (for monochrome documents)
 web-url: https://jbig2dec.com/
 git-url: https://github.com/ArtifexSoftware/jbig2dec
@@ -8,4 +9,4 @@ dep-pkg: libpng
 dep-upp: libtool
 bsystem: autogen
 dopatch: sed_in_place '$d' autogen.sh && ./autogen.sh
-install: configure  --with-libpng="$libpng_INSTALL_DIR"
+install: configure --with-libpng="$libpng_INSTALL_DIR"
