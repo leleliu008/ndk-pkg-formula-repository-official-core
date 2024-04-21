@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A C library to render fonts
 web-url: https://freetype.org/
 git-url: https://gitlab.freedesktop.org/freetype/freetype
@@ -6,47 +7,11 @@ src-sha: 12991c4e55c506dd7f9b765933e62fd2be2e06d421505d7950a132e4f1bb484d
 dep-pkg: brotli libbz2 libpng
 license: FTL
 
-dopatch: |
-    cat > builds/cmake/FindBrotliDec.cmake <<EOF
-    if (BROTLIDEC_INCLUDE_DIRS AND BROTLIDEC_LIBRARIES)
-        set(BROTLIDEC_FOUND TRUE)
-    else()
-        find_package(PkgConfig)
-        pkg_check_modules(PC_BROTLIDEC QUIET libbrotlidec)
-
-        if (PC_BROTLIDEC_FOUND)
-            if (PC_BROTLIDEC_INCLUDE_DIRS)
-                set(BROTLIDEC_INCLUDE_DIRS "\${PC_BROTLIDEC_INCLUDE_DIRS}")
-            elseif (PC_BROTLIDEC_INCLUDEDIR)
-                set(BROTLIDEC_INCLUDE_DIRS "\${PC_BROTLIDEC_INCLUDEDIR}")
-            else()
-                find_path(BROTLIDEC_INCLUDE_DIRS brotli/decode.h)
-            endif()
-
-            set(BROTLIDEC_LIBRARIES "\${PC_BROTLIDEC_LINK_LIBRARIES}")
-
-            if (PC_BROTLIDEC_VERSION)
-                set(BROTLIDEC_VERSION "\${PC_BROTLIDEC_VERSION}")
-            endif()
-        endif()
-    endif()
-
-    include(FindPackageHandleStandardArgs)
-    find_package_handle_standard_args(
-        BrotliDec 
-        REQUIRED_VARS BROTLIDEC_LIBRARIES BROTLIDEC_INCLUDE_DIRS 
-        FOUND_VAR BROTLIDEC_FOUND 
-        VERSION_VAR BROTLIDEC_VERSION
-    )
-
-    mark_as_advanced(BROTLIDEC_INCLUDE_DIRS BROTLIDEC_LIBRARIES)
-    EOF
-
 install: |
-    cmakew \
-        -DFT_WITH_BROTLI=ON \
-        -DFT_WITH_BZIP2=ON \
-        -DFT_WITH_ZLIB=ON \
-        -DFT_WITH_PNG=ON \
-        -DFT_WITH_HARFBUZZ=OFF \
-        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE
+    mesonw \
+        -Dbrotli=enabled \
+        -Dbzip2=enabled \
+        -Dzlib=enabled \
+        -Dpng=enabled \
+        -Dharfbuzz=disabled \
+        -Dtests=disabled

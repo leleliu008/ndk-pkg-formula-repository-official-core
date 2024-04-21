@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc

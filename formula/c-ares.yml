@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Asynchronous DNS library
 git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se

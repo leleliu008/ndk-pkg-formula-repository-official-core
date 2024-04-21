@@ -48,10 +48,14 @@ case $1 in
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
               printf '%s\n' 'lame'      ;;
+    libjansson)
+              printf '%s\n' 'jansson'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
     libvorbis)
               printf '%s\n' 'vorbis'    ;;
+    libexhale)
+              printf '%s\n' 'exhale'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -70,6 +74,7 @@ case $1 in
     libzstd)  printf '%s\n' 'zstd'      ;;
     liblzma)  printf '%s\n' 'xz'        ;;
     libuuid)  printf '%s\n' 'util-linux';;
+    libre2c)  printf '%s\n' 're2c'      ;;
     libz3.a)  printf '%s\n' 'z3'        ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
     libnng)   printf '%s\n' 'nng'       ;;

@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A collection of portable C++ source libraries
 web-url: https://www.boost.org
 git-url: https://github.com/boostorg/boost

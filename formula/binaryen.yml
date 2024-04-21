@@ -4,4 +4,4 @@ git-url: https://github.com/WebAssembly/binaryen
 src-url: https://github.com/WebAssembly/binaryen/archive/version_117.tar.gz
 src-sha: 9acf7cc5be94bcd16bebfb93a1f5ac6be10e0995a33e1981dd7c404dafe83387
 license: Apache-2.0
-install: cmakew -DBUILD_TESTS=OFF
+install: cmakew -DBUILD_TESTS=OFF -DBUILD_STATIC_LIB=ON

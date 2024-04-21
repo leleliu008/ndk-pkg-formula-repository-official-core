@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Implementation of extended-Rice lossless compression algorithm
 web-url: https://support.hdfgroup.org/HDF5/release/obtain5.html#extlibs
 src-url: https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz

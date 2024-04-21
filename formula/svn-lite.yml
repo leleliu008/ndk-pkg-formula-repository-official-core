@@ -7,5 +7,5 @@ binbstd: 1
 
 install: |
     run rm -f svn
-    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -include strings.h -DMAXNAMLEN=512 -I. -lssl -lcrypto -o svn *.c
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -include strings.h -DMAXNAMLEN=512 -I. -lssl -lcrypto -ldl -o svn *.c
     run install_bins svn svn2git.sh

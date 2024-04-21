@@ -14,7 +14,7 @@ install: |
         --disable-code-coverage \
         --disable-gtk-doc \
         --disable-guile \
-        --enable-gcc-warnings
+        --enable-gcc-warnings LIBS=-ldl
 
 # no member named '_p' in 'struct __sFILE'
 #  return fp->_p - fp->_bf._base;

@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Cartographic Projections Library
 web-url: https://proj.org/
 git-url: https://github.com/OSGeo/PROJ

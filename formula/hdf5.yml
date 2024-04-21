@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: File format designed to store large amounts of data
 web-url: https://www.hdfgroup.org/HDF5
 git-url: https://github.com/HDFGroup/hdf5

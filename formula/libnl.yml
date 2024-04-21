@@ -6,8 +6,7 @@ license: LGPL-2.1-or-later
 dep-upp: flex bison libtool
 bsystem: autotools
 
-# int getsubopt(char** __option, char* const* __tokens, char** __value_ptr) __INTRODUCED_IN(26);
-api-min: 26
+ldflags: -Wl,--undefined-version
 
 dopatch: |
     autoreconf -ivf
@@ -20,3 +19,6 @@ install: |
     configure \
         --enable-pthreads \
         --enable-cli
+
+# int getsubopt(char** __option, char* const* __tokens, char** __value_ptr) __INTRODUCED_IN(26);
+api-min: 26

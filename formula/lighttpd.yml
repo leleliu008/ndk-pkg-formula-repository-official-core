@@ -12,4 +12,4 @@ install: |
         --with-zlib \
         --with-bzip2 \
         --with-pcre2 \
-        --without-pcre
+        --without-pcre LIBS=-ldl

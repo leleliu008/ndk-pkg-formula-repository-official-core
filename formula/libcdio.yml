@@ -5,6 +5,7 @@ src-sha: 8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b
 license: GPL-3.0-or-later
 dep-pkg: libiconv libglob
 bsystem: configure
+ldflags: -Wl,--undefined-version
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
         sed_in_place 's|define CDIO_FSEEK fseeko|define CDIO_FSEEK fseek|' lib/driver/_cdio_stdio.c
