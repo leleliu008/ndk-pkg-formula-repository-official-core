@@ -54,6 +54,8 @@ case $1 in
               printf '%s\n' 'jansson'   ;;
     libleveldb)
               printf '%s\n' 'leveldb'   ;;
+    libcpuinfo)
+              printf '%s\n' 'cpuinfo'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
     libvorbis)

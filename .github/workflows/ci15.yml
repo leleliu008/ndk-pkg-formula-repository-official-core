@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
+        pkg: [xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
+        pkg: [xmake,xorriso,xpup,xxd,xz,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq,zlib-ng,zlog,zola,zoxide,zsh,zstd,zsync]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

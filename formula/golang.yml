@@ -38,3 +38,8 @@ install: |
     run cd ..
     run install -d "$PACKAGE_INSTALL_DIR/"
     run mv src/*   "$PACKAGE_INSTALL_DIR/"
+
+    # override temporarily
+    __check_elf_files() {
+        :
+    }

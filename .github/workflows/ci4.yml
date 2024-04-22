@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake]
+        pkg: [faad2,fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang,gmake]
+        pkg: [faad2,fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui,glog,glow,glslang]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

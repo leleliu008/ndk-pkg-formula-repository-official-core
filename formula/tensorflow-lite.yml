@@ -44,6 +44,7 @@ install: |
         -Druy_DIR=$ruy_INSTALL_DIR/lib/cmake/ruy \
         -Dabsl_DIR=$abseil_INSTALL_DIR/lib/cmake/absl \
         -DEigen3_DIR=$eigen3_INSTALL_DIR/lib/cmake/eigen3 \
-        -Dcpuinfo_DIR=$cpuinfo_INSTALL_DIR/lib/cmake/cpuinfo \
+        -Dcpuinfo_DIR=$libcpuinfo_INSTALL_DIR/lib/cmake/cpuinfo \
         -DNEON_2_SSE_DIR=$ARM_NEON_2_x86_SSE/lib/cmake/NEON_2_SSE \
-        -DFlatbuffers_DIR=$flatbuffers_INSTALL_DIR/lib/cmake/flatbuffers
+        -DFlatbuffers_DIR=$flatbuffers_INSTALL_DIR/lib/cmake/flatbuffers \
+        -B "$PACKAGE_WORKING_DIR/build.d"

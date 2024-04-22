@@ -11,7 +11,7 @@ binbstd: 1
 dopatch: |
     sed_in_place 's|STRIP=true||' src/Makefile
 
-    if [ "$REQUESTED_EXETYPE" = fsle ] || [ "$REQUESTED_EXETYPE" = msle ] ; then
+    if [ "$REQUEST_EXETYPE" = fsle ] || [ "$REQUEST_EXETYPE" = msle ] ; then
         run cd ../lib/
         run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"
         run "$AR" x "$libunistring_INSTALL_DIR/lib/libunistring.a"

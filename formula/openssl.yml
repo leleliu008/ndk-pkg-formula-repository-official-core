@@ -19,7 +19,7 @@ dopatch: |
     sed_in_place '/tritools-4.9/d'        Configurations/15-android.conf
 
 install: |
-    if [ "$REQUESTED_EXETYPE" = fsle ] || [ "$REQUESTED_EXETYPE" = msle ] ; then
+    if [ "$REQUEST_EXETYPE" = fsle ] || [ "$REQUEST_EXETYPE" = msle ] ; then
         cat > proxy-ld.c <<EOF
     #include <stdio.h>
     #include <stdlib.h>

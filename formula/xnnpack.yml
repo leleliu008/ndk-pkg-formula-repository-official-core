@@ -3,7 +3,7 @@ summary: High-efficiency floating-point neural network inference operators for m
 git-url: https://github.com/google/XNNPACK
 git-sha: 71f70de09ca17f125d3c24ccceeb12045a674d0c
 license: BSD-3-Clause
-dep-pkg: cpuinfo fp16 fxdiv pthreadpool
+dep-pkg: libcpuinfo fp16 fxdiv pthreadpool
 
 dopatch: |
     sed_in_place 's|CMAKE_C_STANDARD 99|CMAKE_C_STANDARD 11|' CMakeLists.txt

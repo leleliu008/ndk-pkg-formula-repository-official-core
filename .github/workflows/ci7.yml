@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [libaec,libaio,libao,libass,libatomic_ops,libb2,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libleveldb,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc]
+        pkg: [lf,libaec,libaio,libao,libass,libatomic_ops,libb2,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libleveldb,libmaxminddb,libmblen,libmd,libmetalink,libmill]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [libaec,libaio,libao,libass,libatomic_ops,libb2,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libleveldb,libmaxminddb,libmblen,libmd,libmetalink,libmill,libmpc]
+        pkg: [lf,libaec,libaio,libao,libass,libatomic_ops,libb2,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libilbc,libimagequant,libirecovery,libisoburn,libleveldb,libmaxminddb,libmblen,libmd,libmetalink,libmill]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

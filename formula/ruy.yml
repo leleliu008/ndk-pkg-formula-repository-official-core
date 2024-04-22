@@ -2,7 +2,7 @@ pkgtype: lib
 summary: matrix multiplication library
 git-url: https://github.com/google/ruy
 license: Apache-2.0
-dep-pkg: cpuinfo
+dep-pkg: libcpuinfo
 
 install: |
     cmakew \
