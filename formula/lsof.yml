@@ -22,7 +22,7 @@ install: |
     export LSOF_AR="$AR rsc"
     export LSOF_RANLIB="$RANLIB"
     export LSOF_ARCH="$TARGET_PLATFORM_ARCH"
-    export LSOF_INCLUDE="$SYSTEM_INCLUDE_DIR"
+    export LSOF_INCLUDE="$SYSROOT/usr/include"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS -L$PACKAGE_BSCRIPT_DIR/lib $LIBTIRPC"
     
