@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Tool Command Language
 web-url: https://www.tcl-lang.org
 src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.14/tcl8.6.14-src.tar.gz

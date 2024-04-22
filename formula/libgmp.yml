@@ -12,5 +12,5 @@ install: |
         --disable-profiling \
         --disable-assert \
         --disable-cxx \
-        --enable-assembly \
+        --disable-assembly \
         --enable-fft

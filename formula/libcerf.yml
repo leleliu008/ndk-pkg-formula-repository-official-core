@@ -1,11 +1,9 @@
 summary: Numeric library for complex error functions
 git-url: https://jugit.fz-juelich.de/mlz/libcerf
-src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.4/libcerf-v2.4.tar.gz
-src-sha: 080b30ae564c3dabe3b89264522adaf5647ec754021572bee54929697b276cdc
+    #src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.4/libcerf-v2.4.tar.bz2
+src-url: https://mirrors.aliyun.com/macports/distfiles/libcerf/libcerf-2.4.tar.bz2
+src-sha: c62f16a71d09731e0681046267b34ea2f5a6a8f6b7367116f3269c2c7f4944f7
 license: MIT
-
-# complex.h: double complex cexp(double complex __z) __INTRODUCED_IN(23);
-api-min: 23
 
 install: |
     cmakew \
@@ -22,3 +20,7 @@ install: |
         -DLIB_RUN=ON \
         -DCERF_CPP=OFF \
         -DBUILD_SHARED_LIBS=ON
+
+
+# complex.h: double complex cexp(double complex __z) __INTRODUCED_IN(23);
+api-min: 23

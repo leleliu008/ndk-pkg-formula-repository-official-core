@@ -5,6 +5,7 @@ src-sha: dc56708c83a4b934a8af2b78f67f866ba2fb568605c7cf94312acf51ee57d146
 license: BSD-2-Clause
 dep-pkg: aom
 dep-upp: nasm
+
 install: |
     cmakew \
         -DAVIF_ENABLE_WERROR=ON \
@@ -15,3 +16,12 @@ install: |
         -DAVIF_BUILD_TESTS=OFF \
         -DAVIF_BUILD_EXAMPLES=OFF \
         -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DAVIF_ENABLE_WERROR=ON \
+        -DAVIF_CODEC_AOM=ON \
+        -DAVIF_CODEC_AOM_DECODE=ON \
+        -DAVIF_CODEC_AOM_ENCODE=ON \
+        -DAVIF_BUILD_APPS=OFF \
+        -DAVIF_BUILD_TESTS=OFF \
+        -DAVIF_BUILD_EXAMPLES=OFF \
+        -DBUILD_SHARED_LIBS=ON
