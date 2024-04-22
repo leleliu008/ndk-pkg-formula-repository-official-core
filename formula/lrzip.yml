@@ -4,7 +4,7 @@ git-url: https://github.com/ckolivas/lrzip
 src-url: http://ck.kolivas.org/apps/lrzip/lrzip-0.651.tar.xz
 src-sha: 48bd8decb097c1596c9b3777959cd3e332819434ed77a2823e65aa436f1602f9
 license: GPL-2.0-or-later
-dep-pkg: zlib libbz2 lz4 lzo
+dep-pkg: zlib libbz2 liblz4 liblzo
 dep-upp: libtool
 bsystem: autotools
 

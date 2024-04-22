@@ -40,10 +40,12 @@ case $1 in
               printf '%s\n' 'media-info';;
     libxml2-utils|libxml2-python3)
               printf '%s\n' 'libxml2'   ;;
-    libprotobuf)
-              printf '%s\n' 'protobuf'  ;;
     libjpeg-turbo)
               printf '%s\n' 'jpeg-turbo';;
+    libprotobuf)
+              printf '%s\n' 'protobuf'  ;;
+    libopenh264)
+              printf '%s\n' 'openh264'  ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
@@ -56,11 +58,14 @@ case $1 in
               printf '%s\n' 'vorbis'    ;;
     libexhale)
               printf '%s\n' 'exhale'    ;;
+    libpixman)
+              printf '%s\n' 'pixman'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
     librav1e) printf '%s\n' 'rav1e'     ;;
     libdav1d) printf '%s\n' 'dav1d'     ;;
+    libexiv2) printf '%s\n' 'exiv2'     ;;
     libx264)  printf '%s\n' 'x264'      ;;
     libx265)  printf '%s\n' 'x265'      ;;
     libopus)  printf '%s\n' 'opus'      ;;
@@ -75,10 +80,13 @@ case $1 in
     liblzma)  printf '%s\n' 'xz'        ;;
     libuuid)  printf '%s\n' 'util-linux';;
     libre2c)  printf '%s\n' 're2c'      ;;
+    libcgif)  printf '%s\n' 'cgif'      ;;
     libz3.a)  printf '%s\n' 'z3'        ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
     libnng)   printf '%s\n' 'nng'       ;;
     libbz2)   printf '%s\n' 'bzip2'     ;;
+    liblz4)   printf '%s\n' 'lz4'       ;;
+    liblzo)   printf '%s\n' 'lzo'       ;;
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
 

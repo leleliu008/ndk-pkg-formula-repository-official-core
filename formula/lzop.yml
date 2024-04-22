@@ -3,7 +3,7 @@ web-url: https://www.lzop.org/
 src-url: https://www.lzop.org/download/lzop-1.04.tar.gz
 src-sha: 7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41
 license: GPL-2.0-or-later
-dep-pkg: lzo
+dep-pkg: liblzo
 bsystem: cmake
 dopatch: |
     sed_in_place 's|sysinfo|get_sys_info|' src/conf.h

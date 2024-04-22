@@ -1,0 +1,7 @@
+summary: Open Source H.264 Codec
+git-url: https://github.com/cisco/openh264
+src-url: https://github.com/cisco/openh264/archive/refs/tags/v2.4.1.tar.gz
+src-sha: 8ffbe944e74043d0d3fb53d4a2a14c94de71f58dbea6a06d0dc92369542958ea
+license: BSD-2-Clause
+dep-upp: nasm
+install: mesonw -Dtests=disabled

@@ -1,8 +1,8 @@
 pkgtype: exe
 summary: Blazing fast terminal-ui for git written in rust
 git-url: https://github.com/extrawurst/gitui
-src-url: https://github.com/extrawurst/gitui/archive/v0.25.2.tar.gz
-src-sha: 5a67d526e22533952a747cb34eb2430a1340dd3139f60a785f579bba4a6aa5ed
+src-url: https://github.com/extrawurst/gitui/archive/refs/tags/v0.26.1.tar.gz
+src-sha: b1b0a6c692771a4e37f7ff33490365f8f330660a4110adf650b2483d99379c1d
 license: MIT
 dep-pkg: libgit2 libssh2
 dep-upp: gmake

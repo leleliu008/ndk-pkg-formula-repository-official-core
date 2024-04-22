@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: A low-level library for pixel manipulation
 git-url: https://gitlab.freedesktop.org/pixman/pixman
 web-url: https://cairographics.org

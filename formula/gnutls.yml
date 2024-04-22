@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: GNU Transport Layer Security (TLS) Library
 git-url: https://github.com/gnutls/gnutls
 web-url: https://www.gnutls.org/
@@ -6,6 +7,9 @@ src-sha: 2bea4e154794f3f00180fa2a5c51fe8b005ac7a31cd58bd44cdfa7f36ebc3a9b
 dep-pkg: libtasn1 libidn2 nettle p11-kit
 license: LGPL-2.1-or-later GPL-3.0-only
 ldflags: -liconv
+
+prepare: printf 'INPUT(-ldl)\n' > ../lib/libpthread.a
+
 install: |
     configure \
         --without-gcov \

@@ -5,6 +5,32 @@ src-url: https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz
 src-sha: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
 license: GPL-3.0-or-later
 
+dep-upp: patch
+dopatch: |
+    patch -p0 <<EOF
+    --- src/job.c.origin	2024-04-22 16:23:48.474827263 +0800
+    +++ src/job.c	2024-04-22 16:25:06.996893603 +0800
+    @@ -2427,18 +2427,6 @@
+               break;
+             }
+     
+    -    /* execvp() will use a default PATH if none is set; emulate that.  */
+    -    if (p == NULL)
+    -      {
+    -        size_t l = confstr (_CS_PATH, NULL, 0);
+    -        if (l)
+    -          {
+    -            char *dp = alloca (l);
+    -            confstr (_CS_PATH, dp, l);
+    -            p = dp;
+    -          }
+    -      }
+    -
+         cmd = (char *)find_in_given_path (argv[0], p, NULL, 0);
+       }
+     
+    EOF
+
 install: configure --program-prefix=g --without-guile --without-dmalloc
 
 dotweak: cd bin && ln -s gmake make

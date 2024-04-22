@@ -12,6 +12,8 @@ binbstd: 1
 api-min: 23
 
 dopatch: |
+    sed_in_place 's|defined(HAVE_MEMSET_EXPLICIT)|0|' lib/replace/replace.c
+
     sed_in_place 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py
 
     cat > cross-answers.txt <<EOF

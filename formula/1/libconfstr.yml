@@ -1,7 +1,5 @@
-summary: crypt(3) implementation
-web-url: http://michael.dipperstein.com/crypt
-src-url: http://michael.dipperstein.com/crypt/crypt3.c
-src-sha: 75b16b6ef7f1c0c7c4172ed346b2b91b6f1be72c824b6671a059de2b2da554ff
+summary: confstr(3) implementation
+web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/confstr.html
 version: 1
 
 install: |
@@ -9,6 +7,7 @@ install: |
 #include<stdlib.h>
 size_t confstr(int name, char *buf, size_t len) {
     return 0;
+}
 EOF
     run $CC -c $CFLAGS $CPPFLAGS -o libconfstr.o libconfstr.c
     run $AR rsc libconfstr.a libconfstr.o

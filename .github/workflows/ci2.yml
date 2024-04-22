@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [brook,broot,bullet,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cpprestsdk,cpptoml,cppunit,cpuid,croc]
+        pkg: [bullet,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cpprestsdk,cpptoml,cppunit,cpuid,croc,crosstool-ng,crowbook,ctop]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [brook,broot,bullet,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cgif,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cpprestsdk,cpptoml,cppunit,cpuid,croc]
+        pkg: [bullet,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cfitsio,cheat,check,chezmoi,chinese-calendar,choose,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cpprestsdk,cpptoml,cppunit,cpuid,croc,crosstool-ng,crowbook,ctop]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}
