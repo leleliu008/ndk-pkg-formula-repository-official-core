@@ -1,14 +1,20 @@
-pkgtype: lib
 summary: Compression/decompression library aiming for high speed
 web-url: https://google.github.io/snappy
 git-url: https://github.com/google/snappy
 src-url: https://github.com/google/snappy/archive/1.1.10.tar.gz
 src-sha: 49d831bffcc5f3d01482340fe5af59852ca2fe76c3e05df0e67203ebbe0f1d90
 license: BSD-3-Clause
-
+xxflags: -Wno-error=sign-compare
 install: |
     cmakew \
         -DSNAPPY_BUILD_BENCHMARKS=OFF \
         -DSNAPPY_BUILD_TESTS=OFF \
         -DSNAPPY_FUZZING_BUILD=OFF \
-        -DSNAPPY_INSTALL=ON
+        -DSNAPPY_INSTALL=ON \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DSNAPPY_BUILD_BENCHMARKS=OFF \
+        -DSNAPPY_BUILD_TESTS=OFF \
+        -DSNAPPY_FUZZING_BUILD=OFF \
+        -DSNAPPY_INSTALL=ON \
+        -DBUILD_SHARED_LIBS=ON

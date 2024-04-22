@@ -4,20 +4,16 @@ git-url: https://github.com/facebook/rocksdb.git
 src-url: https://github.com/facebook/rocksdb/archive/v6.27.3.tar.gz
 src-sha: ee29901749b9132692b26f0a6c1d693f47d1a9ed8e3771e60556afe80282bf58
 license: GPL-2.0-only
-dep-pkg: gflags snappy liblz4 libzstd libbz2
+dep-pkg: gflags libsnappy libzstd liblz4 libbz2
 
 install: |
     cmakew \
         -DPORTABLE=ON \
         -DUSE_RTTI=ON \
-        -DWITH_BENCHMARK_TOOLS=OFF \
         -DWITH_BZ2=ON \
         -DWITH_LZ4=ON \
         -DWITH_ZLIB=ON \
         -DWITH_ZSTD=ON \
         -DWITH_SNAPPY=ON \
         -DWITH_GFLAGS=ON \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so"
+        -DWITH_BENCHMARK_TOOLS=OFF

@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Binary-decimal and decimal-binary routines for IEEE doubles
 git-url: https://github.com/google/double-conversion
 src-url: https://github.com/google/double-conversion/archive/v3.3.0.tar.gz

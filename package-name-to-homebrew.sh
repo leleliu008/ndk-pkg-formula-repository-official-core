@@ -52,6 +52,8 @@ case $1 in
               printf '%s\n' 'lame'      ;;
     libjansson)
               printf '%s\n' 'jansson'   ;;
+    libleveldb)
+              printf '%s\n' 'leveldb'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
     libvorbis)
@@ -60,6 +62,10 @@ case $1 in
               printf '%s\n' 'exhale'    ;;
     libpixman)
               printf '%s\n' 'pixman'    ;;
+    libsnappy)
+              printf '%s\n' 'snappy'    ;;
+    libcrc32c)
+              printf '%s\n' 'crc32c'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;

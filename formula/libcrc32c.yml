@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Implementation of CRC32C with CPU-specific acceleration
 git-url: https://github.com/google/crc32c
 src-url: https://github.com/google/crc32c/archive/1.1.2.tar.gz
@@ -8,4 +7,10 @@ install: |
     cmakew \
         -DCRC32C_USE_GLOG=OFF \
         -DCRC32C_BUILD_TESTS=OFF \
-        -DCRC32C_BUILD_BENCHMARKS=OFF
+        -DCRC32C_BUILD_BENCHMARKS=OFF \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DCRC32C_USE_GLOG=OFF \
+        -DCRC32C_BUILD_TESTS=OFF \
+        -DCRC32C_BUILD_BENCHMARKS=OFF \
+        -DBUILD_SHARED_LIBS=ON
