@@ -1,0 +1,6 @@
+summary: A family of hash functions
+git-url: https://github.com/google/farmhash
+version: 1.1.0
+dep-upp: libtool
+bsystem: autotools
+prepare: run autoreconf -ivf

@@ -1,4 +1,3 @@
-pkgtype: exe+lib
 summary: An efficient cross platform serialization library for C++
 web-url: https://google.github.io/flatbuffers
 git-url: https://github.com/google/flatbuffers
@@ -8,11 +7,15 @@ license: Apache-2.0
 
 do12345: |
     cmakew \
+        -DFLATBUFFERS_BUILD_FLATC=ON \
         -DFLATBUFFERS_BUILD_TESTS=OFF \
-        -DFLATBUFFERS_BUILD_BENCHMARKS=OFF
+        -DFLATBUFFERS_BUILD_BENCHMARKS=OFF \
+        -DFLATBUFFERS_BUILD_SHAREDLIB=OFF
 
 install: |
     cmakew \
+        -DFLATBUFFERS_FLATC_EXECUTABLE="$NATIVE_INSTALL_DIR/bin/flatc" \
+        -DFLATBUFFERS_BUILD_FLATC=ON \
         -DFLATBUFFERS_BUILD_TESTS=OFF \
         -DFLATBUFFERS_BUILD_BENCHMARKS=OFF \
-        -DFLATBUFFERS_FLATC_EXECUTABLE="$NATIVE_INSTALL_DIR/bin/flatc"
+        -DFLATBUFFERS_BUILD_SHAREDLIB=OFF
