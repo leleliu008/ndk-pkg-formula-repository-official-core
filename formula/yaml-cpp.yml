@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: YAML parser and emitter written in C++ for YAML 1.2 spec
 git-url: https://github.com/jbeder/yaml-cpp
 src-url: https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz
@@ -7,4 +8,4 @@ license: MIT
 install: |
     cmakew \
         -DYAML_CPP_BUILD_TESTS=OFF \
-        -DYAML_CPP_BUILD_TOOLS=ON
+        -DYAML_CPP_BUILD_TOOLS=OFF

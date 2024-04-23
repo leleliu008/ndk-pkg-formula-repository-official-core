@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Color management solution geared towards motion picture production
 web-url: https://opencolorio.org/
 git-url: https://github.com/AcademySoftwareFoundation/OpenColorIO

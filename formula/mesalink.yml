@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: memory-safe and OpenSSL-compatible TLS library
 web-url: https://mesalink.io
 git-url: https://github.com/mesalock-linux/mesalink

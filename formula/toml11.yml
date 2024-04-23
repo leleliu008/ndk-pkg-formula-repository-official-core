@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A header-only C++11 (or later) library for parsing TOML
 web-url: https://github.com/ToruNiina/toml11
 src-url: https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz

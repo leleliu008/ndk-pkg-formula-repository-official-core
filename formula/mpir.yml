@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Multiple Precision Integers and Rationals (fork of GMP)
 git-url: https://github.com/wbhart/mpir
 version: 3.0.0

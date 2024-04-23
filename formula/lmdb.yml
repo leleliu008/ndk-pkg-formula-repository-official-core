@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Lightning memory-mapped database, key-value data store
 web-url: https://symas.com/lmdb
 src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2

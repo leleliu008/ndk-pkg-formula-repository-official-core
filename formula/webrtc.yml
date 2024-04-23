@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Real-Time Communication
 web-url: https://webrtc.org/
 git-url: https://webrtc.googlesource.com/src

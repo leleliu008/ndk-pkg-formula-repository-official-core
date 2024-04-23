@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: Hybrid lossless audio compression
 git-url: https://github.com/dbry/WavPack
 web-url: https://www.wavpack.com/
@@ -10,4 +9,4 @@ dopatch: |
     sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 
-install: configure --disable-tests --enable-apps --disable-man
+install: configure --disable-tests --disable-apps --disable-man

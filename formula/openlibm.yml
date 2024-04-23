@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: High quality, portable, open source libm implementation
 web-url: https://openlibm.org
 git-url: https://github.com/JuliaMath/openlibm

@@ -17,7 +17,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2,perl,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,png,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf]
+        pkg: [numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2,perl,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,png,pngquant,poco,ppkg,procs,progress]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2,perl,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,png,pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf]
+        pkg: [numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2,perl,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,png,pngquant,poco,ppkg,procs,progress]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

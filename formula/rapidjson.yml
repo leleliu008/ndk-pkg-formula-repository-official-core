@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A fast JSON parser and generator for C++ with SAX and DOM style APIs
 web-url: http://rapidjson.org/
 git-url: https://github.com/Tencent/rapidjson

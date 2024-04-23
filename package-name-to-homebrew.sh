@@ -46,10 +46,14 @@ case $1 in
               printf '%s\n' 'protobuf'  ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
+    libtinyxml2)
+              printf '%s\n' 'tinyxml2'  ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
               printf '%s\n' 'lame'      ;;
+    libwavpack)
+              printf '%s\n' 'wavpack'   ;;
     libjansson)
               printf '%s\n' 'jansson'   ;;
     libleveldb)
@@ -89,6 +93,7 @@ case $1 in
     libuuid)  printf '%s\n' 'util-linux';;
     libre2c)  printf '%s\n' 're2c'      ;;
     libcgif)  printf '%s\n' 'cgif'      ;;
+    libzlog)  printf '%s\n' 'zlog'      ;;
     libz3.a)  printf '%s\n' 'z3'        ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
     libnng)   printf '%s\n' 'nng'       ;;

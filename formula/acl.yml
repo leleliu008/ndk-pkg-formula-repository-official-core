@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: C library and utilities for Manipulating POSIX Access Control Lists
 web-url: https://savannah.nongnu.org/projects/acl
 src-url: https://download.savannah.nongnu.org/releases/acl/acl-2.3.2.tar.gz

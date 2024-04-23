@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: An easy-to-use, high-performance audio library for Android
 git-url: https://github.com/google/oboe
 src-url: https://github.com/google/oboe/archive/refs/tags/1.8.1.tar.gz

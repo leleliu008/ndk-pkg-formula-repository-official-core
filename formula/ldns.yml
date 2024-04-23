@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: DNS library written in C
 git-url: https://github.com/NLnetLabs/ldns
 web-url: https://nlnetlabs.nl/projects/ldns/

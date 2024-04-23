@@ -1,3 +1,4 @@
+pkgtype: exe+lib
 summary: Portable abstraction of the hierarchical topology of modern architectures
 git-url: https://github.com/open-mpi/hwloc
 web-url: https://www.open-mpi.org/projects/hwloc

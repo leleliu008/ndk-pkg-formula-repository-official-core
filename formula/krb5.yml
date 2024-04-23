@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Network authentication protocol
 web-url: https://web.mit.edu/kerberos
 git-url: https://github.com/krb5/krb5

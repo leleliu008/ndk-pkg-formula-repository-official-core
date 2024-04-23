@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A light and powerful web framework for C++
 web-url: https://oatpp.io/
 git-url: https://github.com/oatpp/oatpp

@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: chinese festival/jieqi algorithm
 git-url: https://github.com/leleliu008/C-examples
 version: 2022.06.24

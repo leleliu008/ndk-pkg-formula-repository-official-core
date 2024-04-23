@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Integer Set Library for the polyhedral model
 web-url: https://isl.gforge.inria.fr
 git-url: https://github.com/Meinersbur/isl

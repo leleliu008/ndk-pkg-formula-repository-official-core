@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Super fast C++ logging library
 git-url: https://github.com/gabime/spdlog
 src-url: https://github.com/gabime/spdlog/archive/refs/tags/v1.13.0.tar.gz

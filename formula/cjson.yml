@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Ultralightweight JSON parser in ANSI C
 git-url: https://github.com/DaveGamble/cJSON
 src-url: https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.17.tar.gz

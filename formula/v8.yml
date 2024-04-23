@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 git-url: https://github.com/v8/v8

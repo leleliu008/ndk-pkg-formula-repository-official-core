@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: UTF-8 with C++ in a Portable Way
 git-url: https://github.com/nemtrif/utfcpp
 src-url: https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz

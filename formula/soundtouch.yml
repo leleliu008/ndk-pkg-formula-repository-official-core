@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Audio processing library
 web-url: https://www.surina.net/soundtouch/
 git-url: https://codeberg.org/soundtouch/soundtouch
