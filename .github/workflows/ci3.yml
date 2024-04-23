@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnsmap,dog,dos2unix,dot_static,double-conversion,dua,duf,dufs,dust,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

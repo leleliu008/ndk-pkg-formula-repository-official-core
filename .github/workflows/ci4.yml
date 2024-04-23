@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findutils,fish,flac,flatc,flex,fortune,freetype2-with-harfbuzz,fselect,fsmon,fzf,fzy,gawk,gbt,gdu,geographiclib,germanium,gettext,gh,git,git-lfs,gitui]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

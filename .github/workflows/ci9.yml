@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [libtwolame,libunwind,libupnp,libusbmuxd-server,libusrsctp,libvips,libwavpack,libwebm,libxcrypt,libxslt,libyuv,libzlog,libzmq,lief,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lz4]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

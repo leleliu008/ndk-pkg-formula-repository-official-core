@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [aalib,acl,ag,age,alass,antibody,apkeep,aptly,archiver,args,aria2,async++,axel,azcopy,b3sum,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bk,blockhash,boxes,brook]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

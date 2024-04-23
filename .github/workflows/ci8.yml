@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [libmblen,libmd,libmetalink,libmhash,libmill,libmpc,libnl,libnng,libopenh264,libphonenumber,libpipeline,libpsl,libqalculate,libqrencode,libraqm,librasterlite,libraw,libre2c,libressl,librsvg,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libthai,libtinyxml2,libtorrent-rasterbar]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

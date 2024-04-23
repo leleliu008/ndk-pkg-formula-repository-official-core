@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [pngquant,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,qpdf,qrencode,quiche,quickjs,rang,rapidjson,rav1e,rclone,re2c,restic,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false

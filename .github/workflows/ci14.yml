@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        abi: [arm64-v8a]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [arm64-v8a]
         exe: [fsle]
         pkg: [tealdeer,tectonic,tengo,tensorflow-lite,tiff,tig,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,uppm,utf8.h,utfcpp,util-linux,vegeta,vim,virustotal-cli,wabt,wasm3,watchexec,wavpack,webhook]
 
@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false
