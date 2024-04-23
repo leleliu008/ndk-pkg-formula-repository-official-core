@@ -42,6 +42,8 @@ case $1 in
               printf '%s\n' 'libxml2'   ;;
     libjpeg-turbo)
               printf '%s\n' 'jpeg-turbo';;
+    libflatbuffers|flatc)
+              printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
     libopenh264)
@@ -78,6 +80,7 @@ case $1 in
     librav1e) printf '%s\n' 'rav1e'     ;;
     libdav1d) printf '%s\n' 'dav1d'     ;;
     libexiv2) printf '%s\n' 'exiv2'     ;;
+    libfftw3) printf '%s\n' 'fftw'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
     libx265)  printf '%s\n' 'x265'      ;;
     libopus)  printf '%s\n' 'opus'      ;;
@@ -85,6 +88,7 @@ case $1 in
     libpcre)  printf '%s\n' 'pcre'      ;;
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
+    libmhash) printf '%s\n' 'mhash'     ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
     libwebp)  printf '%s\n' 'webp'      ;;

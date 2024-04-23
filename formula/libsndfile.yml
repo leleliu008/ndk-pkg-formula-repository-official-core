@@ -4,11 +4,18 @@ git-url: https://github.com/libsndfile/libsndfile
 src-url: https://github.com/libsndfile/libsndfile/releases/download/1.2.2/libsndfile-1.2.2.tar.xz
 src-sha: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e
 license: LGPL-2.1-or-later
-dep-pkg: libopus flac libvorbis libsqlite3
+dep-pkg: libopus libflac libvorbis libsqlite3
 dep-upp: python3
 install: |
     cmakew \
-        -DBUILD_PROGRAMS=ON \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DBUILD_PROGRAMS=OFF \
+        -DBUILD_EXAMPLES=OFF \
+        -DENABLE_PACKAGE_CONFIG=ON \
+        -DINSTALL_PKGCONFIG_MODULE=ON
+    cmakew \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_PROGRAMS=OFF \
         -DBUILD_EXAMPLES=OFF \
         -DENABLE_PACKAGE_CONFIG=ON \
         -DINSTALL_PKGCONFIG_MODULE=ON

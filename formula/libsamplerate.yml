@@ -6,4 +6,9 @@ license: BSD-2-Clause
 install: |
     cmakew \
         -DLIBSAMPLERATE_EXAMPLES=OFF \
-        -DBUILD_TESTING=OFF
+        -DBUILD_TESTING=OFF \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DLIBSAMPLERATE_EXAMPLES=OFF \
+        -DBUILD_TESTING=OFF \
+        -DBUILD_SHARED_LIBS=ON
