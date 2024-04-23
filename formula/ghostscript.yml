@@ -6,7 +6,6 @@ src-sha: 854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d
 license: AGPL-3.0-or-later
 dep-pkg: jbig2dec libidn openjpeg tesseract liblanginfo
 dep-upp: patch zlib
-bsystem: configure
 binbstd: 1
 
 dopatch: |
@@ -21,6 +20,37 @@ dopatch: |
     rm -rf zlib
     rm -rf tesseract
 
+    # https://bugs.ghostscript.com/show_bug.cgi?id=707649
+    patch -p1 <<EOF
+    From: Ken Sharp <Ken.Sharp@artifex.com>
+    Date: Fri, 8 Mar 2024 09:19:05 +0000 (+0000)
+    Subject: Bug #707649 - fix apply_sasl in error cases.
+    X-Git-Tag: robin_test_ref~44
+    X-Git-Url: https://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff_plain;h=90cabe08422afdd16bac5dd9217602679d943045;hp=590626ae42ac1c1c288ea7558040d8f91a1b8d0d
+
+    Bug #707649 - fix apply_sasl in error cases.
+
+    Forgot to dereference the pointers before assigning the values, if we
+    get non-fatal errors returned from stringprep.
+    ---
+
+    diff --git a/pdf/pdf_sec.c b/pdf/pdf_sec.c
+    index 565ae80ca..7e8f6719d 100644
+    --- a/pdf/pdf_sec.c
+    +++ b/pdf/pdf_sec.c
+    @@ -183,8 +183,8 @@ static int apply_sasl(pdf_context *ctx, char *Password, int Len, char **NewPassw
+              * this easy: the errors we want to ignore are the ones with
+              * codes less than 100. */
+             if ((int)err < 100) {
+    -            NewPassword = Password;
+    -            NewLen = Len;
+    +            *NewPassword = Password;
+    +            *NewLen = Len;
+                 return 0;
+             }
+     
+    EOF
+
     printf '%s' '
     LS0tIC4vYmFzZS9nc2Vycm9ycy5oCTIwMTctMDMtMTYgMDk6MjA6MTEuMDAwMDAwMDAwICswMDAw
     CisrKyAuL2Jhc2UvZ3NlcnJvcnMuaAkyMDE3LTAzLTE4IDIxOjAyOjQ2LjU4NjczNzYyOSArMDAw
@@ -33,7 +63,7 @@ dopatch: |
     YXJnKQogI2VuZGlmCi0jZW5kaWYKIAogY29uc3QgY2hhciAqZ3NfZXJyc3RyKGludCBjb2RlKTsK
     IAo=' | base64 -d | patch -p0
 
-install: |
+prepare: |
     HARFBUZZ_LIBS="$(pkg-config --libs-only-l harfbuzz)"
 
     printf 'INPUT(%s -lc++_shared)\n' "$HARFBUZZ_LIBS" > ../lib/libpthread.a
@@ -53,6 +83,7 @@ install: |
     export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
     export LDFLAGSAUX="$LDFLAGS_FOR_BUILD"
 
+install: |
     configure \
         --disable-compile-inits \
         --disable-cups \
