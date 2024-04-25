@@ -26,5 +26,6 @@ install: |
         -Dbsymbolic_functions=false
 
 dotweak: |
-    sed_in_place "s|$NDKPKG_HOME/installed/.*/libz.a|-lz|g"        lib/pkgconfig/*.pc
-    sed_in_place "s|$NDKPKG_HOME/installed/.*/libintl.so|-lintl|g" lib/pkgconfig/*.pc
+    sed_in_place "s|$NDKPKG_HOME/installed/.*/libz.a||g"          lib/pkgconfig/*.pc
+    sed_in_place "s|$NDKPKG_HOME/installed/.*/libintl.so||g"      lib/pkgconfig/*.pc
+    sed_in_place '/^Requires.private: /s|$| libintl libffi zlib|' lib/pkgconfig/glib-2.0.pc
