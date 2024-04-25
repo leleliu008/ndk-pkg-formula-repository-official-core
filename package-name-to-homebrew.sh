@@ -99,6 +99,8 @@ case $1 in
     libcgif)  printf '%s\n' 'cgif'      ;;
     libzlog)  printf '%s\n' 'zlog'      ;;
     libz3.a)  printf '%s\n' 'z3'        ;;
+    libmpfr)  printf '%s\n' 'mpfr'      ;;
+    libmpir)  printf '%s\n' 'mpir'      ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
     libnng)   printf '%s\n' 'nng'       ;;
     libbz2)   printf '%s\n' 'bzip2'     ;;

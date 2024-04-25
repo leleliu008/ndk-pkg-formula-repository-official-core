@@ -8,13 +8,13 @@ dep-pkg: libjansson liblz4 libmagic libpcre2 libiconv libyaml libpcap libnet lib
 dep-upp: libtool
 bsystem: autotools cargo
 
+dopatch: |
+    sed_in_place "/RUST_TARGET = --target/c RUST_TARGET = --target $RUST_TARGET" rust/Makefile.am
+    sed_in_place "/RUST_SURICATA_LIB_XC_DIR=/c RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/" configure.ac
+
 prepare: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
-
-    sed_in_place "s|RUST_TARGET = .*|RUST_TARGET = --target $RUST_TARGET|" rust/Makefile.am
-    sed_in_place "s|RUST_SURICATA_LIB_XC_DIR=.*|RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/|" configure.ac
-
-    run rustup target add "$RUST_TARGET"
+    run rustup target add "$CARGO_BUILD_TARGET"
 
 install: |
     configure \

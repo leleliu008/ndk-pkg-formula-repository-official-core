@@ -17,7 +17,7 @@ jobs:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [tealdeer,tectonic,tengo,tensorflow-lite,tiff,tig,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,uppm,utf8.h,utfcpp,util-linux,vegeta,vim,virustotal-cli,wabt,wasm3,watchexec,wavpack,webhook]
+        pkg: [tdu,tealdeer,tectonic,tengo,tensorflow-lite,tiff,tig,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,uppm,utf8.h,utfcpp,util-linux,vegeta,vim,virustotal-cli,wabt,wasm3,watchexec,wavpack]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [tealdeer,tectonic,tengo,tensorflow-lite,tiff,tig,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,uppm,utf8.h,utfcpp,util-linux,vegeta,vim,virustotal-cli,wabt,wasm3,watchexec,wavpack,webhook]
+        pkg: [tdu,tealdeer,tectonic,tengo,tensorflow-lite,tiff,tig,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound,unrar,uppm,utf8.h,utfcpp,util-linux,vegeta,vim,virustotal-cli,wabt,wasm3,watchexec,wavpack]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

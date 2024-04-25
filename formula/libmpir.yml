@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Multiple Precision Integers and Rationals (fork of GMP)
 git-url: https://github.com/wbhart/mpir
 version: 3.0.0
@@ -8,6 +7,22 @@ version: 3.0.0
 license: GPL-3.0-or-later
 dep-upp: yasm gm4 libtool texinfo
 bsystem: autotools
+
+prepare: |
+    if [ "$TARGET_PLATFORM_ARCH" = 'i686' ] ; then
+        export M4="$M4 -DPIC"
+    fi
+
+    if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
+        YASM="$(command -v yasm)"
+
+        cat > ../bin/yasm <<EOF
+    #!/bin/sh
+    exec "$YASM" -D PIC "\$@"
+    EOF
+        chmod +x ../bin/yasm
+    fi
+
 install: |
     configure \
         --with-pic \

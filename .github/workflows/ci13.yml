@@ -17,7 +17,7 @@ jobs:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
         exe: [fsle]
-        pkg: [sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tbox,tcc,tcl,tcpdump,tdu]
+        pkg: [rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tbox,tcc,tcl,tcpdump]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tbox,tcc,tcl,tcpdump,tdu]
+        pkg: [rust-analyzer,sassc,scc,sd,shc,shell2http,shiori,silicon,simdjson,sjpeg,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tbox,tcc,tcl,tcpdump]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

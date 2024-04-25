@@ -5,3 +5,14 @@ src-sha: 8ffbe944e74043d0d3fb53d4a2a14c94de71f58dbea6a06d0dc92369542958ea
 license: BSD-2-Clause
 dep-upp: nasm
 install: mesonw -Dtests=disabled
+
+prepare: |
+    if [ "$TARGET_PLATFORM_ARCH" = 'i686' ] ; then
+        NASM="$(command -v nasm)"
+
+        cat > ../bin/nasm <<EOF
+    #!/bin/sh
+    exec "$NASM" -DX86_32_PICASM "\$@"
+    EOF
+        chmod +x ../bin/nasm
+    fi
