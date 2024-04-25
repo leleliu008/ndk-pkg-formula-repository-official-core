@@ -6,7 +6,6 @@ src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
 src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
 license: MIT
 dep-upp: gsed grep
-bsystem: configure
 
 do12345: |
     {
@@ -19,30 +18,22 @@ do12345: |
         fi
     } || return 0
 
-    # /usr/bin/cc -DHAVE_CONFIG_H -I../ncurses -I. -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses -I../include -I/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/../include -D_DARWIN_C_SOURCE -DNDEBUG -Qunused-arguments -no-cpp-precomp -c /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c -o ../objects/lib_getch.o
-    # /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c:312:12: error: implicit declaration of function 'read' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-    # n = (int) read(sp->_ifd, &c2, (size_t) 1);
-    #           ^
-    # /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/ncurses/base/lib_getch.c:312:12: note: did you mean 'fread'?
-    # /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:158:9: note: 'fread' declared here
-    # size_t   fread(void * __restrict __ptr, size_t __size, size_t __nitems, FILE * __restrict __stream);
-    #          ^
-    # 1 error generated.
-    # gmake[1]: *** [Makefile:1004: ../objects/lib_getch.o] Error 1
-    # gmake[1]: Leaving directory '/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/tmp.8sFnLL5q/1612536982/native/ncurses'
-    # gmake: *** [Makefile:120: all] Error 2
-
     unset TERMINFO
-    #install -d "$NATIVE_INSTALL_DIR/lib/pkgconfig"
     configure \
         --with-pkg-config-libdir="$NATIVE_INSTALL_DIR/lib/pkgconfig" \
         ac_cv_header_fcntl_h=yes \
         ac_cv_header_unistd_h=yes \
         ac_cv_header_sys_time_h=yes
 
+dopatch: sed_in_place 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+
 install: |
-    unset TERMINFO
-    #install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+    export BUILD_CC="$CC_FOR_BUILD"
+    export BUILD_CFLAGS="$CFLAGS_FOR_BUILD"
+    export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
+    export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
+    unset  BUILD_LIBS
+    unset  TERMINFO
     configure \
         --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
         --with-cxx-shared \
@@ -61,25 +52,25 @@ install: |
         --disable-stripping \
         --disable-assertions \
         --disable-gnat-projects \
-        --disable-echo &&
-    {
-        cd "$PACKAGE_INSTALL_DIR/include" || return 1
+        --disable-echo
 
-        for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
-        do
-            ln -s "ncursesw/$item" "$item" || return 1
-        done
-        
-        cd "$PACKAGE_INSTALL_DIR/lib" || return 1
+dotweak: |
+    cd include
 
-        for item in libncurses libpanel libmenu libform
-        do
-            ln -s "${item}w.a"  "${item}.a"  || return 1
-            ln -s "${item}w.so" "${item}.so" || return 1
-        done
+    for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
+    do
+        ln -s "ncursesw/$item" "$item"
+    done
 
-        #ln -s libncurses++w.a libncurses++.a || return 1
+    cd -
+    cd lib
 
-        cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig" &&
-        ln -s ncursesw.pc ncurses.pc
-    }
+    for item in libncurses libpanel libmenu libform
+    do
+        ln -s "${item}w.a"  "${item}.a"
+        ln -s "${item}w.so" "${item}.so"
+    done
+
+    cd -
+    cd lib/pkgconfig
+    ln -s ncursesw.pc ncurses.pc

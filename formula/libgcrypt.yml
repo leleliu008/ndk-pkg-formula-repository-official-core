@@ -7,7 +7,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libgpg-error
 ldflags: -Wl,--undefined-version
 
-install: |
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         *86*) CONFIGURE_EXTRA_ARGS='--disable-asm' ;;
         *)    CONFIGURE_EXTRA_ARGS='--enable-asm'  ;;

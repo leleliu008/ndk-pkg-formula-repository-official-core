@@ -19,5 +19,4 @@ install: |
         --without-posix-acls \
         --without-selinux \
         --disable-acl \
-        --disable-gcc-warnings \
-        --disable-year2038
+        --disable-gcc-warnings

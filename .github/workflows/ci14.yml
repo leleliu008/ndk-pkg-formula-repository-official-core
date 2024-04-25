@@ -86,7 +86,7 @@ jobs:
 
 
   macos:
-    #if: false
+    if: false
     strategy:
 
       fail-fast: false

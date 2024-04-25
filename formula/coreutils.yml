@@ -12,11 +12,7 @@ prepare: |
         export CPPFLAGS="$CPPFLAGS -DSYS_getdents=61"
     fi
 
-    if [ "$TARGET_PLATFORM_NBIT" = '64' ] ; then
-        CONFIGURE_EXTRA_ARGS=
-    else
-        CONFIGURE_EXTRA_ARGS='--disable-year2038'
-    fi
+    export FORCE_UNSAFE_CONFIGURE=1
 
 install: |
     configure \
@@ -31,8 +27,7 @@ install: |
         --disable-gcc-warnings \
         --disable-acl \
         --enable-xattr \
-        --enable-threads=posix \
-        "$CONFIGURE_EXTRA_ARGS"
+        --enable-threads=posix
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

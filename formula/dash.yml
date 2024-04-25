@@ -8,7 +8,6 @@ dep-pkg: libedit libglob libstrchrnul
 api-min: 31
 
 install: |
-    export cross_compiling=yes
     configure \
         --with-libedit="$libedit_INSTALL_DIR" \
         --enable-test-workaround=no \

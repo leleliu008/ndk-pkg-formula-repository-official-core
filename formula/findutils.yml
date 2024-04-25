@@ -12,7 +12,6 @@ dopatch: |
     sed_in_place 's/find.texi\ //' doc/Makefile.in
 
 install: |
-    export TIME_T_32_BIT_OK=yes
     configure \
         --without-selinux \
         --with-included-regex \
