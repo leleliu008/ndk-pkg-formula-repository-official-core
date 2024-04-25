@@ -5,7 +5,7 @@ src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz
 src-sha: 0f8a4c272d7f17f369ded10a4aca28b8e304828e95526da482b0ccc4dfc9d8e1
 license: GPL-2.0-or-later
 dep-upp: gm4 bison texinfo
-dep-pkg: isl libgmp libmpc mpfr
+dep-pkg: isl libgmp libmpc libmpfr
 
 dopatch: |
     sed_in_place '/rindex/d' ../include/ndk-pkg-common.h
@@ -16,7 +16,7 @@ install: |
         --with-isl="$isl_INSTALL_DIR" \
         --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
-        --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-mpfr="$libmpfr_INSTALL_DIR" \
         --with-system-zlib \
         --disable-werror \
         --enable-interwork \

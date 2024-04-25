@@ -81,6 +81,7 @@ case $1 in
     libdav1d) printf '%s\n' 'dav1d'     ;;
     libexiv2) printf '%s\n' 'exiv2'     ;;
     libfftw3) printf '%s\n' 'fftw'      ;;
+    libeigen) printf '%s\n' 'eigen'     ;;
     libx264)  printf '%s\n' 'x264'      ;;
     libx265)  printf '%s\n' 'x265'      ;;
     libopus)  printf '%s\n' 'opus'      ;;
