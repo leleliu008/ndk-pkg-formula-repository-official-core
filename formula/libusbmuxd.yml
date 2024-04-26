@@ -5,7 +5,7 @@ src-url: https://github.com/libimobiledevice/libusbmuxd/releases/download/2.1.0/
 src-sha: c35bf68f8e248434957bd5b234c389b02206a06ecd9303a7fb931ed7a5636b16
 license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-pkg: libimobiledevice-glue
-install: configure LIBS=-lm
+bsystem: configure
 
 dopatch: |
     sed_in_place 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h

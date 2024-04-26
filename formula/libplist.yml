@@ -5,3 +5,4 @@ src-url: https://github.com/libimobiledevice/libplist/releases/download/2.4.0/li
 src-sha: 3f5868ae15b117320c1ff5e71be53d29469d4696c4085f89db1975705781a7cd
 license: LGPL-2.1-or-later
 install: configure --without-cython LIBS=-lm
+dotweak: sed_in_place 's|-lplist-2.0|-lplist-2.0 -lm|' lib/pkgconfig/libplist-2.0.pc

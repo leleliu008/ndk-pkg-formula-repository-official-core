@@ -12,8 +12,8 @@ dep-upp: pkg-config
 api-min: 24
 
 dopatch: |
-    sed_in_place 's/@echo/echo/g' common/Makefile.in &&
-    sed_in_place 's/@echo/echo/g' tools/Makefile.in &&
+    sed_in_place 's/@echo/echo/g' common/Makefile.in
+    sed_in_place 's/@echo/echo/g' tools/Makefile.in
     sed_in_place 's/@echo/echo/g' src/Makefile.in
     sed_in_place 's|PLIST_FORMAT_XML|PLIST_FORMAT_XML_|' common/utils.h
     sed_in_place 's|PLIST_FORMAT_BINARY|PLIST_FORMAT_BINARY_|' common/utils.h

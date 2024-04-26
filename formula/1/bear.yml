@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Generate compilation database for clang tooling
 git-url: https://github.com/rizsotto/Bear
 src-url: https://github.com/rizsotto/Bear/archive/refs/tags/3.1.3.tar.gz

@@ -6,6 +6,4 @@ src-sha: dfc1ba61c87258f9ac92a86784b3444445fc4ef6cd51484acc58181c6487ed9e
 license: BSD-3-Clause
 dep-pkg: boost openblas spdlog libfftw3
 bsystem: cmake
-
-dopatch: |
-    sed_in_place 's|find_package(FFTW)|find_package(FFTW3)|' CMakeLists.txt
+dopatch: sed_in_place 's|find_package(FFTW)|find_package(FFTW3)|' CMakeLists.txt

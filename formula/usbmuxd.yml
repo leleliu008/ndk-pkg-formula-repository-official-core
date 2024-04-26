@@ -1,0 +1,23 @@
+pkgtype: exe
+summary: A socket daemon to multiplex connections from and to iOS devices
+web-url: https://libimobiledevice.org/
+git-url: https://github.com/libimobiledevice/usbmuxd
+version: 1.1.1
+    #src-url: https://github.com/libimobiledevice/usbmuxd/archive/refs/tags/1.1.1.tar.gz
+    #src-sha: e7ce30143e69d77fc5aa6fb0cb5f0cfcdbeff47eb1ac7fd90ac259a90de9fadd
+license: LGPL-2.1-or-later
+dep-pkg: libimobiledevice-glue libusb
+dep-upp: libtool
+bsystem: autogen
+
+dopatch: |
+    sed_in_place 's|/var/run|/data/local/tmp|' src/usbmuxd-proto.h
+    sed_in_place 's|/var/run|/data/local/tmp|' src/main.c
+    sed_in_place 's|/var/run|/data/local/tmp|' docs/usbmuxd.8
+    sed_in_place 's|/var/run|/data/local/tmp|' udev/39-usbmuxd.rules.in
+
+install: configure --without-preflight --without-systemd
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24

@@ -109,6 +109,7 @@ case $1 in
     liblzo)   printf '%s\n' 'lzo'       ;;
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+    libcaf)   printf '%s\n' 'caf'       ;;
 
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;

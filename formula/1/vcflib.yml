@@ -1,18 +1,7 @@
 summary: C++ library and cmdline tools for parsing and manipulating VCF files
-git-url: https://github.com/vcflib/vcflib.git
-#src-url: https://github.com/vcflib/vcflib/archive/refs/tags/v1.0.2.tar.gz
-#src-url: dir:///tmp/tmp.AQJ4eClDrE
-#src-sha: a3ef230864328d96eb3b086bf5bbcc34d6699710c358444621f6c3e3f507c910
+git-url: https://github.com/vcflib/vcflib
+src-url: https://github.com/vcflib/vcflib/archive/refs/tags/v1.0.10.tar.gz
+src-sha: 6f7f366555e5b191a509bda6d7a2078825827458ba7e9922094c4c1ebb48e693
 license: MIT
 dep-pkg: htslib
-dep-upp: pkg-config
-
-install: |
-    cmakew \
-        -DBUILD_DOC=OFF \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.so" \
-        -DLIBLZMA_INCLUDE_DIR="$xz_INCLUDE_DIR" \
-        -DLIBLZMA_LIBRARY="$xz_LIBRARY_DIR/liblzma.a"
+install: cmakew -DBUILD_DOC=OFF -DZIG=OFF

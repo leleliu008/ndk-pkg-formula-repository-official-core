@@ -1,5 +1,5 @@
 summary: Resource monitor. C++ version and continuation of bashtop and bpytop
-git-url: https://github.com/aristocratos/btop.git
+git-url: https://github.com/aristocratos/btop
 src-url: https://github.com/aristocratos/btop/archive/refs/tags/v1.2.5.tar.gz
 src-sha: 93ff23276f2c626282037766542543dad5964fb6117c7902c4a4899607f8c95f
 license: Apache-2.0
