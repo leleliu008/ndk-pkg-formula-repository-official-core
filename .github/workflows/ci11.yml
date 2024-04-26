@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
-        exe: [fsle]
+        exe: [msle]
         pkg: [nghttp2,nginx,ngtcp2,ninja,nnn,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patchelf,pcapplusplus,pcre2,perl,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog]
 
     runs-on: ubuntu-latest

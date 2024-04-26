@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
-        exe: [fsle]
+        exe: [msle]
         pkg: [grpc,gsed,gtar,gzip,halibut,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5,lame]
 
     runs-on: ubuntu-latest
