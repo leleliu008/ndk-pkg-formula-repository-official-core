@@ -1,0 +1,6 @@
+summary: Official tldr client written in Rust
+git-url: https://github.com/tldr-pages/tlrc
+src-url: https://github.com/tldr-pages/tlrc/archive/refs/tags/v1.9.1.tar.gz
+src-sha: 73c8e48f2c2e2689c47b1ef32406267e0557561996517773ad1d99a3b05435f3
+license: MIT
+bsystem: cargo

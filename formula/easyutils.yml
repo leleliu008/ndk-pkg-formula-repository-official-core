@@ -1,0 +1,21 @@
+summary: A collections of easy to use command-line utilities
+git-url: https://github.com/leleliu008/C-examples
+binbstd: 1
+install: |
+    PACKAGE_BSCRIPT_DIR="$PACKAGE_WORKING_DIR/src/algorithm/base16"
+    cmakew
+
+    rm -rf     "$PACKAGE_BCACHED_DIR"
+    install -d "$PACKAGE_BCACHED_DIR"
+
+    PACKAGE_BSCRIPT_DIR="$PACKAGE_WORKING_DIR/src/library/mbedTLS/base64"
+    cmakew
+
+    rm -rf     "$PACKAGE_BCACHED_DIR"
+    install -d "$PACKAGE_BCACHED_DIR"
+
+    PACKAGE_BSCRIPT_DIR="$PACKAGE_WORKING_DIR/src/utils/sysinfo"
+    cmakew
+
+    rm -rf "$PACKAGE_INSTALL_DIR/lib"
+    rm -rf "$PACKAGE_INSTALL_DIR/include"

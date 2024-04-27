@@ -1,0 +1,11 @@
+summary: Parallel bzip2
+web-url: http://compression.great-site.net/pbzip2/
+src-url: https://launchpad.net/pbzip2/1.1/1.1.13/+download/pbzip2-1.1.13.tar.gz
+src-sha: 8fd13eaaa266f7ee91f85c1ea97c86d9c9cc985969db9059cdebcb1e1b7bdbe6
+license: bzip2-1.0.6
+dep-pkg: libbz2
+binbstd: 1
+xxflags: -Wno-error=reserved-user-defined-literal
+install: |
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CXX="$CXX" CXXFLAGS="'$CXXFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'"

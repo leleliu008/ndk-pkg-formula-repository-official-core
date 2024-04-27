@@ -1,0 +1,59 @@
+summary: XML 1.0 parser
+web-url: https://libexpat.github.io
+git-url: https://github.com/libexpat/libexpat
+src-url: https://github.com/libexpat/libexpat/releases/download/R_2_6_2/expat-2.6.2.tar.lz
+src-sha: d276ffa9602e0c5f289f33fab7b3a9c86da446092642a09cd3c0c8e51f50d862
+license: MIT
+dep-upp: patch
+dopatch: |
+    patch -p0 <<EOF
+    --- ConfigureChecks.cmake.orign 2024-04-02 08:58:53.499986940 +0000
+    +++ ConfigureChecks.cmake       2024-04-02 09:21:47.648735869 +0000
+    @@ -46,12 +46,32 @@
+     endif(WORDS_BIGENDIAN)
+     
+     if(HAVE_SYS_TYPES_H)
+    -    check_symbol_exists("off_t" "sys/types.h" off_t)
+    -    check_symbol_exists("size_t" "sys/types.h" size_t)
+    +    check_c_source_compiles("
+    +        #include <sys/types.h>
+    +        int main() {
+    +           off_t x;
+    +            return 0;
+    +        }"
+    +       HAVE_OFF_T)
+    +    check_c_source_compiles("
+    +        #include <sys/types.h>
+    +        int main() {
+    +           size_t x;
+    +            return 0;
+    +        }"
+    +       HAVE_SIZE_T)
+     else(HAVE_SYS_TYPES_H)
+    +    set(HAVE_OFF_T 0)
+    +    set(HAVE_SIZE_T 0)
+    +endif(HAVE_SYS_TYPES_H)
+    +
+    +if (NOT HAVE_OFF_T)
+         set(off_t "long")
+    +endif()
+    +
+    +if (NOT HAVE_SIZE_T)
+         set(size_t "unsigned")
+    -endif(HAVE_SYS_TYPES_H)
+    +endif()
+     
+     check_c_source_compiles("
+             #include <stdlib.h>  /* for NULL */
+    EOF
+install: |
+    cmakew \
+        -DEXPAT_BUILD_DOCS=OFF \
+        -DEXPAT_BUILD_TOOLS=ON \
+        -DEXPAT_BUILD_TESTS=OFF \
+        -DEXPAT_BUILD_FUZZERS=OFF \
+        -DEXPAT_BUILD_EXAMPLES=OFF \
+        -DEXPAT_SHARED_LIBS=OFF \
+        -DEXPAT_ENABLE_INSTALL=OFF
+    install_bins xmlwf/xmlwf
+    install_mans "$PACKAGE_WORKING_DIR/src/doc/xmlwf.1"

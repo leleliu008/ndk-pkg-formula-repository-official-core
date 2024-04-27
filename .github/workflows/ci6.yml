@@ -17,7 +17,7 @@ jobs:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
         exe: [msle]
-        pkg: [gron,grpc,gsed,gtar,gzip,halibut,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5]
+        pkg: [gnutls,go-md2man,go-tools,godu,gogs,golang,gomobile,google-benchmark,google-highway,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,helix]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [gron,grpc,gsed,gtar,gzip,halibut,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,isl,ixwebsocket,jfrog-cli,jpeg,jq,json-glib,jump,kcp,kcptun,keybase,krb5]
+        pkg: [gnutls,go-md2man,go-tools,godu,gogs,golang,gomobile,google-benchmark,google-highway,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,gsed,gtar,gzip,halibut,helix]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

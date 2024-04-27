@@ -1,0 +1,30 @@
+summary: C XSLT library for GNOME
+web-url: http://xmlsoft.org/XSLT
+git-url: https://github.com/GNOME/libxslt
+src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.39.tar.xz
+src-sha: 2a20ad621148339b0759c4d4e96719362dee64c9a096dbba625ba053846349f0
+license: X11
+dep-pkg: libxml2
+
+dopatch: |
+    sed_in_place 's|$(XSLTPROC) --nonet $(srcdir)/xsltproc.xml|touch xsltproc.1|' doc/Makefile.am
+    sed_in_place 's|$(XSLTPROC) --nonet $(srcdir)/xsltproc.xml|touch xsltproc.1|' doc/Makefile.in
+
+install: |
+    configure \
+        --without-debug \
+        --without-mem-debug \
+        --without-debugger \
+        --without-crypto \
+        --without-python \
+        --with-profiler \
+        --with-plugins LIBS=-ldl
+
+dotweak: |
+    rm -rfv bin/xslt-config
+    rm -rfv include
+    rm -rfv lib
+    rm -rfv share/man/man3
+    rm -rfv share/aclocal
+    rm -rfv share/doc
+    rm -rfv share/gtk-doc

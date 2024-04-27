@@ -1,0 +1,6 @@
+summary: A invoice generator
+web-url: https://github.com/maaslalani/invoice
+src-url: https://github.com/maaslalani/invoice/archive/refs/tags/v0.1.0.tar.gz
+src-sha: f34f20f6491f42c0e94dbde433a578f0dba98938f2e3186018d3e16d050abdaf
+license: MIT
+bsystem: go

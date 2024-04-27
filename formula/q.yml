@@ -1,0 +1,6 @@
+summary: A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
+git-url: https://github.com/natesales/q
+src-url: https://github.com/natesales/q/archive/refs/tags/v0.19.1.tar.gz
+src-sha: 52134b10255b368c03f4edc54935a1b0cfe052a7ed5ec3a2ad73e3e03a3bf18b
+license: GPL-3.0
+bsystem: go

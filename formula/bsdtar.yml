@@ -1,0 +1,40 @@
+summary: BSD tar
+git-url: https://github.com/libarchive/libarchive
+web-url: https://www.libarchive.org/
+src-url: https://www.libarchive.org/downloads/libarchive-3.7.3.tar.xz
+src-sha: 63e7a7174638fc7d6b79b4c8b0ad954e0f4f45abe7239c1ecb200232aa9a43d2
+license: BSD-2-Clause
+dep-pkg: openssl liblz4 liblzo libzstd liblzma libbz2 zlib libiconv libexpat
+
+prepare: |
+    export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"
+    export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
+
+install: |
+    configure \
+        --enable-xattr \
+        --enable-acl \
+        --enable-bsdtar=static \
+        --enable-bsdcat=static \
+        --enable-bsdcpio=static \
+        --enable-bsdunzip=static \
+        --without-mbedtls \
+        --without-nettle \
+        --without-libb2 \
+        --without-xml2 \
+        --without-cng \
+        --with-openssl \
+        --with-expat \
+        --with-zlib \
+        --with-lzma \
+        --with-bz2lib \
+        --with-lz4 \
+        --with-lzo2 \
+        --with-zstd \
+        --with-iconv
+
+dotweak: |
+    run rm -rf lib
+    run rm -rf include
+    run rm -rf share/man/man3
+    run rm -rf share/man/man5

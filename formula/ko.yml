@@ -1,0 +1,7 @@
+summary: A simple, fast container image builder for Go applications
+web-url: https://ko.build
+git-url: https://github.com/ko-build/ko
+src-url: https://github.com/ko-build/ko/archive/refs/tags/v0.15.2.tar.gz
+src-sha: 4ecd13e513924f16af61f7c3713b989aad8eb10d993ec22c23ea50fe96e32289
+license: Apache-2.0
+install: gow -X github.com/google/ko/pkg/commands.Version=$PACKAGE_NAME

@@ -11,7 +11,7 @@ dopatch: sed_in_place 's|ln -f|ln -sf|' Makefile
 
 install: |
     gmakew clean
-    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS -static'"
+    gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
     install_bins pigz
     install_mans pigz.1
 

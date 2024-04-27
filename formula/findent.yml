@@ -1,0 +1,7 @@
+summary: Indent and beautify Fortran sources and generate dependency information
+web-url: https://www.ratrabbit.nl/ratrabbit/findent/index.html
+src-url: https://downloads.sourceforge.net/project/findent/findent-4.3.2.tar.gz
+src-sha: 62144eb84bda93d21241a6963ef973f92778bca7c915bfea9b38973774e85c7e
+license: BSD-3-Clause
+binbstd: 1
+bsystem: configure

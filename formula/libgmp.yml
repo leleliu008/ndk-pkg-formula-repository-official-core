@@ -6,8 +6,19 @@ src-sha: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
 license: LGPL-3.0-or-later
 dep-upp: gm4
 
+prepare: |
+    cd ../bin
+
+    cat > m4 <<EOF
+    #!/bin/sh
+    exec "$M4" -DPIC "\$@"
+    EOF
+
+    chmod +x m4
+
+    export M4="$PWD/m4"
+
 install: |
-    export M4="$M4 -DPIC"
     configure \
         --with-pic \
         --without-readline \

@@ -1,0 +1,8 @@
+summary: A C++ library for stateful pattern matching of strings
+git-url: https://github.com/google/effcee
+dep-upp: git python3
+dopatch: |
+    cd third_party
+    git clone --depth=1 https://github.com/google/re2
+    git clone --depth=1 https://github.com/abseil/abseil-cpp
+install: cmakew -DEFFCEE_BUILD_TESTING=OFF -DEFFCEE_BUILD_SAMPLES=OFF -DRE2_BUILD_TESTING=OFF

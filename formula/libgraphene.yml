@@ -1,0 +1,9 @@
+pkgtype: lib
+summary: Thin layer of graphic data types
+web-url: https://ebassi.github.io/graphene/
+git-url: https://github.com/ebassi/graphene
+src-url: https://github.com/ebassi/graphene/archive/refs/tags/1.10.8.tar.gz
+src-sha: 922dc109d2dc5dc56617a29bd716c79dd84db31721a8493a13a5f79109a4a4ed
+license: MIT
+dep-pkg: glib
+install: mesonw -Dtests=false -Dgtk_doc=false -Dintrospection=disabled

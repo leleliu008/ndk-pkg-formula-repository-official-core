@@ -10,7 +10,13 @@ bsystem: autotools
 
 prepare: |
     if [ "$TARGET_PLATFORM_ARCH" = 'i686' ] ; then
-        export M4="$M4 -DPIC"
+        cat > ../bin/m4 <<EOF
+    #!/bin/sh
+    exec "$M4" -DPIC "\$@"
+    EOF
+        chmod +x ../bin/m4
+
+        export M4="$PWD/../bin/m4"
     fi
 
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then

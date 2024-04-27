@@ -1,0 +1,12 @@
+summary: Data compression library
+web-url: https://www.nongnu.org/lzip/lzlib.html
+src-url: https://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.14.tar.gz
+src-sha: 5acac8714ed4f306020bae660dddce706e5f8a795863679037da9fe6bf4dcf6f
+license: BSD-2-Clause
+bsystem: gmake
+binbstd: 1
+install: |
+    sed_in_place 's|$(progname_shared)|lib$(libname).so.$(pkgversion)|' Makefile.in
+    run ./configure --enable-static --enable-shared --disable-ldconfig --prefix="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR"
+    gmakew
+    gmakew install

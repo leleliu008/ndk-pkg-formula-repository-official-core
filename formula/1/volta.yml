@@ -1,7 +1,9 @@
 summary: JavaScript toolchain manager for reproducible environments
 web-url: https://volta.sh
 git-url: https://github.com/volta-cli/volta
-src-url: https://github.com/volta-cli/volta/archive/v1.1.1.tar.gz
+src-url: https://github.com/volta-cli/volta/archive/refs/tags/v1.1.1.tar.gz
 src-sha: f2289274538124984bebb09b0968c2821368d8a80d60b9615e4f999f6751366d
 license: BSD-2-Clause
-bsystem: cargo
+install: |
+    export RUSTUP_TOOLCHAIN=1.70
+    cargow install

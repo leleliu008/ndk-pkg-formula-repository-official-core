@@ -46,6 +46,8 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
+    libgraphene)
+              printf '%s\n' 'graphene'  ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
     libtinyxml2)
@@ -110,6 +112,7 @@ case $1 in
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
     libcaf)   printf '%s\n' 'caf'       ;;
+    libglm)   printf '%s\n' 'glm'       ;;
 
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;

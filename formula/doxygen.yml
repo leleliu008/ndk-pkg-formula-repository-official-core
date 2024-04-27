@@ -1,0 +1,51 @@
+pkgtype: pie
+summary: A command-line tool for generating documentation from annotated programming language source files
+git-url: https://github.com/doxygen/doxygen
+web-url: https://www.doxygen.nl/
+src-url: https://www.doxygen.nl/files/doxygen-1.10.0.src.tar.gz
+src-sha: dd7c556b4d96ca5e682534bc1f1a78a5cfabce0c425b14c1b8549802686a4442
+license: GPL-2.0-only
+dep-upp: gm4 flex bison python3 patch
+dep-pkg: libiconv
+
+dopatch: |
+    cat > cmake/FindIconv.cmake <<EOF
+    set(ICONV_INCLUDE_DIR "$libiconv_INCLUDE_DIR")
+    set(ICONV_LIBRARY     -liconv)
+    set(ICONV_LIBRARIES   -liconv)
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(Iconv REQUIRED_VARS ICONV_LIBRARY ICONV_INCLUDE_DIR VERSION_VAR ICONV_VERSION)
+    mark_as_advanced(ICONV_INCLUDE_DIR ICONV_LIBRARY)
+    EOF
+
+    if [ "$TARGET_PLATFORM_NAME" = linux ] && [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        # https://git.alpinelinux.org/aports/tree/main/doxygen/remove-usage-of-fstat64.patch
+        patch -p1 <<EOF
+    --- a/deps/spdlog/include/spdlog/details/os-inl.h
+    +++ b/deps/spdlog/include/spdlog/details/os-inl.h
+    @@ -236,20 +236,11 @@
+     #    else
+         int fd = ::fileno(f);
+     #    endif
+    -// 64 bits(but not in osx or cygwin, where fstat64 is deprecated)
+    -#    if (defined(__linux__) || defined(__sun) || defined(_AIX)) && (defined(__LP64__) || defined(_LP64))
+    -    struct stat64 st;
+    -    if (::fstat64(fd, &st) == 0)
+    -    {
+    -        return static_cast<size_t>(st.st_size);
+    -    }
+    -#    else // other unix or linux 32 bits or cygwin
+         struct stat st;
+         if (::fstat(fd, &st) == 0)
+         {
+             return static_cast<size_t>(st.st_size);
+         }
+    -#    endif
+     #endif
+         throw_spdlog_ex("Failed getting file size from fd", errno);
+         return 0; // will not be reached.
+    EOF
+    fi
+
+install: cmakew -DBUILD_SHARED_LIBS=OFF

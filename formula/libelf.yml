@@ -1,0 +1,45 @@
+summary: A C library to read, create and modify ELF binary files
+git-url: git://sourceware.org/git/elfutils.git
+web-url: https://sourceware.org/elfutils
+src-url: https://sourceware.org/elfutils/ftp/0.190/elfutils-0.190.tar.bz2
+src-sha: 8e00a3a9b5f04bc1dc273ae86281d2d26ed412020b391ffcc23198f10231d692
+license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
+dep-pkg: libzstd liblzma libbz2 zlib
+dep-upp: gm4
+ccflags: -Wno-error
+sfslink: 0
+
+dopatch: |
+    sed_in_place '/libintl\.h/d' lib/eu-config.h
+    sed_in_place '/dgettext/d'   lib/eu-config.h
+    sed_in_place '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+    sed_in_place '/libasm debuginfod/d' Makefile.in
+    sed_in_place '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
+
+install: |
+    configure \
+        --program-prefix=elfutils- \
+        --disable-libdebuginfod \
+        --disable-debuginfod \
+        --enable-install-elfh \
+        --with-zstd \
+        --with-lzma \
+        --with-zlib \
+        --with-bzlib
+
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/libelf.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libelf
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    URL: $PACKAGE_WEB_URL
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lelf
+    Requires: zlib libzstd
+    EOF

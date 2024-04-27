@@ -1,0 +1,7 @@
+summary: CLI client for interacting with Incus
+git-url: https://github.com/lxc/incus
+web-url: https://linuxcontainers.org/incus
+src-url: https://linuxcontainers.org/downloads/incus/incus-0.7.tar.xz
+src-sha: e6230bee918524403c003f2ed28ba75f1c64175afc11f89147d1ee8dd8a6b76b
+license: Apache-2.0
+install: gow ./cmd/incus
