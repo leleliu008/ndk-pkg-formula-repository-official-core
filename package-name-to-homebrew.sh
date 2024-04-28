@@ -48,6 +48,8 @@ case $1 in
               printf '%s\n' 'protobuf'  ;;
     libgraphene)
               printf '%s\n' 'graphene'  ;;
+    libpugixml)
+              printf '%s\n' 'pugixml'   ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
     libtinyxml2)

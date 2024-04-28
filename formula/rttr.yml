@@ -1,0 +1,8 @@
+pkgtype: lib
+summary: C++ Reflection Library
+web-url: https://www.rttr.org
+git-url: https://github.com/rttrorg/rttr
+src-url: https://github.com/rttrorg/rttr/archive/refs/tags/v0.9.6.tar.gz
+src-sha: 058554f8644450185fd881a6598f9dee7ef85785cbc2bb5a5526a43225aa313f
+license: MIT
+install: cmakew -DBUILD_UNIT_TESTS=OFF

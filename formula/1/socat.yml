@@ -6,3 +6,4 @@ license: GPL-2.0-only
 dep-pkg: openssl readline
 binbstd: 1
 bsystem: configure
+dopatch: sed_in_place 's|mqueue\.h|linux/mqueue.h|' sysincludes.h

@@ -1,0 +1,45 @@
+summary: A collection of tools for glib
+web-url: https://developer.gnome.org/glib
+git-url: https://github.com/GNOME/glib
+src-url: https://download.gnome.org/sources/glib/2.80/glib-2.80.0.tar.xz
+src-uri: https://distfiles.macports.org/glib2/glib-2.80.0.tar.xz
+src-sha: 8228a92f92a412160b139ae68b6345bd28f24434a7b5af150ebe21ff587a561d
+license: LGPL-2.1-or-later
+dep-pkg: gettext libffi libpcre2 zlib
+dep-upp: python3
+dep-pym: packaging
+
+dopatch: |
+    sed_in_place "s|link_with : libgio|link_with : libgio.get_static_lib()|" gio/meson.build
+    sed_in_place "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
+    sed_in_place "s|link_with : libgobject|link_with : libgobject.get_static_lib()|" gobject/meson.build
+    sed_in_place "s|link_with : libgmodule|link_with : libgmodule.get_static_lib()|" gmodule/meson.build
+    sed_in_place "s|link_with : libgthread|link_with : libgthread.get_static_lib()|" gthread/meson.build
+    sed_in_place "s|link_with: libgirepository,|link_with: libgirepository.get_static_lib(),|" girepository/meson.build
+
+    sed_in_place "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+
+    sed_in_place "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
+    sed_in_place "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    sed_in_place "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])" meson.build
+
+    sed_in_place '2228,2254d'  meson.build
+    sed_in_place "2228a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_LIBRARY_DIR'])" meson.build
+    sed_in_place '2229a libintl_deps = [libintl, libiconv]' meson.build
+
+install: |
+    mesonw \
+        -Dintrospection=disabled \
+        -Ddocumentation=false \
+        -Dman-pages=disabled \
+        -Dnls=disabled \
+        -Ddtrace=false \
+        -Dglib_debug=disabled \
+        -Dglib_assert=false \
+        -Dtests=false \
+        -Dinstalled_tests=false \
+        -Dbsymbolic_functions=false
+
+dotweak: |
+    rm -rfv lib
+    rm -rfv include

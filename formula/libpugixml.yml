@@ -1,0 +1,8 @@
+pkgtype: lib
+summary: Light-weight C++ XML processing library
+web-url: https://pugixml.org/
+git-url: https://github.com/zeux/pugixml
+src-url: https://github.com/zeux/pugixml/releases/download/v1.14/pugixml-1.14.tar.gz
+src-sha: 2f10e276870c64b1db6809050a75e11a897a8d7456c4be5c6b2e35a11168a015
+license: MIT
+install: cmakew -DBUILD_SHARED_LIBS=ON -DPUGIXML_BUILD_SHARED_AND_STATIC_LIBS=ON
