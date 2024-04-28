@@ -1,0 +1,49 @@
+summary: Macro processing language
+git-url: https://git.savannah.gnu.org/git/m4.git
+web-url: https://www.gnu.org/software/m4
+src-url: https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz
+src-sha: 63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96
+license: GPL-3.0-or-later
+ppflags: -D__USE_FORTIFY_LEVEL=0 -D__USE_GNU=1
+dep-upp: patch
+
+dopatch: |
+    patch -p1 <<EOF
+    --- a/tests/strerror_r.c
+    +++ b/tests/strerror_r.c
+    @@ -43,7 +43,7 @@
+     #endif
+     int __xpg_strerror_r (int errnum, char *buf, size_t buflen);
+     
+    -#elif HAVE_DECL_STRERROR_R && !(__GLIBC__ >= 2 || defined __UCLIBC__ || defined __CYGWIN__)
+    +#elif HAVE_DECL_STRERROR_R && !(__GLIBC__ >= 2 || defined __UCLIBC__ || defined __CYGWIN__ || defined __ANDROID__)
+     
+     /* The system's strerror_r function is OK, except that its third argument
+        is 'int', not 'size_t', or its return type is wrong.  */
+    EOF
+
+install: |
+    configure \
+        --enable-threads=posix \
+        --enable-c++ \
+        --enable-changeword \
+        --disable-assert \
+        --disable-gcc-warnings \
+        --without-dmalloc \
+        --with-included-regex \
+        --program-prefix=g
+
+dotweak: cd bin && ln -s gm4 m4
+
+# https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
+# https://github.com/android/ndk/issues/513
+# https://github.com/innogames/android-ndk/blob/master/platforms/android-23/arch-arm/usr/include/stdio.h
+# no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
+#
+#  #if defined(__USE_GNU) && __ANDROID_API__ >= 23
+#  char* strerror_r(int __errno_value, char* __buf, size_t __n) __RENAME(__gnu_strerror_r) __INTRODUCED_IN(23);
+#  #else /* POSIX */
+#  int strerror_r(int __errno_value, char* __buf, size_t __n);
+#  #endif
+
+api-min: 24
