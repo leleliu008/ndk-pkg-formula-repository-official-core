@@ -8,4 +8,4 @@ install: |
     gmakew clean
     gmakew all_src
     install_libs src/libb64.a
-    install_incs :b64 include/b64/*
+    run install_incs include/b64/*:b64

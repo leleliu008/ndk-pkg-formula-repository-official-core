@@ -28,4 +28,5 @@ install: |
         --enable-warnings \
         --enable-ipv6 \
         --enable-ftp \
-        --disable-trace
+        --disable-trace \
+        ac_cv_func_cuserid=no

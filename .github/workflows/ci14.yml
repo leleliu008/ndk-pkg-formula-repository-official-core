@@ -17,7 +17,7 @@ jobs:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
         exe: [msle]
-        pkg: [rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,rttr,ruff,rust-analyzer,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg,skcms,sl,soundtouch,spdlog]
+        pkg: [restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg,skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,rttr,ruff,rust-analyzer,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg,skcms,sl,soundtouch,spdlog]
+        pkg: [restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg,skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

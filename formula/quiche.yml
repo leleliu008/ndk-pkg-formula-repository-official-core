@@ -5,7 +5,7 @@ bsystem: cargo cmake
 binbstd: 1
 
 install: |
-    cargow build --package quiche &&
-    install_incs quiche/include/quiche.h &&
-    install_libs target/$RUST_TARGET/release/libquiche.a &&
+    cargow build --package quiche
+    install_incs quiche/include/quiche.h
+    install_libs target/$RUST_TARGET/release/libquiche.a
     install_libs target/$RUST_TARGET/release/libquiche.so
