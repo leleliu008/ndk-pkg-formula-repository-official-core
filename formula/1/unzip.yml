@@ -11,19 +11,14 @@ fix-sha: e51364116c84739c591728ecc841113a914fa11358fd10ff0d6813524d811bb9
 version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: 1
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
     do
-        patch -p1 < ../fix/patches/$patchfile || return 1
+        patch -p1 < ../fix/patches/$patchfile
     done
 
 install: |
-    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
-    fi
-
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \
         CC="$CC" \

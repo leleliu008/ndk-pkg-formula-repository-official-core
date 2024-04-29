@@ -3,11 +3,8 @@ web-url: https://www.rarlab.com
 src-url: https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz
 src-sha: 81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd3
 license: Unlicense
-binbstd: 1
-parallel: 0
 
-# int lutimes(const char* __path, const struct timeval __times[2]) __INTRODUCED_IN(26);
-api-min: 26
+parallel: 0
 
 dopatch: |
     sed_in_place 's|getpass("")|""|g'     consio.cpp
@@ -20,3 +17,6 @@ install: |
     gmakew -f makefile lib   CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'"
     install -d "$PACKAGE_INSTALL_DIR/lib"
     gmakew -f makefile install-lib   DESTDIR="$PACKAGE_INSTALL_DIR"
+
+# int lutimes(const char* __path, const struct timeval __times[2]) __INTRODUCED_IN(26);
+api-min: 26

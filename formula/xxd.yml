@@ -4,7 +4,6 @@ git-url: https://github.com/vim/vim
 src-url: https://github.com/vim/vim/archive/refs/tags/v9.1.0300.tar.gz
 src-sha: d687bddb6145adf8fd3630c74a974ee1875254a41e14ef9192d4e6b9a3de73e2
 license: Vim
-binbstd: 1
 bscript: src/xxd
 install: |
     gmakew clean

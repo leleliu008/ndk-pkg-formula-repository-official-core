@@ -8,10 +8,10 @@ dep-pkg: libevent libzmq boost
 dep-upp: libtool
 bsystem: autotools
 
-prepare: |
-    # error: "Cannot compile without assertions!"
-    export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||g')"
+# error: "Cannot compile without assertions!"
+ppflags: -UNDEBUG
 
+prepare: |
     export ac_cv_path_ac_pt_AR="$TOOLCHAIN_BIND/$AR"
     export ac_cv_path_ac_pt_RANLIB="$TOOLCHAIN_BIND/$RANLIB"
     export ac_cv_path_ac_pt_OBJCOPY="$TOOLCHAIN_BIND/$OBJCOPY"

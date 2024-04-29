@@ -1,0 +1,13 @@
+summary: Lookup tool for domain names and other internet resources
+git-url: https://github.com/rfc1036/whois
+src-url: https://github.com/rfc1036/whois/archive/refs/tags/v5.5.22.tar.gz
+src-sha: b7de4288700951b141420e2b4408f0906eaf4e97409cf5043aee80ef4d31e2b4
+license: GPL-2.0-or-later
+dep-pkg: libidn2
+ccflags: -Wno-implicit-function-declaration
+
+install: |
+    gmakew clean
+    gmakew whois HAVE_ICONV=1 CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS=
+    install_bins whois
+    install_mans whois.1

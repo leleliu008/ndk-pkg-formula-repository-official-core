@@ -6,7 +6,6 @@ src-sha: 760729901acbaa517996e681ee6ea259032985e37c2768beef80df3a877deed9
 license: BSD-2-Clause
 dep-pkg: openssl libpcre2 libcrypt libglob
 bsystem: gmake
-binbstd: 1
 
 dopatch: |
     trace_configure() {

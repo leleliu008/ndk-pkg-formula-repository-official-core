@@ -5,18 +5,17 @@ git-url: https://github.com/JuliaMath/openlibm
 src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.2.tar.gz
 src-sha: 7244f9aa468584744e260cef740d57d10eab6e9c05f62084f8f2ba457f4b4b1d
 license: MIT ISC BSD-2-Clause
-bsystem: gmake
-binbstd: 1
 
 dopatch: sed_in_place 's|-mhard-float||g' Make.inc
 
-install: |
+prepare: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
         LONG_DOUBLE_NOT_DOUBLE=1
     else
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
 
+install: |
     gmakew clean
     gmakew install \
         prefix="$PACKAGE_INSTALL_DIR" \

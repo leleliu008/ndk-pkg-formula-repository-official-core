@@ -7,7 +7,6 @@ src-sha: a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724
 license: MIT
 bsystem: gmake
 bscript: trunk
-binbstd: 1
 
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
@@ -27,7 +26,7 @@ install: |
         --cxx=$CXX \
         --ar=$AR \
         --ld=$LD \
-        --randlib=$RANLIB &&
-    gmakew clean &&
-    gmakew &&
+        --randlib=$RANLIB
+    gmakew clean
+    gmakew
     gmakew install

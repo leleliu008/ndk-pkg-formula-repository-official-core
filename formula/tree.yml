@@ -5,7 +5,6 @@ src-url: https://mirrors.aliyun.com/macports/distfiles/tree/tree-2.1.1.tgz
 src-sha: d3c3d55f403af7c76556546325aa1eca90b918cbaaf6d3ab60a49d8367ab90d5
 license: GPL-2.0-or-later
 dep-pkg: liblanginfo
-binbstd: 1
 
 dopatch: |
     sed_in_place 's|ifndef __linux__|if 1|' strverscmp.c || return 1

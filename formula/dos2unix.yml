@@ -4,7 +4,7 @@ src-url: https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.5.2.tar.gz
 src-sha: 264742446608442eb48f96c20af6da303cb3a92b364e72cb7e24f88239c4bf3a
 license: BSD-2-Clause
 dep-pkg: liblanginfo
-binbstd: 1
+
 dopatch: sed_in_place '/^ENABLE_NLS/d' Makefile
 install: |
     gmakew clean

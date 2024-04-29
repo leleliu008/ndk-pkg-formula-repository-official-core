@@ -7,7 +7,6 @@ src-sha: cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8
 license: OpenSSL
 dep-upp: perl
 bsystem: gmake
-binbstd: 1
 
 dopatch: |
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf

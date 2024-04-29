@@ -17,7 +17,7 @@ jobs:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
         exe: [msle]
-        pkg: [aalib,acl,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,async++,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bk,blockhash]
+        pkg: [aalib,acl,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bk,blockhash,boringssl]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [aalib,acl,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,async++,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bk,blockhash]
+        pkg: [aalib,acl,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen,bind,binocle,bison,bk,blockhash,boringssl]
         exe: [fsle]
 
     runs-on: ${{ matrix.os }}

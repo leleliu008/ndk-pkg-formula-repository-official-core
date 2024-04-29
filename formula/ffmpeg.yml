@@ -8,7 +8,6 @@ license: GPL-2.0-or-later
 dep-pkg: libmp3lame libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libvpx libwebp libtiff libpng libjpeg-turbo giflib libxml2 sdl2
 dep-upp: nasm
 bsystem: gmake
-binbstd: 1
 
 install: |
     unset CONFIGURE_EXTRA_ARGS

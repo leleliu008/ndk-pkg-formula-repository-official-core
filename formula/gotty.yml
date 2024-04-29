@@ -1,6 +1,6 @@
-summary: Share your terminal as a web application
+summary: A simple command-line tool to share your terminal as a web application
 git-url: https://github.com/sorenisanerd/gotty
-src-url: https://github.com/sorenisanerd/gotty/archive/refs/tags/v1.3.0.tar.gz
-src-sha: 09cc4fe278fa866df895527047ce83f009de97c01bab729651adac9db306f273
+src-url: https://github.com/sorenisanerd/gotty/archive/refs/tags/v1.5.0.tar.gz
+src-sha: 98a5fb9eddefc4bc4d402ad159d274a3876ee2b23cb8940ebeea328b705454a7
 license: MIT
-bsystem: go
+install: gow -X main.Version=$PACKAGE_VERSION

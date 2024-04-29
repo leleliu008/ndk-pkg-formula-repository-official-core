@@ -13,7 +13,8 @@ version: 3.0.11
 
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: 1
+
+ccflags: -Wno-implicit-function-declaration
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
@@ -27,7 +28,7 @@ dopatch: |
     sed_in_place '/memset OF((/c char *memset OF((char *, int, size_t));'    zip.h
     sed_in_place '/memcpy OF((/c char *memcpy OF((char *, char *, size_t));' zip.h
     sed_in_place '/memcmp OF((/c int memcmp OF((char *, char *, size_t));'   zip.h
-ccflags: -Wno-implicit-function-declaration
+
 install: |
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \

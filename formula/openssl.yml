@@ -8,7 +8,6 @@ src-sha: 83c7329fe52c850677d75e5d0b0ca245309b97e8ecbcfdc1dfdc4ab9fac35b39
 license: Apache-2.0
 dep-upp: perl
 bsystem: gmake
-binbstd: 1
 
 dopatch: |
     sed_in_place '/-mandroid/d'           Configurations/15-android.conf

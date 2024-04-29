@@ -3,7 +3,6 @@ web-url: https://pagure.io/libaio
 src-url: https://pagure.io/libaio/archive/libaio-0.3.113/libaio-libaio-0.3.113.tar.gz
 src-sha: 716c7059703247344eb066b54ecbc3ca2134f0103307192e6c2b7dab5f9528ab
 license: LGPL-2.1-or-later
-binbstd: 1
 
 dopatch: |
     # on macOS, some fs is non-case-sensitive. In this case, gmake install will always say make: 'install' is up to date.

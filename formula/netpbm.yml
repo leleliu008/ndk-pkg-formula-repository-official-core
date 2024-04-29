@@ -5,7 +5,6 @@ src-sha: 7098c0926474303c6fe2d17c0dfb88f24622d1b3a590b6d75495d62ea933b324
 license: GPL-3.0-or-later
 dep-pkg: jasper libtiff libpng libjpeg-turbo libxml2
 dep-upp: gm4 flex perl
-binbstd: 1
 parallel: 0
 
 dopatch: |

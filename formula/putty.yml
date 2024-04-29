@@ -6,6 +6,5 @@ src-sha: cb8b00a94f453494e345a3df281d7a3ed26bb0dd7e36264f145206f8857639fe
 license: MIT
 dep-pkg: libglob
 dep-upp: perl
-install: |
-    export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS -D__USE_BSD=1" | sed 's|-DNDEBUG||g')"
-    cmakew -DPUTTY_GTK_VERSION=NONE
+ppflags: -UNDEBUG -D__USE_BSD=1
+install: cmakew -DPUTTY_GTK_VERSION=NONE

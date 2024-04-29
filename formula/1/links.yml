@@ -4,9 +4,10 @@ src-url: http://links.twibright.com/download/links-2.29.tar.bz2
 src-sha: 22aa96c0b38e1a6f8f7ed9d7a4167a47fc37246097759ef6059ecf8f9ead7998
 dep-pkg: libbz2 libtiff libjpeg-turbo openssl
 license: GPL-2.0-or-later
+
 ccflags: -Wno-error=implicit-function-declaration -Wno-error=unused-function
 bsystem: gmake
-binbstd: 1
+
 install: |
     sed_in_place '/define LINKS_H/a \#include<unistd.h>' links.h
     sed_in_place '/links\.h/a \#include<pwd.h>' file.c

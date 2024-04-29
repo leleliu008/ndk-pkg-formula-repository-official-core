@@ -7,11 +7,6 @@ license: LGPL-2.1-only
 dep-pkg: sdl2
 
 prepare: |
-    # https://github.com/android/ndk/issues/1862
-    if [ "$ANDROID_NDK_VERSION" = '25.2.9519653' ] ; then
-        export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os|-O3|g')"
-    fi
-
     unset CPU
 
     case $TARGET_PLATFORM_ARCH in

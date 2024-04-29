@@ -6,9 +6,6 @@ src-sha: b9c56468b927d9691ab168c0b1e9f8f1f835694a35ff898c549d383bd8d09bd4
 license: Zlib
 dep-pkg: libtirpc libgetdtablesize
 bsystem: gmake
-binbstd: 1
-
-api-min: 26
 
 install: |
     if [ -f "$libtirpc_LIBRARY_DIR/libtirpc.a" ] ; then
@@ -31,3 +28,5 @@ install: |
     gmakew
     run install_bins lsof
     run install_mans Lsof.8
+
+api-min: 26

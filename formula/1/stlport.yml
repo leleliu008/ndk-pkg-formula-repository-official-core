@@ -14,7 +14,7 @@ install: |
         --with-cxx="$CXX" \
         --with-extra-cflags="$CFLAGS $CPPFLAGS" \
         --with-extra-cxxflags="$CXXFLAGS $CPPFLAGS" \
-        --with-extra-ldflags="$LDFLAGS" &&
-    gmakew clean &&
-    gmakew &&
+        --with-extra-ldflags="$LDFLAGS"
+    gmakew clean
+    gmakew
     gmakew install

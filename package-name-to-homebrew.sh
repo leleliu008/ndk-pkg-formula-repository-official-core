@@ -6,6 +6,7 @@ case $1 in
     gm4)      printf '%s\n' 'm4'        ;;
     xxd)      printf '%s\n' 'vim'       ;;
     tcl)      printf '%s\n' 'tcl-tk'    ;;
+    dua)      printf '%s\n' 'dua-cli'   ;;
     file)     printf '%s\n' 'file-formula' ;;
     gtar)     printf '%s\n' 'gnu-tar'   ;;
     gmake)    printf '%s\n' 'make'      ;;
@@ -13,6 +14,8 @@ case $1 in
     xattr)    printf '%s\n' 'attr'      ;;
     patch)    printf '%s\n' 'gpatch'    ;;
     delta)    printf '%s\n' 'git-delta' ;;
+    xmlwf)    printf '%s\n' 'expat'     ;;
+    typos)    printf '%s\n' 'typos-cli' ;;
     proj7)    printf '%s\n' 'proj@7'    ;;
     bsdtar)   printf '%s\n' 'libarchive';;
     blake3)   printf '%s\n' 'b3sum'     ;;
@@ -36,6 +39,8 @@ case $1 in
               printf '%s\n' 'gettext'   ;;
     gettext-runtime)
               printf '%s\n' 'gettext'   ;;
+    libasync++)
+              printf '%s\n' 'asyncplusplus' ;;
     libmediainfo|mediainfo)
               printf '%s\n' 'media-info';;
     libxml2-utils|libxml2-python3)

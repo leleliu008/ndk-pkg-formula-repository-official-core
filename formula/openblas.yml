@@ -5,10 +5,8 @@ git-url: https://github.com/xianyi/OpenBLAS
 src-url: https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.26.tar.gz
 src-sha: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
 license: BSD-3-Clause
-bsystem: gmake
-binbstd: 1
 
-install: |
+prepare: |
     sed_in_place '/LIBDLLNAME   =/i LIBNAME = $(LIBPREFIX).$(LIBSUFFIX)' Makefile.system
     sed_in_place '/ln -fs $(LIBSONAME)/d' Makefile
     sed_in_place 's|ln -fs|true|g' Makefile.install
@@ -20,6 +18,8 @@ install: |
         i686)    ARCH=x86   ; TARGET='ATOM'  ; BINARY=32 ; ARM_SOFTFP_ABI=1 ;;
         x86_64)  ARCH=x86_64; TARGET='ATOM'  ; BINARY=64 ; ARM_SOFTFP_ABI=1 ;;
     esac
+
+install: |
     gmakew clean OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD"
     gmakew       OSNAME=Android ARCH=$ARCH TARGET=$TARGET HOSTCC="$CC_FOR_BUILD" ONLY_CBLAS=1 ARM_SOFTFP_ABI=$ARM_SOFTFP_ABI CC="$CC" AS="$AS" AR="$AR"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

@@ -5,8 +5,6 @@ git-url: https://github.com/LuaJIT/LuaJIT
 git-sha: a91d0d9d3bba1a936669cfac3244509a0f2ac0e3
 version: 2.1.0
 license: MIT
-bsystem: gmake
-binbstd: 1
 
 dopatch: |
     printf '%s\n' 'int main() {return 0;}' > test.c
@@ -24,11 +22,12 @@ dopatch: |
 
     sed_in_place '/TARGET_SONAME=/c TARGET_SONAME=libluajit.so' src/Makefile
 
-install: |
+prepare: |
     if [ -d /usr/include/x86_64-linux-gnu ] ; then
         export CPPFLAGS_FOR_BUILD="$CPPFLAGS_FOR_BUILD -I/usr/include/x86_64-linux-gnu"
     fi
 
+install: |
     gmakew clean all \
         HOST_SYS=$(uname -s) \
         HOST_CC="'$CC_FOR_BUILD -m$TARGET_PLATFORM_NBIT'" \

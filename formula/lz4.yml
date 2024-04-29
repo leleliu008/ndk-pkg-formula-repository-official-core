@@ -4,7 +4,7 @@ git-url: https://github.com/lz4/lz4
 src-url: https://github.com/lz4/lz4/archive/v1.9.4.tar.gz
 src-sha: 0b0e3aa07c8c063ddf40b082bdf7e37a1562bda40a0ff5272957f3e987e0e54b
 license: BSD-2-Clause
-binbstd: 1
+
 install: |
     gmakew clean  TARGET_OS=Linux
     gmakew -C lib TARGET_OS=Linux CC="$CC" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" V=1 BUILD_STATIC=yes BUILD_SHARED=no
