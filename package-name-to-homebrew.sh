@@ -100,6 +100,7 @@ case $1 in
     libzstd)  printf '%s\n' 'zstd'      ;;
     liblzma)  printf '%s\n' 'xz'        ;;
     libuuid)  printf '%s\n' 'util-linux';;
+    libargp)  printf '%s\n' 'argp-standalone';;
     libre2c)  printf '%s\n' 're2c'      ;;
     libcgif)  printf '%s\n' 'cgif'      ;;
     libzlog)  printf '%s\n' 'zlog'      ;;

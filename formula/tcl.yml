@@ -31,4 +31,4 @@ install: |
         --disable-framework \
         --with-tzdata \
         $EXTRA_CONFIGURE_FLAGS \
-        tcl_cv_sys_version=Linux
+        tcl_cv_sys_version=Linux LIBS=-lm

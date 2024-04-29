@@ -4,7 +4,7 @@ web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.190/elfutils-0.190.tar.bz2
 src-sha: 8e00a3a9b5f04bc1dc273ae86281d2d26ed412020b391ffcc23198f10231d692
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libzstd liblzma libbz2 zlib
+dep-pkg: libzstd liblzma libbz2 zlib libargp libobstack
 dep-upp: gm4
 ccflags: -Wno-error
 sfslink: 0
@@ -15,6 +15,14 @@ dopatch: |
     sed_in_place '/N_(Str/a #define _(Str) Str' lib/eu-config.h
     sed_in_place '/libasm debuginfod/d' Makefile.in
     sed_in_place '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
+
+prepare: |
+    # error.h: void error(int __status, int __errno, const char* _Nonnull __fmt, ...) __printflike(3, 4) __INTRODUCED_IN(23);
+    if [ "$TARGET_PLATFORM_VERS" -ge 23 ] ; then
+        export ac_cv_header_error_h=yes
+    else
+        export ac_cv_header_error_h=no
+    fi
 
 install: |
     configure \
