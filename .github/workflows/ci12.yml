@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         #abi: [arm64-v8a]
-        exe: [msle]
+        opt: ['--fsle']
         pkg: [nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patch,patchelf]
 
     runs-on: ubuntu-latest
@@ -82,7 +82,7 @@ jobs:
               fi
           fi
 
-          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}
+          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
 
   macos:
@@ -95,7 +95,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         pkg: [nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl-fips,p7zip,packcc,patch,patchelf]
-        exe: [fsle]
+        opt: ['--fsle']
 
     runs-on: ${{ matrix.os }}
 
@@ -159,4 +159,4 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} --exe=${{ matrix.exe }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
