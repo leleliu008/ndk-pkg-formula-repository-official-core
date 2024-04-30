@@ -6,12 +6,18 @@ src-sha: 907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 license: Apache-2.0
 dep-pkg: libgetloadavg libgit2
 ccflags: -Dindex=strchr
-install: |
+
+prepare: |
     # https://docs.rs/openssl/latest/openssl/
     # https://lib.rs/crates/libgit2-sys
-    export OPENSSL_STATIC=1
-    export OPENSSL_NO_VENDOR=1
     export LIBGIT2_NO_VENDOR=1
+    export OPENSSL_NO_VENDOR=1
+    export OPENSSL_STATIC=1
+    export LIBGIT2_SYS_USE_PKG_CONFIG=1
+    export LIBSSH2_SYS_USE_PKG_CONFIG=1
+    export LIBZ_SYS_STATIC=1
+
+install: |
     cargow install
     install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
     install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash

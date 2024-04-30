@@ -7,11 +7,16 @@ license: MIT
 dep-pkg: libgit2 libssh2
 dep-upp: gmake
 ccflags: -Dindex=strchr
-install: |
+
+prepare: |
+    export LIBGIT2_NO_VENDOR=1
     export OPENSSL_NO_VENDOR=1
+    export OPENSSL_STATIC=1
     export LIBGIT2_SYS_USE_PKG_CONFIG=1
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    cargow install --locked
+    export LIBZ_SYS_STATIC=1
+
+install: cargow install --locked
 
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
 api-min: 23
