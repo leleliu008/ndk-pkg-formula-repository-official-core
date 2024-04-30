@@ -4,11 +4,13 @@ web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.7.1.tar.bz2
 src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
-dep-pkg: libnghttp2 openssl libzstd brotli
+dep-pkg: libnghttp2 libzstd libz brotli openssl
 dep-upp: perl
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 install: |
     configure \
+        --disable-shared \
+        --enable-static \
         --enable-optimize \
         --enable-pthreads \
         --with-default-ssl-backend=openssl \

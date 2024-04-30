@@ -6,7 +6,7 @@ src-sha: 387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595
 version: 2.8.9rel.1
 license: GPL-2.0-or-later
 dep-upp: openssl
-dep-pkg: openssl ncurses libbz2
+dep-pkg: openssl ncurses libbz2 libz
 
 install: |
     configure \

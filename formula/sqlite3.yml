@@ -5,6 +5,6 @@ src-url: https://www.sqlite.org/2024/sqlite-autoconf-3450300.tar.gz
 src-sha: b2809ca53124c19c60f42bf627736eae011afdcc205bb48270a5ee9a38191531
 version: 3.45.3
 license: blessing
-dep-pkg: readline zlib
+dep-pkg: readline libz
 dopatch: sed_in_place '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' sqlite3.c
 install: configure --disable-editline --enable-readline --enable-static-shell LIBS=-lm

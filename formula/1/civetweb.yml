@@ -2,7 +2,7 @@ summary: a small footprint HTTP Server with optional Lua and SQLite support writ
 git-url: https://github.com/civetweb/civetweb.git
 src-url: https://github.com/civetweb/civetweb/archive/refs/tags/v1.15.tar.gz
 src-sha: 90a533422944ab327a4fbb9969f0845d0dba05354f9cacce3a5005fa59f593b9
-dep-pkg: zlib openssl lua
+dep-pkg: libz openssl lua
 bsystem: cmake
 
 install: |

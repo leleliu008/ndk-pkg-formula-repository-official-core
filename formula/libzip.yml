@@ -4,7 +4,7 @@ web-url: https://libzip.org/
 src-url: https://libzip.org/download/libzip-1.10.1.tar.xz
 src-sha: dc3c8d5b4c8bbd09626864f6bcf93de701540f761d76b85d7c7d710f4bd90318
 license: BSD-3-Clause
-dep-pkg: libzstd liblzma libbz2 zlib
+dep-pkg: libzstd liblzma libbz2 libz
 
 install: |
     cmakew \

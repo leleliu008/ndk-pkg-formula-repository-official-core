@@ -5,7 +5,7 @@ git-url: https://github.com/open-mpi/ompi
 src-url: https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.bz2
 src-sha: f740994485516deb63b5311af122c265179f5328a0d857a567b85db00b11e415
 license: BSD-3-Clause
-dep-pkg: libevent
+dep-pkg: libevent libz
 dep-upp: perl
 ppflags: -DPOSIX_MADV_DONTNEED=MADV_DONTNEED
 ccflags: -Wno-implicit-function-declaration
@@ -14,15 +14,15 @@ ccflags: -Wno-implicit-function-declaration
 api-min: 26
 
 dopatch: |
-    sed_in_place 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c &&
-    sed_in_place 's/#define HAS_SHMAT/#define YYYYYYYYY/' opal/mca/memory/patcher/memory_patcher_component.c &&
-    sed_in_place 's/HAS_SHMDT/(defined(SYS_shmdt) || (defined(IPCOP_shmdt) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c &&
-    sed_in_place 's/HAS_SHMAT/(defined(SYS_shmat) || (defined(IPCOP_shmat) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c &&
-    sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h &&
-    sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c &&
-    sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c &&
-    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c &&
-    sed_in_place '1i static int getdtablesize(void);' orte/mca/state/base/state_base_fns.c &&
+    sed_in_place 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c
+    sed_in_place 's/#define HAS_SHMAT/#define YYYYYYYYY/' opal/mca/memory/patcher/memory_patcher_component.c
+    sed_in_place 's/HAS_SHMDT/(defined(SYS_shmdt) || (defined(IPCOP_shmdt) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
+    sed_in_place 's/HAS_SHMAT/(defined(SYS_shmat) || (defined(IPCOP_shmat) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
+    sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h
+    sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c
+    sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c
+    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c
+    sed_in_place '1i static int getdtablesize(void);' orte/mca/state/base/state_base_fns.c
     cat >> orte/mca/state/base/state_base_fns.c <<EOF
     #include <sys/cdefs.h>
     #include <sys/resource.h>

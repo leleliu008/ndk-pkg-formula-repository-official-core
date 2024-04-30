@@ -5,7 +5,7 @@ src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download
 src-sha: 854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d
 license: AGPL-3.0-or-later
 dep-pkg: jbig2dec libidn openjpeg tesseract liblanginfo
-dep-upp: patch zlib
+dep-upp: patch libz
 binbstd: 1
 
 dopatch: |

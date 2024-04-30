@@ -5,7 +5,7 @@ src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.6.tar.xz
 src-uri: https://distfiles.macports.org/libxml2/libxml2-2.12.6.tar.xz
 src-sha: 889c593a881a3db5fdd96cc9318c87df34eb648edfc458272ad46fd607353fbb
 license: MIT
-dep-pkg: libiconv zlib
+dep-pkg: libiconv libz
 
 install: |
     configure \
@@ -21,4 +21,4 @@ install: |
 dotweak: |
     sed -i '/^Requires: /d'                lib/pkgconfig/libxml-2.0.pc
     sed -i -e 's|-liconv||g' -e 's|-lz||g' lib/pkgconfig/libxml-2.0.pc
-    printf 'Requires: libiconv zlib\n' >>  lib/pkgconfig/libxml-2.0.pc
+    printf 'Requires: libiconv libz\n' >>  lib/pkgconfig/libxml-2.0.pc

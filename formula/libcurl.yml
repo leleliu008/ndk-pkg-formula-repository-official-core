@@ -4,7 +4,7 @@ web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.7.1.tar.bz2
 src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
-dep-pkg: libnghttp2 libzstd zlib brotli openssl
+dep-pkg: libnghttp2 libzstd libz brotli openssl
 dep-upp: perl
 
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
@@ -28,4 +28,4 @@ dotweak: |
     rm -rf share/man/man1/curl.1
     cd lib/pkgconfig
     sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
-    printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> libcurl.pc
+    printf 'Requires: libnghttp2 openssl libzstd libz libbrotlidec\n' >> libcurl.pc

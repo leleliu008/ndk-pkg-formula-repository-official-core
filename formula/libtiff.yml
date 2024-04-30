@@ -3,7 +3,7 @@ web-url: https://libtiff.gitlab.io/libtiff
 git-url: https://gitlab.com/libtiff/libtiff
 src-url: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz
 src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
-dep-pkg: libzstd liblzma zlib
+dep-pkg: libzstd liblzma libz
 
 install: |
     cmakew \

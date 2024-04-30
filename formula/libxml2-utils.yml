@@ -6,7 +6,7 @@ src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.6.tar.xz
 src-uri: http://distfiles.macports.org/libxml2/libxml2-2.12.6.tar.xz
 src-sha: 889c593a881a3db5fdd96cc9318c87df34eb648edfc458272ad46fd607353fbb
 license: MIT
-dep-pkg: libiconv zlib
+dep-pkg: libiconv libz
 
 install: |
     configure \
@@ -17,7 +17,10 @@ install: |
         --without-readline \
         --without-coverage \
         --without-debug \
-        --enable-ipv6 LIBS=-liconv
+        --enable-ipv6 \
+        --enable-static \
+        --disable-shared \
+        LIBS=-liconv
 
 dotweak: |
     rm -rfv include

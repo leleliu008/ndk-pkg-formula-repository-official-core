@@ -5,11 +5,11 @@ git-url: https://dev.gnupg.org/source/ntbtls
 src-url: https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.3.2.tar.bz2
 src-sha: bdfcb99024acec9c6c4b998ad63bb3921df4cfee4a772ad6c0ca324dbbf2b07c
 license: GPL-3.0-or-later
-dep-pkg: zlib libgpg-error libgcrypt libksba
+dep-pkg: libgpg-error libgcrypt libksba libz
 
 install: |
     configure \
-        --with-zlib="$zlib_INSTALL_DIR" \
+        --with-zlib="$libz_INSTALL_DIR" \
         --with-libgpg-error-prefix="$libgpg_error_INSTALL_DIR" \
         --with-libgcrypt-prefix="$libgcrypt_INSTALL_DIR" \
         --with-libksba-prefix="$libksba_INSTALL_DIR" \

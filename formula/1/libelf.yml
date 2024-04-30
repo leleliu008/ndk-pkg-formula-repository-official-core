@@ -4,7 +4,7 @@ web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.190/elfutils-0.190.tar.bz2
 src-sha: 8e00a3a9b5f04bc1dc273ae86281d2d26ed412020b391ffcc23198f10231d692
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libzstd liblzma libbz2 zlib libargp libobstack
+dep-pkg: libzstd liblzma libbz2 libz libargp libobstack
 dep-upp: gm4
 ccflags: -Wno-error
 sfslink: 0
@@ -49,5 +49,5 @@ dotweak: |
     URL: $PACKAGE_WEB_URL
     Cflags: -I\${includedir}
     Libs: -L\${libdir} -lelf
-    Requires: zlib libzstd
+    Requires: libz libzstd
     EOF

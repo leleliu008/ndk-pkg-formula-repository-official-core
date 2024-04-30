@@ -3,7 +3,7 @@ git-url: https://github.com/eza-community/eza
 src-url: https://github.com/eza-community/eza/archive/refs/tags/v0.18.13.tar.gz
 src-sha: 679fd3b5b389553aa77a2bce496e8658848ef0f4624968fd1a330dbe92032438
 license: MIT
-dep-pkg: zlib libgit2
+dep-pkg: libz libgit2
 install: cargow install --locked
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);

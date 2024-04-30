@@ -5,15 +5,15 @@ web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.11.7/Python-3.11.7.tgz
 src-sha: 068c05f82262e57641bd93458dfa883128858f5f4997aad7a36fd25b13b29209
 license: Python-2.0
-dep-pkg: gdbm openssl libsqlite3 libexpat libffi liblzma libbz2 zlib
+dep-pkg: gdbm openssl libsqlite3 libexpat libffi liblzma libbz2 libz
 dep-upp: python3
 
 prepare: |
     unset PYTHONHOME
     unset PYTHONPATH
 
-    export ZLIB_CFLAGS="-I$zlib_INCLUDE_DIR"
-    export ZLIB_LIBS="-L$zlib_LIBRARY_DIR -l:libz.a"
+    export ZLIB_CFLAGS="-I$libz_INCLUDE_DIR"
+    export ZLIB_LIBS="-L$libz_LIBRARY_DIR -l:libz.a"
 
     export BZIP2_CFLAGS="-I$libbz2_INCLUDE_DIR"
     export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -l:libbz2.a"

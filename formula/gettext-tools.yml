@@ -19,6 +19,8 @@ install: |
         --disable-openmp \
         --disable-csharp \
         --disable-java \
+        --disable-shared \
+        --enable-static \
         --enable-c++ \
         --enable-curses \
         --enable-threads=posix \

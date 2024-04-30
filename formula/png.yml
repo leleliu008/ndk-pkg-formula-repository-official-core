@@ -4,5 +4,5 @@ git-url: https://github.com/glennrp/libpng
 src-url: https://downloads.sourceforge.net/libpng/libpng-1.6.43.tar.xz
 src-sha: 6a5ca0652392a2d7c9db2ae5b40210843c0bbc081cbd410825ab00cc59f14a6c
 license: libpng-2.0
-dep-pkg: zlib
+dep-pkg: libz
 bsystem: configure
