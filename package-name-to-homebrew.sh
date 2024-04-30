@@ -19,6 +19,7 @@ case $1 in
     proj7)    printf '%s\n' 'proj@7'    ;;
     bsdtar)   printf '%s\n' 'libarchive';;
     blake3)   printf '%s\n' 'b3sum'     ;;
+    eigen3)   printf '%s\n' 'eigen'     ;;
     utfcpp)   printf '%s\n' 'utf8cpp'   ;;
     openpmix) printf '%s\n' 'pmix'      ;;
     xsltproc) printf '%s\n' 'libxslt'   ;;
@@ -75,8 +76,6 @@ case $1 in
               printf '%s\n' 'cpuinfo'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
-    libvorbis)
-              printf '%s\n' 'vorbis'    ;;
     libexhale)
               printf '%s\n' 'exhale'    ;;
     libpixman)
@@ -93,6 +92,8 @@ case $1 in
     libexiv2) printf '%s\n' 'exiv2'     ;;
     libfftw3) printf '%s\n' 'fftw'      ;;
     libeigen) printf '%s\n' 'eigen'     ;;
+    libsrtp)  printf '%s\n' 'srtp'      ;;
+    libflac)  printf '%s\n' 'flac'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
     libx265)  printf '%s\n' 'x265'      ;;
     libopus)  printf '%s\n' 'opus'      ;;

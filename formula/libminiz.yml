@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: implements the zlib (RFC 1950) and Deflate (RFC 1951) compressed data format specification standards
 git-url: https://github.com/richgel999/miniz
 src-url: https://github.com/richgel999/miniz/archive/refs/tags/2.2.0.tar.gz

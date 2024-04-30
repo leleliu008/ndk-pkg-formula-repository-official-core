@@ -10,13 +10,11 @@ dep-pkg: libpcre2 libunistring ncurses
 dopatch: |
     sed_in_place 's|STRIP=true||' src/Makefile
 
-    if [ "$REQUEST_EXETYPE" = fsle ] || [ "$REQUEST_EXETYPE" = msle ] ; then
-        run cd ../lib/
-        run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"
-        run "$AR" x "$libunistring_INSTALL_DIR/lib/libunistring.a"
-        run "$AR" crs libunistring.a *.o
-        run rm -f *.o
-    fi
+    run cd ../lib/
+    run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"
+    run "$AR" x "$libunistring_INSTALL_DIR/lib/libunistring.a"
+    run "$AR" crs libunistring.a *.o
+    run rm -f *.o
 
 install: |
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
