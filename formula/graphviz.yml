@@ -2,10 +2,21 @@ pkgtype: exe+lib
 summary: An open source graph visualization software
 web-url: https://www.graphviz.org/
 git-url: https://gitlab.com/graphviz/graphviz
-src-url: https://gitlab.com/graphviz/graphviz/-/archive/10.0.1/graphviz-10.0.1.tar.bz2
-src-sha: eaa60fea2b3ad904e3bf6919710c1ba3207ce31b5d7da1687dd3b734de8736f6
+src-url: https://gitlab.com/graphviz/graphviz/-/archive/11.0.0/graphviz-11.0.0.tar.bz2
+src-sha: 95173d21922082b0b2649fb24c1dc4bbc1e39504a92903b88df39804778cbb9d
 license: EPL-1.0
 dep-pkg: gd pango libglob
 dep-upp: gm4 flex bison gawk git python3 libtool
 bsystem: autogen
-install: configure --disable-swig
+
+install: |
+    configure \
+        --disable-swig \
+        --disable-php \
+        --disable-tcl \
+        --without-gdk \
+        --without-gtk \
+        --without-qt \
+        --without-x
+
+dotweak: cd lib && ln -s graphviz/lib*.so .

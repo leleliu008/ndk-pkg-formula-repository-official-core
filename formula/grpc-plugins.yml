@@ -1,5 +1,5 @@
-pkgtype: lib
-summary: A modern, open source, high-performance remote procedure call (RPC) framework
+pkgtype: pie
+summary: grpc plugins
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.2.tar.gz
@@ -7,6 +7,8 @@ src-sha: e5d5e0dd96fe9452fe24cc8c827381dca484c54d171fb512a198025fec81a3c8
 license: Apache-2.0
 dep-pkg: abseil c-ares openssl-dev re2 libprotobuf
 dep-upp: grpc-plugins
+
+prepare: printf 'INPUT(%s -l:liblog.so)\n' "$libprotobuf_LIBRARY_DIR/libutf8_validity.a" > ../lib/liblog.a
 
 install: |
     cmakew \
@@ -21,10 +23,14 @@ install: |
         -DgRPC_INSTALL=ON \
         -DgRPC_BUILD_TESTS=OFF \
         -DgRPC_BUILD_GRPC_CPP_PLUGIN=ON \
-        -DgRPC_BUILD_GRPC_PHP_PLUGIN=OFF \
-        -DgRPC_BUILD_GRPC_NODE_PLUGIN=OFF \
-        -DgRPC_BUILD_GRPC_RUBY_PLUGIN=OFF \
-        -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=OFF \
-        -DgRPC_BUILD_GRPC_CSHARP_PLUGIN=OFF \
-        -DgRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN=OFF \
+        -DgRPC_BUILD_GRPC_PHP_PLUGIN=ON \
+        -DgRPC_BUILD_GRPC_NODE_PLUGIN=ON \
+        -DgRPC_BUILD_GRPC_RUBY_PLUGIN=ON \
+        -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=ON \
+        -DgRPC_BUILD_GRPC_CSHARP_PLUGIN=ON \
+        -DgRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN=ON \
         -DBUILD_SHARED_LIBS=OFF
+
+dotweak: |
+    rm -rf include
+    rm -rf lib

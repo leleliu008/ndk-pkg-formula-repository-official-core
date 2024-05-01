@@ -4,7 +4,7 @@ git-url: https://github.com/isc-projects/bind9
 src-url: https://downloads.isc.org/isc/bind9/9.18.25/bind-9.18.25.tar.xz
 src-sha: 5a4a70432a33d009f0e6e9dbb328aae7a5e27507e98e28bf3c0c6b250ccb2ab3
 license: MPL-2.0
-dep-pkg: libnghttp2 openssl json-c libxml2 libidn2 libuv libglob
+dep-pkg: libnghttp2 openssl-dev json-c libxml2 libidn2 libuv libglob
 
 dopatch: |
     for MAKEFILE_AM in $(find lib -name "Makefile.in")
@@ -24,7 +24,7 @@ install: |
         --with-json-c \
         --with-libxml2 \
         --with-libidn2="$libidn2_INSTALL_DIR" \
-        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-openssl="$openssl_dev_INSTALL_DIR" \
         ac_cv_search_idn2_to_ascii_lz="'-lidn2 -lunistring -liconv'"
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);

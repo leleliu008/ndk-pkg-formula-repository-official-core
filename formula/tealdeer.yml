@@ -3,5 +3,5 @@ git-url: https://github.com/dbrgn/tealdeer
 src-url: https://github.com/dbrgn/tealdeer/archive/v1.6.1.tar.gz
 src-sha: d42db25a56a72faec173c86192656c5381281dc197171f385fccffd518930430
 license: Apache-2.0
-dep-pkg: openssl
+dep-pkg: openssl-dev
 bsystem: cargo

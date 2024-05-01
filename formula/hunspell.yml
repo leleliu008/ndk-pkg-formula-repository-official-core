@@ -4,7 +4,7 @@ git-url: https://github.com/hunspell/hunspell
 src-url: https://github.com/hunspell/hunspell/archive/v1.7.2.tar.gz
 src-sha: 69fa312d3586c988789266eaf7ffc9861d9f6396c31fc930a014d551b59bbd6e
 license: GPL-2.0-or-later
-dep-pkg: gettext-runtime readline liblanginfo
+dep-pkg: gettext-dev readline liblanginfo
 dep-upp: gettext-tools libtool
 bsystem: autotools
 install: |

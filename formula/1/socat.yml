@@ -3,7 +3,7 @@ web-url: http://www.dest-unreach.org/socat/
 src-url: http://www.dest-unreach.org/socat/download/socat-1.8.0.0.tar.gz
 src-sha: 6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82
 license: GPL-2.0-only
-dep-pkg: openssl readline
+dep-pkg: openssl-dev readline
 binbstd: 1
 bsystem: configure
 dopatch: sed_in_place 's|mqueue\.h|linux/mqueue.h|' sysincludes.h

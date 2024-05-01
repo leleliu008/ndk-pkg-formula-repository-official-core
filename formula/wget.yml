@@ -3,7 +3,7 @@ git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz
 src-sha: fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de
-dep-pkg: openssl libz libidn2
+dep-pkg: openssl-dev libz libidn2
 license: GPL-3.0-or-later
 
 dopatch: |

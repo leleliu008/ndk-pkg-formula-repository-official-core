@@ -3,6 +3,6 @@ git-url: https://github.com/lycheeverse/lychee
 src-url: https://github.com/lycheeverse/lychee/archive/refs/tags/v0.14.3.tar.gz
 src-sha: b2ce1bd57040ab9d1719b9540e8c2905327f6a71674a0e5f2297f00bb4410651
 license: MIT
-dep-pkg: openssl
+dep-pkg: openssl-dev
 bscript: lychee-bin
 bsystem: cargo

@@ -4,13 +4,13 @@ git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
 src-sha: 44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
 license: LGPL-2.1-or-later
-dep-pkg: gettext-runtime libpcre2 libffi libz
+dep-pkg: gettext-dev libpcre2 libffi libz
 
 dopatch: |
     sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
     sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])|" meson.build
     sed_in_place '2139,2165d'  meson.build
-    sed_in_place "2139a libintl = cc.find_library('intl',  dirs: ['$gettext_runtime_LIBRARY_DIR'])" meson.build
+    sed_in_place "2139a libintl = cc.find_library('intl',  dirs: ['$gettext_dev_LIBRARY_DIR'])" meson.build
     sed_in_place '2140a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |

@@ -5,7 +5,7 @@ src-url: https://www.tcpdump.org/release/libpcap-1.10.4.tar.gz
 src-sha: ed19a0383fad72e3ad435fd239d7cd80d64916b87269550159d20e47160ebe5f
 license: BSD-3-Clause
 dep-upp: gm4 flex bison
-dep-pkg: openssl
+dep-pkg: openssl-dev
 
 install: |
     cmakew \

@@ -4,7 +4,7 @@ git-url: https://github.com/Kitware/CMake
 src-url: https://github.com/Kitware/CMake/releases/download/v3.29.2/cmake-3.29.2.tar.gz
 src-sha: 36db4b6926aab741ba6e4b2ea2d99c9193222132308b4dc824d4123cb730352e
 license: BSD-3-Clause
-dep-pkg: libarchive libexpat libcurl libuv libz jsoncpp rhash ncurses openssl
+dep-pkg: libarchive libexpat libcurl libuv libz jsoncpp rhash ncurses openssl-dev
 
 dopatch: |
     LIBCURL="$(pkg-config --libs-only-l libcurl)"

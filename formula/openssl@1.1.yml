@@ -37,9 +37,9 @@ install: |
         no-asm \
         -D__ANDROID_API__="$TARGET_PLATFORM_VERS" \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --libdir=$PACKAGE_INSTALL_DIR/lib \
-        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl \
+        --libdir=lib \
+        --openssldir=etc/ssl \
         "$TARGET"
     gmakew clean
-    gmakew CROSS_COMPILE=
-    gmakew CROSS_COMPILE= install
+    gmakew build_libs  CROSS_COMPILE=
+    gmakew install_dev CROSS_COMPILE= 

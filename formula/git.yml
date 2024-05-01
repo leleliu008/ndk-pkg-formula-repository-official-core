@@ -4,7 +4,7 @@ git-url: https://github.com/git/git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.44.0.tar.xz
 src-sha: e358738dcb5b5ea340ce900a0015c03ae86e804e7ff64e47aa4631ddee681de3
 license: GPL-2.0-only
-dep-pkg: gettext-runtime libexpat libcurl libpcre2 libz
+dep-pkg: gettext-dev libexpat libcurl libpcre2 libz
 dep-upp: gettext-tools patch
 bsystem: configure
 binbstd: 1
@@ -41,6 +41,6 @@ install: |
         --with-curl="$libcurl_INSTALL_DIR" \
         --with-expat="$libexpat_INSTALL_DIR" \
         --with-iconv="$libiconv_INSTALL_DIR" \
-        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-openssl="$openssl_dev_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk

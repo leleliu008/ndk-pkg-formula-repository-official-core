@@ -4,7 +4,7 @@ git-url: https://github.com/actor-framework/actor-framework
 src-url: https://github.com/actor-framework/actor-framework/archive/refs/tags/0.19.6.tar.gz
 src-sha: 48dc4c4abf5ab5a7c6f84b9259cc8be1b02c601d31893647ab44e143cdc4b6d5
 license: BSD-3-Clause
-dep-pkg: openssl
+dep-pkg: openssl-dev
 xxflags: -std=c++17
 install: cmakew -DCAF_ENABLE_TESTING=OFF
 

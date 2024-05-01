@@ -5,7 +5,7 @@ git-url: https://github.com/pjsip/pjproject
 src-url: https://github.com/pjsip/pjproject/archive/2.11.1.tar.gz
 src-sha: 45f6604372df3f49293749cd7c0b42cb21c4fb666c66f8ed9765de004d1eae38
 license: GPL-2.0-or-later
-dep-pkg: openssl
+dep-pkg: openssl-dev
 binbstd: 1
 
 install: |

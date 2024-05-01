@@ -6,17 +6,24 @@ src-sha: 141afc12b34a14bb691a939b4b122db0d51bd38feda7f41696822bacea7710c7
 license: Apache-2.0
 dep-pkg: leptonica icu4c pango libglob cpu_features
 
-dopatch: sed_in_place '/check_leptonica_tiff_support/d' CMakeLists.txt
-
 install: |
-    export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"
-    export LDFLAGS="$LDFLAGS $cpu_features_LIBRARY_DIR/libndk_compat.a"
     cmakew \
         -DENABLE_LTO=OFF \
-        -DUSE_SYSTEM_ICU=ON \
         -DDISABLE_ARCHIVE=OFF \
         -DDISABLE_CURL=OFF \
-        -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=ON \
+        -DUSE_SYSTEM_ICU=ON \
         -DOPENMP_BUILD=ON \
-        -DLEPT_TIFF_RESULT=0
+        -DLEPT_TIFF_RESULT=0 \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_TRAINING_TOOLS=OFF \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DENABLE_LTO=OFF \
+        -DDISABLE_ARCHIVE=OFF \
+        -DDISABLE_CURL=OFF \
+        -DUSE_SYSTEM_ICU=ON \
+        -DOPENMP_BUILD=ON \
+        -DLEPT_TIFF_RESULT=0 \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_TRAINING_TOOLS=OFF \
+        -DBUILD_SHARED_LIBS=ON

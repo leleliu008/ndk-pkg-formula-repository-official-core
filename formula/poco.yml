@@ -5,7 +5,7 @@ web-url: https://pocoproject.org/
 src-url: https://pocoproject.org/releases/poco-1.13.2/poco-1.13.2-all.tar.gz
 src-sha: 33fe6c0d623e026b026d0ae757e617538428dbb6fe65297196693c78b55711a0
 license: BSL-1.0
-dep-pkg: openssl
+dep-pkg: openssl-dev
 install: |
     cmakew \
         -DENABLE_TESTS=OFF \

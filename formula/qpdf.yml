@@ -3,7 +3,7 @@ git-url: https://github.com/qpdf/qpdf
 src-url: https://github.com/qpdf/qpdf/releases/download/v11.9.0/qpdf-11.9.0.tar.gz
 src-sha: 9f5d6335bb7292cc24a7194d281fc77be2bbf86873e8807b85aeccfbff66082f
 license: Apache-2.0
-dep-pkg: libjpeg-turbo libz openssl
+dep-pkg: libjpeg-turbo libz openssl-dev
 
 install: |
     cmakew \

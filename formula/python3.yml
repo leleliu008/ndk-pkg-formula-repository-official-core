@@ -5,7 +5,7 @@ web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.11.7/Python-3.11.7.tgz
 src-sha: 068c05f82262e57641bd93458dfa883128858f5f4997aad7a36fd25b13b29209
 license: Python-2.0
-dep-pkg: gdbm openssl libsqlite3 libexpat libffi liblzma libbz2 libz
+dep-pkg: gdbm openssl-dev libsqlite3 libexpat libffi liblzma libbz2 libz
 dep-upp: python3
 
 prepare: |
@@ -33,7 +33,7 @@ install: |
         --with-build-python=python3 \
         --with-system-expat \
         --with-system-ffi \
-        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-openssl="$openssl_dev_INSTALL_DIR" \
         --with-ensurepip=no \
         --with-lto \
         --enable-ipv6 \

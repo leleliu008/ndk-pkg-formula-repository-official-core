@@ -4,7 +4,7 @@ web-url: https://www.libarchive.org/
 src-url: https://www.libarchive.org/downloads/libarchive-3.7.3.tar.xz
 src-sha: 63e7a7174638fc7d6b79b4c8b0ad954e0f4f45abe7239c1ecb200232aa9a43d2
 license: BSD-2-Clause
-dep-pkg: openssl liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat
+dep-pkg: openssl-dev liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat
 
 prepare: |
     export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"

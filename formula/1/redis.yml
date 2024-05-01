@@ -7,7 +7,7 @@ license: BSD-3-Clause
 bscript: src
 bsystem: gmake
 dep-upp: pkg-config
-dep-pkg: openssl libbthread
+dep-pkg: openssl-dev libbthread
 ldflags: -lbthread
 
 install: |

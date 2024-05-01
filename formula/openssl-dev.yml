@@ -1,4 +1,4 @@
-pkgtype: exe
+pkgtype: lib
 summary: Cryptography and SSL/TLS Toolkit
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
@@ -30,7 +30,6 @@ prepare: |
 # https://github.com/openssl/openssl/blob/master/INSTALL.md
 install: |
     run ./Configure \
-        no-shared \
         no-tests \
         no-ssl2 \
         no-ssl3 \
@@ -42,7 +41,7 @@ install: |
         --openssldir=etc/ssl \
         "$TARGET"
     gmakew clean
-    gmakew CROSS_COMPILE=
-    gmakew CROSS_COMPILE= install
+    gmakew build_libs  CROSS_COMPILE=
+    gmakew install_dev CROSS_COMPILE= 
 
 dotweak: sed_in_place 's|-latomic||g' lib/pkgconfig/libcrypto.pc
