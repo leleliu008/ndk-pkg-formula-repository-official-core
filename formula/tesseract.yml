@@ -5,7 +5,9 @@ src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.4.tar.
 src-sha: 141afc12b34a14bb691a939b4b122db0d51bd38feda7f41696822bacea7710c7
 license: Apache-2.0
 dep-pkg: leptonica icu4c pango libglob cpu_features
+
 dopatch: sed_in_place '/check_leptonica_tiff_support/d' CMakeLists.txt
+
 install: |
     export CPPFLAGS="$CPPFLAGS -I$cpu_features_INCLUDE_DIR/ndk_compat"
     export LDFLAGS="$LDFLAGS $cpu_features_LIBRARY_DIR/libndk_compat.a"

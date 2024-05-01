@@ -6,4 +6,9 @@ src-url: https://github.com/seladb/PcapPlusPlus/archive/v23.09.tar.gz
 src-sha: 608292f7d2a2e1b7af26adf89347597a6131547eea4e513194bc4f584a40fe74
 license: Unlicense
 dep-pkg: libpcap
-bsystem: cmake
+install: |
+    cmakew \
+        -DPCAPPP_BUILD_TESTS=OFF \
+        -DPCAPPP_BUILD_FUZZERS=OFF \
+        -DPCAPPP_BUILD_EXAMPLES=OFF \
+        -DPCAPPP_BUILD_COVERAGE=OFF

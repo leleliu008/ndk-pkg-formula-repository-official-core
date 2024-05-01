@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.1.tar.gz
-src-sha: c9f9ae6e4d6f40464ee9958be4068087881ed6aa37e30d0e64d40ed7be39dd01
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.2.tar.gz
+src-sha: e5d5e0dd96fe9452fe24cc8c827381dca484c54d171fb512a198025fec81a3c8
 license: Apache-2.0
 dep-pkg: abseil c-ares openssl re2 libprotobuf
 dep-upp: grpc-plugins
