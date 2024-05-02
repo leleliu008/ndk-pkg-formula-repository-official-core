@@ -24,7 +24,7 @@ dopatch: |
     sed_in_place "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
 
     sed_in_place '2228,2254d'  meson.build
-    sed_in_place "2228a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_LIBRARY_DIR'])" meson.build
+    sed_in_place "2228a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_dev_LIBRARY_DIR'])" meson.build
     sed_in_place '2229a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |

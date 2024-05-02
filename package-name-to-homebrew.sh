@@ -34,17 +34,21 @@ case $1 in
               printf '%s\n' 'libtensorflow' ;;
     dot_static)
               printf '%s\n' 'graphviz'  ;;
+    grpc-plugins)
+              printf '%s\n' 'grpc'      ;;
     glib-tools)
               printf '%s\n' 'glib'      ;;
     gettext-tools)
               printf '%s\n' 'gettext'   ;;
-    gettext-runtime)
+    gettext-dev)
               printf '%s\n' 'gettext'   ;;
+    openssl-dev)
+              printf '%s\n' 'openssl'   ;;
     libasync++)
               printf '%s\n' 'asyncplusplus' ;;
     libmediainfo|mediainfo)
               printf '%s\n' 'media-info';;
-    libxml2-utils|libxml2-python3)
+    libxml2-python3|xmlutils)
               printf '%s\n' 'libxml2'   ;;
     libjpeg-turbo)
               printf '%s\n' 'jpeg-turbo';;
@@ -52,6 +56,8 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
+    libtesseract)
+              printf '%s\n' 'tesseract' ;;
     libgraphene)
               printf '%s\n' 'graphene'  ;;
     libpugixml)

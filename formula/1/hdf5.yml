@@ -6,7 +6,7 @@ src-url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_3.tar.gz
 src-sha: df5ee33c74d5efb59738075ef96f4201588e1f1eeb233f047ac7fd1072dee1f6
 version: 1.14.3
 license: BSD-3-Clause
-dep-pkg: szip libz
+dep-pkg: libaec libz
 
 install: |
     cmakew \

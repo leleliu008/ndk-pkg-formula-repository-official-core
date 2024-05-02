@@ -7,7 +7,7 @@ on:
     branches: [ master,dev ]
 
 jobs:
-  container:
+  ubuntu:
 
     strategy:
 
@@ -15,9 +15,8 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        #abi: [arm64-v8a]
-        opt: ['--fsle']
-        pkg: [tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget,whois,wolfssl,wuzz]
+        opt: ['--fsle', '']
+        pkg: [tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget]
 
     runs-on: ubuntu-latest
 
@@ -86,7 +85,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false
@@ -94,8 +93,8 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget,whois,wolfssl,wuzz]
-        opt: ['--fsle']
+        opt: ['--fsle', '']
+        pkg: [tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget]
 
     runs-on: ${{ matrix.os }}
 
@@ -146,8 +145,8 @@ jobs:
                     *lib)
                         ;;
                        *)
-                       MIN_SDK_API_LEVEL=34
-                       ;;
+                        MIN_SDK_API_LEVEL=34
+                        ;;
                   esac
               fi
 

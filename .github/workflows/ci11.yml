@@ -7,7 +7,7 @@ on:
     branches: [ master,dev ]
 
 jobs:
-  container:
+  ubuntu:
 
     strategy:
 
@@ -15,9 +15,8 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        #abi: [arm64-v8a]
-        opt: ['--fsle']
-        pkg: [lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano]
+        opt: ['--fsle', '']
+        pkg: [lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c]
 
     runs-on: ubuntu-latest
 
@@ -86,7 +85,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false
@@ -94,8 +93,8 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano]
-        opt: ['--fsle']
+        opt: ['--fsle', '']
+        pkg: [lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c]
 
     runs-on: ${{ matrix.os }}
 
@@ -146,8 +145,8 @@ jobs:
                     *lib)
                         ;;
                        *)
-                       MIN_SDK_API_LEVEL=34
-                       ;;
+                        MIN_SDK_API_LEVEL=34
+                        ;;
                   esac
               fi
 

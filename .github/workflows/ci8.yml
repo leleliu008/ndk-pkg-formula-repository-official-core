@@ -7,7 +7,7 @@ on:
     branches: [ master,dev ]
 
 jobs:
-  container:
+  ubuntu:
 
     strategy:
 
@@ -15,9 +15,8 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        #abi: [arm64-v8a]
-        opt: ['--fsle']
-        pkg: [ldns,less,lf,libaec,libaio,libao,libargp,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libeffcee,libexhale,libexiv2,libgetdomainname,libglm,libgraphene,libilbc,libimagequant]
+        opt: ['--fsle', '']
+        pkg: [lazygit,lcov,ldns,less,lf,libaec,libaio,libao,libargp,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libglm,libgraphene,libilbc]
 
     runs-on: ubuntu-latest
 
@@ -86,7 +85,7 @@ jobs:
 
 
   macos:
-    if: false
+    #if: false
     strategy:
 
       fail-fast: false
@@ -94,8 +93,8 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        pkg: [ldns,less,lf,libaec,libaio,libao,libargp,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libeffcee,libexhale,libexiv2,libgetdomainname,libglm,libgraphene,libilbc,libimagequant]
-        opt: ['--fsle']
+        opt: ['--fsle', '']
+        pkg: [lazygit,lcov,ldns,less,lf,libaec,libaio,libao,libargp,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcddb,libcdio,libcerf,libcgif,libcroco,libexhale,libexiv2,libgetdomainname,libglm,libgraphene,libilbc]
 
     runs-on: ${{ matrix.os }}
 
@@ -146,8 +145,8 @@ jobs:
                     *lib)
                         ;;
                        *)
-                       MIN_SDK_API_LEVEL=34
-                       ;;
+                        MIN_SDK_API_LEVEL=34
+                        ;;
                   esac
               fi
 
