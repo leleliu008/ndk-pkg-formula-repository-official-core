@@ -30,6 +30,7 @@ case $1 in
     golang@1.21)
               printf '%s\n' 'go@1.21'   ;;
     golang)   printf '%s\n' 'go'        ;;
+    trietool) printf '%s\n' 'libdatrie' ;;
     tensorflow-lite)
               printf '%s\n' 'libtensorflow' ;;
     dot_static)
