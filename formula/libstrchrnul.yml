@@ -17,7 +17,7 @@ install: |
     # https://android.googlesource.com/platform/bionic/+/master/libc/bionic/strchrnul.cpp
     cat > strchrnul.c <<EOF
     char* strchrnul(const char* s, int c) {
-        while (*s && *s != ch) {
+        while (*s && *s != c) {
             ++s;
         }
         return s;
