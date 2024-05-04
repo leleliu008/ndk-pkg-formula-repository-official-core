@@ -1,0 +1,15 @@
+summary: XML-based font configuration library
+web-url: https://wiki.freedesktop.org/www/Software/fontconfig
+git-url: https://gitlab.freedesktop.org/fontconfig/fontconfig
+src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz
+src-sha: 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
+license: MIT
+dep-pkg: libfreetype libexpat libiconv
+dep-upp: gperf python3
+
+install: |
+    mesonw \
+        -Dnls=disabled \
+        -Diconv=enabled \
+        -Dtests=disabled \
+        -Dtools=disabled

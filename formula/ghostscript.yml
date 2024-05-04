@@ -72,7 +72,7 @@ prepare: |
 
     export PATH="$PWD:$PATH"
 
-    export CPPFLAGS="$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2"
+    export CPPFLAGS="$CPPFLAGS -I$libfreetype_INCLUDE_DIR/freetype2"
 
     export LDFLAGS="$LDFLAGS -fopenmp -static-openmp"
 

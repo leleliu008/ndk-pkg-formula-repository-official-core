@@ -24,7 +24,6 @@ case $1 in
     openpmix) printf '%s\n' 'pmix'      ;;
     xsltproc) printf '%s\n' 'libxslt'   ;;
     msgpack-c)printf '%s\n' 'msgpack'   ;;
-    freetype2)printf '%s\n' 'freetype'  ;;
     freetype2-with-harfbuzz)
               printf '%s\n' 'freetype'  ;;
     golang@1.21)
@@ -61,10 +60,18 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
+    libfontconfig)
+              printf '%s\n' 'fontconfig';;
     libtesseract)
               printf '%s\n' 'tesseract' ;;
+    libgraphite2)
+              printf '%s\n' 'graphite2' ;;
     libgraphene)
               printf '%s\n' 'graphene'  ;;
+    libfreetype)
+              printf '%s\n' 'freetype'  ;;
+    libharfbuzz)
+              printf '%s\n' 'harfbuzz'  ;;
     libpugixml)
               printf '%s\n' 'pugixml'   ;;
     libminizip)
@@ -117,6 +124,7 @@ case $1 in
     libmhash) printf '%s\n' 'mhash'     ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
+    liblmdb)  printf '%s\n' 'lmdb'      ;;
     libwebp)  printf '%s\n' 'webp'      ;;
     libzstd)  printf '%s\n' 'zstd'      ;;
     liblzma)  printf '%s\n' 'xz'        ;;

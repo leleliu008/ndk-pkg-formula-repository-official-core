@@ -4,7 +4,7 @@ license: BSD-3-Clause
 git-url: https://github.com/OpenImageIO/oiio.git
 src-url: https://github.com/OpenImageIO/oiio/archive/v2.3.10.0.tar.gz
 src-sha: 3b8a43135792373da7d8897a5937dce96cfd2a2bfb92ff8c51a870df1e9cfbd9
-dep-pkg: boost ffmpeg freetype2 libheif libraw opencolorio openexr openjpeg pybind11
+dep-pkg: boost ffmpeg libfreetype libheif libraw opencolorio openexr openjpeg pybind11
 dep-upp: pkg-config
 bsystem: cmake
 
@@ -17,7 +17,7 @@ install: |
         -DWebP_ROOT="$libwebp_INSTALL_DIR" \
         -DLibheif_ROOT="$libheif_INSTALL_DIR" \
         -DOpenJPEG_ROOT="$openjpeg_INSTALL_DIR" \
-        -DFreetype_ROOT="$freetype2_INSTALL_DIR" \
+        -DFreetype_ROOT="$libfreetype_INSTALL_DIR" \
         -DOpenColorIO_ROOT="$opencolorio_INSTALL_DIR" \
         -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
         -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.so" \

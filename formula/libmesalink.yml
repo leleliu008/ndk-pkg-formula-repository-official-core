@@ -4,6 +4,7 @@ git-url: https://github.com/mesalock-linux/mesalink
 license: BSD-3-Clause
 
 install: |
+    export RUSTUP_TOOLCHAIN=1.74
     cargow build --locked
     run install_incs mesalink/*.h
     run install_incs mesalink/openssl/*.h:openssl

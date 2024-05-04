@@ -1,4 +1,3 @@
-pkgtype: exe+lib
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
 src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2
@@ -10,5 +9,6 @@ bscript: libraries/liblmdb
 
 install: |
     gmakew clean
-    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
-    gmakew install prefix=$PACKAGE_INSTALL_DIR
+    gmakew CC=$CC CFLAGS="'$CFLAGS -pthread $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
+    install_incs lmdb.h
+    install_libs liblmdb.a liblmdb.so
