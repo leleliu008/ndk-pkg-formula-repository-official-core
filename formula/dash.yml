@@ -5,7 +5,6 @@ src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz
 src-sha: 6a474ac46e8b0b32916c4c60df694c82058d3297d8b385b74508030ca4a8f28a
 license: BSD-3-Clause
 dep-pkg: libedit libglob libstrchrnul
-api-min: 31
 
 install: |
     configure \
@@ -15,3 +14,5 @@ install: |
         --enable-lineno \
         --enable-glob \
         --enable-static=yes
+
+api-min: 31
