@@ -2,7 +2,7 @@ pkgtype: exe+lib
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
 src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2
-src-sha: 039be48414f71299d04fb01da3e1a6461075bb77eaeeeda36ee5285de804ebf6
+src-sha: 268c849e0b1c375f7545602a45e826c5e5ad9486555c155f46ca836b34294f5f
 license: OLDAP-2.8
 
 ppflags: -DMDB_USE_ROBUST=0

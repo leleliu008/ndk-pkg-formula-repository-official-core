@@ -86,7 +86,7 @@ main() {
 
     AVAILABLE_PACKAGES=$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \; | sort)
 
-    for item in test v8 webrtc skia pdfium
+    for item in test d8 v8 skia webrtc pdfium
     do
         AVAILABLE_PACKAGES=$(printf '%s\n' "$AVAILABLE_PACKAGES" | sed "s|^$item$||")
     done
