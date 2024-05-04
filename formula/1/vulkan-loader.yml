@@ -1,0 +1,12 @@
+pkgtype: lib
+summary: Vulkan ICD Loader
+web-url: https://github.com/KhronosGroup/Vulkan-Loader
+src-url: https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.283.tar.gz
+src-sha: 67bc7d287204a8b25933f211794dec14180acc6beedfbee48a2e3f8c18c639c1
+license: Apache-2.0
+dep-pkg: vulkan-headers
+dep-upp: python3
+bsystem: cmake
+
+patches: |
+    ba5ef723193384044df1fa3d335c81b79f960fb7cb3b4cf4284e9de514078d18|https://raw.githubusercontent.com/termux/termux-packages/master/packages/vulkan-loader-generic/0002-properly-enable-extensions.patch
