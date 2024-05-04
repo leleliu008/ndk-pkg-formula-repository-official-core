@@ -1,0 +1,7 @@
+summary: Toolkit library for asynchronous network I/O with protocol stacks
+git-url: https://github.com/baresip/re
+src-url: https://github.com/baresip/re/archive/refs/tags/v3.11.0.tar.gz
+src-sha: a29dbdbbacd27461b9c8e94b0e52773f3b1396a64e31e258635f18cf5f27e44e
+license: BSD-3-Clause
+dep-pkg: openssl-dev libz
+bsystem: cmake
