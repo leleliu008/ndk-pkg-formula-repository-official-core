@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget]
+        pkg: [tectonic,tengo,tensorflow-lite,tiff,tig,tlrc,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,wget]
+        pkg: [tectonic,tengo,tensorflow-lite,tiff,tig,tlrc,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,typos,uctags,unbound,unrar,uppm,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,wabt]
 
     runs-on: ${{ matrix.os }}
 

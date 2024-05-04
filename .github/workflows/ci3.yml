@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua]
+        pkg: [cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,d8,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua]
+        pkg: [cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,d8,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen]
 
     runs-on: ${{ matrix.os }}
 

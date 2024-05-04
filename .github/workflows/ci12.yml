@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [nano,nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc]
+        pkg: [mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [nano,nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc]
+        pkg: [mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,netcat,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio]
 
     runs-on: ${{ matrix.os }}
 

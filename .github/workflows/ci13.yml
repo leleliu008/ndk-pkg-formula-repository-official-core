@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,q,qpdf]
+        pkg: [opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proj,proot2]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proj,proot2,protobuf,psimd,pup,putty,pybind11,q,qpdf]
+        pkg: [opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proj,proot2]
 
     runs-on: ${{ matrix.os }}
 
