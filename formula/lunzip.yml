@@ -1,0 +1,6 @@
+summary: Decompressor for lzip files
+web-url: https://www.nongnu.org/lzip/lunzip.html
+src-url: https://download-mirror.savannah.gnu.org/releases/lzip/lunzip/lunzip-1.14.tar.gz
+src-sha: 70a30ca88c538b074a04a6d5fa12a57f8e89febcb9145d322e9525f3694e4cb0
+license: GPL-2.0-or-later
+bsystem: configure
