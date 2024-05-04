@@ -1,30 +1,34 @@
 pkgtype: lib
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
-git-url: https://github.com/v8/v8
 version: 9.9.115.8
 license: BSD-3-Clause
-dep-upp: git ninja
+dep-upp: git gn ninja
 
 prepare: |
+    NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
+       GN="$(command -v gn)"    || abort 1 'command not found: gn'
+
     run cd ..
-    run git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-    run export PATH="'$PWD/depot_tools:$PATH'"
 
-    run command fetch v8
-    run "echo \"target_os = ['android']\" >> .gclient"
-    run cd v8
-    run git checkout $PACKAGE_VERSION
-    run "yes | gclient sync"
+    run git clone --depth=1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
-    GN="$(find "$PWD/buildtools" -name gn)"
+    export PATH="$PWD/depot_tools:$PATH"
+    export DEPOT_TOOLS_UPDATE=0
 
-    if [ -z "$GN" ] ; then
-        abort 1 "gn command not found."
-    fi
+    run command fetch --nohistory v8
 
-    PACKAGE_INSTALLING_SRC_DIR="$PWD"
-    PACKAGE_BSCRIPT_DIR="$PWD"
+    cat >> .gclient <<EOF
+    target_os = ['android']
+    EOF
+
+    run git -C v8 checkout "$PACKAGE_VERSION"
+
+    run gclient sync
+
+    run rm -rf   src
+    run ln -s v8 src
+    run mkdir -p src/_
 
 install: |
     case $TARGET_PLATFORM_ARCH in
@@ -34,7 +38,7 @@ install: |
         x86_64)  GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run $GN gen . --root="$PACKAGE_BSCRIPT_DIR"
+    run "$GN" gen . --root="$PACKAGE_BSCRIPT_DIR"
 
     cat >> args.gn <<EOF
     is_debug=false
@@ -45,7 +49,7 @@ install: |
     v8_enable_i18n_support=false
     EOF
 
-    run ninja
+    run "$NINJA"
     run install_bins d8
     run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
     run install_libs *.so

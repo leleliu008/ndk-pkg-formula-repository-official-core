@@ -1,13 +1,17 @@
-pkgtype: lib
-summary: An open source 2D graphics library
-web-url: https://skia.googlesource.com/skia
-version: 1
+summary: A high-performance JavaScript and WebAssembly Engine powered by Google
+web-url: https://v8.dev/
+version: 9.9.115.8
 license: BSD-3-Clause
 dep-upp: git gn ninja
 
 prepare: |
     NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
        GN="$(command -v gn)"    || abort 1 'command not found: gn'
+
+    run git -c init.defaultBranch=master init
+    run git remote add origin https://chromium.googlesource.com/v8/v8.git
+    run git -c protocol.version=2 fetch --progress --depth=1 origin +refs/tags/$PACKAGE_VERSION:refs/remotes/origin/$PACKAGE_VERSION
+    run git checkout --progress --force -B "$PACKAGE_VERSION" "refs/remotes/origin/$PACKAGE_VERSION"
 
     run cd ..
 
@@ -16,10 +20,10 @@ prepare: |
     export PATH="$PWD/depot_tools:$PATH"
     export DEPOT_TOOLS_UPDATE=0
 
-    cat >> .gclient <<EOF
+    cat > .gclient <<EOF
     solutions = [
       { "name"        : 'src',
-        "url"         : 'https://skia.googlesource.com/skia.git',
+        "url"         : 'https://chromium.googlesource.com/v8/v8.git@origin/$PACKAGE_VERSION',
         "deps_file"   : 'DEPS',
         "managed"     : False,
         "custom_deps" : {},
@@ -29,7 +33,11 @@ prepare: |
     target_os = ['android']
     EOF
 
-    run gclient sync --verbose
+    run gclient sync --verbose --verbose
+
+    #run rm -rf   src
+    #run ln -s v8 src
+    #run mkdir -p src/_
 
 install: |
     case $TARGET_PLATFORM_ARCH in
@@ -44,27 +52,12 @@ install: |
     cat >> args.gn <<EOF
     is_debug=false
     is_component_build=true
-    symbol_level=1
-    pdf_is_standalone=true
-    pdf_enable_xfa=false
-    pdf_enable_v8=false
-    pdf_use_skia_paths=false
-    pdf_use_skia=false
     target_os="android"
     target_cpu="$GN_ARG_TARGET_CPU"
+    v8_target_cpu="$GN_ARG_TARGET_CPU"
+    v8_enable_i18n_support=false
     EOF
-
-    if [ "$TARGET_PLATFORM_ARCH" = 'armv7a' ] ; then
-        cat >> args.gn <<EOF
-    arm_version=7
-    EOF
-    fi
-
-    run cat args.gn
 
     run "$NINJA"
-
-    run install_bins skia_diff
+    run install_bins d8
     run install_libs *.so
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp

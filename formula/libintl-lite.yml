@@ -1,0 +1,4 @@
+summary: A simple (but less powerful) GNU gettext libintl replacement
+git-url: https://github.com/j-jorge/libintl-lite
+license: BSL-1.0
+bsystem: cmake

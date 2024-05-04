@@ -1,0 +1,37 @@
+summary: GNU internationalization (i18n) and localization (l10n) library
+git-url: https://git.savannah.gnu.org/git/gettext.git
+web-url: https://www.gnu.org/software/gettext
+src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
+src-sha: ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0
+license: GPL-3.0-or-later
+dep-pkg: libiconv
+bscript: gettext-runtime
+
+install: |
+    configure \
+        --with-included-gettext \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
+        --disable-openmp \
+        --disable-csharp \
+        --disable-java \
+        --enable-c++ \
+        --enable-nls \
+        --enable-relocatable \
+        --enable-threads=posix \
+        --disable-libasprintf
+
+dotweak: |
+    run install -d lib/pkgconfig/
+    cat >          lib/pkgconfig/libintl.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libintl
+    Description: National Language Support library
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lintl 
+    Requires: libiconv
+    EOF

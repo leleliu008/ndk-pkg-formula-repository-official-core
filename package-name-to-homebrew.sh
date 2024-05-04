@@ -40,6 +40,10 @@ case $1 in
               printf '%s\n' 'glib'      ;;
     gettext-tools)
               printf '%s\n' 'gettext'   ;;
+    libtextstyle)
+              printf '%s\n' 'gettext'   ;;
+    libasprintf)
+              printf '%s\n' 'gettext'   ;;
     gettext-dev)
               printf '%s\n' 'gettext'   ;;
     openssl-dev)
@@ -76,6 +80,8 @@ case $1 in
               printf '%s\n' 'wavpack'   ;;
     libjansson)
               printf '%s\n' 'jansson'   ;;
+    libduktape)
+              printf '%s\n' 'duktape'   ;;
     libleveldb)
               printf '%s\n' 'leveldb'   ;;
     libcpuinfo)

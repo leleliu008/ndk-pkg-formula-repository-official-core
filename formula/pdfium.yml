@@ -1,32 +1,39 @@
 pkgtype: lib
 summary: PDF read/write library by Google
 web-url: https://pdfium.googlesource.com/pdfium/
-git-url: https://pdfium.googlesource.com/pdfium
 version: 1
 license: BSD-3-Clause
-dep-upp: git ninja python3
+dep-upp: git gn ninja python3
 
 prepare: |
+    NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
+       GN="$(command -v gn)"    || abort 1 'command not found: gn'
+
     run cd ..
-    run git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-    run export PATH="'$PWD/depot_tools:$PATH'"
 
-    run gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
-    run "echo \"target_os = ['android']\" >> .gclient"
-    run "yes | gclient sync"
+    run git clone --depth=1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
-    run cd pdfium
+    export PATH="$PWD/depot_tools:$PATH"
+    export DEPOT_TOOLS_UPDATE=0
+
+    cat >> .gclient <<EOF
+    solutions = [
+      { "name"        : 'src',
+        "url"         : 'https://pdfium.googlesource.com/pdfium.git',
+        "deps_file"   : 'DEPS',
+        "managed"     : False,
+        "custom_deps" : {},
+        "custom_vars": {},
+      },
+    ]
+    target_os = ['android']
+    EOF
+
+    run gclient sync --verbose
+
+    run cd -
 
     sed_in_place '/PNG_USE_READ_MACROS/a "FPDFSDK_EXPORTS",' BUILD.gn
-
-    GN="$(find "$PWD/buildtools" -name gn)"
-
-    if [ -z "$GN" ] ; then
-        abort 1 "gn command not found."
-    fi
-
-    PACKAGE_INSTALLING_SRC_DIR="$PWD"
-    PACKAGE_BSCRIPT_DIR="$PWD"
 
 install: |
     case $TARGET_PLATFORM_ARCH in

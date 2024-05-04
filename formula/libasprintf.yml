@@ -1,0 +1,8 @@
+summary: C-style formatted output in C++
+git-url: https://git.savannah.gnu.org/git/gettext.git
+web-url: https://www.gnu.org/software/gettext
+src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
+src-sha: ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0
+license: GPL-3.0-or-later
+bscript: gettext-runtime/libasprintf
+bsystem: configure

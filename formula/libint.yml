@@ -1,0 +1,7 @@
+summary: A high-performance library for computing Gaussian integrals in quantum mechanics
+git-url: https://github.com/evaleev/libint
+src-url: https://github.com/evaleev/libint/archive/refs/tags/v2.9.0.tar.gz
+src-sha: 4929b2f2d3e53479270be052e366e8c70fa154a7f309e5c2c23b7d394159687d
+license: GPL-3.0-or-later LGPL-3.0-or-later
+dep-pkg: boost eigen3 libmpfr
+bsystem: autogen
