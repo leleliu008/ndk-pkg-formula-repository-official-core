@@ -1,6 +1,6 @@
 summary: get NIS domain name
 web-url: https://linux.die.net/man/2/getdomainname
-
+version: 1
 install: |
     cat > getdomainname.h <<EOF
     #ifdef __cplusplus

@@ -1,6 +1,6 @@
 summary: get number of bytes in a character
 web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mblen.html
-
+version: 1
 install: |
     cat > mblen.h <<EOF
     #ifdef __cplusplus

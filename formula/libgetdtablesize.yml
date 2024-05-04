@@ -1,6 +1,6 @@
 summary: get descriptor table size
 web-url: https://linux.die.net/man/2/getdtablesize
-
+version: 1
 install: |
     cat > getdtablesize.h <<EOF
     #ifdef __cplusplus

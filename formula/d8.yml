@@ -2,7 +2,7 @@ summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 version: 9.9.115.8
 license: BSD-3-Clause
-dep-upp: git gn ninja
+dep-upp: git gn ninja python3
 
 prepare: |
     NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
