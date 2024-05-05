@@ -12,7 +12,6 @@ install: |
         --enable-test-workaround=no \
         --enable-fnmatch \
         --enable-lineno \
-        --enable-glob \
-        --enable-static=yes
+        --enable-glob
 
-api-min: 31
+api-min: 26
