@@ -18,7 +18,6 @@ case $1 in
     typos)    printf '%s\n' 'typos-cli' ;;
     proj7)    printf '%s\n' 'proj@7'    ;;
     bsdtar)   printf '%s\n' 'libarchive';;
-    blake3)   printf '%s\n' 'b3sum'     ;;
     eigen3)   printf '%s\n' 'eigen'     ;;
     utfcpp)   printf '%s\n' 'utf8cpp'   ;;
     openpmix) printf '%s\n' 'pmix'      ;;
@@ -94,6 +93,8 @@ case $1 in
               printf '%s\n' 'leveldb'   ;;
     libcpuinfo)
               printf '%s\n' 'cpuinfo'   ;;
+    libhiredis)
+              printf '%s\n' 'hiredis'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
     libexhale)
@@ -104,6 +105,8 @@ case $1 in
               printf '%s\n' 'snappy'    ;;
     libcrc32c)
               printf '%s\n' 'crc32c'    ;;
+    libblake3)
+              printf '%s\n' 'b3sum'     ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -112,6 +115,7 @@ case $1 in
     libexiv2) printf '%s\n' 'exiv2'     ;;
     libfftw3) printf '%s\n' 'fftw'      ;;
     libeigen) printf '%s\n' 'eigen'     ;;
+    libcares) printf '%s\n' 'c-ares'    ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
@@ -149,6 +153,7 @@ case $1 in
 
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
+    adig)     printf '%s\n' 'c-ares'    ;;
 
     libtwolame|stwolame)
               printf '%s\n' 'two-lame'  ;;

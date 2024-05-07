@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [jump,kcp,kcptun,keybase,ko,krb5,lame,lazygit,lcov,ldns,less,lf,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcbor,libcddb,libcdio]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [jump,kcp,kcptun,keybase,ko,krb5,lame,lazygit,lcov,ldns,less,lf,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcap-ng,libcbor,libcddb,libcdio]
 
     runs-on: ${{ matrix.os }}
 

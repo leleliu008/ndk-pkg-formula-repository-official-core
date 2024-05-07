@@ -1,0 +1,16 @@
+summary: Library for large linear classification
+git-url: https://github.com/cjlin1/liblinear
+web-url: https://www.csie.ntu.edu.tw/~cjlin/liblinear/
+src-url: https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.47.tar.gz
+src-sha: 99ce98ca3ce7cfb31f2544c42f23ba5bc6c226e536f95d6cd21fe012f94c65e0
+license: BSD-3-Clause
+
+install: |
+    gmakew clean
+    gmakew lib OS=Android CC="$CC" CXX="$CXX" CFLAGS="'$CFLAGS'" LIBEXT=.so
+    install_incs linear.h
+    install_libs liblinear.*
+
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/bac35ae9140405dec00f1f700d2ecc27cf82526b/liblinear/patch-Makefile.diff
+fix-sha: 11a47747918f665d219b108fac073c626779555b5022903c9b240a4c29bbc2a0
+fix-opt: -p0

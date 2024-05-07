@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow4
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findent]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,figlet,file,findent]
 
     runs-on: ${{ matrix.os }}
 

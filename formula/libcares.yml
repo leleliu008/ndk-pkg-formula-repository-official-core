@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Asynchronous DNS library
 git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se
@@ -14,4 +13,4 @@ install: |
         -DCARES_BUILD_TOOLS=OFF \
         -DCARES_BUILD_TESTS=OFF
 
-dotweak: cp -v lib/libcares_static.a lib/libcares.a
+dotweak: cd lib && ln -s libcares_static.a libcares.a

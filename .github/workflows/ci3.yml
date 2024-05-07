@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow3
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [cmark,cmatrix,cmocka,coreutils,cotp,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [cmark,cmatrix,cmocka,coreutils,cotp,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,dav1d,delta,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog]
 
     runs-on: ${{ matrix.os }}
 

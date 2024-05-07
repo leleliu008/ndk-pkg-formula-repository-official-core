@@ -1,0 +1,7 @@
+summary: HTTP/DNS scanner configurable via YAML templates
+web-url: https://nuclei.projectdiscovery.io/
+git-url: https://github.com/projectdiscovery/nuclei
+src-url: https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.2.6.tar.gz
+src-sha: ac5016e983d65a49da1f7f024e0885738f49c4536edda4e361ffc8c1c442ecf1
+license: MIT
+install: gow ./cmd/nuclei

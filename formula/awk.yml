@@ -1,0 +1,13 @@
+summary: Text processing scripting language
+web-url: https://www.cs.princeton.edu/~bwk/btl.mirror/
+git-url: https://github.com/onetrueawk/awk
+src-url: https://github.com/onetrueawk/awk/archive/refs/tags/20240422.tar.gz
+src-sha: 4793404735db5ea79f790cf865bf4fe875f9c5c23b1b8da186349f54b3a32281
+license: MIT
+dep-upp: bison
+install: |
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS'"
+    mv a.out awk
+    install_bins awk
+    install_mans awk.1

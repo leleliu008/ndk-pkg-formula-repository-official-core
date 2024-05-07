@@ -4,7 +4,7 @@ web-url: https://nghttp2.org/
 git-url: https://github.com/nghttp2/nghttp2
 src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.61.0/nghttp2-1.61.0.tar.gz
 src-sha: aa7594c846e56a22fbf3d6e260e472268808d3b49d5e0ed339f589e9cc9d484c
-dep-pkg: libevent libev libjansson libxml2 c-ares cunit
+dep-pkg: libevent libev libcares libjansson libxml2 cunit
 license: MIT
 
 fix-url: https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1
@@ -14,6 +14,8 @@ dopatch: sed_in_place '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMa
 
 install: |
     cmakew \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_STATIC_LIBS=OFF \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
         -DENABLE_THREADS=ON \
@@ -22,8 +24,6 @@ install: |
         -DENABLE_EXAMPLES=OFF \
         -DENABLE_HPACK_TOOLS=ON \
         -DENABLE_ASIO_LIB=OFF \
-        -DENABLE_STATIC_LIB=ON \
-        -DENABLE_SHARED_LIB=ON \
         -DENABLE_LIB_ONLY=OFF \
         -DENABLE_PYTHON_BINDINGS=OFF \
         -DENABLE_FAILMALLOC=ON \
