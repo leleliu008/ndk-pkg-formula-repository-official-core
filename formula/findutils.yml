@@ -1,4 +1,5 @@
 summary: A package of several programs related to finding files
+git-url: https://git.savannah.gnu.org/git/findutils.git
 web-url: https://www.gnu.org/software/findutils
 src-url: https://ftp.gnu.org/gnu/findutils/findutils-4.9.0.tar.xz
 src-sha: a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe
