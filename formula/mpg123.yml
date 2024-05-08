@@ -21,4 +21,5 @@ install: |
         --enable-debug=no \
         --enable-ipv6=yes \
         --with-module-suffix=.so \
-        --with-cpu="$CPU"
+        --with-cpu="$CPU" \
+        --with-pic

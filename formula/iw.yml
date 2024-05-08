@@ -1,0 +1,12 @@
+summary: A powerful tool for managing and manipulating wireless devices
+web-url: https://wireless.wiki.kernel.org/en/users/Documentation/iw
+src-url: https://mirrors.edge.kernel.org/pub/software/network/iw/iw-6.7.tar.xz
+src-sha: aacf49c266b29d500d73086798a1c652e760c19126a8599fd811850430789a35
+dep-pkg: libnl
+
+install: |
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
+
+api-min: 26
