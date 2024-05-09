@@ -1,4 +1,4 @@
-summary: A command-line tool for downloading RTMP streaming media
+summary: A C library for downloading RTMP streaming media
 web-url: https://rtmpdump.mplayerhq.hu
 git-url: https://git.ffmpeg.org/rtmpdump
 
@@ -9,12 +9,13 @@ fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/rtm
 fix-sha: 3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2bd
 fix-opt: -p0
 
-version: 2.4+20151223
+version: 2.4.20151223
 license: GPL-2.0-or-later
 dep-pkg: libz openssl-dev
+
 parallel: 0
 
 install: |
-    gmakew clean   SYS=posix
-    gmakew         SYS=posix CC="$CC" LD="$LD" AR="$AR" LIB_RTMP=librtmp/librtmp.a OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
-    gmakew install SYS=posix prefix="$PACKAGE_INSTALL_DIR"
+    gmakew -C librtmp clean   SYS=posix
+    gmakew -C librtmp         SYS=posix CC="$CC" LD="$LD" AR="$AR" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
+    gmakew -C librtmp install SYS=posix prefix="$PACKAGE_INSTALL_DIR"

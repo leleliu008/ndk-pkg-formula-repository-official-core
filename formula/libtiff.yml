@@ -1,4 +1,4 @@
-summary: TIFF library and utilities
+summary: TIFF library
 web-url: https://libtiff.gitlab.io/libtiff
 git-url: https://gitlab.com/libtiff/libtiff
 src-url: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz

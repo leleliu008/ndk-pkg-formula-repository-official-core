@@ -59,6 +59,8 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
+    librtmpdump)
+              printf '%s\n' 'rtmpdump'  ;;
     libfontconfig)
               printf '%s\n' 'fontconfig';;
     libtesseract)
@@ -145,6 +147,7 @@ case $1 in
     libbz2)   printf '%s\n' 'bzip2'     ;;
     liblz4)   printf '%s\n' 'lz4'       ;;
     liblzo)   printf '%s\n' 'lzo'       ;;
+    liblua)   printf '%s\n' 'lua'       ;;
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
     libcaf)   printf '%s\n' 'caf'       ;;

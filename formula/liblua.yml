@@ -1,0 +1,12 @@
+summary: Powerful, lightweight programming language
+git-url: https://github.com/lua/lua
+web-url: https://www.lua.org/
+src-url: https://www.lua.org/ftp/lua-5.4.6.tar.gz
+src-sha: 7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88
+license: MIT
+bscript: src
+install: |
+    gmakew clean
+    gmakew liblua.a PLAT=generic CC="$CC" AR="'$AR crs'" RANLIB="$RANLIB" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'"
+    install_libs liblua.a
+    install_incs lua.h luaconf.h lualib.h lauxlib.h lua.hpp

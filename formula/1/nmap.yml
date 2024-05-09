@@ -1,0 +1,15 @@
+summary: Port scanning utility for large networks
+web-url: https://nmap.org/
+src-url: https://nmap.org/dist/nmap-7.95.tar.bz2
+src-sha: e14ab530e47b5afd88f1c8a2bac7f89cd8fe6b478e22d255c5b9bddb7a1c5778
+dep-pkg: liblinear libpcre2 libssh2 libpcap liblua libz openssl-dev
+binbstd: 1
+install: |
+    configure \
+        --with-liblua="$liblua_INSTALL_DIR" \
+        --with-libpcap="$libpcap_INSTALL_DIR" \
+        --with-libpcre="$libpcre2_INSTALL_DIR" \
+        --with-openssl="openssl_dev_INSTALL_DIR" \
+        --without-nmap-update \
+        --without-zenmap
+parallel: 0

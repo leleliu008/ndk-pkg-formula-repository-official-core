@@ -5,5 +5,4 @@ src-url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.
 src-sha: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
 license: LGPL-3.0-or-later
 dep-pkg: libsodium
-dep-upp: pkg-config
 install: configure --with-libsodium --disable-libunwind

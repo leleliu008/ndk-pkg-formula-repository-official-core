@@ -6,7 +6,7 @@ dep-pkg: libnl
 
 install: |
     gmakew clean
-    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'"
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS -Wl,-z,nostart-stop-gc'"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
 
 api-min: 26
