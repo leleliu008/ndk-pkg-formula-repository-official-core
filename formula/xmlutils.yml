@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: A collections of command-line utilities provided by libxml2
 web-url: http://xmlsoft.org
 git-url: https://gitlab.gnome.org/GNOME/libxml2

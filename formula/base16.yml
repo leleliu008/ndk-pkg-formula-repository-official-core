@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: base16 encoder and decoder
 git-url: https://github.com/leleliu008/C-examples
 bscript: algorithm/base16

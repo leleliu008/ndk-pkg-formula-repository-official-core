@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: Ncurses BitTorrent client based on libtorrent-rakshasa
 git-url: https://github.com/rakshasa/rtorrent
 src-url: https://github.com/rakshasa/rtorrent/releases/download/v0.9.8/rtorrent-0.9.8.tar.gz

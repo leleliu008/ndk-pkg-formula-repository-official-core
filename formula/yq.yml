@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: A lightweight and portable command-line YAML processor
 web-url: https://mikefarah.gitbook.io/yq
 git-url: https://github.com/mikefarah/yq

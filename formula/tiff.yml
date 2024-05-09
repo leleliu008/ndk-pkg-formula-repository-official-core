@@ -1,4 +1,3 @@
-pkgtype: exe
 summary: TIFF library and utilities
 web-url: https://libtiff.gitlab.io/libtiff
 git-url: https://gitlab.com/libtiff/libtiff
