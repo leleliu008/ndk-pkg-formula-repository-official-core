@@ -59,14 +59,14 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
-    librtmpdump)
-              printf '%s\n' 'rtmpdump'  ;;
     libfontconfig)
               printf '%s\n' 'fontconfig';;
     libtesseract)
               printf '%s\n' 'tesseract' ;;
     libgraphite2)
               printf '%s\n' 'graphite2' ;;
+    libqrencode)
+              printf '%s\n' 'qrencode'  ;;
     libgraphene)
               printf '%s\n' 'graphene'  ;;
     libfreetype)
@@ -109,6 +109,10 @@ case $1 in
               printf '%s\n' 'crc32c'    ;;
     libblake3)
               printf '%s\n' 'b3sum'     ;;
+    libxxhash)
+              printf '%s\n' 'xxhash'    ;;
+    libxapian)
+              printf '%s\n' 'xapian'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -128,17 +132,23 @@ case $1 in
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
     libmhash) printf '%s\n' 'mhash'     ;;
+    liblcms2) printf '%s\n' 'little-cms2' ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
     liblmdb)  printf '%s\n' 'lmdb'      ;;
+    libgdbm)  printf '%s\n' 'gdbm'      ;;
     libwebp)  printf '%s\n' 'webp'      ;;
+    libjpeg)  printf '%s\n' 'jpeg'      ;;
+    librtmp)  printf '%s\n' 'rtmpdump'  ;;
     libzstd)  printf '%s\n' 'zstd'      ;;
     liblzma)  printf '%s\n' 'xz'        ;;
     libuuid)  printf '%s\n' 'util-linux';;
     libargp)  printf '%s\n' 'argp-standalone';;
     libre2c)  printf '%s\n' 're2c'      ;;
     libcgif)  printf '%s\n' 'cgif'      ;;
+    libgif)   printf '%s\n' 'giflib'    ;;
     libzlog)  printf '%s\n' 'zlog'      ;;
+    libpopt)  printf '%s\n' 'popt'      ;;
     libz3.a)  printf '%s\n' 'z3'        ;;
     libmpfr)  printf '%s\n' 'mpfr'      ;;
     libmpir)  printf '%s\n' 'mpir'      ;;
@@ -152,6 +162,7 @@ case $1 in
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
     libcaf)   printf '%s\n' 'caf'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
+    libhwy)   printf '%s\n' 'highway'   ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
     png)      printf '%s\n' 'libpng'    ;;
@@ -161,6 +172,7 @@ case $1 in
     libtwolame|stwolame)
               printf '%s\n' 'two-lame'  ;;
 
+    getopt)   printf '%s\n' 'util-linux';;
     toml++)   printf '%s\n' 'tomlplusplus'  ;;
     xorg-*)   printf '%s\n' "$1" | cut -c6- ;;
     *)        printf '%s\n' "$1"
