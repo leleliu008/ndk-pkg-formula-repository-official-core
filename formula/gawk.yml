@@ -17,6 +17,8 @@ install: |
         --disable-pma \
         --disable-builtin-intdiv0
 
+dotweak: rm "bin/gawk-$PACKAGE_NAME"
+
 # https://www.gnu.org/software/gawk/manual/html_node/Persistent-Memory.html
 
 # struct passwd* getpwent(void) __INTRODUCED_IN(26);

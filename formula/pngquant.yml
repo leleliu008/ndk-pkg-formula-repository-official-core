@@ -3,5 +3,5 @@ web-url: https://pngquant.org
 git-url: https://github.com/kornelski/pngquant
 src-url: https://static.crates.io/crates/pngquant/pngquant-3.0.3.crate
 src-sha: 68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232
-dep-pkg: libpng lcms2
+dep-pkg: libpng liblcms2
 bsystem: cargo

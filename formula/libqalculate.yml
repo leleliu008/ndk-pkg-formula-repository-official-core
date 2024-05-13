@@ -1,8 +1,8 @@
 summary: Library for Qalculate! program
 web-url: https://qalculate.github.io/
 git-url: https://github.com/Qalculate/libqalculate
-src-url: https://github.com/Qalculate/libqalculate/releases/download/v5.0.0/libqalculate-5.0.0.tar.gz
-src-sha: 591598dedbcbd80119de052559873530030b3510bca2b0758f088cfb7dafb2ee
+src-url: https://github.com/Qalculate/libqalculate/releases/download/v5.1.1/libqalculate-5.1.1.tar.gz
+src-sha: 04db2d1c8dc0d5a006971bb138aa71d4a944275dde8dbf952ad8b59bf499aba1
 license: GPL-2.0-or-later
 dep-upp: gettext-tools perl intltool patch
 dep-pkg: gettext-dev readline icu4c libxml2 libcurl libgmp libmpfr libbthread

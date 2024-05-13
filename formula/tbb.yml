@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Rich and complete approach to parallelism in C++
 git-url: https://github.com/oneapi-src/oneTBB
-src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.11.0.tar.gz
-src-sha: 782ce0cab62df9ea125cdea253a50534862b563f1d85d4cda7ad4e77550ac363
+src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.12.0.tar.gz
+src-sha: c7bb7aa69c254d91b8f0041a71c5bcc3936acb64408a1719aec0b2b7639dd84f
 license: Apache-2.0
 ldflags: -Wl,--undefined-version
 install: |

@@ -1,0 +1,9 @@
+summary: Extremely fast non-cryptographic hash algorithm
+git-url: https://github.com/Cyan4973/xxHash
+src-url: https://github.com/Cyan4973/xxHash/archive/v0.8.2.tar.gz
+src-sha: baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4
+license: BSD-2-Clause
+
+install: |
+    gmakew clean UNAME=Linux
+    gmakew install_libxxhash.a install_libxxhash install_libxxhash.includes install_libxxhash.pc UNAME=Linux PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" SONAME_FLAGS=-shared AR="$AR" V=1

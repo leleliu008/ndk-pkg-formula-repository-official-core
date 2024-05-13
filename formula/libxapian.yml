@@ -1,4 +1,3 @@
-pkgtype: exe+lib
 summary: C++ search engine library
 web-url: https://xapian.org/
 src-url: https://oligarchy.co.uk/xapian/1.4.25/xapian-core-1.4.25.tar.xz

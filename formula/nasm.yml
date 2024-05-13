@@ -1,12 +1,15 @@
 summary: Netwide Assembler (NASM) is an 80x86 assembler
 git-url: https://github.com/netwide-assembler/nasm
 web-url: https://www.nasm.us
-src-url: https://www.nasm.us/pub/nasm/releasebuilds/2.16.02/nasm-2.16.02.tar.xz
-src-sha: 1e1b942ea88f22edae89659e15be26fa027eae0747f51413540f52d4eac4790d
+src-url: https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/nasm-2.16.03.tar.xz
+src-sha: 1412a1c760bbd05db026b6c0d1657affd6631cd0a63cddb6f73cc6d4aa616148
 license: BSD-2-Clause
 bsystem: autogen
 binbstd: 1
 install: |
+    export ac_cv_prog_AR="$AR"
+    export ac_cv_prog_RANLIB="$RANLIB"
+
     configure \
         --disable-profiling \
         --enable-lto \

@@ -1,4 +1,4 @@
-summary: A fast and compact QR Code encoding library
+summary: QR Code generation
 git-url: https://github.com/fukuchi/libqrencode
 web-url: https://fukuchi.org/works/qrencode
 src-url: https://fukuchi.org/works/qrencode/qrencode-4.1.1.tar.gz
@@ -11,9 +11,9 @@ install: |
         -DWITH_TOOLS=OFF \
         -DWITH_TESTS=OFF \
         -DWITHOUT_PNG=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DBUILD_SHARED_LIBS=OFF
     cmakew \
         -DWITH_TOOLS=OFF \
         -DWITH_TESTS=OFF \
         -DWITHOUT_PNG=OFF \
-        -DBUILD_SHARED_LIBS=OFF
+        -DBUILD_SHARED_LIBS=ON

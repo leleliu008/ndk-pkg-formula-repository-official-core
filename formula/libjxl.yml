@@ -4,19 +4,24 @@ git-url: https://github.com/libjxl/libjxl
 src-url: https://github.com/libjxl/libjxl/archive/refs/tags/v0.10.2.tar.gz
 src-sha: 95e807f63143856dc4d161c071cca01115d2c6405b3d3209854ac6989dc6bb91
 license: BSD-3-Clause
-dep-pkg: libwebp libpng libtiff libjpeg-turbo giflib openexr brotli lcms2
+dep-pkg: libjpeg-turbo libwebp libpng libgif liblcms2 libhwy openexr brotli
+dep-upp: git
 
-prepare: run ./deps.sh && rm -rf third_party/libpng
+prepare: run git clone --depth 1 https://github.com/webmproject/sjpeg third_party/sjpeg
 
 install: |
     cmakew \
         -DBUILD_TESTING=OFF \
         -DJPEGXL_ENABLE_JNI=OFF \
-        -DJPEGXL_ENABLE_TOOLS=ON \
-        -DJPEGXL_ENABLE_EXAMPLES=ON \
-        -DJPEGXL_ENABLE_MANPAGES=ON \
+        -DJPEGXL_ENABLE_SJPEG=ON \
+        -DJPEGXL_ENABLE_SKCMS=OFF \
+        -DJPEGXL_ENABLE_TOOLS=OFF \
+        -DJPEGXL_ENABLE_EXAMPLES=OFF \
+        -DJPEGXL_ENABLE_MANPAGES=OFF \
         -DJPEGXL_ENABLE_BENCHMARK=OFF \
         -DJPEGXL_WARNINGS_AS_ERRORS=OFF \
         -DJPEGXL_FORCE_SYSTEM_BROTLI=ON \
+        -DJPEGXL_FORCE_SYSTEM_LCMS2=ON \
+        -DJPEGXL_FORCE_SYSTEM_HWY=ON \
         -DJPEGXL_VERSION=$PACKAGE_VERSION \
         -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"

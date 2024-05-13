@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: Codec library for encoding and decoding AV1 video streams
 web-url: https://aomedia.googlesource.com/aom
 git-url: https://github.com/jbeich/aom
-src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.8.2.tar.gz
-src-sha: 08be381e014c3cf508293f9127c8e24cc35262c6e9c805b0a8313cebf99cbcda
+src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.9.0.tar.gz
+src-sha: 92bed5c071375c3b334246bbe559037a7fa704d8af9fb8bb52c97b33ff1f93c9
 license: BSD-2-Clause
 dep-pkg: libjxl libvmaf
 dep-upp: nasm perl

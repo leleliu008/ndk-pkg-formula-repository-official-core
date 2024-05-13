@@ -1,12 +1,10 @@
 summary: Library for reading, processing and writing images
 web-url: https://openimageio.org/
-license: BSD-3-Clause
 git-url: https://github.com/OpenImageIO/oiio.git
 src-url: https://github.com/OpenImageIO/oiio/archive/v2.3.10.0.tar.gz
 src-sha: 3b8a43135792373da7d8897a5937dce96cfd2a2bfb92ff8c51a870df1e9cfbd9
+license: BSD-3-Clause
 dep-pkg: boost ffmpeg libfreetype libheif libraw opencolorio openexr openjpeg pybind11
-dep-upp: pkg-config
-bsystem: cmake
 
 install: |
     cmakew \
@@ -29,8 +27,8 @@ install: |
         -DJPEG_LIBRARY="$libjpeg_turbo_LIBRARY_DIR/libjpeg.so"\
         -DTIFF_INCLUDE_DIR="$libtiff_INCLUDE_DIR" \
         -DTIFF_LIBRARY="$libtiff_LIBRARY_DIR/libtiff.so" \
-        -DGIF_INCLUDE_DIR="$giflib_INCLUDE_DIR" \
-        -DGIF_LIBRARY="$giflib_LIBRARY_DIR/libgif.so" \
+        -DGIF_INCLUDE_DIR="$libgif_INCLUDE_DIR" \
+        -DGIF_LIBRARY="$libgif_LIBRARY_DIR/libgif.so" \
         -DPYTHON_INCLUDE_DIR="$python_INCLUDE_DIR/python3.9" \
         -DPYTHON_LIBRARY="$python_LIBRARY_DIR/libpython3.so" \
         -DPYTHON_EXECUTABLE="$MY_HOME_DIR/native/python/bin/python3"

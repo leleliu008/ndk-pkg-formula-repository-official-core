@@ -9,6 +9,6 @@ bscript: libraries/liblmdb
 
 install: |
     gmakew clean
-    gmakew CC=$CC CFLAGS="'$CFLAGS -pthread $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
+    gmakew CC="$CC" CFLAGS="'$CFLAGS -pthread $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" SOEXT=.so
     install_incs lmdb.h
     install_libs liblmdb.a liblmdb.so

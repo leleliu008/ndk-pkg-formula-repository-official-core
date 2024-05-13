@@ -1,4 +1,4 @@
-pkgtype: rhash
+pkgtype: exe+lib
 summary: Utility for computing and verifying hash sums of files
 web-url: http://rhash.sourceforge.net
 git-url: https://github.com/rhash/RHash

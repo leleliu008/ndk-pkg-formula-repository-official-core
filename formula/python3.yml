@@ -5,7 +5,7 @@ web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.11.7/Python-3.11.7.tgz
 src-sha: 068c05f82262e57641bd93458dfa883128858f5f4997aad7a36fd25b13b29209
 license: Python-2.0
-dep-pkg: gdbm openssl-dev libsqlite3 libexpat libffi liblzma libbz2 libz
+dep-pkg: openssl-dev libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 dep-upp: python3
 
 prepare: |
@@ -24,8 +24,8 @@ prepare: |
     export LIBSQLITE3_CFLAGS="-I$libsqlite3_INCLUDE_DIR"
     export LIBSQLITE3_LIBS="-L$libsqlite3_LIBRARY_DIR -l:libsqlite3.a"
 
-    export GDBM_CFLAGS="-I$gdbm_INCLUDE_DIR"
-    export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -l:libgdbm_compat.a -l:libgdbm.a"
+    export GDBM_CFLAGS="-I$libgdbm_INCLUDE_DIR"
+    export GDBM_LIBS="-L$libgdbm_LIBRARY_DIR -l:libgdbm_compat.a -l:libgdbm.a"
 
 install: |
     configure \

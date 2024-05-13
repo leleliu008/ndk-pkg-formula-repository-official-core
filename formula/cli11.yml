@@ -2,8 +2,8 @@ pkgtype: lib
 summary: Simple and intuitive command-line parser for C++11
 web-url: https://cliutils.github.io/CLI11/book/
 git-url: https://github.com/CLIUtils/CLI11
-src-url: https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.4.1.tar.gz
-src-sha: 73b7ec52261ce8fe980a29df6b4ceb66243bb0b779451dbd3d014cfec9fdbb58
+src-url: https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.4.2.tar.gz
+src-sha: f2d893a65c3b1324c50d4e682c0cdc021dd0477ae2c048544f39eed6654b699a
 license: BSD-3-Clause
 install: |
     cmakew \

@@ -4,6 +4,5 @@ git-url: https://github.com/mm2/Little-CMS
 src-url: https://downloads.sourceforge.net/project/lcms/lcms/2.16/lcms2-2.16.tar.gz
 src-sha: d873d34ad8b9b4cea010631f1a6228d2087475e4dc5e763eb81acc23d9d45a51
 license: MIT
-dep-pkg: libtiff libjpeg-turbo
-bsystem: configure
+bsystem: meson
 dopatch: sed_in_place '/define CMS_NO_REGISTER_KEYWORD 1/c \#define CMS_NO_REGISTER_KEYWORD 1' include/lcms2.h

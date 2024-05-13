@@ -2,8 +2,8 @@ pkgtype: lib
 summary: A cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D
 git-url: https://github.com/libsdl-org/SDL
 web-url: https://www.libsdl.org/
-src-url: https://www.libsdl.org/release/SDL2-2.30.2.tar.gz
-src-sha: 891d66ac8cae51361d3229e3336ebec1c407a8a2a063b61df14f5fdf3ab5ac31
+src-url: https://www.libsdl.org/release/SDL2-2.30.3.tar.gz
+src-sha: 820440072f8f5b50188c1dae104f2ad25984de268785be40c41a099a510f0aec
 license: Zlib
 
 dopatch: |

@@ -1,5 +1,5 @@
 pkgtype: lib
-summary: C++ websocket client/server library
+summary: A header only C++ library that implements RFC6455 The WebSocket Protocol
 web-url: https://www.zaphoyd.com/projects/websocketpp/
 git-url: https://github.com/zaphoyd/websocketpp
 src-url: https://github.com/zaphoyd/websocketpp/archive/refs/tags/0.8.2.tar.gz
