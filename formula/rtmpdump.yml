@@ -16,5 +16,5 @@ parallel: 0
 
 install: |
     gmakew clean   SYS=posix
-    gmakew         SYS=posix CC="$CC" LD="$LD" AR="$AR" LIB_RTMP=librtmp/librtmp.a OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
+    gmakew         SYS=posix CC="$CC" LD="$LD" AR="$AR" LIB_RTMP=librtmp/librtmp.a OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'" XLIBS=-ldl
     gmakew install SYS=posix prefix="$PACKAGE_INSTALL_DIR"

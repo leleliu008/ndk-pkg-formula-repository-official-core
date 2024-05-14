@@ -1,0 +1,11 @@
+summary: core utils for ndk-pkg
+git-url: https://github.com/leleliu008/ndk-pkg
+license: Apache-2.0
+binbstd: 1
+install: |
+    for file in *.c
+    do
+        OUTFILE="${file%.c}"
+        run "$CC" "$CFLAGS" "$CPPFLAGS" "$LDFLAGS" -std=c99 -Oz -flto -Wl,-s -static -o "$OUTFILE" "$file"
+        install_bins "$OUTFILE"
+    done

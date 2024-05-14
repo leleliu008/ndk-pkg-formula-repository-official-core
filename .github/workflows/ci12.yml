@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,naabu,nano,nanomsg,nap,nasm]
+        pkg: [lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,naabu,nano,nanomsg,nap]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,naabu,nano,nanomsg,nap,nasm]
+        pkg: [lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mimalloc,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,naabu,nano,nanomsg,nap]
 
     runs-on: ${{ matrix.os }}
 

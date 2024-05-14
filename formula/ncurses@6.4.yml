@@ -1,0 +1,76 @@
+pkgtype: lib
+summary: Text-based UI library
+git-url: https://github.com/mirror/ncurses
+web-url: https://www.gnu.org/software/ncurses
+src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
+src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
+license: MIT
+dep-upp: gsed grep
+
+do12345: |
+    {
+        # https://github.com/termux/termux-packages/issues/4487
+        if command -v tic > /dev/null ; then
+            run tic -V
+            [ '6.2.20200212' != "$(printf '%s\n' '6.2.20200212' "$(tic -V | cut -d' ' -f2)" | sort -V | head -n 1)" ]
+        else
+            warn 'tic command not found. we need build it now.'
+        fi
+    } || return 0
+
+    unset TERMINFO
+    configure \
+        --with-pkg-config-libdir="$NATIVE_INSTALL_DIR/lib/pkgconfig" \
+        ac_cv_header_fcntl_h=yes \
+        ac_cv_header_unistd_h=yes \
+        ac_cv_header_sys_time_h=yes
+
+dopatch: sed_in_place 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+
+install: |
+    export BUILD_CC="$CC_FOR_BUILD"
+    export BUILD_CFLAGS="$CFLAGS_FOR_BUILD"
+    export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
+    export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
+    unset  BUILD_LIBS
+    unset  TERMINFO
+    configure \
+        --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
+        --with-cxx-shared \
+        --with-shared \
+        --without-ada \
+        --without-tests \
+        --without-debug \
+        --without-valgrind \
+        --enable-const \
+        --enable-widec \
+        --enable-termcap \
+        --enable-warnings \
+        --enable-pc-files \
+        --enable-ext-mouse \
+        --enable-ext-colors \
+        --disable-stripping \
+        --disable-assertions \
+        --disable-gnat-projects \
+        --disable-echo
+
+dotweak: |
+    cd include
+
+    for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
+    do
+        ln -s "ncursesw/$item" "$item"
+    done
+
+    cd -
+    cd lib
+
+    for item in libncurses libpanel libmenu libform
+    do
+        ln -s "${item}w.a"  "${item}.a"
+        ln -s "${item}w.so" "${item}.so"
+    done
+
+    cd -
+    cd lib/pkgconfig
+    ln -s ncursesw.pc ncurses.pc

@@ -149,7 +149,6 @@ case $1 in
     libgif)   printf '%s\n' 'giflib'    ;;
     libzlog)  printf '%s\n' 'zlog'      ;;
     libpopt)  printf '%s\n' 'popt'      ;;
-    libz3.a)  printf '%s\n' 'z3'        ;;
     libmpfr)  printf '%s\n' 'mpfr'      ;;
     libmpir)  printf '%s\n' 'mpir'      ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
@@ -163,6 +162,7 @@ case $1 in
     libcaf)   printf '%s\n' 'caf'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
     libhwy)   printf '%s\n' 'highway'   ;;
+    libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
     png)      printf '%s\n' 'libpng'    ;;

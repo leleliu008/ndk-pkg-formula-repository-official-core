@@ -9,6 +9,6 @@ license: IJG
 dep-upp: nasm
 install: |
     cmakew \
-        -DWITH_JAVA=OFF \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=ON
+        -DENABLE_SHARED=ON \
+        -DWITH_JAVA=OFF
