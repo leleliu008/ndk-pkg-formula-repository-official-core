@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [sjpeg,skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,subfinder,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tarlz,tbox,tcl,tcpdump,tdu,tealdeer,tectonic,tengo,tiff,tig,tlrc]
+        pkg: [skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,subfinder,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tarlz,tbox,tcl,tcpdump,tdu,tealdeer,tectonic,tengo,tiff,tig,tlrc,tmux]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [sjpeg,skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,subfinder,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tarlz,tbox,tcl,tcpdump,tdu,tealdeer,tectonic,tengo,tiff,tig,tlrc]
+        pkg: [skcms,sl,soundtouch,spdlog,speex,sqlite3,starship,stwolame,stylua,subfinder,supervisord,suricata,svn-lite,swig,syncthing,sysinfo,szip,taglib,tarlz,tbox,tcl,tcpdump,tdu,tealdeer,tectonic,tengo,tiff,tig,tlrc,tmux]
 
     runs-on: ${{ matrix.os }}
 

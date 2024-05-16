@@ -138,7 +138,7 @@ do
     BREW_PACKAGE_NMAE="$(./package-name-to-homebrew.sh "$PACKAGE_NAME")"
 
     if brew info "$BREW_PACKAGE_NMAE" > /dev/null 2>&1 ; then
-        BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | yq '.[0].versions.stable')
+        BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | jq -r '.[0].versions.stable')
 
         if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
             case $BREW_PACKAGE_NMAE in

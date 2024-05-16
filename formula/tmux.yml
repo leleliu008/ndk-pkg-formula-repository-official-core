@@ -1,5 +1,6 @@
 summary: Terminal multiplexer
 web-url: https://tmux.github.io
+git-url: https://github.com/tmux/tmux
 src-url: https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
 src-sha: 551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa
 license: ISC
@@ -13,6 +14,7 @@ dopatch: |
 
 install: |
     configure \
+        --with-TERM=screen-256color \
         --enable-utf8proc \
         --disable-static \
         ac_cv_search_forkpty='-lc' \
