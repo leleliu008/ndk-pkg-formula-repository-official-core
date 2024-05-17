@@ -6,7 +6,9 @@ src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
 dep-pkg: libnghttp2 libzstd libz brotli openssl-dev
 dep-upp: perl
+
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+
 install: |
     configure \
         --disable-shared \

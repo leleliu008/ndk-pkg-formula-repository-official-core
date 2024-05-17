@@ -138,16 +138,20 @@ do
     BREW_PACKAGE_NMAE="$(./package-name-to-homebrew.sh "$PACKAGE_NAME")"
 
     if brew info "$BREW_PACKAGE_NMAE" > /dev/null 2>&1 ; then
-        BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | jq -r '.[0].versions.stable')
+        BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | jq -r '.[0].versions.stable' || true)
 
-        if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
-            case $BREW_PACKAGE_NMAE in
-                lib*) X=lib ;;
-                   *) X="$(printf '%.1s' "$BREW_PACKAGE_NMAE")"
-            esac
+        if [ -z "$BREW_PACKAGE_VERS" ] ; then
+            printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
+        else
+            if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
+                case $BREW_PACKAGE_NMAE in
+                    lib*) X=lib ;;
+                       *) X="$(printf '%.1s' "$BREW_PACKAGE_NMAE")"
+                esac
 
-            printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
-            printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n\n" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NMAE.rb"
+                printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
+                printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n\n" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NMAE.rb"
+            fi
         fi
     else
         printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
