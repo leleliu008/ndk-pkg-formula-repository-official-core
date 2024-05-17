@@ -44,3 +44,12 @@ install: |
         --with-openssl="$openssl_dev_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
+
+caveats: |
+    The following environment variables should be set if you move/copy this software to other location
+
+    GIT_INSTALLED_DIR=/somewhere
+
+    export GIT_EXEC_PATH="$GIT_INSTALLED_DIR/libexec/git-core"
+    export GIT_TEMPLATE_DIR="$GIT_INSTALLED_DIR/share/git-core/templates"
+    export GIT_CONFIG_NOSYSTEM=1

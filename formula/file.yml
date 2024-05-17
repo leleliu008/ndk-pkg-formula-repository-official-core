@@ -4,8 +4,18 @@ git-url: https://github.com/file/file
 src-url: https://astron.com/pub/file/file-5.45.tar.gz
 src-sha: fc97f51029bb0e2c9f4e3bffefdaf678f0e039ee872b9de5c002a6d09c784d82
 license: BSD-2-Clause
+
 dep-pkg: libz
 
 do12345: configure --disable-zlib --disable-bzlib --disable-xzlib
+
 prepare: export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
+
 install: configure --enable-zlib --disable-bzlib --disable-xzlib
+
+caveats: |
+    The following environment variables should be set if you move/copy this software to other location
+
+    FILE_INSTALLED_DIR=/somewhere
+
+    export MAGIC="$FILE_INSTALLED_DIR/share/misc/magic.mgc"

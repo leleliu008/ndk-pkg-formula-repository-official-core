@@ -20,5 +20,12 @@ install: |
         ac_cv_search_forkpty='-lc' \
         ac_cv_search_utf8proc_charwidth='-lutf8proc'
 
+caveats: |
+    To get it working on Termux, you might need to run the following instructions
+
+    export TMUX_TMPDIR="$HOME/tmux-tmp-dir"
+    install -d "$TMUX_TMPDIR"
+    ln -s ~/../usr/lib/terminfo ~/.terminfo
+
 # pty.h: int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
 api-min: 23
