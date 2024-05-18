@@ -13,4 +13,4 @@ prepare: |
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
     export LIBZ_SYS_STATIC=1
 
-install: cargow install --no-default-features --path cli --bin jj
+install: cargow install --locked --no-default-features --path cli --bin jj
