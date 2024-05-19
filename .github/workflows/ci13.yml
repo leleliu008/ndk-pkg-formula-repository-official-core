@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [navi,ncdu,ndk-pkg-core,neofetch,netcat,nethogs,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch]
+        pkg: [nasm,navi,ncdu,ndk-pkg-core,neofetch,netcat,nethogs,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [navi,ncdu,ndk-pkg-core,neofetch,netcat,nethogs,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch]
+        pkg: [nasm,navi,ncdu,ndk-pkg-core,neofetch,netcat,nethogs,netpbm,nghttp2,nginx,ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc]
 
     runs-on: ${{ matrix.os }}
 

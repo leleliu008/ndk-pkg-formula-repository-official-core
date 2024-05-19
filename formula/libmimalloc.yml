@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Compact general purpose allocator
 git-url: https://github.com/microsoft/mimalloc
-src-url: https://github.com/microsoft/mimalloc/archive/refs/tags/v2.1.2.tar.gz
-src-sha: 2b1bff6f717f9725c70bf8d79e4786da13de8a270059e4ba0bdd262ae7be46eb
+src-url: https://github.com/microsoft/mimalloc/archive/refs/tags/v2.1.6.tar.gz
+src-sha: 0ec960b656f8623de35012edacb988f8edcc4c90d2ce6c19f1d290fbb4872ccc
 license: MIT
 install: |
     cmakew \

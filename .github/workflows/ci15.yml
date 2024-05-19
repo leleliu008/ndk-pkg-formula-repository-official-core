@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [quickjs,ragel,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg]
+        pkg: [qrencode,quickjs,ragel,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [quickjs,ragel,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson,sjpeg]
+        pkg: [qrencode,quickjs,ragel,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,simdjson]
 
     runs-on: ${{ matrix.os }}
 

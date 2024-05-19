@@ -59,6 +59,8 @@ case $1 in
               printf '%s\n' 'flatbuffers' ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
+    libmimalloc)
+              printf '%s\n' 'mimalloc'  ;;
     libfontconfig)
               printf '%s\n' 'fontconfig';;
     libtesseract)
@@ -103,6 +105,8 @@ case $1 in
               printf '%s\n' 'exhale'    ;;
     libpixman)
               printf '%s\n' 'pixman'    ;;
+    libjasper)
+              printf '%s\n' 'jasper'    ;;
     libsnappy)
               printf '%s\n' 'snappy'    ;;
     libcrc32c)
@@ -113,6 +117,8 @@ case $1 in
               printf '%s\n' 'xxhash'    ;;
     libxapian)
               printf '%s\n' 'xapian'    ;;
+    libnetpbm)
+              printf '%s\n' 'netpbm'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;

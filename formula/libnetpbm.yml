@@ -1,9 +1,8 @@
-summary: A toolkit for manipulation of graphic images, including conversion of images between a variety of different formats
+summary: A C library for manipulating Netpbm images
 web-url: http://netpbm.sourceforge.net/
 src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.41/netpbm-10.86.41.tgz
 src-sha: 045f7796224a801512efb5e7d6150a321674cbfb566128b21abf8d4ba65b4513
 license: GPL-3.0-or-later
-dep-pkg: libjasper libtiff libpng libjpeg-turbo libxml2
 dep-upp: gm4 flex perl
 parallel: 0
 
@@ -19,18 +18,14 @@ dopatch: |
 
 install: |
     gmakew clean
-    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$libjasper_INCLUDE_DIR/jasper"
-    gmakew package pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so
+    gmakew lib/util/all CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" STATICLIB_TOO=Y
+    gmakew -C lib libnetpbm libnetpbm.a  STATICLIB_TOO=Y CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'"
+    gmakew install-dev pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so STATICLIB_TOO=Y
 
 dotweak: |
     run mv staticlink/libnetpbm.a lib/
     run rm -rf staticlink
     run rm -rf sharedlink
-    run rm pkgconfig_template
-    run rm config_template
-    run rm README
-    run rm VERSION
-    run rm pkginfo
 
     run install -d lib/pkgconfig
 
@@ -41,7 +36,7 @@ dotweak: |
     includedir=\${prefix}/include
 
     Name: Netpbm
-    Description: A toolkit for manipulation of graphic images
+    Description: $PACKAGE_SUMMARY
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
     Libs: -L\${libdir} -lnetpbm
