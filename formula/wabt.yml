@@ -1,6 +1,6 @@
 summary: Web Assembly Binary Toolkit
 git-url: https://github.com/WebAssembly/wabt
-src-url: https://github.com/WebAssembly/wabt/releases/download/1.0.34/wabt-1.0.34.tar.xz
-src-sha: ec080d7e0f103c0a8e84f9c4f09340be77b89439b04c72b0f78f18991cd44359
+src-url: https://github.com/WebAssembly/wabt/releases/download/1.0.35/wabt-1.0.35.tar.xz
+src-sha: 87210f895044137c01a588e9f5b4d1b0ed143c8c666440d387a0b7d2c5eff012
 license: Apache-2.0
 install: cmakew -DBUILD_TESTS=OFF

@@ -1,4 +1,4 @@
-pkgtype: lib
+pkgtype: exe+lib
 summary: Free lossless audio codec
 web-url: https://xiph.org/flac/
 git-url: https://github.com/xiph/flac

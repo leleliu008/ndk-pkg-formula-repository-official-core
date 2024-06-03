@@ -5,7 +5,7 @@ src-url: https://github.com/termux/proot/archive/8f67d6c7fadb445b7a528020d05e72d
 src-sha: 6570eae1752e7f19abf1417de8ccb0329a8c0ed63b1e7a70ef5d07a945af1dd5
 version: 5.1.107
 license: GPL-2.0-or-later
-dep-pkg: talloc
+dep-pkg: libtalloc
 dep-upp: patch
 bscript: src
 api-min: 23
@@ -16,5 +16,5 @@ dopatch: |
 
 install: |
     gmakew clean
-    gmakew V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS $talloc_LIBRARY_DIR/libtalloc.a'"
+    gmakew V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS $libtalloc_LIBRARY_DIR/libtalloc.a'"
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR DESTDIR=

@@ -1,8 +1,8 @@
 summary: New way to see and navigate directory trees
 web-url: https://dystroy.org/broot/
 git-url: https://github.com/Canop/broot
-src-url: https://github.com/Canop/broot/archive/refs/tags/v1.38.0.tar.gz
-src-sha: 1805d8acbf5b31124370a19c1f855a50c7fb929359ef689d9b68957bd95aa000
+src-url: https://github.com/Canop/broot/archive/refs/tags/v1.39.0.tar.gz
+src-sha: d1d2ccc11543ff4ea645d57a5e78639542a6f510b585a78c31ddb3a24399bf61
 license: MIT
 dep-pkg: libgetloadavg libgit2
 install: cargow install --locked
@@ -15,6 +15,3 @@ dopatch: |
     done
 
     sed_in_place '/trash/d' Cargo.toml
-
-fix-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/broot/disable-trash.patch
-fix-sha: e9d5acd2e7bfbe4c036c54bd24609aa8edaa40c9d00247fa7989742a06afb509

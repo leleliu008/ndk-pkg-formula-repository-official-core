@@ -1,7 +1,7 @@
 summary: A file server that supports static serving, uploading, searching, accessing control, webdav...
 git-url: https://github.com/sigoden/dufs
-src-url: https://github.com/sigoden/dufs/archive/refs/tags/v0.40.0.tar.gz
-src-sha: da4b64add0df9fca1e38e416a8c265b57dc66e02d6256d1b34db12f9b5d7a962
+src-url: https://github.com/sigoden/dufs/archive/refs/tags/v0.41.0.tar.gz
+src-sha: 8c0549678a4954a498e0f1f99fe4beec2acd3cb0084fc611cf20431313b05033
 license: MIT
 bsystem: cargo
 

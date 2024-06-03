@@ -43,6 +43,7 @@ case $1 in
               printf '%s\n' 'gettext'   ;;
     libasprintf)
               printf '%s\n' 'gettext'   ;;
+    libintl)  printf '%s\n' 'gettext'   ;;
     gettext-dev)
               printf '%s\n' 'gettext'   ;;
     openssl-dev)
@@ -99,6 +100,8 @@ case $1 in
               printf '%s\n' 'cpuinfo'   ;;
     libhiredis)
               printf '%s\n' 'hiredis'   ;;
+    libcfitsio)
+              printf '%s\n' 'cfitsio'   ;;
     libtheora)
               printf '%s\n' 'theora'    ;;
     libexhale)
@@ -119,6 +122,12 @@ case $1 in
               printf '%s\n' 'xapian'    ;;
     libnetpbm)
               printf '%s\n' 'netpbm'    ;;
+    libfreexl)
+              printf '%s\n' 'freexl'    ;;
+    libphysfs)
+              printf '%s\n' 'physfs'    ;;
+    libtalloc)
+              printf '%s\n' 'talloc'    ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -128,6 +137,7 @@ case $1 in
     libfftw3) printf '%s\n' 'fftw'      ;;
     libeigen) printf '%s\n' 'eigen'     ;;
     libcares) printf '%s\n' 'c-ares'    ;;
+    libfolly) printf '%s\n' 'folly'     ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
@@ -139,8 +149,11 @@ case $1 in
     libexpat) printf '%s\n' 'expat'     ;;
     libmhash) printf '%s\n' 'mhash'     ;;
     liblcms2) printf '%s\n' 'little-cms2' ;;
+    libsdl2)  printf '%s\n' 'sdl2'      ;;
+    libmujs)  printf '%s\n' 'mujs'      ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
+    libldns)  printf '%s\n' 'ldns'      ;;
     liblmdb)  printf '%s\n' 'lmdb'      ;;
     libgdbm)  printf '%s\n' 'gdbm'      ;;
     libwebp)  printf '%s\n' 'webp'      ;;
@@ -154,6 +167,7 @@ case $1 in
     libcgif)  printf '%s\n' 'cgif'      ;;
     libgif)   printf '%s\n' 'giflib'    ;;
     libzlog)  printf '%s\n' 'zlog'      ;;
+    libzimg)  printf '%s\n' 'zimg'      ;;
     libpopt)  printf '%s\n' 'popt'      ;;
     libmpfr)  printf '%s\n' 'mpfr'      ;;
     libmpir)  printf '%s\n' 'mpir'      ;;
@@ -168,6 +182,8 @@ case $1 in
     libcaf)   printf '%s\n' 'caf'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
     libhwy)   printf '%s\n' 'highway'   ;;
+    libtbb)   printf '%s\n' 'tbb'       ;;
+    libsrt)   printf '%s\n' 'srt'       ;;
     libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;
 

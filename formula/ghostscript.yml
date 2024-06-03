@@ -68,7 +68,7 @@ prepare: |
 
     printf 'INPUT(%s -lc++_shared)\n' "$HARFBUZZ_LIBS" > ../lib/libpthread.a
 
-    run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config" || return 1
+    run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config"
 
     export PATH="$PWD:$PATH"
 
