@@ -1,8 +1,8 @@
 summary: A command-line tool that allows you to perform DNS lookups from the command line
 git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se
-src-url: https://c-ares.haxx.se/download/c-ares-1.28.1.tar.gz
-src-sha: 675a69fc54ddbf42e6830bc671eeb6cd89eeca43828eb413243fd2c0a760809d
+src-url: https://c-ares.haxx.se/download/c-ares-1.29.0.tar.gz
+src-sha: 0b89fa425b825c4c7bc708494f374ae69340e4d1fdc64523bdbb2750bfc02ea7
 
 install: |
     cmakew \

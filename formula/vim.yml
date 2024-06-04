@@ -4,7 +4,7 @@ git-url: https://github.com/vim/vim
 src-url: https://github.com/vim/vim/archive/refs/tags/v9.1.0400.tar.gz
 src-sha: 99cf952936aab2493f287c93aff2b0efadf903bdc8bd76d5010ac33bce854975
 license: Vim
-dep-pkg: gettext-dev python3 lua
+dep-pkg: ncurses libintl python3 lua
 binbstd: 1
 
 dopatch: |

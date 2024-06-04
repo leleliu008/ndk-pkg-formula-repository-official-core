@@ -4,12 +4,11 @@ git-url: https://github.com/git/git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.45.0.tar.xz
 src-sha: 0aac200bd06476e7df1ff026eb123c6827bc10fe69d2823b4bf2ebebe5953429
 license: GPL-2.0-only
-dep-pkg: gettext-dev libexpat libcurl libpcre2 libz
-dep-upp: gettext-tools patch
-bsystem: configure
+dep-pkg: libpcre2 libiconv libexpat libcurl libz
+dep-upp: patch
 binbstd: 1
 
-install: |
+dopatch: |
     printf '%s' '
     LS0tIHJ1bi1jb21tYW5kLmMJMjAyMy0wNi0wMSAxNTowMzowNS4wMDAwMDAwMDAgKzA4MDAKKysr
     IHJ1bi1jb21tYW5kLmNoYW5nZWQJMjAyMy0wNy0yMSAwMToxMToxNy41MjcxNDY0NzcgKzA4MDAK
@@ -23,19 +22,30 @@ install: |
     ZWxsYXRpb24iKTsKIAlDSEVDS19CVUcocHRocmVhZF9zaWdtYXNrKFNJR19TRVRNQVNLLCAmYXMt
     Pm9sZCwgTlVMTCksCiAJCSJyZXN0b3Jpbmcgc2lnbmFsIG1hc2siKTsKICNlbmRpZgo=' | base64 -d | patch -p0
 
+    sed_in_place '/uname_S := /c uname_S := Linux' config.mak.uname
+    sed_in_place "/uname_N := /c uname_M := $TARGET_PLATFORM_ARCH" config.mak.uname
+
+prepare: |
     # to bypass git error: cannot run test program while cross compiling
     export ac_cv_fread_reads_directories=yes
-    export ac_cv_header_libintl_h=yes
+    export ac_cv_header_libintl_h=no
     export ac_cv_iconv_omits_bom=no
     export ac_cv_snprintf_returns_bogus=no
 
     export ac_cv_lib_curl_curl_global_init=yes
+
+    export ac_cv_prog_CURL_CONFIG="$libcurl_INSTALL_DIR/bin/curl-config"
 
     LIBCURL_LIBS="$(pkg-config --libs libcurl)"
     printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
 
     export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
 
+    export NO_NSEC=1
+    export NO_GETTEXT=1
+    export NO_INSTALL_HARDLINKS=1
+
+install: |
     configure \
         --with-zlib="$libz_INSTALL_DIR" \
         --with-curl="$libcurl_INSTALL_DIR" \

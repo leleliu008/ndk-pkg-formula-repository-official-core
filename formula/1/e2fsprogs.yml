@@ -4,12 +4,11 @@ git-url: https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
 src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.gz
 src-sha: 5f64ac50a2b60b8e67c5b382bb137dec39344017103caffc3a61554424f2d693
 license: GPL-2.0-or-later
-dep-upp: pkg-config
-dep-pkg: gettext-dev libiconv
+dep-pkg: libintl
 
 # mntent.h: char* hasmntopt(const struct mntent* __entry, const char* __option) __INTRODUCED_IN(26);
 
 install: |
     configure \
-        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
-        --with-libintl-prefix="$gettext_dev_INSTALL_DIR"
+        --with-libintl-prefix="$libintl_INSTALL_DIR" \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR"

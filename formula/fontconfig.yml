@@ -5,12 +5,12 @@ git-url: https://gitlab.freedesktop.org/fontconfig/fontconfig
 src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz
 src-sha: 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
 license: MIT
-dep-pkg: gettext-dev json-c libfreetype libexpat libuuid
+dep-pkg: json-c libfreetype libexpat libuuid libintl
 dep-upp: gettext-tools python3 gperf
 install: |
     configure \
         --enable-iconv \
         --disable-docs \
         --with-expat="$libexpat_INSTALL_DIR" \
-        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
-        --with-libintl-prefix="$gettext_dev_INSTALL_DIR"
+        --with-libintl-prefix="$libintl_INSTALL_DIR" \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR"
