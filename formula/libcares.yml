@@ -1,8 +1,8 @@
 summary: Asynchronous DNS library
+web-url: https://c-ares.org/
 git-url: https://github.com/c-ares/c-ares
-web-url: https://c-ares.haxx.se
-src-url: https://c-ares.haxx.se/download/c-ares-1.28.1.tar.gz
-src-sha: 675a69fc54ddbf42e6830bc671eeb6cd89eeca43828eb413243fd2c0a760809d
+src-url: https://github.com/c-ares/c-ares/archive/refs/tags/v1.30.0.tar.gz
+src-sha: 2f631573fb6ca91e1dfcafa8b43a24cf6fd6174b0c492220c6d2e72a45001ebe
 
 install: |
     cmakew \

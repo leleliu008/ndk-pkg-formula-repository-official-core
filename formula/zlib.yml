@@ -5,6 +5,7 @@ src-url: https://zlib.net/fossils/zlib-1.3.1.tar.gz
 src-sha: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
 license: Zlib
 bsystem: cmake
+
 dopatch: |
     sed_in_place 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
     sed_in_place 's|zlib)|zlibstatic)|' CMakeLists.txt
