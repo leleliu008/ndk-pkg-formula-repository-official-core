@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow10
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [libmetalink,libmhash,libmill,libmimalloc,libminiz,libmpc,libmpir,libnetpbm,libnng,libobstack,libopenh264,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqrencode,libquiche,libraqm,librasterlite,libraw,libre,libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [libmetalink,libmhash,libmill,libmimalloc,libminiz,libmpc,libmpir,libnetpbm,libnng,libobstack,libopenh264,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqrencode,libquiche,libraqm,librasterlite,libraw,libre,libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi]
 
     runs-on: ${{ matrix.os }}
 
