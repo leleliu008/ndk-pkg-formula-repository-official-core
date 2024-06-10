@@ -16,12 +16,10 @@ version: 3.0.11
 license: Info-ZIP
 dep-pkg: libbz2
 
-    #ccflags: -Wno-implicit-function-declaration
-
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
     do  
-        patch -p1 < ../fix/patches/$patchfile || return 1
+        patch -p1 < ../fix/patches/$patchfile
     done
 
     patch -p1 < ../res/99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c.diff
@@ -34,7 +32,6 @@ install: |
     gmakew -f unix/Makefile generic \
         CC="$CC" \
         CPP="'$CPP'" \
-        AS="$AS" \
         AR="$AR" \
         LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
         LFLAGS2="'$LDFLAGS'"
