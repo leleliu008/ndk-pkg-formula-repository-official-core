@@ -6,5 +6,12 @@ src-sha: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
 license: GPL-2.0-or-later
 dep-pkg: gnutls libcares libxml2 libz
 ldflags: -liconv
+
 prepare: printf 'INPUT(-lc++_static -lc++abi)\n' > ../lib/libc++.a
+
 install: configure --disable-libaria2 --enable-static --disable-shared LIBS=-ldl
+
+caveats: |
+    If aria2c is a fully statically linked executable, to get it working on Android 8 and later, you need to run aria2c like below
+
+    aria2c --async-dns=true --async-dns-server=8.8.8.8 https://example.com

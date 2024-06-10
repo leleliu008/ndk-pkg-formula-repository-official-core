@@ -7,7 +7,7 @@ license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
 
 install: |
-    export LDFLAGS="$LDFLAGS -L$PWD/gettext-tools/gnulib-lib/.libs/"
+    export am_cv_func_iconv_works=yes
     configure \
         --with-included-regex \
         --with-included-libxml \

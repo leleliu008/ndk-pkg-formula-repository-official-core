@@ -4,7 +4,7 @@ web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.8.0.tar.bz2
 src-sha: 40d3792d38cfa244d8f692974a567e9a5f3387c547579f1124e95ea2a1020d0d
 license: curl
-dep-pkg: libnghttp2 libzstd libz brotli openssl-dev
+dep-pkg: libnghttp2 libcares libzstd libz brotli openssl-dev
 dep-upp: perl
 
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
@@ -15,6 +15,7 @@ install: |
         --enable-static \
         --enable-optimize \
         --enable-pthreads \
+        --enable-ares \
         --with-default-ssl-backend=openssl \
         --with-ssl="$openssl_dev_INSTALL_DIR" \
         --with-nghttp2 \
@@ -24,3 +25,15 @@ install: |
         --without-libpsl \
         --without-librtmp \
         --without-libidn2
+
+dotweak: |
+    rm -rf include
+    rm -rf lib
+    rm -rf bin/curl-config
+    rm -rf share/aclocal
+    rm -rf share/man/man3
+
+caveats: |
+    If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers=<DNS-SERVERS> argument to curl like below
+
+    curl --dns-servers=8.8.8.8 https://example.com

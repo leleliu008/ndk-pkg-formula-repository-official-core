@@ -3,7 +3,7 @@ git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz
 src-sha: fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de
-dep-pkg: openssl-dev libz libidn2
+dep-pkg: openssl-dev libcares libidn2 libz
 license: GPL-3.0-or-later
 
 dopatch: |
@@ -16,5 +16,11 @@ install: |
         --disable-pcre2 \
         --enable-threads=posix \
         --with-ssl=openssl \
+        --with-cares \
         --with-libidn \
         --without-libpsl
+
+caveats: |
+    If wget is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers=<DNS-SERVERS> argument to curl like below
+
+    wget --dns-servers=8.8.8.8 https://example.com
