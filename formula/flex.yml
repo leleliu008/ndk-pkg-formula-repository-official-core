@@ -5,6 +5,6 @@ src-sha: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
 license: BSD-2-Clause
 dep-upp: gm4
 
-dopatch: sed_in_place '1i \#include<malloc.h>' src/misc.c
+dopatch: sed_in_place '1i \#include<stdlib.h>' src/misc.c
 
 install: configure --enable-warnings LIBS=-lm
