@@ -9,8 +9,8 @@ dopatch: |
     sed_in_place 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
 
 install: |
-    gmakew clean
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" AR="$AR" CFLAGS="'$CFLAGS'"
+    gmakew clean   UNAME=Linux
+    gmakew install UNAME=Linux PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" AR="$AR" CFLAGS="'$CFLAGS'"
 
 developer: |
     Gershon Elber <gershon@cs.technion.sc.il>

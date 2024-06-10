@@ -187,6 +187,7 @@ case $1 in
     libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
+    gif)      printf '%s\n' 'giflib'    ;;
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
     adig)     printf '%s\n' 'c-ares'    ;;
