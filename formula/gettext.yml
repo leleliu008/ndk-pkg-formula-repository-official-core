@@ -11,6 +11,7 @@ dopatch: |
     sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
+    export am_cv_func_iconv_works=yes
     configure \
         --with-included-regex \
         --with-included-libxml \
