@@ -1,11 +1,11 @@
 summary: A new type of shell
 web-url: https://www.nushell.sh
 git-url: https://github.com/nushell/nushell
-src-url: https://github.com/nushell/nushell/archive/refs/tags/0.93.0.tar.gz
-src-sha: 00dcd5ab112d8afd683aa0b87b65b2e47a45487857a6d2481ce7eeb0045c2c00
+src-url: https://github.com/nushell/nushell/archive/refs/tags/0.94.2.tar.gz
+src-sha: 19b8ccb30f63da7eadbc8d9afa69318d9cbbb40bc162558604a24b8773ccd04a
 dep-pkg: libz openssl-dev
 license: MIT
-install: cargow install --no-default-features --features=dataframe
+install: cargow install --no-default-features --features=default-no-clipboard
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
