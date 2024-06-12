@@ -7,6 +7,7 @@ license: LGPL-2.0-or-later
 dopatch: |
     sed_in_place '/lame_init_old/d' include/libmp3lame.sym
     sed_in_place 's|-mtune=native||g' configure
+
 install: |
     configure \
         --without-dmalloc \

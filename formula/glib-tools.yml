@@ -2,7 +2,6 @@ summary: A collection of tools for glib
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.80/glib-2.80.2.tar.xz
-src-uri: https://distfiles.macports.org/glib2/glib-2.80.2.tar.xz
 src-sha: b9cfb6f7a5bd5b31238fd5d56df226b2dda5ea37611475bf89f6a0f9400fe8bd
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
