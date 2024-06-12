@@ -12,6 +12,7 @@ binbstd: 1
 # double complex clog(double complex __z) __INTRODUCED_IN(26);
 api-min: 26
 
+# https://mruby.org/docs/api/file.compile.html
 dopatch: |
     cat > build_config/android.rb <<EOF
     MRuby::CrossBuild.new('android') do |conf|
@@ -26,6 +27,7 @@ dopatch: |
       conf.cc.flags << ENV['CFLAGS_FOR_TARGET'] || ''
       conf.linker.command = conf.cc.command
       conf.linker.flags << ENV['LDFLAGS_FOR_TARGET'] || ''
+      conf.archiver.command = ENV['AR_FOR_TARGET']
 
       conf.gembox 'default'
     end
@@ -85,6 +87,7 @@ dopatch: |
     patch -p1 < patch.diff
 
 install: |
+    export      AR_FOR_TARGET="$AR"
     export      CC_FOR_TARGET="$CC"
     export  CFLAGS_FOR_TARGET="$CPPFLAGS $CFLAGS -DMRB_USE_READLINE -DMRB_READLINE_HEADER=\\<readline/readline.h\\> -DMRB_READLINE_HISTORY=\\<readline/history.h\\>"
     export LDFLAGS_FOR_TARGET="$LDFLAGS -lncurses -lreadline"

@@ -9,6 +9,7 @@ dep-upp: bison patch
 bsystem: rake
 binbstd: 1
 
+# https://mruby.org/docs/api/file.compile.html
 dopatch: |
     cat > build_config/android.rb <<EOF
     MRuby::CrossBuild.new('android') do |conf|
@@ -23,6 +24,7 @@ dopatch: |
       conf.cc.flags << ENV['CFLAGS_FOR_TARGET'] || ''
       conf.linker.command = conf.cc.command
       conf.linker.flags << ENV['LDFLAGS_FOR_TARGET'] || ''
+      conf.archiver.command = ENV['AR_FOR_TARGET']
 
       conf.gembox 'default'
     end
@@ -106,6 +108,7 @@ dopatch: |
     patch -p1 < patch.patch
 
 install: |
+    export      AR_FOR_TARGET="$AR"
     export      CC_FOR_TARGET="$CC"
     export  CFLAGS_FOR_TARGET="$CPPFLAGS $CFLAGS -DMRB_USE_READLINE"
     export LDFLAGS_FOR_TARGET="$LDFLAGS -lncurses -lreadline"
