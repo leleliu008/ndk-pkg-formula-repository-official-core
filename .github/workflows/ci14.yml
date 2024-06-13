@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow14
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proot2,protobuf,psimd,pup,putty,pybind11,q,qpdf]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pget,pigz,pjsip,pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,poco,ppkg,procs,progress,proot2,protobuf,psimd,pup,putty,pybind11,q,qpdf]
 
     runs-on: ${{ matrix.os }}
 

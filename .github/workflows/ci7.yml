@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow7
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gzip,halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,invoice,isl,iw,ixwebsocket]
 
     runs-on: ubuntu-latest
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [PKGLIST]
+        pkg: [graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gzip,halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,invoice,isl,iw,ixwebsocket]
 
     runs-on: ${{ matrix.os }}
 
