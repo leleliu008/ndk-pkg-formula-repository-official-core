@@ -12,7 +12,7 @@ binbstd: 1
 # double complex clog(double complex __z) __INTRODUCED_IN(26);
 api-min: 26
 
-# https://mruby.org/docs/api/file.compile.html
+# https://github.com/mruby/mruby/blob/master/doc/guides/compile.md
 dopatch: |
     cat > build_config/android.rb <<EOF
     MRuby::CrossBuild.new('android') do |conf|

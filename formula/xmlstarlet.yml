@@ -1,0 +1,17 @@
+summary: A set of command line tools to transform, query, validate, and edit XML documents and files
+web-url: https://xmlstar.sourceforge.net/
+src-url: https://downloads.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
+src-sha: 15d838c4f3375332fd95554619179b69e4ec91418a3a5296e7c631b7ed19e7ca
+license: MIT
+dep-pkg: libxslt
+binbstd: 1
+
+dopatch: |
+    sed_in_place 's|xmlErrorPtr error|const xmlError * error|' src/xmlstar.h
+    sed_in_place 's|xmlErrorPtr error|const xmlError * error|' src/xml.c
+    sed_in_place 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
+    sed_in_place 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
+
+install: configure --with-libxml-include-prefix="$libxml2_INCLUDE_DIR/libxml2" LIBS="'$(pkg-config --libs libxml-2.0)'"
+
+dotweak: cd bin && ln -s xml xmlstarlet

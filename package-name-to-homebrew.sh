@@ -84,6 +84,8 @@ case $1 in
               printf '%s\n' 'openh264'  ;;
     libtinyxml2)
               printf '%s\n' 'tinyxml2'  ;;
+    libtinyalsa)
+              printf '%s\n' 'tinyalsa'  ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
