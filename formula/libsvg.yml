@@ -1,0 +1,9 @@
+summary: Library for SVG files
+web-url: https://cairographics.org/
+src-url: https://cairographics.org/snapshots/libsvg-0.1.4.tar.gz
+src-sha: 4c3bf9292e676a72b12338691be64d0f38cd7f2ea5e8b67fbbf45f1ed404bc8f
+license: LGPL-2.1-or-later
+dep-pkg: libjpeg-turbo libpng libxml2
+bsystem: configure
+ppflags: -include stdlib.h
+dopatch: sed_in_place 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' src/svg_image.c
