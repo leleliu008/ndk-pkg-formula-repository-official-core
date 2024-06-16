@@ -14,15 +14,15 @@ ccflags: -Wno-implicit-function-declaration
 api-min: 26
 
 dopatch: |
-    sed_in_place 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c
-    sed_in_place 's/#define HAS_SHMAT/#define YYYYYYYYY/' opal/mca/memory/patcher/memory_patcher_component.c
-    sed_in_place 's/HAS_SHMDT/(defined(SYS_shmdt) || (defined(IPCOP_shmdt) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
-    sed_in_place 's/HAS_SHMAT/(defined(SYS_shmat) || (defined(IPCOP_shmat) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
-    sed_in_place '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h
-    sed_in_place 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c
-    sed_in_place 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c
-    sed_in_place 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c
-    sed_in_place '1i static int getdtablesize(void);' orte/mca/state/base/state_base_fns.c
+    sedInPlace 's/#define HAS_SHMDT/#define XXXXXXXXX/' opal/mca/memory/patcher/memory_patcher_component.c
+    sedInPlace 's/#define HAS_SHMAT/#define YYYYYYYYY/' opal/mca/memory/patcher/memory_patcher_component.c
+    sedInPlace 's/HAS_SHMDT/(defined(SYS_shmdt) || (defined(IPCOP_shmdt) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
+    sedInPlace 's/HAS_SHMAT/(defined(SYS_shmat) || (defined(IPCOP_shmat) \&\& defined(SYS_ipc)))/' opal/mca/memory/patcher/memory_patcher_component.c
+    sedInPlace '/#include <stdlib.h>/a #include "../include/opal_config.h"' opal/util/malloc.h
+    sedInPlace 's/rindex(/strrchr(/g' orte/mca/plm/rsh/plm_rsh_module.c
+    sedInPlace 's/rindex(/strrchr(/g' oshmem/mca/memheap/base/memheap_base_static.c
+    sedInPlace 's/bcmp(/memcmp(/g'    ompi/mca/topo/treematch/treematch/tm_malloc.c
+    sedInPlace '1i static int getdtablesize(void);' orte/mca/state/base/state_base_fns.c
     cat >> orte/mca/state/base/state_base_fns.c <<EOF
     #include <sys/cdefs.h>
     #include <sys/resource.h>

@@ -9,7 +9,7 @@ dep-pkg: libnghttp2 openssl-dev json-c libxml2 libidn2 libuv libglob
 dopatch: |
     for MAKEFILE_AM in $(find lib -name "Makefile.in")
     do
-        sed_in_place 's|-release "$(PACKAGE_VERSION)"||' "$MAKEFILE_AM"
+        sedInPlace 's|-release "$(PACKAGE_VERSION)"||' "$MAKEFILE_AM"
     done
 
 install: |

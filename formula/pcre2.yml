@@ -7,7 +7,7 @@ license: BSD-3-Clause
 dep-pkg: libz libbz2 readline
 
 dopatch: |
-    sed_in_place 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
+    sedInPlace 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
 
 install: |
     cmakew \

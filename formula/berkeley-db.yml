@@ -7,7 +7,7 @@ license: BSD-3-Clause
 dep-pkg: openssl-dev
 bscript: dist
 
-dopatch: sed_in_place 's| install_docs||' Makefile.in
+dopatch: sedInPlace 's| install_docs||' Makefile.in
 install: |
     configure \
         --enable-cxx=no \

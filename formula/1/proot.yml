@@ -14,7 +14,7 @@ api-min: 23
 dopatch: |
     cd src &&
     printf "LS0tIEdOVW1ha2VmaWxlLmJhawkyMDIxLTA3LTAyIDIyOjQ0OjUwLjAwMDAwMDAwMCArMDgwMAorKysgR05VbWFrZWZpbGUJMjAyMS0wNy0wMiAyMzowMDozNy4wMDAwMDAwMDAgKzA4MDAKQEAgLTE5LDExICsxOSwxMCBAQAogUFlUSE9OX01BSk9SX1ZFUlNJT04gPSAkKHNoZWxsICR7UFlUSE9OfSAtYyAiaW1wb3J0IHN5czsgcHJpbnQoc3lzLnZlcnNpb25faW5mby5tYWpvcikiIDI+L2Rldi9udWxsKQogSEFTX1BZVEhPTl9DT05GSUcgOj0gJChzaGVsbCAke1BZVEhPTn0tY29uZmlnIC0tbGRmbGFncyAyPi9kZXYvbnVsbCkKIAotQ1BQRkxBR1MgKz0gLURfRklMRV9PRkZTRVRfQklUUz02NCAtRF9HTlVfU09VUkNFIC1JLiAtSSQoVlBBVEgpCi1DRkxBR1MgICArPSAtZyAtV2FsbCAtV2V4dHJhIC1PMgotQ0ZMQUdTICAgKz0gJChzaGVsbCBwa2ctY29uZmlnIC0tY2ZsYWdzIHRhbGxvYyBsaWJhcmNoaXZlKQotTERGTEFHUyAgKz0gLVdsLC16LG5vZXhlY3N0YWNrCi1MREZMQUdTICArPSAkKHNoZWxsIHBrZy1jb25maWcgLS1saWJzIHRhbGxvYyBsaWJhcmNoaXZlKQorb3ZlcnJpZGUgQ1BQRkxBR1MgKz0gLURfRklMRV9PRkZTRVRfQklUUz02NCAtRF9HTlVfU09VUkNFIC1JLiAtSSQoVlBBVEgpCitvdmVycmlkZSBDRkxBR1MgICArPSAtV2FsbCAtV2V4dHJhCitvdmVycmlkZSBDRkxBR1MgICArPSAkKHNoZWxsIHBrZy1jb25maWcgLS1jZmxhZ3MgdGFsbG9jIGxpYmFyY2hpdmUpCitvdmVycmlkZSBMREZMQUdTICArPSAkKHNoZWxsIHBrZy1jb25maWcgLS1saWJzICAgdGFsbG9jIGxpYmFyY2hpdmUpCiAKIENBUkVfTERGTEFHUyA9IC1sYXJjaGl2ZQogCkBAIC0xODQsNyArMTgzLDYgQEAKICMgU3BlY2lhbCBjYXNlIHRvIGNvbXB1dGUgd2hpY2ggZmlsZXMgZGVwZW5kIG9uIHRoZSBhdXRvLWdlbmVyYXRlZAogIyBmaWxlICJidWlsZC5oIi4KIFVTRV9CVUlMRF9IIDo9ICQocGF0c3Vic3QgJChTUkMpJS5jLCUubywkKHNoZWxsIGVncmVwIC1zbCAnaW5jbHVkZVtbOnNwYWNlOl1dKyJidWlsZC5oIicgJChwYXRzdWJzdCAlLm8sJChTUkMpJS5jLCQoT0JKRUNUUykgJChDQVJFX09CSkVDVFMpKSkpCi0kKFVTRV9CVUlMRF9IKTogYnVpbGQuaAogCiAlLm86ICUuYwogCUBta2RpciAtcCAkKGRpciAkQCkKQEAgLTI0Niw3ICsyNDQsNyBAQAogJChldmFsICQoY2FsbCBkZWZpbmVfZnJvbV9hcmNoLmgsJDEsTE9BREVSX0FERFJFU1MpKQogCiBMT0FERVJfQ0ZMQUdTJDEgICs9IC1mUElDIC1mZnJlZXN0YW5kaW5nICQoTE9BREVSX0FSQ0hfQ0ZMQUdTJDEpCi1MT0FERVJfTERGTEFHUyQxICs9IC1zdGF0aWMgLW5vc3RkbGliIC1XbCQoQlVJTERfSURfTk9ORSksLVR0ZXh0PSQoTE9BREVSX0FERFJFU1MkMSksLXosbm9leGVjc3RhY2sKK0xPQURFUl9MREZMQUdTJDEgKz0gLXN0YXRpYyAtbm9zdGRsaWIKIAogbG9hZGVyL2xvYWRlciQxLm86IGxvYWRlci9sb2FkZXIuYwogCUBta2RpciAtcCAkJChkaXIgJCRAKQo=" | base64 -d | patch &&
-    sed_in_place '1i #include<libgen.h>' cli/cli.c
+    sedInPlace '1i #include<libgen.h>' cli/cli.c
 
 create_build_h() {
     cat > $PACKAGE_INSTALLING_BST_DIR/src/build.h <<EOF
@@ -36,7 +36,7 @@ install: |
     gmakew -C $PACKAGE_INSTALLING_BST_DIR/src install PREFIX=$PACKAGE_INSTALL_DIR DESTDIR=
 
 insert_1() {
-    sed_in_place '1i static char* get_current_dir_name();' "$PACKAGE_INSTALLING_BST_DIR/src/path/temp.c" &&
+    sedInPlace '1i static char* get_current_dir_name();' "$PACKAGE_INSTALLING_BST_DIR/src/path/temp.c" &&
     cat >> "$PACKAGE_INSTALLING_BST_DIR/src/path/temp.c" <<'EOF'
         char* get_current_dir_name() {
 	        struct stat a, b;
@@ -49,7 +49,7 @@ insert_1() {
 EOF
 
 insert_2() {
-    sed_in_place '1i static char* get_current_dir_name();' "$PACKAGE_INSTALLING_BST_DIR/src/syscall/rlimit.c" &&
+    sedInPlace '1i static char* get_current_dir_name();' "$PACKAGE_INSTALLING_BST_DIR/src/syscall/rlimit.c" &&
     cat >> "$PACKAGE_INSTALLING_BST_DIR/src/syscall/rlimit.c" <<'EOF'
         //prlimit(2)
         //Return Value

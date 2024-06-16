@@ -6,7 +6,7 @@ src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.2.tar.gz
 src-sha: 7244f9aa468584744e260cef740d57d10eab6e9c05f62084f8f2ba457f4b4b1d
 license: MIT ISC BSD-2-Clause
 
-dopatch: sed_in_place 's|-mhard-float||g' Make.inc
+dopatch: sedInPlace 's|-mhard-float||g' Make.inc
 
 prepare: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then

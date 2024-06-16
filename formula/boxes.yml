@@ -8,7 +8,7 @@ dep-upp: gm4 flex bison
 dep-pkg: libpcre2 libunistring ncurses
 
 dopatch: |
-    sed_in_place 's|STRIP=true||' src/Makefile
+    sedInPlace 's|STRIP=true||' src/Makefile
 
     run cd ../lib/
     run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"

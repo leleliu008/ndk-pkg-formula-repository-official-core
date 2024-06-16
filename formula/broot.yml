@@ -14,4 +14,4 @@ dopatch: |
         sed -i -E 's/\.range_version\(([^)]*)\.\.[^)]*\)/.atleast_version(\1)/g' "${f}"
     done
 
-    sed_in_place '/trash/d' Cargo.toml
+    sedInPlace '/trash/d' Cargo.toml

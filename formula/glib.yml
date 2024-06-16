@@ -8,11 +8,11 @@ license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 
 dopatch: |
-    sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
-    sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])|" meson.build
-    sed_in_place '2139,2165d'  meson.build
-    sed_in_place "2139a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    sed_in_place '2140a libintl_deps = [libintl, libiconv]' meson.build
+    sedInPlace "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
+    sedInPlace "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])|" meson.build
+    sedInPlace '2139,2165d'  meson.build
+    sedInPlace "2139a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    sedInPlace '2140a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
     mesonw \
@@ -26,7 +26,4 @@ install: |
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
 
-dotweak: |
-    sed_in_place "s|$NDKPKG_HOME/installed/.*/libz.a||g"          lib/pkgconfig/*.pc
-    sed_in_place "s|$NDKPKG_HOME/installed/.*/libintl.so||g"      lib/pkgconfig/*.pc
-    sed_in_place '/^Requires.private: /s|$| libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+dotweak: sedInPlace 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc

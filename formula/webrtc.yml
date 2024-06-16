@@ -5,12 +5,11 @@ version: 1
 license: BSD-3-Clause
 dep-upp: git gn ninja
 
+onstart: |
+    [ "$NATIVE_OS_KIND" = linux ] || abort 1 "this library is only supported built on Linux"
+
 # https://webrtc.github.io/webrtc-org/native-code/android/
 prepare: |
-    if [ "$NATIVE_OS_KIND" != linux ] ; then
-        abort 1 "this library is only supported built on Linux"
-    fi
-
     NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
        GN="$(command -v gn)"    || abort 1 'command not found: gn'
 

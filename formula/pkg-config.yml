@@ -6,8 +6,8 @@ license: GPL-2.0-or-later
 dep-pkg: libiconv
 ccflags: -Wno-int-conversion
 dopatch: |
-    sed_in_place 's|with_libiconv=maybe|with_libiconv=gnu|g' glib/configure
-    sed_in_place '/HAVE_PTHREAD_COND_TIMEDWAIT_MONOTONIC/d'  glib/configure
+    sedInPlace 's|with_libiconv=maybe|with_libiconv=gnu|g' glib/configure
+    sedInPlace '/HAVE_PTHREAD_COND_TIMEDWAIT_MONOTONIC/d'  glib/configure
 
     cat > glib/configure.cache <<EOF
     glib_cv_stack_grows=no

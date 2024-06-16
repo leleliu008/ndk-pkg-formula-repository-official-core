@@ -6,7 +6,7 @@ src-sha: 039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650
 license: MIT
 dep-pkg: json-c libwebsockets
 bsystem: cmake
-dopatch: sed_in_place '/LINK_LIBS util/d' CMakeLists.txt
+dopatch: sedInPlace '/LINK_LIBS util/d' CMakeLists.txt
 
 # int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
 api-min: 23

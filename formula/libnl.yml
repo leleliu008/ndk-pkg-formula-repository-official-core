@@ -10,10 +10,10 @@ ldflags: -Wl,--undefined-version
 
 dopatch: |
     autoreconf -ivf
-    sed_in_place 's@linux-private/@@g' lib/mpls.c
-    sed_in_place 's@linux-private/@@g' lib/route/link/vrf.c
-    sed_in_place '/linux-private/d' Makefile.in
-    sed_in_place '/linux-private/d' Makefile.am
+    sedInPlace 's@linux-private/@@g' lib/mpls.c
+    sedInPlace 's@linux-private/@@g' lib/route/link/vrf.c
+    sedInPlace '/linux-private/d' Makefile.in
+    sedInPlace '/linux-private/d' Makefile.am
 
 install: |
     configure \

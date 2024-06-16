@@ -7,9 +7,9 @@ license: GPL-3.0-or-later
 dep-pkg: libhiredis libblake3 libzstd
 
 dopatch: |
-    sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp
-    sed_in_place 's|third_party/blake3/||'     src/Hash.hpp
-    sed_in_place '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
+    sedInPlace 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp
+    sedInPlace 's|third_party/blake3/||'     src/Hash.hpp
+    sedInPlace '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
 
 install: |
     cmakew \

@@ -4,7 +4,7 @@ src-url: https://code.videolan.org/videolan/dav1d/-/archive/1.4.2/dav1d-1.4.2.ta
 src-sha: 18d0c67421fac213b680a26856dd74ae7bb28b9ff59edd6f6580864d2b71d1ed
 license: BSD-2-Clause
 dep-upp: nasm
-dopatch: sed_in_place 's|libdav1d|libdav1d.get_static_lib()|' tools/meson.build
+dopatch: sedInPlace 's|libdav1d|libdav1d.get_static_lib()|' tools/meson.build
 install: |
     mesonw \
         -Denable_asm=true \

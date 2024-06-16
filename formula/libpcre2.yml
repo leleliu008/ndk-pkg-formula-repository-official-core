@@ -6,7 +6,7 @@ src-sha: e2a53984ff0b07dfdb5ae4486bbb9b21cca8e7df2434096cc9bf1b728c350bcb
 license: BSD-3-Clause
 
 dopatch: |
-    sed_in_place 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
+    sedInPlace 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
 
 install: |
     cmakew \

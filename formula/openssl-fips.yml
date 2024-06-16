@@ -12,8 +12,8 @@ parallel: 0
 dopatch: |
     export LC_COLLATE='C'
     export LC_CTYPE='C'
-    sed_in_place 's/-mandroid//g' Configure
-    sed_in_place 's|./fips_standalone_sha1$(EXE_EXT) fipscanister.o > fipscanister.o.sha1||g' fips/Makefile
+    sedInPlace 's/-mandroid//g' Configure
+    sedInPlace 's|./fips_standalone_sha1$(EXE_EXT) fipscanister.o > fipscanister.o.sha1||g' fips/Makefile
 
 install: |
     get_os_compiler() {

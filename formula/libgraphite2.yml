@@ -7,10 +7,10 @@ src-sha: f99d1c13aa5fa296898a181dff9b82fb25f6cc0933dbaa7a475d8109bd54209d
 license: LGPL-2.1-or-later
 dep-pkg: libfreetype
 
-dopatch: sed_in_place '/add_subdirectory(tests)/d' CMakeLists.txt
+dopatch: sedInPlace '/add_subdirectory(tests)/d' CMakeLists.txt
 
 install: |
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
 
-dotweak: sed_in_place 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc
+dotweak: sedInPlace 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc

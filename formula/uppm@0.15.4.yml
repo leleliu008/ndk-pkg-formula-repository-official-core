@@ -1,0 +1,8 @@
+summary: Universal Prebuild Package Manager
+git-url: https://github.com/leleliu008/uppm
+git-ref: refs/heads/0.15.3
+    #src-url: dir:///Users/fpliu/uppm
+license: Apache-2.0
+dep-pkg: libcurl libgit2 libarchive libyaml libjansson
+prepare: PACKAGE_VERSION=$(sed -n '/set(PROJECT_VERSION /p' CMakeLists.txt | sed 's|set(PROJECT_VERSION[[:space:]]*\(.*\))|\1|')
+install: cmakew -DLINK_STATIC_LIBS=ON

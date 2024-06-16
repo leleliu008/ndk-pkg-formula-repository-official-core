@@ -8,4 +8,4 @@ binbstd: 1
 
 dopatch: |
     # https://github.com/android/ndk/issues/1409
-    sed_in_place 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h
+    sedInPlace 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h

@@ -6,7 +6,7 @@ src-sha: 4793404735db5ea79f790cf865bf4fe875f9c5c23b1b8da186349f54b3a32281
 license: MIT
 dep-upp: gm4 bison
 
-dopatch: sed_in_place 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' makefile
+dopatch: sedInPlace 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' makefile
 
 install: |
     gmakew clean

@@ -7,4 +7,4 @@ dep-upp: bison flex gpasm gplib gplink sdcc
 bsystem: configure
 
 dopatch: |
-    sed_in_place '/SDCC = /c SDCC = sdcc' support/regression/Makefile.in
+    sedInPlace '/SDCC = /c SDCC = sdcc' support/regression/Makefile.in

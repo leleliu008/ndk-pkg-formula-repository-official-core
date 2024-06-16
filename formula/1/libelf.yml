@@ -10,11 +10,11 @@ ccflags: -Wno-error
 sfslink: 0
 
 dopatch: |
-    sed_in_place '/libintl\.h/d' lib/eu-config.h
-    sed_in_place '/dgettext/d'   lib/eu-config.h
-    sed_in_place '/N_(Str/a #define _(Str) Str' lib/eu-config.h
-    sed_in_place '/libasm debuginfod/d' Makefile.in
-    sed_in_place '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
+    sedInPlace '/libintl\.h/d' lib/eu-config.h
+    sedInPlace '/dgettext/d'   lib/eu-config.h
+    sedInPlace '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+    sedInPlace '/libasm debuginfod/d' Makefile.in
+    sedInPlace '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
 
 prepare: |
     # error.h: void error(int __status, int __errno, const char* _Nonnull __fmt, ...) __printflike(3, 4) __INTRODUCED_IN(23);

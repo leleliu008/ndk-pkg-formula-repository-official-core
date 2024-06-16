@@ -9,13 +9,13 @@ ccflags: -Wno-error=implicit-function-declaration -Wno-error=unused-function
 bsystem: gmake
 
 install: |
-    sed_in_place '/define LINKS_H/a \#include<unistd.h>' links.h
-    sed_in_place '/links\.h/a \#include<pwd.h>' file.c
+    sedInPlace '/define LINKS_H/a \#include<unistd.h>' links.h
+    sedInPlace '/links\.h/a \#include<pwd.h>' file.c
 
     OPENSSL_LIBS="$(pkg-config --libs openssl)"
     printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
-    sed_in_place "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure
-    sed_in_place 's|^main()|int main()|' configure
+    sedInPlace "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure
+    sedInPlace 's|^main()|int main()|' configure
 
     export ac_cv_header_stdarg_h=yes
 

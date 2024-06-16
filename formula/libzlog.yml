@@ -6,7 +6,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libglob
 bscript: src
 
-dopatch: sed_in_place '/cp -f/d' makefile
+dopatch: sedInPlace '/cp -f/d' makefile
 
 install: |
     gmakew clean

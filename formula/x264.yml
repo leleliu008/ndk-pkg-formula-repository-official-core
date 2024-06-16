@@ -7,7 +7,7 @@ license: GPL-2.0-only
 
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
-        sed_in_place 's|fseeko|fseekoxxxxxxxxxx|g' configure
+        sedInPlace 's|fseeko|fseekoxxxxxxxxxx|g' configure
     fi
 
 install: |

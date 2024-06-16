@@ -5,5 +5,5 @@ src-sha: e5740fd623a2f8472c9700b9447a8725a6f27d65b0b47c3e3926a60db41b8a64
 license: Apache-2.0
 bsystem: cmake
 dopatch: |
-    sed_in_place '/strip/c message("--")' CMakeLists.txt
-    sed_in_place '/set(CMAKE_CXX_FLAGS/c set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")' CMakeLists.txt
+    sedInPlace '/strip/c message("--")' CMakeLists.txt
+    sedInPlace '/set(CMAKE_CXX_FLAGS/c set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")' CMakeLists.txt

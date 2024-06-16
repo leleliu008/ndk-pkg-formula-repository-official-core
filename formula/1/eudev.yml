@@ -7,7 +7,7 @@ src-sha: 89618619084a19e1451d373c43f141b469c9fd09767973d73dd268b92074d4fc
 api-min: 26
 
 dopatch: |
-    sed_in_place '338,341d' src/shared/hashmap.c
+    sedInPlace '338,341d' src/shared/hashmap.c
 
 install: |
     export CPPFLAGS="$CPPFLAGS -DLINE_MAX=2048"

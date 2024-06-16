@@ -4,5 +4,5 @@ web-url: http://www.fftw.org
 src-url: http://fftw.org/fftw-3.3.10.tar.gz
 src-sha: 56c932549852cddcfafdab3820b0200c7742675be92179e59e6215b340e26467
 license: GPL-2.0-or-later
-dopatch: sed_in_place 's|tools m4|m4|' Makefile.in
+dopatch: sedInPlace 's|tools m4|m4|' Makefile.in
 install: configure --enable-threads LIBS=-lm

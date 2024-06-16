@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: libz libiconv liblanginfo
 
 dopatch: |
-    sed_in_place '1i #include <unistd.h>' libisofs/rockridge.h
+    sedInPlace '1i #include <unistd.h>' libisofs/rockridge.h
 
 install: |
     configure \

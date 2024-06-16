@@ -7,8 +7,8 @@ license: GPL-2.0-or-later
 dep-pkg: liblanginfo
 
 dopatch: |
-    sed_in_place 's|ifndef __linux__|if 1|' strverscmp.c || return 1
-    sed_in_place 's|ifndef __linux__|if 1|' tree.h       || return 1
+    sedInPlace 's|ifndef __linux__|if 1|' strverscmp.c || return 1
+    sedInPlace 's|ifndef __linux__|if 1|' tree.h       || return 1
 
 install: |
     gmakew clean

@@ -18,5 +18,5 @@ install: |
         --disable-static
 
 dotweak: |
-    sed_in_place '/^Requires:/d'                                             lib/pkgconfig/librsvg-2.0.pc
+    sedInPlace '/^Requires:/d'                                             lib/pkgconfig/librsvg-2.0.pc
     printf 'Requires: gdk-pixbuf-2.0 libxml-2.0 pangocairo cairo-gobject' >> lib/pkgconfig/librsvg-2.0.pc

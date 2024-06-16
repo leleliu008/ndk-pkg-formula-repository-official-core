@@ -12,4 +12,4 @@ install: |
     cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
 
 # https://github.com/google/re2/commit/9ebe4a22cad8a025b68a9594bdff3c047a111333
-dotweak: sed_in_place '/re2_INCLUDE_DIR/d' lib/cmake/re2/re2Config.cmake
+dotweak: sedInPlace '/re2_INCLUDE_DIR/d' lib/cmake/re2/re2Config.cmake

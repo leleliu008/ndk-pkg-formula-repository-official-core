@@ -8,5 +8,5 @@ license: AGPL-3.0-or-later
 dep-pkg: libpng
 dep-upp: libtool
 bsystem: autogen
-dopatch: sed_in_place '$d' autogen.sh && ./autogen.sh
+dopatch: sedInPlace '$d' autogen.sh && ./autogen.sh
 install: configure --with-libpng="$libpng_INSTALL_DIR"

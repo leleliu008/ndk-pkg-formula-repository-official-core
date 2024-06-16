@@ -142,8 +142,8 @@ dopatch: |
     mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
     EOF
 
-    sed_in_place 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
-    sed_in_place 's|${CURL_LIBRARY}|CURL::libcurl|' src/lib_proj.cmake
+    sedInPlace 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
+    sedInPlace 's|${CURL_LIBRARY}|CURL::libcurl|' src/lib_proj.cmake
 
 install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF
 

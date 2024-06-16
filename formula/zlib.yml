@@ -7,8 +7,8 @@ license: Zlib
 bsystem: cmake
 
 dopatch: |
-    sed_in_place 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
-    sed_in_place 's|zlib)|zlibstatic)|' CMakeLists.txt
+    sedInPlace 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
+    sedInPlace 's|zlib)|zlibstatic)|' CMakeLists.txt
 
 developer: |
     Jean-loup Gailly <jloup@gailly.net>

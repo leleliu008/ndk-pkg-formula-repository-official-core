@@ -24,8 +24,8 @@ dopatch: |
 
     patch -p1 < ../res/99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c.diff
 
-    sed_in_place 's|$(AS) _match.s|$(AS) -o _match.o _match.s|'          unix/Makefile
-    sed_in_place 's|$(AS) _crc_i386.s|$(AS) -o _crc_i386.o _crc_i386.s|' unix/Makefile
+    sedInPlace 's|$(AS) _match.s|$(AS) -o _match.o _match.s|'          unix/Makefile
+    sedInPlace 's|$(AS) _crc_i386.s|$(AS) -o _crc_i386.o _crc_i386.s|' unix/Makefile
 
 install: |
     gmakew -f unix/Makefile clean

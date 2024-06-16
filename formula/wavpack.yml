@@ -6,7 +6,7 @@ src-sha: 8944b237968a1b3976a1eb47cd556916e041a2aa8917495db65f82c3fcc2a225
 license: BSD-3-Clause
 
 dopatch: |
-    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
-    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
+    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: configure --disable-tests --enable-apps --disable-man

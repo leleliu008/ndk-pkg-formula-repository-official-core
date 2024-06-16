@@ -7,4 +7,4 @@ dep-pkg: libz
 dep-upp: libtool
 bsystem: autotools
 bscript: contrib/minizip
-dopatch: sed_in_place 's|__FreeBSD__|__ANDROID__|' ioapi.h
+dopatch: sedInPlace 's|__FreeBSD__|__ANDROID__|' ioapi.h

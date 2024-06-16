@@ -7,6 +7,6 @@ dep-pkg: gettext-dev
 bsystem: configure
 
 # https://github.com/android/ndk/issues/1409
-dopatch: sed_in_place 's|int streaming;|int streaming __attribute__((common));|' barcode.h
+dopatch: sedInPlace 's|int streaming;|int streaming __attribute__((common));|' barcode.h
 
 prepare: export CPPFLAGS="$CPPFLAGS -I$gettext_dev_INSTALL_DIR/share/gettext"

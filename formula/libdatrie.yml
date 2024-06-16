@@ -6,6 +6,6 @@ src-sha: 12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be
 license: LGPL-2.1-or-later
 dep-pkg: libiconv
 
-dopatch: sed_in_place '/SUBDIRS = /c SUBDIRS = datrie' Makefile.in
+dopatch: sedInPlace '/SUBDIRS = /c SUBDIRS = datrie' Makefile.in
 
 install: configure LIBS="'-lcharset -liconv'"

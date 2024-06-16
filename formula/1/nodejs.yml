@@ -8,8 +8,8 @@ dep-upp: gmake pkg-config
 api-min: 23
 
 dopatch: |
-    sed_in_place 's|-Wl,--start-group||g' tools/gyp/pylib/gyp/generator/make.py &&
-    sed_in_place 's|-Wl,--end-group||g'   tools/gyp/pylib/gyp/generator/make.py
+    sedInPlace 's|-Wl,--start-group||g' tools/gyp/pylib/gyp/generator/make.py &&
+    sedInPlace 's|-Wl,--end-group||g'   tools/gyp/pylib/gyp/generator/make.py
 
 install: |
     export CC_host="$CC_FOR_BUILD"

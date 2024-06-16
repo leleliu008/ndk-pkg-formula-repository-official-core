@@ -6,7 +6,7 @@ src-sha: 76a6ff060887773f25977b588ae508484bb12d11cb7a2be3322daa9c6e53f1b2
 license: BSD-2-Clause
 dep-pkg: libcurl libzen libz
 bscript: Project/CMake
-dopatch: sed_in_place 's|find_package(CURL)|find_package(CURL CONFIG)|' CMakeLists.txt
+dopatch: sedInPlace 's|find_package(CURL)|find_package(CURL CONFIG)|' CMakeLists.txt
 install: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
     cmakew -DBUILD_SHARED_LIBS=OFF -DCURL_INCLUDE_DIRS="$libcurl_INCLUDE_DIR" -DCURL_LIBRARIES="'$CURL_LIBRARIES'"

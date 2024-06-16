@@ -5,8 +5,8 @@ src-sha: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 license: LGPL-2.0-or-later
 
 dopatch: |
-    sed_in_place '/lame_init_old/d' include/libmp3lame.sym
-    sed_in_place 's|-mtune=native||g' configure
+    sedInPlace '/lame_init_old/d' include/libmp3lame.sym
+    sedInPlace 's|-mtune=native||g' configure
 
 install: |
     configure \

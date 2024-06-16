@@ -8,11 +8,11 @@ license: BSD-2-Clause
 dep-pkg: libpng libtiff liblcms2
 
 dopatch: |
-    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
-    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
-    sed_in_place 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sed_in_place 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sed_in_place 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
+    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
+    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
+    sedInPlace 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    sedInPlace 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    sedInPlace 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
 
 install: |
     cmakew \

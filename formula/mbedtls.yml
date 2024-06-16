@@ -10,7 +10,7 @@ dep-pkg: libz
 dopatch: |
     # https://github.com/Mbed-TLS/mbedtls/issues/8832
     if [ "$TARGET_PLATFORM_ARCH" = i686 ] ; then
-        sed_in_place '/#define MBEDTLS_AESNI_C/d' include/mbedtls/mbedtls_config.h
+        sedInPlace '/#define MBEDTLS_AESNI_C/d' include/mbedtls/mbedtls_config.h
     fi
 
 install: |

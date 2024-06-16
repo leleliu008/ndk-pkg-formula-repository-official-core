@@ -8,8 +8,8 @@ license: 0BSD
 bsystem: gmake
 
 dopatch: |
-    sed_in_place '/SHARED_EXT=/c SHARED_EXT=".so"' configure
-    sed_in_place 's/LD_STATIC=-static/LD_STATIC=/' configure
+    sedInPlace '/SHARED_EXT=/c SHARED_EXT=".so"' configure
+    sedInPlace 's/LD_STATIC=-static/LD_STATIC=/' configure
 
 install: |
     run ./configure \

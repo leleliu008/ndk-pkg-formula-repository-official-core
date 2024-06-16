@@ -8,8 +8,8 @@ license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
 
 dopatch: |
-    sed_in_place '/SUBDIRS =/s|gettext-tools||g' Makefile.in
-    sed_in_place '/SUBDIRS =/s|gnulib-tests||g' gettext-tools/Makefile.in
+    sedInPlace '/SUBDIRS =/s|gettext-tools||g' Makefile.in
+    sedInPlace '/SUBDIRS =/s|gnulib-tests||g' gettext-tools/Makefile.in
 
 install: |
     configure \

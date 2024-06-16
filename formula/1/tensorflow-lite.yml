@@ -10,8 +10,8 @@ dep-pkg: abseil ruy xnnpack libflatbuffers eigen3 ARM_NEON_2_x86_SSE
 bscript: tensorflow/lite
 
 dopatch: |
-    sed_in_place 's|NOT DEFINED PTHREADPOOL_SOURCE_DIR|FALSE|' CMakeLists.txt
-    sed_in_place '/find_package(ruy REQUIRED)/a include(./pthreadpool.cmake)' CMakeLists.txt
+    sedInPlace 's|NOT DEFINED PTHREADPOOL_SOURCE_DIR|FALSE|' CMakeLists.txt
+    sedInPlace '/find_package(ruy REQUIRED)/a include(./pthreadpool.cmake)' CMakeLists.txt
 
     cat > pthreadpool.cmake <<EOF
     add_library(pthreadpool STATIC IMPORTED)

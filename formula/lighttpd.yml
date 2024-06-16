@@ -7,7 +7,7 @@ dep-pkg: openssl-dev libz libbz2 libpcre2 libglob
 dep-upp: libtool
 bsystem: autogen
 
-dopatch: sed_in_place '/define MAX_WRITE_LIMIT/a \#include<linux/fs.h>' src/chunk.h
+dopatch: sedInPlace '/define MAX_WRITE_LIMIT/a \#include<linux/fs.h>' src/chunk.h
 
 install: |
     configure \

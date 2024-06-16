@@ -7,4 +7,4 @@ license: BSD-2-Clause GPL-2.0-only
 bsystem: configure
 
 dopatch: |
-    sed_in_place 's|-lpthread||g' configure
+    sedInPlace 's|-lpthread||g' configure

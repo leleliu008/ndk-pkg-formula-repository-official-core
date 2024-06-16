@@ -4,9 +4,9 @@ license: Apache-2.0
 bsystem: gmake
 
 dopatch: |
-    sed_in_place 's/| sed.*/> $@/' Makefile &&
-    sed_in_place 's/.0 -Wl,-soname,libhighwayhash.so.0//' Makefile
-    sed_in_place '/ln -s/d' Makefile
+    sedInPlace 's/| sed.*/> $@/' Makefile &&
+    sedInPlace 's/.0 -Wl,-soname,libhighwayhash.so.0//' Makefile
+    sedInPlace '/ln -s/d' Makefile
 
 install: |
     unset MAKE_EXTRA_FLAGS

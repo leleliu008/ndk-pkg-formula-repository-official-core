@@ -6,7 +6,7 @@ src-sha: 6fd33527b410a37ebc91bb64ca51bdabab12b076bc99d153d7c5dd405e4bdf90
 license: MIT
 dep-pkg: libz libuv libevent
 ccflags: -Wno-unused-but-set-variable
-dopatch: sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
+dopatch: sedInPlace 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
 install: |
     cmakew \
         -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \

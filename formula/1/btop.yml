@@ -6,7 +6,7 @@ license: Apache-2.0
 bsystem: gmake
 
 dopatch: |
-    sed_in_place '/-flto=/d' Makefile
+    sedInPlace '/-flto=/d' Makefile
 
 install: |
     gmakew clean

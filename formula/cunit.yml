@@ -13,7 +13,7 @@ dopatch: |
     find . -name ".deps"    -exec rm -rf {} +
     find . -name "Makefile" -exec rm -rf {} +
     autoreconf -ivf
-    sed_in_place 's/install-data-am: install-dochdrDATA/install-data-am: /' doc/headers/Makefile.in
+    sedInPlace 's/install-data-am: install-dochdrDATA/install-data-am: /' doc/headers/Makefile.in
 
 install: |
     configure \

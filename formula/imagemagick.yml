@@ -9,8 +9,8 @@ license: ImageMagick
 dep-pkg: ghostscript libheif liblqr libtool
 
 dopatch: |
-    sed_in_place '/ftello/d' ../include/ndk-pkg-common.h
-    sed_in_place '/fseeko/d' ../include/ndk-pkg-common.h
+    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
+    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \

@@ -7,7 +7,7 @@ dep-pkg: libiconv
 
 dopatch: |
     run mv makefile.linux_any_cpu makefile.machine
-    sed_in_place 's|getpass("")|""|g' CPP/7zip/UI/Console/UserInputUtils.cpp
+    sedInPlace 's|getpass("")|""|g' CPP/7zip/UI/Console/UserInputUtils.cpp
     printf 'INPUT(%s)\n' '-liconv' > ../lib/libpthread.a
 
 install: |

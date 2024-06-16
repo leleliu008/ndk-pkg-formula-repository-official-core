@@ -5,7 +5,7 @@ src-url: https://github.com/gabime/spdlog/archive/refs/tags/v1.13.0.tar.gz
 src-sha: 534f2ee1a4dcbeb22249856edfb2be76a1cf4f708a20b0ac2ed090ee24cfdbc9
 license: MIT
 dep-pkg: fmt
-dopatch: sed_in_place 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
+dopatch: sedInPlace 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
 install: |
     cmakew \
         -DSPDLOG_FMT_EXTERNAL=ON \

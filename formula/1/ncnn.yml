@@ -10,7 +10,7 @@ bsystem: cmake
 api-min: 24
 
 dopatch: |
-    sed_in_place 's|glslang/glslang|glslang|' src/gpu.cpp
+    sedInPlace 's|glslang/glslang|glslang|' src/gpu.cpp
 
 install: |
     cmakew \

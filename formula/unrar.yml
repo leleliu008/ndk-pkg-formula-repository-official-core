@@ -7,8 +7,8 @@ license: Unlicense
 parallel: 0
 
 dopatch: |
-    sed_in_place 's|getpass("")|""|g'     consio.cpp
-    sed_in_place 's|install -D|install|g' makefile
+    sedInPlace 's|getpass("")|""|g'     consio.cpp
+    sedInPlace 's|install -D|install|g' makefile
 
 install: |
     gmakew -f makefile unrar CXX="$CXX" AR="$AR" STRIP="$STRIP" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'"

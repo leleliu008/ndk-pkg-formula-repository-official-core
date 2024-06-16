@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: liblzo
 bsystem: cmake
 dopatch: |
-    sed_in_place 's|sysinfo|get_sys_info|' src/conf.h
-    sed_in_place 's|sysinfo|get_sys_info|' src/help.c
-    sed_in_place 's|sysinfo|get_sys_info|' src/lzop.c
-    sed_in_place 's|sysinfo|get_sys_info|' src/djgpp2.c
+    sedInPlace 's|sysinfo|get_sys_info|' src/conf.h
+    sedInPlace 's|sysinfo|get_sys_info|' src/help.c
+    sedInPlace 's|sysinfo|get_sys_info|' src/lzop.c
+    sedInPlace 's|sysinfo|get_sys_info|' src/djgpp2.c

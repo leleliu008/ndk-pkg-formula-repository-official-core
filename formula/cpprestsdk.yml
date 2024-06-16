@@ -8,7 +8,7 @@ dep-pkg: websocketpp openssl-dev boost libz
 dep-upp: pkg-config
 ldflags: -llog
 
-dopatch: sed_in_place 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
+dopatch: sedInPlace 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 
 install: |
     export OPENSSL_ROOT_DIR="$openssl_dev_INSTALL_DIR"

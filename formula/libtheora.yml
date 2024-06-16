@@ -7,7 +7,7 @@ license: BSD-3-Clause
 dep-pkg: libogg
 dep-upp: libtool
 bsystem: autogen
-dopatch: sed_in_place '$d' autogen.sh
+dopatch: sedInPlace '$d' autogen.sh
 install: |
     configure \
         --with-ogg=$libogg_INSTALL_DIR \

@@ -8,7 +8,7 @@ dep-upp: pkg-config lua
 bsystem: autotools
 
 dopatch: |
-    sed_in_place 's|docs||g' Makefile.am &&
+    sedInPlace 's|docs||g' Makefile.am &&
     run autoreconf -ivf
 
 install: |

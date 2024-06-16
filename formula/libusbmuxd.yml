@@ -8,8 +8,8 @@ dep-pkg: libimobiledevice-glue
 bsystem: configure
 
 dopatch: |
-    sed_in_place 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
-    sed_in_place 's|/var/run|/data/local/tmp|' src/libusbmuxd.c
+    sedInPlace 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
+    sedInPlace 's|/var/run|/data/local/tmp|' src/libusbmuxd.c
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

@@ -7,8 +7,8 @@ license: GPL-3.0-or-later LGPL-2.0-or-later
 
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" -lt 30 ] ; then
-        sed_in_place '1i void* mempcpy(void* dst, const void* src, size_t n) {return memcpy(dst, src, n) + n;}' srclib/canonicalize-lgpl.c
-        sed_in_place '1i #include <string.h>' srclib/canonicalize-lgpl.c
+        sedInPlace '1i void* mempcpy(void* dst, const void* src, size_t n) {return memcpy(dst, src, n) + n;}' srclib/canonicalize-lgpl.c
+        sedInPlace '1i #include <string.h>' srclib/canonicalize-lgpl.c
     fi
 
 install: configure --enable-extra-encodings

@@ -8,7 +8,7 @@ dep-pkg: libexpat libcurl libssh inih
 
 dopatch: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl)"
-    sed_in_place "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES|" src/CMakeLists.txt
+    sedInPlace "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES|" src/CMakeLists.txt
 
 install: |
     cmakew \

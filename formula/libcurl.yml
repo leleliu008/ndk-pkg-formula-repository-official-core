@@ -7,7 +7,7 @@ license: curl
 dep-pkg: libnghttp2 libcares libzstd libz brotli openssl-dev
 dep-upp: perl
 
-dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+dopatch: sedInPlace 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 
 install: |
     configure \

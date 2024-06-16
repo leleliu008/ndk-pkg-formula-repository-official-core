@@ -7,7 +7,7 @@ src-sha: 81e6518f2c4656fdeaf18a018f135e96a96e7f66dbe1c1f05860dd94772176cc
 license: BSD-3-Clause
 dep-pkg: imath libz libdeflate
 
-dopatch: sed_in_place '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
+dopatch: sedInPlace '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
 
 install: |
     cmakew \

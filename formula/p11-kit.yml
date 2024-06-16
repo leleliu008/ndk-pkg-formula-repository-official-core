@@ -8,7 +8,7 @@ license: BSD-3-Clause
 
 dopatch: |
     # p11-kit cannot be used as a static library
-    sed_in_place 's/if test "$enable_static" = "yes"; then/if false ; then/' configure
+    sedInPlace 's/if test "$enable_static" = "yes"; then/if false ; then/' configure
 
 install: |
     configure \

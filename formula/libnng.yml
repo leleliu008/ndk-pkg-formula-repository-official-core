@@ -8,9 +8,9 @@ dep-pkg: mbedtls
 
 dopatch2: |
     if [ "$TARGET_PLATFORM_VERS" -ge 24 ] ; then
-        sed_in_place '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF TRUE)'  src/platform/posix/CMakeLists.txt
+        sedInPlace '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF TRUE)'  src/platform/posix/CMakeLists.txt
     else
-        sed_in_place '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF FALSE)' src/platform/posix/CMakeLists.txt
+        sedInPlace '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF FALSE)' src/platform/posix/CMakeLists.txt
     fi
 
 install: |

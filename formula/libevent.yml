@@ -18,4 +18,4 @@ install: |
         -DEVENT__COVERAGE=OFF \
         -DEVENT__LIBRARY_TYPE=BOTH
 
-dotweak: sed_in_place '/Requires:/s|$| openssl|' lib/pkgconfig/libevent_openssl.pc
+dotweak: sedInPlace '/Requires:/s|$| openssl|' lib/pkgconfig/libevent_openssl.pc

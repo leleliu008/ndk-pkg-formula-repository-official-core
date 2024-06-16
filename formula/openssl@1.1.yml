@@ -9,12 +9,12 @@ dep-upp: perl
 bsystem: gmake
 
 dopatch: |
-    sed_in_place '/-mandroid/d'           Configurations/15-android.conf
-    sed_in_place '/ndk is invalid/d'      Configurations/15-android.conf
-    sed_in_place '/no NDK $triarch-gcc/d' Configurations/15-android.conf
-    sed_in_place '/-target/d'             Configurations/15-android.conf
-    sed_in_place '/-gcc-toolchain/d'      Configurations/15-android.conf
-    sed_in_place '/tritools-4.9/d'        Configurations/15-android.conf
+    sedInPlace '/-mandroid/d'           Configurations/15-android.conf
+    sedInPlace '/ndk is invalid/d'      Configurations/15-android.conf
+    sedInPlace '/no NDK $triarch-gcc/d' Configurations/15-android.conf
+    sedInPlace '/-target/d'             Configurations/15-android.conf
+    sedInPlace '/-gcc-toolchain/d'      Configurations/15-android.conf
+    sedInPlace '/tritools-4.9/d'        Configurations/15-android.conf
 
 # 注意：1.0.2以上的openssl不支持openssl-fips，从openssl3.0开始支持新设计的openssl-fips
 # https://github.com/openssl/openssl/issues/7582

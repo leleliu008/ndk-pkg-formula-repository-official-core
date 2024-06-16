@@ -6,6 +6,6 @@ binbstd: 1
 bsystem: autogen
 
 dopatch: |
-    sed_in_place 's/-lpthread//' Makefile.am
-    sed_in_place 's/which/command -v/' autogen.sh
+    sedInPlace 's/-lpthread//' Makefile.am
+    sedInPlace 's/which/command -v/' autogen.sh
     ./autogen.sh

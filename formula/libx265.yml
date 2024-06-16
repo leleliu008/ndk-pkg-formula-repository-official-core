@@ -13,4 +13,4 @@ install: |
         -DENABLE_SHARED=ON \
         -DENABLE_ASSEMBLY=OFF
 
-dotweak: sed_in_place '/^Libs.private:/s|-l-l||' lib/pkgconfig/x265.pc
+dotweak: sedInPlace '/^Libs:/s|-l-l||' lib/pkgconfig/x265.pc

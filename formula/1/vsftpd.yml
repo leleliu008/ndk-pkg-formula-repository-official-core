@@ -7,7 +7,7 @@ dep-pkg: openssl-dev libcap libcrypt
 
 dopatch: |
     # https://linux.die.net/man/3/getusershell
-    sed_in_place '/#define VSF_SYSDEP_HAVE_USERSHELL/d' sysdeputil.c
+    sedInPlace '/#define VSF_SYSDEP_HAVE_USERSHELL/d' sysdeputil.c
 
 install: |
     gmakew clean

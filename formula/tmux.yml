@@ -8,9 +8,9 @@ dep-upp: bison
 dep-pkg: ncurses libevent utf8proc libglob liblanginfo libgetdtablesize
 
 dopatch: |
-    sed_in_place '1i int getdtablesize();'   compat/imsg.c
-    sed_in_place '1i #include<sys/endian.h>' compat/htonll.c
-    sed_in_place '1i #include<sys/endian.h>' compat/ntohll.c
+    sedInPlace '1i int getdtablesize();'   compat/imsg.c
+    sedInPlace '1i #include<sys/endian.h>' compat/htonll.c
+    sedInPlace '1i #include<sys/endian.h>' compat/ntohll.c
 
 install: |
     configure \
