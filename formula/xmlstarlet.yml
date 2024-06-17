@@ -7,11 +7,15 @@ dep-pkg: libxslt
 binbstd: 1
 
 dopatch: |
-    sedInPlace 's|xmlErrorPtr error|const xmlError * error|' src/xmlstar.h
-    sedInPlace 's|xmlErrorPtr error|const xmlError * error|' src/xml.c
+    sedInPlace 's|xmlErrorPtr error|const xmlError * error|'  src/xmlstar.h
+    sedInPlace 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c
     sedInPlace 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
     sedInPlace 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
 
-install: configure --with-libxml-include-prefix="$libxml2_INCLUDE_DIR/libxml2" LIBS="'$(pkg-config --libs libxml-2.0)'"
+install: |
+    configure \
+        --with-libxml-prefix="$libxml2_INSTALL_DIR" \
+        --with-libxslt-prefix="$libxslt_INSTALL_DIR" \
+        LIBS="'$(pkg-config --libs libxml-2.0)'"
 
 dotweak: cd bin && ln -s xml xmlstarlet

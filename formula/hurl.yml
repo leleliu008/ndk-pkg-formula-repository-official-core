@@ -6,8 +6,10 @@ src-sha: 499f2430ee6b73b0414ab8aa3c9298be8276e7b404b13c76e4c02a86eb1db9cd
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 install: |
+    export RUSTUP_TOOLCHAIN=1.78
+
     for item in hurl hurlfmt
     do
-        cargow install --path packages/$item
+        cargow install --locked --path packages/$item
         install_mans docs/manual/$item.1
     done
