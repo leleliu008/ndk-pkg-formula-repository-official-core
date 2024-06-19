@@ -1,0 +1,18 @@
+summary: Lightweight BitTorrent client
+web-url: https://www.transmissionbt.com/
+git-url: https://github.com/transmission/transmission
+src-url: https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6.tar.xz
+src-sha: 2a38fe6d8a23991680b691c277a335f8875bdeca2b97c6b26b598bc9c7b0c45f
+license: GPL-2.0-only GPL-3.0-only
+dep-pkg: libminiupnpc libevent libcurl libz
+dep-upp: python3
+install: |
+    cmakew \
+        -DENABLE_QT=OFF \
+        -DENABLE_MAC=OFF \
+        -DENABLE_NLS=OFF \
+        -DENABLE_WEB=OFF \
+        -DENABLE_TESTS=OFF \
+        -DENABLE_UTILS=ON \
+        -DENABLE_DAEMON=ON \
+        -DENABLE_CLI=ON

@@ -1,0 +1,12 @@
+summary: UPnP IGD client library and daemon
+web-url: https://miniupnp.tuxfamily.org
+src-uri: https://miniupnp.tuxfamily.org/files/download.php?file=miniupnpc-2.2.7.tar.gz
+src-url: http://miniupnp.free.fr/files/miniupnpc-2.2.7.tar.gz
+src-sha: b0c3a27056840fd0ec9328a5a9bac3dc5e0ec6d2e8733349cf577b0aa1e70ac1
+license: BSD-3-Clause
+install: |
+    cmakew \
+        -DUPNPC_BUILD_STATIC=ON \
+        -DUPNPC_BUILD_SHARED=ON \
+        -DUPNPC_BUILD_SAMPLE=OFF \
+        -DUPNPC_BUILD_TESTS=OFF

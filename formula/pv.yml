@@ -1,0 +1,6 @@
+summary: Monitor data progress through a pipe
+web-url: https://www.ivarch.com/programs/pv.shtml
+src-url: https://www.ivarch.com/programs/sources/pv-1.8.10.tar.gz
+src-sha: d4c90c17cfcd44aa96b98237731e4f811e071d4c2052a689d2d81e6671f571b1
+license: Artistic-2.0
+install: configure --disable-nls

@@ -1,0 +1,10 @@
+summary: A simple tool for calculation of IP networks
+web-url: https://kyberdigi.cz/projects/ipinfo/
+src-url: https://kyberdigi.cz/projects/ipinfo/files/ipinfo-1.2.tar.gz
+src-sha: 19e6659f781a48b56062a5527ff463a29c4dcc37624fab912d1dce037b1ddf2d
+license: Beerware
+binbstd: 1
+install: |
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -lm -o ipinfo  ipinfo.c
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -lm -o ipmatch ipmatch.c
+    install_bins ipinfo ipmatch
