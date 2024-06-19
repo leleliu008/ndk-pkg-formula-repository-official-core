@@ -1,7 +1,7 @@
 summary: A git-compatible distributed version control system
 git-url: https://github.com/martinvonz/jj
-src-url: https://github.com/martinvonz/jj/archive/refs/tags/v0.17.1.tar.gz
-src-sha: 653e1190a82a39dae733487a11aa641ba62a36ae1e221c21844f822575961919
+src-url: https://github.com/martinvonz/jj/archive/refs/tags/v0.18.0.tar.gz
+src-sha: 4f81eed321c3aeeb1e0528250f49b703710ebf91ba18238dd46f97b9a59aaa98
 license: Apache-2.0
 dep-pkg: libgit2
 
