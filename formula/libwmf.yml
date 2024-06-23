@@ -1,0 +1,18 @@
+summary: Library for converting WMF (Window Metafile Format) files
+web-url: https://wvware.sourceforge.net/libwmf.html
+src-url: https://downloads.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz
+src-uri: https://distfiles.macports.org/libwmf/libwmf-0.2.8.4.tar.gz
+src-sha: 5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
+license: LGPL-2.1-only
+dep-pkg: gd
+
+install: |
+    configure \
+        --with-png="$libpng_INSTALL_DIR" \
+        --with-jpeg="$libjpeg_turbo_INSTALL_DIR" \
+        --with-freetype="$libfreetype_INSTALL_DIR"
+
+dotweak: |
+    cd lib
+    mv libwmf-0.2.so.7 libwmf-0.2.so
+    mv libwmflite-0.2.so.7 libwmflite-0.2.so

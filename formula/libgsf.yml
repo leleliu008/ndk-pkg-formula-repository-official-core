@@ -1,0 +1,7 @@
+summary: I/O abstraction library for dealing with structured file formats
+git-url: https://gitlab.gnome.org/GNOME/libgsf
+src-url: https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.52.tar.xz
+src-sha: 9181c914b9fac0e05d6bcaa34c7b552fe5fc0961d3c9f8c01ccc381fb084bcf0
+license: LGPL-2.1-only
+dep-pkg: glib libxml2 libbz2
+bsystem: configure
