@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libsvg,libsvm,libtextstyle,libthai,libtinyalsa,libtinyxml2,libtorrent-rasterbar,libtwolame,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libxcrypt,libyuv,libz3,libzim,libzlog]
+        pkg: [libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspiro,libspng,libsrtp,libsvg,libsvm,libtextstyle,libthai,libtinyalsa,libtinyxml2,libtorrent-rasterbar,libtwolame,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libxcrypt,libyuv,libz3,libzim]
 
     runs-on: ubuntu-latest
 
@@ -33,7 +33,7 @@ jobs:
             chmod +x ndk-pkg
             mv ndk-pkg /usr/bin/ndk-pkg
 
-      - run: /usr/bin/ndk-pkg env
+      - run: /usr/bin/ndk-pkg about
       - run: /usr/bin/ndk-pkg setup
       - run: /usr/bin/ndk-pkg sysinfo
 
@@ -94,7 +94,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--fsle', '']
-        pkg: [libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspng,libsrtp,libsvg,libsvm,libtextstyle,libthai,libtinyalsa,libtinyxml2,libtorrent-rasterbar,libtwolame,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libxcrypt,libyuv,libz3,libzim,libzlog]
+        pkg: [libre2c,libressl,librtmp,libsamplerate,libsigsegv,libsmi,libsndfile,libspectre,libspiro,libspng,libsrtp,libsvg,libsvm,libtextstyle,libthai,libtinyalsa,libtinyxml2,libtorrent-rasterbar,libtwolame,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libxcrypt,libyuv,libz3,libzim]
 
     runs-on: ${{ matrix.os }}
 
@@ -106,7 +106,7 @@ jobs:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
-      - run: ./ndk-pkg env
+      - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
 
