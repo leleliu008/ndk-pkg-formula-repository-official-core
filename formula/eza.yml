@@ -1,7 +1,7 @@
 summary: Modern replacement for ls(1)
 git-url: https://github.com/eza-community/eza
-src-url: https://github.com/eza-community/eza/archive/refs/tags/v0.18.16.tar.gz
-src-sha: dd713474b902568cb2c7c8ea7db8e08db5818617e34908ae7142e9da9cefd17b
+src-url: https://github.com/eza-community/eza/archive/refs/tags/v0.18.18.tar.gz
+src-sha: 437ea76838fea2464b9592f1adef7df0412e27c9fc2a3e7ff47efcdfb17457f5
 license: MIT
 dep-pkg: libz libgit2
 install: cargow install --locked

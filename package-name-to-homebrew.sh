@@ -86,6 +86,8 @@ case $1 in
               printf '%s\n' 'tinyxml2'  ;;
     libtinyalsa)
               printf '%s\n' 'tinyalsa'  ;;
+    libsimdjson)
+              printf '%s\n' 'simdjson'  ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)

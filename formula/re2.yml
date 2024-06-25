@@ -1,15 +1,12 @@
 pkgtype: lib
 summary: Alternative to backtracking PCRE-style regular expression engines
 git-url: https://github.com/google/re2
-src-url: https://github.com/google/re2/archive/refs/tags/2024-05-01.tar.gz
-src-sha: fef2f366578401eada34f5603679fb2aebe9b409de8d275a482ce5f2cbac2492
-version: 20240501
+src-url: https://github.com/google/re2/archive/refs/tags/2024-06-01.tar.gz
+src-sha: 7326c74cddaa90b12090fcfc915fe7b4655723893c960ee3c2c66e85c5504b6c
+version: 20240601
 license: BSD-3-Clause
 dep-pkg: abseil
 
 install: |
     cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=OFF
     cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
-
-# https://github.com/google/re2/commit/9ebe4a22cad8a025b68a9594bdff3c047a111333
-dotweak: sedInPlace '/re2_INCLUDE_DIR/d' lib/cmake/re2/re2Config.cmake

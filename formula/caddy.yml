@@ -1,7 +1,17 @@
 summary: A powerful, enterprise-ready, open source web server with automatic HTTPS
 web-url: https://caddyserver.com/
 git-url: https://github.com/caddyserver/caddy
-src-url: https://github.com/caddyserver/caddy/archive/refs/tags/v2.7.6.tar.gz
-src-sha: e1c524fc4f4bd2b0d39df51679d9d065bb811e381b7e4e51466ba39a0083e3ed
+src-url: https://github.com/caddyserver/caddy/archive/refs/tags/v2.8.4.tar.gz
+src-sha: 5c2e95ad9e688a18dd9d9099c8c132331e01e0bebd401183e8d9123372cf4fcc
+res-url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.4.2.tar.gz
+res-sha: 02e685227fdddd2756993ca019cbe120da61833df070ccf23f250c122c13d554
 license: Apache-2.0
-install: gow ./cmd/caddy
+dep-upp: golang
+binbstd: 1
+
+do12345: |
+    run cd ../res
+    run go build -v ./cmd/xcaddy
+    run mv xcaddy ../src/
+
+install: run ./xcaddy build "v$PACKAGE_VERSION" --output caddy && install_bins caddy

@@ -1,7 +1,7 @@
 summary: Validate and define text-based and dynamic configuration
 web-url: https://cuelang.org/
 git-url: https://github.com/cue-lang/cue
-src-url: https://github.com/cue-lang/cue/archive/refs/tags/v0.8.2.tar.gz
-src-sha: 84af8ee44781f268173b729d29abcc0ab816a82701aa14ef1aafbd50594a6457
+src-url: https://github.com/cue-lang/cue/archive/refs/tags/v0.9.1.tar.gz
+src-sha: cc4340acc54e079b2d9fb067a0d41c1d9cf030a1c28fe1a736867d5651ace552
 license: Apache-2.0
 install: gow -X cuelang.org/go/cmd/cue/cmd.version=$PACKAGE_VERSION ./cmd/cue

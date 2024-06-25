@@ -1,8 +1,9 @@
 summary: A command-line tool to convert SVG to PNG
 web-url: https://github.com/RazrFalcon/resvg
-src-url: https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.41.0.tar.gz
-src-sha: 489e767d4e87f18336ead22a99e64f338cd980a948bf875cfa60742eff7170cc
+src-url: https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.42.0.tar.gz
+src-sha: 277ae58105d96e6ed6b22df75fab4eb93c3802623d675b9f4970a64e00c2a1e4
 license: MPL-2.0
+
 install: |
     cargow install --path crates/usvg
     cargow install --path crates/resvg
