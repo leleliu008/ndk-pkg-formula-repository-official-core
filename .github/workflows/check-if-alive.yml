@@ -38,7 +38,7 @@ jobs:
             updated: 1676399969
             EOF
 
-      - run: ndk-pkg env
+      - run: ndk-pkg about
       - run: ndk-pkg setup
       - run: ndk-pkg sysinfo
       - run: |
