@@ -186,6 +186,7 @@ case $1 in
     libhwy)   printf '%s\n' 'highway'   ;;
     libtbb)   printf '%s\n' 'tbb'       ;;
     libsrt)   printf '%s\n' 'srt'       ;;
+    libwv2)   printf '%s\n' 'wv2'       ;;
     libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
