@@ -6,8 +6,7 @@ src-sha: 5c2e95ad9e688a18dd9d9099c8c132331e01e0bebd401183e8d9123372cf4fcc
 res-url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.4.2.tar.gz
 res-sha: 02e685227fdddd2756993ca019cbe120da61833df070ccf23f250c122c13d554
 license: Apache-2.0
-dep-upp: golang
-binbstd: 1
+bsystem: go
 
 do12345: |
     run cd ../res
