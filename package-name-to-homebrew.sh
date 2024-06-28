@@ -183,6 +183,7 @@ case $1 in
     liblua)   printf '%s\n' 'lua'       ;;
     libzmq)   printf '%s\n' 'zeromq'    ;;
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+    libaom)   printf '%s\n' 'aom'       ;;
     libcaf)   printf '%s\n' 'caf'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
     libhwy)   printf '%s\n' 'highway'   ;;

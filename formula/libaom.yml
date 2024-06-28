@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: Codec library for encoding and decoding AV1 video streams
 web-url: https://aomedia.googlesource.com/aom
 git-url: https://github.com/jbeich/aom
-src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.9.0.tar.gz
-src-sha: 92bed5c071375c3b334246bbe559037a7fa704d8af9fb8bb52c97b33ff1f93c9
+src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.9.1.tar.gz
+src-sha: dcbc52dbb5bcfb79e83529c6357c7f170718f0fac21ad882d9ac410e5158296f
 license: BSD-2-Clause
 dep-pkg: libjxl libvmaf
 dep-upp: nasm perl
@@ -14,14 +14,14 @@ install: |
         -DENABLE_DOCS=OFF \
         -DENABLE_TESTS=OFF \
         -DENABLE_TESTDATA=OFF \
-        -DENABLE_TOOLS=ON \
-        -DENABLE_EXAMPLES=ON \
+        -DENABLE_TOOLS=OFF \
+        -DENABLE_EXAMPLES=OFF \
         -DCONFIG_RUNTIME_CPU_DETECT=0
     cmakew \
         -DBUILD_SHARED_LIBS=ON \
         -DENABLE_DOCS=OFF \
         -DENABLE_TESTS=OFF \
         -DENABLE_TESTDATA=OFF \
-        -DENABLE_TOOLS=ON \
-        -DENABLE_EXAMPLES=ON \
+        -DENABLE_TOOLS=OFF \
+        -DENABLE_EXAMPLES=OFF \
         -DCONFIG_RUNTIME_CPU_DETECT=0

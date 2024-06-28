@@ -13,6 +13,7 @@ install: |
     configure \
         --enable-optimize \
         --enable-pthreads \
+        --enable-ares \
         --with-default-ssl-backend=openssl \
         --with-ssl="$openssl_dev_INSTALL_DIR" \
         --with-nghttp2 \

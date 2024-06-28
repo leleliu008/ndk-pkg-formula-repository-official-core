@@ -2,14 +2,14 @@ pkgtype: lib
 summary: Optimized BLAS library
 web-url: https://www.openblas.net
 git-url: https://github.com/xianyi/OpenBLAS
-src-url: https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.26.tar.gz
-src-sha: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
+src-url: https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.27.tar.gz
+src-sha: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
 license: BSD-3-Clause
 
 prepare: |
     sedInPlace '/LIBDLLNAME   =/i LIBNAME = $(LIBPREFIX).$(LIBSUFFIX)' Makefile.system
-    sedInPlace '/ln -fs $(LIBSONAME)/d' Makefile
     sedInPlace 's|ln -fs|true|g' Makefile.install
+    sedInPlace 's|ln -fs|true|g' Makefile
 
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android
     case $TARGET_PLATFORM_ARCH in

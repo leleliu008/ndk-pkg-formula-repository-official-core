@@ -1,0 +1,53 @@
+summary: test program
+web-url: ddddd
+dep-pkg: libcurl
+version: 1
+binbstd: 1
+install: |
+    cat > conftest.c <<EOF
+    #include <stdlib.h>
+    #include <curl/curl.h>
+
+    int main() {
+        CURL * curl = curl_easy_init();
+
+        if (curl == NULL) {
+            return -1;
+        }
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/foo.bin");
+
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        // https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_set_default_verify_paths.html
+        const char * const SSL_CERT_FILE = getenv("SSL_CERT_FILE");
+
+        if ((SSL_CERT_FILE != NULL) && (SSL_CERT_FILE[0] != '\0')) {
+            // https://curl.se/libcurl/c/CURLOPT_CAINFO.html
+            curl_easy_setopt(curl, CURLOPT_CAINFO, SSL_CERT_FILE);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        const char * const DNS_SERVERS = getenv("CURLOPT_DNS_SERVERS");
+
+        if ((DNS_SERVERS != NULL) && (DNS_SERVERS[0] != '\0')) {
+            // https://curl.se/libcurl/c/CURLOPT_DNS_SERVERS.html
+            curl_easy_setopt(curl, CURLOPT_DNS_SERVERS, DNS_SERVERS);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
+
+        CURLcode ret = curl_easy_perform(curl);
+
+        curl_easy_cleanup(curl);
+
+        return ret;
+    }
+    EOF
+
+    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
+    run $CC $CPPFLAGS $LDFLAGS $LIBCURL_LIBS -o conftest conftest.c
+    install_bins conftest

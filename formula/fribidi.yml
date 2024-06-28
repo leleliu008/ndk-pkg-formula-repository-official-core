@@ -1,7 +1,7 @@
 pkgtype: exe+lib
 summary: Implementation of the Unicode BiDi algorithm
 git-url: https://github.com/fribidi/fribidi
-src-url: https://github.com/fribidi/fribidi/releases/download/v1.0.14/fribidi-1.0.14.tar.xz
-src-sha: 76ae204a7027652ac3981b9fa5817c083ba23114340284c58e756b259cd2259a
+src-url: https://github.com/fribidi/fribidi/releases/download/v1.0.15/fribidi-1.0.15.tar.xz
+src-sha: 0bbc7ff633bfa208ae32d7e369cf5a7d20d5d2557a0b067c9aa98bcbf9967587
 license: LGPL-2.1-or-later
 bsystem: configure
