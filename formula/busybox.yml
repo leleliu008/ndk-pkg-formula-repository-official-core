@@ -3,13 +3,17 @@ web-url: https://busybox.net/
 src-url: https://busybox.net/downloads/busybox-1.36.1.tar.bz2
 src-sha: b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314
 license: GPL-2.0
+dep-upp: bzip2
 bsystem: gmake
 ccflags: -Wno-ignored-optimization-argument -Wno-unused-command-line-argument -Wno-implicit-function-declaration
 
-onready: run mv ../res/*.config busybox.config
-
 dopatch: |
+    ln -s "$ANDROID_NDK_CC" ../bin/clang
+
     printf '\n' > ../include/ndk-pkg-common.h
+
+    run mv ../res/*.config busybox.config
+
     gsed -i \
         -e "s|@TERMUX_PREFIX@|$PACKAGE_INSTALL_DIR|g" \
         -e "s|@TERMUX_SYSROOT@|$SYSROOT|g" \
@@ -23,8 +27,6 @@ dopatch: |
     mv busybox.config .config
 
 install: |
-    #unset  CFLAGS
-    #unset LDFLAGS
     run gmake oldconfig
     run gmake CC="$CC" AS="$CC" AR="$AR" NM="$NM" STRIP="$STRIP" OBJCOPY="$OBJCOPY" OBJDUMP="$OBJDUMP" PKG_CONFIG="$PKG_CONFIG" HOSTCC="$CC_FOR_BUILD" HOSTCXX="$CXX_FOR_BUILD" HOSTCFLAGS="'$CFLAGS_FOR_BUILD'" HOSTCXXFLAGS="'$CXXFLAGS_FOR_BUILD'"
     install_bins busybox
