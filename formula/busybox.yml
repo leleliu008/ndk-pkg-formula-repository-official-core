@@ -1,0 +1,47 @@
+summary: tiny versions of many common UNIX utilities into a single small executable
+web-url: https://busybox.net/
+src-url: https://busybox.net/downloads/busybox-1.36.1.tar.bz2
+src-sha: b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314
+license: GPL-2.0
+bsystem: gmake
+ccflags: -Wno-ignored-optimization-argument -Wno-unused-command-line-argument -Wno-implicit-function-declaration
+
+onready: run mv ../res/*.config busybox.config
+
+dopatch: |
+    printf '\n' > ../include/ndk-pkg-common.h
+    gsed -i \
+        -e "s|@TERMUX_PREFIX@|$PACKAGE_INSTALL_DIR|g" \
+        -e "s|@TERMUX_SYSROOT@|$SYSROOT|g" \
+        -e "s|@TERMUX_CFLAGS@|$CFLAGS|g" \
+        -e "s|@TERMUX_LDFLAGS@|$LDFLAGS|g" \
+        -e "s|@TERMUX_LDLIBS@|log|g" \
+        -e "s|@TERMUX_HOST_PLATFORM@-||g" \
+        busybox.config
+    gsed -i '/ CONFIG_STATIC_LIBGCC /c CONFIG_STATIC_LIBGCC=y' busybox.config
+    gsed -i '/ CONFIG_STATIC /c CONFIG_STATIC=y' busybox.config
+    mv busybox.config .config
+
+install: |
+    #unset  CFLAGS
+    #unset LDFLAGS
+    run gmake oldconfig
+    run gmake CC="$CC" AS="$CC" AR="$AR" NM="$NM" STRIP="$STRIP" OBJCOPY="$OBJCOPY" OBJDUMP="$OBJDUMP" PKG_CONFIG="$PKG_CONFIG" HOSTCC="$CC_FOR_BUILD" HOSTCXX="$CXX_FOR_BUILD" HOSTCFLAGS="'$CFLAGS_FOR_BUILD'" HOSTCXXFLAGS="'$CXXFLAGS_FOR_BUILD'"
+    install_bins busybox
+ 
+res-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/busybox.config
+res-sha: 5dd6118c4571ec21186bdd4d87904f41e64f6d62ddfc73fa7396260de71f8432
+
+fix-opt: -p0
+patches: |
+    5c3d7e399fbf0f61213a7b3212048c084b4d7dbabf518c9f9c5867a78a84432a|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0000-use-clang.patch
+    2e08685522c2668d3b54e509771d094c83e247ad669bb0e6d6c524564b3614de|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0001-clang-fix.patch
+    a48a68f5d1cc9f6dfec38b87a2684fda085461cf4ed1b1bef97628bde4109032|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0002-hardcoded-paths-fix.patch
+    8acc8052d77a774b79b7ceaf245380dc8d3b603cde4e8165fa984f812d057e65|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0003-strchrnul-fix.patch
+    96dca9372627559de2e186d48d2b76f2934ad09fcfa046cecaf16b9e7587ace7|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0005-no-change-identity.patch
+    a30e288aeeb4d0c138760ea811822dea78ca98cd511d1a5a83a5920d3518ee09|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0006-miscutils-crond.patch
+    e2493a6c02ab313f166327d3d98603ea261005f204b5d783d876ad502471ebe6|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0007-miscutils-crontab.patch
+    44e09da8d71dcc67a889c295bdb5d50cdfa0f90b6ab114c4c06181c9eba23137|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0008-networking-ftpd-no-chroot.patch
+    587b67493840871f67375ef3b21aa8b9b6a23c15cafff8724358d719a71bf959|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0009-networking-httpd-default-port.patch
+    102627807d6571d2ff2a1eb6fe9c5dc76a84b182b5bbee537def6f00f0297ff4|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0011-networking-tftp-no-chroot.patch
+    37902a94f75c3e17fa4dc76b88ca4eba359cca6280fec2006f201d8ccce72087|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0012-util-linux-mount-no-addmntent.patch

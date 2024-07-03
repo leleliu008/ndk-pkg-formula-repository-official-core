@@ -1,0 +1,14 @@
+summary: A small man page generator
+web-url: https://sr.ht/~sircmpwn/scdoc/
+src-url: https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.3.tar.gz
+src-sha: 4c5c6136540384e5455b250f768e7ca11b03fdba1a8efc2341ee0f1111e57612
+license: MIT
+
+do12345: |
+    gmakew clean
+    gmakew scdoc CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
+    mv scdoc scdoc.exe
+
+install: |
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" HOST_SCDOC=./scdoc.exe

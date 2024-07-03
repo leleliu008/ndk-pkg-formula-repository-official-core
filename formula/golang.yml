@@ -7,9 +7,9 @@ src-sha: fed720678e728a7ca30ba8d1ded1caafe27d16028fab0232b8ba8e22008fb784
 license: BSD-3-Clause
 version: 1.22.4
 dep-upp: bash
-binbstd: 1
 bscript: src
 bsystem: go
+
 install: |
     export GOROOT_BOOTSTRAP="$(go env GOROOT)"
 

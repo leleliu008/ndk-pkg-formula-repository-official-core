@@ -5,7 +5,9 @@ src-sha: 700eb7a7b9a4bbd1c8aa757aaa7b0cc8c5047d4c33c48518564eb3f0938e193f
 dep-pkg: boost icu4c libprotobuf googletest abseil
 license: Apache-2.0
 bscript: cpp
+
 dopatch: printf 'INPUT(-licudata %s -lc++_shared)\n' "$(pkg-config --libs-only-l protobuf)" > ../../lib/libpthread.a
+
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
@@ -15,5 +17,4 @@ install: |
         -DUSE_POSIX_THREAD=ON \
         -DUSE_ICU_REGEXP=ON \
         -DUSE_BOOST=ON \
-        -DBoost_USE_STATIC_LIBS=ON \
         -DUSE_RE2=OFF
