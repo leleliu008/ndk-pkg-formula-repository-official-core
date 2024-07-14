@@ -1,0 +1,161 @@
+name: workflow5
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  ubuntu:
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--fsle', '']
+        pkg: [figlet,file,findent,findutils,fish,flac,flatc,flex,flock,fontconfig,fortune,fselect,fsmon,fswatch,fzf,fzy,g,garble,gat,gawk,gbt,gdk-pixbuf,gdu,geographiclib,germanium,getopt,gettext,gettext-tools,gf,gh]
+
+    runs-on: ubuntu-latest
+
+    container: fpliu/ndk-pkg
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v4
+
+      - if:  ${{ github.ref_name == 'dev' }}
+        run: |
+            curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/dev/ndk-pkg
+            chmod +x ndk-pkg
+            mv ndk-pkg /usr/bin/ndk-pkg
+
+      - run: /usr/bin/ndk-pkg about
+      - run: /usr/bin/ndk-pkg setup
+      - run: /usr/bin/ndk-pkg sysinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
+
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            created: 1673675503
+            updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
+
+      - run: |
+          set -ex
+
+          PKGTYPE=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+
+          if [ "$PKGTYPE" = exe ] ; then
+            MIN_SDK_API_LEVEL=34
+          else
+              if [ -z "$PKGTYPE" ] ; then
+                  PKGNAME=${{ matrix.pkg }}
+
+                  case $PKGNAME in
+                    lib*)
+                        ;;
+                    *lib)
+                        ;;
+                       *)
+                       MIN_SDK_API_LEVEL=34
+                       ;;
+                  esac
+              fi
+
+              if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                  MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                    MIN_SDK_API_LEVEL=21
+                  fi
+              fi
+          fi
+
+          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+
+
+  macos:
+    if: false
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        os:  [macos-14]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--fsle', '']
+        pkg: [figlet,file,findent,findutils,fish,flac,flatc,flex,flock,fontconfig,fortune,fselect,fsmon,fswatch,fzf,fzy,g,garble,gat,gawk,gbt,gdk-pixbuf,gdu,geographiclib,germanium,getopt,gettext,gettext-tools,gf,gh]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: export -p
+
+      - uses: actions/checkout@v4
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+
+      - run: install -d ~/.ndk-pkg/repos.d/official-core
+      - run: |
+            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
+            branch: master
+            pinned: 1
+            enabled: 1
+            created: 1673675503
+            updated: 1676399969
+            EOF
+
+      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
+
+      - run: |
+          set -ex
+
+          if [ ${{ matrix.pkg }} = pdfium ] ; then
+            echo ${{ matrix.pkg }} package should be built on GNU/Linux
+            exit 0
+          fi
+
+          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+
+          if [ "$PKGTYPE" = exe ] ; then
+            MIN_SDK_API_LEVEL=34
+          else
+              if [ -z "$PKGTYPE" ] ; then
+                  PKGNAME=${{ matrix.pkg }}
+
+                  case $PKGNAME in
+                    lib*)
+                        ;;
+                    *lib)
+                        ;;
+                       *)
+                        MIN_SDK_API_LEVEL=34
+                        ;;
+                  esac
+              fi
+
+              if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+                    MIN_SDK_API_LEVEL=21
+                  fi
+              fi
+          fi
+
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
