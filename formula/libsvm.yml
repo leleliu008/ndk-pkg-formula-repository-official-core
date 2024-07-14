@@ -1,8 +1,8 @@
 summary: Library for support vector machines
 git-url: https://github.com/cjlin1/libsvm
 web-url: https://www.csie.ntu.edu.tw/~cjlin/libsvm/
-src-url: https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.32.tar.gz
-src-sha: 8644cc6518ca88bbc50d8c8ead1734f1ab9b6f17017045ef9ae38773aa653dad
+src-url: https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.33.tar.gz
+src-sha: d5da12ccc3d0eed8453fbdf6fac7d9f0052f3e8a5f07a2174e4ef0a9d83dcdf8
 license: BSD-3-Clause
 binbstd: 1
 install: |
