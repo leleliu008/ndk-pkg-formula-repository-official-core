@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,okta-aws-cli,opa,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pegof,pget,pigz]
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [ngtcp2,ninja,nnn,nsh,ntbtls,nuclei,numactl,nushell,oat++,obfs4proxy,oboe,okta-aws-cli,opa,openal-soft,opencolorio,opencv,openlibm,openmpi,openssl,openssl-fips,p7zip,packcc,patch,patchelf,pbzip2,pcapplusplus,pcre2,pegof,pget,pigz]
 
     runs-on: ${{ matrix.os }}

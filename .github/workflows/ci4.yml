@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff]
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,esbuild,ethereum,exa,exhale,exiv2,eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff]
 
     runs-on: ${{ matrix.os }}

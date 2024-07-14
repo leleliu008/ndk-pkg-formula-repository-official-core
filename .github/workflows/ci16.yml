@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,sjpeg,skcms,sl,soundtouch,spdlog,speex]
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [re2c,restic,resvg,ripgrep,ripgrep-all,rlwrap,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,sjpeg,skcms,sl,soundtouch,spdlog,speex]
 
     runs-on: ${{ matrix.os }}

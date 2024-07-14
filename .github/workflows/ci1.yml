@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [ARM_NEON_2_x86_SSE,aalib,acl,act,actionlint,adig,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,arping,awk,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen]
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [ARM_NEON_2_x86_SSE,aalib,acl,act,actionlint,adig,ag,age,alass,algernon,antibody,apkeep,aptly,archiver,args,aria2,arping,awk,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,bgrep,binaryen]
 
     runs-on: ${{ matrix.os }}

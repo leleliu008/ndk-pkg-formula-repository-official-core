@@ -15,7 +15,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libflatbuffers,libgetdomainname,libglm,libgraphene,libhexdump,libilbc,libimagequant,libintl-lite,libirecovery]
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       matrix:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--fsle', '']
+        opt: ['--static', '']
         pkg: [libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libflatbuffers,libgetdomainname,libglm,libgraphene,libhexdump,libilbc,libimagequant,libintl-lite,libirecovery]
 
     runs-on: ${{ matrix.os }}
