@@ -1,19 +1,18 @@
 summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
 git-url: https://github.com/sqlite/sqlite
-web-url: https://www.sqlite.org/
-src-url: https://www.sqlite.org/2024/sqlite-autoconf-3460000.tar.gz
-src-sha: 6f8e6a7b335273748816f9b3b62bbdc372a889de8782d7f048c653a447417a7d
+web-url: https://sqlite.org/
+src-url: https://sqlite.org/2024/sqlite-amalgamation-3460000.zip
+src-sha: 712a7d09d2a22652fb06a49af516e051979a3984adb067da86760e60ed51a7f5
 version: 3.46.0
 license: blessing
-binbstd: 1
 
 install: |
-    run "$CC" -c "$CFLAGS" "$CPPFLAGS" -o sqlite3.o sqlite3.c
+    run "$CC" -c "$CFLAGS" "$CPPFLAGS" -o sqlite3.o ../sqlite3.c
     run "$CC" -shared "$LDFLAGS" -o libsqlite3.so sqlite3.o
     run "$AR" rsc libsqlite3.a sqlite3.o
 
-    install_incs *.h
-    install_libs libsqlite3.a libsqlite3.so
+    install_libs libsqlite3.*
+    install_incs ../*.h
 
 dotweak: |
     install -d lib/pkgconfig

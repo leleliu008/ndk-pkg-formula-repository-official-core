@@ -6,6 +6,6 @@ license: MIT GPL-2.0-or-later
 dep-pkg: libz
 binbstd: 1
 install: |
-    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -l:libz.a -o pngcheck pngcheck.c
+    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -lz -o pngcheck pngcheck.c
     install_bins pngcheck
     install_mans pngcheck.1

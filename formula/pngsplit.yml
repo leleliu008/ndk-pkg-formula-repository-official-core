@@ -7,6 +7,6 @@ dep-pkg: libz
 bscript: gpl
 binbstd: 1
 install: |
-    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -l:libz.a -o pngsplit pngsplit.c
+    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -lz -o pngsplit pngsplit.c
     install_bins pngsplit
     install_mans pngsplit.1
