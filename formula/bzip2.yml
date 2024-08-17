@@ -1,9 +1,11 @@
 summary: Burrows–Wheeler-based data compression utilities with high compression ratio
 web-url: https://sourceware.org/bzip2
 git-url: https://sourceware.org/git/bzip2
-src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8.tar.gz
-src-sha: fb36d769189faaf841390fae88639fb02c79b87b0691a340fbbfc32b4f82b789
+src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8@2.tar.gz
+src-sha: 13337d86c271b8e6f9cf4ea0b6fd6a1cd06b9b75c31fb4781ffbfcc6982c1bf0
+version: 1.0.8
 license: bzip2-1.0.8
-install: cmakew -DINSTALL_EXECUTABLES=ON -DINSTALL_LIBRARIES=OFF -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=OFF
-
-developer: Julian Seward <jseward@acm.org>
+bsystem: cmake
+prepare: |
+    CMAKE_BUILD_TARGETS='bz2-static bzip2 bzip2recover'
+    CMAKE_INSTALL_COMPONENTS='bin man'
