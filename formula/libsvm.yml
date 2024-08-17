@@ -2,12 +2,13 @@ summary: Library for support vector machines
 git-url: https://github.com/cjlin1/libsvm
 web-url: https://www.csie.ntu.edu.tw/~cjlin/libsvm/
 src-url: https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.33.tar.gz
+src-uri: https://distfiles.macports.org/libsvm/libsvm-3.33.tar.gz
 src-sha: d5da12ccc3d0eed8453fbdf6fac7d9f0052f3e8a5f07a2174e4ef0a9d83dcdf8
 license: BSD-3-Clause
-binbstd: 1
+
 install: |
-    run $CXX -c $CXXFLAGS $CPPFLAGS -o svm.o svm.cpp
+    run $CXX -c $CXXFLAGS $CPPFLAGS -o svm.o ../svm.cpp
     run $CXX -shared $LDFLAGS -o libsvm.so svm.o
     run $AR crs libsvm.a svm.o
-    install_incs svm.h
-    install_libs libsvm.a libsvm.so
+    install_incs ../svm.h
+    install_libs libsvm.*
