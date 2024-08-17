@@ -6,6 +6,7 @@ src-sha: cf789791b5c11d6d7a00628590696627bb8f980e3d7c7a0200026787b08aba37
 license: ISC
 dep-pkg: openssl-dev libgetloadavg
 install: cargow install --locked --no-default-features
+prepare: export RUSTUP_TOOLCHAIN=1.76
 
 # sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
 api-min: 24
