@@ -7,7 +7,6 @@ license: WTFPL
 dep-pkg: imlib2
 
 ppflags: -DX_DISPLAY_MISSING
-ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lfreetype
 
 dopatch: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then

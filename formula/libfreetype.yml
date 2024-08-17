@@ -3,7 +3,7 @@ web-url: https://freetype.org/
 git-url: https://gitlab.freedesktop.org/freetype/freetype
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
 src-sha: 12991c4e55c506dd7f9b765933e62fd2be2e06d421505d7950a132e4f1bb484d
-dep-pkg: brotli libbz2 libpng
+dep-pkg: libbrotli libbz2 libpng
 license: FTL
 
 install: |

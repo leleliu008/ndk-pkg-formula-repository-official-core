@@ -4,7 +4,7 @@ web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.8.0.tar.bz2
 src-sha: 40d3792d38cfa244d8f692974a567e9a5f3387c547579f1124e95ea2a1020d0d
 license: curl
-dep-pkg: libnghttp2 libcares libzstd libz brotli openssl-dev
+dep-pkg: libnghttp2 libcares libzstd libz libbrotli openssl-dev
 dep-upp: perl
 
 dopatch: sedInPlace 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
