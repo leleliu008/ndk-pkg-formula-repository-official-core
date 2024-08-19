@@ -1,14 +1,16 @@
-pkgtype: exe+lib
 summary: A high-performance JPEG image codec that uses SIMD instructions (MMX, SSE2, AVX2, Neon, AltiVec) to accelerate baseline JPEG compression and decompression
 web-url: https://www.libjpeg-turbo.org/
 git-url: https://github.com/libjpeg-turbo/libjpeg-turbo
-src-url: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.0.2/libjpeg-turbo-3.0.2.tar.gz
-src-uri: https://downloads.sourceforge.net/project/libjpeg-turbo/3.0.2/libjpeg-turbo-3.0.2.tar.gz
-src-sha: c2ce515a78d91b09023773ef2770d6b0df77d674e144de80d63e0389b3a15ca6
+src-url: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.0.3/libjpeg-turbo-3.0.3.tar.gz
+src-uri: https://distfiles.macports.org/libjpeg-turbo/libjpeg-turbo-3.0.3.tar.gz
+src-sha: 343e789069fc7afbcdfe44dbba7dbbf45afa98a15150e079a38e60e44578865d
 license: IJG
 dep-upp: nasm
+
+prepare: CMAKE_INSTALL_COMPONENTS='lib include'
+
 install: |
     cmakew \
+        -DWITH_JAVA=OFF \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=ON \
-        -DWITH_JAVA=OFF
+        -DENABLE_SHARED=ON
