@@ -4,7 +4,7 @@ src-url: http://www.sudo.ws/dist/sudo-1.9.2.tar.gz
 src-sha: 7c98d201f181c47152711b9f391e0f6b5545f3ef8926298a3e8bc6288e118314
 
 dopatch: |
-    sedInPlace '1i #include<sudo_compat.h>' include/compat/glob.h
+    gsed -i '1i #include<sudo_compat.h>' include/compat/glob.h
 
 install: |
     export CPPFLAGS="$CPPFLAGS -DLINE_MAX=2048"

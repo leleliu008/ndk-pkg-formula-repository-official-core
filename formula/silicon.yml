@@ -1,6 +1,5 @@
 pkgtype: pie
 summary: A command-line tool to render your source code into a beautiful image
-git-url: https://github.com/Aloxaf/silicon
 src-url: https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.2.tar.gz
 src-sha: 815d41775dd9cd399650addf8056f803f3f57e68438e8b38445ee727a56b4b2d
 license: MIT

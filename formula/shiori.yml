@@ -1,5 +1,4 @@
 summary: Simple bookmark manager built with Go
-git-url: https://github.com/go-shiori/shiori
 src-url: https://github.com/go-shiori/shiori/archive/refs/tags/v1.5.0.tar.gz
 src-sha: c2ebc0f009feb22f891c7ab0fa7b8c0d71e1cfc34a974c7503a702ec07d8e9ee
 license: MIT

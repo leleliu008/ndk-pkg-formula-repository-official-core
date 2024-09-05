@@ -1,7 +1,6 @@
 pkgtype: exe+lib
 summary: Codec library for encoding and decoding AV1 video streams
 web-url: https://aomedia.googlesource.com/aom
-git-url: https://github.com/jbeich/aom
 src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.9.1.tar.gz
 src-sha: dcbc52dbb5bcfb79e83529c6357c7f170718f0fac21ad882d9ac410e5158296f
 license: BSD-2-Clause

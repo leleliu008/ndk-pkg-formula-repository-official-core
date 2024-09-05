@@ -1,5 +1,4 @@
 summary: A HTTP server to execute shell commands
-git-url: https://github.com/adnanh/webhook
 src-url: https://github.com/adnanh/webhook/archive/2.8.1.tar.gz
 src-sha: a1e3eb2231e5631ebb374b76a79c3bac9cbdc7010974395e2d5e4e2e62ffd187
 license: MIT

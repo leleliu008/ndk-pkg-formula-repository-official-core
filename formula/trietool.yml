@@ -1,6 +1,5 @@
 summary: A command-line tool for manipulating double-array trie data
 web-url: https://linux.thai.net/~thep/datrie/datrie.html
-git-url: https://github.com/tlwg/libdatrie
 src-url: https://github.com/tlwg/libdatrie/releases/download/v0.2.13/libdatrie-0.2.13.tar.xz
 src-sha: 12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be
 license: LGPL-2.1-or-later

@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: Cartographic Projections Library
 web-url: https://proj.org/
-git-url: https://github.com/OSGeo/PROJ
 src-url: https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz
 src-sha: b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14
 license: MIT
@@ -142,8 +141,8 @@ dopatch: |
     mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
     EOF
 
-    sedInPlace 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
-    sedInPlace 's|${CURL_LIBRARY}|CURL::libcurl|' src/lib_proj.cmake
+    gsed -i 's|${TIFF_LIBRARY}|TIFF::TIFF|' src/lib_proj.cmake
+    gsed -i 's|${CURL_LIBRARY}|CURL::libcurl|' src/lib_proj.cmake
 
 install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF
 

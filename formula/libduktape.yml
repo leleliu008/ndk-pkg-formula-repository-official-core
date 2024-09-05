@@ -1,6 +1,5 @@
 summary: An embeddable Javascript engine with a focus on portability and compact footprint
 web-url: https://duktape.org/
-git-url: https://github.com/svaarala/duktape
 src-url: https://github.com/svaarala/duktape/releases/download/v2.7.0/duktape-2.7.0.tar.xz
 src-sha: 90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890
 license: MIT

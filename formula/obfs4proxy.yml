@@ -1,5 +1,4 @@
 summary: Pluggable transport proxy for Tor, implementing obfs4
-git-url: https://github.com/Yawning/obfs4
 src-url: https://github.com/Yawning/obfs4/archive/refs/tags/obfs4proxy-0.0.14.tar.gz
 src-sha: a4b7520e732b0f168832f6f2fdf1be57f3e2cce0612e743d3f6b51341a740903
 license: BSD-2-Clause

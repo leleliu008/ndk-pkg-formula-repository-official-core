@@ -20,7 +20,7 @@ dopatch: |
         export CFLAGS="$CFLAGS -arch=$NATIVE_OS_ARCH"
     fi
 
-    sedInPlace '/TARGET_SONAME=/c TARGET_SONAME=libluajit.so' src/Makefile
+    gsed -i '/TARGET_SONAME=/c TARGET_SONAME=libluajit.so' src/Makefile
 
 prepare: |
     if [ -d /usr/include/x86_64-linux-gnu ] ; then

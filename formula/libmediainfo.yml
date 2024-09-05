@@ -7,7 +7,7 @@ license: BSD-2-Clause
 dep-pkg: libcurl libzen libz
 bscript: Project/CMake
 
-dopatch: sedInPlace 's|find_package(CURL)|find_package(CURL CONFIG)|' CMakeLists.txt
+dopatch: gsed -i 's|find_package(CURL)|find_package(CURL CONFIG)|' CMakeLists.txt
 
 install: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"

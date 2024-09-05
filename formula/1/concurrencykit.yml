@@ -1,10 +1,9 @@
 summary: Aid design and implementation of concurrent systems
 web-url: http://concurrencykit.org/
-git-url: https://github.com/concurrencykit/ck.git
 src-url: https://github.com/concurrencykit/ck/archive/0.7.0.tar.gz
 src-sha: e730cb448fb0ecf9d19bf4c7efe9efc3c04dd9127311d87d8f91484742b0da24
 license: BSD-2-Clause
 bsystem: configure
 
 dopatch: |
-    sedInPlace '1a set -x' configure
+    gsed -i '1a set -x' configure

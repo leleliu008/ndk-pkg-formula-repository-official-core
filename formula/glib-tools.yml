@@ -9,22 +9,22 @@ dep-upp: python3
 dep-pym: packaging
 
 dopatch: |
-    sedInPlace "s|link_with : libgio|link_with : libgio.get_static_lib()|" gio/meson.build
-    sedInPlace "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
-    sedInPlace "s|link_with : libgobject|link_with : libgobject.get_static_lib()|" gobject/meson.build
-    sedInPlace "s|link_with : libgmodule|link_with : libgmodule.get_static_lib()|" gmodule/meson.build
-    sedInPlace "s|link_with : libgthread|link_with : libgthread.get_static_lib()|" gthread/meson.build
-    sedInPlace "s|link_with: libgirepository,|link_with: libgirepository.get_static_lib(),|" girepository/meson.build
+    gsed -i "s|link_with : libgio|link_with : libgio.get_static_lib()|" gio/meson.build
+    gsed -i "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
+    gsed -i "s|link_with : libgobject|link_with : libgobject.get_static_lib()|" gobject/meson.build
+    gsed -i "s|link_with : libgmodule|link_with : libgmodule.get_static_lib()|" gmodule/meson.build
+    gsed -i "s|link_with : libgthread|link_with : libgthread.get_static_lib()|" gthread/meson.build
+    gsed -i "s|link_with: libgirepository,|link_with: libgirepository.get_static_lib(),|" girepository/meson.build
 
-    sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+    gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
 
-    sedInPlace "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
+    gsed -i "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
+    gsed -i "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    gsed -i "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
 
-    sedInPlace '2228,2254d'  meson.build
-    sedInPlace "2228a libintl = cc.find_library('intl', static : true, dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    sedInPlace '2229a libintl_deps = [libintl, libiconv]' meson.build
+    gsed -i '2228,2254d'  meson.build
+    gsed -i "2228a libintl = cc.find_library('intl', static : true, dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i '2229a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
     mesonw \

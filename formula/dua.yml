@@ -1,5 +1,4 @@
 summary: A fast disk usage analyzer
-git-url: https://github.com/Byron/dua-cli
 src-url: https://github.com/Byron/dua-cli/archive/refs/tags/v2.29.0.tar.gz
 src-sha: af58bfc5146b296ced1ed711b0bbd21bce731a69fb6bea6622e6acfbe180a91a
 license: MIT

@@ -1,6 +1,5 @@
 summary: Standalone version of arguments parsing functions from GLIBC
 web-url: https://www.lysator.liu.se/~nisse/misc/
-git-url: https://github.com/argp-standalone/argp-standalone
 src-url: https://github.com/argp-standalone/argp-standalone/archive/refs/tags/1.5.0.tar.gz
 src-sha: c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
 license: LGPL-2.1-or-later

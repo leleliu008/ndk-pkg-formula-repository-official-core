@@ -1,5 +1,4 @@
 summary: Subdomain discovery tool
-git-url: https://github.com/projectdiscovery/subfinder
 src-url: https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.6.tar.gz
 src-sha: 636bccb8b5a18b709f735f29979e53752f3d71e1c246b7ce845d802766937bf2
 license: MIT

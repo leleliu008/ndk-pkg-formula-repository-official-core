@@ -8,8 +8,8 @@ dep-upp: gm4 bison texinfo
 dep-pkg: isl libgmp libmpc libmpfr
 
 dopatch: |
-    sedInPlace '/rindex/d' ../include/ndk-pkg-common.h
-    sedInPlace '/memcmp/d' ../include/ndk-pkg-common.h
+    gsed -i '/rindex/d' ../include/ndk-pkg-common.h
+    gsed -i '/memcmp/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \

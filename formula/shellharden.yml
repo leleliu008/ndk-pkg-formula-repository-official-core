@@ -1,5 +1,4 @@
 summary: A bash syntax highlighter that encourages/fixes variables quoting
-git-url: https://github.com/anordal/shellharden
 src-url: https://github.com/anordal/shellharden/archive/refs/tags/v4.3.1.tar.gz
 src-sha: 3c16a98502df01a2fa2b81467d5232cc1aa4c80427e2ecf9f7e74591d692e22c
 license: MPL-2.0

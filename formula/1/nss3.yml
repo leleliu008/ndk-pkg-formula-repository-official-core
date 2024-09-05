@@ -8,7 +8,7 @@ bscript: nss
 
 dopatch: |
     :
-    #sedInPlace '1a set -x' build.sh
+    #gsed -i '1a set -x' build.sh
 
 install: |
     "$PACKAGE_INSTALLING_BST_DIR/build.sh" \

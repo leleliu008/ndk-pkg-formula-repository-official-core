@@ -9,12 +9,12 @@ parallel: 0
 
 dopatch: |
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
-    sedInPlace 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
-    sedInPlace '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in
-    sedInPlace '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in
-    sedInPlace '/^INSTALL =/c INSTALL = install' config.mk.in
-    sedInPlace '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
-    sedInPlace 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile
+    gsed -i 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
+    gsed -i '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in
+    gsed -i '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in
+    gsed -i '/^INSTALL =/c INSTALL = install' config.mk.in
+    gsed -i '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+    gsed -i 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile
     run cp config.mk.in config.mk
 
 install: |

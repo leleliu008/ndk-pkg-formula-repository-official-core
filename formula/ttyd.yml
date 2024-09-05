@@ -1,12 +1,11 @@
 summary: A simple command-line tool for sharing terminal over the web
 web-url: https://tsl0922.github.io/ttyd
-git-url: https://github.com/tsl0922/ttyd
 src-url: https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.7.tar.gz
 src-sha: 039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650
 license: MIT
 dep-pkg: json-c libwebsockets
 bsystem: cmake
-dopatch: sedInPlace '/LINK_LIBS util/d' CMakeLists.txt
+dopatch: gsed -i '/LINK_LIBS util/d' CMakeLists.txt
 
 # int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
 api-min: 23

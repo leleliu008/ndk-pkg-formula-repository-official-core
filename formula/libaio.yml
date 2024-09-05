@@ -7,7 +7,7 @@ license: LGPL-2.1-or-later
 dopatch: |
     # on macOS, some fs is non-case-sensitive. In this case, gmake install will always say make: 'install' is up to date.
     mv INSTALL INSTALL.txt
-    sedInPlace 's|install -D|install|g' src/Makefile
+    gsed -i 's|install -D|install|g' src/Makefile
 
 install: |
     gmakew clean

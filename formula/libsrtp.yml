@@ -1,5 +1,4 @@
 summary: Implementation of the Secure Real-time Transport Protocol
-git-url: https://github.com/cisco/libsrtp
 src-url: https://github.com/cisco/libsrtp/archive/v2.6.0.tar.gz
 src-sha: bf641aa654861be10570bfc137d1441283822418e9757dc71ebb69a6cf84ea6b
 license: BSD-3-Clause

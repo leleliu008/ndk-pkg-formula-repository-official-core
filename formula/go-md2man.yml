@@ -1,5 +1,4 @@
 summary: Converts markdown into roff (man pages)
-git-url: https://github.com/cpuguy83/go-md2man
 src-url: https://github.com/cpuguy83/go-md2man/archive/refs/tags/v2.0.4.tar.gz
 src-sha: b0a4c7c077ede56967deef6ab7e7696c0f46124b0b3360fd05564ec5a536f11f
 license: MIT

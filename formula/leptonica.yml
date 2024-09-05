@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: Image processing and image analysis library
 web-url: http://www.leptonica.org/
-git-url: https://github.com/DanBloomberg/leptonica
 src-url: https://github.com/DanBloomberg/leptonica/releases/download/1.84.1/leptonica-1.84.1.tar.gz
 src-sha: 2b3e1254b1cca381e77c819b59ca99774ff43530209b9aeb511e1d46588a64f6
 license: BSD-2-Clause

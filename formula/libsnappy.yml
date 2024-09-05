@@ -1,6 +1,5 @@
 summary: Compression/decompression library aiming for high speed
 web-url: https://google.github.io/snappy
-git-url: https://github.com/google/snappy
 src-url: https://github.com/google/snappy/archive/refs/tags/1.2.0.tar.gz
 src-sha: 9b8f10fbb5e3bc112f2e5e64f813cb73faea42ec9c533a5023b5ae08aedef42e
 license: BSD-3-Clause

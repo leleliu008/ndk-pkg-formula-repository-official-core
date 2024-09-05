@@ -1,6 +1,5 @@
 summary: C library for the Public Suffix List
 web-url: https://rockdaboot.github.io/libpsl
-git-url: https://github.com/rockdaboot/libpsl
 src-url: https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 src-sha: 1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208
 license: MIT

@@ -33,7 +33,7 @@ prepare: |
 
     run cd -
 
-    sedInPlace '/PNG_USE_READ_MACROS/a "FPDFSDK_EXPORTS",' BUILD.gn
+    gsed -i '/PNG_USE_READ_MACROS/a "FPDFSDK_EXPORTS",' BUILD.gn
 
 install: |
     case $TARGET_PLATFORM_ARCH in

@@ -7,8 +7,8 @@ license: GPL-3.0-or-later
 bsystem: configure
 
 dopatch: |
-    sedInPlace 's/__DragonFly__/__DragonFly__ || defined __ANDROID__/' lib/freading.c &&
-    sedInPlace 's/__DragonFly__/__DragonFly__ || defined __ANDROID__/' lib/stdio-impl.h
+    gsed -i 's/__DragonFly__/__DragonFly__ || defined __ANDROID__/' lib/freading.c &&
+    gsed -i 's/__DragonFly__/__DragonFly__ || defined __ANDROID__/' lib/stdio-impl.h
 
 install: |
     configure \

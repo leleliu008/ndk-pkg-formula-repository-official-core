@@ -1,6 +1,5 @@
 summary: USB multiplexor library for iOS devices
 web-url: https://www.libimobiledevice.org
-git-url: https://github.com/libimobiledevice/libusbmuxd
 src-url: https://github.com/libimobiledevice/libusbmuxd/releases/download/2.1.0/libusbmuxd-2.1.0.tar.bz2
 src-sha: c35bf68f8e248434957bd5b234c389b02206a06ecd9303a7fb931ed7a5636b16
 license: GPL-2.0-or-later LGPL-2.1-or-later
@@ -8,8 +7,8 @@ dep-pkg: libimobiledevice-glue
 bsystem: configure
 
 dopatch: |
-    sedInPlace 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
-    sedInPlace 's|/var/run|/data/local/tmp|' src/libusbmuxd.c
+    gsed -i 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
+    gsed -i 's|/var/run|/data/local/tmp|' src/libusbmuxd.c
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

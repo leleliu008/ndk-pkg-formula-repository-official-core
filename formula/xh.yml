@@ -1,5 +1,4 @@
 summary: A friendly and fast tool for sending HTTP requests
-git-url: https://github.com/ducaale/xh
 src-url: https://github.com/ducaale/xh/archive/refs/tags/v0.22.0.tar.gz
 src-sha: 72f4d5e24165d8749433167e3ad3df8f26faafb250f1232acbe5192843e4157c
 license: MIT

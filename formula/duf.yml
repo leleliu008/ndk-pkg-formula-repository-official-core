@@ -1,5 +1,4 @@
 summary: A better alternative to df(1)
-git-url: https://github.com/muesli/duf
 src-url: https://github.com/muesli/duf/archive/v0.8.1.tar.gz
 src-sha: ebc3880540b25186ace220c09af859f867251f4ecaef435525a141d98d71a27a
 license: MIT

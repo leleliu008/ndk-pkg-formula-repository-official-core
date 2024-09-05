@@ -5,7 +5,7 @@ src-url: http://downloads.webmproject.org/releases/webp/libwebp-1.4.0.tar.gz
 src-sha: 61f873ec69e3be1b99535634340d5bde750b2e4447caa1db9f61be3fd49ab1e5
 license: BSD-3-Clause
 
-dopatch: sedInPlace 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
+dopatch: gsed -i 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
 
 install: |
     cmakew \
@@ -31,4 +31,4 @@ install: |
         -DWEBP_BUILD_IMG2WEBP=OFF \
         -DWEBP_BUILD_ANIM_UTILS=OFF
 
-dotweak: sedInPlace '/^Libs:/s|$| -lm|' lib/pkgconfig/libsharpyuv.pc
+dotweak: gsed -i '/^Libs:/s|$| -lm|' lib/pkgconfig/libsharpyuv.pc

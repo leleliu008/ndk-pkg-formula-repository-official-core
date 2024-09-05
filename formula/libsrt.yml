@@ -1,14 +1,13 @@
 summary: Secure Reliable Transport
 web-url: https://www.srtalliance.org/
-git-url: https://github.com/Haivision/srt
 src-url: https://github.com/Haivision/srt/archive/refs/tags/v1.5.3.tar.gz
 src-sha: befaeb16f628c46387b898df02bc6fba84868e86a6f6d8294755375b9932d777
 license: MPL-2.0
 dep-pkg: openssl-dev
 
 dopatch: |
-    sedInPlace 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
-    sedInPlace 's|scripts/srt-ffplay|scripts/srt-ffplay EXCLUDE_FROM_ALL|'   CMakeLists.txt
+    gsed -i 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
+    gsed -i 's|scripts/srt-ffplay|scripts/srt-ffplay EXCLUDE_FROM_ALL|'   CMakeLists.txt
 
 install: |
     cmakew \

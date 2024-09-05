@@ -1,5 +1,4 @@
 summary: Toolkit library for asynchronous network I/O with protocol stacks
-git-url: https://github.com/baresip/re
 src-url: https://github.com/baresip/re/archive/refs/tags/v3.13.0.tar.gz
 src-sha: de293bf0a55656e59325f8563814d185c8b459667c897a59d1acc952f86f4746
 license: BSD-3-Clause

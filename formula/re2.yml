@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: Alternative to backtracking PCRE-style regular expression engines
-git-url: https://github.com/google/re2
 src-url: https://github.com/google/re2/archive/refs/tags/2024-06-01.tar.gz
 src-sha: 7326c74cddaa90b12090fcfc915fe7b4655723893c960ee3c2c66e85c5504b6c
 version: 20240601

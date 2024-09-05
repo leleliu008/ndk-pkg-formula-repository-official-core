@@ -1,5 +1,4 @@
 summary: New zlib (gzip, deflate) compatible compressor
-git-url: https://github.com/google/zopfli
 src-url: https://github.com/google/zopfli/archive/zopfli-1.0.3.tar.gz
 src-sha: e955a7739f71af37ef3349c4fa141c648e8775bceb2195be07e86f8e638814bd
 license: Apache-2.0

@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: AV1 encoder
-git-url: https://gitlab.com/AOMediaCodec/SVT-AV1
 src-url: https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.0.0/SVT-AV1-v2.0.0.tar.bz2
 src-sha: f9c076c377e504be15e195db8dd36d91233bc37cb8e82530382f38bc1926df02
 license: BSD-3-Clause

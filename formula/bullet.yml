@@ -1,6 +1,5 @@
 summary: Physics SDK
 web-url: https://bulletphysics.org/
-git-url: https://github.com/bulletphysics/bullet3
 src-url: https://github.com/bulletphysics/bullet3/archive/3.25.tar.gz
 src-sha: c45afb6399e3f68036ddb641c6bf6f552bf332d5ab6be62f7e6c54eda05ceb77
 license: Zlib

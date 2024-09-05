@@ -7,7 +7,7 @@ license: BSD-2-Clause
 binbstd: 1
 
 dopatch: |
-    sedInPlace 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
+    gsed -i 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
 
 install: |
     export LD="$CC"

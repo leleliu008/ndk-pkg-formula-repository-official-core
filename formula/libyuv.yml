@@ -1,6 +1,5 @@
 summary: C library includes YUV conversion and scaling functionality
 web-url: https://chromium.googlesource.com/libyuv/libyuv
-git-url: https://github.com/leleliu008/libyuv
 src-url: https://github.com/leleliu008/libyuv/archive/refs/tags/v1788.tar.gz
 src-sha: 5daec5a5868600d1682397ef0941b2bdf2d02c07d2d499b0a1604afedaf23540
 dep-pkg: libjpeg-turbo

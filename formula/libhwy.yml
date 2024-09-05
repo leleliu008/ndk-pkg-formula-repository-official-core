@@ -1,5 +1,4 @@
 summary: Performance-portable, length-agnostic SIMD with runtime dispatch
-git-url: https://github.com/google/highway
 src-url: https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz
 src-sha: 7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343
 license: Apache-2.0

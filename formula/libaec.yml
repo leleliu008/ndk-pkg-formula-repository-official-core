@@ -4,4 +4,4 @@ src-url: https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.3/libaec-v1.1.3.ta
 src-sha: 46216f9d2f2d3ffea4c61c9198fe0236f7f316d702f49065c811447186d18222
 license: BSD-2-Clause
 bsystem: cmake
-dopatch: sedInPlace 's|DESTINATION cmake|DESTINATION lib/cmake/libaec|' CMakeLists.txt
+dopatch: gsed -i 's|DESTINATION cmake|DESTINATION lib/cmake/libaec|' CMakeLists.txt

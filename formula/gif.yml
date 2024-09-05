@@ -6,7 +6,7 @@ src-sha: be7ffbd057cadebe2aa144542fd90c6838c6a083b5e8a9048b8ee3b66b29d5fb
 parallel: 0
 
 dopatch: |
-    sedInPlace 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
+    gsed -i 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
 
 install: |
     gmakew clean   UNAME=Linux

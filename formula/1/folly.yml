@@ -1,5 +1,4 @@
 summary: A collection of reusable C++ library artifacts developed at Facebook
-git-url: https://github.com/facebook/folly.git
 src-url: https://github.com/facebook/folly/archive/refs/tags/v2023.09.18.00.tar.gz
 src-sha: 92167187103e20b0c8b808c9f263453872caba7edf63410cda1f79e2f98828f8
 license: Apache-2.0

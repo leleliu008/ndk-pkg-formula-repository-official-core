@@ -1,5 +1,4 @@
 summary: A structural diff tool that compares files based on their syntax
-git-url: https://github.com/Wilfred/difftastic
 src-url: https://github.com/Wilfred/difftastic/archive/refs/tags/0.57.0.tar.gz
 src-sha: 7ecc69f9cfa88259f7d6aef9309b03d00db8d2bf314c71807fe8b4f07a386063
 license: MIT

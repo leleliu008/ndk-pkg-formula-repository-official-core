@@ -1,6 +1,5 @@
 summary: A small static web server without CGI
 web-url: https://unix4lyfe.org/darkhttpd/
-git-url: https://github.com/emikulic/darkhttpd
 src-url: https://github.com/emikulic/darkhttpd/archive/refs/tags/v1.16.tar.gz
 src-sha: ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981
 license: ISC

@@ -7,7 +7,7 @@ src-sha: 59c89d0ed40d4efb23b7318aa29fe7039dbbc098334b14f17f1e7e561da31a26
 license: Zlib
 
 dopatch: |
-    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
-    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
+    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
+    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: cmakew -DSDL_STATIC=ON -DSDL_SHARED=ON

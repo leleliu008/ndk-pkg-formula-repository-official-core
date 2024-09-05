@@ -1,5 +1,4 @@
 summary: Wrapper around libsass that helps to create command-line apps
-git-url: https://github.com/sass/sassc
 src-url: https://github.com/sass/sassc/archive/refs/tags/3.6.2.tar.gz
 src-sha: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
 license: MIT

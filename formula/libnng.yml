@@ -1,6 +1,5 @@
 summary: Nanomsg-next-generation -- light-weight brokerless messaging
 web-url: https://nng.nanomsg.org
-git-url: https://github.com/nanomsg/nng
 src-url: https://github.com/nanomsg/nng/archive/refs/tags/v1.8.0.tar.gz
 src-sha: cfacfdfa35c1618a28bb940e71f774a513dcb91292999696b4346ad8bfb5baff
 license: MIT
@@ -8,9 +7,9 @@ dep-pkg: mbedtls
 
 dopatch2: |
     if [ "$TARGET_PLATFORM_VERS" -ge 24 ] ; then
-        sedInPlace '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF TRUE)'  src/platform/posix/CMakeLists.txt
+        gsed -i '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF TRUE)'  src/platform/posix/CMakeLists.txt
     else
-        sedInPlace '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF FALSE)' src/platform/posix/CMakeLists.txt
+        gsed -i '/NNG_HAVE_LOCKF/c set(NNG_HAVE_LOCKF FALSE)' src/platform/posix/CMakeLists.txt
     fi
 
 install: |

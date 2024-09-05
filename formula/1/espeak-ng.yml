@@ -1,11 +1,10 @@
 summary: An open source speech synthesizer
-git-url: https://github.com/espeak-ng/espeak-ng.git
 src-url: https://github.com/espeak-ng/espeak-ng/archive/refs/tags/1.50.tar.gz
 src-sha: 5ce9f24ee662b5822a4acc45bed31425e70d7c50707b96b6c1603a335c7759fa
 binbstd: 1
 bsystem: autogen
 
 dopatch: |
-    sedInPlace 's/-lpthread//' Makefile.am
-    sedInPlace 's/which/command -v/' autogen.sh
+    gsed -i 's/-lpthread//' Makefile.am
+    gsed -i 's/which/command -v/' autogen.sh
     ./autogen.sh

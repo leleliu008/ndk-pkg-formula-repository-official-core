@@ -1,6 +1,5 @@
 summary: Top-like interface for container metrics
 web-url: https://ctop.sh
-git-url: https://github.com/bcicen/ctop
 src-url: https://github.com/bcicen/ctop/archive/refs/tags/v0.7.7.tar.gz
 src-sha: 0db439f2030af73ad5345884b08a33a762c3b41b30604223dd0ebddde72d2741
 license: MIT

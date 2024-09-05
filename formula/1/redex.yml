@@ -6,13 +6,13 @@ dep-pkg: boost jsoncpp libexecinfo
 bsystem: autotools
 
 dopatch: |
-    sedInPlace 's/-lpthread/-lc/g'           Makefile.am &&
-    sedInPlace 's/__ANDROID__/0/g'           tools/oatmeal/dump-oat.cpp &&
-    sedInPlace 's/__ANDROID__/0/g'           tools/oatmeal/elf-writer.cpp &&
-    sedInPlace 's/#ifdef __ANDROID__/#if 0/' libresource/ResourceTypes.cpp &&
+    gsed -i 's/-lpthread/-lc/g'           Makefile.am &&
+    gsed -i 's/__ANDROID__/0/g'           tools/oatmeal/dump-oat.cpp &&
+    gsed -i 's/__ANDROID__/0/g'           tools/oatmeal/elf-writer.cpp &&
+    gsed -i 's/#ifdef __ANDROID__/#if 0/' libresource/ResourceTypes.cpp &&
     autoreconf -ivf &&
-    sedInPlace 's/-lpthread//g'     configure &&
-    sedInPlace 's/PTHREAD_LIBS=//g' configure
+    gsed -i 's/-lpthread//g'     configure &&
+    gsed -i 's/PTHREAD_LIBS=//g' configure
 
 install: |
     build_with_configure

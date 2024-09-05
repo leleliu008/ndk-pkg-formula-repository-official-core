@@ -1,5 +1,4 @@
 summary: A minimalist svn client to checkout/update Subversion repositories
-git-url: https://github.com/rofl0r/svn-lite
 src-url: https://github.com/rofl0r/svn-lite/archive/refs/tags/v1.09.tar.gz
 src-sha: 6152c3c7e73d0face8e2867ed31782e4a08b2d7aae4d45e45b49418b6b08465e
 dep-pkg: openssl@1.1

@@ -1,7 +1,6 @@
 pkgtype: exe+lib
 summary: An open source graph visualization software
 web-url: https://www.graphviz.org/
-git-url: https://gitlab.com/graphviz/graphviz
 src-url: https://gitlab.com/graphviz/graphviz/-/archive/11.0.0/graphviz-11.0.0.tar.bz2
 src-sha: 95173d21922082b0b2649fb24c1dc4bbc1e39504a92903b88df39804778cbb9d
 license: EPL-1.0

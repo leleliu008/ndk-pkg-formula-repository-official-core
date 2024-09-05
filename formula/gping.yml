@@ -1,5 +1,4 @@
 summary: Ping, but with a graph
-git-url: https://github.com/orf/gping
 src-url: https://github.com/orf/gping/archive/refs/tags/gping-v1.16.1.tar.gz
 src-sha: 557dad6e54b5dd23f88224ea7914776b7636672f237d9cbbea59972235ca89a8
 license: MIT

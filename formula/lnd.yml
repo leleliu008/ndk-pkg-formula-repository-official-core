@@ -1,6 +1,5 @@
 summary: Lightning Network Daemon
 web-url: http://dev.lightning.community/
-git-url: https://github.com/lightningnetwork/lnd
 src-url: https://github.com/lightningnetwork/lnd/archive/refs/tags/v0.15.0-beta.tar.gz
 src-sha: 04f6cac7b644f6e4e8a30b5732980df477c47961cf2398bf456cc4ca9fd1d4a5
 version: 0.15.0

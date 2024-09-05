@@ -7,11 +7,11 @@ dep-pkg: nspr
 bscript: nss
 
 dopatch: |
-    sedInPlace 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
-    sedInPlace 's/-lpthread//g'        coreconf/Linux.mk &&
-    sedInPlace 's/-lpthread//g'        lib/softoken/config.mk &&
-    sedInPlace 's/-lpthreads//g'       lib/sqlite/config.mk &&
-    sedInPlace 's/-lpthread//g'        gtests/google_test/gtest/m4/acx_pthread.m4 &&
+    gsed -i 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
+    gsed -i 's/-lpthread//g'        coreconf/Linux.mk &&
+    gsed -i 's/-lpthread//g'        lib/softoken/config.mk &&
+    gsed -i 's/-lpthreads//g'       lib/sqlite/config.mk &&
+    gsed -i 's/-lpthread//g'        gtests/google_test/gtest/m4/acx_pthread.m4 &&
     unset XCFLAGS &&
     prepare_includes "$PWD/lib" 
 

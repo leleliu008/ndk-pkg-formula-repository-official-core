@@ -1,7 +1,6 @@
 pkgtype: pie
 summary: A cross-platform build utility based on Lua
 web-url: https://xmake.io/
-git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.9.2/xmake-v2.9.2.tar.gz
 src-sha: 1f617b6a4568c7eb3e8ab0f3a67c16989245adc547e3a7d1fd861acb308fb5b2
 license: Apache-2.0

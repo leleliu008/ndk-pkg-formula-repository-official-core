@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: Zlib replacement with optimizations for next generation systems
-git-url: https://github.com/zlib-ng/zlib-ng
 src-url: https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.1.7.tar.gz
 src-sha: 59e68f67cbb16999842daeb517cdd86fc25b177b4affd335cd72b76ddc2a46d8
 license: Zlib

@@ -6,19 +6,19 @@ license: MPL-2.0
 bscript: nspr
 
 dopatch: |
-    sedInPlace '/AS="$android_toolchain"/d'       configure &&
-    sedInPlace '/CC="$android_toolchain"/d'       configure &&
-    sedInPlace '/CXX="$android_toolchain"/d'      configure &&
-    sedInPlace '/CPP="$android_toolchain"/d'      configure &&
-    sedInPlace '/LD="$android_toolchain"/d'       configure &&
-    sedInPlace '/AR="$android_toolchain"/d'       configure &&
-    sedInPlace '/RANLIB="$android_toolchain"/d'   configure &&
-    sedInPlace '/STRIP="$android_toolchain"/d'    configure &&
-    sedInPlace '/CPPFLAGS="-I$android_platform/d' configure &&
-    sedInPlace '/CFLAGS="-mandroid/d'             configure &&
-    sedInPlace '/CXXFLAGS="-mandroid/d'           configure &&
-    sedInPlace '/LDFLAGS="-mandroid/d'            configure &&
-    sedInPlace '/os_Linux_x86.s/d'                configure
+    gsed -i '/AS="$android_toolchain"/d'       configure &&
+    gsed -i '/CC="$android_toolchain"/d'       configure &&
+    gsed -i '/CXX="$android_toolchain"/d'      configure &&
+    gsed -i '/CPP="$android_toolchain"/d'      configure &&
+    gsed -i '/LD="$android_toolchain"/d'       configure &&
+    gsed -i '/AR="$android_toolchain"/d'       configure &&
+    gsed -i '/RANLIB="$android_toolchain"/d'   configure &&
+    gsed -i '/STRIP="$android_toolchain"/d'    configure &&
+    gsed -i '/CPPFLAGS="-I$android_platform/d' configure &&
+    gsed -i '/CFLAGS="-mandroid/d'             configure &&
+    gsed -i '/CXXFLAGS="-mandroid/d'           configure &&
+    gsed -i '/LDFLAGS="-mandroid/d'            configure &&
+    gsed -i '/os_Linux_x86.s/d'                configure
 
 install: |
     configure \

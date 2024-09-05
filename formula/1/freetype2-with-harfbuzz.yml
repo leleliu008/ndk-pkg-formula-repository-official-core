@@ -102,7 +102,7 @@ dopatch: |
     )
     EOF
 
-    sedInPlace 's|HarfBuzz_LIBRARY|HarfBuzz_LIBRARIES|' CMakeLists.txt
+    gsed -i 's|HarfBuzz_LIBRARY|HarfBuzz_LIBRARIES|' CMakeLists.txt
 
 install: |
     cmakew \

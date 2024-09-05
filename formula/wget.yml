@@ -7,8 +7,8 @@ dep-pkg: openssl-dev libcares libidn2 libz
 license: GPL-3.0-or-later
 
 dopatch: |
-    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
-    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
+    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
+    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \

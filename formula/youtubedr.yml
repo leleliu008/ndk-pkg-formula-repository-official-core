@@ -1,5 +1,4 @@
 summary: A command-line tool to download videos from youtube.com
-git-url: https://github.com/kkdai/youtube
 src-url: https://github.com/kkdai/youtube/archive/refs/tags/v2.10.1.tar.gz
 src-sha: 9d71c4a7e192d81f12944b3c881fa7d61a20d48d083bfad72bd357f9becb04ef
 license: MIT

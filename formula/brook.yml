@@ -1,6 +1,5 @@
 summary: Cross-platform strong encryption and not detectable proxy. Zero-Configuration
 web-url: https://txthinking.github.io/brook/
-git-url: https://github.com/txthinking/brook
 src-url: https://github.com/txthinking/brook/archive/refs/tags/v20240606.tar.gz
 src-sha: eee1c6173daff3199c23396f4661d7f81d701dc0f4eb1662b39041a6ca10703b
 license: GPL-3.0-only

@@ -9,11 +9,11 @@ dep-pkg: readline openssl-dev berkeley-db libglob
 bscript: src
 
 dopatch: |
-    sedInPlace '/search_paths_first"/d' configure
+    gsed -i '/search_paths_first"/d' configure
 
     for item in $(grep '<db.h>' -rl plugins/kdb/db2)
     do
-        sedInPlace 's|<db.h>|<db_185.h>|g' "$item" || return 1
+        gsed -i 's|<db.h>|<db_185.h>|g' "$item" || return 1
     done
 
 prepare: |

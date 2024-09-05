@@ -1,5 +1,4 @@
 summary: A simple utility to discover large files/folders
-git-url: https://github.com/viktomas/godu
 src-url: https://github.com/viktomas/godu/archive/refs/tags/v1.3.tar.gz
 src-sha: aec09355c2cf8b44da8b8694326b158563b6b05587f6c2de996a1b52bb523ca0
 license: MIT

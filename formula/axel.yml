@@ -1,5 +1,4 @@
 summary: A lightweight download accelerator
-git-url: https://github.com/axel-download-accelerator/axel
 src-url: https://github.com/axel-download-accelerator/axel/releases/download/v2.17.14/axel-2.17.14.tar.xz
 src-sha: 938ee7c8c478bf6fcc82359bbf9576f298033e8b13908e53e3ea9c45c1443693
 license: GPL-2.0-or-later

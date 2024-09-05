@@ -7,5 +7,5 @@ dep-pkg: libpcap ncurses libbthread
 ccflags: -fcommon
 binbstd: 1
 bsystem: configure
-dopatch: sedInPlace 's|-mt -pthread -thread|-lc|' configure
+dopatch: gsed -i 's|-mt -pthread -thread|-lc|' configure
 prepare: printf 'INPUT(%s -l:libssl.a -l:libcrypto.a -ldl)\n' "$libpcap_LIBRARY_DIR/libpcap.a" > ../lib/libpcap.a

@@ -1,5 +1,4 @@
 summary: A collection of tools, libraries, and tests for Vulkan shader compilation
-git-url: https://github.com/google/shaderc
 src-url: https://github.com/google/shaderc/archive/refs/tags/v2024.0.tar.gz
 src-sha: c761044e4e204be8e0b9a2d7494f08671ca35b92c4c791c7049594ca7514197f
 license: Apache-2.0

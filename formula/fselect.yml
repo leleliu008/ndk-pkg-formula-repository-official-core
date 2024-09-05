@@ -1,5 +1,4 @@
 summary: Find files with SQL-like queries
-git-url: https://github.com/jhspetersson/fselect
 src-url: https://github.com/jhspetersson/fselect/archive/refs/tags/0.8.6.tar.gz
 src-sha: 4b7a6dc5f6f3da39c3242856a1c78734c7b14bd801dc4d7e32bc6f5a1809bc63
 license: MIT

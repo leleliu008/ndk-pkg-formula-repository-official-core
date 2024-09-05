@@ -22,8 +22,8 @@ dopatch: |
     ZWxsYXRpb24iKTsKIAlDSEVDS19CVUcocHRocmVhZF9zaWdtYXNrKFNJR19TRVRNQVNLLCAmYXMt
     Pm9sZCwgTlVMTCksCiAJCSJyZXN0b3Jpbmcgc2lnbmFsIG1hc2siKTsKICNlbmRpZgo=' | base64 -d | patch -p0
 
-    sedInPlace '/uname_S := /c uname_S := Linux' config.mak.uname
-    sedInPlace "/uname_N := /c uname_M := $TARGET_PLATFORM_ARCH" config.mak.uname
+    gsed -i '/uname_S := /c uname_S := Linux' config.mak.uname
+    gsed -i "/uname_N := /c uname_M := $TARGET_PLATFORM_ARCH" config.mak.uname
 
 prepare: |
     # to bypass git error: cannot run test program while cross compiling

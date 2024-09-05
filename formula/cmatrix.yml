@@ -1,5 +1,4 @@
 summary: A command-line tool for producing a Matrix-style animation
-git-url: https://github.com/abishekvashok/cmatrix/
 src-url: https://github.com/abishekvashok/cmatrix/archive/refs/tags/v2.0.tar.gz
 src-sha: ad93ba39acd383696ab6a9ebbed1259ecf2d3cf9f49d6b97038c66f80749e99a
 license: GPL-3.0-or-later

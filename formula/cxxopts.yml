@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: A lightweight C++ command-line option parser
-git-url: https://github.com/jarro2783/cxxopts
 src-url: https://github.com/jarro2783/cxxopts/archive/refs/tags/v3.2.1.tar.gz
 src-sha: 841f49f2e045b9c6365997c2a8fbf76e6f215042dda4511a5bb04bc5ebc7f88a
 license: MIT

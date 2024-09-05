@@ -6,11 +6,11 @@ src-sha: 1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5
 license: GPL-3.0-or-later
 
 dopatch: |
-    sedInPlace 's/ret = strerror_r (errnum, buf, buflen);/strerror_r (errnum, buf, buflen); ret = errno;/g' gl/lib/strerror_r.c
-    sedInPlace 's/strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE/errno == ERANGE/g' gl/lib/strerror_r.c
-    sedInPlace '/if (errno == ERANGE)/i strerror_r (errnum, stackbuf, sizeof stackbuf);'      gl/lib/strerror_r.c
-    sedInPlace 's/find.texi\ //' doc/Makefile.am
-    sedInPlace 's/find.texi\ //' doc/Makefile.in
+    gsed -i 's/ret = strerror_r (errnum, buf, buflen);/strerror_r (errnum, buf, buflen); ret = errno;/g' gl/lib/strerror_r.c
+    gsed -i 's/strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE/errno == ERANGE/g' gl/lib/strerror_r.c
+    gsed -i '/if (errno == ERANGE)/i strerror_r (errnum, stackbuf, sizeof stackbuf);'      gl/lib/strerror_r.c
+    gsed -i 's/find.texi\ //' doc/Makefile.am
+    gsed -i 's/find.texi\ //' doc/Makefile.in
 
 install: |
     configure \

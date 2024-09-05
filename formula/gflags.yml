@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: A C++ library for processing command-line flags
 web-url: https://gflags.github.io/gflags
-git-url: https://github.com/gflags/gflags
 src-url: https://github.com/gflags/gflags/archive/v2.2.2.tar.gz
 src-sha: 34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf
 license: BSD-3-Clause

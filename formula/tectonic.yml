@@ -1,6 +1,5 @@
 summary: Modernized, complete, self-contained TeX/LaTeX engine
 web-url: https://tectonic-typesetting.github.io/
-git-url: https://github.com/tectonic-typesetting/tectonic
 src-url: https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.15.0.tar.gz
 src-sha: 3c13de312c4fe39ff905ad17e64a15a3a59d33ab65dacb0a8b9482c57e6bc6aa
 license: MIT

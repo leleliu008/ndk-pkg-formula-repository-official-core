@@ -9,14 +9,14 @@ binbstd: 1
 
 dopatch: |
     autoconf
-    #sedInPlace 's/JEMALLOC_NOTHROW/JEMALLOC_XXXXXXX/' include/jemalloc/jemalloc_macros.h.in
-    #sedInPlace 's/__declspec(.*)//g' include/jemalloc/jemalloc_macros.h.in
+    #gsed -i 's/JEMALLOC_NOTHROW/JEMALLOC_XXXXXXX/' include/jemalloc/jemalloc_macros.h.in
+    #gsed -i 's/__declspec(.*)//g' include/jemalloc/jemalloc_macros.h.in
 
 modify_code()    {    
     :
     #for item in $(find . -name "*.[h|c|cpp]")
     #do
-    #    sedInPlace 's/JEMALLOC_NOTHROW//g' "$item" || return 1
+    #    gsed -i 's/JEMALLOC_NOTHROW//g' "$item" || return 1
     #done
 
 

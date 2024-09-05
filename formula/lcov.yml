@@ -1,6 +1,5 @@
 summary: Graphical front-end for GCC coverage testing tool - gcov
 web-url: http://ltp.sourceforge.net/coverage/lcov.php
-git-url: https://github.com/linux-test-project/lcov
 src-url: https://github.com/linux-test-project/lcov/releases/download/v2.1/lcov-2.1.tar.gz
 src-sha: 4d01d9f551a3f0e868ce84742fb60aac4407e3fc1622635a07e29d70e38f1faf
 license: GPL-2.0-or-later

@@ -1,6 +1,5 @@
 summary: A fast and flexible static site generator
 web-url: https://gohugo.io
-git-url: https://github.com/gohugoio/hugo
 src-url: https://github.com/gohugoio/hugo/archive/refs/tags/v0.127.0.tar.gz
 src-sha: 549c7ebdf2ee6b3107ea10a9fbd9932a91bb3f30f7e8839245f6d8e318aca88c
 license: Apache-2.0

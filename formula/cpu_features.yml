@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: Cross platform C99 library to get cpu features at runtime
-git-url: https://github.com/google/cpu_features
 src-url: https://github.com/google/cpu_features/archive/v0.9.0.tar.gz
 src-sha: bdb3484de8297c49b59955c3b22dba834401bc2df984ef5cfc17acbe69c5018e
 license: Apache-2.0

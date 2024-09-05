@@ -1,6 +1,5 @@
 summary: A library for reading and editing the metadata of several popular audio formats
 web-url: https://taglib.org/
-git-url: https://github.com/taglib/taglib
 src-url: https://github.com/taglib/taglib/archive/refs/tags/v1.13.1.tar.gz
 src-sha: c8da2b10f1bfec2cd7dbfcd33f4a2338db0765d851a50583d410bacf055cfd0b
 license: LGPL-2.1-or-later

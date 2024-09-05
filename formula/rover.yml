@@ -1,6 +1,5 @@
 summary: CLI for managing and maintaining data graphs with Apollo Studio
 web-url: https://www.apollographql.com/docs/rover/
-git-url: https://github.com/apollographql/rover
 src-url: https://github.com/apollographql/rover/archive/refs/tags/v0.25.0.tar.gz
 src-sha: 3d0137ac50c6e6a9ca2865b00e41957ca8e9725bab490f372176ae35be8e9f5b
 license: MIT

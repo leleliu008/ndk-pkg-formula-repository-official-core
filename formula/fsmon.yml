@@ -1,10 +1,9 @@
 summary: Filesystem monitor with fanotify and inotify backends
-git-url: https://github.com/nowsecure/fsmon
 src-url: https://github.com/nowsecure/fsmon/archive/refs/tags/1.8.6.tar.gz
 src-sha: 250df85b69328a43628cd88fc6df10596dd75e37ef59815e1f35e7818483e81d
 license: MIT
 
-dopatch: sedInPlace 's|TARGET_TRIPLE|TARGET_MACHINE|' Makefile
+dopatch: gsed -i 's|TARGET_TRIPLE|TARGET_MACHINE|' Makefile
 
 install: |
     gmakew clean

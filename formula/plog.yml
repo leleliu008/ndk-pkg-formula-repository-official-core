@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: A portable, simple and extensible logging library for C++
-git-url: https://github.com/SergiusTheBest/plog
 src-url: https://github.com/SergiusTheBest/plog/archive/refs/tags/1.1.10.tar.gz
 src-sha: 55a090fc2b46ab44d0dde562a91fe5fc15445a3caedfaedda89fe3925da4705a
 license: MIT

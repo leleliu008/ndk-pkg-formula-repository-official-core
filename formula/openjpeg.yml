@@ -1,18 +1,17 @@
 pkgtype: lib
 summary: Library for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
-git-url: https://github.com/uclouvain/openjpeg
 src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
 src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
 license: BSD-2-Clause
 dep-pkg: libpng libtiff liblcms2
 
 dopatch: |
-    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
-    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
-    sedInPlace 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sedInPlace 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sedInPlace 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
+    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
+    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+    gsed -i 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    gsed -i 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    gsed -i 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
 
 install: |
     cmakew \

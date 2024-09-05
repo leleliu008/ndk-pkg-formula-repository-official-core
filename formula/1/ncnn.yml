@@ -1,5 +1,4 @@
 summary: High-performance neural network inference framework
-git-url: https://github.com/Tencent/ncnn.git
 src-url: https://github.com/Tencent/ncnn/archive/refs/tags/20220216.tar.gz
 src-sha: 3c1e6155f37292b5b908f8538cb0791a8b4d9cbc9c508b5ff69e41f106e2a372
 license: BSD-3-Clause
@@ -10,7 +9,7 @@ bsystem: cmake
 api-min: 24
 
 dopatch: |
-    sedInPlace 's|glslang/glslang|glslang|' src/gpu.cpp
+    gsed -i 's|glslang/glslang|glslang|' src/gpu.cpp
 
 install: |
     cmakew \

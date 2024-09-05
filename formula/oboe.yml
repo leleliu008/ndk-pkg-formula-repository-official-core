@@ -1,10 +1,9 @@
 pkgtype: lib
 summary: An easy-to-use, high-performance audio library for Android
-git-url: https://github.com/google/oboe
 src-url: https://github.com/google/oboe/archive/refs/tags/1.8.1.tar.gz
 src-sha: af80c16175aa4602e51f3f4378424a199e5d91476b1cba6cd00299bf1e21881f
 license: Apache-2.0
-dopatch: sedInPlace 's|/${ANDROID_ABI}||' CMakeLists.txt
+dopatch: gsed -i 's|/${ANDROID_ABI}||' CMakeLists.txt
 install: |
     cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
     cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON

@@ -4,5 +4,5 @@ src-url: https://www.gaia-gis.it/gaia-sins/librasterlite-sources/librasterlite-1
 src-sha: 0a8dceb75f8dec2b7bd678266e0ffd5210d7c33e3d01b247e9e92fa730eebcb3
 license: MPL-1.1
 dep-pkg: libgeotiff libspatialite libpng
-dopatch: sedInPlace "s|-ltiff|$(pkg-config --libs libtiff-4)|" configure
+dopatch: gsed -i "s|-ltiff|$(pkg-config --libs libtiff-4)|" configure
 install: configure LIBS="'$(pkg-config --libs proj)'"

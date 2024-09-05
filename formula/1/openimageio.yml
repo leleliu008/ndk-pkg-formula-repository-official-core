@@ -1,6 +1,5 @@
 summary: Library for reading, processing and writing images
 web-url: https://openimageio.org/
-git-url: https://github.com/OpenImageIO/oiio.git
 src-url: https://github.com/OpenImageIO/oiio/archive/v2.3.10.0.tar.gz
 src-sha: 3b8a43135792373da7d8897a5937dce96cfd2a2bfb92ff8c51a870df1e9cfbd9
 license: BSD-3-Clause

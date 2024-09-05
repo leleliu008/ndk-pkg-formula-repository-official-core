@@ -1,6 +1,5 @@
 summary: Provides library functionality for FIDO U2F & FIDO 2.0, including USB
 web-url: https://developers.yubico.com/libfido2/
-git-url: https://github.com/Yubico/libfido2
 src-url: https://github.com/Yubico/libfido2/archive/refs/tags/1.14.0.tar.gz
 src-sha: 3601792e320032d428002c4cce8499a4c7b803319051a25a0c9f1f138ffee45a
 license: BSD-2-Clause

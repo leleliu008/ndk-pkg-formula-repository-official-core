@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: Vulkan Header files and API registry
-git-url: https://github.com/KhronosGroup/Vulkan-Headers
 src-url: https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.283.tar.gz
 src-sha: a76ff77815012c76abc9811215c2167128a73a697bcc23948e858d1f7dd54a85
 license: Apache-2.0

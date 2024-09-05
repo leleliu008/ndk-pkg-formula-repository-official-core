@@ -1,5 +1,4 @@
 summary: Perceptual video quality assessment based on multi-method fusion
-git-url: https://github.com/Netflix/vmaf
 src-url: https://github.com/Netflix/vmaf/archive/refs/tags/v3.0.0.tar.gz
 src-sha: 7178c4833639e6b989ecae73131d02f70735fdb3fc2c7d84bc36c9c3461d93b1
 license: BSD-2-Clause-Patent

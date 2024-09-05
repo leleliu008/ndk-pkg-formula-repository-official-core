@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: A simple .ini file parser in C
-git-url: https://github.com/benhoyt/inih
 src-url: https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz
 src-sha: e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7
 license: BSD-3-Clause

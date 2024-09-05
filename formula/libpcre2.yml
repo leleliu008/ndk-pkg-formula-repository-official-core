@@ -1,12 +1,11 @@
 summary: Perl compatible regular expressions library with a new API
 web-url: https://www.pcre.org/
-git-url: https://github.com/PCRE2Project/pcre2
 src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.43/pcre2-10.43.tar.bz2
 src-sha: e2a53984ff0b07dfdb5ae4486bbb9b21cca8e7df2434096cc9bf1b728c350bcb
 license: BSD-3-Clause
 
 dopatch: |
-    sedInPlace 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
+    gsed -i 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
 
 install: |
     cmakew \

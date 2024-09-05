@@ -1,12 +1,11 @@
 summary: A flexible, lightweight pure C library for implementing modern network protocols easily with a tiny footprint, using a nonblocking event loop.
 web-url: https://libwebsockets.org
-git-url: https://github.com/warmcat/libwebsockets
 src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.3.tar.gz
 src-sha: 6fd33527b410a37ebc91bb64ca51bdabab12b076bc99d153d7c5dd405e4bdf90
 license: MIT
 dep-pkg: libz libuv libevent
 ccflags: -Wno-unused-but-set-variable
-dopatch: sedInPlace 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
+dopatch: gsed -i 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
 install: |
     cmakew \
         -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \

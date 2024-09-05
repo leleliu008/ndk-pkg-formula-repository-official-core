@@ -1,6 +1,5 @@
 summary: Library with common system API code for libimobiledevice projects
 web-url: https://libimobiledevice.org/
-git-url: https://github.com/libimobiledevice/libimobiledevice-glue
 src-url: https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.2.0/libimobiledevice-glue-1.2.0.tar.bz2
 src-sha: ff9cbc240c9780edfa43914a057b86362054053721b65fb04f54a25023b92b62
 license: LGPL-2.1-or-later

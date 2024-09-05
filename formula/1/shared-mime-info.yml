@@ -10,7 +10,7 @@ dep-pkg: libxml2 glib
 ldflags: -lgmodule-2.0 -lffi -lz
 
 dopatch: |
-    sedInPlace "s|xmlto,|xmlto, '--skip-validation',|" data/meson.build
+    gsed -i "s|xmlto,|xmlto, '--skip-validation',|" data/meson.build
 
 install: |
     mesonw -Dupdate-mimedb=false

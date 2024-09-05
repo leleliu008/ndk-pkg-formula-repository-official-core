@@ -10,7 +10,7 @@ ppflags: -DX_DISPLAY_MISSING
 
 dopatch: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
-        sedInPlace '/HAVE_FLDLN2/d' configure
+        gsed -i '/HAVE_FLDLN2/d' configure
     fi
 
 install: |

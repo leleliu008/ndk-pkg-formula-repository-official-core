@@ -6,11 +6,11 @@ license: LGPL-2.0-or-later
 dep-pkg: libiconv libz
 
 dopatch: |
-    sedInPlace 's/iomanip.h/iomanip/g' configure
+    gsed -i 's/iomanip.h/iomanip/g' configure
 
     for item in $(grep -l "unsigned int argc" examples/*)
     do
-        sedInPlace 's/int main( unsigned int argc,/int main(int argc,/g' "$item" 
+        gsed -i 's/int main( unsigned int argc,/int main(int argc,/g' "$item" 
     done
 
 install: |

@@ -1,6 +1,5 @@
 summary: Power of curl, ease of use of httpie
 web-url: https://curlie.io
-git-url: https://github.com/rs/curlie
 src-url: https://github.com/rs/curlie/archive/v1.7.2.tar.gz
 src-sha: b2ced685c6d2cde951cbd894ecc16df2f987f9d680830bcf482a7dcd22165116
 license: MIT

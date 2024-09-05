@@ -25,7 +25,7 @@ do12345: |
         ac_cv_header_unistd_h=yes \
         ac_cv_header_sys_time_h=yes
 
-dopatch: sedInPlace 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+dopatch: gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
 
 install: |
     export BUILD_CC="$CC_FOR_BUILD"

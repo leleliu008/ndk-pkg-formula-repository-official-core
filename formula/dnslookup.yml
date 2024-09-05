@@ -1,5 +1,4 @@
 summary: A simple command line utility to make DNS lookups to the specified server
-git-url: https://github.com/ameshkov/dnslookup
 src-url: https://github.com/ameshkov/dnslookup/archive/refs/tags/v1.10.0.tar.gz
 src-sha: 6001fa5b54ba3a1b29f68eed4d12b026a1b716b1578342621f398fd4d569d199
 license: GPL-3.0-only

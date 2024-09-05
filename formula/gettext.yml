@@ -7,8 +7,8 @@ license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
 
 dopatch: |
-    sedInPlace '/ftello/d' ../include/ndk-pkg-common.h
-    sedInPlace '/fseeko/d' ../include/ndk-pkg-common.h
+    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
+    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     export am_cv_func_iconv_works=yes

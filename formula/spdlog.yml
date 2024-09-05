@@ -1,12 +1,11 @@
 pkgtype: lib
 summary: Super fast C++ logging library
-git-url: https://github.com/gabime/spdlog
 src-url: https://github.com/gabime/spdlog/archive/refs/tags/v1.14.1.tar.gz
 src-sha: 1586508029a7d0670dfcb2d97575dcdc242d3868a259742b69f100801ab4e16b
 license: MIT
 dep-pkg: fmt
 
-dopatch: sedInPlace 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
+dopatch: gsed -i 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
 
 install: |
     cmakew \

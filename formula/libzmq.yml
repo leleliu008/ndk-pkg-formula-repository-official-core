@@ -1,6 +1,5 @@
 summary: An open-source universal messaging library
 web-url: https://zeromq.org/
-git-url: https://github.com/zeromq/libzmq
 src-url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz
 src-sha: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
 license: LGPL-3.0-or-later

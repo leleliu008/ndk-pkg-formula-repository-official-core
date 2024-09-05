@@ -9,8 +9,8 @@ dep-upp: libtool
 bsystem: autotools cargo
 
 dopatch: |
-    sedInPlace "/RUST_TARGET = --target/c RUST_TARGET = --target $RUST_TARGET" rust/Makefile.am
-    sedInPlace "/RUST_SURICATA_LIB_XC_DIR=/c RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/" configure.ac
+    gsed -i "/RUST_TARGET = --target/c RUST_TARGET = --target $RUST_TARGET" rust/Makefile.am
+    gsed -i "/RUST_SURICATA_LIB_XC_DIR=/c RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/" configure.ac
 
 prepare: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"

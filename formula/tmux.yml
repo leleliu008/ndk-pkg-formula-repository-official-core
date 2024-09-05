@@ -1,6 +1,5 @@
 summary: Terminal multiplexer
 web-url: https://tmux.github.io
-git-url: https://github.com/tmux/tmux
 src-url: https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
 src-sha: 551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa
 license: ISC
@@ -8,9 +7,9 @@ dep-upp: bison
 dep-pkg: ncurses libevent utf8proc libglob liblanginfo libgetdtablesize
 
 dopatch: |
-    sedInPlace '1i int getdtablesize();'   compat/imsg.c
-    sedInPlace '1i #include<sys/endian.h>' compat/htonll.c
-    sedInPlace '1i #include<sys/endian.h>' compat/ntohll.c
+    gsed -i '1i int getdtablesize();'   compat/imsg.c
+    gsed -i '1i #include<sys/endian.h>' compat/htonll.c
+    gsed -i '1i #include<sys/endian.h>' compat/ntohll.c
 
 install: |
     configure \

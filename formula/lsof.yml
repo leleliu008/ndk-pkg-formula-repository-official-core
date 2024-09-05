@@ -1,6 +1,5 @@
 summary: A command-line tool to list open files
 web-url: https://people.freebsd.org/~abe
-git-url: https://github.com/lsof-org/lsof
 src-url: https://github.com/lsof-org/lsof/archive/4.99.3.tar.gz
 src-sha: b9c56468b927d9691ab168c0b1e9f8f1f835694a35ff898c549d383bd8d09bd4
 license: Zlib

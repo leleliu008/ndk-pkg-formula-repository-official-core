@@ -1,6 +1,5 @@
 pkgtype: lib
 summary: Modern, C++-native, header-only, test framework
-git-url: https://github.com/catchorg/Catch2
 src-url: https://github.com/catchorg/Catch2/archive/refs/tags/v3.6.0.tar.gz
 src-sha: 485932259a75c7c6b72d4b874242c489ea5155d17efa345eb8cc72159f49f356
 license: BSL-1.0

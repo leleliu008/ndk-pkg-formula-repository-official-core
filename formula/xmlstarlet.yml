@@ -7,10 +7,10 @@ dep-pkg: libxslt
 binbstd: 1
 
 dopatch: |
-    sedInPlace 's|xmlErrorPtr error|const xmlError * error|'  src/xmlstar.h
-    sedInPlace 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c
-    sedInPlace 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
-    sedInPlace 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
+    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xmlstar.h
+    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c
+    gsed -i 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
+    gsed -i 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
 
 install: |
     configure \

@@ -1,6 +1,5 @@
 summary: Library and utility to talk to iBoot/iBSS via USB
 web-url: https://www.libimobiledevice.org
-git-url: https://github.com/libimobiledevice/libirecovery
 src-url: https://github.com/libimobiledevice/libirecovery/releases/download/1.2.0/libirecovery-1.2.0.tar.bz2
 src-sha: 74448348f8a68b654015fe1952fdc4e0781db20dcf4e1d85ec97d6f91e95eb14
 license: LGPL-2.1-only

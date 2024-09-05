@@ -1,6 +1,5 @@
 pkgtype: exe+lib
 summary: Improved JPEG encoder
-git-url: https://github.com/mozilla/mozjpeg
 src-url: https://github.com/mozilla/mozjpeg/archive/refs/tags/v4.1.5.tar.gz
 src-sha: 9fcbb7171f6ac383f5b391175d6fb3acde5e64c4c4727274eade84ed0998fcc1
 license: BSD-3-Clause

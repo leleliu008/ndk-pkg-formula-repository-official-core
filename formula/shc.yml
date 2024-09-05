@@ -1,6 +1,5 @@
 summary: Shell Script Compiler
 web-url: https://neurobin.github.io/shc
-git-url: https://github.com/neurobin/shc
 src-url: https://github.com/neurobin/shc/archive/refs/tags/4.0.3.tar.gz
 src-sha: 7d7fa6a9f5f53d607ab851d739ae3d3b99ca86e2cb1425a6cab9299f673aee16
 license: GPL-3.0-or-later

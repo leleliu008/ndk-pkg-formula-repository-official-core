@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: C interface for Machine Intelligence
 web-url: https://www.tensorflow.org/
-git-url: https://github.com/tensorflow/tensorflow
 src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.16.1.tar.gz
 src-sha: c729e56efc945c6df08efe5c9f5b8b89329c7c91b8f40ad2bb3e13900bd4876d
 license: Apache-2.0
@@ -10,8 +9,8 @@ dep-pkg: abseil ruy xnnpack libflatbuffers eigen3 ARM_NEON_2_x86_SSE
 bscript: tensorflow/lite
 
 dopatch: |
-    sedInPlace 's|NOT DEFINED PTHREADPOOL_SOURCE_DIR|FALSE|' CMakeLists.txt
-    sedInPlace '/find_package(ruy REQUIRED)/a include(./pthreadpool.cmake)' CMakeLists.txt
+    gsed -i 's|NOT DEFINED PTHREADPOOL_SOURCE_DIR|FALSE|' CMakeLists.txt
+    gsed -i '/find_package(ruy REQUIRED)/a include(./pthreadpool.cmake)' CMakeLists.txt
 
     cat > pthreadpool.cmake <<EOF
     add_library(pthreadpool STATIC IMPORTED)

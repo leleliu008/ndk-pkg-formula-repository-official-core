@@ -1,7 +1,6 @@
 pkgtype: exe+lib
 summary: Implementation of the OpenAL 3D audio API
 web-url: https://openal-soft.org/
-git-url: https://github.com/kcat/openal-soft
 src-url: https://github.com/kcat/openal-soft/archive/refs/tags/1.23.1.tar.gz
 src-sha: dfddf3a1f61059853c625b7bb03de8433b455f2f79f89548cbcbd5edca3d4a4a
 license: LGPL-2.0-or-later

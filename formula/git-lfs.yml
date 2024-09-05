@@ -1,5 +1,4 @@
 summary: A git extension for versioning large files
-git-url: https://github.com/git-lfs/git-lfs
 src-url: https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-v3.5.1.tar.gz
 src-sha: fc19c7316e80a6ef674aa4e1863561c1263cd4ce0588b9989e4be9461664d752
 license: MIT

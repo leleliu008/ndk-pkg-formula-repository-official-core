@@ -1,6 +1,5 @@
 summary: Authy/Google Authenticator like TOTP CLI tool written in Go
 web-url: https://yitsushi.github.io/totp-cli/
-git-url: https://github.com/yitsushi/totp-cli
 src-url: https://github.com/yitsushi/totp-cli/archive/refs/tags/v1.8.7.tar.gz
 src-sha: d23554e785323cc6d4145b848fe140621f9bb6fc8809280235ed5f7aeb92e5fd
 license: MIT

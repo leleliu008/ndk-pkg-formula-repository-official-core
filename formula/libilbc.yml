@@ -1,5 +1,4 @@
 summary: Packaged version of iLBC codec from the WebRTC project
-git-url: https://github.com/TimothyGu/libilbc
 src-url: https://github.com/TimothyGu/libilbc/releases/download/v3.0.4/libilbc-3.0.4.tar.gz
 src-sha: 6820081a5fc58f86c119890f62cac53f957adb40d580761947a0871cea5e728f
 license: BSD-3-Clause

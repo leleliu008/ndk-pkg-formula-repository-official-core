@@ -13,9 +13,9 @@ dopatch: |
         do
             if [ -f "$1/$item" ] ; then
                 if [ "$XTRACE" = yes ] ; then
-                    sedInPlace '1i set -x' "$1/$item"
+                    gsed -i '1i set -x' "$1/$item"
                 fi
-                sedInPlace 's/ngx_feature_run=yes/ngx_feature_run=no/g' "$1/$item"
+                gsed -i 's/ngx_feature_run=yes/ngx_feature_run=no/g' "$1/$item"
             elif [ -d "$1/$item" ] ; then
                 trace_configure "$1/$item"
             fi
@@ -24,12 +24,12 @@ dopatch: |
 
     trace_configure auto
     if [ "$XTRACE" = yes ] ; then
-        sedInPlace '1i set -x' configure
+        gsed -i '1i set -x' configure
     fi
 
-    sedInPlace 's/#if (NGX_READ_EVENT != EPOLLIN|EPOLLRDHUP)/#if 1/' src/event/modules/ngx_epoll_module.c
-    sedInPlace 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c
-    sedInPlace '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
+    gsed -i 's/#if (NGX_READ_EVENT != EPOLLIN|EPOLLRDHUP)/#if 1/' src/event/modules/ngx_epoll_module.c
+    gsed -i 's/#if (NGX_WRITE_EVENT != EPOLLOUT)/#if 1/'          src/event/modules/ngx_epoll_module.c
+    gsed -i '/#if (NGX_HAVE_SCHED_SETAFFINITY)/a #include <sched.h>' src/os/unix/ngx_setaffinity.h
 
 install: |
     export NGX_SYSTEM=Linux
@@ -37,9 +37,9 @@ install: |
     export NGX_MACHINE=$TARGET_PLATFORM_ARCH
 
     if [ "$TARGET_PLATFORM_NBIT" -eq '64' ] ; then
-        sedInPlace 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
+        gsed -i 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=8/' auto/types/sizeof
     else
-        sedInPlace 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
+        gsed -i 's/ngx_size=`$NGX_AUTOTEST`/ngx_size=4/' auto/types/sizeof
     fi
     
     [ -f Makefile ] && gmakew clean

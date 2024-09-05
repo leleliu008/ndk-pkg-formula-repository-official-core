@@ -1,6 +1,5 @@
 summary: Friendly and expressive shell
 web-url: https://elv.sh/
-git-url: https://github.com/elves/elvish
 src-url: https://github.com/elves/elvish/archive/refs/tags/v0.20.1.tar.gz
 src-sha: 6a6006015f44def98676eaed611702b000d66838c0e76da572d517d9bde5c388
 license: BSD-2-Clause

@@ -1,5 +1,4 @@
 summary: A neofetch-like tool for fetching system information and displaying them in a pretty way
-git-url: https://github.com/fastfetch-cli/fastfetch
 src-url: https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.11.3.tar.gz
 src-sha: 7867b0cd424689dea76b0d502e07abe449939f929eb252fc21b3a27c197cb195
 license: MIT

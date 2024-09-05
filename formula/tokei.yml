@@ -1,5 +1,4 @@
 summary: Program that allows you to count code, quickly
-git-url: https://github.com/XAMPPRocky/tokei
 src-url: https://github.com/XAMPPRocky/tokei/archive/v12.1.2.tar.gz
 src-sha: 81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50
 license: MIT

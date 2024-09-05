@@ -7,11 +7,11 @@ version: 2024.01.13
 license: MIT
 
 dopatch: |
-    sedInPlace 's|-g||' Makefile
-    sedInPlace 's|LIBS+=-ldl -lpthread|LIBS+=-ldl|' Makefile
-    sedInPlace 's|lib/quickjs|lib|g'         Makefile
-    sedInPlace 's|include/quickjs|include|g' Makefile
-    sedInPlace 's|$(HOST_CC) $(LDFLAGS)|$(HOST_CC) -B/usr/bin $(LDFLAGS)|' Makefile
+    gsed -i 's|-g||' Makefile
+    gsed -i 's|LIBS+=-ldl -lpthread|LIBS+=-ldl|' Makefile
+    gsed -i 's|lib/quickjs|lib|g'         Makefile
+    gsed -i 's|include/quickjs|include|g' Makefile
+    gsed -i 's|$(HOST_CC) $(LDFLAGS)|$(HOST_CC) -B/usr/bin $(LDFLAGS)|' Makefile
     # https://newbedev.com/how-to-specify-alternate-linker-command-when-linking-with-cc
 
 install: |

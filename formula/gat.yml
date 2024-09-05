@@ -1,5 +1,4 @@
 summary: Cat alternative written in Go
-git-url: https://github.com/koki-develop/gat
 src-url: https://github.com/koki-develop/gat/archive/refs/tags/v0.17.0.tar.gz
 src-sha: 62c7509bee419f81af5d2f856f17ec98d65dd12212b3e361806cb2b6a22233b6
 license: MIT

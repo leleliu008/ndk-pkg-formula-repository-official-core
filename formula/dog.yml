@@ -1,6 +1,5 @@
 summary: A command-line DNS client
 web-url: https://dns.lookup.dog/
-git-url: https://github.com/ogham/dog
 src-url: https://github.com/ogham/dog/archive/v0.1.0.tar.gz
 src-sha: 82387d38727bac7fcdb080970e84b36de80bfe7923ce83f993a77d9ac7847858
 license: EUPL-1.2

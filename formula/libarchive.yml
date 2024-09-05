@@ -34,5 +34,5 @@ install: |
         --with-iconv
 
 dotweak: |
-    sedInPlace '/Libs: /s|$| -liconv|' lib/pkgconfig/libarchive.pc
-    sedInPlace '/Requires:/d'          lib/pkgconfig/libarchive.pc
+    gsed -i '/Libs: /s|$| -liconv|' lib/pkgconfig/libarchive.pc
+    gsed -i '/Requires:/d'          lib/pkgconfig/libarchive.pc

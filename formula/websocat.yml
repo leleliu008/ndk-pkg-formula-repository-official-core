@@ -1,5 +1,4 @@
 summary: Command-line client for WebSockets
-git-url: https://github.com/vi/websocat
 src-url: https://github.com/vi/websocat/archive/refs/tags/v1.13.0.tar.gz
 src-sha: 43800f8df38ede8b5bffe825e633c0db6a3c36cfe26c23e882bcfc028d3119c7
 license: MIT

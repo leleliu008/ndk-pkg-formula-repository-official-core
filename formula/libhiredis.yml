@@ -1,5 +1,4 @@
 summary: Minimalistic client for Redis
-git-url: https://github.com/redis/hiredis
 src-url: https://github.com/redis/hiredis/archive/v1.2.0.tar.gz
 src-sha: 82ad632d31ee05da13b537c124f819eb88e18851d9cb0c30ae0552084811588c
 license: BSD-3-Clause

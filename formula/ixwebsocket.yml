@@ -1,5 +1,4 @@
 summary: WebSocket client and server, and HTTP client command-line tool
-git-url: https://github.com/machinezone/IXWebSocket
 src-url: https://github.com/machinezone/IXWebSocket/archive/refs/tags/v11.3.2.tar.gz
 src-sha: 07d5e9f4cf492069c39c3953fbb3700a9cf8ec8949343998888e54ef37b03223
 license: BSD-3-Clause

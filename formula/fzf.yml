@@ -1,5 +1,4 @@
 summary: A command-line fuzzy finder written in Go
-git-url: https://github.com/junegunn/fzf
 src-url: https://github.com/junegunn/fzf/archive/refs/tags/0.53.0.tar.gz
 src-sha: d45abbfb64f21913c633d46818d9d3eb3d7ebc7e94bd16f45941958aa5480e1d
 license: MIT

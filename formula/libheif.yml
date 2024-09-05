@@ -1,6 +1,5 @@
 summary: ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 web-url: https://www.libde265.org/
-git-url: https://github.com/strukturag/libheif
 src-url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
 src-sha: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
 license: LGPL-3.0-only

@@ -1,6 +1,5 @@
 summary: Text interface for Git repositories
 web-url: https://jonas.github.io/tig
-git-url: https://github.com/jonas/tig
 src-url: https://github.com/jonas/tig/releases/download/tig-2.5.10/tig-2.5.10.tar.gz
 src-sha: f655cc1366fc10058a2bd505bb88ca78e653ff7526c1b81774c44b9d841210e3
 license: GPL-2.0-or-later

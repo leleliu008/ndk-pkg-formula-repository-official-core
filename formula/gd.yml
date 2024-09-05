@@ -1,9 +1,8 @@
 pkgtype: lib
 summary: Graphics library to dynamically manipulate images
 web-url: https://libgd.github.io/
-git-url: https://github.com/libgd/libgd
 src-url: https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz
 src-sha: 3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61
 dep-pkg: libfontconfig libavif
 install: configure --without-x --without-xpm
-dotweak: sedInPlace 's|-lgd|-lgd -liconv|' lib/pkgconfig/gdlib.pc
+dotweak: gsed -i 's|-lgd|-lgd -liconv|' lib/pkgconfig/gdlib.pc

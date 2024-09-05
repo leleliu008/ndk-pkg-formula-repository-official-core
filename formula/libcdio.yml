@@ -8,5 +8,5 @@ bsystem: configure
 ldflags: -Wl,--undefined-version
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
-        sedInPlace 's|define CDIO_FSEEK fseeko|define CDIO_FSEEK fseek|' lib/driver/_cdio_stdio.c
+        gsed -i 's|define CDIO_FSEEK fseeko|define CDIO_FSEEK fseek|' lib/driver/_cdio_stdio.c
     fi

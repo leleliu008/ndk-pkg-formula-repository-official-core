@@ -1,5 +1,4 @@
 summary: Speex audio processing library
-git-url: https://github.com/xiph/speexdsp
 src-url: https://github.com/xiph/speexdsp/archive/SpeexDSP-1.2.1.tar.gz
 src-sha: d17ca363654556a4ff1d02cc13d9eb1fc5a8642c90b40bd54ce266c3807b91a7
 license: BSD-3-Clause
