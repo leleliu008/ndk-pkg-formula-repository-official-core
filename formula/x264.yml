@@ -6,6 +6,8 @@ version: r3108
 license: GPL-2.0-only
 
 dopatch: |
+    gsed -i '1c #!/usr/bin/env bash' configure
+
     if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
         gsed -i 's|fseeko|fseekoxxxxxxxxxx|g' configure
     fi
