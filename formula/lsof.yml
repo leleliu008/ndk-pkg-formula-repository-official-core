@@ -8,6 +8,8 @@ dep-upp: perl
 bsystem: gmake
 
 install: |
+    gsed -i '1c #!/bin/sh' lib/dialects/linux/Mksrc
+
     if [ -f "$libtirpc_LIBRARY_DIR/libtirpc.a" ] ; then
         LIBTIRPC="$libtirpc_LIBRARY_DIR/libtirpc.a"
     else
