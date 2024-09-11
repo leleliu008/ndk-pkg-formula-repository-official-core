@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: OpenGL and OpenGL ES reference compiler for shading languages
 web-url: https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/
 src-url: https://github.com/KhronosGroup/glslang/archive/refs/tags/14.2.0.tar.gz

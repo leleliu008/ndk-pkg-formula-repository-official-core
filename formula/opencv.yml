@@ -4,7 +4,7 @@ web-url: https://opencv.org/
 src-url: https://github.com/opencv/opencv/archive/refs/tags/4.9.0.tar.gz
 src-sha: ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c
 license: Apache-2.0
-dep-pkg: eigen3 libtbb openjpeg openexr openblas ffmpeg
+dep-pkg: eigen3 libtbb openjpeg openexr openblas ffmpeg-dev
 dep-upp: python3 android-sdk
 
 dopatch: |

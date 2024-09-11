@@ -20,8 +20,6 @@ install: |
     gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
     gsed -i "s|SDL2_CONFIG=|SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'|" configure
 
-    export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS -ldl"
-
     if run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
@@ -39,7 +37,7 @@ install: |
         --enable-cross-compile \
         --enable-pic \
         --enable-static \
-        --disable-shared \
+        --enable-shared \
         --enable-mediacodec \
         --enable-libmp3lame \
         --enable-libtheora \
@@ -61,7 +59,7 @@ install: |
         --disable-debug \
         --disable-vulkan \
         --disable-ffplay \
-        --enable-ffprobe \
+        --disable-ffprobe \
         --disable-libfdk-aac \
         --extra-cflags='-DANDROID' $CONFIGURE_EXTRA_ARGS ; then
         gmakew clean

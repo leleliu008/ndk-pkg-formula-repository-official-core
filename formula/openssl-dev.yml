@@ -1,5 +1,4 @@
-pkgtype: lib
-summary: Cryptography and SSL/TLS Toolkit
+summary: Cryptography and SSL/TLS library
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-3.3.0.tar.gz
