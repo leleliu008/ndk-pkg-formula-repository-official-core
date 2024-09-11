@@ -5,7 +5,9 @@ src-sha: 4793404735db5ea79f790cf865bf4fe875f9c5c23b1b8da186349f54b3a32281
 license: MIT
 dep-upp: gm4 bison
 
-dopatch: gsed -i 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' makefile
+dopatch: |
+    gsed -i 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' makefile
+    gsed -i 's|-lm|$(LDFLAGS) -lm|' makefile
 
 install: |
     gmakew clean
