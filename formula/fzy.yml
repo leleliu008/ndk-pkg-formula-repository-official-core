@@ -5,4 +5,4 @@ license: MIT
 
 install: |
     gmakew clean
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" LIBS=
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CFLAGS="'$CFLAGS'" LIBS="'$LDFLAGS'"
