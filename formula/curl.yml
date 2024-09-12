@@ -1,4 +1,4 @@
-summary: Get a file from an HTTP, HTTPS or FTP server
+summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.8.0.tar.bz2
@@ -34,6 +34,6 @@ dotweak: |
     rm -rf share/man/man3
 
 caveats: |
-    If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers=<DNS-SERVERS> argument to curl like below
+    If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers <DNS-SERVERS> argument to curl like below
 
-    curl --dns-servers=8.8.8.8 https://example.com
+    curl --dns-servers 1.1.1.1,8.8.8.8 https://example.com

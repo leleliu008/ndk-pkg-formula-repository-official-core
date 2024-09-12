@@ -7,6 +7,15 @@ src-sha: 43ad877b018bc63deb2468d71f95219c2fac196876ef36d1bee51d226173ec93
 license: MIT
 dep-pkg: libiconv libz
 
+onstart: |
+    [ "$TERMUX" = 1 ] || return 0
+
+    bsdtar() {
+        # https://github.com/termux/termux-packages/issues/1054
+        run pkg install -y proot
+        run proot --link2symlink bsdtar "$@"
+    }
+
 install: |
     configure \
         --with-iconv="$libiconv_INSTALL_DIR" \
