@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow19
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yaml-cpp]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yaml-cpp]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yaml-cpp]
 
     runs-on: ${{ matrix.os }}
 

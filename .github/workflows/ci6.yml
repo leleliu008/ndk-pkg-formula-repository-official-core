@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow6
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [gettext-tools,gf,gh,ghr,gif,gindent,git,git-cliff,git-lfs,gitui,gitwatch,glab,glib-tools,glog,glow,glslang,gm4,gmake,gn,gnu-barcode,gnu-which,gnupg,go-md2man,go-tools,godu,gogs,golang,gomobile,google-benchmark,gopls]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [gettext-tools,gf,gh,ghr,gif,gindent,git,git-cliff,git-lfs,gitui,gitwatch,glab,glib-tools,glog,glow,glslang,gm4,gmake,gn,gnu-barcode,gnu-which,gnupg,go-md2man,go-tools,godu,gogs,golang,gomobile,google-benchmark,gopls]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [gettext-tools,gf,gh,ghr,gif,gindent,git,git-cliff,git-lfs,gitui,gitwatch,glab,glib-tools,glog,glow,glslang,gm4,gmake,gn,gnu-barcode,gnu-which,gnupg,go-md2man,go-tools,godu,gogs,golang,gomobile,google-benchmark,gopls]
 
     runs-on: ${{ matrix.os }}
 
