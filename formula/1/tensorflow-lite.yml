@@ -5,7 +5,7 @@ src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.16.1.tar.
 src-sha: c729e56efc945c6df08efe5c9f5b8b89329c7c91b8f40ad2bb3e13900bd4876d
 license: Apache-2.0
 dep-pym: numpy
-dep-pkg: abseil ruy xnnpack libflatbuffers eigen3 ARM_NEON_2_x86_SSE
+dep-pkg: abseil ruy xnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
 bscript: tensorflow/lite
 
 dopatch: |
@@ -42,7 +42,7 @@ install: |
         -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON \
         -Druy_DIR=$ruy_INSTALL_DIR/lib/cmake/ruy \
         -Dabsl_DIR=$abseil_INSTALL_DIR/lib/cmake/absl \
-        -DEigen3_DIR=$eigen3_INSTALL_DIR/lib/cmake/eigen3 \
+        -DEigen3_DIR=$libeigen_INSTALL_DIR/lib/cmake/eigen3 \
         -Dcpuinfo_DIR=$libcpuinfo_INSTALL_DIR/lib/cmake/cpuinfo \
         -DNEON_2_SSE_DIR=$ARM_NEON_2_x86_SSE/lib/cmake/NEON_2_SSE \
         -DFlatbuffers_DIR=$libflatbuffers_INSTALL_DIR/lib/cmake/flatbuffers

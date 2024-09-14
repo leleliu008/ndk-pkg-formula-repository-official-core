@@ -1,0 +1,29 @@
+summary: Netscape Portable Runtime
+web-url: https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
+src-url: https://archive.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz
+src-sha: 7ea3297ea5969b5d25a5dd8d47f2443cda88e9ee746301f6e1e1426f8a6abc8f
+license: MPL-2.0
+ppflags: -DANDROID
+ldflags: -llog
+bscript: nspr
+binbstd: 1
+
+do12345: |
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o now       config/now.c
+    run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o nsinstall config/nsinstall.c
+
+dopatch: gsed -i '2663s|$target||' configure
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NBIT" = 64 ] ; then
+        CONFIGURE_EXTRA_ARGS='--enable-64bit'
+    else
+        unset CONFIGURE_EXTRA_ARGS
+    fi
+
+    CPPFLAGS="$CPPFLAGS -I$PWD/dist/include/nspr"
+
+install: |
+    configure only --with-pthreads --enable-ipv6 $CONFIGURE_EXTRA_ARGS
+    gmakew clean
+    gmakew install NSINSTALL="$PWD/nsinstall" NOW="$PWD/now"

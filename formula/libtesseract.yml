@@ -2,13 +2,15 @@ summary: OCR (Optical Character Recognition) engine
 src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.4.1.tar.gz
 src-sha: c4bc2a81c12a472f445b7c2fb4705a08bd643ef467f51ec84f0e148bd368051b
 license: Apache-2.0
-dep-pkg: leptonica pango libglob cpu_features
+dep-pkg: libleptonica libcpu_features
+
+dopatch: gsed -i '/TARGETS tesseract DESTINATION/d' CMakeLists.txt
 
 install: |
     cmakew \
         -DENABLE_LTO=OFF \
-        -DDISABLE_ARCHIVE=OFF \
-        -DDISABLE_CURL=OFF \
+        -DDISABLE_ARCHIVE=ON \
+        -DDISABLE_CURL=ON \
         -DUSE_SYSTEM_ICU=ON \
         -DOPENMP_BUILD=ON \
         -DLEPT_TIFF_RESULT=0 \
@@ -17,8 +19,8 @@ install: |
         -DBUILD_SHARED_LIBS=OFF
     cmakew \
         -DENABLE_LTO=OFF \
-        -DDISABLE_ARCHIVE=OFF \
-        -DDISABLE_CURL=OFF \
+        -DDISABLE_ARCHIVE=ON \
+        -DDISABLE_CURL=ON \
         -DUSE_SYSTEM_ICU=ON \
         -DOPENMP_BUILD=ON \
         -DLEPT_TIFF_RESULT=0 \

@@ -1,0 +1,10 @@
+summary: Objective-C runtime library intended for use with Clang
+web-url: http://www.gnustep.org/
+src-url: https://github.com/gnustep/libobjc2/archive/refs/tags/v2.2.1.tar.gz
+src-sha: 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
+license: MIT
+install: |
+    cmakew \
+        -DENABLE_OBJCXX=OFF \
+        -DGNUSTEP_CONFIG=OFF \
+        -DTESTS=OFF

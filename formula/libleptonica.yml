@@ -1,0 +1,28 @@
+summary: Image processing and image analysis library
+web-url: http://www.leptonica.org/
+src-url: https://github.com/DanBloomberg/leptonica/releases/download/1.84.1/leptonica-1.84.1.tar.gz
+src-sha: 2b3e1254b1cca381e77c819b59ca99774ff43530209b9aeb511e1d46588a64f6
+license: BSD-2-Clause
+dep-pkg: libgif libpng libtiff libwebp libjpeg-turbo libopenjpeg
+
+install: |
+    cmakew \
+        -DENABLE_GIF=ON \
+        -DENABLE_PNG=ON \
+        -DENABLE_TIFF=ON \
+        -DENABLE_WEBP=ON \
+        -DENABLE_JPEG=ON \
+        -DENABLE_OPENJPEG=ON \
+        -DBUILD_PROG=OFF \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DENABLE_GIF=ON \
+        -DENABLE_PNG=ON \
+        -DENABLE_TIFF=ON \
+        -DENABLE_WEBP=ON \
+        -DENABLE_JPEG=ON \
+        -DENABLE_OPENJPEG=ON \
+        -DBUILD_PROG=OFF \
+        -DBUILD_SHARED_LIBS=ON
+
+dotweak: cd lib/pkgconfig && mv lept_Release.pc lept.pc

@@ -1,4 +1,4 @@
-summary: Small library for rendering Postscript documents
+summary: A small library for rendering Postscript documents
 web-url: https://wiki.freedesktop.org/www/Software/libspectre/
 git-url: https://gitlab.freedesktop.org/libspectre/libspectre
 src-url: https://libspectre.freedesktop.org/releases/libspectre-0.2.12.tar.gz

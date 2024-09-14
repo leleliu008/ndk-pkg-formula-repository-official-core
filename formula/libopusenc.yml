@@ -1,0 +1,7 @@
+summary: C library for encoding .opus files
+web-url: https://opus-codec.org/
+src-url: https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz
+src-sha: 8298db61a8d3d63e41c1a80705baa8ce9ff3f50452ea7ec1c19a564fe106cbb9
+license: BSD-3-Clause
+dep-pkg: libopus
+bsystem: configure

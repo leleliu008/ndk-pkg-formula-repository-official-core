@@ -1,0 +1,12 @@
+pkgtype: exe+lib
+summary: HTTP/3 library written in C
+src-url: https://github.com/ngtcp2/nghttp3/releases/download/v1.5.0/nghttp3-1.5.0.tar.gz
+src-sha: 13d68a48867d2eb0679b81e2e6e065de074abc64246fb11417c3e40988e5ff23
+license: MIT
+
+install: |
+    cmakew \
+        -DENABLE_WERROR=OFF \
+        -DENABLE_DEBUG=OFF \
+        -DENABLE_ASAN=OFF \
+        -DENABLE_LIB_ONLY=ON

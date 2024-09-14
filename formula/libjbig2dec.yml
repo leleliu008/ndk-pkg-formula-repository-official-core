@@ -3,14 +3,12 @@ web-url: https://jbig2dec.com/
 src-url: https://github.com/ArtifexSoftware/jbig2dec/archive/refs/tags/0.20.tar.gz
 src-sha: a9705369a6633aba532693450ec802c562397e1b824662de809ede92f67aff21
 license: AGPL-3.0-or-later
-dep-pkg: libpng
 dep-upp: libtool
 bsystem: autogen
 
 dopatch: gsed -i '$d' autogen.sh && ./autogen.sh
 
 install: |
-    configure only --enable-static --disable-shared --with-libpng="$libpng_INSTALL_DIR"
+    configure only --without-libpng
     gmakew
-    gmakew install-man1
-    install_bins jbig2dec
+    gmakew install-libLTLIBRARIES install-includeHEADERS install-pkgconfigDATA

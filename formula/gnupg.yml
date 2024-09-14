@@ -4,7 +4,7 @@ git-url: https://dev.gnupg.org/source/gnupg
 src-url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.5.tar.bz2
 src-sha: f68f7d75d06cb1635c336d34d844af97436c3f64ea14bcb7c869782f96f44277
 license: GPL-3.0-or-later
-dep-pkg: libgcrypt libassuan libksba libiconv libbz2 libz npth readline
+dep-pkg: libgcrypt libassuan libksba libnpth libiconv libbz2 libz readline
 
 install: |
     configure \
@@ -16,7 +16,7 @@ install: |
         --with-libgcrypt-prefix=$libgcrypt_INSTALL_DIR \
         --with-libassuan-prefix=$libassuan_INSTALL_DIR \
         --with-ksba-prefix=$libksba_INSTALL_DIR \
-        --with-npth-prefix=$npth_INSTALL_DIR \
+        --with-npth-prefix=$libnpth_INSTALL_DIR \
         --with-bzip2=$libbz2_INSTALL_DIR \
         --with-readline=$readline_INSTALL_DIR \
         --with-libiconv-prefix=$libincov_INSTALL_DIR LIBS=-lm

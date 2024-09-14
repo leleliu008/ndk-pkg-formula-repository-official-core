@@ -3,28 +3,26 @@ web-url: https://opencolorio.org/
 src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v2.3.2.tar.gz
 src-sha: 6bbf4e7fa4ea2f743a238cb22aff44890425771a2f57f62cece1574e46ceec2f
 license: BSD-3-Clause
-dep-pkg: libopenexr liblcms2 libexpat libyaml-cpp libpystring libminizip-ng
+dep-pkg: libImath libexpat libyaml-cpp libpystring libminizip-ng
 dep-upp: git
-
-dopatch: |
-    MINIZIP_LIBRARIES="$(pkg-config --libs-only-l minizip-ng)"
-    gsed -i "s|INTERFACE ZLIB::ZLIB|INTERFACE ZLIB::ZLIB $MINIZIP_LIBRARIES|" share/cmake/modules/Findminizip-ng.cmake
-
-    export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS -ldeflate"
-
 install: |
     cmakew \
         -Dpystring_INCLUDE_DIR="$libpystring_INCLUDE_DIR/pystring" \
-        -Dpystring_LIBRARY="$libpystring_LIBRARY_DIR/libpystring.a" \
-        -DOCIO_BUILD_APPS=ON \
+        -Dpystring_LIBRARY="$libpystring_LIBRARY_DIR/libpystring.so" \
+        -DOCIO_BUILD_APPS=OFF \
         -DOCIO_BUILD_DOCS=OFF \
         -DOCIO_BUILD_TESTS=OFF \
         -DOCIO_BUILD_JAVA=OFF \
         -DOCIO_BUILD_PYTHON=OFF \
         -DOCIO_WARNING_AS_ERROR=OFF \
         -DBUILD_SHARED_LIBS=OFF
-
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
-    rm -rf share/OpenColorIO/
+    cmakew \
+        -Dpystring_INCLUDE_DIR="$libpystring_INCLUDE_DIR/pystring" \
+        -Dpystring_LIBRARY="$libpystring_LIBRARY_DIR/libpystring.so" \
+        -DOCIO_BUILD_APPS=OFF \
+        -DOCIO_BUILD_DOCS=OFF \
+        -DOCIO_BUILD_TESTS=OFF \
+        -DOCIO_BUILD_JAVA=OFF \
+        -DOCIO_BUILD_PYTHON=OFF \
+        -DOCIO_WARNING_AS_ERROR=OFF \
+        -DBUILD_SHARED_LIBS=ON

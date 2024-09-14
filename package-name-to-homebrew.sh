@@ -88,6 +88,10 @@ case $1 in
               printf '%s\n' 'tinyalsa'  ;;
     libsimdjson)
               printf '%s\n' 'simdjson'  ;;
+    libnghttp2)
+              printf '%s\n' 'nghttp2'   ;;
+    libnghttp3)
+              printf '%s\n' 'nghttp3'   ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)

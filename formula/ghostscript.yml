@@ -1,83 +1,22 @@
 pkgtype: exe+lib
-summary: Interpreter for PostScript and PDF
+summary: An interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
-src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz
-src-sha: 854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostpdl-10.03.1.tar.xz
+src-sha: 05eee45268f6bb2c6189f9a40685c4608ca089443a93f2af5f5194d83dc368db
 license: AGPL-3.0-or-later
-dep-pkg: jbig2dec libjpeg-turbo libidn libtesseract liblanginfo
-dep-upp: patch libz
+dep-pkg: libidn liblcms2 libjbig2dec libfontconfig libtesseract liblanginfo
+xxflags: -std=c++11
 binbstd: 1
 
 dopatch: |
-    rm -rf expat
-    rm -rf freetype
-    rm -rf jbig2dec
-    rm -rf jpeg
-    rm -rf lcms2mt
-    rm -rf libpng
-    rm -rf openjpeg
-    rm -rf tiff
-    rm -rf zlib
-    rm -rf tesseract
+    rm -rf tesseract freetype jbig2dec openjpeg lcms2mt libpng expat jpeg tiff zlib
 
-    # https://bugs.ghostscript.com/show_bug.cgi?id=707649
-    patch -p1 <<EOF
-    From: Ken Sharp <Ken.Sharp@artifex.com>
-    Date: Fri, 8 Mar 2024 09:19:05 +0000 (+0000)
-    Subject: Bug #707649 - fix apply_sasl in error cases.
-    X-Git-Tag: robin_test_ref~44
-    X-Git-Url: https://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff_plain;h=90cabe08422afdd16bac5dd9217602679d943045;hp=590626ae42ac1c1c288ea7558040d8f91a1b8d0d
-
-    Bug #707649 - fix apply_sasl in error cases.
-
-    Forgot to dereference the pointers before assigning the values, if we
-    get non-fatal errors returned from stringprep.
-    ---
-
-    diff --git a/pdf/pdf_sec.c b/pdf/pdf_sec.c
-    index 565ae80ca..7e8f6719d 100644
-    --- a/pdf/pdf_sec.c
-    +++ b/pdf/pdf_sec.c
-    @@ -183,8 +183,8 @@ static int apply_sasl(pdf_context *ctx, char *Password, int Len, char **NewPassw
-              * this easy: the errors we want to ignore are the ones with
-              * codes less than 100. */
-             if ((int)err < 100) {
-    -            NewPassword = Password;
-    -            NewLen = Len;
-    +            *NewPassword = Password;
-    +            *NewLen = Len;
-                 return 0;
-             }
-     
-    EOF
-
-    printf '%s' '
-    LS0tIC4vYmFzZS9nc2Vycm9ycy5oCTIwMTctMDMtMTYgMDk6MjA6MTEuMDAwMDAwMDAwICswMDAw
-    CisrKyAuL2Jhc2UvZ3NlcnJvcnMuaAkyMDE3LTAzLTE4IDIxOjAyOjQ2LjU4NjczNzYyOSArMDAw
-    MApAQCAtMTQ4LDE0ICsxNDgsMTQgQEAKICAqCiAgKi8KIAotI2lmbmRlZiBfX3ByaW50Zmxpa2UK
-    Ky8qIFJlZGVmaW5lIGNkZWZzLmgncyBfX3ByaW50Zmxpa2UgZnVuY3Rpb246ICovCisjdW5kZWYg
-    X19wcmludGZsaWtlCiAjaWYgX19HTlVDX18gPiAyIHx8IF9fR05VQ19fID09IDIgJiYgX19HTlVD
-    X01JTk9SX18gPj0gNwogI2RlZmluZSBfX3ByaW50Zmxpa2UoZm10YXJnLCBmaXJzdHZhcmFyZykg
-    XAogICAgIF9fYXR0cmlidXRlX18oKF9fZm9ybWF0X18gKF9fcHJpbnRmX18sIGZtdGFyZywgZmly
-    c3R2YXJhcmcpKSkKICNlbHNlCiAjZGVmaW5lIF9fcHJpbnRmbGlrZShmbXRhcmcsIGZpcnN0dmFy
-    YXJnKQogI2VuZGlmCi0jZW5kaWYKIAogY29uc3QgY2hhciAqZ3NfZXJyc3RyKGludCBjb2RlKTsK
-    IAo=' | base64 -d | patch -p0
-
-prepare: |
-    HARFBUZZ_LIBS="$(pkg-config --libs-only-l harfbuzz)"
-
-    printf 'INPUT(%s -lc++_shared)\n' "$HARFBUZZ_LIBS" > ../lib/libpthread.a
+    gsed -i 's|-g -o|$(LDFLAGS) -o|' base/unix-dll.mak
 
     run ln -s "$PKG_CONFIG" "$TARGET_TRIPLE-pkg-config"
-
     export PATH="$PWD:$PATH"
 
-    export CPPFLAGS="$CPPFLAGS -I$libfreetype_INCLUDE_DIR/freetype2"
-
-    export LDFLAGS="$LDFLAGS -fopenmp -static-openmp"
-
-    export ac_cv_lib_pthread_pthread_create=yes
-
+prepare: |
     export CCAUX="$CC_FOR_BUILD"
     export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"
     export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
@@ -92,3 +31,7 @@ install: |
         --without-x
     run make soclean
     run make install-so
+
+patches: |
+    544d34abad8b3b957bb83f1d1ee1b0b440d538afc8d9a5fa3b11d0ef89c4e3d2|https://raw.githubusercontent.com/macports/macports-ports/master/print/ghostscript/files/pdf_sec.c.diff||-p0
+    cce893445d5f5d21c261d65a047193c574781bb3a565b7f71a6ed97246af273a|https://raw.githubusercontent.com/termux/termux-packages/master/packages/ghostscript/base-gserrors.h.patch
