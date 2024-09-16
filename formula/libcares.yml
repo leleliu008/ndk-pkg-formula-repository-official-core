@@ -3,6 +3,8 @@ web-url: https://c-ares.org/
 src-url: https://github.com/c-ares/c-ares/archive/refs/tags/v1.33.1.tar.gz
 src-sha: b3d127d8357863eb465053ce9308b79d9b00314f92ec09df056221a1a45c2fef
 
+dopatch: gsed -i 's|LIST (APPEND CARES_DEPENDENT_LIBS ${CMAKE_THREAD_LIBS_INIT})|LIST (APPEND CARES_DEPENDENT_LIBS pthread)|' CMakeLists.txt
+
 install: |
     cmakew \
         -DCARES_INSTALL=ON \
