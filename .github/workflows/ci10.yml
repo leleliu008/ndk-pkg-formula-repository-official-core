@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libnetpbm,libnfc,libnfs,libnghttp3,libnng]
+        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libnetpbm,libnfc,libnfs,libnghttp3,libnng]
+        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libnetpbm,libnfc,libnfs,libnghttp3,libnng]
+        pkg: [libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2]
 
     runs-on: ${{ matrix.os }}
 

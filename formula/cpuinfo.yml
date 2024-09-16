@@ -1,9 +1,7 @@
-pkgtype: exe+lib
+pkgtype: pie
 summary: CPU INFOrmation library
 git-url: https://github.com/pytorch/cpuinfo
 license: BSD-2-Clause
-
-dopatch: gsed -i 's|${CMAKE_INSTALL_DATAROOTDIR}|${CMAKE_INSTALL_LIBDIR}/cmake|g' CMakeLists.txt
 
 install: |
     cmakew \
@@ -12,9 +10,5 @@ install: |
         -DCPUINFO_BUILD_MOCK_TESTS=OFF \
         -DCPUINFO_BUILD_BENCHMARKS=OFF \
         -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DCPUINFO_BUILD_TOOLS=OFF \
-        -DCPUINFO_BUILD_UNIT_TESTS=OFF \
-        -DCPUINFO_BUILD_MOCK_TESTS=OFF \
-        -DCPUINFO_BUILD_BENCHMARKS=OFF \
-        -DBUILD_SHARED_LIBS=ON
+
+dotweak: rm -rf include/ lib/ share/

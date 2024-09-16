@@ -7,7 +7,7 @@ dep-pkg: libiconv
 
 install: |
     export LIBS='-lcharset -liconv'
-    configure_only --disable-shared --enable-static
+    configure only --disable-shared --enable-static
     gmakew -C datrie
     gmakew -C tools install
     gmakew -C man   install

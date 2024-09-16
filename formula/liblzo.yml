@@ -1,4 +1,3 @@
-pkgtype: exe+lib
 summary: Real-time data compression library
 web-url: https://www.oberhumer.com/opensource/lzo
 src-url: https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz

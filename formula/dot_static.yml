@@ -9,7 +9,7 @@ bsystem: autogen
 
 install: |
     export LDFLAGS="$LDFLAGS --static -static"
-    configure_only \
+    configure only \
         --disable-swig \
         --disable-php \
         --disable-tcl \

@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh]
+        pkg: [libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh]
+        pkg: [libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh]
+        pkg: [libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo]
 
     runs-on: ${{ matrix.os }}
 

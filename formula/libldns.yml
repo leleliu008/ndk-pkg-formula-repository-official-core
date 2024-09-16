@@ -13,4 +13,4 @@ install: |
         --without-drill \
         --without-pyldns \
         --without-examples \
-        --disable-dane-verify LIBS="'-lssl -lcrypto'"
+        --disable-dane-verify

@@ -1,4 +1,4 @@
-name: workflow20
+name: workflow21
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yasm,youtubedr,yq,yyjson,zip]
+        pkg: [zlib,zlib-ng,zola,zopfli,zoxide,zsh,zstd,zsync]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yasm,youtubedr,yq,yyjson,zip]
+        pkg: [zlib,zlib-ng,zola,zopfli,zoxide,zsh,zstd,zsync]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xnnpack,xorriso,xpup,xsltproc,xxd,xxhash,xz,yasm,youtubedr,yq,yyjson,zip]
+        pkg: [zlib,zlib-ng,zola,zopfli,zoxide,zsh,zstd,zsync]
 
     runs-on: ${{ matrix.os }}
 

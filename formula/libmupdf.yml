@@ -1,0 +1,53 @@
+summary: The ultimate library for managing PDF documents
+git-url: git://git.ghostscript.com/mupdf.git
+web-url: https://mupdf.com/
+src-url: https://mupdf.com/downloads/archive/mupdf-1.24.9-source.tar.gz
+src-sha: 0b446aa0eecc114e9969dccd70c9789358fccb6589a81d470dc941a0874da98a
+license: AGPL-3.0-or-later
+dep-pkg: openssl-dev libtesseract libjbig2dec libharfbuzz libgumbo libmujs
+
+dopatch: |
+    for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
+    do
+        [ "$item" = thirdparty/extract ] && continue
+        [ "$item" = thirdparty/lcms2 ]   && continue
+        run rm -rf "$item"
+    done
+
+    mv pyproject.toml{,.unused}
+    mv setup.py{,.unused}
+    gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
+
+prepare: |
+    unset GMAKE_EXTRA_ARGS
+
+    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
+    do
+        K="${KV%:*}"
+        V="${KV#*:}"
+
+        A="$(pkg-config --cflags "$V")"
+        B="$(pkg-config --libs   "$V")"
+
+        GMAKE_EXTRA_ARGS="$GMAKE_EXTRA_ARGS SYS_${K}_CFLAGS='$A' SYS_${K}_LIBS='$B'"
+    done
+
+install: |
+    gmakew clean
+    gmakew install-libs \
+        build=$PROFILE \
+        shared=yes \
+        verbose=yes \
+        tesseract=yes \
+        prefix=$PACKAGE_INSTALL_DIR \
+        OS=Linux \
+        CC=$CC \
+        LD=$LD \
+        AR=$AR \
+        RANLIB=$RANLIB \
+        XCFLAGS="'$CFLAGS $CPPFLAGS'" \
+        USE_SYSTEM_LIBS=yes \
+        USE_SYSTEM_MUJS=yes \
+        $GMAKE_EXTRA_ARGS
+
+dotweak: cd lib && mv libmupdf.so.* libmupdf.so

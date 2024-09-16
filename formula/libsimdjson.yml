@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: SIMD-accelerated C++ JSON parser
 web-url: https://simdjson.org
 src-url: https://github.com/simdjson/simdjson

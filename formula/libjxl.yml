@@ -3,7 +3,7 @@ web-url: https://jpeg.org/jpegxl/index.html
 src-url: https://github.com/libjxl/libjxl/archive/refs/tags/v0.10.2.tar.gz
 src-sha: 95e807f63143856dc4d161c071cca01115d2c6405b3d3209854ac6989dc6bb91
 license: BSD-3-Clause
-dep-pkg: libjpeg-turbo libwebp libpng libgif liblcms2 libbrotli libhwy openexr
+dep-pkg: libjpeg-turbo libopenexr libwebp libpng libgif liblcms2 libbrotli libhwy
 dep-upp: git
 
 prepare: run git clone --depth 1 https://github.com/webmproject/sjpeg third_party/sjpeg

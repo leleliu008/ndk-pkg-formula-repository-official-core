@@ -1,4 +1,4 @@
-summary: Utility for computing and verifying hash sums of files
+summary: Library for computing and verifying hash sums of files
 web-url: http://rhash.sourceforge.net
 src-url: https://github.com/rhash/RHash/archive/v1.4.4.tar.gz
 src-sha: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
@@ -11,15 +11,13 @@ dopatch: |
 
 install: |
     run ./configure \
-        --cc=$CC \
-        --ar=$AR \
+        --cc="$CC" \
+        --ar="$AR" \
         --extra-cflags="'$CFLAGS $CPPFLAGS'" \
         --extra-ldflags="'$LDFLAGS'" \
-        --target=$TARGET_TRIPLE \
-        --prefix=$PACKAGE_INSTALL_DIR \
-        --enable-static \
+        --target="$TARGET_TRIPLE" \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --enable-lib-static \
-        --disable-lib-shared
+        --enable-lib-shared
     gmakew clean
-    gmakew
-    gmakew install-binary install-man install-conf
+    gmakew install-lib-static install-lib-shared install-lib-headers install-pkg-config

@@ -3,7 +3,7 @@ web-url: https://tsl0922.github.io/ttyd
 src-url: https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.7.tar.gz
 src-sha: 039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650
 license: MIT
-dep-pkg: json-c libwebsockets
+dep-pkg: libjson-c libwebsockets
 bsystem: cmake
 dopatch: gsed -i '/LINK_LIBS util/d' CMakeLists.txt
 

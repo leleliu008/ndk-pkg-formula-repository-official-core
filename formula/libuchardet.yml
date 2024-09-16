@@ -1,0 +1,11 @@
+summary: Encoding detector library
+git-url: https://gitlab.freedesktop.org/uchardet/uchardet
+web-url: https://www.freedesktop.org/wiki/Software/uchardet/
+src-url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz
+src-sha: e97a60cfc00a1c147a674b097bb1422abd9fa78a2d9ce3f3fdcc2e78a34ac5f0
+
+dopatch: gsed -i '/add_subdirectory(test)/d' CMakeLists.txt
+
+install: |
+    cmakew -DBUILD_BINARY=OFF -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_BINARY=OFF -DBUILD_SHARED_LIBS=ON

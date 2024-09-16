@@ -1,0 +1,19 @@
+summary: A set of tools for reading and writing files containing sampled sound (such as MS Windows WAV and the Apple/SGI AIFF format) 
+web-url: http://libsndfile.github.io/libsndfile/
+src-url: https://github.com/libsndfile/libsndfile/releases/download/1.2.2/libsndfile-1.2.2.tar.xz
+src-sha: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e
+license: LGPL-2.1-or-later
+dep-pkg: libopus libflac libvorbis
+dep-upp: python3
+
+install: |
+    cmakew \
+        -DBUILD_PROGRAMS=ON \
+        -DBUILD_EXAMPLES=ON \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DENABLE_PACKAGE_CONFIG=ON \
+        -DINSTALL_PKGCONFIG_MODULE=OFF
+
+dotweak: |
+    rm -rf include/
+    rm -rf lib/

@@ -5,6 +5,7 @@ src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download
 src-sha: 05eee45268f6bb2c6189f9a40685c4608ca089443a93f2af5f5194d83dc368db
 license: AGPL-3.0-or-later
 dep-pkg: libidn liblcms2 libjbig2dec libfontconfig libtesseract liblanginfo
+dep-upp: libz
 xxflags: -std=c++11
 binbstd: 1
 

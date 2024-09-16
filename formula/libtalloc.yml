@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Hierarchical, reference-counted memory pool with destructors
 web-url: https://talloc.samba.org/
 src-url: https://www.samba.org/ftp/talloc/talloc-2.4.2.tar.gz
