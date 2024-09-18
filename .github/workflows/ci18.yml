@@ -20,41 +20,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container: fpliu/ndk-pkg
+    container: ubuntu:24.04
 
     steps:
-      - run: export -p
-
       - uses: actions/checkout@v4
 
-      - if:  ${{ github.ref_name == 'dev' }}
-        run: |
-            curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/dev/ndk-pkg
-            chmod +x ndk-pkg
-            mv ndk-pkg /usr/bin/ndk-pkg
+      - run: apt -y update
+      - run: apt -y install curl
 
-      - run: /usr/bin/ndk-pkg about
-      - run: /usr/bin/ndk-pkg setup
-      - run: /usr/bin/ndk-pkg sysinfo
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
 
-      - run: install -d ~/.ndk-pkg/repos.d/official-core
-
-      - run: |
-            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
-            branch: master
-            pinned: 1
-            enabled: 1
-            created: 1673675503
-            updated: 1676399969
-            EOF
-
-      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
 
       - run: |
           set -ex
 
-          PKGTYPE=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
 
           if [ "$PKGTYPE" = exe ] ; then
             MIN_SDK_API_LEVEL=34
@@ -74,14 +58,14 @@ jobs:
               fi
 
               if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-                  MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
                   if [ -z "$MIN_SDK_API_LEVEL" ] ; then
                     MIN_SDK_API_LEVEL=21
                   fi
               fi
           fi
 
-          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
 
   alpine:
 
@@ -101,35 +85,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: apk update
-      - run: apk add gcompat g++ libc-dev linux-headers
-
       - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
-      - run: mv ndk-pkg /usr/bin/ndk-pkg
 
-      - run: /usr/bin/ndk-pkg about
-      - run: /usr/bin/ndk-pkg setup
-      - run: /usr/bin/ndk-pkg sysinfo
-
-      - run: install -d ~/.ndk-pkg/repos.d/official-core
-
-      - run: |
-            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
-            branch: master
-            pinned: 1
-            enabled: 1
-            created: 1673675503
-            updated: 1676399969
-            EOF
-
-      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
 
       - run: |
           set -ex
 
-          PKGTYPE=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
+          PKGTYPE=$(./ndk-pkg info-available ${{ matrix.pkg }} pkgtype)
 
           if [ "$PKGTYPE" = exe ] ; then
             MIN_SDK_API_LEVEL=34
@@ -149,15 +115,14 @@ jobs:
               fi
 
               if [ -z "$MIN_SDK_API_LEVEL" ] ; then
-                  MIN_SDK_API_LEVEL=$(/usr/bin/ndk-pkg info-available ${{ matrix.pkg }} api-min)
+                  MIN_SDK_API_LEVEL=$(./ndk-pkg info-available ${{ matrix.pkg }} api-min)
                   if [ -z "$MIN_SDK_API_LEVEL" ] ; then
                     MIN_SDK_API_LEVEL=21
                   fi
               fi
           fi
 
-          /usr/bin/ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
-
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
 
 
   macos:
@@ -185,19 +150,6 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-
-      - run: install -d ~/.ndk-pkg/repos.d/official-core
-      - run: |
-            cat > ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-official-core
-            branch: master
-            pinned: 1
-            enabled: 1
-            created: 1673675503
-            updated: 1676399969
-            EOF
-
-      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
 
       - run: |
           set -ex
@@ -234,4 +186,4 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
