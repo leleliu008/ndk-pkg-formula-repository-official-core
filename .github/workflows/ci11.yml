@@ -34,7 +34,8 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: |
           set -ex
 
@@ -65,7 +66,7 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
   alpine:
 
@@ -91,7 +92,8 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: |
           set -ex
 
@@ -122,7 +124,7 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
 
   macos:
@@ -140,8 +142,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - run: export -p
-
       - uses: actions/checkout@v4
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
@@ -150,7 +150,8 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: |
           set -ex
 
@@ -186,4 +187,4 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} -I formula ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
