@@ -14,8 +14,8 @@ dopatch: |
         run rm -rf "$item"
     done
 
-    mv pyproject.toml{,.unused}
-    mv setup.py{,.unused}
+    rm pyproject.toml
+    rm setup.py
     gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
 
 prepare: |

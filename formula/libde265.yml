@@ -3,6 +3,5 @@ src-url: https://github.com/strukturag/libde265/releases/download/v1.0.15/libde2
 src-sha: 00251986c29d34d3af7117ed05874950c875dd9292d016be29d3b3762666511d
 license: LGPL-3.0-or-later
 install: |
-    cmakew \
-        -DENABLE_SDL=OFF \
-        -DDISABLE_SSE=ON
+    cmakew -DENABLE_SDL=OFF -DDISABLE_SSE=ON -DENABLE_ENCODER=OFF -DENABLE_DECODER=OFF -DBUILD_SHARED_LIBS=OFF
+    cmakew -DENABLE_SDL=OFF -DDISABLE_SSE=ON -DENABLE_ENCODER=OFF -DENABLE_DECODER=OFF -DBUILD_SHARED_LIBS=ON

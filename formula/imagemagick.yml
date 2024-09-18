@@ -27,4 +27,4 @@ install: |
         --without-x \
         --without-wmf \
         --without-fftw \
-        --disable-opencl LIBS=-lc++_shared
+        --disable-opencl LIBS=-lc++

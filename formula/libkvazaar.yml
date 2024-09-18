@@ -1,0 +1,6 @@
+summary: An open-source HEVC encoder
+src-url: https://github.com/ultravideo/kvazaar/archive/refs/tags/v2.3.1.tar.gz
+src-sha: c5a1699d0bd50bc6bdba485b3438a5681a43d7b2c4fd6311a144740bfa59c9cc
+license: BSD-3-Clause
+dep-upp: libtool nasm
+bsystem: autogen

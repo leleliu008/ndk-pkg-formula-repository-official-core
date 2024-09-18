@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli,cjson]
+        pkg: [binaryen,bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli]
 
     runs-on: ubuntu-latest
 
@@ -92,7 +92,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli,cjson]
+        pkg: [binaryen,bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli]
 
     runs-on: ubuntu-latest
 
@@ -170,7 +170,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli,cjson]
+        pkg: [binaryen,bind,binocle,bison,bk,blockhash,boringssl,boxes,brook,broot,brotli,bsdtar,bullet,busybox,byacc,bzip2,caddy,cargo-c,catch2,ccache,cereal,cflow,cgal,cheat,check,chezmoi,chinese-calendar,chisel,choose,cilium-cli]
 
     runs-on: ${{ matrix.os }}
 

@@ -4,6 +4,8 @@ src-sha: 3c48af7bdb1f673b2f3c9f8c0bfa9107a7019b54ac3b4e30964bc0707debdd3a
 license: MIT
 dep-pkg: imagemagick
 
+prepare: export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS -lomp -ldl"
+
 install: |
     waf configure --prefix=$PACKAGE_INSTALL_DIR
     waf

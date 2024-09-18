@@ -1,7 +1,12 @@
 summary: ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 web-url: https://www.libde265.org/
-src-url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
-src-sha: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
+src-url: https://github.com/strukturag/libheif/releases/download/v1.18.2/libheif-1.18.2.tar.gz
+src-sha: c4002a622bec9f519f29d84bfdc6024e33fd67953a5fb4dc2c2f11f67d5e45bf
 license: LGPL-3.0-only
-dep-pkg: libde265 libx265 librav1e libdav1d svt-av1 libaom
-bsystem: cmake
+dep-pkg: libaom libx265 libde265 librav1e libdav1d libSvtAv1
+
+prepare: CMAKE_ARGS='-DWITH_DAV1D=ON -DWITH_RAV1E=ON -DWITH_SvtEnc=ON -DWITH_GDK_PIXBUF=OFF -DENABLE_PLUGIN_LOADING=OFF -DWITH_EXAMPLES=OFF'
+
+install: |
+    cmakew $CMAKE_ARGS -DBUILD_SHARED_LIBS=OFF
+    cmakew $CMAKE_ARGS -DBUILD_SHARED_LIBS=ON

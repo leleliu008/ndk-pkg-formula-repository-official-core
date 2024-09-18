@@ -6,6 +6,6 @@ license: GPL-2.0-or-later
 
 install: |
     configure only --disable-liblastlog2
-    gmakew getopt misc-utils/getopt.1
+    gmakew getopt
     install_bins getopt
-    install_mans misc-utils/getopt.1
+    install_mans ../misc-utils/getopt.1

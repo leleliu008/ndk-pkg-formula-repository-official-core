@@ -6,21 +6,25 @@ license: BSD-3-Clause
 dep-pkg: libjpeg-turbo libopenexr libwebp libpng libgif liblcms2 libbrotli libhwy
 dep-upp: git
 
-prepare: run git clone --depth 1 https://github.com/webmproject/sjpeg third_party/sjpeg
+prepare: |
+    run git clone --depth 1 https://github.com/webmproject/sjpeg third_party/sjpeg
+
+    CMAKE_ARGS="
+        -DBUILD_TESTING=OFF
+        -DJPEGXL_ENABLE_JNI=OFF
+        -DJPEGXL_ENABLE_SJPEG=ON
+        -DJPEGXL_ENABLE_SKCMS=OFF
+        -DJPEGXL_ENABLE_TOOLS=OFF
+        -DJPEGXL_ENABLE_EXAMPLES=OFF
+        -DJPEGXL_ENABLE_MANPAGES=OFF
+        -DJPEGXL_ENABLE_BENCHMARK=OFF
+        -DJPEGXL_WARNINGS_AS_ERRORS=OFF
+        -DJPEGXL_FORCE_SYSTEM_BROTLI=ON
+        -DJPEGXL_FORCE_SYSTEM_LCMS2=ON
+        -DJPEGXL_FORCE_SYSTEM_HWY=ON
+        -DJPEGXL_VERSION=$PACKAGE_VERSION
+        -DSJPEG_ANDROID_NDK_PATH=$ANDROID_NDK_HOME"
 
 install: |
-    cmakew \
-        -DBUILD_TESTING=OFF \
-        -DJPEGXL_ENABLE_JNI=OFF \
-        -DJPEGXL_ENABLE_SJPEG=ON \
-        -DJPEGXL_ENABLE_SKCMS=OFF \
-        -DJPEGXL_ENABLE_TOOLS=OFF \
-        -DJPEGXL_ENABLE_EXAMPLES=OFF \
-        -DJPEGXL_ENABLE_MANPAGES=OFF \
-        -DJPEGXL_ENABLE_BENCHMARK=OFF \
-        -DJPEGXL_WARNINGS_AS_ERRORS=OFF \
-        -DJPEGXL_FORCE_SYSTEM_BROTLI=ON \
-        -DJPEGXL_FORCE_SYSTEM_LCMS2=ON \
-        -DJPEGXL_FORCE_SYSTEM_HWY=ON \
-        -DJPEGXL_VERSION=$PACKAGE_VERSION \
-        -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"
+    cmakew $CMAKE_ARGS -DBUILD_SHARED_LIBS=OFF
+    cmakew $CMAKE_ARGS -DBUILD_SHARED_LIBS=ON

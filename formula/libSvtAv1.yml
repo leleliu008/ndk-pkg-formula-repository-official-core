@@ -4,10 +4,7 @@ src-sha: a1d95875f7539d49f7c8fdec0623fbf984804a168da6289705d53268e3b38412
 license: BSD-3-Clause
 dep-upp: yasm
 
-dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME COMPONENT bin DESTINATION/' Source/App/CMakeLists.txt
-
-prepare: |
+install: |
     export PATH="$ANDROID_NDK_TOOLCHAIN_BIND:$PATH"
-    CMAKE_INSTALL_COMPONENTS=bin
-
-install: cmakew -DBUILD_APPS=ON -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_APPS=OFF -DBUILD_SHARED_LIBS=ON
+    cmakew -DBUILD_APPS=OFF -DBUILD_SHARED_LIBS=OFF
