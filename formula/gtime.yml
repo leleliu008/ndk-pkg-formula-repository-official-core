@@ -8,4 +8,4 @@ dopatch: gsed -i '/config\.h/a \#include<string.h>' src/resuse.c
 
 install: configure --program-prefix=g
 
-dotweak: cd bin && ln -s gtime time
+dotweak: ln -s gtime bin/time

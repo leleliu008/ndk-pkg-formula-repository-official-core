@@ -14,7 +14,7 @@ install: |
         --disable-acl \
         --disable-assert
 
-dotweak: cd bin && ln -s gsed sed
+dotweak: ln -s gsed bin/sed
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

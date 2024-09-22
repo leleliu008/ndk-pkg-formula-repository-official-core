@@ -3,7 +3,7 @@ git-url: https://github.com/protocolbuffers/protobuf
 git-sha: 2434ef2adf0c74149b9d547ac5fb545a1ff8b6b5
 version: 26.1
 license: BSD-3-Clause
-dep-pkg: libz jsoncpp abseil
+dep-pkg: libz libjsoncpp abseil
 
 # used by other package. make sure protoc and libprotoc have the same version
 do12345: |

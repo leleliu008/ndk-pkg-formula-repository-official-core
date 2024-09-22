@@ -18,4 +18,4 @@ install: |
         --with-libxslt-prefix="$libxslt_INSTALL_DIR" \
         LIBS="'$(pkg-config --libs libxml-2.0)'"
 
-dotweak: cd bin && ln -s xml xmlstarlet
+dotweak: ln -s xml bin/xmlstarlet

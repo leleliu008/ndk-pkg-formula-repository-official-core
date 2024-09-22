@@ -8,4 +8,4 @@ dep-upp: texinfo
 dep-pkg: libintl
 binbstd: 1
 install: configure --program-prefix=g LIBS="'-lintl -liconv'"
-dotweak: cd bin && ln -s gindent indent
+dotweak: ln -s gindent bin/indent

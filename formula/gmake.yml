@@ -33,6 +33,6 @@ dopatch: |
 
 install: configure --program-prefix=g --without-guile --without-dmalloc
 
-dotweak: cd bin && ln -s gmake make
+dotweak: ln -s gmake bin/make
 
 api-min: 28

@@ -33,7 +33,7 @@ install: |
         --with-included-regex \
         --program-prefix=g
 
-dotweak: cd bin && ln -s gm4 m4
+dotweak: ln -s gm4 bin/m4
 
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513
