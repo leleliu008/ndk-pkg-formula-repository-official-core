@@ -7,8 +7,13 @@ license: GPL-2.0-or-later
 dep-pkg: libmp3lame libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libvpx libwebp libtiff libpng libjpeg-turbo libgif libxml2 libsdl2
 dep-upp: nasm
 bsystem: gmake
+ldflags: -ldl
 
-install: |
+dopatch: |
+    gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
+    gsed -i "s|SDL2_CONFIG=|SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'|" configure
+
+prepare: |
     unset CONFIGURE_EXTRA_ARGS
 
     case $TARGET_PLATFORM_ARCH in
@@ -17,11 +22,7 @@ install: |
         i686)    CONFIGURE_EXTRA_ARGS='--disable-asm' ;;
     esac
 
-    gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
-    gsed -i "s|SDL2_CONFIG=|SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'|" configure
-
-    export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS -ldl"
-
+install: |
     if run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --sysroot="$SYSROOT" \

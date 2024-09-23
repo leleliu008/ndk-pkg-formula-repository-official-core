@@ -5,12 +5,11 @@ src-sha: 6bbf4e7fa4ea2f743a238cb22aff44890425771a2f57f62cece1574e46ceec2f
 license: BSD-3-Clause
 dep-pkg: libopenexr liblcms2 libexpat libyaml-cpp libpystring libminizip-ng
 dep-upp: git
+ldflags: -ldeflate
 
 dopatch: |
     MINIZIP_LIBRARIES="$(pkg-config --libs-only-l minizip-ng)"
     gsed -i "s|INTERFACE ZLIB::ZLIB|INTERFACE ZLIB::ZLIB $MINIZIP_LIBRARIES|" share/cmake/modules/Findminizip-ng.cmake
-
-    export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS -ldeflate"
 
 install: |
     cmakew \
