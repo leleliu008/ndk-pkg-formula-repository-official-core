@@ -12,6 +12,4 @@ prepare: export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
 
 install: configure --enable-zlib --disable-bzlib --disable-xzlib
 
-dotweak: |
-    rm -rf bin
-    rm -rf share/man/man1
+dotweak: rm -rf bin/ share/man/man1/

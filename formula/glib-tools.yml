@@ -39,6 +39,4 @@ install: |
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
 
-dotweak: |
-    rm -rfv lib
-    rm -rfv include
+dotweak: rm -rf include/ lib/

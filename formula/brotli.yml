@@ -2,7 +2,11 @@ summary: A generic-purpose lossless compression algorithm by Google
 src-url: https://github.com/google/brotli/archive/refs/tags/v1.1.0.tar.gz
 src-sha: e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff
 license: MIT
+
+dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME COMPONENT bin DESTINATION/' CMakeLists.txt
+
+prepare: |
+    CMAKE_BUILD_TARGETS=brotli
+    CMAKE_INSTALL_COMPONENTS=bin
+
 install: cmakew -DBUILD_SHARED_LIBS=OFF
-dotweak: |
-    rm -rf include/
-    rm -rf lib/

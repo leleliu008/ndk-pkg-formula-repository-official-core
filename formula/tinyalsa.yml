@@ -9,6 +9,4 @@ install: |
         -DTINYALSA_BUILD_EXAMPLES=OFF \
         -DTINYALSA_USES_PLUGINS=ON
 
-dotweak: |
-    rm -rf include
-    rm -rf lib
+dotweak: rm -rf include/ lib/

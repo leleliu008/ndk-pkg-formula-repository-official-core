@@ -24,7 +24,4 @@ install: |
         -DOCIO_WARNING_AS_ERROR=OFF \
         -DBUILD_SHARED_LIBS=OFF
 
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
-    rm -rf share/OpenColorIO/
+dotweak: rm -rf include/ lib/ share/OpenColorIO/

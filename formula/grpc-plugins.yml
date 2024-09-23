@@ -1,13 +1,11 @@
 pkgtype: pie
 summary: grpc plugins
 web-url: https://grpc.io
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.2.tar.gz
-src-sha: e5d5e0dd96fe9452fe24cc8c827381dca484c54d171fb512a198025fec81a3c8
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.64.0.tar.gz
+src-sha: d5509e40fb24f6390deeef8a88668124f4ec77d2ebb3b1a957b235a2f08b70c0
 license: Apache-2.0
-dep-pkg: abseil openssl-dev re2 libprotobuf libcares
+dep-pkg: libprotobuf.a libcares openssl-dev re2
 dep-upp: grpc-plugins
-
-prepare: printf 'INPUT(%s -l:liblog.so)\n' "$libprotobuf_LIBRARY_DIR/libutf8_validity.a" > ../lib/liblog.a
 
 install: |
     cmakew \
@@ -28,8 +26,7 @@ install: |
         -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=ON \
         -DgRPC_BUILD_GRPC_CSHARP_PLUGIN=ON \
         -DgRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN=ON \
-        -DBUILD_SHARED_LIBS=OFF
+        -DBUILD_SHARED_LIBS=OFF \
+        -DPROTOBUF_PROTOC_EXECUTABLE="$(command -v protoc)"
 
-dotweak: |
-    rm -rf include
-    rm -rf lib
+dotweak: rm -rf include/ lib/

@@ -1,0 +1,28 @@
+summary: Protocol Buffers(data interchange format) compiler and library developed by Google
+git-url: https://github.com/protocolbuffers/protobuf
+git-sha: 2434ef2adf0c74149b9d547ac5fb545a1ff8b6b5
+version: 26.1
+license: BSD-3-Clause
+dep-pkg: libz libjsoncpp abseil
+
+# used by other package. make sure protoc and libprotoc have the same version
+do12345: |
+    cmakew \
+        -DCMAKE_CXX_STANDARD=17 \
+        -Dprotobuf_WITH_ZLIB=ON \
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -Dprotobuf_BUILD_EXAMPLES=OFF \
+        -Dprotobuf_BUILD_LIBPROTOC=ON \
+        -Dprotobuf_BUILD_SHARED_LIBS=OFF
+
+install: |
+    cmakew \
+        -DCMAKE_CXX_STANDARD=17 \
+        -Dprotobuf_WITH_ZLIB=ON \
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -Dprotobuf_BUILD_EXAMPLES=OFF \
+        -Dprotobuf_BUILD_PROTOC_BINARIES=ON \
+        -Dprotobuf_BUILD_LIBPROTOC=ON \
+        -Dprotobuf_ABSL_PROVIDER=package \
+        -Dprotobuf_JSONCPP_PROVIDER=package \
+        -Dprotobuf_BUILD_SHARED_LIBS=OFF
