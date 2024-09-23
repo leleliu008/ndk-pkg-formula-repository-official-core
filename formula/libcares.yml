@@ -14,4 +14,4 @@ install: |
         -DCARES_BUILD_TOOLS=OFF \
         -DCARES_BUILD_TESTS=OFF
 
-dotweak: ln -s libcares_static.a bin/libcares.a
+dotweak: ln -s libcares_static.a lib/libcares.a

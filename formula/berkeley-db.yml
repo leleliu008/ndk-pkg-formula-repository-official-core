@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: A high-performance key/value database
 web-url: https://www.oracle.com/database/berkeley-db
 src-url: https://fossies.org/linux/misc/db-18.1.40.tar.gz
@@ -8,6 +7,7 @@ dep-pkg: openssl-dev
 bscript: dist
 
 dopatch: gsed -i 's| install_docs||' Makefile.in
+
 install: |
     configure \
         --enable-cxx=no \
@@ -17,3 +17,5 @@ install: |
         --enable-compat185 \
         --enable-smallbuild \
         db_cv_atomic=gcc-builtin
+
+dotweak: rm -rf include/ lib/
