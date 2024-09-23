@@ -3,15 +3,6 @@ web-url: https://www.gaia-gis.it/fossil/libspatialite/index
 src-url: https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz
 src-sha: 43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080
 license: MPL-1.1
-dep-pkg: libfreexl librttopo libxml2 libminizip proj7
-install: |
-    LIBS_PROJ="$(pkg-config --libs proj)"
-    LIBS_GEOS="$(pkg-config --libs geos)"
-    LIBS_FREEXL="$(pkg-config --libs freexl)"
-    configure \
-        --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" \
-        LIBS="'$LIBS_PROJ $LIBS_FREEXL -llog'" \
-        ac_cv_search_GEOSCoveredBy="'$LIBS_GEOS'" \
-        ac_cv_search_GEOSDelaunayTriangulation="'$LIBS_GEOS'" \
-        ac_cv_search_GEOSContext_setErrorMessageHandler_r="'$LIBS_GEOS'" \
-        ac_cv_search_GEOSFrechetDistance_r="'$LIBS_GEOS'"
+dep-pkg: libfreexl librttopo libxml2 libminizip libproj7
+dep-lib: -llog
+install: configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" 

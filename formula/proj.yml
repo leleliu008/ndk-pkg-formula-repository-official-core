@@ -5,33 +5,7 @@ src-sha: ffe20170ee2b952207adf8a195e2141eab12cda181e49fdeb54425d98c7171d7
 license: MIT
 dep-upp: sqlite3
 dep-pkg: libsqlite3 libtiff libcurl
-
-dopatch: |
-    # https://cmake.org/cmake/help/latest/module/FindTIFF.html
-    TIFF_LIBRARIES="$(pkg-config --libs-only-l libtiff-4 | tr ' ' ';')"
-
-    cat > cmake/FindTIFF.cmake <<EOF
-    set(TIFF_FOUND TRUE)
-
-    add_library(TIFF::TIFF INTERFACE IMPORTED)
-    set_target_properties(TIFF::TIFF PROPERTIES
-        INTERFACE_INCLUDE_DIRECTORIES "$libtiff_INCLUDE_DIR"
-        INTERFACE_LINK_LIBRARIES      "$TIFF_LIBRARIES"
-    )
-    EOF
-
-    # # https://cmake.org/cmake/help/latest/module/FindCURL.html
-    CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
-
-    cat > cmake/FindCURL.cmake <<EOF
-    set(CURL_FOUND TRUE)
-
-    add_library(CURL::libcurl INTERFACE IMPORTED)
-    set_target_properties(CURL::libcurl PROPERTIES
-        INTERFACE_INCLUDE_DIRECTORIES "$libcurl_INCLUDE_DIR"
-        INTERFACE_LINK_LIBRARIES      "$CURL_LIBRARIES"
-    )
-    EOF
+dep-lib: libtiff-4 libcurl
 
 install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_EXAMPLES=OFF -DBUILD_APPS=ON  -DBUILD_SHARED_LIBS=OFF
 

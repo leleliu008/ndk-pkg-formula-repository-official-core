@@ -5,6 +5,7 @@ src-url: https://www.kernel.org/pub/software/scm/git/git-2.45.2.tar.xz
 src-sha: 51bfe87eb1c02fed1484051875365eeab229831d30d0cec5d89a14f9e40e9adb
 license: GPL-2.0-only
 dep-pkg: libpcre2 libiconv libexpat libcurl libz
+dep-lib: libcurl
 dep-upp: patch
 binbstd: 1
 
@@ -35,11 +36,6 @@ prepare: |
     export ac_cv_lib_curl_curl_global_init=yes
 
     export ac_cv_prog_CURL_CONFIG="$libcurl_INSTALL_DIR/bin/curl-config"
-
-    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
-
-    export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
 
     export NO_NSEC=1
     export NO_GETTEXT=1

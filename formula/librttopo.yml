@@ -6,4 +6,4 @@ license: GPL-2.0-or-later
 dep-pkg: geos
 dep-upp: libtool
 bsystem: autogen
-install: configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" LIBS="'$(pkg-config --libs geos)'" ac_cv_search_GEOSContext_setErrorMessageHandler_r=yes
+install: configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config"

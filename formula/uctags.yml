@@ -2,7 +2,6 @@ summary: Maintained ctags implementation
 git-url: https://github.com/universal-ctags/ctags
 license: GPL-2.0-or-later
 dep-pkg: libjansson libyaml libxml2
-dep-upp: pkg-config
 bsystem: autogen
 install: configure --enable-tmpdir=/data/local/tmp
 

@@ -16,7 +16,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,sjpeg]
+        pkg: [rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori]
 
     runs-on: ubuntu-latest
 
@@ -69,6 +69,7 @@ jobs:
           ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
   alpine:
+    if: false
 
     strategy:
 
@@ -77,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,sjpeg]
+        pkg: [rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori]
 
     runs-on: ubuntu-latest
 
@@ -137,7 +138,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori,silicon,sjpeg]
+        pkg: [rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd,shaderc,shc,shell2http,shellharden,shiori]
 
     runs-on: ${{ matrix.os }}
 

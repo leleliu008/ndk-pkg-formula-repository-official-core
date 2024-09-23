@@ -8,8 +8,6 @@ license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 
 dopatch: |
-    gsed -i "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
-    gsed -i "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])|" meson.build
     gsed -i '2139,2165d'  meson.build
     gsed -i "2139a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
     gsed -i '2140a libintl_deps = [libintl, libiconv]' meson.build

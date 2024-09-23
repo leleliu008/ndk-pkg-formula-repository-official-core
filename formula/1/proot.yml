@@ -4,7 +4,7 @@ version: 5.2.0-alpha
 src-url: https://github.com/proot-me/proot/archive/refs/tags/v$PACKAGE_VERSION.tar.gz
 src-sha: 852d2faf85234e6e832d4c9938ff8befa91b89f019969afd80907554568905fc
 license: GPL-2.0-or-later
-dep-upp: pkg-config python3 git
+dep-upp: python3 git
 dep-pkg: libarchive libtalloc
 bsystem: gmake
 

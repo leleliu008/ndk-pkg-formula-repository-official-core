@@ -4,10 +4,7 @@ src-url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.2.tar.gz
 src-sha: 543bead934135f20f438e0b6d8858c55c5fcb7ff80f5d1d55489965f1aad58b9
 license: GPL-2.0-or-later
 dep-pkg: libexpat libcurl libssh inih
-
-dopatch: |
-    CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl)"
-    gsed -i "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES|" src/CMakeLists.txt
+dep-lib: libcurl
 
 install: |
     cmakew \

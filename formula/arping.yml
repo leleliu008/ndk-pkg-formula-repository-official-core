@@ -3,6 +3,6 @@ src-url: https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.24.ta
 src-sha: e443f65a44e247b27da8177decac31aa84336d5de87eab44fc02e33e7ba0b251
 license: GPL-2.0-or-later
 dep-pkg: libnet libpcap
+dep-lib: -lssl -lcrypto -ldl
 bsystem: autotools
-prepare: printf 'INPUT(%s -l:libssl.a -l:libcrypto.a -ldl)\n' "$libpcap_LIBRARY_DIR/libpcap.a" > ../lib/libpcap.a
 api-min: 24

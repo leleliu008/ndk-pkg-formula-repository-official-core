@@ -4,9 +4,6 @@ src-url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1
 src-sha: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
 license: GPL-2.0-or-later
 dep-pkg: libgnutls libcares libxml2 libz
-ldflags: -liconv
-
-prepare: printf 'INPUT(-lc++_static -lc++abi)\n' > ../lib/libc++.a
 
 install: configure --disable-libaria2 --enable-static --disable-shared LIBS=-ldl
 

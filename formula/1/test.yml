@@ -1,6 +1,7 @@
 summary: test program
 web-url: ddddd
 dep-pkg: libcurl
+dep-lib: libcurl
 version: 1
 binbstd: 1
 install: |
@@ -48,6 +49,5 @@ install: |
     }
     EOF
 
-    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    run $CC $CPPFLAGS $LDFLAGS $LIBCURL_LIBS -o conftest conftest.c
+    run $CC $CPPFLAGS $LDFLAGS -o conftest conftest.c
     install_bins conftest

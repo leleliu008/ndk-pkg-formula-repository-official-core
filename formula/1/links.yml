@@ -3,6 +3,7 @@ web-url: http://links.twibright.com
 src-url: http://links.twibright.com/download/links-2.29.tar.bz2
 src-sha: 22aa96c0b38e1a6f8f7ed9d7a4167a47fc37246097759ef6059ecf8f9ead7998
 dep-pkg: libbz2 libtiff libjpeg-turbo openssl-dev
+dep-lib: openssl
 license: GPL-2.0-or-later
 
 ccflags: -Wno-error=implicit-function-declaration -Wno-error=unused-function
@@ -12,9 +13,6 @@ install: |
     gsed -i '/define LINKS_H/a \#include<unistd.h>' links.h
     gsed -i '/links\.h/a \#include<pwd.h>' file.c
 
-    OPENSSL_LIBS="$(pkg-config --libs openssl)"
-    printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
-    gsed -i "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure
     gsed -i 's|^main()|int main()|' configure
 
     export ac_cv_header_stdarg_h=yes

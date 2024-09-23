@@ -5,7 +5,7 @@ src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.16.1.tar.
 src-sha: c729e56efc945c6df08efe5c9f5b8b89329c7c91b8f40ad2bb3e13900bd4876d
 license: Apache-2.0
 dep-pym: numpy
-dep-pkg: abseil ruy xnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
+dep-pkg: abseil ruy libxnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
 bscript: tensorflow/lite
 
 dopatch: |
@@ -23,12 +23,10 @@ dopatch: |
     cat > tools/cmake/modules/FindXNNPACK.cmake <<EOF
     add_library(xnnpack STATIC IMPORTED)
     set_target_properties(xnnpack PROPERTIES
-    IMPORTED_LOCATION             "${xnnpack_LIBRARY_DIR}/libxnnpack.a"
-    INTERFACE_INCLUDE_DIRECTORIES "${xnnpack_INCLUDE_DIR}"
+    IMPORTED_LOCATION             "${libxnnpack_LIBRARY_DIR}/libxnnpack.a"
+    INTERFACE_INCLUDE_DIRECTORIES "${libxnnpack_INCLUDE_DIR}"
     )
     EOF
-
-    printf 'INPUT(-llog -l:libm.so)\n' > ../../../lib/libm.a
 
 # https://www.tensorflow.org/lite/guide/build_cmake#specifics_of_android_cross-compilation
 install: |

@@ -3,6 +3,6 @@ src-url: https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.1.tar.
 src-sha: 48d69813363c0236cd3ee24ec71f96bd404e6f11ed09264d37172d9000d5ebb8
 license: MIT
 dep-pkg: libpcap
+dep-lib: -lssl -lcrypto -ldl
 bscript: v2
-prepare: printf 'INPUT(%s -l:libssl.a -l:libcrypto.a -ldl)\n' "$libpcap_LIBRARY_DIR/libpcap.a" > ../../lib/libpcap.a
 install: gow ./cmd/naabu

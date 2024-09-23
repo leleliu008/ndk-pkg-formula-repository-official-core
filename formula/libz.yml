@@ -10,7 +10,7 @@ dopatch: |
     gsed -i 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
     gsed -i 's|zlib)|zlibstatic)|' CMakeLists.txt
 
-dotweak: cp lib/pkgconfig/zlib.pc lib/pkgconfig/libz.pc
+dotweak: ln -s zlib.pc lib/pkgconfig/libz.pc
 
 developer: |
     Jean-loup Gailly <jloup@gailly.net>

@@ -5,7 +5,7 @@ src-url: https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.49.tar.bz2
 src-sha: 8b79d54639dbf4abc08b5406fb2f37e669a2dec091dd024fb87dd367131c63a9
 license: LGPL-2.1-or-later
 dep-pkg: libbthread
-ldflags: -lbthread
+dep-lib: -lbthread
 ccflags: -include pthread.h -include bthread.h
 
 dopatch: |

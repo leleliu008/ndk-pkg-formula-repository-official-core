@@ -6,7 +6,6 @@ license: LGPL-2.0-only LGPL-2.0-or-later LGPL-2.1-only
 dep-pkg: libgsf
 
 xxflags: -std=c++11
-ldflags: -liconv
 
 prepare: export CXXFLAGS="$CXXFLAGS -I$libxml2_INCLUDE_DIR/libxml2"
 

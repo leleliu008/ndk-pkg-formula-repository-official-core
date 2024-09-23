@@ -4,6 +4,7 @@ src-url: https://downloads.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmls
 src-sha: 15d838c4f3375332fd95554619179b69e4ec91418a3a5296e7c631b7ed19e7ca
 license: MIT
 dep-pkg: libxslt
+dep-lib: libxml-2.0
 binbstd: 1
 
 dopatch: |
@@ -15,7 +16,6 @@ dopatch: |
 install: |
     configure \
         --with-libxml-prefix="$libxml2_INSTALL_DIR" \
-        --with-libxslt-prefix="$libxslt_INSTALL_DIR" \
-        LIBS="'$(pkg-config --libs libxml-2.0)'"
+        --with-libxslt-prefix="$libxslt_INSTALL_DIR"
 
 dotweak: ln -s xml bin/xmlstarlet
