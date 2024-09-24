@@ -6,6 +6,7 @@ src-sha: 9e64634fc4ce6797b204bcb8897ce14fdd0ab48ca57696f78767c59cae578095
 license: GPL-3.0-or-later
 dep-upp: texinfo
 dep-pkg: libintl
+dep-lib:  -lintl -liconv
 binbstd: 1
-install: configure --program-prefix=g LIBS="'-lintl -liconv'"
+install: configure --program-prefix=g
 dotweak: ln -s gindent bin/indent

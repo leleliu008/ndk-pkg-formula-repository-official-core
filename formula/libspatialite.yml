@@ -5,4 +5,4 @@ src-sha: 43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080
 license: MPL-1.1
 dep-pkg: libfreexl librttopo libxml2 libminizip libproj7
 dep-lib: -llog
-install: configure --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" 
+install: configure --with-geosconfig="$libgeos_INSTALL_DIR/bin/geos-config" 

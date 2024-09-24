@@ -4,8 +4,9 @@ src-url: https://github.com/raboof/nethogs/archive/refs/tags/v0.8.7.tar.gz
 src-sha: 957d6afcc220dfbba44c819162f44818051c5b4fb793c47ba98294393986617d
 license: GPL-2.0
 dep-pkg: libpcap ncurses
+dep-lib: openssl
+
 install: |
-    gsed -i 's|-lpcap|-l:libpcap.a -l:libssl.a -l:libcrypto.a -ldl|' src/MakeApp.mk
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CXX="$CXX" CXXFLAGS="'$CXXFLAGS -std=c++14'" CPPFLAGS="'$CPPFLAGS -Dindex=strchr -Drindex=strrchr -D_GNU_SOURCE -Dquad_t=int64_t -Du_quad_t=uint64_t'"
 

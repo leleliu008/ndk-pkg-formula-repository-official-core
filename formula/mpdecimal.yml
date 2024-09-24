@@ -4,11 +4,9 @@ web-url: https://www.bytereef.org/mpdecimal/
 src-url: https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.0.tar.gz
 src-sha: 942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c
 license: BSD-2-Clause
+bsystem: configure
 binbstd: 1
 
-dopatch: |
-    gsed -i 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
+dopatch: gsed -i 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
 
-install: |
-    export LD="$CC"
-    configure
+prepare: export LD="$CC"

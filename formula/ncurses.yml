@@ -27,13 +27,16 @@ do12345: |
 
 dopatch: gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
 
-install: |
+prepare: |
     export BUILD_CC="$CC_FOR_BUILD"
     export BUILD_CFLAGS="$CFLAGS_FOR_BUILD"
     export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
     export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
     unset  BUILD_LIBS
+
     unset  TERMINFO
+
+install: |
     configure \
         --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
         --with-cxx-shared \
@@ -55,22 +58,15 @@ install: |
         --disable-echo
 
 dotweak: |
-    cd include
-
     for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
-        ln -s "ncursesw/$item" "$item"
+        ln -s "ncursesw/$item" "include/$item"
     done
-
-    cd -
-    cd lib
 
     for item in libncurses libpanel libmenu libform
     do
-        ln -s "${item}w.a"  "${item}.a"
-        ln -s "${item}w.so" "${item}.so"
+        ln -s "${item}w.a"  "lib/${item}.a"
+        ln -s "${item}w.so" "lib/${item}.so"
     done
 
-    cd -
-    cd lib/pkgconfig
-    ln -s ncursesw.pc ncurses.pc
+    ln -s ncursesw.pc lib/pkgconfig/ncurses.pc

@@ -6,7 +6,5 @@ src-sha: 45f6604372df3f49293749cd7c0b42cb21c4fb666c66f8ed9765de004d1eae38
 license: GPL-2.0-or-later
 dep-pkg: openssl-dev
 binbstd: 1
-
-install: |
-    export LD="$CC"
-    configure --disable-libwebrtc
+prepare: export LD="$CC"
+install: configure --disable-libwebrtc

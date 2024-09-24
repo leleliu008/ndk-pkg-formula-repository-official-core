@@ -14,4 +14,4 @@ install: |
         --enable-jpeg \
         --enable-lcms \
         --enable-jasper \
-        --enable-examples LIBS=-lc++_shared
+        --disable-examples

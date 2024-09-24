@@ -6,10 +6,12 @@ src-sha: 1412a1c760bbd05db026b6c0d1657affd6631cd0a63cddb6f73cc6d4aa616148
 license: BSD-2-Clause
 bsystem: autogen
 binbstd: 1
-install: |
+
+prepare: |
     export ac_cv_prog_AR="$AR"
     export ac_cv_prog_RANLIB="$RANLIB"
 
+install: |
     configure \
         --disable-profiling \
         --enable-lto \

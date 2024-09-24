@@ -1,5 +1,4 @@
-pkgtype: lib
-summary: Library for JPEG-2000 image manipulation
+summary: A collection of tools for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
 src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
 src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
@@ -9,20 +8,22 @@ dep-pkg: libpng libtiff liblcms2
 dopatch: |
     gsed -i '/ftello/d' ../include/ndk-pkg-common.h
     gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+
     gsed -i 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
     gsed -i 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    gsed -i 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
 
 install: |
     cmakew \
-        -DBUILD_DOC=OFF \
+        -DBUILD_DOC=ON \
         -DBUILD_JAVA=OFF \
         -DBUILD_JPIP=OFF \
         -DBUILD_JPIP_SERVER=OFF \
         -DBUILD_CODEC=ON \
         -DBUILD_VIEWER=OFF \
-        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_SHARED_LIBS=OFF \
         -DBUILD_STATIC_LIBS=ON \
         -DBUILD_UNIT_TESTS=OFF \
         -DBUILD_LUTS_GENERATOR=OFF \
         -DBUILD_PKGCONFIG_FILES=ON
+
+dotweak: rm -rf include/ lib/ share/man/man3/
