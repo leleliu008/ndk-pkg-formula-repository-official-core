@@ -6,7 +6,4 @@ src-sha: b14f79104b1d0d78de9fb42805f29d54fdf01c3e4291cc3638e04d09d145b8d6
 license: BSD-2-Clause
 dep-pkg: libcurl libzen libz
 bscript: Project/CMake
-
-install: |
-    cmakew -DBUILD_SHARED_LIBS=OFF
-    cmakew -DBUILD_SHARED_LIBS=ON
+install: cmakew 2

@@ -4,6 +4,4 @@ web-url: https://cmocka.org/
 src-url: https://gitlab.com/cmocka/cmocka/-/archive/cmocka-1.1.7/cmocka-cmocka-1.1.7.tar.gz
 src-sha: 243344de12f8df78fa639fb426dd02d4cb37eda61462e48e6a0e13a98b94602a
 license: Apache-2.0
-install: |
-    cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_EXAMPLES=OFF -DUNIT_TESTING=OFF
-    cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_EXAMPLES=OFF -DUNIT_TESTING=OFF
+install: cmakew 2 -DWITH_EXAMPLES=OFF -DUNIT_TESTING=OFF

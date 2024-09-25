@@ -6,8 +6,6 @@ dep-upp: yasm
 
 dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME COMPONENT bin DESTINATION/' Source/App/CMakeLists.txt
 
-prepare: |
-    export PATH="$ANDROID_NDK_TOOLCHAIN_BIND:$PATH"
-    CMAKE_INSTALL_COMPONENTS=bin
+prepare: export PATH="$ANDROID_NDK_TOOLCHAIN_BIND:$PATH"
 
-install: cmakew -DBUILD_APPS=ON -DBUILD_SHARED_LIBS=OFF
+install: cmakew -DBUILD_APPS=ON -DBUILD_SHARED_LIBS=OFF --components=bin

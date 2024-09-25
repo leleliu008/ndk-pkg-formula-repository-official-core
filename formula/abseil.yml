@@ -6,13 +6,7 @@ src-sha: 733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc
 license: Apache-2.0
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DABSL_PROPAGATE_CXX_STD=ON \
-        -DBUILD_SHARED_LIBS=ON \
-        -DCMAKE_CXX_STANDARD=17 \
-        -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
-    cmakew \
-        -DABSL_PROPAGATE_CXX_STD=ON \
-        -DBUILD_SHARED_LIBS=OFF \
         -DCMAKE_CXX_STANDARD=17 \
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE

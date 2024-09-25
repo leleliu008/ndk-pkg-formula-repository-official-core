@@ -7,7 +7,7 @@ license: BSD-3-Clause
 dep-pkg: libzstd liblzma libbz2 libz
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DENABLE_ZSTD=ON \
         -DENABLE_LZMA=ON \
         -DENABLE_BZIP2=ON \
@@ -19,19 +19,4 @@ install: |
         -DBUILD_DOC=OFF \
         -DBUILD_TOOLS=OFF \
         -DBUILD_REGRESS=OFF \
-        -DBUILD_EXAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DENABLE_ZSTD=ON \
-        -DENABLE_LZMA=ON \
-        -DENABLE_BZIP2=ON \
-        -DENABLE_GNUTLS=OFF \
-        -DENABLE_OPENSSL=OFF \
-        -DENABLE_MBEDTLS=OFF \
-        -DENABLE_COMMONCRYPTO=OFF \
-        -DENABLE_WINDOWS_CRYPTO=OFF \
-        -DBUILD_DOC=OFF \
-        -DBUILD_TOOLS=OFF \
-        -DBUILD_REGRESS=OFF \
-        -DBUILD_EXAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DBUILD_EXAMPLES=OFF

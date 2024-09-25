@@ -5,18 +5,10 @@ src-sha: 0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029
 dep-upp: python3
 
 install: |
-    cmakew \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DRE2C_BUILD_LIBS=ON \
-        -DRE2C_BUILD_RE2GO=OFF \
-        -DRE2C_BUILD_RE2RUST=OFF \
-        -DRE2C_REBUILD_DOCS=OFF
-    cmakew \
-        -DBUILD_SHARED_LIBS=ON \
+    cmakew 2 \
         -DRE2C_BUILD_LIBS=ON \
         -DRE2C_BUILD_RE2GO=OFF \
         -DRE2C_BUILD_RE2RUST=OFF \
         -DRE2C_REBUILD_DOCS=OFF
 
-dotweak: |
-    rm -rf bin/ share/man/
+dotweak: rm -rf bin/ share/man/

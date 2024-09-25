@@ -3,14 +3,5 @@ web-url: https://dystroy.org/broot/
 src-url: https://github.com/Canop/broot/archive/refs/tags/v1.39.0.tar.gz
 src-sha: d1d2ccc11543ff4ea645d57a5e78639542a6f510b585a78c31ddb3a24399bf61
 license: MIT
-dep-pkg: libgetloadavg libgit2
+dep-pkg: libgetloadavg libz
 install: cargow install --locked
-
-dopatch: |
-    run cargo fetch --target "$RUST_TARGET"
-
-    for f in $CARGO_HOME/registry/src/*/libgit2-sys-*/build.rs ; do
-        gsed -i -E 's/\.range_version\(([^)]*)\.\.[^)]*\)/.atleast_version(\1)/g' "${f}"
-    done
-
-    gsed -i '/trash/d' Cargo.toml

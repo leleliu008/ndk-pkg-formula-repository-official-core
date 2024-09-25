@@ -10,6 +10,4 @@ prepare: |
         CMAKE_EXTRA_ARGS='-DENABLE_DOUBLE_PRECISION=OFF'
     fi
 
-install: |
-    cmakew -DBUILD_SHARED_LIBS=OFF $CMAKE_EXTRA_ARGS
-    cmakew -DBUILD_SHARED_LIBS=ON  $CMAKE_EXTRA_ARGS
+install: cmakew 2 $CMAKE_EXTRA_ARGS

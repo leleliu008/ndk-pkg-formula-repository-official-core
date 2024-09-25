@@ -16,17 +16,9 @@ prepare: |
     fi
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DODE_WITH_DEMOS=OFF \
         -DODE_WITH_TESTS=OFF \
         -DODE_WITH_LIBCCD=ON \
         -DODE_WITH_LIBCCD_SYSTEM=ON \
-        -DBUILD_SHARED_LIBS=OFF \
-        $CMAKE_EXTRA_ARGS
-    cmakew \
-        -DODE_WITH_DEMOS=OFF \
-        -DODE_WITH_TESTS=OFF \
-        -DODE_WITH_LIBCCD=ON \
-        -DODE_WITH_LIBCCD_SYSTEM=ON \
-        -DBUILD_SHARED_LIBS=ON \
         $CMAKE_EXTRA_ARGS

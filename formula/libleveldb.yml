@@ -5,11 +5,6 @@ license: BSD-3-Clause
 dep-pkg: libsnappy libcrc32c
 xxflags: -Wno-error=unused-but-set-variable
 install: |
-    cmakew \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DLEVELDB_BUILD_TESTS=OFF \
-        -DLEVELDB_BUILD_BENCHMARKS=OFF
-    cmakew \
-        -DBUILD_SHARED_LIBS=ON \
+    cmakew 2 \
         -DLEVELDB_BUILD_TESTS=OFF \
         -DLEVELDB_BUILD_BENCHMARKS=OFF

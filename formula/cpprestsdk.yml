@@ -8,6 +8,6 @@ dep-lib: -llog
 
 dopatch: gsed -i 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 
-install: |
-    export OPENSSL_ROOT_DIR="$openssl_dev_INSTALL_DIR"
-    cmakew -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF
+prepare: export OPENSSL_ROOT_DIR="$openssl_dev_INSTALL_DIR"
+
+install: cmakew -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF

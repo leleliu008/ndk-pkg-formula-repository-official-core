@@ -6,21 +6,12 @@ src-sha: c62f16a71d09731e0681046267b34ea2f5a6a8f6b7367116f3269c2c7f4944f7
 license: MIT
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DPEDANTIC=ON \
         -DWERROR=OFF \
         -DLIB_MAN=OFF \
         -DLIB_RUN=ON \
-        -DCERF_CPP=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DPEDANTIC=ON \
-        -DWERROR=OFF \
-        -DLIB_MAN=OFF \
-        -DLIB_RUN=ON \
-        -DCERF_CPP=OFF \
-        -DBUILD_SHARED_LIBS=ON
-
+        -DCERF_CPP=OFF
 
 # complex.h: double complex cexp(double complex __z) __INTRODUCED_IN(23);
 api-min: 23

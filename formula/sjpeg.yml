@@ -3,6 +3,5 @@ summary: simple jpeg encoder
 git-url: https://github.com/webmproject/sjpeg
 license: Apache-2.0
 dep-pkg: libpng libjpeg-turbo
-install: |
-    cmakew -DBUILD_SHARED_LIBS=ON  -DSJPEG_BUILD_EXAMPLES=OFF -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"
-    cmakew -DBUILD_SHARED_LIBS=OFF -DSJPEG_BUILD_EXAMPLES=ON  -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"
+
+install: cmakew 2 -DSJPEG_BUILD_EXAMPLES=OFF -DSJPEG_ANDROID_NDK_PATH="$ANDROID_NDK_HOME"

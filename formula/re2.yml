@@ -5,7 +5,4 @@ src-sha: 7326c74cddaa90b12090fcfc915fe7b4655723893c960ee3c2c66e85c5504b6c
 version: 20240601
 license: BSD-3-Clause
 dep-pkg: abseil
-
-install: |
-    cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=OFF
-    cmakew -DRE2_BUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
+install: cmakew 2 -DRE2_BUILD_TESTING=OFF

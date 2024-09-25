@@ -3,6 +3,4 @@ web-url: https://www.openexr.com/
 src-url: https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.11.tar.gz
 src-sha: 9057849585e49b8b85abe7cc1e76e22963b01bfdc3b6d83eac90c499cd760063
 license: BSD-3-Clause
-install: |
-    cmakew -DPYTHON=OFF -DDOCS=OFF -DBUILD_SHARED_LIBS=OFF
-    cmakew -DPYTHON=OFF -DDOCS=OFF -DBUILD_SHARED_LIBS=ON
+install: cmakew 2 -DPYTHON=OFF -DDOCS=OFF

@@ -6,15 +6,8 @@ license: BSD-3-Clause
 dep-pkg: libImath libz libdeflate
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DDOCS=OFF \
         -DOPENEXR_INSTALL=ON \
         -DOPENEXR_INSTALL_TOOLS=OFF \
-        -DOPENEXR_INSTALL_EXAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DDOCS=OFF \
-        -DOPENEXR_INSTALL=ON \
-        -DOPENEXR_INSTALL_TOOLS=OFF \
-        -DOPENEXR_INSTALL_EXAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DOPENEXR_INSTALL_EXAMPLES=OFF

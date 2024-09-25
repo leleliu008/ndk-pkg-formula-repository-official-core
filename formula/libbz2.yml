@@ -5,9 +5,7 @@ src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8@2.tar.gz
 src-sha: 13337d86c271b8e6f9cf4ea0b6fd6a1cd06b9b75c31fb4781ffbfcc6982c1bf0
 version: 1.0.8
 license: bzip2-1.0.8
-bsystem: cmake
-prepare: |
-    CMAKE_BUILD_TARGETS='bz2-shared bz2-static'
-    CMAKE_INSTALL_COMPONENTS='lib dev'
+
+install: cmakew --targets=bz2-shared,bz2-static --components=lib,dev
 
 developer: Julian Seward <jseward@acm.org>

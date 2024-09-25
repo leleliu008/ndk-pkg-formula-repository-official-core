@@ -6,14 +6,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libopus libflac libvorbis libsqlite3
 dep-upp: python3
 install: |
-    cmakew \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DBUILD_PROGRAMS=OFF \
-        -DBUILD_EXAMPLES=OFF \
-        -DENABLE_PACKAGE_CONFIG=ON \
-        -DINSTALL_PKGCONFIG_MODULE=ON
-    cmakew \
-        -DBUILD_SHARED_LIBS=ON \
+    cmakew 2 \
         -DBUILD_PROGRAMS=OFF \
         -DBUILD_EXAMPLES=OFF \
         -DENABLE_PACKAGE_CONFIG=ON \

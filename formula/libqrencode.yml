@@ -7,13 +7,7 @@ license: LGPL-2.1-or-later
 dep-pkg: libpng
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DWITH_TOOLS=OFF \
         -DWITH_TESTS=OFF \
-        -DWITHOUT_PNG=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DWITH_TOOLS=OFF \
-        -DWITH_TESTS=OFF \
-        -DWITHOUT_PNG=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DWITHOUT_PNG=OFF

@@ -6,10 +6,9 @@ src-sha: 343e789069fc7afbcdfe44dbba7dbbf45afa98a15150e079a38e60e44578865d
 license: IJG
 dep-upp: nasm
 
-prepare: CMAKE_INSTALL_COMPONENTS='lib include'
-
 install: |
     cmakew \
         -DWITH_JAVA=OFF \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=ON
+        -DENABLE_SHARED=ON \
+        --components=lib,include

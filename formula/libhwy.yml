@@ -4,15 +4,8 @@ src-sha: 7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343
 license: Apache-2.0
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DHWY_ENABLE_TESTS=OFF \
         -DHWY_ENABLE_EXAMPLES=OFF \
         -DHWY_ENABLE_CONTRIB=ON \
-        -DHWY_ENABLE_INSTALL=ON \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DHWY_ENABLE_TESTS=OFF \
-        -DHWY_ENABLE_EXAMPLES=OFF \
-        -DHWY_ENABLE_CONTRIB=ON \
-        -DHWY_ENABLE_INSTALL=ON \
-        -DBUILD_SHARED_LIBS=ON
+        -DHWY_ENABLE_INSTALL=ON

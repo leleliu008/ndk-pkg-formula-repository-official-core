@@ -6,7 +6,7 @@ src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
 dep-pkg: libzstd liblzma libz
 
 install: |
-    cmakew \
+    cmakew 2 \
         -Dlzw=ON \
         -Dzlib=ON \
         -Dzstd=ON \
@@ -18,19 +18,4 @@ install: |
         -Dtiff-docs=OFF \
         -Dtiff-tools=OFF \
         -Dtiff-tests=OFF \
-        -Dtiff-contrib=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -Dlzw=ON \
-        -Dzlib=ON \
-        -Dzstd=ON \
-        -Dlzma=ON \
-        -Dwebp=OFF \
-        -Djpeg=OFF \
-        -Djbig=OFF \
-        -Dlerc=OFF \
-        -Dtiff-docs=OFF \
-        -Dtiff-tools=OFF \
-        -Dtiff-tests=OFF \
-        -Dtiff-contrib=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -Dtiff-contrib=OFF

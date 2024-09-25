@@ -6,23 +6,13 @@ license: BSD-2-Clause
 dep-pkg: libgif libpng libtiff libwebp libjpeg-turbo libopenjpeg
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DENABLE_GIF=ON \
         -DENABLE_PNG=ON \
         -DENABLE_TIFF=ON \
         -DENABLE_WEBP=ON \
         -DENABLE_JPEG=ON \
         -DENABLE_OPENJPEG=ON \
-        -DBUILD_PROG=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DENABLE_GIF=ON \
-        -DENABLE_PNG=ON \
-        -DENABLE_TIFF=ON \
-        -DENABLE_WEBP=ON \
-        -DENABLE_JPEG=ON \
-        -DENABLE_OPENJPEG=ON \
-        -DBUILD_PROG=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DBUILD_PROG=OFF
 
 dotweak: cd lib/pkgconfig && mv lept_Release.pc lept.pc

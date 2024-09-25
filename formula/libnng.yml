@@ -13,13 +13,7 @@ dopatch2: |
     fi
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DNNG_TESTS=OFF \
         -DNNG_ENABLE_TLS=ON \
-        -DNNG_ENABLE_HTTP=ON \
-        -DBUILD_SHARED_LIBS=ON
-    cmakew \
-        -DNNG_TESTS=OFF \
-        -DNNG_ENABLE_TLS=ON \
-        -DNNG_ENABLE_HTTP=ON \
-        -DBUILD_SHARED_LIBS=OFF
+        -DNNG_ENABLE_HTTP=ON

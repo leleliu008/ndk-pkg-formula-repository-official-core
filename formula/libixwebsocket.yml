@@ -3,7 +3,4 @@ src-url: https://github.com/machinezone/IXWebSocket/archive/refs/tags/v11.3.2.ta
 src-sha: 07d5e9f4cf492069c39c3953fbb3700a9cf8ec8949343998888e54ef37b03223
 license: BSD-3-Clause
 dep-pkg: openssl-dev libz
-
-install: |
-    cmakew -DUSE_TLS=ON -DUSE_OPEN_SSL=ON -DIXWEBSOCKET_INSTALL=ON -DBUILD_SHARED_LIBS=OFF
-    cmakew -DUSE_TLS=ON -DUSE_OPEN_SSL=ON -DIXWEBSOCKET_INSTALL=ON -DBUILD_SHARED_LIBS=ON
+install: cmakew 2 -DUSE_TLS=ON -DUSE_OPEN_SSL=ON -DIXWEBSOCKET_INSTALL=ON

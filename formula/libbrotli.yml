@@ -5,6 +5,4 @@ license: MIT
 
 dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME EXCLUDE_FROM_ALL DESTINATION/' CMakeLists.txt
 
-install: |
-    cmakew -DBUILD_SHARED_LIBS=OFF
-    cmakew -DBUILD_SHARED_LIBS=ON
+install: cmakew 2

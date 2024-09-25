@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: libexpat libcurl libssh inih
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DEXIV2_ENABLE_NLS=OFF \
         -DEXIV2_ENABLE_XMP=ON \
         -DEXIV2_ENABLE_PNG=ON \
@@ -18,19 +18,4 @@ install: |
         -DEXIV2_ENABLE_WEBREADY=ON \
         -DEXIV2_ENABLE_PRINTUCS2=ON \
         -DEXIV2_BUILD_EXIV2_COMMAND=OFF \
-        -DEXIV2_BUILD_SAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DEXIV2_ENABLE_NLS=OFF \
-        -DEXIV2_ENABLE_XMP=ON \
-        -DEXIV2_ENABLE_PNG=ON \
-        -DEXIV2_ENABLE_SSH=ON \
-        -DEXIV2_ENABLE_CURL=ON \
-        -DEXIV2_ENABLE_BMFF=ON \
-        -DEXIV2_ENABLE_VIDEO=ON \
-        -DEXIV2_ENABLE_LENSDATA=ON \
-        -DEXIV2_ENABLE_WEBREADY=ON \
-        -DEXIV2_ENABLE_PRINTUCS2=ON \
-        -DEXIV2_BUILD_EXIV2_COMMAND=OFF \
-        -DEXIV2_BUILD_SAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DEXIV2_BUILD_SAMPLES=OFF

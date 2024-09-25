@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Smart font renderer for non-Roman scripts
 web-url: https://graphite.sil.org
 src-url: https://github.com/silnrsi/graphite/releases/download/1.3.14/graphite2-1.3.14.tgz
@@ -8,8 +7,6 @@ dep-pkg: libfreetype
 
 dopatch: gsed -i '/add_subdirectory(tests)/d' CMakeLists.txt
 
-install: |
-    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON
-    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
+install: cmakew 2 -DGRAPHITE2_NFILEFACE=ON
 
 dotweak: gsed -i 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc

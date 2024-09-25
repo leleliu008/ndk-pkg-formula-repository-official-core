@@ -6,7 +6,7 @@ license: BSD-3-Clause
 dep-pkg: libImath libexpat libyaml-cpp libpystring libminizip-ng
 dep-upp: git
 install: |
-    cmakew \
+    cmakew 2 \
         -Dpystring_INCLUDE_DIR="$libpystring_INCLUDE_DIR/pystring" \
         -Dpystring_LIBRARY="$libpystring_LIBRARY_DIR/libpystring.so" \
         -DOCIO_BUILD_APPS=OFF \
@@ -14,15 +14,4 @@ install: |
         -DOCIO_BUILD_TESTS=OFF \
         -DOCIO_BUILD_JAVA=OFF \
         -DOCIO_BUILD_PYTHON=OFF \
-        -DOCIO_WARNING_AS_ERROR=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -Dpystring_INCLUDE_DIR="$libpystring_INCLUDE_DIR/pystring" \
-        -Dpystring_LIBRARY="$libpystring_LIBRARY_DIR/libpystring.so" \
-        -DOCIO_BUILD_APPS=OFF \
-        -DOCIO_BUILD_DOCS=OFF \
-        -DOCIO_BUILD_TESTS=OFF \
-        -DOCIO_BUILD_JAVA=OFF \
-        -DOCIO_BUILD_PYTHON=OFF \
-        -DOCIO_WARNING_AS_ERROR=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DOCIO_WARNING_AS_ERROR=OFF

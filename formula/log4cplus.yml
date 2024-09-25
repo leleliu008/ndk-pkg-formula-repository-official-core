@@ -6,15 +6,8 @@ src-url: https://downloads.sourceforge.net/project/log4cplus/log4cplus-stable/2.
 src-sha: a1d8e67a207f90a9dd4f82b28a1f3ac6dead5a80c2bed071277a9e865698a82b
 license: Apache-2.0
 install: |
-    cmakew \
+    cmakew 2 \
         -DLOG4CPLUS_BUILD_TESTING=OFF \
         -DLOG4CPLUS_BUILD_LOGGINGSERVER=OFF \
         -DLOG4CPLUS_HAVE_VSNPRINTF=ON \
-        -DWITH_UNIT_TESTS=OFF \
-        -DBUILD_SHARED_LIBS=ON
-    cmakew \
-        -DLOG4CPLUS_BUILD_TESTING=OFF \
-        -DLOG4CPLUS_BUILD_LOGGINGSERVER=ON \
-        -DLOG4CPLUS_HAVE_VSNPRINTF=ON \
-        -DWITH_UNIT_TESTS=OFF \
-        -DBUILD_SHARED_LIBS=OFF
+        -DWITH_UNIT_TESTS=OFF

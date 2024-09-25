@@ -8,10 +8,7 @@ dep-pkg: openssl-dev libnghttp2 libjson-c libxml2 libidn2 libuv libglob
 dep-upp: perl
 
 dopatch: |
-    for MAKEFILE_AM in $(find lib -name "Makefile.in")
-    do
-        gsed -i 's|-release "$(PACKAGE_VERSION)"||' "$MAKEFILE_AM"
-    done
+    find lib -name 'Makefile.in' -exec gsed -i 's|-release "$(PACKAGE_VERSION)"||' {} +
 
 install: |
     configure \

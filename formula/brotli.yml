@@ -5,8 +5,4 @@ license: MIT
 
 dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME COMPONENT bin DESTINATION/' CMakeLists.txt
 
-prepare: |
-    CMAKE_BUILD_TARGETS=brotli
-    CMAKE_INSTALL_COMPONENTS=bin
-
-install: cmakew -DBUILD_SHARED_LIBS=OFF
+install: cmakew -DBUILD_SHARED_LIBS=OFF --targets=brotli --components=bin

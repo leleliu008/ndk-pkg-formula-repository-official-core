@@ -7,7 +7,7 @@ dep-pkg: libleptonica libcpu_features
 dopatch: gsed -i '/TARGETS tesseract DESTINATION/d' CMakeLists.txt
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DENABLE_LTO=OFF \
         -DDISABLE_ARCHIVE=ON \
         -DDISABLE_CURL=ON \
@@ -15,15 +15,4 @@ install: |
         -DOPENMP_BUILD=ON \
         -DLEPT_TIFF_RESULT=0 \
         -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DENABLE_LTO=OFF \
-        -DDISABLE_ARCHIVE=ON \
-        -DDISABLE_CURL=ON \
-        -DUSE_SYSTEM_ICU=ON \
-        -DOPENMP_BUILD=ON \
-        -DLEPT_TIFF_RESULT=0 \
-        -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DBUILD_TRAINING_TOOLS=OFF

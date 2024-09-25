@@ -5,20 +5,13 @@ src-sha: e226b4ff91e1260fc80e8312b39cde5a783b96e9f248530eae941b7f1bf6342a
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
 dep-pkg: libpcre2 libunistring ncurses
+dep-lib: -liconv
 
-dopatch: |
-    gsed -i 's|STRIP=true||' src/Makefile
-
-    run cd ../lib/
-    run "$AR" x "$libiconv_INSTALL_DIR/lib/libiconv.a"
-    run "$AR" x "$libunistring_INSTALL_DIR/lib/libunistring.a"
-    run "$AR" crs libunistring.a *.o
-    run rm -f *.o
+dopatch: gsed -i 's|STRIP=true||' src/Makefile
 
 install: |
-    export CPPFLAGS="$CPPFLAGS -I. -I../src"
     gmakew clean
-    gmakew CC="$CC" CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"
+    gmakew CC="$CC" CFLAGS="'$CPPFLAGS -I. -I../src $CFLAGS'" LDFLAGS="'$LDFLAGS'"
     run install_bins out/boxes
     run install_mans doc/boxes.1
     run install_etcs boxes-config

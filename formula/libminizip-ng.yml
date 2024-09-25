@@ -5,7 +5,7 @@ license: Zlib
 dep-pkg: libiconv libzstd liblzma libbz2 libz
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DMZ_FETCH_LIBS=OFF \
         -DMZ_LIB_SUFFIX=-ng \
         -DMZ_LIBCOMP=OFF \
@@ -13,15 +13,4 @@ install: |
         -DMZ_ZSTD=ON \
         -DMZ_LZMA=ON \
         -DMZ_ZLIB=ON \
-        -DMZ_OPENSSL=OFF \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DMZ_FETCH_LIBS=OFF \
-        -DMZ_LIB_SUFFIX=-ng \
-        -DMZ_LIBCOMP=OFF \
-        -DMZ_BZIP2=ON \
-        -DMZ_ZSTD=ON \
-        -DMZ_LZMA=ON \
-        -DMZ_ZLIB=ON \
-        -DMZ_OPENSSL=OFF \
-        -DBUILD_SHARED_LIBS=ON
+        -DMZ_OPENSSL=OFF

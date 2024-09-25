@@ -7,6 +7,4 @@ dopatch: |
     gsed -i '/stdio\.h/a \#include<sys/uio.h>' lib/pdu.c
     gsed -i '/stdio\.h/a \#include<sys/uio.h>' lib/socket.c
 
-install: |
-    cmakew -DBUILD_SHARED_LIBS=OFF
-    cmakew -DBUILD_SHARED_LIBS=ON
+install: cmakew 2

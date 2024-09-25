@@ -6,7 +6,6 @@ dep-pkg: libjpeg-turbo openssl-dev libz
 
 # https://qpdf.readthedocs.io/en/stable/installation.html
 install: |
-    CMAKE_INSTALL_COMPONENTS='cli doc'
     cmakew \
         -DINSTALL_MANUAL=OFF \
         -DINSTALL_EXAMPLES=OFF \
@@ -16,4 +15,5 @@ install: |
         -DBUILD_SHARED_LIBS=OFF \
         -DBUILD_STATIC_LIBS=ON \
         -DUSE_IMPLICIT_CRYPTO=OFF \
-        -DREQUIRE_CRYPTO_OPENSSL=ON
+        -DREQUIRE_CRYPTO_OPENSSL=ON \
+        --components=cli,doc

@@ -7,16 +7,7 @@ dep-pkg: libjxl libvmaf
 dep-upp: nasm perl
 
 install: |
-    cmakew \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DENABLE_DOCS=OFF \
-        -DENABLE_TESTS=OFF \
-        -DENABLE_TESTDATA=OFF \
-        -DENABLE_TOOLS=OFF \
-        -DENABLE_EXAMPLES=OFF \
-        -DCONFIG_RUNTIME_CPU_DETECT=0
-    cmakew \
-        -DBUILD_SHARED_LIBS=ON \
+    cmakew 2 \
         -DENABLE_DOCS=OFF \
         -DENABLE_TESTS=OFF \
         -DENABLE_TESTDATA=OFF \

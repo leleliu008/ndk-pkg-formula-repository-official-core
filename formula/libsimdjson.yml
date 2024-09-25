@@ -4,7 +4,4 @@ src-url: https://github.com/simdjson/simdjson
 src-url: https://github.com/simdjson/simdjson/archive/refs/tags/v3.9.4.tar.gz
 src-sha: 9bf13be00fa1e1c5891a90dbc39b983e09972f0972a8956c20a9974cedfcca2f
 license: Apache-2.0
-
-install: |
-    cmakew -DBUILD_SHARED_LIBS=ON
-    cmakew -DBUILD_SHARED_LIBS=OFF
+install: cmakew 2
