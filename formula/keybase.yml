@@ -3,11 +3,9 @@ web-url: https://keybase.io
 src-url: https://github.com/keybase/client/releases/download/v6.0.1/keybase-v6.0.1.tar.xz
 src-sha: e3d1987b2e0d61162ab3049e70f359a7e938f23398d195a1c7bf28f397a2b218
 license: BSD-3-Clause
-bsystem: go
 bscript: go
 
 install: |
-    for item in keybase kbfs/kbfsfuse kbfs/kbfsgit/git-remote-keybase
-    do
-        gow -tags production ./$item || return 1
-    done
+    gow -tags production ./keybase
+    gow -tags production ./kbfs/kbfsfuse
+    gow -tags production ./kbfs/kbfsgit/git-remote-keybase

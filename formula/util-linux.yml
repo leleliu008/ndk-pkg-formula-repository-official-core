@@ -1,7 +1,7 @@
 summary: A collection of Linux utilities
 git-url: https://github.com/util-linux/util-linux
-src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.3.tar.xz
-src-sha: 7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.2.tar.xz
+src-sha: d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
 license: GPL-2.0-or-later
 dep-upp: automake libtool
 dep-pkg: readline libcap-ng libz
@@ -22,6 +22,7 @@ install: |
         --disable-ipcs \
         --disable-kill \
         --disable-last \
+        --disable-liblastlog2 \
         --disable-logger \
         --disable-mesg \
         --disable-makeinstall-chown \
@@ -35,17 +36,23 @@ install: |
         --disable-lsmem \
         --disable-chmem \
         --disable-rfkill \
-        --disable-hwclock-cmos
+        --disable-hwclock-cmos \
+        ac_cv_func_setns=yes \
+        ac_cv_func_unshare=yes \
+        ac_cv_func_uselocale=no
 
 patches:
-    45dd0f06f899fc5a02ad8e67c5349a1ab7fe75b00ae0e730326b33f873d54c61|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/versionsort.patch
-    a8785e6b9ca0e8d786540d797163e3083d447d9de0204d62a95118e13ef663d8|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/sys-utils-irq-common.patch
-    693a928594f021a73cabc67d23e38288c278f80a0e641dfbee459ffb788e6c7f|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/sys-utils-ipcutils.h.patch
-    89da79bcd2427f146147cefdb6ceb4765d26410bced0322280353da853ca0d06|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/sys-utils-ipcutils.c.patch
-    115d5c747fb0b261dfeb87b00a4a7b0dfc2c8cbaa90b8875b4db348f82f3a2dd|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/sys-utils-ipcmk.c.patch
-    daa7231c63ea5fb51e40e37bd1976b2466cebfdbd17b0fd5d3844e3e09ea6657|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/fix-paths.patch
-    d3d6a92deee736d1da6232ed680cc9bfbd2cc253f7d578295f8c4d51f2582f79|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/lib-ismounted.c.patch
-    58925a93344e80e15ec9841f3c557bad9b45e6349ea3196781e7c65bd25aecbc|https://raw.githubusercontent.com/termux/termux-packages/master/packages/util-linux/misc-utils-lsfd-sock-xinfo.c.patch
+    a8b2bcf9ca30674522443f980600ba2a36410fa908550d534a54f61d6ce292cb|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/configure.patch
+    b275c1b1f6df7c60e96214842745b04f8b82d9aad2fc93c5cff1993fa23dd076|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/fix-cachestat.patch
+    48eece4fa5767781a71aac63d80bf850794de3728f3a4b93982bc75fb2a11a8b|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/fix-paths.patch
+    d3d6a92deee736d1da6232ed680cc9bfbd2cc253f7d578295f8c4d51f2582f79|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/lib-ismounted.c.patch
+    58925a93344e80e15ec9841f3c557bad9b45e6349ea3196781e7c65bd25aecbc|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/misc-utils-lsfd-sock-xinfo.c.patch
+    a76cbf0d1bc9cdc9df6ae7225cb1b753fcc6c49d4fa77b921f16d41173470eb6|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/misc-utuls-lsfd-file.c.patch
+    115d5c747fb0b261dfeb87b00a4a7b0dfc2c8cbaa90b8875b4db348f82f3a2dd|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/sys-utils-ipcmk.c.patch
+    89da79bcd2427f146147cefdb6ceb4765d26410bced0322280353da853ca0d06|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/sys-utils-ipcutils.c.patch
+    693a928594f021a73cabc67d23e38288c278f80a0e641dfbee459ffb788e6c7f|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/sys-utils-ipcutils.h.patch
+    a8785e6b9ca0e8d786540d797163e3083d447d9de0204d62a95118e13ef663d8|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/sys-utils-irq-common.patch
+    45dd0f06f899fc5a02ad8e67c5349a1ab7fe75b00ae0e730326b33f873d54c61|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/versionsort.patch
 
 # mntent.h:74:char* _Nullable hasmntopt(const struct mntent* _Nonnull __entry, const char* _Nonnull __option) __INTRODUCED_IN(26);
 api-min: 26

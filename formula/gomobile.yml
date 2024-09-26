@@ -1,9 +1,6 @@
 summary: A tool for building and running mobile apps written in Go
 git-url: https://github.com/golang/mobile
-bsystem: go
 
 install: |
-    for item in gobind gomobile
-    do
-        gow ./cmd/$item || return 1
-    done
+    gow ./cmd/gobind
+    gow ./cmd/gomobile

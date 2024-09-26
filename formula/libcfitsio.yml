@@ -5,6 +5,5 @@ src-sha: 95900cf95ae760839e7cb9678a7b2fad0858d6ac12234f934bd1cb6bfc246ba9
 license: Unlicense
 dep-pkg: libcurl libz
 binbstd: 1
-install: |
-    export CFLAGS="$CFLAGS $LDFLAGS"
-    configure --enable-reentrant
+prepare: export CFLAGS="$CFLAGS $LDFLAGS"
+install: configure --enable-reentrant

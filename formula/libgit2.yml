@@ -5,10 +5,10 @@ src-sha: de384e29d7efc9330c6cdb126ebf88342b5025d920dcb7c645defad85195ea7f
 dep-pkg: libssh2 libpcre2 libiconv
 license: GPL-2.0-only
 
-dopatch: find . -name 'CMakeLists.txt' -exec gsed -i 's|C_STANDARD 90|C_STANDARD 99|' {} \;
+dopatch: find . -name 'CMakeLists.txt' -exec gsed -i 's|C_STANDARD 90|C_STANDARD 99|' {} +
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DBUILD_CLI=OFF \
         -DBUILD_TESTS=OFF \
         -DBUILD_FUZZERS=OFF \
@@ -22,6 +22,4 @@ install: |
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
 
-dotweak: |
-    gsed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' lib/pkgconfig/libgit2.pc
-    gsed -i -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc
+dotweak: gsed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc

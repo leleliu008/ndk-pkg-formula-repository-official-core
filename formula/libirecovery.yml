@@ -4,6 +4,5 @@ src-url: https://github.com/libimobiledevice/libirecovery/releases/download/1.2.
 src-sha: 74448348f8a68b654015fe1952fdc4e0781db20dcf4e1d85ec97d6f91e95eb14
 license: LGPL-2.1-only
 dep-pkg: libusb readline libimobiledevice-glue
-dep-lib: -lncurses
 bsystem: configure
 api-min: 24

@@ -14,7 +14,6 @@ install: |
         -DSPDLOG_BUILD_TESTS=OFF \
         -DSPDLOG_BUILD_EXAMPLE=OFF \
         -DSPDLOG_BUILD_SHARED=ON
-    run rm -rf *
     cmakew \
         -DSPDLOG_FMT_EXTERNAL=ON \
         -DSPDLOG_BUILD_BENCH=OFF \

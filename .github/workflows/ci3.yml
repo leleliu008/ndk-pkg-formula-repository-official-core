@@ -8,7 +8,7 @@ on:
 
 jobs:
   ubuntu:
-    if: false
+
     strategy:
 
       fail-fast: false
@@ -69,7 +69,7 @@ jobs:
           ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
   alpine:
-
+    if: false
     strategy:
 
       fail-fast: false

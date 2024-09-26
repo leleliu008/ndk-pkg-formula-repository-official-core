@@ -12,5 +12,4 @@ install: |
         --disable-valgrind-tests \
         --disable-code-coverage \
         --enable-doc \
-        --enable-gcc-warnings \
-        LIBS=-liconv
+        --enable-gcc-warnings

@@ -10,7 +10,7 @@ install: |
         --without-python \
         --without-systemd \
         --enable-widechar \
-        --enable-libuuid \
+        --enable-libblkid \
         --disable-all-programs \
         --disable-bash-completion \
         --disable-use-tty-group \

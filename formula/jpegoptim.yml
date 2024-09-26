@@ -4,9 +4,7 @@ src-sha: 90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38
 license: GPL-3.0-or-later
 dep-pkg: libjpeg-turbo
 binbstd: 1
-prepare: |
-    for h in "$libjpeg_turbo_INCLUDE_DIR"/*.h
-    do
-        ln -sv "$h" "$PACKAGE_WORKING_DIR/include/"
-    done
+
+prepare: find "$libjpeg_turbo_INCLUDE_DIR" -name '*.h' -exec ln -sv '{}' "$PACKAGE_WORKING_DIR/include/" \;
+
 install: configure --with-libjpeg="$PACKAGE_WORKING_DIR"

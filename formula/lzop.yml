@@ -5,8 +5,4 @@ src-sha: 7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41
 license: GPL-2.0-or-later
 dep-pkg: liblzo
 bsystem: cmake
-dopatch: |
-    gsed -i 's|sysinfo|get_sys_info|' src/conf.h
-    gsed -i 's|sysinfo|get_sys_info|' src/help.c
-    gsed -i 's|sysinfo|get_sys_info|' src/lzop.c
-    gsed -i 's|sysinfo|get_sys_info|' src/djgpp2.c
+dopatch: gsed -i 's|sysinfo|get_sys_info|' src/conf.h src/help.c src/lzop.c src/djgpp2.c

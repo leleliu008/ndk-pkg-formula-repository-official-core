@@ -5,10 +5,6 @@ src-sha: 53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6
 license: LGPL-2.1-or-later
 dep-pkg: openssl-dev libusbmuxd
 
-# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
-# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
-api-min: 24
-
 dopatch: |
     gsed -i 's/@echo/echo/g' common/Makefile.in
     gsed -i 's/@echo/echo/g' tools/Makefile.in
@@ -17,3 +13,7 @@ dopatch: |
     gsed -i 's|PLIST_FORMAT_BINARY|PLIST_FORMAT_BINARY_|' common/utils.h
 
 install: configure --without-cython
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24

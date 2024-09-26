@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Optimized BLAS library
 web-url: https://www.openblas.net
 src-url: https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.27.tar.gz

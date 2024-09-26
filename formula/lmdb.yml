@@ -1,14 +1,13 @@
-pkgtype: exe+lib
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
 src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2
 src-sha: 268c849e0b1c375f7545602a45e826c5e5ad9486555c155f46ca836b34294f5f
 license: OLDAP-2.8
 
-ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
 
 install: |
     gmakew clean
-    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
-    gmakew install prefix=$PACKAGE_INSTALL_DIR
+    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS -DMDB_USE_ROBUST=0'" LDFLAGS="'$LDFLAGS'" AR=$AR
+    install_bins mdb_stat mdb_copy mdb_dump mdb_load
+    install_mans mdb_*.1

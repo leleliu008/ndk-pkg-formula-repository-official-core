@@ -5,14 +5,9 @@ src-url: https://ftp.gnu.org/gnu/tar/tar-1.35.tar.gz
 src-sha: 14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e
 license: GPL-3.0-or-later
 dep-pkg: libglob
-
-# no member named '_p' in 'struct __sFILE'
-#  return fp->_p - fp->_bf._base;
-api-min: 24
+ppflags: -D__USE_FORTIFY_LEVEL=0 -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE
 
 install: |
-    export CPPFLAGS="$CPPFLAGS -D__USE_FORTIFY_LEVEL=0 -D__POSIX_VISIBLE=199209 -D__BSD_VISIBLE"
-
     configure \
         --with-included-regex \
         --with-xattrs \
@@ -20,3 +15,7 @@ install: |
         --without-selinux \
         --disable-acl \
         --disable-gcc-warnings
+
+# no member named '_p' in 'struct __sFILE'
+#  return fp->_p - fp->_bf._base;
+api-min: 24

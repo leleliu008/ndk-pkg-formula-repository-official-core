@@ -14,7 +14,7 @@ dopatch: |
     gsed -i 's|$(HOST_CC) $(LDFLAGS)|$(HOST_CC) -B/usr/bin $(LDFLAGS)|' Makefile
     # https://newbedev.com/how-to-specify-alternate-linker-command-when-linking-with-cc
 
-install: |
+prepare: |
     export HOST_CC="$CC_FOR_BUILD"
     export CC="$CC $CPPFLAGS $CFLAGS $LDFLAGS"
 
@@ -22,5 +22,6 @@ install: |
     unset CPPFLAGS
     unset LDFLAGS
 
+install: |
     gmakew clean
     gmakew install HOST_CC="'$HOST_CC'" CC="'$CC'" "AR=$AR" "STRIP=$STRIP" LDFLAGS=-Wl,-v CROSS_PREFIX=xxx PREFIX="$PACKAGE_INSTALL_DIR"

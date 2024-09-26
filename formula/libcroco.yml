@@ -7,6 +7,6 @@ dep-pkg: glib libxml2
 
 install: |
     configure \
+        --enable-checks \
         --disable-gtk-doc \
-        --disable-Bsymbolic \
-        --enable-checks LIBS=-lpcre2-8
+        --disable-Bsymbolic

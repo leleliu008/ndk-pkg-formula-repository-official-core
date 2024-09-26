@@ -11,10 +11,7 @@ bscript: src
 dopatch: |
     gsed -i '/search_paths_first"/d' configure
 
-    for item in $(grep '<db.h>' -rl plugins/kdb/db2)
-    do
-        gsed -i 's|<db.h>|<db_185.h>|g' "$item" || return 1
-    done
+    gsed -i 's|<db\.h>|<db_185.h>|g' $(grep '<db\.h>' -rl plugins/kdb/db2)
 
 prepare: |
     # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
