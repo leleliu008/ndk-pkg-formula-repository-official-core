@@ -6,6 +6,7 @@ license: BSD-2-Clause
 dep-pkg: liblanginfo
 
 dopatch: gsed -i '/^ENABLE_NLS/d' Makefile
+
 install: |
     gmakew clean
     gmakew CC="$CC" CPP="'$CPP'" STRIP="$STRIP" CFLAGS_USER="'$CFLAGS'" LDFLAGS_USER="'$LDFLAGS'" D2U_OS=android

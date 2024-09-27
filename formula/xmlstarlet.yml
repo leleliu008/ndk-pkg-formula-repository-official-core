@@ -8,8 +8,7 @@ dep-lib: libxml-2.0
 binbstd: 1
 
 dopatch: |
-    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xmlstar.h
-    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c
+    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c src/xmlstar.h
     gsed -i 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
     gsed -i 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
 

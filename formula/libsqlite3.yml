@@ -15,8 +15,7 @@ install: |
     install_incs ../*.h
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/sqlite3.pc <<EOF
+    writepc sqlite3 <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

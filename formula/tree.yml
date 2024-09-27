@@ -6,9 +6,7 @@ src-sha: d3c3d55f403af7c76556546325aa1eca90b918cbaaf6d3ab60a49d8367ab90d5
 license: GPL-2.0-or-later
 dep-pkg: liblanginfo
 
-dopatch: |
-    gsed -i 's|ifndef __linux__|if 1|' strverscmp.c || return 1
-    gsed -i 's|ifndef __linux__|if 1|' tree.h       || return 1
+dopatch: gsed -i 's|ifndef __linux__|if 1|' tree.h strverscmp.c
 
 install: |
     gmakew clean

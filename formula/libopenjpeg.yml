@@ -4,9 +4,7 @@ src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
 src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
 license: BSD-2-Clause
 
-dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     cmakew \

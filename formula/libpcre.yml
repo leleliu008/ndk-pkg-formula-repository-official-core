@@ -17,11 +17,9 @@ install: |
         -DBUILD_SHARED_LIBS=OFF
 
 dotweak: |
-    install -d lib/pkgconfig
-
     for item in pcre pcre16 pcre32 pcreposix
     do
-        cat > "lib/pkgconfig/lib$item.pc" <<EOF
+        writepc "lib$item" <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

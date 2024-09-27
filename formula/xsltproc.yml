@@ -12,8 +12,6 @@ dopatch: |
 
 install: |
     configure \
-        --enable-static \
-        --disable-shared \
         --without-debug \
         --without-mem-debug \
         --without-debugger \

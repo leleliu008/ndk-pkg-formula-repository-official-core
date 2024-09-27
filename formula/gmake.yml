@@ -31,8 +31,8 @@ dopatch: |
      
     EOF
 
-install: configure --program-prefix=g --without-guile --without-dmalloc
+install: configure --without-guile --without-dmalloc
 
-dotweak: ln -s gmake bin/make
+dotweak: ln -s make bin/gmake
 
 api-min: 28

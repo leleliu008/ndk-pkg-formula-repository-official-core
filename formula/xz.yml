@@ -9,8 +9,6 @@ install: |
     configure \
         --disable-external-sha256 \
         --disable-werror \
-        --disable-shared \
-        --enable-static \
         --enable-assembler \
         --enable-threads=posix
 

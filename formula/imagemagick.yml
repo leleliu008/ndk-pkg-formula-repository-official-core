@@ -8,9 +8,7 @@ src-sha: c8589ea233f678b0474daaba19a55ce783b52b25495fb5ba93ac1d377f65bb2f
 license: ImageMagick
 dep-pkg: ghostscript libheif liblqr libtool
 
-dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \

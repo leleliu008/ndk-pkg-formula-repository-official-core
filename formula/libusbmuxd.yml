@@ -6,9 +6,7 @@ license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-pkg: libimobiledevice-glue
 bsystem: configure
 
-dopatch: |
-    gsed -i 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h
-    gsed -i 's|/var/run|/data/local/tmp|' src/libusbmuxd.c
+dopatch: gsed -i 's|/var/run|/data/local/tmp|' include/usbmuxd-proto.h src/libusbmuxd.c
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);

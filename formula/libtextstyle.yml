@@ -17,8 +17,7 @@ install: |
         --with-libncurses-prefix="$ncurses_INSTALL_DIR"
 
 dotweak: |
-    run install -d lib/pkgconfig/
-    cat >          lib/pkgconfig/libtextstyle.pc <<EOF
+    writepc libtextstyle <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

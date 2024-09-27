@@ -17,8 +17,6 @@ install: |
         --without-coverage \
         --without-debug \
         --enable-ipv6 \
-        --enable-static \
-        --disable-shared \
         LIBS=-liconv
 
 dotweak: |

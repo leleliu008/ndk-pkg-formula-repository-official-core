@@ -5,7 +5,6 @@ src-uri: https://ftp.osuosl.org/pub/xiph/releases/liboggz/liboggz-1.1.1.tar.gz
 src-sha: 6bafadb1e0a9ae4ac83304f38621a5621b8e8e32927889e65a98706d213d415a
 license: BSD-3-Clause
 dep-pkg: libogg
-
-install: configure --enable-static --disable-shared
+bsystem: configure
 
 dotweak: rm -rf include/ lib/

@@ -11,8 +11,6 @@ dopatch: gsed -i 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 
 install: |
     configure \
-        --disable-shared \
-        --enable-static \
         --enable-optimize \
         --enable-pthreads \
         --enable-ares \
@@ -26,12 +24,7 @@ install: |
         --without-librtmp \
         --without-libidn2
 
-dotweak: |
-    rm -rf include
-    rm -rf lib
-    rm -rf bin/curl-config
-    rm -rf share/aclocal
-    rm -rf share/man/man3
+dotweak: rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
 
 caveats: |
     If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers <DNS-SERVERS> argument to curl like below

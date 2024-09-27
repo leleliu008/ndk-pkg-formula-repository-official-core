@@ -36,8 +36,7 @@ install: |
         --with-bzlib
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/libelf.pc <<EOF
+    writepc libelf <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

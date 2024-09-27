@@ -5,6 +5,5 @@ license: Apache-2.0
 dep-upp: gmake
 bsystem: cargo
 
-# error: undefined reference to 'getgrnam_r'
-# https://github.com/sharkdp/fd/issues/642
+# int getgrnam_r(const char* _Nonnull __name, struct group* __BIONIC_COMPLICATED_NULLNESS __group, char* _Nonnull __buf, size_t __n, struct group* _Nullable *_Nonnull __result) __INTRODUCED_IN(24);
 api-min: 24

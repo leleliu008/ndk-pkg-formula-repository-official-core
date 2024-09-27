@@ -14,12 +14,9 @@ dopatch: |
 install: configure --enable-extra-encodings
 
 dotweak: |
-    install -d lib/pkgconfig
-            cd lib/pkgconfig
-
     for item in iconv charset
     do
-        cat > "lib$item.pc" <<EOF
+        writepc "lib$item" <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

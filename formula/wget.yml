@@ -6,9 +6,7 @@ src-sha: fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de
 dep-pkg: openssl-dev libcares libidn2 libz
 license: GPL-3.0-or-later
 
-dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \

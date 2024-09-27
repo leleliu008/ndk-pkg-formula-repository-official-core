@@ -7,8 +7,7 @@ license: MIT
 install: cmakew 2 -DGLM_BUILD_TESTS=OFF
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/glm.pc <<EOF
+    writepc glm <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     includedir=\${prefix}/include
 

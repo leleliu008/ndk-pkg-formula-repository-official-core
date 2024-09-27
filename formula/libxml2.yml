@@ -25,9 +25,6 @@ install: |
         --without-readline \
         --without-coverage \
         --without-debug \
-        --enable-ipv6 LIBS="'-liconv -lm'"
+        --enable-ipv6
 
-dotweak: |
-    gsed -i '/^Requires: /d'                    lib/pkgconfig/libxml-2.0.pc
-    gsed -i -e 's|-liconv|-ldl|g' -e 's|-lz||g' lib/pkgconfig/libxml-2.0.pc
-    printf 'Requires: libiconv libz\n' >>       lib/pkgconfig/libxml-2.0.pc
+dotweak: gsed -i 's|-liconv|-liconv -ldl|' lib/pkgconfig/libxml-2.0.pc

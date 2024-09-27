@@ -7,11 +7,10 @@ install: |
     gmakew clean SO=so
     gmakew build/release/libmujs.a build/release/libmujs.so SO=so CFLAGS="'-std=c99 $CFLAGS $CPPFLAGS'" OPTIM=
     install_incs mujs.h
-    install_libs build/release/libmujs.a build/release/libmujs.so
+    install_libs build/release/libmujs.*
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/mujs.pc <<EOF
+    writepc mujs <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

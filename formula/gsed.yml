@@ -8,13 +8,12 @@ ppflags: -D__USE_FORTIFY_LEVEL=0
 
 install: |
     configure \
-        --program-prefix=g \
         --without-selinux \
         --with-included-regex \
         --disable-acl \
         --disable-assert
 
-dotweak: ln -s gsed bin/sed
+dotweak: ln -s sed bin/gsed
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

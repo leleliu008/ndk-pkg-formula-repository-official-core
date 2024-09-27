@@ -5,8 +5,6 @@ src-url: https://www.wavpack.com/wavpack-5.7.0.tar.bz2
 src-sha: 8944b237968a1b3976a1eb47cd556916e041a2aa8917495db65f82c3fcc2a225
 license: BSD-3-Clause
 
-dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: configure --disable-tests --disable-apps --disable-man

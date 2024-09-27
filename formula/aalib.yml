@@ -7,5 +7,7 @@ dep-pkg: ncurses@6.4
 dep-upp: libtool
 bsystem: autotools
 ppflags: -include stdlib.h -include string.h
+
 dopatch: gsed -i '203c return 0;' src/aalinuxkbd.c
+
 install: configure --without-x --with-ncurses="$ncurses_6_4_INSTALL_DIR"

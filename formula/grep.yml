@@ -12,9 +12,7 @@ install: |
         --disable-gcc-warnings \
         --with-included-regex
 
-dotweak: |
-    gsed -i 's|bash|sh|' bin/egrep
-    gsed -i 's|bash|sh|' bin/fgrep
+dotweak: gsed -i 's|bash|sh|' bin/[ef]grep
 
 # no member named '_p' in 'struct __sFILE'  return fp->_p - fp->_bf._base;
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html

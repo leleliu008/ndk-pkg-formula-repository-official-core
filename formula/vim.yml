@@ -6,9 +6,7 @@ license: Vim
 dep-pkg: ncurses libintl python3 lua
 binbstd: 1
 
-dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 prepare: |
     printf '\n' > ../include.h

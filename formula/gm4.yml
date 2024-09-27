@@ -30,10 +30,9 @@ install: |
         --disable-assert \
         --disable-gcc-warnings \
         --without-dmalloc \
-        --with-included-regex \
-        --program-prefix=g
+        --with-included-regex
 
-dotweak: ln -s gm4 bin/m4
+dotweak: ln -s m4 bin/gm4
 
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513

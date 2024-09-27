@@ -18,8 +18,6 @@ install: |
         --enable-bsdcat=static \
         --enable-bsdcpio=static \
         --enable-bsdunzip=static \
-        --enable-static \
-        --disable-shared \
         --without-mbedtls \
         --without-nettle \
         --without-libb2 \
@@ -35,4 +33,4 @@ install: |
         --with-zstd \
         --with-iconv
 
-dotweak: rm -rf include/ lib/ share/man/man3/ share/man/man5/
+dotweak: rm -rf include/ lib/ share/man/man[35]/

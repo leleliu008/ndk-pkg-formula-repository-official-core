@@ -7,11 +7,7 @@ dep-pkg: libiconv libz
 
 dopatch: |
     gsed -i 's/iomanip.h/iomanip/g' configure
-
-    for item in $(grep -l "unsigned int argc" examples/*)
-    do
-        gsed -i 's/int main( unsigned int argc,/int main(int argc,/g' "$item" 
-    done
+    gsed -i 's/^int main( unsigned int /int main( int /g' examples/demo_*.cpp
 
 install: |
     configure \

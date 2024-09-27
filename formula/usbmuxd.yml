@@ -9,11 +9,7 @@ dep-pkg: libimobiledevice-glue libusb
 dep-upp: libtool
 bsystem: autogen
 
-dopatch: |
-    gsed -i 's|/var/run|/data/local/tmp|' src/usbmuxd-proto.h
-    gsed -i 's|/var/run|/data/local/tmp|' src/main.c
-    gsed -i 's|/var/run|/data/local/tmp|' docs/usbmuxd.8
-    gsed -i 's|/var/run|/data/local/tmp|' udev/39-usbmuxd.rules.in
+dopatch: gsed -i 's|/var/run|/data/local/tmp|' src/main.c src/usbmuxd-proto.h docs/usbmuxd.8 udev/39-usbmuxd.rules.in
 
 install: configure --without-preflight --without-systemd
 

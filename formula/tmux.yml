@@ -8,8 +8,7 @@ dep-pkg: ncurses libevent utf8proc libglob liblanginfo libgetdtablesize
 
 dopatch: |
     gsed -i '1i int getdtablesize();'   compat/imsg.c
-    gsed -i '1i #include<sys/endian.h>' compat/htonll.c
-    gsed -i '1i #include<sys/endian.h>' compat/ntohll.c
+    gsed -i '1i #include<sys/endian.h>' compat/htonll.c compat/ntohll.c
 
 install: |
     configure \

@@ -31,19 +31,3 @@ dotweak: |
     run rm README
     run rm VERSION
     run rm pkginfo
-
-    run install -d lib/pkgconfig
-
-    cat > lib/pkgconfig/netpbm.pc <<EOF
-    prefix=\${pcfiledir}/../..
-    exec_prefix=\${prefix}
-    libdir=\${exec_prefix}/lib
-    includedir=\${prefix}/include
-
-    Name: Netpbm
-    Description: A toolkit for manipulation of graphic images
-    Version: $PACKAGE_VERSION
-    Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lnetpbm
-    Requires: jasper libpng libjpeg libtiff-4 libxml-2.0
-    EOF

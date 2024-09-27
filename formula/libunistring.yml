@@ -14,8 +14,7 @@ install: |
         --enable-namespacing
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/libunistring.pc <<EOF
+    writepc libunistring <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

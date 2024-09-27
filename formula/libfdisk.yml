@@ -22,4 +22,7 @@ install: |
         --disable-makeinstall-chown \
         --disable-makeinstall-setuid
 
-dotweak: rm -rf bin/ sbin/ share/man/man1/ share/man/man5/ share/man/man8/
+dotweak: rm -rf bin/ sbin/ share/man/man[158]/
+
+# int getgrnam_r(const char* _Nonnull __name, struct group* __BIONIC_COMPLICATED_NULLNESS __group, char* _Nonnull __buf, size_t __n, struct group* _Nullable *_Nonnull __result) __INTRODUCED_IN(24);
+api-min: 24

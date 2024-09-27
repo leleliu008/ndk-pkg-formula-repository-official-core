@@ -5,7 +5,7 @@ src-sha: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
 license: GPL-2.0-or-later
 dep-pkg: libgnutls libcares libxml2 libz
 
-install: configure --disable-libaria2 --enable-static --disable-shared LIBS=-ldl
+install: configure --disable-libaria2 LIBS=-ldl
 
 caveats: |
     If aria2c is a fully statically linked executable, to get it working on Android 8 and later, you need to run aria2c like below

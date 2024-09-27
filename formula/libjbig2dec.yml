@@ -6,7 +6,7 @@ license: AGPL-3.0-or-later
 dep-upp: libtool
 bsystem: autogen
 
-dopatch: gsed -i '$d' autogen.sh && ./autogen.sh
+dopatch: gsed -i '$d' autogen.sh
 
 install: |
     configure only --without-libpng

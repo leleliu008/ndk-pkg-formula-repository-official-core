@@ -6,9 +6,7 @@ license: BSD-2-Clause
 dep-pkg: libpng libtiff liblcms2
 
 dopatch: |
-    gsed -i '/ftello/d' ../include/ndk-pkg-common.h
-    gsed -i '/fseeko/d' ../include/ndk-pkg-common.h
-
+    gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
     gsed -i 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
     gsed -i 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
 

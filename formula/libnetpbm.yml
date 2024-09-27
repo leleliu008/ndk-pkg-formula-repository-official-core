@@ -24,12 +24,9 @@ install: |
 
 dotweak: |
     run mv staticlink/libnetpbm.a lib/
-    run rm -rf staticlink
-    run rm -rf sharedlink
+    run rm -rf staticlink sharedlink
 
-    run install -d lib/pkgconfig
-
-    cat > lib/pkgconfig/netpbm.pc <<EOF
+    writepc netpbm <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

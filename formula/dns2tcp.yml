@@ -6,6 +6,5 @@ license: GPL-2.0-or-later
 bsystem: configure
 binbstd: 1
 
-dopatch: |
-    # https://github.com/android/ndk/issues/1409
-    gsed -i 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h
+# https://github.com/android/ndk/issues/1409
+dopatch: gsed -i 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h
