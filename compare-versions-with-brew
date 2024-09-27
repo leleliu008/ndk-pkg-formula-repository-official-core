@@ -115,7 +115,19 @@ do
 
     PACKAGE_GIT_URL="$(get_git_url_from_formula "$FORMULA_FILEPATH")"
 
-    if [ -n "$PACKAGE_GIT_URL" ] ; then
+    if [ -z "$PACKAGE_GIT_URL" ] ; then
+        case $PACKAGE_SRC_URL in
+            https://github.com/*/*/releases/*)
+                URL="${PACKAGE_SRC_URL%%/releases/*}"
+                ;;
+            https://github.com/*/*/archive/*)
+                URL="${PACKAGE_SRC_URL%%/archive/*}"
+                ;;
+            https://gitlab.com/*/*/-/archive/*)
+                URL="${PACKAGE_SRC_URL%%/-/archive/*}"
+                ;;
+        esac
+    else
         case $PACKAGE_GIT_URL in
             https://github.com/*)
                 URL="$PACKAGE_GIT_URL"
