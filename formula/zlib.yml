@@ -8,6 +8,8 @@ bsystem: cmake
 
 dopatch: gsed -i 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
 
+dotweak: ln -s zlib.pc lib/pkgconfig/libz.pc
+
 developer: |
     Jean-loup Gailly <jloup@gailly.net>
     Mark Adler <madler@alumni.caltech.edu>
