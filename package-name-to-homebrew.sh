@@ -10,6 +10,7 @@ case $1 in
     file)     printf '%s\n' 'file-formula' ;;
     gtar)     printf '%s\n' 'gnu-tar'   ;;
     gmake)    printf '%s\n' 'make'      ;;
+    gtime)    printf '%s\n' 'gnu-time'  ;;
     gindent)  printf '%s\n' 'gnu-indent';;
     xattr)    printf '%s\n' 'attr'      ;;
     patch)    printf '%s\n' 'gpatch'    ;;
@@ -25,6 +26,8 @@ case $1 in
     msgpack-c)printf '%s\n' 'msgpack'   ;;
     freetype2-with-harfbuzz)
               printf '%s\n' 'freetype'  ;;
+    zlog-chk-conf)
+              printf '%s\n' 'zlog'      ;;
     golang@1.21)
               printf '%s\n' 'go@1.21'   ;;
     golang)   printf '%s\n' 'go'        ;;
@@ -39,6 +42,8 @@ case $1 in
               printf '%s\n' 'glib'      ;;
     gettext-tools)
               printf '%s\n' 'gettext'   ;;
+    libcpu_features)
+              printf '%s\n' 'cpu_features' ;;
     libtextstyle)
               printf '%s\n' 'gettext'   ;;
     libasprintf)
@@ -58,6 +63,8 @@ case $1 in
               printf '%s\n' 'jpeg-turbo';;
     libflatbuffers|flatc)
               printf '%s\n' 'flatbuffers' ;;
+    libprotobuf.a)
+              printf '%s\n' 'protobuf'  ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
     libmimalloc)
@@ -76,12 +83,24 @@ case $1 in
               printf '%s\n' 'freetype'  ;;
     libharfbuzz)
               printf '%s\n' 'harfbuzz'  ;;
+    libjbig2dec)
+              printf '%s\n' 'jbig2dec'  ;;
+    libyaml-cpp)
+              printf '%s\n' 'yaml-cpp'  ;;
     libpugixml)
               printf '%s\n' 'pugixml'   ;;
     libminizip)
               printf '%s\n' 'minizip'   ;;
+    libcurlcpp)
+              printf '%s\n' 'curlcpp'   ;;
+    libopenssl)
+              printf '%s\n' 'openssl'   ;;
+    libopenexr)
+              printf '%s\n' 'openexr'   ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
+    libopenblas)
+              printf '%s\n' 'openblas'  ;;
     libtinyxml2)
               printf '%s\n' 'tinyxml2'  ;;
     libtinyalsa)
@@ -138,6 +157,12 @@ case $1 in
               printf '%s\n' 'physfs'    ;;
     libtalloc)
               printf '%s\n' 'talloc'    ;;
+    libgnutls)
+              printf '%s\n' 'gnutls'    ;;
+    libnettle)
+              printf '%s\n' 'nettle'    ;;
+    libSvtAv1)
+              printf '%s\n' 'svt-av1'   ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -148,6 +173,12 @@ case $1 in
     libeigen) printf '%s\n' 'eigen'     ;;
     libcares) printf '%s\n' 'c-ares'    ;;
     libfolly) printf '%s\n' 'folly'     ;;
+    libbotan) printf '%s\n' 'botan'     ;;
+    libgumbo) printf '%s\n' 'gumbo-parser' ;;
+    libmupdf) printf '%s\n' 'mupdf'     ;;
+    libImath) printf '%s\n' 'imath'     ;;
+    libgeos)  printf '%s\n' 'geos'      ;;
+    libproj)  printf '%s\n' 'proj'      ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
@@ -158,7 +189,10 @@ case $1 in
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
     libmhash) printf '%s\n' 'mhash'     ;;
+    librhash) printf '%s\n' 'rhash'     ;;
     liblcms2) printf '%s\n' 'little-cms2' ;;
+    libaften) printf '%s\n' 'aften'     ;;
+    libftgl)  printf '%s\n' 'ftgl'      ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
     libmujs)  printf '%s\n' 'mujs'      ;;
     libqpdf)  printf '%s\n' 'qpdf'      ;;
@@ -192,18 +226,25 @@ case $1 in
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
     libaom)   printf '%s\n' 'aom'       ;;
     libcaf)   printf '%s\n' 'caf'       ;;
+    libcpr)   printf '%s\n' 'cpr'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
     libhwy)   printf '%s\n' 'highway'   ;;
     libtbb)   printf '%s\n' 'tbb'       ;;
     libsrt)   printf '%s\n' 'srt'       ;;
     libwv2)   printf '%s\n' 'wv2'       ;;
+    libelf)   printf '%s\n' 'elfutils'  ;;
+    liborc)   printf '%s\n' 'orc'       ;;
+    libdb)    printf '%s\n' 'berkeley-db' ;;
     libz3)    printf '%s\n' 'z3'        ;;
+    libfl)    printf '%s\n' 'flex'      ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
     gif)      printf '%s\n' 'giflib'    ;;
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
     adig)     printf '%s\n' 'c-ares'    ;;
+    orcc)     printf '%s\n' 'orc'       ;;
+    sndfile)  printf '%s\n' 'libsndfile' ;;
 
     libtwolame|stwolame)
               printf '%s\n' 'two-lame'  ;;

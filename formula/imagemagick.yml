@@ -26,3 +26,5 @@ install: |
         --without-wmf \
         --without-fftw \
         --disable-opencl LIBS=-lc++
+
+dotweak: gsed -i 's|-lm|-lomp|' lib/pkgconfig/ImageMagick.pc

@@ -6,7 +6,7 @@ license: GFDL-1.2-or-later
 dep-pkg: libogg
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DWITH_OGG=ON \
         -DBUILD_CXXLIBS=ON \
         -DBUILD_PROGRAMS=OFF \

@@ -1,4 +1,4 @@
-summary: Library for sample rate conpackage set version of audio data
+summary: An audio sample rate conversion library
 web-url: https://github.com/libsndfile/libsamplerate
 src-url: https://github.com/libsndfile/libsamplerate/archive/0.2.2.tar.gz
 src-sha: 16e881487f184250deb4fcb60432d7556ab12cb58caea71ef23960aec6c0405a

@@ -10,7 +10,7 @@ xxflags: -std=c++11
 binbstd: 1
 
 dopatch: |
-    rm -rf tesseract freetype jbig2dec openjpeg lcms2mt libpng expat jpeg tiff zlib
+    rm -rf tesseract/ freetype/ jbig2dec/ openjpeg/ lcms2mt/ libpng/ expat/ jpeg/ tiff/ zlib/
 
     gsed -i 's|-g -o|$(LDFLAGS) -o|' base/unix-dll.mak
 
@@ -30,9 +30,30 @@ install: |
         --disable-gtk \
         --with-system-libtiff \
         --without-x
-    run make soclean
-    run make install-so
+    gmake  install-so
+    gmakew libgs
+    gmakew libgxps
+    gmakew libgpdl
+    gmakew libgpcl6
+    cd bin
+    find . -name '*.a' -printf '%P\n' | xargs -I {} mv {} lib{}
+    install_libs  *.a
+
+dotweak: |
+    writepc libgs <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libgs
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lgs
+    Requires: fontconfig tesseract jbig2dec lcms2 libidn
+    EOF
 
 patches: |
-    544d34abad8b3b957bb83f1d1ee1b0b440d538afc8d9a5fa3b11d0ef89c4e3d2|https://raw.githubusercontent.com/macports/macports-ports/master/print/ghostscript/files/pdf_sec.c.diff||-p0
+    b3d60b8e97ed4464fdda14a53ab9bf135e201a0c995e7e6517001bad2d7b2c91|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/ghostscript/fix-incompatible-pointer-types.patch
     cce893445d5f5d21c261d65a047193c574781bb3a565b7f71a6ed97246af273a|https://raw.githubusercontent.com/termux/termux-packages/master/packages/ghostscript/base-gserrors.h.patch
