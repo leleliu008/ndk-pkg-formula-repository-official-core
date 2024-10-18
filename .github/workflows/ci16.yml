@@ -32,7 +32,7 @@ jobs:
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
-      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg setup -y
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
@@ -66,7 +66,7 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }} -y
 
   alpine:
     if: false
@@ -90,7 +90,7 @@ jobs:
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
-      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg setup -y
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
@@ -124,7 +124,7 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }} -y
 
 
   macos:
@@ -148,7 +148,7 @@ jobs:
       - run: chmod u+x ndk-pkg
 
       - run: ./ndk-pkg about
-      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg setup -y
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
@@ -187,4 +187,4 @@ jobs:
               fi
           fi
 
-          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+          ./ndk-pkg install android-$MIN_SDK_API_LEVEL-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }} -y

@@ -9,7 +9,7 @@ bscript: source
 
 do12345: |
     # https://www.talkwithdevices.com/archives/260
-    case $NATIVE_OS_KIND in
+    case $NATIVE_PLATFORM_KIND in
         darwin) run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" MacOSX && make ;;
         *)      run "$PACKAGE_BSCRIPT_DIR/runConfigureICU" Linux  && make ;;
     esac

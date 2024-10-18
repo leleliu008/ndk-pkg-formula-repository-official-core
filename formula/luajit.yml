@@ -16,8 +16,8 @@ dopatch: |
         fi
     }
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        export CFLAGS="$CFLAGS -arch=$NATIVE_OS_ARCH"
+    if [ "$NATIVE_PLATFORM_KIND" = darwin ] ; then
+        export CFLAGS="$CFLAGS -arch=$NATIVE_PLATFORM_ARCH"
     fi
 
     gsed -i '/TARGET_SONAME=/c TARGET_SONAME=libluajit.so' src/Makefile
