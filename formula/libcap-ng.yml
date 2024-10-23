@@ -3,7 +3,7 @@ web-url: https://people.redhat.com/sgrubb/libcap-ng
 src-url: https://github.com/stevegrubb/libcap-ng/archive/refs/tags/v0.8.5.tar.gz
 src-sha: e4be07fdd234f10b866433f224d183626003c65634ed0552b02e654a380244c2
 license: LGPL-2.1-or-later
-dep-upp: libtool swig
+dep-upp: libtool
 bsystem: autogen
 
 install: |

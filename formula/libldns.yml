@@ -4,7 +4,6 @@ web-url: https://nlnetlabs.nl/projects/ldns/
 src-url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.3.tar.gz
 src-sha: c3f72dd1036b2907e3a56e6acf9dfb2e551256b3c1bbd9787942deeeb70e7860
 license: BSD-3-Clause
-dep-upp: swig
 dep-pkg: libpcap
 parallel: 0
 install: |
