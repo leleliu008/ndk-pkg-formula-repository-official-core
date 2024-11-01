@@ -5,27 +5,11 @@ web-url: https://www.gnu.org/software/ncurses
 src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz
 src-sha: 136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6
 license: MIT
-dep-upp: gsed grep
+dep-upp: gsed grep tic
 
-do12345: |
-    {
-        # https://github.com/termux/termux-packages/issues/4487
-        if command -v tic > /dev/null ; then
-            run tic -V
-            [ '6.2.20200212' != "$(printf '%s\n' '6.2.20200212' "$(tic -V | cut -d' ' -f2)" | sort -V | head -n 1)" ]
-        else
-            warn 'tic command not found. we need build it now.'
-        fi
-    } || return 0
-
-    unset TERMINFO
-    configure \
-        --with-pkg-config-libdir="$NATIVE_INSTALL_DIR/lib/pkgconfig" \
-        ac_cv_header_fcntl_h=yes \
-        ac_cv_header_unistd_h=yes \
-        ac_cv_header_sys_time_h=yes
-
-dopatch: gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+dopatch: |
+    gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+    gsed -i 's|malloc(need)|(char*)malloc(need)|' ncurses/tinfo/make_hash.c
 
 prepare: |
     export BUILD_CC="$CC_FOR_BUILD"
@@ -33,7 +17,6 @@ prepare: |
     export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
     export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
     unset  BUILD_LIBS
-
     unset  TERMINFO
 
 install: |
