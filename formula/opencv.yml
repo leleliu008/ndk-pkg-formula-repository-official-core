@@ -54,7 +54,7 @@ install: |
         -DOPENCV_GENERATE_PKGCONFIG=ON \
         -DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
         -DANDROID_NO_TERMUX=OFF \
-        -DANDROID_SDK_ROOT="$(uppm info android-sdk installed-dir)"
+        -DANDROID_SDK_ROOT="$("UPPM" info android-sdk installed-dir)"
 
 dotweak: |
     run cp -r sdk/native/jni/include ./
