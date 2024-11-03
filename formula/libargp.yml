@@ -4,6 +4,3 @@ src-url: https://github.com/argp-standalone/argp-standalone/archive/refs/tags/1.
 src-sha: c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
 license: LGPL-2.1-or-later
 bsystem: meson
-
-fix-url: https://git.alpinelinux.org/aports/plain/main/argp-standalone/gnu89-inline.patch
-fix-sha: 29be7cf514ecebe0c8879e9c510931d5ed03cb5f06ddd230f08b541b168fd5b6

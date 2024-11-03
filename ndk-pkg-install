@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -ex
+
+unset PKGTYPE
+unset MIN_SDK_API_LEVEL
+
+PKGTYPE=$(./ndk-pkg info-available "$1" pkgtype)
+
+if [ "$PKGTYPE" = exe ] ; then
+    MIN_SDK_API_LEVEL=34
+else
+  if [ -z "$PKGTYPE" ] ; then
+      case $1 in
+        lib*)
+            ;;
+        *lib)
+            ;;
+           *)
+            MIN_SDK_API_LEVEL=34
+           ;;
+      esac
+  fi
+
+  if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+      MIN_SDK_API_LEVEL=$(./ndk-pkg info-available "$1" api-min)
+
+      if [ -z "$MIN_SDK_API_LEVEL" ] ; then
+          MIN_SDK_API_LEVEL=21
+      fi
+  fi
+fi
+
+shift
+
+ABI="$1"
+
+shift
+
+./ndk-pkg install "$1" "--target=android-$MIN_SDK_API_LEVEL-$ABI" "$@"
