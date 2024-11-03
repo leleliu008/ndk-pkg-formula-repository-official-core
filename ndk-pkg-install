@@ -31,10 +31,12 @@ else
   fi
 fi
 
+PACKAGE_NAME="$1"
+
 shift
 
 ABI="$1"
 
 shift
 
-./ndk-pkg install "$1" "--target=android-$MIN_SDK_API_LEVEL-$ABI" "$@"
+./ndk-pkg install "$PACKAGE_NAME" "--target=android-$MIN_SDK_API_LEVEL-$ABI" "$@"
