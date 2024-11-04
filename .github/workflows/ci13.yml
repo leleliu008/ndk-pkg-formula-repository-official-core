@@ -40,7 +40,8 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   alpine:
-    #if: false
+    if: false
+
     strategy:
 
       fail-fast: false
@@ -68,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    if: false
+
     strategy:
 
       fail-fast: false
