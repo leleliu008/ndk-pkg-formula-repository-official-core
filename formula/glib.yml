@@ -1,8 +1,8 @@
 summary: A general-purpose, portable utility library which provides many useful data types, macros, type conversions, string utilities, file utilities, a mainloop abstraction, and so on
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
-src-url: https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
-src-uri: https://distfiles.macports.org/glib2/glib-2.78.0.tar.xz
+src-uri: https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
+src-url: https://distfiles.macports.org/glib2/glib-2.78.0.tar.xz
 src-sha: 44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
