@@ -6,7 +6,7 @@ src-sha: 387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595
 version: 2.8.9rel.1
 license: GPL-2.0-or-later
 dep-upp: libopenssl
-dep-pkg: openssl-dev ncurses libbz2 libz
+dep-pkg: openssl-dev libncurses libbz2 libz
 
 install: |
     configure \
@@ -16,7 +16,7 @@ install: |
         --with-build-cflags="'$CFLAGS_FOR_BUILD'" \
         --with-build-ldflags="'$LDFLAGS_FOR_BUILD'" \
         --with-screen=ncurses \
-        --with-curses-dir=$ncurses_INSTALL_DIR \
+        --with-curses-dir=$libncurses_INSTALL_DIR \
         --with-zlib \
         --with-bzlib \
         --with-ssl \

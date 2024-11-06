@@ -8,7 +8,7 @@ on:
 
 jobs:
   ubuntu:
-    if: false
+    #if: false
 
     strategy:
 
@@ -69,6 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
+    if: false
 
     strategy:
 

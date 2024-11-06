@@ -3,7 +3,7 @@ web-url: http://www.gnuplot.info/
 src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.2/gnuplot-5.4.2.tar.gz
 src-sha: e57c75e1318133951d32a83bcdc4aff17fed28722c4e71f2305cfc2ae1cae7ba
 license: gnuplot
-dep-pkg: gd libcerf lua pango readline
+dep-pkg: gd libcerf lua pango libreadline
 bsystem: autotools
 
 dopatch: gsed -i 's|docs||g' Makefile.am

@@ -1,11 +1,10 @@
-pkgtype: lib
 summary: Text-based UI library
 git-url: https://github.com/mirror/ncurses
 web-url: https://www.gnu.org/software/ncurses
 src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
 src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
 license: MIT
-dep-upp: gsed grep tic
+dep-upp: gsed grep
 
 dopatch: |
     gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
@@ -25,6 +24,7 @@ install: |
         --with-cxx-shared \
         --with-shared \
         --without-ada \
+        --without-progs \
         --without-tests \
         --without-debug \
         --without-valgrind \
@@ -38,6 +38,7 @@ install: |
         --disable-stripping \
         --disable-assertions \
         --disable-gnat-projects \
+        --disable-db-install \
         --disable-echo
 
 dotweak: |

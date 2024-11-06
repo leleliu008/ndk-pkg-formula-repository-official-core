@@ -4,7 +4,7 @@ src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-l
 src-sha: d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
 license: GPL-2.0-or-later
 dep-upp: automake libtool
-dep-pkg: readline libcap-ng libz
+dep-pkg: libreadline libcap-ng libz
 
 install: |
     configure \

@@ -4,7 +4,7 @@ web-url: https://www.nano-editor.org/
 src-url: https://www.nano-editor.org/dist/v8/nano-8.0.tar.xz
 src-sha: c17f43fc0e37336b33ee50a209c701d5beb808adc2d9f089ca831b40539c9ac4
 license: GPL-3.0-or-later
-dep-pkg: ncurses libintl libmagic
+dep-pkg: libncurses libintl libmagic
 
 prepare: |
     # pwd.h: struct passwd* getpwent(void) __INTRODUCED_IN(26);

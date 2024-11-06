@@ -3,6 +3,6 @@ web-url: https://htop.dev
 src-url: https://github.com/htop-dev/htop/archive/refs/tags/3.3.0.tar.gz
 src-sha: 1e5cc328eee2bd1acff89f860e3179ea24b85df3ac483433f92a29977b14b045
 license: GPL-2.0-or-later
-dep-pkg: ncurses libstrchrnul liblanginfo libexecinfo
+dep-pkg: libncurses libstrchrnul liblanginfo libexecinfo
 bsystem: autogen
 install: configure --disable-static --enable-unicode

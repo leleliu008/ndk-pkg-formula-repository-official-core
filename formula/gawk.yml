@@ -4,12 +4,12 @@ web-url: https://www.gnu.org/software/gawk
 src-url: https://ftp.gnu.org/gnu/gawk/gawk-5.3.0.tar.xz
 src-sha: ca9c16d3d11d0ff8c69d79dc0b47267e1329a69b39b799895604ed447d3ca90b
 license: GPL-3.0-or-later
-dep-pkg: readline libmpfr
+dep-pkg: libreadline libmpfr
 
 install: |
     configure \
         --with-pic \
-        --with-readline="$readline_INSTALL_DIR" \
+        --with-readline="$libreadline_INSTALL_DIR" \
         --with-mpfr="$libmpfr_INSTALL_DIR" \
         --enable-extensions \
         --enable-lint \

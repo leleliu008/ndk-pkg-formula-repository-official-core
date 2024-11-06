@@ -3,5 +3,5 @@ web-url: https://taskwarrior.org/
 src-url: https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.1/task-2.6.1.tar.gz
 src-sha: 00aa6032b3d8379a5cfa29afb66d2b0703a69e3d1fea733d225d654dbcb0084f
 license: MIT
-dep-pkg: libgnutls util-linux readline
+dep-pkg: libgnutls util-linux libreadline
 bsystem: cmake

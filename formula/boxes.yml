@@ -4,7 +4,7 @@ src-url: https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.0.tar.gz
 src-sha: e226b4ff91e1260fc80e8312b39cde5a783b96e9f248530eae941b7f1bf6342a
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
-dep-pkg: libpcre2 libunistring ncurses
+dep-pkg: libpcre2 libunistring libncurses
 dep-lib: -liconv
 
 dopatch: gsed -i 's|STRIP=true||' src/Makefile

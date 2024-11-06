@@ -3,7 +3,7 @@ web-url: https://gpsim.sourceforge.io/
 src-url: https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.1.tar.gz
 src-sha: c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69
 license: GPL-2.0-or-later
-dep-pkg: glib libpopt readline
+dep-pkg: glib libpopt libreadline
 dep-upp: python3
-binbstd: 1
 install: configure --disable-gui
+binbstd: 1

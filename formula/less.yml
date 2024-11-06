@@ -4,5 +4,5 @@ web-url: http://www.greenwoodsoftware.com/less/index.html
 src-url: http://www.greenwoodsoftware.com/less/less-643.tar.gz
 src-sha: 2911b5432c836fa084c8a2e68f6cd6312372c026a58faaa98862731c8b6052e8
 license: GPL-3.0-or-later
-dep-pkg: ncurses libpcre2 liblanginfo
+dep-pkg: libncurses libpcre2 liblanginfo
 install: configure --with-regex=pcre2 --with-secure

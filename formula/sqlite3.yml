@@ -5,7 +5,7 @@ src-url: https://www.sqlite.org/2024/sqlite-autoconf-3460000.tar.gz
 src-sha: 6f8e6a7b335273748816f9b3b62bbdc372a889de8782d7f048c653a447417a7d
 version: 3.46.0
 license: blessing
-dep-pkg: readline libz
+dep-pkg: libreadline libz
 
 dopatch: gsed -i '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if defined(STRERROR_R_CHAR_P) || (defined(__USE_GNU) && __ANDROID_API__ >= 23)' sqlite3.c
 

@@ -3,7 +3,7 @@ web-url: https://www.vim.org/
 src-url: https://github.com/vim/vim/archive/refs/tags/v9.1.0500.tar.gz
 src-sha: d6009449df4e28e38b0da3bf5621a65037dec1ec53092f8f56cd1a27f3d91009
 license: Vim
-dep-pkg: ncurses libintl python3 lua
+dep-pkg: libncurses libintl python3 lua
 binbstd: 1
 
 dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
