@@ -1,0 +1,5 @@
+summary: A modern Git CLI
+src-url: https://github.com/chriswalz/bit/archive/refs/tags/v1.1.2.tar.gz
+src-sha: 563ae6b0fa279cb8ea8f66b4b455c7cb74a9e65a0edbe694505b2c8fc719b2ff
+license: Apache-2.0
+install: gow -X main.version=v$PACKAGE_VERSION
