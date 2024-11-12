@@ -1,0 +1,97 @@
+name: workflow20
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  ubuntu:
+    #if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xorriso,xpup]
+
+    runs-on: ubuntu-latest
+
+    container: ubuntu:24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: apt -y update
+      - run: apt -y install curl
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+  alpine:
+    #if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xorriso,xpup]
+
+    runs-on: ubuntu-latest
+
+    container: alpine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+  macos:
+    if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        os:  [macos-14]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils,xmlwf,xorriso,xpup]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}

@@ -1,0 +1,97 @@
+name: workflow1
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  ubuntu:
+    #if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [ARM_NEON_2_x86_SSE,aalib,acl,act,actionlint,adig,ag,age,alass,algernon,antibody,aom,apkeep,aptly,archiver,args,aria2,arping,awk,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
+
+    runs-on: ubuntu-latest
+
+    container: ubuntu:24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: apt -y update
+      - run: apt -y install curl
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+  alpine:
+    #if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [ARM_NEON_2_x86_SSE,aalib,acl,act,actionlint,adig,ag,age,alass,algernon,antibody,aom,apkeep,aptly,archiver,args,aria2,arping,awk,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
+
+    runs-on: ubuntu-latest
+
+    container: alpine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+  macos:
+    if: false
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        os:  [macos-14]
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [ARM_NEON_2_x86_SSE,aalib,acl,act,actionlint,adig,ag,age,alass,algernon,antibody,aom,apkeep,aptly,archiver,args,aria2,arping,awk,axel,azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod u+x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}

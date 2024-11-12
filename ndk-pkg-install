@@ -8,7 +8,7 @@ unset MIN_SDK_API_LEVEL
 PKGTYPE=$(./ndk-pkg info-available "$1" pkgtype)
 
 if [ "$PKGTYPE" = exe ] ; then
-    MIN_SDK_API_LEVEL=34
+    MIN_SDK_API_LEVEL=35
 else
   if [ -z "$PKGTYPE" ] ; then
       case $1 in
@@ -17,7 +17,7 @@ else
         *lib)
             ;;
            *)
-            MIN_SDK_API_LEVEL=34
+            MIN_SDK_API_LEVEL=35
            ;;
       esac
   fi
