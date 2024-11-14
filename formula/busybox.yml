@@ -47,3 +47,5 @@ patches: |
     587b67493840871f67375ef3b21aa8b9b6a23c15cafff8724358d719a71bf959|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0009-networking-httpd-default-port.patch
     102627807d6571d2ff2a1eb6fe9c5dc76a84b182b5bbee537def6f00f0297ff4|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0011-networking-tftp-no-chroot.patch
     37902a94f75c3e17fa4dc76b88ca4eba359cca6280fec2006f201d8ccce72087|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0012-util-linux-mount-no-addmntent.patch
+    fb4014b02bfb12c8791f402dbd0e3abb57a494361e0f8cd7e010258cc5eda319|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0013-busybox-1.36.1-kernel-6.8.patch
+    11fea0ed7efe00bd611465cff56ff7bc784fc92fd51af76a83853e033632c23c|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0014-fix-segfault.patch

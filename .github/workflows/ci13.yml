@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip]
+        pkg: [libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip]
+        pkg: [libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    if: false
+    #if: false
 
     strategy:
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx,lz4,lzip]
+        pkg: [libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luajit,luau,lunzip,lychee,lynx]
 
     runs-on: ${{ matrix.os }}
 

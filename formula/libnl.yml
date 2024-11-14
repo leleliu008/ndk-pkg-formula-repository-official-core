@@ -1,23 +1,11 @@
 summary: Netlink Library based Linux kernel interfaces
-src-url: https://github.com/thom311/libnl/releases/download/libnl3_9_0/libnl-3.9.0.tar.gz
-src-sha: aed507004d728a5cf11eab48ca4bf9e6e1874444e33939b9d3dfed25018ee9bb
+src-url: https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-3.11.0.tar.gz
+src-sha: 2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d
 license: LGPL-2.1-or-later
 dep-upp: flex bison libtool
 bsystem: autotools
+ccflags: -include sys/select.h
 
-ldflags: -Wl,--undefined-version
+dopatch: gsed -i '91a typedef __be32 in_addr_t;' include/linux-private/linux/in.h
 
-dopatch: |
-    autoreconf -ivf
-    gsed -i 's@linux-private/@@g' lib/mpls.c
-    gsed -i 's@linux-private/@@g' lib/route/link/vrf.c
-    gsed -i '/linux-private/d' Makefile.in
-    gsed -i '/linux-private/d' Makefile.am
-
-install: |
-    configure \
-        --enable-pthreads \
-        --enable-cli
-
-# int getsubopt(char** __option, char* const* __tokens, char** __value_ptr) __INTRODUCED_IN(26);
-api-min: 26
+install: configure --disable-pthreads --disable-cli

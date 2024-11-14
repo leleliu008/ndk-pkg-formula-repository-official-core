@@ -1,8 +1,8 @@
 summary: A cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D
 git-url: https://github.com/libsdl-org/SDL
 web-url: https://www.libsdl.org/
-src-url: https://www.libsdl.org/release/SDL2-2.30.4.tar.gz
-src-sha: 59c89d0ed40d4efb23b7318aa29fe7039dbbc098334b14f17f1e7e561da31a26
+src-url: https://www.libsdl.org/release/SDL2-2.30.9.tar.gz
+src-sha: 24b574f71c87a763f50704bbb630cbe38298d544a1f890f099a4696b1d6beba4
 license: Zlib
 
 dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h

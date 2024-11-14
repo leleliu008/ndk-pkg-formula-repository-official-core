@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd]
+        pkg: [pybind11,q,qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd]
+        pkg: [pybind11,q,qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    if: false
+    #if: false
 
     strategy:
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc,scdoc,sd]
+        pkg: [pybind11,q,qpdf,qrencode,quickjs,ragel,rancher,rang,rapidjson,rav1e,rclone,re2c,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,robin-map,rover,rsass,rsync,rtmpdump,rtorrent,ruff,rust-analyzer,ruy,samurai,sassc,scc]
 
     runs-on: ${{ matrix.os }}
 

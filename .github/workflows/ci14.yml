@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch,netcat,nethogs]
+        pkg: [lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch,netcat,nethogs]
+        pkg: [lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    if: false
+    #if: false
 
     strategy:
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch,netcat,nethogs]
+        pkg: [lz4,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mediainfo,minisign,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mruby@3.0.0,mruby@3.2.0,msgpack-c,mujs,naabu,nano,nanomsg,nap,nasm,navi,ncdu,ncurses,ndk-pkg-core,neofetch]
 
     runs-on: ${{ matrix.os }}
 

@@ -1,0 +1,7 @@
+summary: An open-source audio processing library
+web-url: https://www.surina.net/soundtouch/
+git-url: https://codeberg.org/soundtouch/soundtouch
+src-url: https://www.surina.net/soundtouch/soundtouch-2.3.3.tar.gz
+src-sha: 43b23dfac2f64a3aff55d64be096ffc7b73842c3f5665caff44975633a975a99
+license: LGPL-2.1-or-later
+install: cmakew 2 -DSOUNDSTRETCH=OFF

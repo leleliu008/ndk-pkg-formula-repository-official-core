@@ -1,8 +1,8 @@
 pkgtype: pie
 summary: Remote terminal application
-git-url: https://github.com/mobile-shell/mosh
 web-url: https://mosh.org/
-src-url: https://mosh.org/mosh-1.4.0.tar.gz
+git-url: https://github.com/mobile-shell/mosh
+src-url: https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz
 src-sha: 872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd
 license: GPL-3.0-or-later
 dep-pkg: openssl-dev libncurses libz libprotobuf liblanginfo
