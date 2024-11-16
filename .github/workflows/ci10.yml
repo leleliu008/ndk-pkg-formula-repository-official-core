@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz]
+        pkg: [libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz]
+        pkg: [libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    #if: false
+    if: false
 
     strategy:
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc,libminiz]
+        pkg: [libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene,libhexdump,libid3,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libixwebsocket,libjpeg,libkcp,libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiupnpc]
 
     runs-on: ${{ matrix.os }}
 

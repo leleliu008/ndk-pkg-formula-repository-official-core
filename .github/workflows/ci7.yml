@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl,htop]
+        pkg: [golang,gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl,htop]
+        pkg: [golang,gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl]
 
     runs-on: ubuntu-latest
 
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   macos:
-    #if: false
+    if: false
 
     strategy:
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl,htop]
+        pkg: [golang,gomobile,google-benchmark,gopls,goreleaser,gosh,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,graphicsmagick,graphviz,grep,grex,gron,grpc,grpc-plugins,gsed,gtar,gtime,gzip,halibut,helix,helm,hexdump,hexyl]
 
     runs-on: ${{ matrix.os }}
 
