@@ -1,6 +1,6 @@
 summary: Static checker for GitHub Actions workflow files
 web-url: https://rhysd.github.io/actionlint/
-src-url: https://github.com/rhysd/actionlint/archive/refs/tags/v1.7.1.tar.gz
-src-sha: f53808c46db1ac2aa579b00f4a12a8acdf6eaf85a382091ce051dea33b18d7b4
+src-url: https://github.com/rhysd/actionlint/archive/refs/tags/v1.7.4.tar.gz
+src-sha: 3004bcb4615510e671c76a56259755ed616c3200fb73b0be0ca9c3d6ea09c73a
 license: MIT
 install: gow -X github.com/rhysd/actionlint.version=$PACKAGE_VERSION ./cmd/actionlint

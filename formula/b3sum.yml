@@ -1,6 +1,6 @@
 summary: A command line utility for calculating BLAKE3 hashes
-src-url: https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.5.1.tar.gz
-src-sha: 822cd37f70152e5985433d2c50c8f6b2ec83aaf11aa31be9fe71486a91744f37
+src-url: https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.5.4.tar.gz
+src-sha: ddd24f26a31d23373e63d9be2e723263ac46c8b6d49902ab08024b573fd2a416
 license: CC0-1.0
 bscript: b3sum
 bsystem: cargo

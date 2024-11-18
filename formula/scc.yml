@@ -1,5 +1,5 @@
 summary: Fast and accurate code counter with complexity and COCOMO estimates
-src-url: https://github.com/boyter/scc/archive/refs/tags/v3.3.4.tar.gz
-src-sha: 3097e23532d9a254fe217c81557136c7ac5aa4d48a200b61b366330e5eaf7ce4
+src-url: https://github.com/boyter/scc/archive/refs/tags/v3.4.0.tar.gz
+src-sha: bdedb6f32d1c3d73ac7e55780021c742bc8ed32f6fb878ee3e419f9acc76bdaa
 license: MIT
 bsystem: go
