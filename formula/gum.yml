@@ -1,0 +1,5 @@
+summary: A tool for glamorous shell scripts
+src-url: https://github.com/charmbracelet/gum/archive/refs/tags/v0.14.5.tar.gz
+src-sha: b2c8101bb6f93acba420808df65b3f9acfe8cc9de283c1d9d94311123f43f271
+license: MIT
+install: gow -X main.Version=$PACKAGE_VERSION

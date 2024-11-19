@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode,libquiche]
+        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode,libquiche]
+        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode]
 
     runs-on: ubuntu-latest
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode,libquiche]
+        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libphonenumber,libphysfs,libpipeline,libpng++,libpsl,libpugixml,libqalculate,libqpdf,libqrencode]
 
     runs-on: ${{ matrix.os }}
 

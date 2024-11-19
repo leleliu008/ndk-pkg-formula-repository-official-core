@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers]
+        pkg: [ldns,less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers]
+        pkg: [ldns,less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk]
 
     runs-on: ubuntu-latest
 
@@ -79,7 +79,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers]
+        pkg: [ldns,less,lf,libLIEF,libaec,libaio,libao,libargp,libasprintf,libass,libasync++,libatomic_ops,libb2,libb64,libbcrypt,libblkid,libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk]
 
     runs-on: ${{ matrix.os }}
 
