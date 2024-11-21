@@ -91,8 +91,20 @@ jobs:
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
-      - run: mv ndk-pkg alpine-rootfs/
+
+      - run: mv ndk-pkg         alpine-rootfs/
       - run: mv ndk-pkg-install alpine-rootfs/
+
+      - run: install -d alpine-rootfs/root/.ndk-pkg/repos.d/official-core/
+      - run: mv formula alpine-rootfs/root/.ndk-pkg/repos.d/official-core/
+      - run: |
+            cat >       alpine-rootfs/root/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
 
       - run: sudo mount -o bind  /dev alpine-rootfs/dev
       - run: sudo mount -t proc  none alpine-rootfs/proc
@@ -101,9 +113,6 @@ jobs:
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg about
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg setup
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg sysinfo
-
-      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
-      - run: mv formula alpine-rootfs/root/.ndk-pkg/repos.d/my_repo/
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
