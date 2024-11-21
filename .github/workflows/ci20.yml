@@ -17,7 +17,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils]
+        pkg: [uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils]
+        pkg: [uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet]
 
     runs-on: ubuntu-latest
 
@@ -68,6 +68,45 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
+  chroot:
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        opt: ['--static', '']
+        pkg: [uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: curl -LO http://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/alpine-minirootfs-3.20.3-x86_64.tar.gz
+      - run: install -d alpine-rootfs
+      - run: tar xf alpine-minirootfs-3.20.3-x86_64.tar.gz -C alpine-rootfs
+      - run: cp -p /etc/resolv.conf alpine-rootfs/etc/
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+      - run: mv ndk-pkg alpine-rootfs/
+      - run: mv ndk-pkg-install alpine-rootfs/
+
+      - run: sudo mount -o bind  /dev alpine-rootfs/dev
+      - run: sudo mount -t proc  none alpine-rootfs/proc
+      - run: sudo mount -t sysfs none alpine-rootfs/sys
+
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg about
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg setup
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg sysinfo
+
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: mv formula alpine-rootfs/root/.ndk-pkg/repos.d/my_repo/
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+
   macos:
     if: false
 
@@ -79,7 +118,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet,xmlutils]
+        pkg: [uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl,x264,x265,xh,xmake,xmlstarlet]
 
     runs-on: ${{ matrix.os }}
 
