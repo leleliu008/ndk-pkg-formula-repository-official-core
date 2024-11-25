@@ -1,9 +1,0 @@
-summary: A post-modern modal text editor
-web-url: https://helix-editor.com/
-src-url: https://github.com/helix-editor/helix/archive/refs/tags/v0.6.0.tar.gz
-src-sha: 522aec90a268015b88cd7ddbc9de43c93314241b863cf7b7da12205cec565464
-license: MPL-2.0
-bsystem: cargo
-
-install: |
-    cargow install --path "$PACKAGE_INSTALLING_BST_DIR/helix-term"

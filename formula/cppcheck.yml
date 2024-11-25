@@ -1,0 +1,7 @@
+summary: Static analysis tool for C and C++ code
+web-url: https://sourceforge.net/projects/cppcheck
+src-url: https://github.com/danmar/cppcheck/archive/refs/tags/2.16.0.tar.gz
+src-sha: f1a97c8cef5ee9d0abb57e9244549d4fe18d4ecac80cf82e250d1fc5f38b1501
+license: GPL-3.0-or-later
+dep-pkg: libpcre libxml2 libgetloadavg
+install: cmakew -DUSE_MATCHCOMPILER=On -DDISABLE_DMAKE=ON

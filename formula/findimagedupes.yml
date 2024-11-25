@@ -1,5 +1,5 @@
 summary: Find visually similar or duplicate images
 git-url: https://gitlab.com/opennota/findimagedupes
 license: GPL-3.0-or-later
-dep-pkg: file libjpeg-turbo libpng libtiff
+dep-pkg: libmagic libjpeg-turbo libpng libtiff libheif
 bsystem: go
