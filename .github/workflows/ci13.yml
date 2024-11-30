@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libtorrent-rasterbar,libtwolame,libuchardet,libunbound,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libtorrent-rasterbar,libtwolame,libuchardet,libunbound,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet]
 
     runs-on: ubuntu-latest
 
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libtorrent-rasterbar,libtwolame,libuchardet,libunbound,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libtorrent-rasterbar,libtwolame,libuchardet,libunbound,libuninameslist,libunwind,libupnp,libusrsctp,libvips,libwavpack,libwebm,libwmf,libwv2,libxcrypt,libxnnpack,libyuv,libz3,libzim,libzlog,libzmq,lighttpd,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet]
 
     runs-on: ${{ matrix.os }}
 

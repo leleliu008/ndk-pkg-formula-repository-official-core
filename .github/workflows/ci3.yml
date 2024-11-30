@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cotp,cpio,cppcheck,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel]
+        pkg: [azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cotp,cpio,cppcheck,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel]
+        pkg: [azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
 
     runs-on: ubuntu-latest
 
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cotp,cpio,cppcheck,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel]
+        pkg: [azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka,coreutils,cotp,cpio,cppcheck,cpprestsdk,cpptoml,cppunit,cpuid,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel]
+        pkg: [azcopy,b3sum,base16,base64,bash,basis_universal,bat,bc,bcrypt,berkeley-db]
 
     runs-on: ${{ matrix.os }}
 
