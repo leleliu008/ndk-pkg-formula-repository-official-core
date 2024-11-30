@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow4
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [dash,dav1d,delta,difftastic,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,erdtree,esbuild,ethereum,exa,exhale,exiv2]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [dash,dav1d,delta,difftastic,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,erdtree,esbuild,ethereum,exa,exhale,exiv2]
 
     runs-on: ubuntu-latest
 
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [dash,dav1d,delta,difftastic,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,erdtree,esbuild,ethereum,exa,exhale,exiv2]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [dash,dav1d,delta,difftastic,diffutils,dns2tcp,dnslookup,dnsmap,dnsx,dog,doggo,dos2unix,dot_static,double-conversion,doxygen,dua,duf,dufs,duktape,dust,easyutils,ed,elvish,epsilon,erdtree,esbuild,ethereum,exa,exhale,exiv2]
 
     runs-on: ${{ matrix.os }}
 

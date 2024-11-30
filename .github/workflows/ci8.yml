@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,ideviceinstaller,invoice,ipinfo,isl,iw,jbig2dec,jfrog-cli,jj,jpegoptim,jq,json-glib,jump,kcptun,keybase,ko,krb5]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,ideviceinstaller,invoice,ipinfo,isl,iw,jbig2dec,jfrog-cli,jj,jpegoptim,jq,json-glib,jump,kcptun,keybase,ko,krb5]
 
     runs-on: ubuntu-latest
 
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,ideviceinstaller,invoice,ipinfo,isl,iw,jbig2dec,jfrog-cli,jj,jpegoptim,jq,json-glib,jump,kcptun,keybase,ko,krb5]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [halibut,helix,helm,hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide,hyperfine,ideviceinstaller,invoice,ipinfo,isl,iw,jbig2dec,jfrog-cli,jj,jpegoptim,jq,json-glib,jump,kcptun,keybase,ko,krb5]
 
     runs-on: ${{ matrix.os }}
 
