@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers,libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene]
+        pkg: [file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers,libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene]
+        pkg: [file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers,libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene]
+        pkg: [file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libbluray,libcaca,libcap,libcbor,libcddb,libcdio,libcerf,libcfitsio,libcgif,libcroco,libduktape,libexhale,libexiv2,libfdisk,libflatbuffers,libgeotiff,libgetdomainname,libgetsubopt,libglm,libgraphene]
+        pkg: [file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ${{ matrix.os }}
 
