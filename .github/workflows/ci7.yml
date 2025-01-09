@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet,file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet,file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -68,7 +68,7 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
-  chroot:
+  chroot-alpine:
     if: false
 
     strategy:
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet,file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [chisel,choose,cilium-cli,cjson,cli11,clog,cmake,cmark,cmatrix,cmocka]
+        pkg: [eza,faac,faad2,fcp,fd,fdk-aac,fdroidcl,fff,ffmpeg,figlet,file,findent,findimagedupes,findutils,fish,flac,flatc,flex,flock,fontconfig]
 
     runs-on: ${{ matrix.os }}
 

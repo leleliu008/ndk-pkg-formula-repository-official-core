@@ -68,7 +68,7 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
-  chroot:
+  chroot-alpine:
     if: false
 
     strategy:

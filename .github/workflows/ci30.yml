@@ -17,7 +17,7 @@ jobs:
         tag: ['24.04' ,'22.04', '20.04']
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink]
+        pkg: [utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl]
 
     runs-on: ubuntu-latest
 
@@ -49,7 +49,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink]
+        pkg: [utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl]
 
     runs-on: ubuntu-latest
 
@@ -68,7 +68,7 @@ jobs:
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
-  chroot:
+  chroot-alpine:
     if: false
 
     strategy:
@@ -78,7 +78,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink]
+        pkg: [utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl]
 
     runs-on: ubuntu-latest
 
@@ -128,7 +128,7 @@ jobs:
         os:  [macos-14]
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libkvazaar,libldns,libleveldb,liblinear,liblmdb,liblua,libmaxminddb,libmblen,libmd,libmesalink]
+        pkg: [utf8.h,utfcpp,uthash,util-linux,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,whois,wolfssl]
 
     runs-on: ${{ matrix.os }}
 
