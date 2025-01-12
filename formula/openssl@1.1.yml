@@ -27,6 +27,7 @@ install: |
     esac
 
     export CROSS_SYSROOT="$SYSROOT"
+    export PERL="$(command -v perl)"
 
     run ./Configure \
         no-tests \

@@ -25,6 +25,7 @@ prepare: |
     esac
 
     export CROSS_SYSROOT="$SYSROOT"
+    export PERL="$(command -v perl)"
 
 # https://github.com/openssl/openssl/blob/master/INSTALL.md
 install: |

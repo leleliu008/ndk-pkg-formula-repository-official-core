@@ -6,7 +6,7 @@ license: MIT
 
 do12345: |
     gmakew clean
-    gmakew scdoc CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
+    gmakew scdoc CFLAGS="'$CFLAGS -Wno-unused-variable'" LDFLAGS="'$LDFLAGS'"
     mv scdoc scdoc.exe
 
 install: |

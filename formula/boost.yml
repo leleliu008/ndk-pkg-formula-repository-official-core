@@ -5,6 +5,7 @@ src-url: https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-
 src-sha: 2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
 license: BSL-1.0
 dep-pkg: libz libbz2 liblzma libzstd libiconv icu4c
+bssytem: b2
 binbstd: 1
 
 # https://boostorg.github.io/build/manual/master/index.html
@@ -13,6 +14,7 @@ binbstd: 1
 # https://www.boost.org/doc/libs/1_65_1/libs/context/doc/html/context/architectures.html
 do12345: |
     gsed -i '1a set -x' bootstrap.sh tools/build/src/engine/build.sh
+    gsed -i "s|build.sh\" \${TOOLSET}|build.sh\" --cxx=$CXX_FOR_BUILD \${TOOLSET}|" ./bootstrap.sh
     run ./bootstrap.sh
 
 dopatch: |

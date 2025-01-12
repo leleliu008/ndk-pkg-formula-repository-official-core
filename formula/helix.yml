@@ -5,7 +5,7 @@ src-sha: 0f466ed2de039a7eca6faf29fc0db712c92e1a59d0bdc7e8916c717ceee8b3b3
 license: MPL-2.0
 dep-upp: git
 install: |
-    export RUSTUP_TOOLCHAIN=1.74
+    export RUSTUP_TOOLCHAIN=1.81
     cargow install --path helix-term
     rm -rf runtime/grammars/sources/
     install -d -v    "$PACKAGE_INSTALL_DIR/libexec"

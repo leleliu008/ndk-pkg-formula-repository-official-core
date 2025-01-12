@@ -12,6 +12,7 @@ bsystem: gmake
 dopatch: |
     gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
     gsed -i "s|SDL2_CONFIG=|SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'|" configure
+    ln -s "$CC_FOR_BUILD" ../bin/gcc
 
 prepare: |
     unset CONFIGURE_EXTRA_ARGS
