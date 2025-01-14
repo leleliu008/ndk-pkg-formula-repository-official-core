@@ -13,4 +13,4 @@ install: |
         -DENABLE_SHARED=ON \
         -DENABLE_ASSEMBLY=OFF
 
-dotweak: gsed -i '/^Libs:/s|-l-l||' lib/pkgconfig/x265.pc
+dotweak: gsed -i '/^Libs:/s|-l-l:libunwind\.a||g' lib/pkgconfig/x265.pc

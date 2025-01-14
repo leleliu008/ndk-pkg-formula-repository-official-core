@@ -3,6 +3,5 @@ web-url: https://www.apollographql.com/docs/rover/
 src-url: https://github.com/apollographql/rover/archive/refs/tags/v0.26.3.tar.gz
 src-sha: accf6257f030e109d8626d2acf2885d2512d1a8918f88ea4e392712d879768c6
 license: MIT
-dep-pkg: libz
-dep-upp: libopenssl
+dep-pkg: libz openssl-dev
 install: cargow install --locked
