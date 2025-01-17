@@ -8,7 +8,7 @@ on:
 
 jobs:
   ubuntu:
-    if: false
+    if: true
     strategy:
 
       fail-fast: false
@@ -16,7 +16,8 @@ jobs:
       matrix:
         #tag: ['24.04' ,'22.04', '20.04']
         tag: ['20.04']
-        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        abi: [arm64-v8a]
         opt: ['--static', '']
         pkg: [shc,shell2http,shellharden,shiori,silicon,sjpeg,skcms,sl,sndfile,spdlog]
 
@@ -41,7 +42,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   alpine:
-    if: true
+    if: false
 
     strategy:
 
