@@ -8,7 +8,7 @@ on:
 
 jobs:
   ubuntu:
-    if: true
+    if: false
     strategy:
 
       fail-fast: false
@@ -121,7 +121,7 @@ jobs:
 
 
   macos:
-    if: false
+    if: true
 
     strategy:
 
@@ -129,7 +129,8 @@ jobs:
 
       matrix:
         os:  [macos-15]
-        abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
+        abi: [arm64-v8a]
         opt: ['--static', '']
         pkg: [easyutils,ed,elvish,epsilon,erdtree,esbuild,ethereum,exa,exhale,exiv2]
 
