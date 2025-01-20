@@ -1,0 +1,9 @@
+summary: Successor of GNU Wget, a file and recursive website downloader
+web-url: https://gitlab.com/gnuwget/wget2
+src-url: https://ftp.gnu.org/gnu/wget/wget2-2.2.0.tar.gz
+src-sha: 2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357
+license: GPL-3.0-or-later
+dep-pkg: libz libbz2 liblzma libzstd lzlib libbrotli libnghttp2 openssl-dev libpcre2 libpsl
+dep-lib: -lc++
+dep-upp: texinfo doxygen
+install: configure --with-ssl=openssl --with-bzip2 --with-lzma --without-gpgme --enable-static --disable-shared

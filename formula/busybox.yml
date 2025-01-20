@@ -9,6 +9,7 @@ ccflags: -Wno-ignored-optimization-argument -Wno-unused-command-line-argument -W
 
 dopatch: |
     ln -s "$ANDROID_NDK_CC" ../bin/clang
+    ln -s "$CC_FOR_BUILD"   ../bin/gcc
 
     printf '\n' > ../include/ndk-pkg-common.h
 

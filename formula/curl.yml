@@ -1,8 +1,8 @@
 summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.10.0.tar.bz2
-src-sha: be30a51f7bbe8819adf5a8e8cc6991393ede31f782b8de7b46235cc1eb7beb9f
+src-url: https://curl.haxx.se/download/curl-8.11.1.tar.bz2
+src-sha: e9773ad1dfa21aedbfe8e1ef24c9478fa780b1b3d4f763c98dd04629b5e43485
 license: curl
 dep-pkg: libnghttp2 libcares libzstd libz libbrotli openssl-dev
 dep-upp: perl

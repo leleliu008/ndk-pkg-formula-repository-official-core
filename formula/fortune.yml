@@ -1,7 +1,7 @@
 summary: A command-line tool for displaying a random quotation
-src-url: https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.18.0/fortune-mod-3.18.0.tar.xz
-src-sha: c5a681f1a2601b7186d1f612d2f3a7c42e1189f4326f17a34bccaca98134c42b
+src-url: https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.24.0/fortune-mod-3.24.0.tar.xz
+src-sha: 1f387877254e95eab61f937257b42609f29b994ef0571531655bbfc3a2ac74ac
 dep-upp: perl xsltproc docbook-xsl
-dep-plm: App::Cpan Path::Tiny App::Docmake
+dep-plm: App::Docmake Code::TidyAll::Plugin::ClangFormat Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TestCount File::Find::Object List::Util Path::Tiny Perl::Critic Perl::Tidy Test::Code::TidyAll Test::Differences Test::RunValgrind Test::TrailingSpace Test::Trap
 do12345: cmakew
 install: cmakew

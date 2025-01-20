@@ -1,8 +1,8 @@
 summary: A free, open-source, command-line tool that is used to download files from web servers using HTTP, HTTPS, FTP protocols
 git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
-src-url: https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz
-src-sha: fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de
+src-url: https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
+src-sha: 766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784
 dep-pkg: openssl-dev libcares libidn2 libz
 license: GPL-3.0-or-later
 
