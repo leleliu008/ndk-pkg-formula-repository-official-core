@@ -39,7 +39,9 @@ install: |
         --disable-hwclock-cmos \
         ac_cv_func_setns=yes \
         ac_cv_func_unshare=yes \
-        ac_cv_func_uselocale=no
+        ac_cv_func_uselocale=no \
+        ac_cv_func_statx=no \
+        ac_cv_type_struct_statx=no
 
 patches:
     a8b2bcf9ca30674522443f980600ba2a36410fa908550d534a54f61d6ce292cb|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/configure.patch

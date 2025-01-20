@@ -32,7 +32,7 @@ install: |
     install_bins busybox
  
 res-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/busybox.config
-res-sha: 5dd6118c4571ec21186bdd4d87904f41e64f6d62ddfc73fa7396260de71f8432
+res-sha: e51e59e8569380a7fcd86e55e2d8a526f92b876f7f3691c04ab215970eaac7df
 
 fix-opt: -p0
 patches: |
@@ -49,3 +49,5 @@ patches: |
     37902a94f75c3e17fa4dc76b88ca4eba359cca6280fec2006f201d8ccce72087|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0012-util-linux-mount-no-addmntent.patch
     fb4014b02bfb12c8791f402dbd0e3abb57a494361e0f8cd7e010258cc5eda319|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0013-busybox-1.36.1-kernel-6.8.patch
     11fea0ed7efe00bd611465cff56ff7bc784fc92fd51af76a83853e033632c23c|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0014-fix-segfault.patch
+    1b6f60fb8c949c7914fe119c810f3c6be14daabb08eabb0fa2a84775f626ae42|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0015-fix-ipv6.patch
+    38de1b3e7a8b58169edc7625738fffb93140cdcd8ef8d58c1b261e360aafadee|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0016-fix-ipv6-2.patch
