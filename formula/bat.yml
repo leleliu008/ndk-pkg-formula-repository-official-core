@@ -2,18 +2,7 @@ summary: Clone of cat(1) with syntax highlighting and Git integration
 src-url: https://github.com/sharkdp/bat/archive/refs/tags/v0.24.0.tar.gz
 src-sha: 907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 license: Apache-2.0
-dep-pkg: libgetloadavg libgit2
-ccflags: -Dindex=strchr
-
-prepare: |
-    # https://docs.rs/openssl/latest/openssl/
-    # https://lib.rs/crates/libgit2-sys
-    export LIBGIT2_NO_VENDOR=1
-    export OPENSSL_NO_VENDOR=1
-    export OPENSSL_STATIC=1
-    export LIBGIT2_SYS_USE_PKG_CONFIG=1
-    export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    export LIBZ_SYS_STATIC=1
+dep-pkg: libz
 
 install: |
     cargow install
