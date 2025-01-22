@@ -1,6 +1,5 @@
 summary: parse suboption arguments from a string
 web-url: https://linux.die.net/man/3/getsubopt
-dep-pkg: libstrchrnul
 version: 1
 binbstd: 1
 install: |
@@ -40,6 +39,12 @@ install: |
     #include <stdlib.h>
     #include <string.h>
 
+    static char* strchrnul_my(const char* s, int c) {
+        while (*s && *s != c) {
+            ++s;
+        }
+        return s;
+    }
 
     /* Parse comma separated suboption from *OPTIONP and match against
        strings in TOKENS.  If found return index and set *VALUEP to
@@ -57,7 +62,7 @@ install: |
         return -1;
 
       /* Find end of next token.  */
-      endp = strchrnul (*optionp, ',');
+      endp = strchrnul_my (*optionp, ',');
 
       /* Find start of value.  */
       vstart = memchr (*optionp, '=', endp - *optionp);

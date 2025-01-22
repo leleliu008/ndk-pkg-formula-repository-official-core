@@ -1,11 +1,27 @@
-summary: Download with resuming and segmented downloading
+summary: A lightweight multi-protocol & multi-source, cross platform download utility
 web-url: https://aria2.github.io
 src-url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
 src-sha: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
 license: GPL-2.0-or-later
-dep-pkg: libgnutls libcares libxml2 libz
+dep-pkg: libcares libssh2 libxml2 libsqlite3
 
-install: configure --disable-libaria2 LIBS=-ldl
+install: |
+    configure \
+        --enable-static \
+        --disable-shared \
+        --disable-libaria2 \
+        --without-libnettle \
+        --without-libgcrypt \
+        --without-libexpat \
+        --without-libgmp \
+        --without-gnutls \
+        --with-libcares \
+        --with-libssh2 \
+        --with-libxml2 \
+        --with-sqlite3 \
+        --with-openssl \
+        --with-libz \
+        LIBS=-liconv
 
 caveats: |
     If aria2c is a fully statically linked executable, to get it working on Android 8 and later, you need to run aria2c like below
