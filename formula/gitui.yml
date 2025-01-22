@@ -1,20 +1,9 @@
 summary: Blazing fast terminal-ui for git written in rust
-src-url: https://github.com/extrawurst/gitui/archive/refs/tags/v0.26.3.tar.gz
-src-sha: 8075e180f3b01ff0c290b690488a7628c44b4de12346e04a77d823914a48918b
+src-url: https://github.com/extrawurst/gitui/archive/refs/tags/v0.27.0.tar.gz
+src-sha: 55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b
 license: MIT
-dep-pkg: libgit2 libssh2
-dep-upp: gmake
-ccflags: -Dindex=strchr
-
-prepare: |
-    export LIBGIT2_NO_VENDOR=1
-    export OPENSSL_NO_VENDOR=1
-    export OPENSSL_STATIC=1
-    export LIBGIT2_SYS_USE_PKG_CONFIG=1
-    export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    export LIBZ_SYS_STATIC=1
-
-install: cargow install --locked
+dep-pkg: libz openssl-dev
+bsystem: cargo
 
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
 api-min: 23

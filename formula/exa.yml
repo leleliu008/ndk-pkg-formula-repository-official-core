@@ -3,8 +3,8 @@ web-url: https://the.exa.website
 src-url: https://github.com/ogham/exa/archive/v0.10.1.tar.gz
 src-sha: ff0fa0bfc4edef8bdbbb3cabe6fdbd5481a71abbbcc2159f402dea515353ae7c
 license: MIT
-dep-pkg: libz libgit2
-install: cargow install --locked
+dep-pkg: libz
+bsystem: cargo
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 api-min: 24
