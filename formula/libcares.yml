@@ -1,9 +1,7 @@
 summary: Asynchronous DNS library
 web-url: https://c-ares.org/
-src-url: https://github.com/c-ares/c-ares/archive/refs/tags/v1.33.1.tar.gz
-src-sha: b3d127d8357863eb465053ce9308b79d9b00314f92ec09df056221a1a45c2fef
-
-dopatch: gsed -i 's|LIST (APPEND CARES_DEPENDENT_LIBS ${CMAKE_THREAD_LIBS_INIT})|LIST (APPEND CARES_DEPENDENT_LIBS pthread)|' CMakeLists.txt
+src-url: https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz
+src-sha: fa38dbed659ee4cc5a32df5e27deda575fa6852c79a72ba1af85de35a6ae222f
 
 install: |
     cmakew \
@@ -13,5 +11,3 @@ install: |
         -DCARES_STATIC_PIC=ON \
         -DCARES_BUILD_TOOLS=OFF \
         -DCARES_BUILD_TESTS=OFF
-
-dotweak: ln -s libcares_static.a lib/libcares.a
