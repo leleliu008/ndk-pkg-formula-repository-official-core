@@ -6,23 +6,17 @@ license: LGPL-2.0-or-later
 dep-pkg: libarchive libuchardet libxml2 libssh openssl-dev
 dep-upp: perl
 
-dopatch: |
-    for d in inside incsrch compare filecase multiarc tmppanel calc NetRocks
-    do
-        gsed -i '/target_link_libraries/s|utils|WinPort|' "$d/CMakeLists.txt"
-    done
-    gsed -i 's|    utils|    WinPort|' colorer/CMakeLists.txt
-    gsed -i 's|getpass("Password please:")|""|g' multiarc/src/formats/libarch/libarch_utils.cpp
+dopatch: gsed -i 's|getpass("Password please:")|""|g' multiarc/src/formats/libarch/libarch_utils.cpp
 
 prepare: export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS $LDFLAGS"
 
-install: cmakew -DANDROID=ON -DUSEWX=OFF
+install: cmakew -DANDROID_ALLOW_UNDEFINED_SYMBOLS=ON -DUSEWX=OFF
 
 patches: |
-    87565c4a8009f0667d0d52339745109202aed722a9a92f64c5fdf70b4ee816eb|https://github.com/spvkgn/far2l-termux/raw/refs/heads/main/far2l/far2l-src-setattr.cpp.patch
-    82a584804feade3b72045c553ddfbbf78d722e6ffc03dc5c53ebbefa7414cbc6|https://github.com/spvkgn/far2l-termux/raw/refs/heads/main/far2l/multiarc-CMakeLists.txt.patch
-    318581c5614eec74abe339d7941c7cd287a712f9b35218ec788b4db0c02eeab6|https://github.com/spvkgn/far2l-termux/raw/refs/heads/main/far2l/multiarc-src-formats-rar-unrar-os.hpp.patch
-    068e7ff80b1bb45bc68c06ca095e54ef3be7cb54898d8c1b2bd214fc8d33dfcf|https://github.com/spvkgn/far2l-termux/raw/refs/heads/main/far2l/NetRocks-src-Protocol-SSH-SSHConnection.cpp.patch
+    87565c4a8009f0667d0d52339745109202aed722a9a92f64c5fdf70b4ee816eb|https://github.com/termux/termux-packages/raw/refs/heads/master/x11-packages/far2l/far2l-src-setattr.cpp.patch
+    82a584804feade3b72045c553ddfbbf78d722e6ffc03dc5c53ebbefa7414cbc6|https://github.com/termux/termux-packages/raw/refs/heads/master/x11-packages/far2l/multiarc-CMakeLists.txt.patch
+    318581c5614eec74abe339d7941c7cd287a712f9b35218ec788b4db0c02eeab6|https://github.com/termux/termux-packages/raw/refs/heads/master/x11-packages/far2l/multiarc-src-formats-rar-unrar-os.hpp.patch
+    068e7ff80b1bb45bc68c06ca095e54ef3be7cb54898d8c1b2bd214fc8d33dfcf|https://github.com/termux/termux-packages/raw/refs/heads/master/x11-packages/far2l/NetRocks-src-Protocol-SSH-SSHConnection.cpp.patch
 
 # void endpwent(void) __INTRODUCED_IN(26);
 api-min: 26
