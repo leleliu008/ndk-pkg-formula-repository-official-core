@@ -1,7 +1,7 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
-src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.7.2.tar.gz
-src-sha: de384e29d7efc9330c6cdb126ebf88342b5025d920dcb7c645defad85195ea7f
+src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.0.tar.gz
+src-sha: 75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2
 dep-pkg: libssh2 libpcre2 libiconv
 license: GPL-2.0-only
 
