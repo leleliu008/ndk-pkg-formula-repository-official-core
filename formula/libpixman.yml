@@ -1,7 +1,7 @@
 summary: A low-level library for pixel manipulation
 git-url: https://gitlab.freedesktop.org/pixman/pixman
 web-url: https://cairographics.org
-src-url: https://cairographics.org/releases/pixman-0.42.2.tar.gz
-src-sha: ea1480efada2fd948bc75366f7c349e1c96d3297d09a3fe62626e38e234a625e
+src-url: https://cairographics.org/releases/pixman-0.44.2.tar.gz
+src-sha: 6349061ce1a338ab6952b92194d1b0377472244208d47ff25bef86fc71973466
 license: MIT
 install: mesonw -Dneon=disabled -Darm-simd=disabled -Da64-neon=disabled

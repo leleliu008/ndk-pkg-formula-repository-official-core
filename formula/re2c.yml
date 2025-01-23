@@ -1,7 +1,7 @@
-summary: Generate C-based recognizers from regular expressions
+summary: A free and open-source lexer generator that generates C-based recognizers from regular expressions
 web-url: https://re2c.org/
-src-url: https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz
-src-sha: 0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029
+src-url: https://github.com/skvadrik/re2c/releases/download/4.0.2/re2c-4.0.2.tar.xz
+src-sha: 5e52ce0e26326115e41bc45d34dc2d5e10f2e44ed3a413fa2a826aa3500c8d56
 dep-upp: python3
 install: |
     cmakew \

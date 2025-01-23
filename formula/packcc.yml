@@ -1,6 +1,7 @@
 summary: A packrat parser generator for C
-git-url: https://github.com/arithy/packcc
-
+src-url: https://github.com/arithy/packcc/archive/refs/tags/v2.0.2.tar.gz
+src-sha: b9bea7b2dee2a9bbc4d513a912b52d646556161a4f97e1074c9c9a509f2cc343
+license: MIT
 install: |
     run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o packcc ../src/packcc.c
     install_bins packcc
