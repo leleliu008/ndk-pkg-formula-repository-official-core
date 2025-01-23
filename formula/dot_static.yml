@@ -1,11 +1,10 @@
 summary: A command-line tool for drawing graphs
 web-url: https://www.graphviz.org/
-src-url: https://gitlab.com/graphviz/graphviz/-/archive/11.0.0/graphviz-11.0.0.tar.bz2
-src-sha: 95173d21922082b0b2649fb24c1dc4bbc1e39504a92903b88df39804778cbb9d
+src-url: https://gitlab.com/graphviz/graphviz/-/archive/12.2.1/graphviz-12.2.1.tar.xz
+src-sha: 85e34b5c982777c30f01dfab9ea7c713b4335a2f584e62c0abb9868413eb915b
 license: EPL-1.0
 dep-pkg: gd pango libglob
 dep-upp: libtool gm4 flex bison gawk git python3
-bsystem: autogen
 
 prepare: export LDFLAGS="$LDFLAGS --static -static"
 
