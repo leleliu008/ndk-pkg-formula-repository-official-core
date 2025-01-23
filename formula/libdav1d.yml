@@ -1,7 +1,7 @@
 summary: AV1 decoder targeted to be small and fast
 git-url: https://code.videolan.org/videolan/dav1d
-src-url: https://code.videolan.org/videolan/dav1d/-/archive/1.4.3/dav1d-1.4.3.tar.bz2
-src-sha: 2a7e68a17b22d1c060d31a7af84c8e033a145fca1d63ef36d57f0f39eb4dd0df
+src-url: https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2
+src-sha: 4eddffd108f098e307b93c9da57b6125224dc5877b1b3d157b31be6ae8f1f093
 license: BSD-2-Clause
 dep-upp: nasm
 

@@ -1,14 +1,16 @@
 summary: A free, general-purpose data compression with a high compression ratio
 web-url: https://tukaani.org/xz
-src-url: https://downloads.sourceforge.net/project/lzmautils/xz-5.4.6.tar.gz
-src-uri: https://archive.org/download/xz-5.4.6/xz-5.4.6.tar.gz
-src-sha: aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d43fd5c
+src-url: https://github.com/tukaani-project/xz/releases/download/v5.6.3/xz-5.6.3.tar.gz
+src-sha: b1d45295d3f71f25a4c9101bd7c8d16cb56348bbef3bbc738da0351e17c73317
 license: LGPL-2.1-or-later
 
 install: |
     configure \
         --disable-external-sha256 \
+        --disable-nls \
         --disable-werror \
+        --disable-shared \
+        --enable-static \
         --enable-assembler \
         --enable-threads=posix
 

@@ -1,9 +1,10 @@
 summary: Syntax-highlighting pager for git and diff output
-src-url: https://github.com/dandavison/delta/archive/refs/tags/0.17.0.tar.gz
-src-sha: 1abd21587bcc1f2ef0cd342784ce990da9978bc345578e45506419e0952de714
+src-url: https://github.com/dandavison/delta/archive/refs/tags/0.18.2.tar.gz
+src-sha: 64717c3b3335b44a252b8e99713e080cbf7944308b96252bc175317b10004f02
 license: MIT
 dep-pkg: libz
 bsystem: cargo
 
-# stdlib.h: int getloadavg(double __averages[], int __n) __INTRODUCED_IN(29);
-api-min: 29
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24
