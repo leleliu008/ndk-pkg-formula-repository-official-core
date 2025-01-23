@@ -1,0 +1,7 @@
+summary: A general purpose TCP-IP emulator
+git-url: https://gitlab.freedesktop.org/slirp/libslirp
+src-url: https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.8.0/libslirp-v4.8.0.tar.gz
+src-sha: 2a98852e65666db313481943e7a1997abff0183bd9bea80caec1b5da89fda28c
+license: BSD-3-Clause
+dep-pkg: glib
+bsystem: meson
