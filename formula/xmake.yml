@@ -1,9 +1,10 @@
 pkgtype: pie
 summary: A cross-platform build utility based on Lua
 web-url: https://xmake.io/
-src-url: https://github.com/xmake-io/xmake/releases/download/v2.9.2/xmake-v2.9.2.tar.gz
-src-sha: 1f617b6a4568c7eb3e8ab0f3a67c16989245adc547e3a7d1fd861acb308fb5b2
+src-url: https://github.com/xmake-io/xmake/releases/download/v2.9.7/xmake-v2.9.7.tar.gz
+src-sha: 248e496a5a734c89e167f931e2620c0ea4109e7ca913dc1022735129a5ffe9d3
 license: Apache-2.0
+dep-pkg: libreadline
 bscript: core
 bsystem: xmake
 ccflags: -Wno-error=unused-but-set-variable
