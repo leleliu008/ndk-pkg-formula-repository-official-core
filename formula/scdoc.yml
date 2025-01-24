@@ -1,6 +1,7 @@
 summary: A small man page generator
 web-url: https://sr.ht/~sircmpwn/scdoc/
 src-url: https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.3.tar.gz
+src-uri: https://distfiles.macports.org/scdoc/1.11.3.tar.gz
 src-sha: 4c5c6136540384e5455b250f768e7ca11b03fdba1a8efc2341ee0f1111e57612
 license: MIT
 dep-upp: scdoc
