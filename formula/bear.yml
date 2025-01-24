@@ -3,13 +3,10 @@ summary: Generate compilation database for clang tooling
 src-url: https://github.com/rizsotto/Bear/archive/refs/tags/3.1.5.tar.gz
 src-sha: 4ac7b041222dcfc7231c6570d5bd76c39eaeda7a075ee2385b84256e7d659733
 license: GPL-3.0-or-later
-dep-pkg: fmt grpc nlohmann-json spdlog
+dep-pkg: fmt grpc nlohmann-json spdlog libposix_spawn
 dep-upp: grpc-plugins
 
 install: |
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
-
-# spawn.h: int posix_spawnp(pid_t* __pid, const char* __file, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
-api-min: 28

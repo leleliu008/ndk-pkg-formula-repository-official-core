@@ -3,7 +3,7 @@ web-url: https://ccache.dev
 src-url: https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.xz
 src-sha: c0b85ddfc1a3e77b105ec9ada2d24aad617fa0b447c6a94d55890972810f0f5a
 license: GPL-3.0-or-later
-dep-pkg: libhiredis libblake3 libxxhash libzstd fmt
+dep-pkg: libhiredis libblake3 libxxhash libzstd fmt libposix_spawn
 
 dopatch: |
     gsed -i '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
@@ -18,6 +18,3 @@ install: |
         -DENABLE_TESTING=OFF \
         -DWARNINGS_AS_ERRORS=OFF \
         -DZSTD_FROM_INTERNET=OFF
-
-# spawn.h int posix_spawnp(pid_t* _Nullable __pid, const char* _Nonnull __file, const posix_spawn_file_actions_t _Nullable * _Nullable __actions, const posix_spawnattr_t _Nullable * _Nullable __attr, char* const _Nonnull __argv[_Nonnull], char* const _Nullable __env[_Nullable]) __INTRODUCED_IN(28);
-api-min: 28

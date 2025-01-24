@@ -3,7 +3,5 @@ web-url: https://ninja-build.org
 src-url: https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz
 src-sha: 821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a
 license: Apache-2.0
+dep-pkg: libposix_spawn
 bsystem: cmake
-
-# spawn.h: int posix_spawn(pid_t* __pid, const char* __path, const posix_spawn_file_actions_t* __actions, const posix_spawnattr_t* __attr, char* const __argv[], char* const __env[]) __INTRODUCED_IN(28);
-api-min: 28

@@ -4,8 +4,8 @@ web-url: https://fishshell.com/
 src-url: https://github.com/fish-shell/fish-shell/releases/download/3.7.1/fish-3.7.1.tar.xz
 src-sha: 614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250
 license: GPL-2.0-or-later
-dep-pkg: libpcre2 libreadline
+dep-pkg: libpcre2 libreadline libposix_spawn
 install: cmakew -DWITH_GETTEXT=OFF
 
-# spawn.h int posix_spawnp(pid_t* _Nullable __pid, const char* _Nonnull __file, const posix_spawn_file_actions_t _Nullable * _Nullable __actions, const posix_spawnattr_t _Nullable * _Nullable __attr, char* const _Nonnull __argv[_Nonnull], char* const _Nullable __env[_Nullable]) __INTRODUCED_IN(28);
-api-min: 28
+# stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
+api-min: 26

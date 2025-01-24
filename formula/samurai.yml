@@ -2,9 +2,12 @@ summary: Ninja-compatible build tool written in C
 src-url: https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz
 src-sha: 3b8cf51548dfc49b7efe035e191ff5e1963ebc4fe8f6064a5eefc5343eaf78a5
 license: Apache-2.0
+dep-pkg: libposix_spawn
 
 fix-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/samurai/0e98a83a8e5e32898ef52764acef48d1db2d960d.patch
 fix-sha: 870b7f988e470839a59f3ee764b835c8574e5427513e066477179b2bc23edd85
+
+prepare: export ANDROID_NDK_COMPILER_ARGS="$ANDROID_NDK_COMPILER_ARGS $CFLAGS $CPPFLAGS $LDFLAGS"
 
 install: |
     gmakew clean
