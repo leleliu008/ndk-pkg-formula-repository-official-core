@@ -1,0 +1,16 @@
+summary: Email client that runs in your terminal
+web-url: https://aerc-mail.org/
+git-url: https://git.sr.ht/~rjarry/aerc
+src-url: https://git.sr.ht/~rjarry/aerc/archive/0.19.0.tar.gz
+src-sha: caf830959cf689db257ffb64893fd78f1a362a22fe774dd561340fc552d599eb
+license: MIT
+dep-upp: scdoc
+bsystem: gmake go
+
+install: |
+    gmakew clean
+    gmakew PREFIX="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
+
+# langinfo.h char* _Nonnull nl_langinfo_l(nl_item __item, locale_t _Nonnull __l) __INTRODUCED_IN(26);
+min-api: 26

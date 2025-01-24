@@ -5,8 +5,6 @@ src-sha: 75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2
 dep-pkg: libssh2 libpcre2 libiconv
 license: GPL-2.0-only
 
-dopatch: find . -name 'CMakeLists.txt' -exec gsed -i 's|C_STANDARD 90|C_STANDARD 99|' {} +
-
 install: |
     cmakew 2 \
         -DBUILD_CLI=OFF \
