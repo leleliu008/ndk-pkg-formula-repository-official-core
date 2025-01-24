@@ -1,0 +1,9 @@
+summary: library to spawn a process
+web-url: https://pubs.opengroup.org/onlinepubs/9799919799/functions/posix_spawn.html
+src-url: https://github.com/leleliu008/android-ndk-missing/archive/refs/tags/v1.tar.gz
+src-sha: 8422c887712a012d6956d201a5e1587e3ef9b3bd2860a9bcc202715b3174bb76
+install: |
+    run $CXX -c $CXXFLAGS $CPPFLAGS -o posix_spawn.o ../posix_spawn.cpp
+    run $AR rsc libposix_spawn.a  posix_spawn.o
+    run install_incs ../posix_spawn.h
+    run install_libs libposix_spawn.a

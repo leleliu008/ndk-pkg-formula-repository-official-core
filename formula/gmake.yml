@@ -34,5 +34,3 @@ dopatch: |
 install: configure --without-guile --without-dmalloc
 
 dotweak: ln -s make bin/gmake
-
-api-min: 28
