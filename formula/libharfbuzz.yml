@@ -1,6 +1,6 @@
 summary: A text shaping engine. It primarily supports OpenType, but also Apple Advanced Typography
-src-url: https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.5.0.tar.gz
-src-sha: 7ad8e4e23ce776efb6a322f653978b3eb763128fd56a90252775edb9fd327956
+src-url: https://github.com/harfbuzz/harfbuzz/archive/refs/tags/10.2.0.tar.gz
+src-sha: 11749926914fd488e08e744538f19329332487a6243eec39ef3c63efa154a578
 dep-pkg: icu4c glib libgraphite2
 license: MIT
 

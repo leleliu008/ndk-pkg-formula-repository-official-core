@@ -1,15 +1,9 @@
 summary: charset conversion library
 git-url: https://git.savannah.gnu.org/git/libiconv.git
 web-url: https://www.gnu.org/software/libiconv
-src-url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz
-src-sha: 8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
+src-url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
+src-sha: 3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8
 license: GPL-3.0-or-later LGPL-2.0-or-later
-
-dopatch: |
-    if [ "$TARGET_PLATFORM_VERS" -lt 30 ] ; then
-        gsed -i '1i void* mempcpy(void* dst, const void* src, size_t n) {return memcpy(dst, src, n) + n;}' srclib/canonicalize-lgpl.c
-        gsed -i '1i #include <string.h>' srclib/canonicalize-lgpl.c
-    fi
 
 install: configure --enable-extra-encodings
 

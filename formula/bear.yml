@@ -10,3 +10,6 @@ install: |
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
+
+# posix_spawn_file_actions_init
+api-min: 24

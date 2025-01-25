@@ -17,6 +17,5 @@ install: |
         --without-gcov \
         --without-p11-kit
 
-# no member named '_p' in 'struct __sFILE'
-#  return fp->_p - fp->_bf._base;
-api-min: 24
+# time.h time_t mktime_z(timezone_t _Nonnull __tz, struct tm* _Nonnull __tm) __INTRODUCED_IN(35);
+#api-min: 35

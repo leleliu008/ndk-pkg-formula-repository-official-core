@@ -1,6 +1,6 @@
 summary: Kubernetes package manager
 web-url: https://helm.sh/
-src-url: https://github.com/helm/helm/archive/refs/tags/v3.15.2.tar.gz
-src-sha: c26b74f855cd403183729f24be5a60ed6ed018d2855f0d9caf99cacb127f34b2
+src-url: https://github.com/helm/helm/archive/refs/tags/v3.17.0.tar.gz
+src-sha: ce7a7170f585cfdb8f9e79c09aa7a73c563fa6c76a15dadf4b73a8ae1223f894
 license: Apache-2.0
 install: gow ./cmd/helm

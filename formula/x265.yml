@@ -6,13 +6,11 @@ src-sha: 206329b9599c78d06969a1b7b7bb939f7c99a459ab283b2e93f76854bd34ca7b
 license: GPL-2.0-only
 bscript: source
 
-dopatch: gsed -i 's|cli x265-shared|cli x265-static|' CMakeLists.txt
-
 install: |
     cmakew \
         -DENABLE_PIC=ON \
         -DENABLE_CLI=ON \
-        -DENABLE_SHARED=ON \
+        -DENABLE_SHARED=OFF \
         -DENABLE_ASSEMBLY=OFF
 
 dotweak: rm -rf include/ lib/

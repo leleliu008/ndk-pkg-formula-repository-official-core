@@ -1,0 +1,7 @@
+summary: Matching Algorithm with Recursively Implemented StorAge
+src-url: https://github.com/s-yata/marisa-trie/archive/refs/tags/v0.2.6.tar.gz
+src-sha: 1063a27c789e75afa2ee6f1716cc6a5486631dcfcb7f4d56d6485d2462e566de
+license: BSD-2-Clause LGPL-2.1-or-later
+dep-upp: libtool
+bsystem: autotools
+binbstd: 1

@@ -1,0 +1,8 @@
+summary: A command-line utility for converting text from one encoding to another
+git-url: https://git.savannah.gnu.org/git/libiconv.git
+web-url: https://www.gnu.org/software/libiconv
+src-url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
+src-sha: 3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8
+license: GPL-3.0-or-later LGPL-2.0-or-later
+
+install: configure --enable-extra-encodings --enable-static --disable-shared
