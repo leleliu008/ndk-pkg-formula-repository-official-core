@@ -1,0 +1,30 @@
+summary: test C++
+web-url: https://dd
+
+prepare: |
+    cat > test.cc <<EOF
+    #include<iostream>
+    using namespace std;
+
+    int main() {
+        cout << "Hello C++" << endl;
+        return 0;
+    }
+    EOF
+
+    cat > CMakeLists.txt <<EOF
+    cmake_minimum_required(VERSION 3.0.0)
+    project(test-cxx CXX)
+    add_executable(test-cxx test.cc)
+    include(GNUInstallDirs)
+    install(TARGETS test-cxx RUNTIME DESTINATION \${CMAKE_INSTALL_BINDIR})
+    EOF
+
+install: |
+    export NDKPKG_VERBOSE=1
+
+    cmakew
+
+    #run $CXX_FOR_BUILD $CXXFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD test.cc
+    run $CXX $CXXFLAGS $CPPFLAGS $LDFLAGS -static-libstdc++ ../test.cc
+    install_bins a.out
