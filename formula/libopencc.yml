@@ -3,6 +3,7 @@ src-url: https://github.com/BYVoid/OpenCC/archive/refs/tags/ver.1.1.9.tar.gz
 src-sha: ad4bcd8d87219a240a236d4a55c9decd2132a9436697d2882ead85c8939b0a99
 version: 1.1.9
 license: Apache-2.0
+dep-upp: python3
 
 do12345: cmakew   -DBUILD_PYTHON=OFF -DBUILD_SHARED_LIBS=OFF
 
