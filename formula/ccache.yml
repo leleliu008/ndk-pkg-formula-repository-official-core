@@ -3,7 +3,7 @@ web-url: https://ccache.dev
 src-url: https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.xz
 src-sha: c0b85ddfc1a3e77b105ec9ada2d24aad617fa0b447c6a94d55890972810f0f5a
 license: GPL-3.0-or-later
-dep-pkg: libhiredis libblake3 libxxhash libzstd fmt libposix_spawn
+dep-pkg: libhiredis libblake3 libxxhash libzstd libfmt libposix_spawn
 
 dopatch: |
     gsed -i '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
