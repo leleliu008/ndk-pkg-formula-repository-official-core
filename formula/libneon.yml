@@ -1,0 +1,8 @@
+summary: HTTP and WebDAV client library with a C interface
+web-url: https://notroj.github.io/neon/
+src-url: https://notroj.github.io/neon/neon-0.34.0.tar.gz
+src-sha: 2e3ee8535039966c80764f539d5c9bfee1651a17e2f36e5ca462632181253977
+license: LGPL-2.0-or-later
+dep-pkg: libz libexpat openssl-dev
+install: configure --with-expat --with-ssl=openssl
+binbstd: 1

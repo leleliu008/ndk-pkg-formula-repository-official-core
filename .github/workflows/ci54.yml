@@ -19,7 +19,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder,superfile]
+        pkg: [sjpeg,skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder]
 
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder,superfile]
+        pkg: [sjpeg,skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder]
 
     runs-on: ubuntu-latest
 
@@ -81,7 +81,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder,superfile]
+        pkg: [sjpeg,skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder]
 
     runs-on: ubuntu-latest
 
@@ -132,7 +132,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder,superfile]
+        pkg: [sjpeg,skcms,sl,sndfile,speex,sqlite3,starship,stwolame,stylua,subfinder]
 
     runs-on: ${{ matrix.os }}
 
