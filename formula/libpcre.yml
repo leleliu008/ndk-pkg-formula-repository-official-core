@@ -5,7 +5,7 @@ src-sha: 4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8
 license: BSD-3-Clause
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DPCRE_BUILD_PCRE8=ON \
         -DPCRE_BUILD_PCRE16=ON \
         -DPCRE_BUILD_PCRE32=ON \
@@ -13,8 +13,7 @@ install: |
         -DPCRE_BUILD_PCREGREP=OFF \
         -DPCRE_BUILD_TESTS=OFF \
         -DPCRE_SUPPORT_VALGRIND=OFF \
-        -DPCRE_SUPPORT_UNICODE_PROPERTIES=ON \
-        -DBUILD_SHARED_LIBS=OFF
+        -DPCRE_SUPPORT_UNICODE_PROPERTIES=ON
 
 dotweak: |
     for item in pcre pcre16 pcre32 pcreposix

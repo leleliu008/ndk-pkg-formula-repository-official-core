@@ -1,0 +1,12 @@
+summary: MPEG audio decoder
+web-url: https://www.underbit.com/products/mad/
+src-url: https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz
+src-sha: bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690
+license: GPL-2.0-or-later
+dep-upp: libtool
+bsystem: autotools
+onready: |
+    touch NEWS
+    touch AUTHORS
+    touch ChangeLog
+install: configure --disable-debugging --enable-fpm=64bit

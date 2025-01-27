@@ -1,0 +1,8 @@
+summary: ID3 tag manipulation library
+web-url: https://www.underbit.com/products/mad/
+src-url: https://codeberg.org/tenacityteam/libid3tag/archive/0.16.3.tar.gz
+src-sha: 0561009778513a95d91dac33cee8418d6622f710450a7cb56a74636d53b588cb
+license: GPL-2.0-only
+dep-pkg: libz
+dep-upp: gperf
+install: cmakew 2
