@@ -19,5 +19,5 @@ dotweak: |
     Description: $PACKAGE_SUMMARY
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lltdl
+    Libs: -L\${libdir} -lltdl -ldl
     EOF
