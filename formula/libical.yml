@@ -1,10 +1,14 @@
 summary: Implementation of iCalendar protocols and data formats
 web-url: https://libical.github.io/libical
-src-url: https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz
-src-sha: 09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f
+src-url: https://github.com/libical/libical/releases/download/v3.0.19/libical-3.0.19.tar.gz
+src-sha: 6a1e7f0f50a399cbad826bcc286ce10d7151f3df7cc103f641de15160523c73f
 license: LGPL-2.1-or-later
-dep-pkg: icu4c libxml2 glib
+dep-pkg: libicu libxml2
+dep-upp: perl
 
+prepare: export ICU_ROOT="$libicu_INSTALL_DIR"
+
+# https://github.com/libical/libical/wiki/For-the-Users:-Cross-compiling
 install: |
     cmakew \
         -DTARGET_DUMPER=OFF \
@@ -14,14 +18,11 @@ install: |
         -DICAL_ALLOW_EMPTY_PROPERTIES=OFF \
         -DICAL_BUILD_DOCS=OFF \
         -DICAL_ERRORS_ARE_FATAL=OFF \
-        -DICAL_GLIB=ON \
+        -DICAL_GLIB=OFF \
         -DICAL_GLIB_VAPI=OFF \
         -DLIBICAL_BUILD_TESTING=OFF \
         -DSHARED_ONLY=OFF \
         -DSTATIC_ONLY=OFF \
         -DTHREAD_SANITIZER=OFF \
         -DUSE_BUILTIN_TZDATA=OFF \
-        -DWITH_CXX_BINDINGS=ON \
-        -DICU_INCLUDE_DIR="$icu4c_INCLUDE_DIR" \
-        -DICU_LIBRARY="$icu4c_LIBRARY_DIR/libicuuc.so" \
-        -DICU_I18N_LIBRARY="$icu4c_LIBRARY_DIR/libicui18n.so"
+        -DWITH_CXX_BINDINGS=ON

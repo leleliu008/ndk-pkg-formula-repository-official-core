@@ -1,0 +1,19 @@
+summary: Command-driven, interactive function plotting
+web-url: http://www.gnuplot.info/
+git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
+src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.0/gnuplot-6.0.0.tar.gz
+src-sha: 635a28f0993f6ab0d1179e072ad39b8139d07f51237f841d93c6c2ff4b1758ec
+license: gnuplot
+dep-pkg: libgd libcerf libpango libreadline 
+bsystem: autotools
+
+dopatch: |
+    gsed -i -e '/SUBDIRS = /s| docs||g' -e '/SUBDIRS = /s| demo||g' Makefile.am
+
+install: |
+    configure \
+        --disable-wxwidgets \
+        --without-tutorial \
+        --without-x \
+        --without-qt \
+        --without-latex

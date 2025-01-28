@@ -3,7 +3,7 @@ web-url: https://www.graphviz.org/
 src-url: https://gitlab.com/graphviz/graphviz/-/archive/12.2.1/graphviz-12.2.1.tar.xz
 src-sha: 85e34b5c982777c30f01dfab9ea7c713b4335a2f584e62c0abb9868413eb915b
 license: EPL-1.0
-dep-pkg: gd pango libglob
+dep-pkg: libgd libpango libglob
 dep-upp: libtool gm4 flex bison gawk git python3
 
 prepare: export LDFLAGS="$LDFLAGS --static -static"

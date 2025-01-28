@@ -2,5 +2,5 @@ summary: A library for complex text layout
 src-url: https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.1.tar.gz
 src-sha: ff8f0604dc38671b57fc9ca5c15f3613e063d2f988ff14aa4de60981cb714134
 license: MIT
-dep-pkg: fribidi libharfbuzz
+dep-pkg: libfribidi libharfbuzz
 bsystem: meson

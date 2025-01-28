@@ -1,52 +1,34 @@
-summary: A C library to read, create and modify ELF binary files
+summary: C library to read, create and modify ELF binary files
 git-url: git://sourceware.org/git/elfutils.git
 web-url: https://sourceware.org/elfutils
-src-url: https://sourceware.org/elfutils/ftp/0.190/elfutils-0.190.tar.bz2
-src-sha: 8e00a3a9b5f04bc1dc273ae86281d2d26ed412020b391ffcc23198f10231d692
+src-url: https://sourceware.org/elfutils/ftp/0.191/elfutils-0.191.tar.bz2
+src-sha: df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libzstd liblzma libbz2 libz libargp libobstack
+dep-pkg: libz libfts libargp libobstack
 dep-upp: gm4
 ccflags: -Wno-error
-sfslink: 0
 
 dopatch: |
     gsed -i '/libintl\.h/d' lib/eu-config.h
     gsed -i '/dgettext/d'   lib/eu-config.h
     gsed -i '/N_(Str/a #define _(Str) Str' lib/eu-config.h
-    gsed -i '/libasm debuginfod/d' Makefile.in
-    gsed -i '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
 
 prepare: |
-    # error.h: void error(int __status, int __errno, const char* _Nonnull __fmt, ...) __printflike(3, 4) __INTRODUCED_IN(23);
-    if [ "$TARGET_PLATFORM_VERS" -ge 23 ] ; then
-        export ac_cv_header_error_h=yes
-    else
-        export ac_cv_header_error_h=no
+    # FNM_EXTMATCH is a GNU externsion, musl does not define it
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"
     fi
 
 install: |
-    configure \
-        --program-prefix=elfutils- \
+    configure only \
         --disable-libdebuginfod \
         --disable-debuginfod \
         --enable-install-elfh \
-        --with-zstd \
-        --with-lzma \
-        --with-zlib \
-        --with-bzlib
-
-dotweak: |
-    writepc libelf <<EOF
-    prefix=\${pcfiledir}/../..
-    exec_prefix=\${prefix}
-    libdir=\${exec_prefix}/lib
-    includedir=\${prefix}/include
-
-    Name: libelf
-    Description: $PACKAGE_SUMMARY
-    Version: $PACKAGE_VERSION
-    URL: $PACKAGE_WEB_URL
-    Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lelf
-    Requires: libz libzstd
-    EOF
+        --with-zlib="$libz_INSTALL_DIR" \
+        --without-zstd \
+        --without-lzma \
+        --without-bzlib
+    gmake -C lib
+    gmake -C libelf
+    gmake -C libelf install
+    install_pcfs config/libelf.pc

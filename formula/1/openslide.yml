@@ -3,7 +3,7 @@ web-url: https://openslide.org/
 src-url: https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz
 src-sha: 9938034dba7f48fadc90a2cdf8cfe94c5613b04098d1348a5ff19da95b990564
 license: LGPL-2.1-only
-dep-pkg: cairo openjpeg libsqlite3 gdk-pixbuf
+dep-pkg: libcairo openjpeg libsqlite3 libgdk-pixbuf
 bsystem: configure
 
 dopatch: |

@@ -2,5 +2,5 @@ summary: Subtitle renderer for the ASS/SSA subtitle format
 src-url: https://github.com/libass/libass/releases/download/0.17.2/libass-0.17.2.tar.xz
 src-sha: e8261b51d66ba933fe99248c6fdd8767ed96c5a7e5363c83992c735a2c2fbf74
 license: ISC
-dep-pkg: libfontconfig libharfbuzz fribidi libunibreak
+dep-pkg: libfontconfig libharfbuzz libfribidi libunibreak
 install: configure --enable-large-tiles

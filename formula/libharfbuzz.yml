@@ -1,7 +1,7 @@
 summary: A text shaping engine. It primarily supports OpenType, but also Apple Advanced Typography
 src-url: https://github.com/harfbuzz/harfbuzz/archive/refs/tags/10.2.0.tar.gz
 src-sha: 11749926914fd488e08e744538f19329332487a6243eec39ef3c63efa154a578
-dep-pkg: icu4c glib libgraphite2
+dep-pkg: libicu glib libgraphite2
 license: MIT
 
 dopatch: gsed -i "/subdir('util')/d" meson.build

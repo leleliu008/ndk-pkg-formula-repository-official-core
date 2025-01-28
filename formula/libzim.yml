@@ -2,5 +2,5 @@ summary: Reference implementation of the ZIM specification
 src-url: https://github.com/openzim/libzim/archive/refs/tags/9.2.2.tar.gz
 src-sha: 458d89638606eeabaad5098b0ede7a76396cbcb6c13fb2413afee601b5c1e0c6
 license: GPL-2.0-or-later
-dep-pkg: libxapian libzstd liblzma icu4c
+dep-pkg: libxapian libzstd liblzma libicu
 bsystem: meson
