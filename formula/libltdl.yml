@@ -1,0 +1,23 @@
+summary: A small library aims at hiding the various difficulties of dlopening libraries from programmers
+git-url: https://git.savannah.gnu.org/git/libtool.git
+web-url: https://www.gnu.org/software/libtool
+src-url: https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz
+src-sha: f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675
+license: GPL-2.0-or-later
+dep-upp: gm4
+bscript: libltdl
+install: configure --enable-ltdl-install
+
+dotweak: |
+    writepc libltdl <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libltdl
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lltdl
+    EOF

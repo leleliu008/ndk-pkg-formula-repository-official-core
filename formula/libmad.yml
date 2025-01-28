@@ -10,3 +10,17 @@ onready: |
     touch AUTHORS
     touch ChangeLog
 install: configure --disable-debugging --enable-fpm=64bit
+
+dotweak: |
+    writepc libmad <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libmad
+    Description: MPEG audio decoder
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lmad
+    EOF

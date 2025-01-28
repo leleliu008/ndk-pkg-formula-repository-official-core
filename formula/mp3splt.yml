@@ -1,7 +1,9 @@
 summary: A command-line tool to split MP3 and Ogg Vorbis files
 web-url: https://mp3splt.sourceforge.net/mp3splt_page/home.php
 src-url: https://downloads.sourceforge.net/project/mp3splt/mp3splt/2.6.2/mp3splt-2.6.2.tar.gz
+src-uri: https://distfiles.macports.org/mp3splt/mp3splt-2.6.2.tar.gz
 src-sha: 3ec32b10ddd8bb11af987b8cd1c76382c48d265d0ffda53041d9aceb1f103baa
 license: GPL-2.0-or-later
 dep-pkg: libmp3splt
 bsystem: configure
+dopatch: gsed -i 's|__BEOS__|__ANDROID__|g' src/freedb.c
