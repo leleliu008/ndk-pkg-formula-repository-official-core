@@ -1,0 +1,5 @@
+summary: Rust task runner and build tool
+src-url: https://github.com/sagiegurari/cargo-make/archive/refs/tags/0.37.24.tar.gz
+src-sha: a7f6f7332862442e6020e8d8b2568a6fa8eed28156be0dddd61982e1e644cf02
+license: Apache-2.0
+bsystem: cargo

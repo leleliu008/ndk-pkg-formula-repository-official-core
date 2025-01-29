@@ -1,0 +1,9 @@
+summary: TCP connect to the given IP/port combo
+src-url: https://github.com/mkirchner/tcping/archive/refs/tags/2.1.0.tar.gz
+src-sha: b8aa427420fe00173b5a2c0013d78e52b010350f5438bf5903c1942cba7c39c9
+license: MIT
+binbstd: 1
+install: |
+    run "$CC" "$CFLAGS" "$CPPFLAGS" "$LDFLAGS" -o tcping cli.c tcping.c
+    install_bins tcping
+    install_mans man/tcping.1
