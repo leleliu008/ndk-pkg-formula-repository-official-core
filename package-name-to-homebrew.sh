@@ -63,6 +63,8 @@ case $1 in
               printf '%s\n' 'jpeg-turbo' ;;
     libgdk-pixbuf)
               printf '%s\n' 'gdk-pixbuf' ;;
+    libminizip-ng)
+              printf '%s\n' 'minizip-ng' ;;
     libflatbuffers|flatc)
               printf '%s\n' 'flatbuffers' ;;
     libopencolorio)
@@ -73,18 +75,20 @@ case $1 in
               printf '%s\n' 'protobuf'  ;;
     libmimalloc)
               printf '%s\n' 'mimalloc'  ;;
+    libminiupnpc)
+              printf '%s\n' 'miniupnpc'  ;;
     libfontconfig)
               printf '%s\n' 'fontconfig' ;;
     libtesseract)
               printf '%s\n' 'tesseract' ;;
     libgraphite2)
               printf '%s\n' 'graphite2' ;;
+    libleptonica)
+              printf '%s\n' 'leptonica' ;;
     libqrencode)
               printf '%s\n' 'qrencode'  ;;
     libgraphene)
               printf '%s\n' 'graphene'  ;;
-    libleptonic)
-              printf '%s\n' 'leptonic'  ;;
     libfreetype)
               printf '%s\n' 'freetype'  ;;
     libharfbuzz)
@@ -127,14 +131,10 @@ case $1 in
               printf '%s\n' 'ncurses'   ;;
     libnghttp2)
               printf '%s\n' 'nghttp2'   ;;
-    libnghttp3)
-              printf '%s\n' 'nghttp3'   ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
               printf '%s\n' 'lame'      ;;
-    libcpuinfo)
-              printf '%s\n' 'cpuinfo'   ;;
     libfribidi)
               printf '%s\n' 'fribidi'   ;;
     libwavpack)
@@ -227,10 +227,14 @@ case $1 in
     liblcms2) printf '%s\n' 'little-cms2' ;;
     libcairo) printf '%s\n' 'cairo'     ;;
     libpango) printf '%s\n' 'pango'     ;;
+    libpng++) printf '%s\n' 'png++'     ;;
+    libproj7) printf '%s\n' 'proj@7'    ;;
     libaften) printf '%s\n' 'aften'     ;;
     libftgl)  printf '%s\n' 'ftgl'      ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
     libmujs)  printf '%s\n' 'mujs'      ;;
+    libneon)  printf '%s\n' 'neon'      ;;
+    libnpth)  printf '%s\n' 'npth'      ;;
     libqpdf)  printf '%s\n' 'qpdf'      ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
@@ -250,7 +254,7 @@ case $1 in
     libzlog)  printf '%s\n' 'zlog'      ;;
     libzimg)  printf '%s\n' 'zimg'      ;;
     libpopt)  printf '%s\n' 'popt'      ;;
-    libltdl)  printf '%s\n' 'ltdl'      ;;
+    libltdl)  printf '%s\n' 'libtool'   ;;
     libmpfr)  printf '%s\n' 'mpfr'      ;;
     libmpir)  printf '%s\n' 'mpir'      ;;
     libgmp)   printf '%s\n' 'gmp'       ;;
@@ -275,6 +279,7 @@ case $1 in
     libid3)   printf '%s\n' 'id3lib'    ;;
     libisl)   printf '%s\n' 'isl'       ;;
     liborc)   printf '%s\n' 'orc'       ;;
+    libode)   printf '%s\n' 'ode'       ;;
     libdb)    printf '%s\n' 'berkeley-db' ;;
     libz3)    printf '%s\n' 'z3'        ;;
     libfl)    printf '%s\n' 'flex'      ;;
@@ -286,7 +291,9 @@ case $1 in
     iconv)    printf '%s\n' 'libiconv'  ;;
     adig)     printf '%s\n' 'c-ares'    ;;
     orcc)     printf '%s\n' 'orc'       ;;
+    pjsip)    printf '%s\n' 'pjproject' ;;
     sndfile)  printf '%s\n' 'libsndfile' ;;
+    pngsplit) printf '%s\n' 'pngcheck'  ;;
 
     libtwolame|stwolame)
               printf '%s\n' 'two-lame'  ;;
@@ -294,7 +301,7 @@ case $1 in
     ffmpeg-dev)
               printf '%s\n' 'ffmpeg'    ;;
 
-    getopt|libblkid|libfdisk)
+    getopt|libblkid|libfdisk|libmount)
               printf '%s\n' 'util-linux' ;;
 
     toml++)   printf '%s\n' 'tomlplusplus'  ;;
