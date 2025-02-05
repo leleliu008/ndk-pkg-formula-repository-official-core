@@ -1,20 +1,11 @@
 summary: GNOME XML library
 web-url: http://xmlsoft.org
 git-url: https://gitlab.gnome.org/GNOME/libxml2
-src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.8.tar.xz
-src-uri: https://distfiles.macports.org/libxml2/libxml2-2.12.8.tar.xz
-src-sha: 43ad877b018bc63deb2468d71f95219c2fac196876ef36d1bee51d226173ec93
+src-url: https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz
+src-uri: https://distfiles.macports.org/libxml2/libxml2-2.13.5.tar.xz
+src-sha: 74fc163217a3964257d3be39af943e08861263c4231f9ef5b496b6f6d4c7b2b6
 license: MIT
 dep-pkg: libiconv libz
-
-onstart: |
-    [ "$TERMUX" = 1 ] || return 0
-
-    bsdtar() {
-        # https://github.com/termux/termux-packages/issues/1054
-        run pkg install -y proot
-        run proot --link2symlink bsdtar "$@"
-    }
 
 install: |
     configure \
@@ -25,6 +16,9 @@ install: |
         --without-readline \
         --without-coverage \
         --without-debug \
-        --enable-ipv6
+        --enable-ipv6 LIBS="'-liconv -lm'"
 
-dotweak: gsed -i 's|-liconv|-liconv -ldl|' lib/pkgconfig/libxml-2.0.pc
+dotweak: |
+    sed -i '/^Requires: /d'                lib/pkgconfig/libxml-2.0.pc
+    sed -i -e 's|-liconv||g' -e 's|-lz||g' lib/pkgconfig/libxml-2.0.pc
+    printf 'Requires: libiconv libz\n' >>  lib/pkgconfig/libxml-2.0.pc

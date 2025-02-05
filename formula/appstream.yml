@@ -1,0 +1,19 @@
+summary: Tools and libraries to work with AppStream metadata
+web-url: https://www.freedesktop.org/wiki/Distributions/AppStream/
+src-url: https://github.com/ximion/appstream/archive/refs/tags/v1.0.4.tar.gz
+src-sha: dff6efa67d9ea4797870d70e3370b9e3fa66ce3c749aba68e6b10222473463cf
+license: LGPL-2.1-or-later
+dep-pkg: libxmlb libxml2 libyaml libcurl
+dep-upp: gettext-tools itstool xsltproc docbook-xsl gperf
+
+dopatch: gsed -i '/tests/d' meson.build
+
+install: |
+    mesonw \
+        -Dsystemd=false \
+        -Dstemming=false \
+        -Dvapi=true \
+        -Dgir=false \
+        -Ddocs=false \
+        -Dapidocs=false \
+        -Dinstall-docs=false

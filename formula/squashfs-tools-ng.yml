@@ -1,0 +1,7 @@
+summary: tools to create and extract Squashfs filesystems
+src-url: https://github.com/AgentD/squashfs-tools-ng/archive/refs/tags/v1.3.2.tar.gz
+src-sha: 21f40dc82f69b721e92bfc539e47bfb8581753f8de492c877c59737ce2e3bf0f
+license: GPL-3.0-or-later
+dep-pkg: liblz4 liblzo libzstd liblzma libz
+dep-upp: libtool
+bsystem: autotools
