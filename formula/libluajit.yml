@@ -5,11 +5,6 @@ src-sha: b4120332a4191db9c9da2d81f9f11f0d4504fc4cff2dea0f642d3d8f1fcebd0e
 version: 2.1.1736781742
 license: MIT
 
-dopatch: |
-    if [ "$NATIVE_PLATFORM_KIND" = darwin ] ; then
-        export CFLAGS="$CFLAGS -arch=$NATIVE_PLATFORM_ARCH"
-    fi
-
 install: |
     gmakew clean amalg \
         HOST_SYS=$(uname -s) \
