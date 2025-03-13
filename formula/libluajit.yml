@@ -5,10 +5,12 @@ src-sha: b4120332a4191db9c9da2d81f9f11f0d4504fc4cff2dea0f642d3d8f1fcebd0e
 version: 2.1.1736781742
 license: MIT
 
-dosetup: |
-    if [ "$GITHUB_ACTIONS" = true ] ; then
-        if [ -f /usr/bin/apt-get ] ; then
-            run $sudo /usr/bin/apt-get install -y libc6-dev-i386
+prepare: |
+    if [ "$TARGET_PLATFORM_NBIT" = 32 ] ; then
+        if [ "$GITHUB_ACTIONS" = true ] ; then
+            if [ -f /usr/bin/apt-get ] ; then
+                run $sudo /usr/bin/apt-get install -y libc6-dev-i386
+            fi
         fi
     fi
 
