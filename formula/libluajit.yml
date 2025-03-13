@@ -7,17 +7,22 @@ license: MIT
 
 prepare: |
     if [ "$TARGET_PLATFORM_NBIT" = 32 ] ; then
-        if [ "$GITHUB_ACTIONS" = true ] ; then
-            if [ -f /usr/bin/apt-get ] ; then
-                run $sudo /usr/bin/apt-get install -y libc6-dev-i386
-            fi
+        if [ "$NATIVE_PLATFORM_LIBC" = glibc ] ; then
+            cat > zig-cc <<EOF
+    #!/bin/sh
+    unset CC CXX LD AS
+    set -ex
+    exec "$ZIG" cc "\$@" --target=x86-linux-musl
+    EOF
+            chmod +x zig-cc
+            CC_FOR_BUILD="$PWD/zig-cc"
         fi
     fi
 
 install: |
     gmakew clean amalg \
         HOST_SYS=$(uname -s) \
-        HOST_CC="'$CC_FOR_BUILD -m$TARGET_PLATFORM_NBIT'" \
+        HOST_CC="$CC_FOR_BUILD" \
         HOST_LD="$CC_FOR_BUILD" \
         HOST_CFLAGS="'$CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD'" \
         HOST_LDFLAGS="'$LDFLAGS_FOR_BUILD'" \
