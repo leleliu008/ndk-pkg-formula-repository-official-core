@@ -206,6 +206,7 @@ case $1 in
     libfftw3) printf '%s\n' 'fftw'      ;;
     libeigen) printf '%s\n' 'eigen'     ;;
     libcares) printf '%s\n' 'c-ares'    ;;
+    libcjson) printf '%s\n' 'cjson'     ;;
     libfolly) printf '%s\n' 'folly'     ;;
     libbotan) printf '%s\n' 'botan'     ;;
     libgumbo) printf '%s\n' 'gumbo-parser' ;;
