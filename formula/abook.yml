@@ -1,0 +1,16 @@
+summary: Address book with mutt support
+web-url: https://abook.sourceforge.io/
+git-url: https://git.code.sf.net/p/abook/git.git
+git-ref: refs/tags/ver_0_6_2
+version: 0.6.2
+license: GPL-2.0-only GPL-2.0-or-later GPL-3.0-or-later
+dep-upp: gettext-tools xz
+dep-pkg: libreadline
+dep-lib: -lncursesw
+bsystem: autotools
+
+dopatch: |
+    gsed -i '1i \#include<ctype.h>' database.c
+    gsed -i '1i \#include<string.h>' getopt.c
+
+prepare: run autoreconf -ivf
