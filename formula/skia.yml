@@ -3,18 +3,11 @@ summary: An open source 2D graphics library
 web-url: https://skia.googlesource.com/skia
 version: 1
 license: BSD-3-Clause
-dep-upp: git gn ninja
+dep-upp: depot_tools
+bsystem: gn
 
 prepare: |
-    NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
-       GN="$(command -v gn)"    || abort 1 'command not found: gn'
-
     run cd ..
-
-    run git clone --depth=1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
-    export PATH="$PWD/depot_tools:$PATH"
-    export DEPOT_TOOLS_UPDATE=0
 
     cat >> .gclient <<EOF
     solutions = [
@@ -31,7 +24,6 @@ prepare: |
 
     run gclient sync --verbose
 
-install: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;
@@ -39,30 +31,32 @@ install: |
         x86_64)  GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    run "$GN" gen . --root="$PACKAGE_BSCRIPT_DIR"
-
-    cat >> args.gn <<EOF
-    is_debug=false
-    is_component_build=true
-    symbol_level=1
-    pdf_is_standalone=true
-    pdf_enable_xfa=false
-    pdf_enable_v8=false
-    pdf_use_skia_paths=false
-    pdf_use_skia=false
-    target_os="android"
-    target_cpu="$GN_ARG_TARGET_CPU"
-    EOF
-
     if [ "$TARGET_PLATFORM_ARCH" = 'armv7a' ] ; then
-        cat >> args.gn <<EOF
-    arm_version=7
-    EOF
+        GN_ARG_EXTRA='arm_version=7'
+    else
+        GN_ARG_EXTRA=
     fi
 
-    run cat args.gn
+    gnw() {
+        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\" $GN_ARG_EXTRA'"
+        run gn args --list .
+    }
 
-    run "$NINJA"
+install: |
+    gnw \
+        is_cfi=false \
+        is_debug=false \
+        is_component_build=true \
+        is_official_build=false \
+        symbol_level=1 \
+        treat_warnings_as_errors=false \
+        strip_debug_info=true \
+        use_custom_libcxx=false \
+        use_gold=false \
+        use_lld=true
+
+    run ninja --version
+    run ninja --verbose
 
     run install_bins skia_diff
     run install_libs *.so
