@@ -3,18 +3,10 @@ summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 version: 9.9.115.8
 license: BSD-3-Clause
-dep-upp: git gn ninja
+dep-upp: depot_tools
 
 prepare: |
-    NINJA="$(command -v ninja)" || abort 1 'command not found: ninja'
-       GN="$(command -v gn)"    || abort 1 'command not found: gn'
-
     run cd ..
-
-    run git clone --depth=1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
-    export PATH="$PWD/depot_tools:$PATH"
-    export DEPOT_TOOLS_UPDATE=0
 
     run command fetch --nohistory v8
 

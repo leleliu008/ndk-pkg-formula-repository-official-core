@@ -35,7 +35,7 @@ prepare: |
         x86_64)  GN_ARG_TARGET_CPU=x64   ;;
     esac
 
-    GN_ARGS='is_debug=false is_cfi=false is_component_build=false is_official_build=false treat_warnings_as_errors=false v8_static_library=true v8_enable_future=true v8_enable_fuzztest=false v8_enable_i18n_support=false v8_use_external_startup_data=false use_lld=true use_custom_libcxx=false clang_use_chrome_plugins=false target_os="android"'
+    GN_ARGS='is_debug=false is_cfi=false is_component_build=false is_official_build=false treat_warnings_as_errors=false v8_static_library=true v8_enable_future=true v8_enable_fuzztest=false v8_enable_i18n_support=false v8_use_external_startup_data=false use_lld=true use_custom_libcxx=true clang_use_chrome_plugins=false target_os="android"'
 
     run gn gen _ "'--args=$GN_ARGS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\"'"
 
