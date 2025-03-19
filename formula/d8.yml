@@ -47,13 +47,17 @@ install: |
         is_component_build=false \
         is_official_build=false \
         v8_static_library=true \
+        v8_monolithic=true \
         v8_enable_future=true \
         v8_enable_fuzztest=false \
+        v8_android_log_stdout=false \
         v8_enable_i18n_support=false \
         v8_use_external_startup_data=false \
         treat_warnings_as_errors=false \
         clang_use_chrome_plugins=false \
-        use_custom_libcxx=true \
+        strip_debug_info=true \
+        use_custom_libcxx=false \
+        use_gold=false \
         use_lld=true
     run ninja --version
     run ninja --verbose d8
