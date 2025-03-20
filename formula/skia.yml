@@ -44,7 +44,6 @@ prepare: |
 
 install: |
     gnw \
-        is_cfi=false \
         is_debug=false \
         is_component_build=true \
         is_official_build=false \
@@ -58,7 +57,6 @@ install: |
     run ninja --version
     run ninja --verbose
 
-    run install_bins skia_diff
     run install_libs *.so
     run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
     run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp
