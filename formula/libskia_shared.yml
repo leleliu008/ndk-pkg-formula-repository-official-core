@@ -45,9 +45,8 @@ prepare: |
 install: |
     gnw \
         is_debug=false \
-        is_component_build=true \
         is_official_build=false \
-        skia_enable_tools=true
+        is_component_build=true
 
     run ninja --version
     run ninja --verbose
