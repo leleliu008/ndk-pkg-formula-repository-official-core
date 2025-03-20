@@ -26,8 +26,6 @@ prepare: |
 
     run cd -
 
-    #gsed -i '/PNG_USE_READ_MACROS/a "FPDFSDK_EXPORTS",' BUILD.gn
-
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;
@@ -68,13 +66,13 @@ install: |
         pdf_enable_xfa=false \
         pdf_enable_v8=false \
         pdf_use_skia=false \
-        pdf_use_skia_paths=false \
+        pdf_is_complete_lib=true \
         pdf_is_standalone=true
 
     run ninja --version
     run ninja --verbose
 
+    run ls
     run install_bins pdfium_diff
-    run install_libs *.so
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp
+    run install_libs *.a
+    run cp -r "$PACKAGE_BSCRIPT_DIR/public" "$PACKAGE_INSTALL_DIR/include"
