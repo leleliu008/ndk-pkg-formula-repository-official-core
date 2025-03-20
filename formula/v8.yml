@@ -61,5 +61,5 @@ install: |
     run ninja --version
     run ninja --verbose d8
     run install_bins d8
-    run install_libs *.so
+    run install_libs obj/*.a
     run cp -r "$PACKAGE_BSCRIPT_DIR"/include "$PACKAGE_INSTALL_DIR/"
