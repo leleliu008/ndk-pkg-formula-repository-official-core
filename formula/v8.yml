@@ -36,7 +36,7 @@ prepare: |
     esac
 
     gnw() {
-        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_version=\"27c\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\"'"
+        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_root=\"$ANDROID_NDK_ROOT\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\"'"
         run gn args --list .
     }
 
