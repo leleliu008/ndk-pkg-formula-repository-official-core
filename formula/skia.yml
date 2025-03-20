@@ -49,7 +49,6 @@ install: |
         is_official_build=false \
         symbol_level=1 \
         treat_warnings_as_errors=false \
-        strip_debug_info=true \
         use_custom_libcxx=false \
         use_gold=false \
         use_lld=true
@@ -59,4 +58,3 @@ install: |
 
     run install_libs *.so
     run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp
