@@ -47,14 +47,10 @@ install: |
         is_debug=false \
         is_component_build=true \
         is_official_build=false \
-        symbol_level=1 \
-        treat_warnings_as_errors=false \
-        use_custom_libcxx=false \
-        use_gold=false \
-        use_lld=true
+        skia_enable_tools=true
 
     run ninja --version
     run ninja --verbose
 
     run install_libs *.so
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
+    run cp -r $PACKAGE_BSCRIPT_DIR/include "$PACKAGE_INSTALL_DIR/"
