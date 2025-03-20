@@ -3,7 +3,7 @@ summary: PDF read/write library by Google
 web-url: https://pdfium.googlesource.com/pdfium/
 version: 1
 license: BSD-3-Clause
-dep-upp: depot_tools
+dep-upp: python3 depot_tools
 bsystem: gn
 
 prepare: |
