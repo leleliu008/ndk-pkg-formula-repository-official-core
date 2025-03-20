@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 git-url: https://chromium.googlesource.com/v8/v8.git
@@ -35,8 +36,14 @@ prepare: |
         x86_64)  GN_ARG_TARGET_CPU=x64   ;;
     esac
 
+    if [ "$TARGET_PLATFORM_ARCH" = 'armv7a' ] ; then
+        GN_ARG_EXTRA='arm_version=7'
+    else
+        GN_ARG_EXTRA=
+    fi
+
     gnw() {
-        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_root=\"$ANDROID_NDK_ROOT\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\"'"
+        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_root=\"$ANDROID_NDK_ROOT\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\" $GN_ARG_EXTRA'"
         run gn args --list .
     }
 
@@ -58,6 +65,8 @@ install: |
         strip_debug_info=true \
         use_custom_libcxx=false \
         use_lld=true
+
     run ninja --version
     run ninja --verbose d8
+
     run install_bins d8

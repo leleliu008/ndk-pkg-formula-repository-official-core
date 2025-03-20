@@ -1,18 +1,21 @@
-pkgtype: lib
-summary: PDF read/write library by Google
-web-url: https://pdfium.googlesource.com/pdfium/
-version: 1
+summary: A high-performance JavaScript and WebAssembly Engine powered by Google
+web-url: https://v8.dev/
+git-url: https://chromium.googlesource.com/v8/v8.git
+git-ref: refs/tags/12.7.224.16
+git-nth: 0
+version: 12.7.224.16
 license: BSD-3-Clause
 dep-upp: depot_tools
+dep-pym: vpython
 bsystem: gn
 
-prepare: |
+onready: |
     run cd ..
 
-    cat >> .gclient <<EOF
+    cat > .gclient <<EOF
     solutions = [
       { "name"        : 'src',
-        "url"         : 'https://pdfium.googlesource.com/pdfium.git',
+        "url"         : 'https://chromium.googlesource.com/v8/v8.git@origin/$PACKAGE_VERSION',
         "deps_file"   : 'DEPS',
         "managed"     : False,
         "custom_deps" : {},
@@ -24,10 +27,7 @@ prepare: |
 
     run gclient sync --verbose
 
-    run cd -
-
-    #gsed -i '/PNG_USE_READ_MACROS/a "FPDFSDK_EXPORTS",' BUILD.gn
-
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;
@@ -64,17 +64,8 @@ install: |
         strip_debug_info=true \
         use_custom_libcxx=false \
         use_lld=true
-        symbol_level=1
-        pdf_is_standalone=true
-        pdf_enable_xfa=false
-        pdf_enable_v8=false
-        pdf_use_skia_paths=false
-        pdf_use_skia=false
-
     run ninja --version
-    run ninja --verbose
-
-    run install_bins pdfium_diff
-    run install_libs *.so
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/*.h
-    run install_incs $PACKAGE_BSCRIPT_DIR/public/cpp/*.h:cpp
+    run ninja --verbose d8
+    run install_bins d8
+    run install_libs obj/*.a
+    run cp -r "$PACKAGE_BSCRIPT_DIR"/include "$PACKAGE_INSTALL_DIR/"
