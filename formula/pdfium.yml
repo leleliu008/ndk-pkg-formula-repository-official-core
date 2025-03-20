@@ -63,13 +63,13 @@ install: |
         clang_use_chrome_plugins=false \
         strip_debug_info=true \
         use_custom_libcxx=false \
-        use_lld=true
-        symbol_level=1
+        use_lld=true \
+        symbol_level=1 \
+        pdf_enable_xfa=false \
+        pdf_enable_v8=false \
+        pdf_use_skia=false \
+        pdf_use_skia_paths=false \
         pdf_is_standalone=true
-        pdf_enable_xfa=false
-        pdf_enable_v8=false
-        pdf_use_skia_paths=false
-        pdf_use_skia=false
 
     run ninja --version
     run ninja --verbose
