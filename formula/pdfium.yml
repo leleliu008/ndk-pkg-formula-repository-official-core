@@ -40,7 +40,7 @@ prepare: |
     fi
 
     gnw() {
-        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_root=\"$ANDROID_NDK_ROOT\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" v8_target_cpu=\"$GN_ARG_TARGET_CPU\" $GN_ARG_EXTRA'"
+        run gn gen . "--root=$PACKAGE_BSCRIPT_DIR" "'--args=$* target_os=\"android\" android_ndk_root=\"$ANDROID_NDK_ROOT\" android32_ndk_api_level=$TARGET_PLATFORM_VERS android64_ndk_api_level=$TARGET_PLATFORM_VERS target_cpu=\"$GN_ARG_TARGET_CPU\" $GN_ARG_EXTRA'"
         run gn args --list .
     }
 
@@ -50,12 +50,6 @@ install: |
         is_debug=false \
         is_component_build=false \
         is_official_build=false \
-        v8_static_library=true \
-        v8_monolithic=true \
-        v8_enable_future=true \
-        v8_enable_fuzztest=false \
-        v8_enable_i18n_support=false \
-        v8_use_external_startup_data=false \
         treat_warnings_as_errors=false \
         clang_use_chrome_plugins=false \
         strip_debug_info=true \
@@ -73,6 +67,6 @@ install: |
 
     run ls
     run tree
-    run install_bins pdfium_*
+    run install_bins pdfium_diff pdfium_test
     run install_libs obj/*.a
     run cp -r "$PACKAGE_BSCRIPT_DIR/public" "$PACKAGE_INSTALL_DIR/include"
