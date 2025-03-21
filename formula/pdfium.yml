@@ -73,6 +73,7 @@ install: |
     run ninja --verbose
 
     run ls
+    run tree
     run install_bins pdfium_diff
-    run install_libs *.a
+    run install_libs obj/*.a
     run cp -r "$PACKAGE_BSCRIPT_DIR/public" "$PACKAGE_INSTALL_DIR/include"
