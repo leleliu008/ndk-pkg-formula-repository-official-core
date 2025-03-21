@@ -16,7 +16,7 @@ prepare: |
         "deps_file"   : 'DEPS',
         "managed"     : False,
         "custom_deps" : {},
-        "custom_vars": { "checkout_configuration": "small" },
+        "custom_vars": { "checkout_configuration": "minimal" },
       },
     ]
     target_os = ['android']
@@ -54,7 +54,6 @@ install: |
         v8_monolithic=true \
         v8_enable_future=true \
         v8_enable_fuzztest=false \
-        v8_android_log_stdout=false \
         v8_enable_i18n_support=false \
         v8_use_external_startup_data=false \
         treat_warnings_as_errors=false \
@@ -74,6 +73,6 @@ install: |
 
     run ls
     run tree
-    run install_bins pdfium_diff
+    run install_bins pdfium_*
     run install_libs obj/*.a
     run cp -r "$PACKAGE_BSCRIPT_DIR/public" "$PACKAGE_INSTALL_DIR/include"
