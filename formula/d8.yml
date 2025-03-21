@@ -1,7 +1,7 @@
-pkgtype: pie
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 git-url: https://chromium.googlesource.com/v8/v8.git
+git-uri: https://github.com/v8/v8
 git-ref: refs/tags/12.7.224.16
 git-nth: 0
 version: 12.7.224.16
@@ -9,10 +9,9 @@ license: BSD-3-Clause
 dep-upp: depot_tools
 dep-pym: vpython
 bsystem: gn
+boolean: ~static
 
-onready: |
-    run cd ..
-
+dofetch: |
     cat > .gclient <<EOF
     solutions = [
       { "name"        : 'src',

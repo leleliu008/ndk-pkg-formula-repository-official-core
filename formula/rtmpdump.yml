@@ -12,7 +12,8 @@ fix-opt: -p0
 version: 2.4+20151223
 license: GPL-2.0-or-later
 dep-pkg: libz openssl-dev
-parallel: 0
+
+boolean: ~parallel
 
 install: |
     gmakew clean   SYS=posix

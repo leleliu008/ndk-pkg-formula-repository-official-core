@@ -1,14 +1,12 @@
-pkgtype: lib
 summary: An open source 2D graphics library
-web-url: https://skia.googlesource.com/skia
+git-url: https://skia.googlesource.com/skia.git
+git-url: https://github.com/google/skia
 version: 1
 license: BSD-3-Clause
 dep-upp: python3 gn ninja depot_tools
 bsystem: gn
 
-prepare: |
-    run cd ..
-
+dofetch: |
     cat >> .gclient <<EOF
     solutions = [
       { "name"        : 'src',
@@ -24,6 +22,7 @@ prepare: |
 
     run gclient sync --verbose
 
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;

@@ -1,14 +1,13 @@
 pkgtype: lib
 summary: PDF read/write library by Google
-web-url: https://pdfium.googlesource.com/pdfium/
+git-url: https://pdfium.googlesource.com/pdfium.git
+git-uri: https://github.com/chromium/pdfium
 version: 1
 license: BSD-3-Clause
 dep-upp: python3 depot_tools
 bsystem: gn
 
-prepare: |
-    run cd ..
-
+dofetch: |
     cat >> .gclient <<EOF
     solutions = [
       { "name"        : 'src',
@@ -24,8 +23,7 @@ prepare: |
 
     run gclient sync --verbose
 
-    run cd -
-
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;

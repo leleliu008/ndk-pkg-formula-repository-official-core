@@ -4,4 +4,4 @@ src-url: https://download-mirror.savannah.gnu.org/releases/lzip/lzip-1.24.1.tar.
 src-sha: 30c9cb6a0605f479c496c376eb629a48b0a1696d167e3c1e090c5defa481b162
 license: GPL-2.0-or-later
 bsystem: configure
-parallel: 0
+boolean: ~parallel

@@ -4,7 +4,8 @@ src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.41/
 src-sha: 045f7796224a801512efb5e7d6150a321674cbfb566128b21abf8d4ba65b4513
 license: GPL-3.0-or-later
 dep-upp: gm4 flex perl
-parallel: 0
+
+boolean: ~parallel
 
 dopatch: |
     # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99

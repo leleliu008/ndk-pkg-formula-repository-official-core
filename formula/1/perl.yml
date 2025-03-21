@@ -1,4 +1,3 @@
-pkgtype: pie
 summary: Highly capable, feature-rich programming language
 web-url: https://www.perl.org
 git-url: https://github.com/perl/perl5
@@ -13,6 +12,8 @@ fix-sha: 4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5
 dep-upp: patch
 license: GPL-1.0-or-later
 bsystem: gmake
+
+boolean: ~static
 
 install: |
     TARGET_CC=$CC

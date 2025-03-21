@@ -3,13 +3,13 @@ summary: Real-Time Communication
 web-url: https://webrtc.org/
 version: 1
 license: BSD-3-Clause
-dep-upp: depot_tools
+dep-upp: python3 gn ninja depot_tools
 
 onstart: |
     [ "$NATIVE_PLATFORM_KIND" = linux ] || abort 1 "this library is only supported built on Linux"
 
 # https://webrtc.github.io/webrtc-org/native-code/android/
-prepare: |
+dofetch: |
     run cd ..
 
     run fetch --nohistory --nohooks webrtc_android
@@ -22,6 +22,7 @@ prepare: |
 
     run gclient sync --verbose
 
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
         aarch64) GN_ARG_TARGET_CPU=arm64 ;;

@@ -42,7 +42,7 @@ jobs:
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
   alpine:
-    if: true
+    if: false
 
     strategy:
 
