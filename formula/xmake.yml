@@ -6,8 +6,11 @@ license: Apache-2.0
 boolean: ~static
 dep-pkg: libreadline
 bscript: core
-bsystem: xmake
 ccflags: -Wno-error=unused-but-set-variable
+
+prepare: run ln -s libncurses.a ../../lib/libcurses.a
+
+install: xmakew --charset=y --small=y --xml=y --demo=n --curses=y
 
 # sys/uio: ssize_t pwritev(int __fd, const struct iovec* __iov, int __count, off_t __offset) __RENAME_IF_FILE_OFFSET64(pwritev64) __INTRODUCED_IN(24);
 # sys/uio: ssize_t preadv(int __fd, const struct iovec* __iov, int __count, off_t __offset) __RENAME_IF_FILE_OFFSET64(preadv64) __INTRODUCED_IN(24);

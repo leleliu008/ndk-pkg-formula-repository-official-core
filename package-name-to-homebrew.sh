@@ -231,6 +231,7 @@ case $1 in
     libpng++) printf '%s\n' 'png++'     ;;
     libproj7) printf '%s\n' 'proj@7'    ;;
     libaften) printf '%s\n' 'aften'     ;;
+    libtbox)  printf '%s\n' 'tbox'      ;;
     libftgl)  printf '%s\n' 'ftgl'      ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
     libmujs)  printf '%s\n' 'mujs'      ;;
