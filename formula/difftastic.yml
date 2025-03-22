@@ -6,4 +6,4 @@ bsystem: cargo
 dep-lib: -lc++abi
 prepare: |
     export CXXSTDLIB='c++_static'
-    #export RUSTUP_TOOLCHAIN=1.74
+    export RUSTUP_TOOLCHAIN=1.76

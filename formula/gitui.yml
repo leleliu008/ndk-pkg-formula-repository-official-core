@@ -4,6 +4,7 @@ src-sha: 55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b
 license: MIT
 dep-pkg: libz openssl-dev
 bsystem: cargo cmake
+install: cargow install --locked
 
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
 api-min: 23
