@@ -1,15 +1,19 @@
 summary: GNU Transport Layer Security (TLS) Library
 git-url: https://github.com/gnutls/gnutls
 web-url: https://www.gnutls.org/
-src-url: https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.4.tar.xz
-src-sha: 2bea4e154794f3f00180fa2a5c51fe8b005ac7a31cd58bd44cdfa7f36ebc3a9b
+src-url: https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
+src-sha: 69e113d802d1670c4d5ac1b99040b1f2d5c7c05daec5003813c049b5184820ed
 license: LGPL-2.1-or-later GPL-3.0-only
-dep-pkg: libtasn1 libidn2 libnettle
+dep-pkg: libtasn1 libidn2 libnettle libz
+
+dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
 
 install: |
     configure \
         --enable-gcc-warnings \
+        --disable-tools \
         --disable-tests \
+        --disable-doc \
         --disable-valgrind-tests \
         --disable-code-coverage \
         --disable-gtk-doc \
@@ -19,4 +23,4 @@ install: |
 
 # no member named '_p' in 'struct __sFILE'
 #  return fp->_p - fp->_bf._base;
-api-min: 24
+#api-min: 24

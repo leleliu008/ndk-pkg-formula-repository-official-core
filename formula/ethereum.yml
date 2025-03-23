@@ -6,7 +6,7 @@ license: LGPL-3.0-or-later
 bsystem: go
 
 install: |
-    for item in geth abigen bootnode ethkey evm rlpdump clef
+    for item in geth abigen ethkey evm rlpdump clef
     do
         gow ./cmd/$item
     done
