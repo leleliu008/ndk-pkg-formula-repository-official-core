@@ -2,12 +2,12 @@ summary: Highly capable, feature-rich programming language
 web-url: https://www.perl.org
 git-url: https://github.com/perl/perl5
 
-src-url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz
-src-sha: 82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded
+src-url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
+src-sha: d91115e90b896520e83d4de6b52f8254ef2b70a8d545ffab33200ea9f1cf29e8
 
 # http://arsv.github.io/perl-cross/index.html
-fix-url: https://github.com/arsv/perl-cross/releases/download/1.3.6/perl-cross-1.3.6.tar.gz
-fix-sha: 4010f41870d64e3957b4b8ce70ebba10a7c4a3e86c5551acb4099c3fcbb37ce5
+fix-url: https://github.com/arsv/perl-cross/releases/download/1.5.2/perl-cross-1.5.2.tar.gz
+fix-sha: 584dc54c48dca25e032b676a15bef377c1fed9de318b4fc140292a5dbf326e90
 
 dep-upp: patch
 license: GPL-1.0-or-later
@@ -15,19 +15,21 @@ bsystem: gmake
 
 boolean: ~static
 
-install: |
-    TARGET_CC=$CC
-    TARGET_CXX=$CXX
-    TARGET_CPP=$CPP
-    TARGET_AS=$AS
-    TARGET_LD=$LD
-    TARGET_AR=$AR
-    TARGET_RANLIB=$RANLIB
+dopatch: run cp -r ../fix/* .
 
-    TARGET_CFLAGS=$CFLAGS
-    TARGET_CXXFLAGS=$CXXFLAGS
-    TARGET_CPPFLAGS=$CPPFLAGS
-    TARGET_LDFLAGS=$LDFLAGS
+install: |
+    TARGET_CC="$CC"
+    TARGET_CXX="$CXX"
+    TARGET_CPP="$CPP"
+    TARGET_AS="$AS"
+    TARGET_LD="$LD"
+    TARGET_AR="$AR"
+    TARGET_RANLIB="$RANLIB"
+
+    TARGET_CFLAGS="$CFLAGS"
+    TARGET_CXXFLAGS="$CXXFLAGS"
+    TARGET_CPPFLAGS="$CPPFLAGS"
+    TARGET_LDFLAGS="$LDFLAGS"
 
     unset CC
     unset CXX
@@ -42,15 +44,19 @@ install: |
     unset CPPFLAGS
     unset LDFLAGS
 
-    run cp -r ../fix/* .
-
-    ./configure \
+    run ./configure \
         --target="$TARGET_TRIPLE" \
         -Dosname=android \
-        -Dsysroot=$SYSROOT \
-        -Dprefix=$PACKAGE_INSTALL_DIR \
+        -Dsysroot="$SYSROOT" \
+        -Dprefix="$PACKAGE_INSTALL_DIR" \
+        --with-cc="$TARGET_CC" \
+        --with-ar="$TARGET_AR" \
+        --with-ranlib="$TARGET_RANLIB" \
+        --host-cc="$CC_FOR_BUILD" \
+        --host-ar="$AR_FOR_BUILD" \
+        --host-ranlib="$RANLIB_FOR_BUILD" \
         -Dcc="$TARGET_CC" \
-        -Dld="$TARGET_CC -Wl,--enable-new-dtags" \
+        -Dld="$TARGET_CC" \
         -Dar="$TARGET_AR" \
         -Dranlib="$TARGET_RANLIB" \
         -Duseshrplib \
@@ -58,6 +64,3 @@ install: |
     gmakew clean
     gmakew
     gmakew install
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE/libperl.so" "$PACKAGE_INSTALL_DIR/lib/libperl.so"
-    run install -d "$PACKAGE_INSTALL_DIR/include"
-    run ln -sr "$PACKAGE_INSTALL_DIR/lib/perl5/$PACKAGE_VERSION/$TARGET_PLATFORM_ARCH-android/CORE" "$PACKAGE_INSTALL_DIR/include/perl"

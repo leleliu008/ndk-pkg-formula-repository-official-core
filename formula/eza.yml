@@ -3,7 +3,7 @@ src-url: https://github.com/eza-community/eza/archive/refs/tags/v0.20.24.tar.gz
 src-sha: e5a1761f05adc74b80d59036819e768060971c6f5107e208024c752a2af02ccc
 license: MIT
 dep-pkg: libz
-bsystem: cargo
+install: cargow install --locked
 prepare: export RUSTUP_TOOLCHAIN=1.81
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
