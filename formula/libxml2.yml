@@ -10,6 +10,7 @@ dep-pkg: libiconv libz
 install: |
     configure \
         --with-iconv="$libiconv_INSTALL_DIR" \
+        --with-http \
         --with-zlib \
         --without-lzma \
         --without-python \
