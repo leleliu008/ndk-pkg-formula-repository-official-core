@@ -3,7 +3,7 @@ summary: Real-Time Communication
 web-url: https://webrtc.org/
 version: 1
 license: BSD-3-Clause
-dep-upp: python3 gn ninja depot_tools
+dep-upp: depot_tools
 
 onstart: |
     [ "$NATIVE_PLATFORM_KIND" = linux ] || abort 1 "this library is only supported built on Linux"

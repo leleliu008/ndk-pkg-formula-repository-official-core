@@ -1,9 +1,9 @@
 summary: An open source 2D graphics library
-git-url: https://skia.googlesource.com/skia.git
-git-url: https://github.com/google/skia
+web-url: https://skia.googlesource.com/skia
+web-uri: https://github.com/google/skia
 version: 1
 license: BSD-3-Clause
-dep-upp: python3 gn ninja depot_tools
+dep-upp: depot_tools
 bsystem: gn
 
 dofetch: |

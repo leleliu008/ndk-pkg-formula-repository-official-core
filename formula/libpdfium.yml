@@ -1,10 +1,9 @@
-pkgtype: lib
 summary: PDF read/write library by Google
-git-url: https://pdfium.googlesource.com/pdfium.git
-git-uri: https://github.com/chromium/pdfium
+web-url: https://pdfium.googlesource.com/pdfium
+web-uri: https://github.com/chromium/pdfium
 version: 1
 license: BSD-3-Clause
-dep-upp: python3 depot_tools
+dep-upp: depot_tools
 bsystem: gn
 
 dofetch: |
