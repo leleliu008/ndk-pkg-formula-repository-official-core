@@ -2,7 +2,7 @@ summary: A perceptual image hash calculation tool based on algorithm descibed in
 src-url: https://github.com/commonsmachinery/blockhash/archive/refs/tags/v0.3.3.tar.gz
 src-sha: 3c48af7bdb1f673b2f3c9f8c0bfa9107a7019b54ac3b4e30964bc0707debdd3a
 license: MIT
-boolean: ~static
+disable: static
 dep-pkg: imagemagick
 dep-lib: ImageMagick libgs -llog
 

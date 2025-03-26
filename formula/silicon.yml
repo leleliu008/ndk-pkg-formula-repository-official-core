@@ -2,7 +2,7 @@ summary: A command-line tool to render your source code into a beautiful image
 src-url: https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.3.tar.gz
 src-sha: 56e7f3be4118320b64e37a174cc2294484e27b019c59908c0a96680a5ae3ad58
 license: MIT
-boolean: ~static
+disable: static
 dep-pkg: libfontconfig libharfbuzz
 bsystem: cargo cmake+gmake
 

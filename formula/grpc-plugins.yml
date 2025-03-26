@@ -3,7 +3,7 @@ web-url: https://grpc.io
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.64.0.tar.gz
 src-sha: d5509e40fb24f6390deeef8a88668124f4ec77d2ebb3b1a957b235a2f08b70c0
 license: Apache-2.0
-boolean: ~static
+disable: static
 dep-pkg: libprotobuf.a libcares openssl-dev re2
 dep-upp: grpc-plugins
 

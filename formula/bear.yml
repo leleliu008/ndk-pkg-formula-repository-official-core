@@ -5,7 +5,7 @@ license: GPL-3.0-or-later
 dep-pkg: libfmt grpc nlohmann-json spdlog libposix_spawn
 dep-upp: grpc-plugins
 
-boolean: ~static
+disable: static
 
 install: |
     cmakew \

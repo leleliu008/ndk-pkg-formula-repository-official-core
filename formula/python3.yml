@@ -4,7 +4,7 @@ web-url: https://www.python.org
 src-url: https://www.python.org/ftp/python/3.11.7/Python-3.11.7.tgz
 src-sha: 068c05f82262e57641bd93458dfa883128858f5f4997aad7a36fd25b13b29209
 license: Python-2.0
-boolean: ~static
+disable: static
 dep-pkg: openssl-dev libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 dep-upp: python3
 

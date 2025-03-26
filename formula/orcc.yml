@@ -3,7 +3,7 @@ web-url: https://gstreamer.freedesktop.org/projects/orc.html
 src-url: https://gstreamer.freedesktop.org/src/orc/orc-0.4.38.tar.xz
 src-sha: a55a98d4772567aa3faed8fb84d540c3db77eaba16d3e2e10b044fbc9228668d
 license: BSD-3-Clause
-boolean: ~static
+disable: static
 
 install: |
     mesonw \

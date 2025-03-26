@@ -4,7 +4,7 @@ src-url: https://github.com/fish-shell/fish-shell/releases/download/3.7.1/fish-3
 src-sha: 614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250
 license: GPL-2.0-or-later
 dep-pkg: libpcre2 libreadline libposix_spawn
-boolean: ~static
+disable: static
 
 dopatch: gsed -i '/Fish does not support static linking/d' CMakeLists.txt
 
