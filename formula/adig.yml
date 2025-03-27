@@ -12,4 +12,4 @@ install: |
         -DCARES_BUILD_TOOLS=ON \
         -DCARES_BUILD_TESTS=OFF
 
-dotweak: rm -rf include/ lib/ share/man/man3/
+dotweak: run rm -rf include/ lib/ share/man/man3/

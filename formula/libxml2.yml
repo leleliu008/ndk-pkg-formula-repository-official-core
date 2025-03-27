@@ -19,5 +19,4 @@ install: |
         --without-debug \
         --enable-ipv6
 
-dotweak: |
-    gsed -i -e '/^Requires: /s|$| libiconv|' -e 's|-liconv|-ldl|g' lib/pkgconfig/libxml-2.0.pc
+dotweak: gsed -i -e '/^Requires/s|$| libiconv|' -e 's|-liconv|-ldl|g' lib/pkgconfig/libxml-2.0.pc

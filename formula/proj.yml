@@ -9,4 +9,4 @@ dep-lib: libtiff-4 libcurl
 
 install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_EXAMPLES=OFF -DBUILD_APPS=ON  -DBUILD_SHARED_LIBS=OFF
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

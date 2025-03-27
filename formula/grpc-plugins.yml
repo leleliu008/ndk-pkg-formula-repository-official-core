@@ -29,4 +29,4 @@ install: |
         -DBUILD_SHARED_LIBS=OFF \
         -DPROTOBUF_PROTOC_EXECUTABLE="$(command -v protoc)"
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

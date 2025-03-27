@@ -21,4 +21,4 @@ install: |
         --disable-makeinstall-chown \
         --disable-makeinstall-setuid
 
-dotweak: rm -rf bin/ sbin/ share/man/man[158]/
+dotweak: run rm -rf bin/ sbin/ share/man/man[158]/

@@ -25,10 +25,4 @@ install: |
 
 dotweak: |
     run mv staticlink/libnetpbm.a lib/
-    run rm -rf staticlink
-    run rm -rf sharedlink
-    run rm pkgconfig_template
-    run rm config_template
-    run rm README
-    run rm VERSION
-    run rm pkginfo
+    run rm -rf staticlink sharedlink pkgconfig_template config_template README VERSION pkginfo

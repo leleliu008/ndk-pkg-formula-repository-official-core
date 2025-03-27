@@ -21,11 +21,4 @@ install: |
         --disable-shared \
         LIBS=-liconv
 
-dotweak: |
-    rm -rfv include
-    rm -rfv lib
-    rm -rfv bin/xml2-config
-    rm -rfv share/aclocal
-    rm -rfv share/doc
-    rm -rfv share/gtk-doc
-    rm -rfv share/man/man1/xml2-config.1
+dotweak: run rm -rf include/ lib/ bin/xml2-config share/aclocal/ share/doc/ share/gtk-doc/ share/man/man1/xml2-config.1

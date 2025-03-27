@@ -33,5 +33,4 @@ install: |
         --with-zstd \
         --with-iconv
 
-dotweak: |
-    gsed -i -e '/Libs: /s|$| -liconv|' -e '/Requires:/d' lib/pkgconfig/libarchive.pc
+dotweak: gsed -i -e '/^Libs:/s|$| -liconv|' -e '/^Requires/d' lib/pkgconfig/libarchive.pc

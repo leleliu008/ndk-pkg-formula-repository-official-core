@@ -31,6 +31,6 @@ dopatch: |
      
     EOF
 
-install: configure --without-guile --without-dmalloc
+install: configure --program-prefix=g --without-guile --without-dmalloc
 
-dotweak: ln -s make bin/gmake
+dotweak: run ln -s gmake bin/make

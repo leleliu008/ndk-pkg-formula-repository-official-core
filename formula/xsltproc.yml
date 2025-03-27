@@ -22,11 +22,4 @@ install: |
         --with-profiler \
         --with-plugins LIBS=-ldl
 
-dotweak: |
-    rm -rfv bin/xslt-config
-    rm -rfv include
-    rm -rfv lib
-    rm -rfv share/man/man3
-    rm -rfv share/aclocal
-    rm -rfv share/doc
-    rm -rfv share/gtk-doc
+dotweak: run rm -rf bin/xslt-config include/ lib/ share/man/man3/ share/aclocal/ share/doc/ share/gtk-doc/

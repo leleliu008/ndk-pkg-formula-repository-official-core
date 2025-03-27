@@ -14,4 +14,4 @@ install: |
         --without-fastcgi \
         --with-zlib="$libz_INSTALL_DIR"
 
-dotweak: gsed -i 's|-ltorrent|-ltorrent -lexecinfo|' lib/pkgconfig/libtorrent.pc
+dotweak: gsed -i '/-ltorrent/s|$| -lexecinfo|' lib/pkgconfig/libtorrent.pc

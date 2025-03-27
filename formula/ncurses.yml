@@ -43,13 +43,13 @@ install: |
 dotweak: |
     for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
-        ln -s "ncursesw/$item" "include/$item"
+        run ln -s "ncursesw/$item" "include/$item"
     done
 
     for item in libncurses libpanel libmenu libform
     do
-        ln -s "${item}w.a"  "lib/${item}.a"
-        ln -s "${item}w.so" "lib/${item}.so"
+        run ln -s "${item}w.a"  "lib/${item}.a"
+        run ln -s "${item}w.so" "lib/${item}.so"
     done
 
-    ln -s ncursesw.pc lib/pkgconfig/ncurses.pc
+    run ln -s ncursesw.pc lib/pkgconfig/ncurses.pc

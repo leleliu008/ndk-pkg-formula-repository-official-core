@@ -17,7 +17,7 @@ install: |
         --disable-pma \
         --disable-builtin-intdiv0
 
-dotweak: rm "bin/gawk-$PACKAGE_VERSION"
+dotweak: run rm "bin/gawk-$PACKAGE_VERSION"
 
 # https://www.gnu.org/software/gawk/manual/html_node/Persistent-Memory.html
 

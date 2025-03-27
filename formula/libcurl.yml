@@ -23,8 +23,6 @@ install: |
         --without-libidn2
 
 dotweak: |
-    rm -f bin/curl share/man/man1/curl.1
+    run rm -f bin/curl share/man/man1/curl.1
 
-    cd lib/pkgconfig
-    gsed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
-    printf 'Requires: libnghttp2 libcares libzstd libz libbrotlidec openssl\n' >> libcurl.pc
+    gsed -i '/Libs.private:/d' lib/pkgconfig/libcurl.pc

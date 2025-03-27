@@ -9,4 +9,4 @@ bsystem: configure
 
 dopatch: gsed -i '/SUBDIRS =/c SUBDIRS = liboggz' src/Makefile.in
 
-dotweak: rm -rf share/
+dotweak: run rm -rf share/

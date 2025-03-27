@@ -14,4 +14,4 @@ install: |
         --disable-frontend \
         --enable-nasm
 
-dotweak: rm -rf share/man
+dotweak: run rm -rf share/man/

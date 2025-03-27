@@ -11,4 +11,4 @@ install: |
         -DCPUINFO_BUILD_BENCHMARKS=OFF \
         -DBUILD_SHARED_LIBS=OFF
 
-dotweak: rm -rf include/ lib/ share/
+dotweak: run rm -rf include/ lib/ share/

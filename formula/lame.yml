@@ -15,4 +15,4 @@ install: |
         --enable-nasm \
         LIBS=-lm
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

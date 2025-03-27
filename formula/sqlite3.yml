@@ -11,4 +11,4 @@ dopatch: gsed -i '/if defined(STRERROR_R_CHAR_P) || defined(__USE_GNU)/c \#if de
 
 install: configure --disable-editline --enable-readline --enable-static-shell LIBS=-lm
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

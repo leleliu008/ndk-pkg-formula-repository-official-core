@@ -18,6 +18,5 @@ install: |
         -Dpixbuf-loader=enabled \
         -Dintrospection=disabled
 
-dotweak2: |
-    gsed -i '/^Requires:/d'                                                  lib/pkgconfig/librsvg-2.0.pc
+dotweak: |
     printf 'Requires: gdk-pixbuf-2.0 libxml-2.0 pangocairo cairo-gobject' >> lib/pkgconfig/librsvg-2.0.pc

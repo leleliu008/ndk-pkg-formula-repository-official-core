@@ -9,4 +9,4 @@ dopatch: gsed -i '/add_subdirectory(tests)/d' CMakeLists.txt
 
 install: cmakew 2 -DGRAPHITE2_NFILEFACE=ON
 
-dotweak: gsed -i 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc
+dotweak: gsed -i '/-lgraphite2/s|$| -lc++|' lib/pkgconfig/graphite2.pc

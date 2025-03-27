@@ -22,7 +22,7 @@ install: |
         --disable-makeinstall-chown \
         --disable-makeinstall-setuid
 
-dotweak: rm -rf bin/ sbin/ share/man/man[158]/
+dotweak: run rm -rf bin/ sbin/ share/man/man[158]/
 
 patches:
     45dd0f06f899fc5a02ad8e67c5349a1ab7fe75b00ae0e730326b33f873d54c61|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/versionsort.patch

@@ -13,4 +13,4 @@ install: |
         -DENABLE_SHARED=OFF \
         -DENABLE_ASSEMBLY=OFF
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

@@ -50,4 +50,4 @@ install: |
         USE_SYSTEM_MUJS=yes \
         $GMAKE_EXTRA_ARGS
 
-dotweak: cd lib && mv libmupdf.so.* libmupdf.so
+dotweak: run cd lib && run mv libmupdf.so.* libmupdf.so

@@ -15,4 +15,4 @@ install: |
         -DENABLE_OPENJPEG=ON \
         -DBUILD_PROG=OFF
 
-dotweak: cd lib/pkgconfig && mv lept_Release.pc lept.pc
+dotweak: run cd lib/pkgconfig && run mv lept_Release.pc lept.pc

@@ -18,4 +18,4 @@ install: |
         --enable-smallbuild \
         db_cv_atomic=gcc-builtin
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

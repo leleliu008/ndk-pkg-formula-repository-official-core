@@ -14,4 +14,4 @@ install: |
         --enable-assembler \
         --enable-threads=posix
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

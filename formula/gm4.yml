@@ -24,6 +24,7 @@ dopatch: |
 
 install: |
     configure \
+        --program-prefix=g \
         --enable-threads=posix \
         --enable-c++ \
         --enable-changeword \
@@ -32,7 +33,7 @@ install: |
         --without-dmalloc \
         --with-included-regex
 
-dotweak: ln -s m4 bin/gm4
+dotweak: run ln -s gm4 bin/m4
 
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html
 # https://github.com/android/ndk/issues/513

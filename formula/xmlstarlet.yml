@@ -17,4 +17,4 @@ install: |
         --with-libxml-prefix="$libxml2_INSTALL_DIR" \
         --with-libxslt-prefix="$libxslt_INSTALL_DIR"
 
-dotweak: ln -s xml bin/xmlstarlet
+dotweak: run ln -s xml bin/xmlstarlet

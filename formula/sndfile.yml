@@ -14,4 +14,4 @@ install: |
         -DENABLE_PACKAGE_CONFIG=ON \
         -DINSTALL_PKGCONFIG_MODULE=OFF
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

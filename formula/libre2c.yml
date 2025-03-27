@@ -11,4 +11,4 @@ install: |
         -DRE2C_BUILD_RE2RUST=OFF \
         -DRE2C_REBUILD_DOCS=OFF
 
-dotweak: rm -rf bin/ share/man/
+dotweak: run rm -rf bin/ share/man/

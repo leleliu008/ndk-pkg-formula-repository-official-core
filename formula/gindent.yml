@@ -8,5 +8,7 @@ dep-upp: texinfo
 dep-pkg: libintl
 dep-lib:  -lintl -liconv
 binbstd: 1
-bsystem: configure
-dotweak: ln -s indent bin/gindent
+
+install: configure --program-prefix=g
+
+dotweak: run ln -s gindent bin/indent

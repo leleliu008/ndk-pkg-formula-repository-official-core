@@ -22,4 +22,4 @@ install: |
         -DWEBP_LINK_STATIC=ON \
         -DBUILD_SHARED_LIBS=OFF
 
-dotweak: gsed -i '/^Libs:/s|$| -lm|' lib/pkgconfig/libsharpyuv.pc
+dotweak: run rm -rf include/ lib/

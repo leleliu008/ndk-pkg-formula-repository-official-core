@@ -1,22 +1,19 @@
 summary: A general-purpose, portable utility library which provides many useful data types, macros, type conversions, string utilities, file utilities, a mainloop abstraction, and so on
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
-src-uri: https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
-src-url: https://distfiles.macports.org/glib2/glib-2.78.0.tar.xz
-src-sha: 44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
+src-url: https://download.gnome.org/sources/glib/2.82/glib-2.82.4.tar.xz
+src-uri: https://distfiles.macports.org/glib2/glib-2.82.4.tar.xz
+src-sha: 37dd0877fe964cd15e9a2710b044a1830fb1bd93652a6d0cb6b8b2dff187c709
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
-
-dopatch: |
-    gsed -i '2139,2165d'  meson.build
-    gsed -i "2139a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    gsed -i '2140a libintl_deps = [libintl, libiconv]' meson.build
+dep-upp: gettext-tools
 
 install: |
     mesonw \
+        -Dintrospection=disabled \
+        -Ddocumentation=false \
+        -Dman-pages=disabled \
         -Dnls=disabled \
-        -Dman=false \
-        -Dgtk_doc=false \
         -Ddtrace=false \
         -Dglib_debug=disabled \
         -Dglib_assert=false \
@@ -24,4 +21,4 @@ install: |
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
 
-dotweak: gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+dotweak: gsed -i -e '/^Requires/s|$| libintl libffi libz|' -e 's|-lintl||' -e 's|-liconv||' -e 's|-latomic||' lib/pkgconfig/glib-2.0.pc

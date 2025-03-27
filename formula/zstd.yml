@@ -19,4 +19,4 @@ install: |
         -DZSTD_LZMA_SUPPORT=ON \
         -DZSTD_LZ4_SUPPORT=OFF
 
-dotweak: rm -rf include/ lib/
+dotweak: run rm -rf include/ lib/

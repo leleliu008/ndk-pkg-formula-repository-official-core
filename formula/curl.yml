@@ -24,7 +24,7 @@ install: |
         --without-librtmp \
         --without-libidn2
 
-dotweak: rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
+dotweak: run rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
 
 caveats: |
     If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers <DNS-SERVERS> argument to curl like below

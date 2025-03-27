@@ -6,10 +6,7 @@ license: GPL-2.0-or-later
 dep-upp: libtool
 bsystem: autotools
 
-dopatch: |
-    touch NEWS
-    touch AUTHORS
-    touch ChangeLog
+dopatch: run touch NEWS AUTHORS ChangeLog
 
 install: configure --disable-debugging --enable-fpm=64bit
 

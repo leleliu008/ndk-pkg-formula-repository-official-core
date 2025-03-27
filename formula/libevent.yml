@@ -17,4 +17,4 @@ install: |
         -DEVENT__COVERAGE=OFF \
         -DEVENT__LIBRARY_TYPE=BOTH
 
-dotweak: gsed -i '/Requires:/s|$| openssl|' lib/pkgconfig/libevent_openssl.pc
+dotweak: gsed -i '/^Requires/s|$| openssl|' lib/pkgconfig/libevent_openssl.pc
