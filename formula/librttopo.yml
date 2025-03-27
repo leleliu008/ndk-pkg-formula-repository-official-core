@@ -1,8 +1,8 @@
 summary: RT Topology Library
 git-url: https://git.osgeo.org/gitea/rttopo/librttopo
-src-url: https://git.osgeo.org/gitea/rttopo/librttopo/archive/librttopo-1.1.0.tar.gz
+src-url: https://deb.debian.org/debian/pool/main/libr/librttopo/librttopo_1.1.0.orig.tar.gz
 src-uri: https://distfiles.macports.org/librttopo/librttopo-1.1.0.tar.gz
-src-sha: 60b49acb493c1ab545116fb0b0d223ee115166874902ad8165eb39e9fd98eaa9
+src-sha: 2e2fcabb48193a712a6c76ac9a9be2a53f82e32f91a2bc834d9f1b4fa9cd879f
 license: GPL-2.0-or-later
 dep-pkg: libgeos
 dep-upp: libtool
