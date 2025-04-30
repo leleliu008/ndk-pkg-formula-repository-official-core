@@ -1,0 +1,8 @@
+summary: A fancy terminal browser for the Gemini protocol
+src-url: https://github.com/makew0rld/amfora/archive/refs/tags/v1.10.0.tar.gz
+src-sha: 0bc9964ccefb3ea0d66944231492f66c3b0009ab0040e19cc115d0b4cd9b8078
+license: GPL-3.0-only
+install: |
+    gow -X main.version=PACKAGE_VERSION -X main.commit= -X main.builtBy=xcpkg
+    run install -d "$PACKAGE_INSTALL_DIR/share/"
+    run cp -r contrib/themes "$PACKAGE_INSTALL_DIR/share/"
