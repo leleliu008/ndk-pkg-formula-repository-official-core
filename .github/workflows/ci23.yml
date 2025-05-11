@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow23
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide]
 
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide]
 
     runs-on: ubuntu-latest
 
@@ -81,7 +81,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide]
 
     runs-on: ubuntu-latest
 
@@ -132,7 +132,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [PKGLIST]
+        pkg: [hexdump,hexyl,htop,htslib,httpx,hugo,hunspell,hurl,hwloc,hydroxide]
 
     runs-on: ${{ matrix.os }}
 
