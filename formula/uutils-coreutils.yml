@@ -5,5 +5,6 @@ src-sha: 732c0ac646be7cc59a51cdfdb2d0ff1a4d2501c28f900a2d447c77729fdfca22
 license: MIT
 bsystem: gmake cargo
 install: |
+    [ "$TERMUX" = 1 ] || run rustup target add "$RUST_TARGET"
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR" PROFILE="$PROFILE" CARGOFLAGS="--target=$RUST_TARGET" BUILDDIR="$PWD/target/$RUST_TARGET/$PROFILE" SKIP_UTILS="'uptime users pinky who hostid'" MULTICALL=y COMPLETIONS=n MANPAGES=n
