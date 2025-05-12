@@ -6,4 +6,4 @@ license: MIT
 bsystem: gmake cargo
 install: |
     gmakew clean
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" PROFILE="$PROFILE" MULTICALL=y COMPLETIONS=n MANPAGES=n
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" PROFILE="$PROFILE" CARGOFLAGS="--target=$RUST_TARGET" BUILDDIR="$PWD/target/$RUST_TARGET/$PROFILE" SKIP_UTILS="'uptime users pinky who hostid'" MULTICALL=y COMPLETIONS=n MANPAGES=n
