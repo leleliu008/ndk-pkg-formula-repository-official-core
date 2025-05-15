@@ -13,3 +13,7 @@ install: cmakew 2 -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF
 
 dotweak: |
     printf 'Requires: openssl, libz\n' >> lib/pkgconfig/libssh.pc
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24

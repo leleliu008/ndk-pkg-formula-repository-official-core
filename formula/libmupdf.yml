@@ -1,8 +1,8 @@
 summary: The ultimate library for managing PDF documents
-git-url: git://git.ghostscript.com/mupdf.git
+git-url: https://github.com/ArtifexSoftware/mupdf
 web-url: https://mupdf.com/
-src-url: https://mupdf.com/downloads/archive/mupdf-1.24.9-source.tar.gz
-src-sha: 0b446aa0eecc114e9969dccd70c9789358fccb6589a81d470dc941a0874da98a
+src-url: https://mupdf.com/downloads/archive/mupdf-1.26.0-source.tar.gz
+src-sha: d896f89eabfc5aaaabcdddc30f4592f6df33075640759292dd338d8e69e59c63
 license: AGPL-3.0-or-later
 dep-pkg: openssl-dev libtesseract libjbig2dec libharfbuzz libgumbo libmujs
 
@@ -49,5 +49,3 @@ install: |
         USE_SYSTEM_LIBS=yes \
         USE_SYSTEM_MUJS=yes \
         $GMAKE_EXTRA_ARGS
-
-dotweak: run cd lib && run mv libmupdf.so.* libmupdf.so

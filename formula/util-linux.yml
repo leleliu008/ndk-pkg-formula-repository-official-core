@@ -6,6 +6,19 @@ license: GPL-2.0-or-later
 dep-upp: automake libtool
 dep-pkg: libreadline libcap-ng libz libglob
 
+dopatch: |
+    if [ ! -f /bin/bash ] ; then
+        for f in tools/*
+        do
+            [ -f "$f" ] || continue
+            [ -L "$f" ] && continue
+
+            if [ "$(head -n 1 "$f")" = '#!/bin/bash' ] ; then
+                gsed -i '1c #!/usr/bin/env bash' "$f"
+            fi
+        done
+    fi
+
 install: |
     configure \
         --without-python \

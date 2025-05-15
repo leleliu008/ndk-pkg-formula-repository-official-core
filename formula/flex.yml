@@ -4,6 +4,12 @@ src-sha: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
 license: BSD-2-Clause
 dep-upp: gm4
 
-dopatch: gsed -i '1i \#include<stdlib.h>' src/misc.c
+dopatch: |
+    gsed -i '1i \#include<stdlib.h>' src/misc.c
+
+    # https://github.com/westes/flex/issues/428
+    if [ "$NATIVE_PLATFORM_KIND" = darwin ] ; then
+        gsed -i 's| reallocarray||' configure
+    fi
 
 install: configure --enable-warnings LIBS=-lm
