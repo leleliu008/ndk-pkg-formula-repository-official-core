@@ -1,9 +1,12 @@
 summary: Compression/decompression library aiming for high speed
 web-url: https://google.github.io/snappy
-src-url: https://github.com/google/snappy/archive/refs/tags/1.2.0.tar.gz
-src-sha: 9b8f10fbb5e3bc112f2e5e64f813cb73faea42ec9c533a5023b5ae08aedef42e
+src-url: https://github.com/google/snappy/archive/refs/tags/1.2.2.tar.gz
+src-sha: 90f74bc1fbf78a6c56b3c4a082a05103b3a56bb17bca1a27e052ea11723292dc
 license: BSD-3-Clause
-xxflags: -Wno-error=sign-compare
+
+fix-url: https://raw.githubusercontent.com/leleliu008/xcpkg-formula-repository-official-core/refs/heads/master/patches/snappy.diff
+fix-sha: f431b4cd86070644c4a0ad169f1abb9771ae277c8e07f3aa9b7d9d0e9f8c5ed9
+
 install: |
     cmakew 2 \
         -DSNAPPY_BUILD_BENCHMARKS=OFF \

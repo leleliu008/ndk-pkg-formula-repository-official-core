@@ -1,0 +1,18 @@
+summary: A collection of reusable C++ library artifacts developed at Facebook
+src-url: https://github.com/facebook/folly/archive/refs/tags/v2025.05.19.00.tar.gz
+src-sha: c60daf2e709e0a3fd428d09a1e3439c1836189d4248189a1a45f33500de90eac
+license: Apache-2.0
+dep-pkg: boost fastfloat libfmt libglog libevent liblz4 libsnappy libsodium libdouble-conversion
+
+install: |
+    cmakew 2 \
+        -DHAVE_VSNPRINTF_ERRORS_EXITCODE=0 \
+        -DHAVE_VSNPRINTF_ERRORS_EXITCODE__TRYRUN_OUTPUT=a \
+        -DFOLLY_HAVE_WCHAR_SUPPORT_EXITCODE=0 \
+        -DFOLLY_HAVE_WCHAR_SUPPORT_EXITCODE__TRYRUN_OUTPUT=a \
+        -DFOLLY_HAVE_LINUX_VDSO_EXITCODE=1 \
+        -DFOLLY_HAVE_LINUX_VDSO_EXITCODE__TRYRUN_OUTPUT=a \
+        -DFOLLY_HAVE_UNALIGNED_ACCESS_EXITCODE=0 \
+        -DFOLLY_HAVE_UNALIGNED_ACCESS_EXITCODE__TRYRUN_OUTPUT=a \
+        -DFOLLY_HAVE_WEAK_SYMBOLS_EXITCODE=0 \
+        -DFOLLY_HAVE_WEAK_SYMBOLS_EXITCODE__TRYRUN_OUTPUT=a
