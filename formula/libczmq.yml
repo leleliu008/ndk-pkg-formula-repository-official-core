@@ -1,0 +1,12 @@
+summary: High-level C binding for ZeroMQ
+web-url: http://czmq.zeromq.org/
+src-url: https://github.com/zeromq/czmq/releases/download/v4.2.1/czmq-4.2.1.tar.gz
+src-sha: 5d720a204c2a58645d6f7643af15d563a712dad98c9d32c1ed913377daa6ac39
+license: MPL-2.0
+dep-pkg: liblz4 libzmq libuuid
+ccflags: -DCZMQ_HAVE_ANDROID=1
+install: configure --enable-drafts=no
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24
