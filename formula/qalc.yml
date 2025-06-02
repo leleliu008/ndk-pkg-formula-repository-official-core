@@ -1,4 +1,4 @@
-summary: Library for Qalculate! program
+summary: A powerful and easy to use command-line calculator
 web-url: https://qalculate.github.io/
 src-url: https://github.com/Qalculate/libqalculate/releases/download/v5.5.2/libqalculate-5.5.2.tar.gz
 src-sha: fc14d4527dccfc9189684b9fcd64d78aa67ae5383012c66e1596b2531f5daef1
@@ -7,7 +7,7 @@ dep-upp: gettext-tools perl intltool
 dep-pkg: libintl libreadline libicu libxml2 libcurl libgmp libmpfr
 bsystem: configure
 
-prepare: export LDFLAGS="$LDFLAGS $("$CC" -print-libgcc-file-name)"
+dotweak: run rm -rf include/ lib/
 
 fix-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/qalc/libqalculate-util.cc.patch
 fix-sha: 869ca7507a7b33523dfa59d63ce15e363e9a330f86198866bcf440c64e6a1f86
