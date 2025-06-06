@@ -1,7 +1,7 @@
 summary: Simulating articulated rigid body dynamics
 web-url: https://www.ode.org/
-src-url: https://bitbucket.org/odedevs/ode/downloads/ode-0.16.6.tar.gz
-src-sha: c91a28c6ff2650284784a79c726a380d6afec87ecf7a35c32a6be0c5b74513e8
+src-url: https://bitbucket.org/odedevs/ode/get/0.16.6.tar.gz
+src-sha: 05c0a0ea84c58c213d05e220adbc6559c473227505d5668a51493eed21b6c2f8
 license: LGPL-2.1-or-later BSD-3-Clause
 dep-pkg: libccd
 
