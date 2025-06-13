@@ -2,6 +2,7 @@ summary: A POSIX-compliant implementation of /bin/sh that aims to be as small as
 git-url: https://git.kernel.org/pub/scm/utils/dash/dash
 web-url: http://gondor.apana.org.au/~herbert/dash
 src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz
+src-uri: https://ftp.openbsd.org/pub/OpenBSD/distfiles/dash-0.5.12.tar.gz
 src-sha: 6a474ac46e8b0b32916c4c60df694c82058d3297d8b385b74508030ca4a8f28a
 license: BSD-3-Clause
 dep-pkg: libedit libglob libstrchrnul

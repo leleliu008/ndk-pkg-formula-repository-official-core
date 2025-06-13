@@ -1,7 +1,7 @@
 summary: Run and Test HTTP Requests with plain text and curl
 web-url: https://hurl.dev
-src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/6.0.0.tar.gz
-src-sha: 3f21c9e2a4e86e1a5913e211d890b07e9388871e3d6ed526668487f56b11b925
+src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/6.1.1.tar.gz
+src-sha: 26ef1ed685f4b94190914a0e03127f7b7f6a488abf65758c19092dc6b9034b2c
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 
