@@ -2,8 +2,12 @@ summary: A fancy terminal browser for the Gemini protocol
 src-url: https://github.com/makew0rld/amfora/archive/refs/tags/v1.10.0.tar.gz
 src-sha: 0bc9964ccefb3ea0d66944231492f66c3b0009ab0040e19cc115d0b4cd9b8078
 license: GPL-3.0-only
+
 install: |
     export CGO_ENABLED=1
     gow -X main.version=PACKAGE_VERSION -X main.commit= -X main.builtBy=ndk-pkg
     run install -d "$PACKAGE_INSTALL_DIR/share/"
     run cp -r contrib/themes "$PACKAGE_INSTALL_DIR/share/"
+
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/community/amfora/update-cview-cbind-mods.patch
+fix-sha: f6aecc9b114e4374fd68b9977a35ba3a3c0854ec19a85ec646e7b2a65f72f409
