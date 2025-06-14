@@ -1,0 +1,9 @@
+pkgtype: exe+lib
+summary: A command-line tool to modify the buffering operations for standard input, output and error streams of another command
+web-url: https://uutils.github.io/coreutils/
+src-url: https://github.com/uutils/coreutils/archive/refs/tags/0.1.0.tar.gz
+src-sha: 55c528f2b53c1b30cb704550131a806e84721c87b3707b588a961a6c97f110d8
+license: MIT
+install: |
+    cargow install --path src/uu/stdbuf
+    install_libs target/$RUST_TARGET/release/build/uu_stdbuf-*/out/libstdbuf.so
