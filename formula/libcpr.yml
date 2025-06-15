@@ -1,0 +1,7 @@
+summary: A simple wrapper around libcurl for C++ Requests
+web-url: https://docs.libcpr.org/
+src-url: https://github.com/libcpr/cpr/archive/refs/tags/1.12.0.tar.gz
+src-sha: f64b501de66e163d6a278fbb6a95f395ee873b7a66c905dd785eae107266a709
+license: MIT
+dep-pkg: libcurl
+install: cmakew 2 -DCPR_USE_SYSTEM_CURL=ON -DCPR_BUILD_TESTS=OFF
