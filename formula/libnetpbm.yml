@@ -1,31 +1,40 @@
 summary: A C library for manipulating Netpbm images
 web-url: http://netpbm.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.41/netpbm-10.86.41.tgz
-src-sha: 045f7796224a801512efb5e7d6150a321674cbfb566128b21abf8d4ba65b4513
+src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.46/netpbm-10.86.46.tgz
+src-uri: https://fossies.org/linux/misc/netpbm-10.86.46.tgz
+src-sha: 743729a0cdbfe502140e87789cc54f864c7a97f019ca1ade883199cec1e638d2
 license: GPL-3.0-or-later
 dep-upp: gm4 flex perl
-
 disable: parallel
 
 dopatch: |
-    # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
-    gsed -i 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
-    gsed -i '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in
-    gsed -i '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in
-    gsed -i '/^INSTALL =/c INSTALL = install' config.mk.in
-    gsed -i '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+    gsed -i \
+         -e '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' \
+         -e '/^STRIPFLAG =/c STRIPFLAG = ' \
+         -e '/^INSTALL =/c INSTALL = install' \
+         -e '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+
     gsed -i 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile
+
     run cp config.mk.in config.mk
+
+prepare: |
+    GMAKE_EXTRA_FLAGS="'CC=$CC' 'AR=$AR' 'RANLIB=$RANLIB' 'CC_FOR_BUILD=$CC_FOR_BUILD' 'LD_FOR_BUILD=$CC_FOR_BUILD' 'CFLAGS_FOR_BUILD=$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD' 'LDFLAGS_FOR_BUILD=$LDFLAGS_FOR_BUILD' STATICLIB_TOO=Y NETPBMLIBTYPE=unixshared NETPBMLIBSUFFIX=so"
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export CPPFLAGS_FOR_BUILD="$CPPFLAGS_FOR_BUILD -D_DARWIN_C_SOURCE"
+    fi
 
 install: |
     gmakew clean
-    gmakew lib/util/all CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" STATICLIB_TOO=Y
-    gmakew -C lib libnetpbm libnetpbm.a  STATICLIB_TOO=Y CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'"
-    gmakew install-dev pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so STATICLIB_TOO=Y
+    gmakew lib/util/all "$GMAKE_EXTRA_FLAGS"
+    gmakew -C lib   all "$GMAKE_EXTRA_FLAGS"
+    gmakew install-dev "pkgdir=$PACKAGE_INSTALL_DIR" "$GMAKE_EXTRA_FLAGS"
 
 dotweak: |
     run mv staticlink/libnetpbm.a lib/
-    run rm -rf staticlink sharedlink
+    run rm -rf staticlink
+    run rm -rf sharedlink
 
     writepc netpbm <<EOF
     prefix=\${pcfiledir}/../..
@@ -38,5 +47,4 @@ dotweak: |
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
     Libs: -L\${libdir} -lnetpbm
-    Requires: jasper libpng libjpeg libtiff-4 libxml-2.0
     EOF
