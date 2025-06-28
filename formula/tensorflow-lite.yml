@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: C interface for Machine Intelligence
 web-url: https://www.tensorflow.org/
-src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.16.1.tar.gz
-src-sha: c729e56efc945c6df08efe5c9f5b8b89329c7c91b8f40ad2bb3e13900bd4876d
+src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.19.0.tar.gz
+src-sha: 4691b18e8c914cdf6759b80f1b3b7f3e17be41099607ed0143134f38836d058e
 license: Apache-2.0
 dep-pym: numpy
 dep-pkg: abseil ruy libxnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
