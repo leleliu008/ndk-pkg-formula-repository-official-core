@@ -1,36 +1,37 @@
 summary: Multi-format archive and compression library
 git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
-src-url: https://www.libarchive.org/downloads/libarchive-3.7.4.tar.xz
-src-sha: f887755c434a736a609cbd28d87ddbfbe9d6a3bb5b703c22c02f6af80a802735
+src-url: https://www.libarchive.org/downloads/libarchive-3.8.1.tar.xz
+src-sha: 19f917d42d530f98815ac824d90c7eaf648e9d9a50e4f309c812457ffa5496b5
 license: BSD-2-Clause
 dep-pkg: liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat openssl-dev
 
-prepare: |
-    export ac_cv_sizeof_wchar_t="$($CC -E -dM - < /dev/null | sed -n '/__SIZEOF_WCHAR_T__/p' | cut -d ' ' -f3)"
-    export CPPFLAGS="$CPPFLAGS -I$PACKAGE_BSCRIPT_DIR/contrib/android/include"
-
 install: |
-    configure \
-        --enable-xattr \
-        --enable-acl \
-        --enable-bsdtar=static \
-        --enable-bsdcat=static \
-        --enable-bsdcpio=static \
-        --enable-bsdunzip=static \
-        --without-mbedtls \
-        --without-nettle \
-        --without-libb2 \
-        --without-xml2 \
-        --without-cng \
-        --with-openssl \
-        --with-expat \
-        --with-zlib \
-        --with-lzma \
-        --with-bz2lib \
-        --with-lz4 \
-        --with-lzo2 \
-        --with-zstd \
-        --with-iconv
-
-dotweak: gsed -i -e '/^Libs:/s|$| -liconv|' -e '/^Requires/d' lib/pkgconfig/libarchive.pc
+    cmakew \
+        -DENABLE_TEST=OFF \
+        -DENABLE_ACL=ON \
+        -DENABLE_XATTR=ON \
+        -DENABLE_TAR=OFF \
+        -DENABLE_CAT=OFF \
+        -DENABLE_CPIO=OFF \
+        -DENABLE_UNZIP=OFF \
+        -DENABLE_TAR_SHARED=OFF \
+        -DENABLE_CAT_SHARED=OFF \
+        -DENABLE_CPIO_SHARED=OFF \
+        -DENABLE_UNZIP_SHARED=OFF \
+        -DENABLE_CNG=OFF \
+        -DENABLE_LIBB2=OFF \
+        -DENABLE_NETTLE=OFF \
+        -DENABLE_MBEDTLS=OFF \
+        -DENABLE_LIBXML2=OFF \
+        -DENABLE_LZ4=ON \
+        -DENABLE_LZO=ON \
+        -DENABLE_ZLIB=ON \
+        -DENABLE_LZMA=ON \
+        -DENABLE_ZSTD=ON \
+        -DENABLE_BZip2=ON \
+        -DENABLE_ICONV=ON \
+        -DENABLE_EXPAT=ON \
+        -DENABLE_OPENSSL=ON \
+        -DENABLE_INSTALL=ON \
+        -DBUILD_SHARED_LIBS=ON
