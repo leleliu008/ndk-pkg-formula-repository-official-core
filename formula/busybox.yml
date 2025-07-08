@@ -1,7 +1,7 @@
 summary: tiny versions of many common UNIX utilities into a single small executable
 web-url: https://busybox.net/
-src-url: https://busybox.net/downloads/busybox-1.36.1.tar.bz2
-src-sha: b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314
+src-url: https://busybox.net/downloads/busybox-1.37.0.tar.bz2
+src-sha: 3311dff32e746499f4df0d5df04d7eb396382d7e108bb9250e7b519b837043a4
 license: GPL-2.0
 dep-upp: bzip2
 bsystem: gmake
@@ -33,7 +33,7 @@ install: |
     install_bins busybox
  
 res-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/busybox.config
-res-sha: e51e59e8569380a7fcd86e55e2d8a526f92b876f7f3691c04ab215970eaac7df
+res-sha: d86be2c4b5353cd4ede349e2a13bb3feb8b03bfd4ec8cefa157c64e8ee3d4d1d
 
 fix-opt: -p0
 patches: |
