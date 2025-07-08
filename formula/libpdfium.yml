@@ -41,12 +41,13 @@ prepare: |
         run gn args --list .
     }
 
+# https://github.com/chromium/pdfium/blob/main/pdfium.gni
 install: |
     gnw \
         is_cfi=false \
         is_debug=false \
         is_component_build=false \
-        is_official_build=false \
+        is_official_build=true \
         treat_warnings_as_errors=false \
         clang_use_chrome_plugins=false \
         strip_debug_info=true \
