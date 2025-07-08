@@ -1,6 +1,7 @@
 summary: A massively parallel (multi-threaded) combined implementation of the tar archiver and the lzip compressor
 web-url: https://www.nongnu.org/lzip/tarlz.html
 src-url: https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.25.tar.lz
+src-uri: https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.25.tar.lz
 src-sha: 7d0bbe9c3a137bb93a10be56988fcf7362e4dbc65490639edc4255b704105fce
 license: GPL-2.0-or-later
 dep-pkg: lzlib
