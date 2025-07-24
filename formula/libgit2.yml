@@ -1,9 +1,15 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
-src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.0.tar.gz
-src-sha: 75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2
+src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.1.tar.gz
+src-sha: 14cab3014b2b7ad75970ff4548e83615f74d719afe00aa479b4a889c1e13fc00
 dep-pkg: libssh2 libpcre2 libiconv
 license: GPL-2.0-only
+
+prepare: |
+    # https://github.com/leleliu008/ndk-pkg-formula-repository-official-core/issues/18
+    if [ "$TARGET_PLATFORM_ARCH" = i686 ] ; then
+        gsed -i '/find_library/i if(LIBRARY STREQUAL "atomic")\nlist(APPEND RESOLVED_LIBRARIES -latomic)\ncontinue()\nendif()' cmake/FindPkgLibraries.cmake
+    fi
 
 install: |
     cmakew 2 \
