@@ -59,7 +59,7 @@ install: |
 patches: |
     a8b2bcf9ca30674522443f980600ba2a36410fa908550d534a54f61d6ce292cb|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/configure.patch
     b275c1b1f6df7c60e96214842745b04f8b82d9aad2fc93c5cff1993fa23dd076|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/fix-cachestat.patch
-    48eece4fa5767781a71aac63d80bf850794de3728f3a4b93982bc75fb2a11a8b|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/fix-paths.patch
+    4d58474c9720b8e88e3c8281b598ef12f04f4b07cd668eeec7af562e0b9a93be|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/fix-paths.patch
     d3d6a92deee736d1da6232ed680cc9bfbd2cc253f7d578295f8c4d51f2582f79|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/lib-ismounted.c.patch
     58925a93344e80e15ec9841f3c557bad9b45e6349ea3196781e7c65bd25aecbc|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/misc-utils-lsfd-sock-xinfo.c.patch
     a76cbf0d1bc9cdc9df6ae7225cb1b753fcc6c49d4fa77b921f16d41173470eb6|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/util-linux/misc-utuls-lsfd-file.c.patch

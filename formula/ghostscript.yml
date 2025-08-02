@@ -1,8 +1,8 @@
 pkgtype: exe+lib
 summary: An interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
-src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostpdl-10.03.1.tar.xz
-src-sha: 05eee45268f6bb2c6189f9a40685c4608ca089443a93f2af5f5194d83dc368db
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostpdl-10.05.1.tar.xz
+src-sha: 320d97f46f2f1f0e770a97d2a9ed8699c8770e46987e3a3de127855856696eb9
 license: AGPL-3.0-or-later
 dep-pkg: libidn liblcms2 libjbig2dec libfontconfig libtesseract liblanginfo
 dep-upp: libz
@@ -55,5 +55,4 @@ dotweak: |
     EOF
 
 patches: |
-    b3d60b8e97ed4464fdda14a53ab9bf135e201a0c995e7e6517001bad2d7b2c91|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/ghostscript/fix-incompatible-pointer-types.patch
     cce893445d5f5d21c261d65a047193c574781bb3a565b7f71a6ed97246af273a|https://raw.githubusercontent.com/termux/termux-packages/master/packages/ghostscript/base-gserrors.h.patch
