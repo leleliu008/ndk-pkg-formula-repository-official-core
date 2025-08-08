@@ -1,8 +1,8 @@
 summary: A free and open source distributed version control system with speed and efficiency
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
-src-sha: 1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
+src-sha: 7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4
 license: GPL-2.0-only
 dep-pkg: libpcre2 libiconv libexpat libcurl libz
 dep-lib: libcurl
@@ -51,11 +51,7 @@ install: |
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
 
-caveats: |
-    The following environment variables should be set if you move/copy this software to other location
-
-    GIT_INSTALLED_DIR=/somewhere
-
-    export GIT_EXEC_PATH="$GIT_INSTALLED_DIR/libexec/git-core"
-    export GIT_TEMPLATE_DIR="$GIT_INSTALLED_DIR/share/git-core/templates"
-    export GIT_CONFIG_NOSYSTEM=1
+bindenv: |
+    GIT_EXEC_PATH=%s/libexec/git-core
+    GIT_TEMPLATE_DIR=%s/share/git-core/templates
+    GIT_CONFIG_NOSYSTEM=1

@@ -6,7 +6,7 @@ git-ref: refs/tags/12.7.224.16
 version: 12.7.224.16
 license: BSD-3-Clause
 dep-upp: depot_tools
-dep-pym: vpython
+dep-pip: vpython
 bsystem: gn
 
 dofetch: |

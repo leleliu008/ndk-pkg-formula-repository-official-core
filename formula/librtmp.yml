@@ -13,7 +13,7 @@ version: 2.4.20151223
 license: GPL-2.0-or-later
 dep-pkg: libz openssl-dev
 
-disable: parallel
+parallel: 0
 
 install: |
     gmakew -C librtmp clean   SYS=posix

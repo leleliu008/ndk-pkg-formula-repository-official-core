@@ -1,35 +1,30 @@
 summary: A collection of tools for glib
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
-src-url: https://download.gnome.org/sources/glib/2.80/glib-2.80.2.tar.xz
-src-sha: b9cfb6f7a5bd5b31238fd5d56df226b2dda5ea37611475bf89f6a0f9400fe8bd
+src-url: https://download.gnome.org/sources/glib/2.84/glib-2.84.3.tar.xz
+src-sha: aa4f87c3225bf57ca85f320888f7484901a17934ca37023c3bd8435a72db863e
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
-dep-upp: python3
-dep-pym: packaging
+dep-upp: gettext-tools
 
-dopatch: |
-    gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
-
-    gsed -i "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
-    gsed -i "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    gsed -i "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
-
-    gsed -i '2228,2254d'  meson.build
-    gsed -i "2228a libintl = cc.find_library('intl', static : true, dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    gsed -i '2229a libintl_deps = [libintl, libiconv]' meson.build
+dopatch: gsed -i "s|dependency('iconv')|dependency('libiconv')|" meson.build
 
 install: |
     mesonw \
         -Dintrospection=disabled \
         -Ddocumentation=false \
         -Dman-pages=disabled \
+        -Dsysprof=disabled \
+        -Dselinux=disabled \
+        -Ddtrace=disabled \
         -Dnls=disabled \
-        -Ddtrace=false \
+        -Dlibelf=disabled \
+        -Dlibmount=disabled \
         -Dglib_debug=disabled \
         -Dglib_assert=false \
+        -Dxattr=false \
         -Dtests=false \
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
 
-dotweak: run rm -rf include/ lib/
+dotweak: run rm -rf lib/ include/

@@ -4,7 +4,7 @@ src-url: https://nmap.org/dist/nmap-7.95.tar.bz2
 src-sha: e14ab530e47b5afd88f1c8a2bac7f89cd8fe6b478e22d255c5b9bddb7a1c5778
 dep-pkg: liblinear libpcre2 libssh2 libpcap liblua libz openssl-dev
 
-disable: parallel
+parallel: 0
 
 install: |
     configure \

@@ -4,7 +4,7 @@ web-url: https://www.tensorflow.org/
 src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.19.0.tar.gz
 src-sha: 4691b18e8c914cdf6759b80f1b3b7f3e17be41099607ed0143134f38836d058e
 license: Apache-2.0
-dep-pym: numpy
+dep-pip: numpy
 dep-pkg: abseil ruy libxnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
 bscript: tensorflow/lite
 

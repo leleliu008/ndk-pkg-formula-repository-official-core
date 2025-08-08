@@ -7,7 +7,7 @@ license: OpenSSL
 bsystem: gmake
 dep-upp: perl
 
-disable: parallel
+parallel: 0
 
 dopatch: |
     export LC_COLLATE='C'

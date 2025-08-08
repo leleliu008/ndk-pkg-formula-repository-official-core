@@ -4,7 +4,7 @@ src-url: https://github.com/itstool/itstool/archive/2.0.6.tar.gz
 src-sha: bda0b08e9a1db885c9d7d1545535e9814dd8931d5b8dd5ab4a47bd769d0130c6
 license: GPL-3.0-or-later
 dep-pkg: python3
-dep-pym: libxml2
+dep-pip: libxml2
 bsystem: autogen
 
 install: |

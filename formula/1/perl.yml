@@ -13,7 +13,7 @@ dep-upp: patch
 license: GPL-1.0-or-later
 bsystem: gmake
 
-disable: static
+linkage: shared
 
 dopatch: run cp -r ../fix/* .
 
