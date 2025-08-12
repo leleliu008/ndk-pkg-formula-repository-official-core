@@ -1,0 +1,8 @@
+summary: A tiny text editor written in Rust
+src-url: https://github.com/ilai-deutel/kibi/archive/v0.2.2.tar.gz
+src-sha: df0e2945d9d08fed3a0adbe73c73405641615eb55835675e06e91411fd541e91
+license: Apache-2.0 MIT
+install: |
+    cargow install
+    run install -D -m644 config_example.ini "$PACKAGE_INSTALL_DIR/etc/kibi/config.ini"
+    run install -D -m644 syntax.d/*      -t "$PACKAGE_INSTALL_DIR/share/kibi/syntax.d/"

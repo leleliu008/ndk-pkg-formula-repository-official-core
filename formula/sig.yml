@@ -1,0 +1,5 @@
+summary: Interactive grep (for streaming)
+src-url: https://github.com/ynqa/sig/archive/refs/tags/v0.1.4.tar.gz
+src-sha: 0d040d517cb74a5ae4a52e8121fcc7bfc777e0a9be456aa121a5e44189621c84
+license: MIT
+bsystem: cargo
