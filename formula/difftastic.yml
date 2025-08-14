@@ -1,9 +1,9 @@
 summary: A structural diff tool that compares files based on their syntax
-src-url: https://github.com/Wilfred/difftastic/archive/refs/tags/0.62.0.tar.gz
-src-sha: ef69a23c6e3b9697d84ea5be158e8cb6d7482f49fc91cf4f9c7416bd48301260
+src-url: https://github.com/Wilfred/difftastic/archive/refs/tags/0.64.0.tar.gz
+src-sha: 54c7c93309ff9a2cbe87153ac1d16e80bacac4042c80f6b7206e9b71a6f10d0b
 license: MIT
 bsystem: cargo
 dep-lib: -lc++abi
 prepare: |
     export CXXSTDLIB='c++_static'
-    export RUSTUP_TOOLCHAIN=1.76
+    export RUSTUP_TOOLCHAIN=1.80

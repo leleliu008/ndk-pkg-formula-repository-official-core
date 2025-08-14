@@ -3,4 +3,7 @@ src-url: https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz
 src-sha: e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2
 license: BSD-3-Clause
 bsystem: cargo
-prepare: export RUSTUP_TOOLCHAIN=1.79
+prepare: export RUSTUP_TOOLCHAIN=1.80
+
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/d4491a45e0f208e75d48bdc665db2d6e87813675/fcp/rust-1.80.patch
+fix-sha: cd9057498c939c9a9999408128b0561a4a7c0bc618b0426216c7fe94e00a99da

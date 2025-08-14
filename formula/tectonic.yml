@@ -8,4 +8,4 @@ dep-pkg: libfontconfig libharfbuzz openssl-dev
 # https://docs.rs/cc/latest/cc/
 prepare: export CXXSTDLIB='c++_static'
 
-install: cargow install --features external-harfbuzz
+install: cargow install --locked --features external-harfbuzz

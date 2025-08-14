@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: GNU internationalization (i18n) and localization (l10n) library
 git-url: https://git.savannah.gnu.org/git/gettext.git
 web-url: https://www.gnu.org/software/gettext
-src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
-src-sha: ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0
+src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz
+src-sha: 39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f
 license: GPL-3.0-or-later
 dep-pkg: libncurses libiconv
 
@@ -31,7 +31,8 @@ install: |
         --enable-libasprintf \
         --enable-namespacing \
         --enable-nls \
-        --enable-relocatable
+        --enable-relocatable \
+        gl_cv_header_working_fcntl_h=yes
 
 dotweak: |
     writepc libintl <<EOF

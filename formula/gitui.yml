@@ -2,7 +2,7 @@ summary: Blazing fast terminal-ui for git written in rust
 src-url: https://github.com/extrawurst/gitui/archive/refs/tags/v0.27.0.tar.gz
 src-sha: 55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b
 license: MIT
-dep-pkg: libz openssl-dev
+dep-pkg: libz libgit2 openssl-dev
 bsystem: cargo cmake
 install: cargow install --locked
 

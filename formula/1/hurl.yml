@@ -1,0 +1,28 @@
+summary: Run and Test HTTP Requests with plain text and curl
+web-url: https://hurl.dev
+src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/7.0.0.tar.gz
+src-sha: 3f505848aabd9eec78360928b0fcbfea237a049b5c8d25b8d9e0aeb3f9d8dfed
+license: Apache-2.0
+dep-pkg: libcurl libxml2
+
+prepare: |
+    # https://github.com/KyleMayes/clang-sys#environment-variables
+    unset LLVM_CONFIG_PATH
+    unset LIBCLANG_PATH
+    unset LIBCLANG_STATIC_PATH
+    export CLANG_PATH="$ANDROID_NDK_CC"
+
+    #export C_INCLUDE_PATH='/usr/include/x86_64-linux-gnu'
+    XXXX="$("$ANDROID_NDK_CC" -print-resource-dir)"
+    export BINDGEN_EXTRA_CLANG_ARGS="$ANDROID_NDK_COMPILER_ARGS -D__ANDROID_API__=$TARGET_PLATFORM_VERS -v -isystem$ANDROID_NDK_SYSROOT/usr/include/linux -isystem$XXXX/include $CPPFLAGS"
+    echo "BINDGEN_EXTRA_CLANG_ARGS=$BINDGEN_EXTRA_CLANG_ARGS"
+
+    export RUST_LOG=bindgen,libbindgen
+    export RUST_BACKTRACE=full
+    export CARGO_PROFILE_RELEASE_BUILD_OVERRIDE_DEBUG=true
+
+install: |
+    cargow install --locked --path packages/hurl
+    cargow install --locked --path packages/hurlfmt
+    install_mans docs/manual/hurl.1
+    install_mans docs/manual/hurlfmt.1
