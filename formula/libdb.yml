@@ -1,7 +1,6 @@
 summary: High performance key/value database
 web-url: https://www.oracle.com/database/technologies/related/berkeleydb.html
 src-url: https://download.oracle.com/berkeley-db/db-18.1.40.tar.gz
-src-uri: https://fossies.org/linux/misc/db-18.1.40.tar.gz
 src-sha: 0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8
 license: AGPL-3.0-only
 bscript: dist

@@ -1,18 +1,11 @@
 summary: Display directories as trees (with optional color/HTML output)
-web-url: http://mama.indstate.edu/users/ice/tree
-    #src-url: http://mama.indstate.edu/users/ice/tree/src/tree-2.1.1.tgz
-src-url: https://mirrors.aliyun.com/macports/distfiles/tree/tree-2.1.1.tgz
-src-sha: d3c3d55f403af7c76556546325aa1eca90b918cbaaf6d3ab60a49d8367ab90d5
+web-url: https://oldmanprogrammer.net/source.php?dir=projects/tree
+src-url: https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.2.1.tar.gz
+src-sha: 5caddcbca805131ff590b126d3218019882e4ca10bc9eb490bba51c05b9b3b75
 license: GPL-2.0-or-later
 dep-pkg: liblanginfo
 
-dopatch: gsed -i 's|ifndef __linux__|if 1|' tree.h strverscmp.c
-
 install: |
     gmakew clean
-    gmakew install \
-        PREFIX="$PACKAGE_INSTALL_DIR" \
-        MANDIR="$PACKAGE_INSTALL_DIR/share/man" \
-        CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64'" \
-        LDFLAGS="'$LDFLAGS'"
+    gmakew
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" MANDIR="$PACKAGE_INSTALL_DIR/share/man"

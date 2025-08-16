@@ -1,8 +1,7 @@
 summary: Numeric library for complex error functions
 git-url: https://jugit.fz-juelich.de/mlz/libcerf
-    #src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.4/libcerf-v2.4.tar.bz2
-src-url: https://mirrors.aliyun.com/macports/distfiles/libcerf/libcerf-2.4.tar.bz2
-src-sha: c62f16a71d09731e0681046267b34ea2f5a6a8f6b7367116f3269c2c7f4944f7
+src-url: https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.4/libcerf-v2.4.tar.bz2
+src-sha: 6084ee75f7035690fc193a8b298bc87f6446b5e19f20544690c171a5094fe76c
 license: MIT
 
 install: |

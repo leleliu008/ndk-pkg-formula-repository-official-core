@@ -2,7 +2,7 @@ summary: A structural diff tool that compares files based on their syntax
 src-url: https://github.com/Wilfred/difftastic/archive/refs/tags/0.64.0.tar.gz
 src-sha: 54c7c93309ff9a2cbe87153ac1d16e80bacac4042c80f6b7206e9b71a6f10d0b
 license: MIT
-bsystem: cargo
+bsystem: cargo gmake
 dep-lib: -lc++abi
 prepare: |
     export CXXSTDLIB='c++_static'
