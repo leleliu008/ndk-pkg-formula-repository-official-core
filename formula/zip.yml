@@ -11,7 +11,7 @@ fix-sha: 4f5aca2d9f6021d2fd73f2fc16e9a392ab98673a940b44cf78fe38b8cdec1ab9
 res-url: https://raw.githubusercontent.com/Homebrew/formula-patches/d2b59930/zip/xcode15.diff
 res-sha: 99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c
 
-version: 3.0.11
+version: 3.0.13
 
 license: Info-ZIP
 dep-pkg: libbz2

@@ -1,8 +1,8 @@
 summary: Command-driven, interactive function plotting
 web-url: http://www.gnuplot.info/
 git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
-src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.0/gnuplot-6.0.0.tar.gz
-src-sha: 635a28f0993f6ab0d1179e072ad39b8139d07f51237f841d93c6c2ff4b1758ec
+src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.3/gnuplot-6.0.3.tar.gz
+src-sha: ec52e3af8c4083d4538152b3f13db47f6d29929a3f6ecec5365c834e77f251ab
 license: gnuplot
 dep-pkg: libgd libcerf libpango libreadline 
 bsystem: autotools

@@ -1,8 +1,8 @@
 summary: TIFF library and utilities
 web-url: https://libtiff.gitlab.io/libtiff
 git-url: https://gitlab.com/libtiff/libtiff
-src-url: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz
-src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
+src-url: https://download.osgeo.org/libtiff/tiff-4.7.0.tar.gz
+src-sha: 67160e3457365ab96c5b3286a0903aa6e78bdc44c4bc737d2e486bcecb6ba976
 dep-pkg: libwebp libjpeg-turbo libzstd liblzma libz
 dep-lib: -lsharpyuv
 
@@ -21,3 +21,5 @@ install: |
         -Dtiff-tests=ON \
         -Dtiff-contrib=ON \
         -DBUILD_SHARED_LIBS=OFF
+
+dotweak: run rm -rf include/ lib/
