@@ -1,8 +1,11 @@
 summary: Basis Universal GPU texture codec command-line compression tool
-src-url: https://github.com/BinomialLLC/basis_universal/archive/refs/tags/1.16.4.tar.gz
-src-sha: e5740fd623a2f8472c9700b9447a8725a6f27d65b0b47c3e3926a60db41b8a64
+src-url: https://github.com/BinomialLLC/basis_universal/archive/refs/tags/v1_60.tar.gz
+src-sha: 64ac9363656dc3eb41c59ee52af7e939abe574a92c85fd0ba27008c4a7ec9f40
+version: 1.60
 license: Apache-2.0
-bsystem: cmake
+
 dopatch: |
     gsed -i '/strip/c message("--")' CMakeLists.txt
-    gsed -i '/set(CMAKE_CXX_FLAGS/c set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")' CMakeLists.txt
+    #gsed -i '/set(CMAKE_CXX_FLAGS/c set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")' CMakeLists.txt
+
+install: cmakew && install_bins ../bin/basisu

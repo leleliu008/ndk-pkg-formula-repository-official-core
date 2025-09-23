@@ -5,6 +5,7 @@ license: MIT
 dep-pkg: libz libgit2 openssl-dev
 bsystem: cargo cmake
 install: cargow install --locked
+prepare: export RUSTUP_TOOLCHAIN=1.88
 
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
 api-min: 23

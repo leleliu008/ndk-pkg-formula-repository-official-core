@@ -1,6 +1,6 @@
 summary: The fastest and safest AV1 video encoder
-src-url: https://github.com/xiph/rav1e/archive/refs/tags/v0.7.1.tar.gz
-src-sha: da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c
+src-url: https://github.com/xiph/rav1e/archive/refs/tags/v0.8.1.tar.gz
+src-sha: 06d1523955fb6ed9cf9992eace772121067cca7e8926988a1ee16492febbe01e
 license: BSD-2-Clause
 dep-upp: nasm cargo-c libz
 bsystem: cargo

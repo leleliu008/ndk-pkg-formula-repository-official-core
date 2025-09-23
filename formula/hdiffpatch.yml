@@ -9,6 +9,7 @@ license: MIT
 
 prepare: |
     run git clone https://github.com/sisong/libmd5.git ../libmd5
+    run git clone https://github.com/sisong/xxHash.git ../xxHash
     run git clone https://github.com/sisong/bzip2.git ../bzip2
     run git clone https://github.com/sisong/lzma.git ../lzma
     run git clone https://github.com/sisong/zstd.git ../zstd
@@ -17,5 +18,5 @@ prepare: |
 
 install: |
     gmakew clean
-    gmakew ZSTD=1 LZMA=1 ZLIB=0 BZIP2=1 LDEF=1 MD5=1 CC="$CC" PATCH_LINK="'$LDFLAGS'" DIFF_LINK="'$LDFLAGS'"
+    gmakew ZSTD=1 LZMA=1 ZLIB=0 BZIP2=1 LDEF=1 MD5=1 XXH=1 CC="$CC" PATCH_LINK="'$LDFLAGS'" DIFF_LINK="'$LDFLAGS'"
     install_bins hdiffz hpatchz
