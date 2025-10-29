@@ -2,13 +2,13 @@ pkgtype: exe+lib
 summary: C++ class libraries for building network and internet-based applications
 git-url: https://github.com/pocoproject/poco
 web-url: https://pocoproject.org/
-src-url: https://pocoproject.org/releases/poco-1.13.2/poco-1.13.2-all.tar.gz
-src-sha: 33fe6c0d623e026b026d0ae757e617538428dbb6fe65297196693c78b55711a0
+src-url: https://pocoproject.org/releases/poco-1.14.1/poco-1.14.1-all.tar.gz
+src-sha: c4b547070eec8330302ffbfee1d6ba02da2e0e120626f6c5dd52192e5b641f34
 license: BSL-1.0
-dep-pkg: openssl-dev
+dep-pkg: libsqlite3 libpcre2 libexpat libz openssl-dev
 install: |
     cmakew \
         -DENABLE_TESTS=OFF \
         -DENABLE_DATA_ODBC=OFF \
         -DENABLE_DATA_MYSQL=OFF \
-        -DBUILD_SHARED_LIBS=OFF
+        -DBUILD_SHARED_LIBS=ON

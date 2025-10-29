@@ -12,3 +12,9 @@ dopatch: gsed -i 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 prepare: export OPENSSL_ROOT_DIR="$openssl_dev_INSTALL_DIR"
 
 install: cmakew -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF
+
+patches: |
+    bc68dd08310ba22dc5ceb7506c86a6d4c8bfefa46581eea8cd917354a8b8ae34|https://github.com/microsoft/cpprestsdk/commit/d17f091b5a753b33fb455e92b590fc9f4e921119.patch?full_index=1
+    4205e818f5636958589d2c1e5841a31acfe512eda949d63038e23d8c089a9636|https://github.com/microsoft/cpprestsdk/commit/6df13a8c0417ef700c0f164bcd0686ad46f66fd9.patch?full_index=1
+    3bc72590cbaf6d04e3e5230558647e5b38e7f494cd0e5d3ea5c866ac25f9130a|https://github.com/microsoft/cpprestsdk/commit/4188ad89b2cf2e8de3cc3513adcf400fbfdc5ce7.patch?full_index=1
+    737567e533405f7f6ef0a83bafef7fdeea95c96947f66be0973e5f362e1b82f5|https://github.com/microsoft/cpprestsdk/commit/32b322b564e5e540ff02393ffe3bd3bade8d299c.patch?full_index=1

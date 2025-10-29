@@ -1,8 +1,8 @@
 summary: Validating, recursive, caching DNS resolver
 web-url: https://www.unbound.net
 git-url: https://github.com/NLnetLabs/unbound
-src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.21.0.tar.gz
-src-sha: e7dca7d6b0f81bdfa6fa64ebf1053b5a999a5ae9278a87ef182425067ea14521
+src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.24.1.tar.gz
+src-sha: 7f2b1633e239409619ae0527f67878b0f33ae0ec0ee5a3a51c042c359ba1eeab
 license: BSD-3-Clause
 dep-pkg: libnghttp2 libevent libexpat
 dep-upp: gm4 flex bison libtool
@@ -22,3 +22,6 @@ install: |
         ac_cv_prog_AR="$AR"
     gmakew lib
     gmakew install-lib
+
+# pthread.h int pthread_spin_unlock(pthread_spinlock_t* _Nonnull __spinlock) __INTRODUCED_IN(24);
+api-min: 24

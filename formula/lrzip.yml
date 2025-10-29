@@ -11,9 +11,6 @@ bsystem: autotools
 # stdio.h:326:FILE* fmemopen(void* __buf, size_t __size, const char* __mode) __INTRODUCED_IN(23);
 api-min: 23
 
-dopatch: gsed -i 's/PAGE_SIZE/XXXXXXXXXXXXXXXXXXXXXX/' lrzip_private.h util.c
+dopatch: gsed -i 's/PAGE_SIZE/getpagesize()/' lrzip_private.h util.c lrzip.c
 
-install: |
-    configure \
-        --disable-asm \
-        ac_cv_lib_pthread_pthread_create=yes
+install: configure --disable-asm ac_cv_lib_pthread_pthread_create=yes

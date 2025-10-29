@@ -7,7 +7,13 @@ license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 dep-upp: gettext-tools
 
-dopatch: gsed -i "s|dependency('iconv')|dependency('libiconv')|" meson.build
+dopatch: |
+    gsed -i "s|dependency('iconv')|dependency('libiconv')|" meson.build
+
+    # sys/stat.h:182:int lchmod(const char* _Nonnull __path, mode_t __mode) __INTRODUCED_IN(36);
+    if [ "$TARGET_PLATFORM_VERS" -lt 36 ] ; then
+        gsed -i "/lchmod/d" meson.build
+    fi
 
 install: |
     mesonw \
