@@ -73,18 +73,6 @@ version_match() {
     esac
 }
 
-get_version_from_formula() {
-    sed -n '/^version:/p' "$1" | cut -c10-
-}
-
-get_src_url_from_formula() {
-    sed -n '/^src-url:/p' "$1" | cut -c10-
-}
-
-get_version_from_url() {
-    basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
-}
-
 #########################################################################
 
 curl -s -L -o artifacts.html 'https://repo1.maven.org/maven2/com/fpliu/ndk/pkg/prefab/android/21'
@@ -99,15 +87,7 @@ do
 
     FORMULA_FILEPATH="formula/$artifactId.yml"
 
-    PACKAGE_VERSION="$(get_version_from_formula "$FORMULA_FILEPATH")"
-
-    if [ -z "$PACKAGE_VERSION" ] ; then
-        PACKAGE_SRC_URL="$(get_src_url_from_formula "$FORMULA_FILEPATH")"
-
-        if [ -n "$PACKAGE_SRC_URL" ] ; then
-            PACKAGE_VERSION="$(get_version_from_url "$PACKAGE_SRC_URL")"
-        fi
-    fi
+    PACKAGE_VERSION="$(./xcpkg formula-parse "$FORMULA_FILEPATH" version)"
 
     if version_match "$PACKAGE_VERSION" gt "$LATEST_VERSION_IN_MAVEN_CENTRAL" ; then
         printf "${COLOR_RED}%-15s %-10s %-10s${COLOR_OFF}\n" "$artifactId" "$PACKAGE_VERSION" "$LATEST_VERSION_IN_MAVEN_CENTRAL"

@@ -9,6 +9,147 @@ COLOR_BLUE='\033[0;94m'         # Blue
 COLOR_PURPLE='\033[0;35m'       # Purple
 COLOR_OFF='\033[0m'             # Reset
 
+printf_package_info_red() {
+    printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_purple() {
+    printf "${COLOR_PURPLE}%-20s %-15s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_blue() {
+    printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_green() {
+    printf "${COLOR_GREEN}%-20s %-15s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+get_homebrew_package_name() {
+case $1 in
+    g)        printf '%s\n' 'g-ls'      ;;
+
+    gm4)      printf '%s\n' 'm4'        ;;
+    gmake)    printf '%s\n' 'make'      ;;
+
+    gtar)     printf '%s\n' 'gnu-tar'   ;;
+    gtime)    printf '%s\n' 'gnu-time'  ;;
+    gindent)  printf '%s\n' 'gnu-indent';;
+
+    d8)       printf '%s\n' 'v8'        ;;
+    bit)      printf '%s\n' 'bit-git'   ;;
+    xxd)      printf '%s\n' 'vim'       ;;
+    tcl)      printf '%s\n' 'tcl-tk'    ;;
+    dua)      printf '%s\n' 'dua-cli'   ;;
+    tic)      printf '%s\n' 'ncurses'   ;;
+    gif)      printf '%s\n' 'giflib'    ;;
+    file)     printf '%s\n' 'file-formula' ;;
+    adig)     printf '%s\n' 'c-ares'    ;;
+    orcc)     printf '%s\n' 'orc'       ;;
+    qalc)     printf '%s\n' 'libqalculate' ;;
+    pjsip)    printf '%s\n' 'pjproject' ;;
+    xattr)    printf '%s\n' 'attr'      ;;
+    patch)    printf '%s\n' 'gpatch'    ;;
+    delta)    printf '%s\n' 'git-delta' ;;
+    xmlwf)    printf '%s\n' 'expat'     ;;
+    typos)    printf '%s\n' 'typos-cli' ;;
+    proj7)    printf '%s\n' 'proj@7'    ;;
+    flatc)    printf '%s\n' 'flatbuffers' ;;
+    getopt)   printf '%s\n' 'util-linux';;
+    bsdtar)   printf '%s\n' 'libarchive';;
+    choose)   printf '%s\n' 'choose-rust';;
+    eigen3)   printf '%s\n' 'eigen'     ;;
+    utfcpp)   printf '%s\n' 'utf8cpp'   ;;
+    toml++)   printf '%s\n' 'tomlplusplus'  ;;
+    pngsplit) printf '%s\n' 'pngcheck'  ;;
+    xmlutils) printf '%s\n' 'libxml2'   ;;
+    stwolame) printf '%s\n' 'two-lame'  ;;
+    openpmix) printf '%s\n' 'pmix'      ;;
+    xsltproc) printf '%s\n' 'libxslt'   ;;
+    trietool) printf '%s\n' 'libdatrie' ;;
+    msgpack-c)printf '%s\n' 'msgpack'   ;;
+    jackaudio)printf '%s\n' 'jack'      ;;
+    proto-cli)printf '%s\n' 'proto'     ;;
+    mediainfo)printf '%s\n' 'media-info';;
+
+    golang)   printf '%s\n' 'go'        ;;
+    golang@1.21)
+              printf '%s\n' 'go@1.21'   ;;
+    dot_static)
+              printf '%s\n' 'graphviz'  ;;
+    grpc-plugins)
+              printf '%s\n' 'grpc'      ;;
+    zlog-chk-conf)
+              printf '%s\n' 'zlog'      ;;
+    tensorflow-lite)
+              printf '%s\n' 'libtensorflow' ;;
+    update-mime-database)
+              printf '%s\n' 'shared-mime-info' ;;
+
+    glib-tools)
+              printf '%s\n' 'glib'      ;;
+    gettext-tools)
+              printf '%s\n' 'gettext'   ;;
+
+    png)      printf '%s\n' 'libpng'    ;;
+    tiff)     printf '%s\n' 'libtiff'   ;;
+    sndfile)  printf '%s\n' 'libsndfile' ;;
+    nghttp3)  printf '%s\n' 'libnghttp3' ;;
+    ngtcp2)   printf '%s\n' 'libngtcp2'  ;;
+
+    llvm+*@18)printf '%s\n' 'llvm@18'    ;;
+    llvm+*@19)printf '%s\n' 'llvm@19'    ;;
+    llvm+*@20)printf '%s\n' 'llvm@20'    ;;
+
+    xorg-*)   printf '%s\n' "$1" | cut -c6- ;;
+
+    lib*)
+        case $1 in
+            libz)     printf '%s\n' 'zlib'      ;;
+            libfl)    printf '%s\n' 'flex'      ;;
+            libdb)    printf '%s\n' 'berkeley-db' ;;
+            libfdt)   printf '%s\n' 'dtc'       ;;
+            libgif)   printf '%s\n' 'giflib'    ;;
+            libbz2)   printf '%s\n' 'bzip2'     ;;
+            libzmq)   printf '%s\n' 'zeromq'    ;;
+            libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+            libicu)   printf '%s\n' 'icu4c'     ;;
+            libhwy)   printf '%s\n' 'highway'   ;;
+            librtmp)  printf '%s\n' 'rtmpdump'  ;;
+            liblzma)  printf '%s\n' 'xz'        ;;
+            libjpeg)  printf '%s\n' 'jpeg'      ;;
+            libltdl)  printf '%s\n' 'libtool'   ;;
+            libuuid)  printf '%s\n' 'util-linux';;
+            libargp)  printf '%s\n' 'argp-standalone';;
+            liburcu)  printf '%s\n' 'userspace-rcu' ;;
+            liblcms2) printf '%s\n' 'little-cms2' ;;
+            libfftw3) printf '%s\n' 'fftw'      ;;
+            libcares) printf '%s\n' 'c-ares'    ;;
+            libgumbo) printf '%s\n' 'gumbo-parser' ;;
+
+            libasync++)
+                      printf '%s\n' 'asyncplusplus' ;;
+            libsqlite3)
+                      printf '%s\n' 'sqlite'    ;;
+            libmp3lame)
+                      printf '%s\n' 'lame'      ;;
+            libtwolame)
+                      printf '%s\n' 'two-lame'  ;;
+            libblake3)
+                      printf '%s\n' 'b3sum'     ;;
+            libSvtAv1)
+                      printf '%s\n' 'svt-av1'   ;;
+            libxml2-python3)
+                      printf '%s\n' 'libxml2'   ;;
+            libtextstyle|libasprintf|libintl)
+                      printf '%s\n' 'gettext'   ;;
+            libprotobuf.a)
+                      printf '%s\n' 'protobuf'  ;;
+            libtiff.a)
+                      printf '%s\n' 'libtiff'   ;;
+        esac
+esac
+}
 
 version_sort() {
     # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sort.html
@@ -73,99 +214,85 @@ version_match() {
     esac
 }
 
-get_version_from_formula() {
-    sed -n '/^version:/p' "$1" | cut -c10-
-}
-
-get_src_url_from_formula() {
-    sed -n '/^src-url:/p' "$1" | cut -c10-
-}
-
-get_git_url_from_formula() {
-    sed -n '/^git-url:/p' "$1" | cut -c10-
-}
-
-get_web_url_from_formula() {
-    sed -n '/^web-url:/p' "$1" | cut -c10-
-}
-
-get_version_from_url() {
-    basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
-}
-
 #########################################################################
 
 for FORMULA_FILEPATH in formula/*.yml
 do
     FORMULA_FILENAME="${FORMULA_FILEPATH#formula/}"
 
-    PACKAGE_VERSION="$(get_version_from_formula "$FORMULA_FILEPATH")"
-
-    if [ -z "$PACKAGE_VERSION" ] ; then
-        PACKAGE_SRC_URL="$(get_src_url_from_formula "$FORMULA_FILEPATH")"
-
-        if [ -n "$PACKAGE_SRC_URL" ] ; then
-            PACKAGE_VERSION="$(get_version_from_url "$PACKAGE_SRC_URL")"
-        fi
-    fi
-
-    ####################################################################
-
-    unset URL
-
-    PACKAGE_GIT_URL="$(get_git_url_from_formula "$FORMULA_FILEPATH")"
-
-    if [ -z "$PACKAGE_GIT_URL" ] ; then
-        case $PACKAGE_SRC_URL in
-            https://github.com/*/*/releases/*)
-                URL="${PACKAGE_SRC_URL%%/releases/*}"
-                ;;
-            https://github.com/*/*/archive/*)
-                URL="${PACKAGE_SRC_URL%%/archive/*}"
-                ;;
-            https://gitlab.com/*/*/-/archive/*)
-                URL="${PACKAGE_SRC_URL%%/-/archive/*}"
-                ;;
-        esac
-    else
-        case $PACKAGE_GIT_URL in
-            https://github.com/*)
-                URL="$PACKAGE_GIT_URL"
-                ;;
-        esac
-    fi
-
-    if [ -z "$URL" ] ; then
-        URL="$(get_web_url_from_formula "$FORMULA_FILEPATH")"
-    fi
-
-    if [ -z "$URL" ] ; then
-        URL="$PACKAGE_GIT_URL"
-    fi
-
-    ####################################################################
-
     PACKAGE_NAME="${FORMULA_FILENAME%.yml}"
 
-    BREW_PACKAGE_NMAE="$(./package-name-to-homebrew.sh "$PACKAGE_NAME")"
+    PACKAGE_VERSION="$(./xcpkg formula-parse "$FORMULA_FILEPATH" version)"
+    PACKAGE_WEB_URL="$(./xcpkg formula-parse "$FORMULA_FILEPATH" web-url)"
 
-    if brew info "$BREW_PACKAGE_NMAE" > /dev/null 2>&1 ; then
-        BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | jq -r '.[0].versions.stable' || true)
+    S1="$(get_homebrew_package_name "$PACKAGE_NAME")"
+    S2=
 
-        if [ -z "$BREW_PACKAGE_VERS" ] ; then
-            printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
-        else
+    case $PACKAGE_NAME in
+        lib*)  S2="${PACKAGE_NAME#lib}"  ;;
+        *-dev) S2="${PACKAGE_NAME%-dev}" ;;
+    esac
+
+    for BREW_PACKAGE_NAME in $S1 "$PACKAGE_NAME" $S2
+    do
+        if brew info "$BREW_PACKAGE_NAME" --json > /dev/null 2>&1 ; then
+            BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].versions.stable')
+
+            if [ "$BREW_PACKAGE_VERS" = "$PACKAGE_VERSION" ] ; then
+                continue 2
+            fi
+
             if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
-                case $BREW_PACKAGE_NMAE in
+                case $BREW_PACKAGE_NAME in
                     lib*) X=lib ;;
-                       *) X="$(printf '%.1s' "$BREW_PACKAGE_NMAE")"
+                       *) X="$(printf '%.1s' "$BREW_PACKAGE_NAME")"
                 esac
 
-                printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
-                printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n\n" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NMAE.rb"
+                printf_package_info_red "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_WEB_URL"
+                printf_package_info_red "$BREW_PACKAGE_NAME" "$BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/master/Formula/$X/$BREW_PACKAGE_NAME.rb"
+
+                printf '\n'
+                continue 2
             fi
         fi
-    else
-        printf "${COLOR_BLUE}%-20s %-15s %s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$URL"
-    fi
+    done
+
+    PACKAGE_GIT_URL="$(./xcpkg formula-parse "$FORMULA_FILEPATH" git-url)"
+
+    case $PACKAGE_GIT_URL in
+        https://github.com/*)
+            X="${PACKAGE_GIT_URL#'https://github.com/'}"
+            X="${X%/}"
+            Y="${X%/*}"
+            Z="${X#*/}"
+
+            cat > QUERY <<EOF
+            {
+                repository(owner: "$Y", name: "$Z") {
+                    latestRelease {
+                      tagName
+                    }
+                }
+            }
+EOF
+
+            LATEST_RELEASE_TAGNAME="$(gh api graphql -f "query=$(cat QUERY)" --jq .data.repository.latestRelease.tagName)"
+
+            LATEST_RELEASE_VERSION="${LATEST_RELEASE_TAGNAME#v}"
+            LATEST_RELEASE_VERSION="${LATEST_RELEASE_VERSION%-stable}"
+
+            if version_match "$LATEST_RELEASE_VERSION" gt "$PACKAGE_VERSION" ; then
+                printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+                printf_package_info_purple "$PACKAGE_NAME" "$LATEST_RELEASE_VERSION" "$PACKAGE_GIT_URL/releases/tag/$LATEST_RELEASE_TAGNAME"
+            else
+                printf_package_info_green  "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+            fi
+
+            printf '\n'
+
+            continue
+    esac
+
+    printf_package_info_blue "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_WEB_URL"
+    printf '\n'
 done
