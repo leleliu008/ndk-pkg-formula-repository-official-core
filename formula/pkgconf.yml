@@ -1,8 +1,8 @@
 summary: Reimplementation of pkg-config
 web-url: http://pkgconf.org
 git-url: https://github.com/pkgconf/pkgconf
-src-url: https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz
-src-sha: 3a9080ac51d03615e7c1910a0a2a8df08424892b5f13b0628a204d3fcce0ea8b
+src-url: https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz
+src-sha: cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243
 license: ISC
 bsystem: configure
 dotweak: run ln -s pkgconf bin/pkg-config

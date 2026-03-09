@@ -18,7 +18,7 @@ jobs:
         tag: ['24.04']
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
-        opt: ['--static', '']
+        arg: ['--static', '']
         pkg: [aalib,abook,acl,act,actionlint,adig,aerc,ag,age,alass]
 
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.arg }}
 
   alpine:
     if: true
@@ -51,7 +51,7 @@ jobs:
       matrix:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
-        opt: ['--static', '']
+        arg: ['--static', '']
         pkg: [aalib,abook,acl,act,actionlint,adig,aerc,ag,age,alass]
 
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.arg }}
 
   chroot-alpine:
     if: false
@@ -80,7 +80,7 @@ jobs:
 
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
-        opt: ['--static', '']
+        arg: ['--static', '']
         pkg: [aalib,abook,acl,act,actionlint,adig,aerc,ag,age,alass]
 
     runs-on: ubuntu-latest
@@ -117,7 +117,7 @@ jobs:
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg about
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg setup
       - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg sysinfo
-      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+      - run: sudo chroot alpine-rootfs env GITHUB_ACTIONS=true ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.arg }}
 
 
   macos:
@@ -131,7 +131,7 @@ jobs:
         os:  [macos-15]
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
-        opt: ['--static', '']
+        arg: ['--static', '']
         pkg: [aalib,abook,acl,act,actionlint,adig,aerc,ag,age,alass]
 
     runs-on: ${{ matrix.os }}
@@ -147,4 +147,4 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.arg }}
