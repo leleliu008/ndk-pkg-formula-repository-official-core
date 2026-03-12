@@ -16,7 +16,7 @@ jobs:
     container: ubuntu:24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - run: apt -y update
       - run: apt -y install curl

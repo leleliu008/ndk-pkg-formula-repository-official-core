@@ -5,6 +5,8 @@ license: BSD-2-Clause
 dep-upp: gm4
 
 dopatch: |
+    gsed -i 's|void \*malloc ()|void *malloc (size_t size)|' lib/malloc.c
+
     gsed -i '1i \#include<stdlib.h>' src/misc.c
 
     # https://github.com/westes/flex/issues/428
