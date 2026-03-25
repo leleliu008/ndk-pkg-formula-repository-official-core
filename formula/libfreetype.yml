@@ -1,8 +1,9 @@
 summary: A C library to render fonts
 web-url: https://freetype.org/
 git-url: https://gitlab.freedesktop.org/freetype/freetype
-src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
-src-sha: 12991c4e55c506dd7f9b765933e62fd2be2e06d421505d7950a132e4f1bb484d
+src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.14.2/freetype-2.14.2.tar.xz
+src-uri: https://download.savannah.gnu.org/releases/freetype/freetype-2.14.2.tar.xz
+src-sha: 4b62dcab4c920a1a860369933221814362e699e26f55792516d671e6ff55b5e1
 dep-pkg: libbrotli libbz2 libpng
 license: FTL
 

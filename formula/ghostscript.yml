@@ -19,7 +19,7 @@ dopatch: |
 
 prepare: |
     export CCAUX="$CC_FOR_BUILD"
-    export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"
+    export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD -std=gnu17"
     export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
     export LDFLAGSAUX="$LDFLAGS_FOR_BUILD"
 

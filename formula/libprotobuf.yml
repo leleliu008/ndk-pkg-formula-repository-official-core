@@ -1,7 +1,7 @@
 summary: Protocol Buffers(data interchange format) compiler and library developed by Google
 git-url: https://github.com/protocolbuffers/protobuf
-git-sha: 2434ef2adf0c74149b9d547ac5fb545a1ff8b6b5
-version: 26.1
+git-sha: 4fbd1111a292d04746c732573025e3251de0bb9c
+version: 32.0
 license: BSD-3-Clause
 dep-pkg: libz libjsoncpp abseil
 

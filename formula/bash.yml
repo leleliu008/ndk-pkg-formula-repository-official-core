@@ -6,6 +6,9 @@ src-sha: 9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff
 license: GPL-3.0-or-later
 dep-pkg: libreadline
 
+# https://github.com/openwrt/packages/issues/26469
+prepare: export CFLAGS_FOR_BUILD="$CFLAGS_FOR_BUILD -std=gnu17"
+
 install: |
     configure \
         --with-curses \

@@ -5,6 +5,19 @@ src-sha: 5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
 license: LGPL-2.1-only
 dep-pkg: libgd
 
+prepare: |
+    cat > ../bin/freetype-config <<EOF
+    #!/bin/sh
+    case \$1 in
+        --cflags) pkg-config --cflags freetype2 ;;
+        --libs)   pkg-config --libs   freetype2 ;;
+    esac
+    EOF
+
+    chmod +x ../bin/freetype-config
+
+    export ac_cv_path_FREETYPE_CONFIG="$PWD/../bin/freetype-config"
+
 install: |
     configure \
         --with-png="$libpng_INSTALL_DIR" \
