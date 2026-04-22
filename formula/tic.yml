@@ -1,0 +1,40 @@
+summary: A command-line tool to translates a terminfo file from source format into compiled format
+git-url: https://github.com/mirror/ncurses
+src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz
+src-sha: 355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11
+license: MIT
+
+dopatch: gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+
+prepare: |
+    export BUILD_CC="$CC_FOR_BUILD"
+    export BUILD_CFLAGS="$CFLAGS_FOR_BUILD"
+    export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
+    export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
+    unset  BUILD_LIBS
+
+    unset TERMINFO
+
+    export LDCONFIG=true
+
+install: |
+    configure only \
+        --without-ada \
+        --without-tests \
+        --without-debug \
+        --without-shared \
+        --without-valgrind \
+        --enable-const \
+        --enable-widec \
+        --enable-warnings \
+        --enable-ext-mouse \
+        --enable-ext-colors \
+        --disable-termcap \
+        --disable-pc-files \
+        --disable-stripping \
+        --disable-assertions \
+        --disable-gnat-projects \
+        --disable-echo
+    gmakew -C include
+    gmakew -C progs tic
+    install_bins progs/tic
