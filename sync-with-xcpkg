@@ -88,9 +88,9 @@ git clone https://github.com/leleliu008/xcpkg-formula-repository-official-core
 
 for FORMULA_FILEPATH_A in formula/*.yml
 do
-    echo "################################################ $FORMULA_FILEPATH_A"
+    : "################################################"
 
-    FORMULA_FILEPATH_B="xcpkg-formula-repository-official-core/$FORMULA_FILEPATH"
+    FORMULA_FILEPATH_B="xcpkg-formula-repository-official-core/$FORMULA_FILEPATH_A"
 
     [ -L "$FORMULA_FILEPATH_A" ] && continue
     [ -L "$FORMULA_FILEPATH_B" ] && continue
