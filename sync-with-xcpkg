@@ -105,7 +105,7 @@ do
 
     ################################################
 
-    DIFF_CONTENT="$(diff "$FORMULA_FILEPATH_A" "$FORMULA_FILEPATH_B")"
+    DIFF_CONTENT="$(diff "$FORMULA_FILEPATH_A" "$FORMULA_FILEPATH_B" || true)"
 
     [ -z "$DIFF_CONTENT" ] && continue
 
