@@ -124,9 +124,9 @@ EOF
 '
     for LINE in $DIFF_CONTENT2
     do
-        case $LINE in
-            echo "LINE=$LINE"
+        echo "LINE=$LINE"
 
+        case $LINE in
             src-url:*|src-sha:*)
                 ;;
             *)  X=1
