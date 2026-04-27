@@ -149,7 +149,7 @@ EOF
         FORMULA_FILENAME="${FORMULA_FILEPATH_A#formula/}"
         PACKAGE_NAME="${FORMULA_FILENAME%.yml}"
 
-        if ./ndk-pkg install "android-35-arm64-v8a/$PACKAGE_NAME" ; then
+        if ./ndk-pkg install "android-35-arm64-v8a/$PACKAGE_NAME" -I formula ; then
             git add "$FORMULA_FILEPATH_A"
             git commit -m "github-actions-bot-auto-upgrade $FORMULA_FILEPATH_A $VERSION_A -> $VERSION_B"
             git push origin master
