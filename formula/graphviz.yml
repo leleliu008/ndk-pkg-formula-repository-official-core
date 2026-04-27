@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: An open source graph visualization software
 web-url: https://www.graphviz.org/
 git-url: https://gitlab.com/graphviz/graphviz
-src-url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/13.0.1/graphviz-13.0.1.tar.xz
-src-sha: eabb50ea256165a072e99c46a00cce9cb9063b6bf6b3bd8e088c9855212b664a
+src-url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.1.5/graphviz-14.1.5.tar.xz
+src-sha: b017378835f7ca12f1a3f1db5c338d7e7af16b284b7007ad73ccec960c1b45b3
 license: EPL-1.0
 dep-pkg: libgd libpango libglob
 dep-upp: gm4 flex bison gawk git python3 libtool
