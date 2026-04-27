@@ -16,6 +16,7 @@ jobs:
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/master/ndk-pkg
       - run: chmod u+x ndk-pkg
+      - run: ./ndk-pkg setup
 
       - run: curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/xcpkg-0.30.0-macos-15.0-arm64.release.tar.xz
       - run: /usr/bin/bsdtar xf xcpkg-0.30.0-macos-15.0-arm64.release.tar.xz --strip-components=1
