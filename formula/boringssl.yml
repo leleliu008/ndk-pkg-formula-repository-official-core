@@ -1,5 +1,5 @@
 pkgtype: exe+lib
-summary: A fork of OpenSSL that is designed to meet Google needs
+summary: A fork of OpenSSL that is designed to meet the needs of Google
 web-url: https://boringssl.googlesource.com/boringssl/
 git-url: https://github.com/google/boringssl
 dep-upp: perl golang

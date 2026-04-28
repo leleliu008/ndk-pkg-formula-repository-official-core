@@ -1,4 +1,4 @@
-summary: Command-driven, interactive function plotting
+summary: A command-line utility for producing 2D and 3D plots
 web-url: http://www.gnuplot.info/
 git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
 src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.3/gnuplot-6.0.3.tar.gz

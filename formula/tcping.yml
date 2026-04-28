@@ -1,4 +1,4 @@
-summary: TCP connect to the given IP/port combo
+summary: A cross-platform ping program using TCP instead of ICMP
 src-url: https://github.com/mkirchner/tcping/archive/refs/tags/2.1.0.tar.gz
 src-sha: b8aa427420fe00173b5a2c0013d78e52b010350f5438bf5903c1942cba7c39c9
 license: MIT

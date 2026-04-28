@@ -1,4 +1,3 @@
-summary: A command-line tool to get your currently running system information
-git-url: https://github.com/leleliu008/C-examples
-bscript: utils/sysinfo
-bsystem: cmake
+summary: A command-line tool to show your currently running system information
+git-url: https://github.com/leleliu008/sysinfo
+install: cmakew --targets=sysinfo --components=bin
