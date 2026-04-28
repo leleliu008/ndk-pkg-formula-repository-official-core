@@ -1,5 +1,5 @@
 pkgtype: lib
-summary: A C library to render fonts
+summary: C library to render fonts
 web-url: https://www.freetype.org
 git-url: https://gitlab.freedesktop.org/freetype/freetype
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz

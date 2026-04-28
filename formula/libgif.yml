@@ -1,4 +1,4 @@
-summary: A C library for processing GIFs
+summary: C library for processing GIFs
 web-url: https://sourceforge.net/projects/giflib/
 git-url: https://git.code.sf.net/p/giflib/code
 src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.2.tar.gz

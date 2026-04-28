@@ -1,4 +1,4 @@
-summary: A C library for downloading RTMP streaming media
+summary: C library for downloading RTMP streaming media
 web-url: https://rtmpdump.mplayerhq.hu
 git-url: https://git.ffmpeg.org/rtmpdump
 

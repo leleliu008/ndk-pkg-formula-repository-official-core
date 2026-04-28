@@ -105,16 +105,9 @@ do
 
     ################################################
 
-    DIFF_CONTENT="$(diff "$FORMULA_FILEPATH_A" "$FORMULA_FILEPATH_B" || true)"
+    diff -q "$FORMULA_FILEPATH_A" "$FORMULA_FILEPATH_B" && continue
 
-    [ -z "$DIFF_CONTENT" ] && continue
-
-    DIFF_CONTENT2="$(printf '%s\n' "$DIFF_CONTENT" | grep '^[<>]' | sed 's|^[<>] ||')"
-
-    cat <<EOF
-diff $FORMULA_FILEPATH_A
-$DIFF_CONTENT
-EOF
+    DIFF_CONTENT="$(diff "$FORMULA_FILEPATH_A" "$FORMULA_FILEPATH_B" | grep '^[<>]' | sed 's|^[<>] ||')"
 
     ################################################
 
@@ -122,7 +115,7 @@ EOF
 
     export IFS='
 '
-    for LINE in $DIFF_CONTENT2
+    for LINE in $DIFF_CONTENT
     do
         echo "LINE=$LINE"
 
@@ -151,7 +144,7 @@ EOF
 
         if ./ndk-pkg install "android-35-arm64-v8a/$PACKAGE_NAME" -I formula ; then
             git add "$FORMULA_FILEPATH_A"
-            git commit -m "github-actions-bot-auto-upgrade $FORMULA_FILEPATH_A $VERSION_A -> $VERSION_B"
+            git commit -m "github-actions-auto-upgrade $FORMULA_FILEPATH_A $VERSION_A -> $VERSION_B"
             git push origin master
         else
             git checkout "$FORMULA_FILEPATH_A"

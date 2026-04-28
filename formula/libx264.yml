@@ -3,7 +3,7 @@ web-url: https://www.videolan.org/developers/x264.html
 git-url: https://code.videolan.org/videolan/x264
 git-sha: 31e19f92f00c7003fa115047ce50978bc98c3a0d
 version: r3108
-license: GPL-2.0-only
+license: GPL-2.0-or-later
 
 dopatch: |
     gsed -i '1c #!/usr/bin/env bash' configure

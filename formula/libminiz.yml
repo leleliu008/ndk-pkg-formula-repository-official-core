@@ -1,7 +1,5 @@
 summary: implements the zlib (RFC 1950) and Deflate (RFC 1951) compressed data format specification standards
-src-url: https://github.com/richgel999/miniz/archive/refs/tags/2.2.0.tar.gz
-src-sha: bd1136d0a1554520dcb527a239655777148d90fd2d51cf02c36540afc552e6ec
-
-dopatch: gsed -i 's|${CMAKE_INSTALL_DATADIR}/pkgconfig|${CMAKE_INSTALL_LIBDIR}/pkgconfig|' CMakeLists.txt
-
+src-url: https://github.com/richgel999/miniz/archive/refs/tags/3.1.0.tar.gz
+src-sha: 09569fc19d060ac9f5999ba9356728c2494ebe6a24ac0eb0a6b6ae3d396cfea6
+license: MIT
 install: cmakew 2 -DBUILD_EXAMPLES=OFF

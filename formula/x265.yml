@@ -3,7 +3,7 @@ web-url: http://x265.org
 git-url: https://bitbucket.org/multicoreware/x265_git
 src-url: https://bitbucket.org/multicoreware/x265_git/get/3.6.tar.gz
 src-sha: 206329b9599c78d06969a1b7b7bb939f7c99a459ab283b2e93f76854bd34ca7b
-license: GPL-2.0-only
+license: GPL-2.0-or-later
 bscript: source
 
 install: |

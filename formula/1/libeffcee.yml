@@ -1,4 +1,4 @@
-summary: A C++ library for stateful pattern matching of strings
+summary: C++ library for stateful pattern matching of strings
 git-url: https://github.com/google/effcee
 dep-upp: git python3
 dopatch: |
