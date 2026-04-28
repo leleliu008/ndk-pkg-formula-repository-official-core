@@ -1,4 +1,4 @@
-summary: A modern replacement for ls(1)
+summary: A modern alternative to ls(1)
 src-url: https://github.com/eza-community/eza/archive/refs/tags/v0.20.24.tar.gz
 src-sha: e5a1761f05adc74b80d59036819e768060971c6f5107e208024c752a2af02ccc
 license: EUPL-1.2
