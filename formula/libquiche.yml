@@ -1,11 +1,12 @@
 summary: Savoury implementation of the QUIC transport protocol and HTTP/3
-git-url: https://github.com/cloudflare/quiche
+src-url: https://github.com/cloudflare/quiche/archive/refs/tags/0.24.5.tar.gz
+src-sha: 7d2dff9ac5b9a53eb32d98af9b5fae944dcc7176a9fcfe1877f682b1ec935663
 license: BSD-2-Clause
+dep-pkg: openssl-dev
 bsystem: cargo cmake
-binbstd: 1
 
 install: |
-    cargow build --package quiche
+    cargow build --package quiche --features=openssl
     install_incs quiche/include/quiche.h
     install_libs target/$RUST_TARGET/release/libquiche.a
     install_libs target/$RUST_TARGET/release/libquiche.so
