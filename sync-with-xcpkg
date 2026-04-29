@@ -15,17 +15,7 @@ run() {
 }
 
 version_sort() {
-    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sort.html
-    # https://man.netbsd.org/NetBSD-8.1/i386/sort.1
-    #
-    # sort: unrecognized option: V
-    # BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
-    # Usage: sort [-nrugMcszbdfiokt] [-o FILE] [-k start[.offset][opts][,end[.offset][opts]] [-t CHAR] [FILE]...
-    if  printf '\n' | (sort -V > /dev/null 2>&1) ; then
-        printf '%s\n' "$@" | sort -V
-    else
-        printf '%s\n' "$@" | sort -t. -n -k1,1 -k2,2 -k3,3 -k4,4
-    fi
+    printf '%s\n' "$@" | sort -V
 }
 
 # check if match the condition
@@ -88,8 +78,6 @@ git clone https://github.com/leleliu008/xcpkg-formula-repository-official-core
 
 for FORMULA_FILEPATH_A in formula/*.yml
 do
-    : "################################################"
-
     FORMULA_FILEPATH_B="xcpkg-formula-repository-official-core/$FORMULA_FILEPATH_A"
 
     [ -L "$FORMULA_FILEPATH_A" ] && continue
@@ -117,10 +105,10 @@ do
 '
     for LINE in $DIFF_CONTENT
     do
-        echo "LINE=$LINE"
-
         case $LINE in
-            src-url:*|src-sha:*)
+            src-url:*)
+                ;;
+            src-sha:*)
                 ;;
             *)  X=1
                 break
