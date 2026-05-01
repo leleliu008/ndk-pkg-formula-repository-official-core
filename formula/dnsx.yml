@@ -1,5 +1,5 @@
 summary: DNS query and resolution tool
-src-url: https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.2.1.tar.gz
-src-sha: 08a806e1f87e11e1a4953bf84a35c77afdd84a946b8e7c9b602443007eeb1fe3
+src-url: https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.2.3.tar.gz
+src-sha: 5de84e732cf5c8b31f481e9a98fc22025f402d3624a6b9a74c29bddacae155a1
 license: MIT
 install: gow ./cmd/dnsx
