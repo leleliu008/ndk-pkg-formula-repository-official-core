@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: Seamless operability between C++11 and Python
-src-url: https://github.com/pybind/pybind11/archive/refs/tags/v2.12.0.tar.gz
-src-sha: bf8f242abd1abcd375d516a7067490fb71abd79519a282d22b6e4d19282185a7
+src-url: https://github.com/pybind/pybind11/archive/refs/tags/v3.0.1.tar.gz
+src-sha: 741633da746b7c738bb71f1854f957b9da660bcd2dce68d71949037f0969d0ca
 license: BSD-3-Clause
 install: |
     cmakew \
