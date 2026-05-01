@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: Header-only C++ library for JSON Schema validation
-src-url: https://github.com/tristanpenman/valijson/archive/refs/tags/v1.0.2.tar.gz
-src-sha: 35d86e54fc727f1265226434dc996e33000a570f833537a25c8b702b0b824431
+src-url: https://github.com/tristanpenman/valijson/archive/refs/tags/v1.0.6.tar.gz
+src-sha: bf0839de19510ff7792d8a8aca94ea11a288775726b36c4c9a2662651870f8da
 license: BSD-2-Clause
 dep-pkg: libjsoncpp
 bsystem: cmake
