@@ -1,6 +1,6 @@
 summary: A command-line tool to create modern online books from Markdown files
 web-url: https://rust-lang.github.io/mdBook/
-src-url: https://github.com/rust-lang/mdBook/archive/refs/tags/v0.4.40.tar.gz
-src-sha: 550da7ff02ef62c60db6e813b6dbae65b9ed3d491186ea74929536feaceea94b
+src-url: https://github.com/rust-lang/mdBook/archive/refs/tags/v0.5.2.tar.gz
+src-sha: 2c8615a17c5670f9aa6d8dbf77c343cf430f95f571f28a87bb7aaa8f29c1ac5b
 license: MPL-2.0
 bsystem: cargo
