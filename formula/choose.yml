@@ -1,5 +1,5 @@
 summary: Human-friendly and fast alternative to cut and (sometimes) awk
-src-url: https://github.com/theryangeary/choose/archive/v1.3.1.tar.gz
-src-sha: 6c44170f456f410370ba31d59bfad1f54a71ba80a79b87debbe235672a2ea0dd
+src-url: https://github.com/theryangeary/choose/archive/refs/tags/v1.3.7.tar.gz
+src-sha: 8f51a315fbbe0688c4a2078ba8bc8446d36943b6cce6ed9bbd6a11f33bd1a134
 license: GPL-3.0-or-later
 bsystem: cargo
