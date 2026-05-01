@@ -1,6 +1,6 @@
 summary: Terminal JSON viewer
 web-url: https://fx.wtf
-src-url: https://github.com/antonmedv/fx/archive/refs/tags/35.0.0.tar.gz
-src-sha: 5ab642bb91ad9c1948de1add2d62acec22d82398e420957c191c1549999eb351
+src-url: https://github.com/antonmedv/fx/archive/refs/tags/39.2.0.tar.gz
+src-sha: cdb98177f956615c961bc615fab0b30e73167295152d4f2d4cb70b16cdf47d6e
 license: MIT
 bsystem: go
