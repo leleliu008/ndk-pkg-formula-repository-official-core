@@ -1,6 +1,6 @@
 summary: HTTP/3 library written in C
-src-url: https://github.com/ngtcp2/nghttp3/releases/download/v1.11.0/nghttp3-1.11.0.tar.xz
-src-sha: 27d084518f06d78279b050cc9cdff2418f80fb753da019427ce853cec920f33f
+src-url: https://github.com/ngtcp2/nghttp3/releases/download/v1.15.0/nghttp3-1.15.0.tar.xz
+src-sha: 6da0cd06b428d32a54c58137838505d9dc0371a900bb8070a46b29e1ceaf2e0f
 license: MIT
 install: |
     cmakew \
