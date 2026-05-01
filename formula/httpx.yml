@@ -1,5 +1,5 @@
 summary: Fast and multi-purpose HTTP toolkit
-src-url: https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.6.5.tar.gz
-src-sha: 5329d93921f24a9126122f2003d6bfdee57c2cfeb16903dd40a9564c674354b6
+src-url: https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.8.1.tar.gz
+src-sha: 063093ba08409131a2b760807ddaa65ea7b42cc2e9fd3fca6ba32c3d94b6ba92
 license: MIT
 install: gow ./cmd/httpx
