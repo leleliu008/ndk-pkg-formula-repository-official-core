@@ -1,5 +1,5 @@
 summary: live video streaming server in golang
-src-url: https://github.com/gwuhaolin/livego/archive/refs/tags/0.0.15.tar.gz
-src-sha: f1beb250dbbcfb578c32e37f862379aacf804570a8ce602b1a7a9f4d53d1304d
+src-url: https://github.com/gwuhaolin/livego/archive/refs/tags/0.0.20.tar.gz
+src-sha: 4895b0e191a8b49c2b8065ffcb17a5641159d7c259c5ad5d937c70174ba15f66
 license: MIT
 bsystem: go
