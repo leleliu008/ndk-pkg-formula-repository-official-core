@@ -1,6 +1,6 @@
 summary: A highly customizable Changelog Generator that follows Conventional Commit specifications
-src-url: https://github.com/orhun/git-cliff/archive/refs/tags/v2.9.1.tar.gz
-src-sha: dd5a707fba4549ab4ea5e9e95ea7ed302852eb1916b93a1a369019f005ad4cc4
+src-url: https://github.com/orhun/git-cliff/archive/refs/tags/v2.12.0.tar.gz
+src-sha: 2a55fd44467dfb6b0a0a494328af2b664775f938367603e1f0441f66c7146732
 license: Apache-2.0 MIT
 dep-pkg: libz
 install: cargow install --path git-cliff
