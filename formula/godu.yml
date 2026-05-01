@@ -1,5 +1,5 @@
 summary: A simple utility to discover large files/folders
-src-url: https://github.com/viktomas/godu/archive/refs/tags/v1.3.tar.gz
-src-sha: aec09355c2cf8b44da8b8694326b158563b6b05587f6c2de996a1b52bb523ca0
+src-url: https://github.com/viktomas/godu/archive/refs/tags/v1.5.2.tar.gz
+src-sha: 09869710652969b8a9d227dea4ac33893b1f538197b101affa6a8a9aa6a50474
 license: MIT
 bsystem: go
