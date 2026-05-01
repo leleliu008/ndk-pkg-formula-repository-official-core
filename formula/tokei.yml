@@ -1,5 +1,5 @@
 summary: Program that allows you to count code, quickly
-src-url: https://github.com/XAMPPRocky/tokei/archive/v12.1.2.tar.gz
-src-sha: 81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50
+src-url: https://github.com/XAMPPRocky/tokei/archive/refs/tags/v14.0.0.tar.gz
+src-sha: 4e561dbb83ef1b46359714fc623fd45eddfb14821ece63a219470500fdd1cd26
 license: MIT
 bsystem: cargo
