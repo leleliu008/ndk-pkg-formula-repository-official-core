@@ -1,8 +1,8 @@
 summary: Assuan IPC Library
 web-url: https://www.gnupg.org/related_software/libassuan
 git-url: https://dev.gnupg.org/source/libassuan
-src-url: https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.7.tar.bz2
-src-sha: 0103081ffc27838a2e50479153ca105e873d3d65d8a9593282e9c94c7e6afb76
+src-url: https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2
+src-sha: d2931cdad266e633510f9970e1a2f346055e351bb19f9b78912475b8074c36f6
 license: GPL-3.0-or-later
 dep-pkg: libgpg-error
 install: configure --with-libgpg-error-prefix=$libgpg_error_INSTALL_DIR
