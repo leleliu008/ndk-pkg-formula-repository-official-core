@@ -1,7 +1,7 @@
 summary: Palette quantization library extracted from pnquant2
 web-url: https://pngquant.org/lib
-src-url: https://github.com/ImageOptim/libimagequant/archive/refs/tags/4.3.1.tar.gz
-src-sha: 75020204491f14a8cdf4b857f6c5bab08b6b5f1736345412b296a253bc632bf6
+src-url: https://github.com/ImageOptim/libimagequant/archive/refs/tags/4.4.1.tar.gz
+src-sha: 2464a3e922b5a220b633d674062b82f0670114f8f3dd30d1935a621c95965f1b
 license: GPL-3.0-or-later
 dep-upp: cargo-c
 bscript: imagequant-sys
