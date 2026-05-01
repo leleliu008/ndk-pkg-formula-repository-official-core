@@ -1,7 +1,7 @@
 summary: A command-line option parsing utility
 git-url: https://github.com/util-linux/util-linux
-src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz
-src-sha: 59e676aa53ccb44b6c39f0ffe01a8fa274891c91bef1474752fad92461def24f
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz
+src-sha: 3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b
 license: GPL-2.0-or-later
 
 install: |
