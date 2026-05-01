@@ -1,6 +1,6 @@
 summary: Go git service
 web-url: https://gogs.io
-src-url: https://github.com/gogs/gogs/archive/v0.13.0.tar.gz
-src-sha: 59a8c4349ed104ccd44985e940a6cdb25fca1a6019212e7f65b30f1252f627ce
+src-url: https://github.com/gogs/gogs/archive/refs/tags/v0.14.1.tar.gz
+src-sha: 1a92bc887569c53bc61cb7164a687fd4a39832f1168597803207f84a8c8080b9
 license: MIT
 bsystem: go
