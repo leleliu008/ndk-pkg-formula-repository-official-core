@@ -1,7 +1,7 @@
 summary: SIMD-accelerated C++ JSON parser
 web-url: https://simdjson.org
 src-url: https://github.com/simdjson/simdjson
-src-url: https://github.com/simdjson/simdjson/archive/refs/tags/v3.11.6.tar.gz
-src-sha: 7176a2feb98e1b36b6b9fa56d64151068865f505a0ce24203f3ddbb3f985103b
+src-url: https://github.com/simdjson/simdjson/archive/refs/tags/v4.2.4.tar.gz
+src-sha: 6f942d018561a6c30838651a386a17e6e4abbfc396afd0f62740dea1810dedea
 license: Apache-2.0
 install: cmakew 2
