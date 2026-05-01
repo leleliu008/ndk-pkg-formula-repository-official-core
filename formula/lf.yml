@@ -1,8 +1,7 @@
 summary: Terminal file manager
-src-url: https://github.com/gokcehan/lf/archive/r26.tar.gz
-src-sha: dccd1ad67d2639e47fe0cbc93d74f202d6d6f0c3759fb0237affb7b1a2b1379e
+src-url: https://github.com/gokcehan/lf/archive/refs/tags/r40.tar.gz
+src-sha: 43a78f66728dbbbd6848a074dd3d70e8ce7ef22e428de81a89bf2da174226a26
 license: MIT
-
 install: |
     gow -X main.gVersion=$PACKAGE_VERSION
     run install_mans lf.1
