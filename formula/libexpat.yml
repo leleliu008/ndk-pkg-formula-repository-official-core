@@ -1,7 +1,7 @@
 summary: XML 1.0 parser
 web-url: https://libexpat.github.io
-src-url: https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.lz
-src-sha: 80a5bec283c7cababb3c6ec145feb4f34a7741eae69f9e6654cc82f5890f05e2
+src-url: https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.lz
+src-sha: 4cb8ec847a42d97fe4e9ee4fb516aca79cd41667e13a3982124e11c204bf2b9d
 license: MIT
 
 install: |
