@@ -1,5 +1,5 @@
 summary: JSON, YAML, TOML, XML, and CSV query and modification tool
-src-url: https://github.com/TomWright/dasel/archive/refs/tags/v2.7.0.tar.gz
-src-sha: 93546e10971ca74c3192940fe9435b48368cefa677cef8a7532b214c6d8b6c39
+src-url: https://github.com/TomWright/dasel/archive/refs/tags/v3.2.1.tar.gz
+src-sha: b70b50bb901379c9bd1350bdef436e4cae83089a123ba3225a5fd99dbbc9e5b1
 license: MIT
 install: gow -X github.com/tomwright/dasel/internal.Version=$PACKAGE_VERSION ./cmd/dasel
