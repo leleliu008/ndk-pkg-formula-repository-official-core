@@ -1,6 +1,6 @@
 pkgtype: lib
 summary: A simple .ini file parser in C
-src-url: https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz
-src-sha: e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7
+src-url: https://github.com/benhoyt/inih/archive/refs/tags/r62.tar.gz
+src-sha: 9c15fa751bb8093d042dae1b9f125eb45198c32c6704cd5481ccde460d4f8151
 license: BSD-3-Clause
 install: mesonw -Dcpp_std=c++11
