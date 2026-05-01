@@ -1,7 +1,7 @@
 summary: Thai language support library
 web-url: https://linux.thai.net/projects/libthai
-src-url: https://github.com/tlwg/libthai/releases/download/v0.1.28/libthai-0.1.28.tar.xz
-src-sha: ffe0a17b4b5aa11b153c15986800eca19f6c93a4025ffa5cf2cab2dcdf1ae911
+src-url: https://github.com/tlwg/libthai/releases/download/v0.1.30/libthai-0.1.30.tar.xz
+src-sha: ddba8b53dfe584c3253766030218a88825488a51a7deef041d096e715af64bdd
 license: LGPL-2.1-or-later
 dep-pkg: libdatrie
 dep-upp: trietool
