@@ -1,5 +1,5 @@
 summary: Run your GitHub Actions locally
-src-url: https://github.com/nektos/act/archive/refs/tags/v0.2.69.tar.gz
-src-sha: aba388bff6661d85ddb55262cb76c266c878ffd8f5b374cf9b3485f4b8b71e51
+src-url: https://github.com/nektos/act/archive/refs/tags/v0.2.84.tar.gz
+src-sha: da58b74d03b2cd21df81aeb054c2792054d6cf9d4c3171e98440fde9becb01fa
 license: MIT
 install: gow -X main.version="$PACKAGE_VERSION" -o act main.go
