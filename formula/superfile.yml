@@ -1,5 +1,5 @@
 summary: Modern and pretty fancy file manager for the terminal
-src-url: https://github.com/yorukot/superfile/archive/refs/tags/v1.1.5.tar.gz
-src-sha: 38ecb89048b712d244246c7317115d973c1b56323295e902fbe7e2cc400d9cd6
+src-url: https://github.com/yorukot/superfile/archive/refs/tags/v1.5.0.tar.gz
+src-sha: bb394f73817d164b9756613ccd850fb3dd5fd5ee898defd86b27eecd4cec48bf
 license: MIT
 install: gow -o spf
