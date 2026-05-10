@@ -1,5 +1,5 @@
-summary: implements the zlib (RFC 1950) and Deflate (RFC 1951) compressed data format specification standards
+summary: A lossless, high performance data compression library in a single source file that implements the zlib (RFC 1950) and Deflate (RFC 1951) compressed data format specification standards
 src-url: https://github.com/richgel999/miniz/archive/refs/tags/3.1.0.tar.gz
 src-sha: 09569fc19d060ac9f5999ba9356728c2494ebe6a24ac0eb0a6b6ae3d396cfea6
 license: MIT
-install: cmakew 2 -DBUILD_EXAMPLES=OFF
+install: cmakew 2 -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_FUZZERS=OFF
