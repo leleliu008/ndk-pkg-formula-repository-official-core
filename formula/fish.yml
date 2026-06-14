@@ -1,6 +1,6 @@
 summary: A smart and user-friendly command-line shell
 web-url: https://fishshell.com/
-src-url: https://github.com/fish-shell/fish-shell/releases/download/4.5.0/fish-4.5.0.tar.xz
-src-sha: 89151f8cf14b634e080226fe696f9ce7d4d153c77629996ca4431c80482c64ed
+src-url: https://github.com/fish-shell/fish-shell/releases/download/4.7.1/fish-4.7.1.tar.xz
+src-sha: 6f4d5b438a6338e3f5dcda19a28261e2ece7a9b7ff97686685e6abdc31dbb7df
 license: GPL-2.0-only
 bsystem: cargo
