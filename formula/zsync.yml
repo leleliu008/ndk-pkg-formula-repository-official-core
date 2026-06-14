@@ -1,8 +1,9 @@
-summary: A file transfer program
+summary: A command-line tool similar to rsync but optimised for transfering single large files across the network
 git-url: https://github.com/cph6/zsync
 web-url: https://zsync.moria.org.uk/
-src-url: https://distfiles.macports.org/zsync/zsync-0.6.2.tar.bz2
-src-sha: 0b9d53433387aa4f04634a6c63a5efa8203070f2298af72a705f9be3dda65af2
+src-url: https://zsync.moria.org.uk/download/zsync-0.7.1.tar.gz
+src-sha: f521437761d9d19b5ca351f7736f28543cfb8a37391bbdc5b49681403268ff89
 license: Artistic-2.0
-bsystem: configure
-binbstd: 1
+install: |
+    gow ./cmd/zsync
+    gow ./cmd/zsyncmake
