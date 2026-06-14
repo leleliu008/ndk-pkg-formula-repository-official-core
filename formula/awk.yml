@@ -1,7 +1,7 @@
 summary: Text processing scripting language
 web-url: https://www.cs.princeton.edu/~bwk/btl.mirror/
-src-url: https://github.com/onetrueawk/awk/archive/refs/tags/20240422.tar.gz
-src-sha: 4793404735db5ea79f790cf865bf4fe875f9c5c23b1b8da186349f54b3a32281
+src-url: https://github.com/onetrueawk/awk/archive/refs/tags/20260426.tar.gz
+src-sha: 7ae5b9fc6a8149bc45ea0ba3ba434a69a16d1460d19f6d01b6f04cc885b8e02b
 license: MIT
 dep-upp: gm4 bison
 
