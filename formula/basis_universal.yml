@@ -1,7 +1,7 @@
 summary: Basis Universal GPU texture codec command-line compression tool
-src-url: https://github.com/BinomialLLC/basis_universal/archive/refs/tags/v1_60.tar.gz
-src-sha: 64ac9363656dc3eb41c59ee52af7e939abe574a92c85fd0ba27008c4a7ec9f40
-version: 1.60
+src-url: https://github.com/BinomialLLC/basis_universal/archive/refs/tags/v2_1_0.tar.gz
+src-sha: ee1dbeb4c16699b577a0c78dce337bbede268e04bd2d463946971f8cb1e9c8df
+version: 2.1.0
 license: Apache-2.0
 
 dopatch: |
