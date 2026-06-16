@@ -4,4 +4,7 @@ src-url: https://github.com/samtools/htslib/releases/download/1.23.1/htslib-1.23
 src-sha: f8a3f36effeec38f043c53ab1f2d9ed45064f14205c5ef8e3c815763b90803c4
 license: MIT
 dep-pkg: libz liblzma libbz2 libcurl
+
+prepare: gsed -i "s|^AR[[:space:]]*=.*|AR=$AR|" Makefile
+
 install: configure --enable-libcurl
