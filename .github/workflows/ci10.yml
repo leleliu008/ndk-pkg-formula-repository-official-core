@@ -1,4 +1,4 @@
-name: workflow6
+name: workflow10
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libneon,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencc,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libpdfium,libphonenumber,libphysfs,libpipeline,libpng++,libproj7,libpugixml,libqalculate,libqpdf,libqrencode,libquiche,libraqm,libraw,libre,libre2c,librecode,libressl,librist,librtmp,libsamplerate,libsigsegv,libsimdjson,libskia_shared,libskia_static,libslirp,libsmartcols,libsmi,libsndfile,libsoundtouch,libspatialite,libspectre,libspiro,libspng,libsrt,libsrtp,libssh@0.11,libsvg,libsvm,libtbox,libtextstyle,libthai]
+        pkg: [taglib,tarlz,tcl,tcpdump,tcping,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tic,tiff,tig,tinyalsa,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unrar,unzip,uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,uutils-coreutils,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmer,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,wget2,whois,wolfssl,wuzz,x264,x265]
 
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libneon,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencc,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libpdfium,libphonenumber,libphysfs,libpipeline,libpng++,libproj7,libpugixml,libqalculate,libqpdf,libqrencode,libquiche,libraqm,libraw,libre,libre2c,librecode,libressl,librist,librtmp,libsamplerate,libsigsegv,libsimdjson,libskia_shared,libskia_static,libslirp,libsmartcols,libsmi,libsndfile,libsoundtouch,libspatialite,libspectre,libspiro,libspng,libsrt,libsrtp,libssh@0.11,libsvg,libsvm,libtbox,libtextstyle,libthai]
+        pkg: [taglib,tarlz,tcl,tcpdump,tcping,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tic,tiff,tig,tinyalsa,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unrar,unzip,uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,uutils-coreutils,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmer,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,wget2,whois,wolfssl,wuzz,x264,x265]
 
     runs-on: ubuntu-latest
 
@@ -81,7 +81,7 @@ jobs:
       matrix:
         abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         opt: ['--static', '']
-        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libneon,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencc,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libpdfium,libphonenumber,libphysfs,libpipeline,libpng++,libproj7,libpugixml,libqalculate,libqpdf,libqrencode,libquiche,libraqm,libraw,libre,libre2c,librecode,libressl,librist,librtmp,libsamplerate,libsigsegv,libsimdjson,libskia_shared,libskia_static,libslirp,libsmartcols,libsmi,libsndfile,libsoundtouch,libspatialite,libspectre,libspiro,libspng,libsrt,libsrtp,libssh@0.11,libsvg,libsvm,libtbox,libtextstyle,libthai]
+        pkg: [taglib,tarlz,tcl,tcpdump,tcping,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tic,tiff,tig,tinyalsa,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unrar,unzip,uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,uutils-coreutils,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmer,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,wget2,whois,wolfssl,wuzz,x264,x265]
 
     runs-on: ubuntu-latest
 
@@ -132,7 +132,7 @@ jobs:
         #abi: [armeabi-v7a, arm64-v8a, x86, x86_64]
         abi: [arm64-v8a]
         opt: ['--static', '']
-        pkg: [libminiupnpc,libminiz,libmount,libmpc,libmpir,libmupdf,libneon,libnetpbm,libnfc,libnfs,libngtcp2,libnng,libnova,libobstack,libode,liboggz,libolm,libopencc,libopencolorio,libopenh264,libopusenc,liborc,libp11-kit,libpdfium,libphonenumber,libphysfs,libpipeline,libpng++,libproj7,libpugixml,libqalculate,libqpdf,libqrencode,libquiche,libraqm,libraw,libre,libre2c,librecode,libressl,librist,librtmp,libsamplerate,libsigsegv,libsimdjson,libskia_shared,libskia_static,libslirp,libsmartcols,libsmi,libsndfile,libsoundtouch,libspatialite,libspectre,libspiro,libspng,libsrt,libsrtp,libssh@0.11,libsvg,libsvm,libtbox,libtextstyle,libthai]
+        pkg: [taglib,tarlz,tcl,tcpdump,tcping,tdu,tealdeer,tectonic,tengo,tensorflow-lite,tic,tiff,tig,tinyalsa,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unrar,unzip,uppm,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,usbmuxd,utf8.h,utfcpp,uthash,util-linux,uutils-coreutils,valijson,vegeta,vim,virustotal-cli,vulkan-headers,wabt,wasm3,wasmer,wasmtime,watchexec,wavpack,webhook,webp,websocat,wget,wget2,whois,wolfssl,wuzz,x264,x265]
 
     runs-on: ${{ matrix.os }}
 
