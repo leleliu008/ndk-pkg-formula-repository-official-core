@@ -15,7 +15,7 @@ install: |
         --disable-pie \
         --enable-event-api \
         --with-pthreads \
-        --with-ssl="$openssl_dev_INSTALL_DIR" \
+        --with-ssl="$libopenssl_INSTALL_DIR" \
         --with-libexpat="$libexpat_INSTALL_DIR" \
         --with-libevent="$libevent_INSTALL_DIR" \
         --with-libnghttp2="$libnghttp2_INSTALL_DIR" \

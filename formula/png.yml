@@ -1,8 +1,8 @@
 summary: Library for manipulating PNG images
 web-url: http://www.libpng.org/pub/png/libpng.html
 git-url: https://github.com/glennrp/libpng
-src-url: https://downloads.sourceforge.net/libpng/libpng-1.6.43.tar.xz
-src-sha: 6a5ca0652392a2d7c9db2ae5b40210843c0bbc081cbd410825ab00cc59f14a6c
+src-url: https://downloads.sourceforge.net/project/libpng/libpng16/1.6.58/libpng-1.6.58.tar.xz
+src-sha: 28eb403f51f0f7405249132cecfe82ea5c0ef97f1b32c5a65828814ae0d34775
 license: libpng-2.0
 dep-pkg: libz
 bsystem: configure

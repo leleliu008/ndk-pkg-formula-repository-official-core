@@ -5,7 +5,7 @@ web-url: https://pocoproject.org/
 src-url: https://pocoproject.org/releases/poco-1.14.1/poco-1.14.1-all.tar.gz
 src-sha: c4b547070eec8330302ffbfee1d6ba02da2e0e120626f6c5dd52192e5b641f34
 license: BSL-1.0
-dep-pkg: libsqlite3 libpcre2 libexpat libz openssl-dev
+dep-pkg: libsqlite3 libpcre2 libexpat libz libopenssl
 install: |
     cmakew \
         -DENABLE_TESTS=OFF \

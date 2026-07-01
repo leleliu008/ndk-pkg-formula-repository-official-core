@@ -3,7 +3,7 @@ web-url: https://tectonic-typesetting.github.io/
 src-url: https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.16.9.tar.gz
 src-sha: 9861d4d4230b987d8560f1b84fe6c8a550738401be65b9425b0c7d0466178f2b
 license: MIT
-dep-pkg: libicu libfontconfig libharfbuzz openssl-dev
+dep-pkg: libicu libfontconfig libharfbuzz libopenssl
 install: cargow install --locked --features external-harfbuzz
 
 prepare: |

@@ -6,7 +6,7 @@ src-sha: cd222505012cce20b25682fca931ec93bd21ae92cb4abfe742cf7b76aa907520
 license: BSD-3-Clause
 bscript: src
 bsystem: gmake
-dep-pkg: openssl-dev libbthread
+dep-pkg: libopenssl libbthread
 dep-lib: -lbthread
 
 install: |

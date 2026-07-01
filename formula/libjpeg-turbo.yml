@@ -1,7 +1,7 @@
 summary: A high-performance JPEG image codec that uses SIMD instructions (MMX, SSE2, AVX2, Neon, AltiVec) to accelerate baseline JPEG compression and decompression
 web-url: https://www.libjpeg-turbo.org/
-src-url: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.0.3/libjpeg-turbo-3.0.3.tar.gz
-src-sha: 343e789069fc7afbcdfe44dbba7dbbf45afa98a15150e079a38e60e44578865d
+src-url: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.4.1/libjpeg-turbo-3.1.4.1.tar.gz
+src-sha: ecae8008e2cc9ade2f2c1bb9d5e6d4fb73e7c433866a056bd82980741571a022
 license: IJG
 dep-upp: nasm
 

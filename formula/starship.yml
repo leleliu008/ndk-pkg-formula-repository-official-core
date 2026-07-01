@@ -3,7 +3,7 @@ web-url: https://starship.rs
 src-url: https://github.com/starship/starship/archive/refs/tags/v1.20.1.tar.gz
 src-sha: 851d84be69f9171f10890e3b58b8c5ec6057dd873dc83bfe0bdf965f9844b5dc
 license: ISC
-dep-pkg: openssl-dev libgetloadavg
+dep-pkg: libopenssl libgetloadavg
 install: cargow install --locked --no-default-features
 
 # sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);

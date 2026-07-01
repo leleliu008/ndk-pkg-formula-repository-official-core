@@ -47,7 +47,7 @@ install: |
         --with-curl="$libcurl_INSTALL_DIR" \
         --with-expat="$libexpat_INSTALL_DIR" \
         --with-iconv="$libiconv_INSTALL_DIR" \
-        --with-openssl="$openssl_dev_INSTALL_DIR" \
+        --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
 

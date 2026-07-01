@@ -4,7 +4,7 @@ web-url: https://rsync.samba.org/
 src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.1.tar.gz
 src-sha: 2924bcb3a1ed8b551fc101f740b9f0fe0a202b115027647cf69850d65fd88c52
 license: GPL-3.0-or-later
-dep-pkg: openssl-dev libpopt libz liblz4 libzstd libxxhash libiconv libglob
+dep-pkg: libopenssl libpopt libz liblz4 libzstd libxxhash libiconv libglob
 install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no LIBS=-ldl
 
 fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.4.1.tar.gz

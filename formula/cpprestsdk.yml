@@ -3,13 +3,13 @@ summary: C++ library for cloud-based client-server communication
 src-url: https://github.com/microsoft/cpprestsdk/archive/refs/tags/v2.10.19.tar.gz
 src-sha: 4b0d14e5bfe77ce419affd253366e861968ae6ef2c35ae293727c1415bd145c8
 license: MIT
-dep-pkg: websocketpp openssl-dev boost libz
+dep-pkg: websocketpp libopenssl boost libz
 dep-lib: -llog
 xxflags: -Wno-deprecated-declarations
 
 dopatch: gsed -i 's|ANDROID|XXXX|' Release/cmake/cpprest_find_openssl.cmake
 
-prepare: export OPENSSL_ROOT_DIR="$openssl_dev_INSTALL_DIR"
+prepare: export OPENSSL_ROOT_DIR="$libopenssl_INSTALL_DIR"
 
 install: cmakew -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF
 

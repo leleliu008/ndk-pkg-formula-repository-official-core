@@ -5,7 +5,7 @@ src-url: https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tgz
 src-sha: 883bddee3c92fcb91cf9c09c5343196953cbb9ced826213545849693970868ed
 license: Python-2.0
 linkage: shared
-dep-pkg: openssl-dev libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
+dep-pkg: libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 dep-upp: python3
 
 dopatch: gsed -i 's|__FreeBSD_kernel__|__ANDROID__|' Modules/posixmodule.c
@@ -35,7 +35,7 @@ install: |
         --with-build-python=python3 \
         --with-system-expat \
         --with-system-ffi \
-        --with-openssl="$openssl_dev_INSTALL_DIR" \
+        --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-ensurepip=no \
         --with-lto \
         --enable-ipv6 \

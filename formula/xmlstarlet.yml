@@ -6,11 +6,16 @@ license: MIT
 dep-pkg: libxslt
 dep-lib: libxml-2.0
 binbstd: 1
+ccflags: -Wno-incompatible-function-pointer-types
+
+fix-url: https://raw.githubusercontent.com/gentoo/gentoo/ea0797e1f96c7a0e17fc1af24131a0e0c923d08a/app-text/xmlstarlet/files/xmlstarlet-1.6.1-libxml2-2.14.0-compile.patch
+fix-sha: 5d2f35d16447e5d4258110a6e83f788ae52c9dc6b3b20eee84977626105dce1e
 
 dopatch: |
     gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c src/xmlstar.h
     gsed -i 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
     gsed -i 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
+    gsed -i '/AM_LDFLAGS=/d' configure
 
 install: |
     configure \

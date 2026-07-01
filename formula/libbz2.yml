@@ -1,8 +1,8 @@
 summary: Burrows–Wheeler-based data compression library with high compression ratio
 web-url: https://sourceware.org/bzip2
 git-url: https://sourceware.org/git/bzip2
-src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8@2.tar.gz
-src-sha: 13337d86c271b8e6f9cf4ea0b6fd6a1cd06b9b75c31fb4781ffbfcc6982c1bf0
+src-url: https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8@3.tar.gz
+src-sha: a48b19875f19f4fce9a65b55c77065c9029b01f6b5ec580a890e77812dd313b5
 version: 1.0.8
 license: bzip2-1.0.8
 

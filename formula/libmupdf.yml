@@ -4,7 +4,7 @@ web-url: https://mupdf.com/
 src-url: https://mupdf.com/downloads/archive/mupdf-1.26.0-source.tar.gz
 src-sha: d896f89eabfc5aaaabcdddc30f4592f6df33075640759292dd338d8e69e59c63
 license: AGPL-3.0-or-later
-dep-pkg: openssl-dev libtesseract libjbig2dec libharfbuzz libgumbo libmujs
+dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs
 
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)

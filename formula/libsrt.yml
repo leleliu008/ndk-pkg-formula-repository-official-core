@@ -3,7 +3,7 @@ web-url: https://www.srtalliance.org/
 src-url: https://github.com/Haivision/srt/archive/refs/tags/v1.5.3.tar.gz
 src-sha: befaeb16f628c46387b898df02bc6fba84868e86a6f6d8294755375b9932d777
 license: MPL-2.0
-dep-pkg: openssl-dev
+dep-pkg: libopenssl
 
 dopatch: |
     gsed -i 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
@@ -15,8 +15,8 @@ install: |
         -DENABLE_STATIC=ON \
         -DENABLE_SHARED=ON \
         -DENABLE_UNITTESTS=OFF \
-        -DWITH_OPENSSL_INCLUDEDIR=$openssl_dev_INSTALL_DIR/include \
-        -DWITH_OPENSSL_LIBDIR=$openssl_dev_INSTALL_DIR/lib \
+        -DWITH_OPENSSL_INCLUDEDIR=$libopenssl_INSTALL_DIR/include \
+        -DWITH_OPENSSL_LIBDIR=$libopenssl_INSTALL_DIR/lib \
         -DCMAKE_INSTALL_BINDIR=bin \
         -DCMAKE_INSTALL_LIBDIR=lib \
         -DCMAKE_INSTALL_INCLUDEDIR=include

@@ -4,7 +4,7 @@ web-url: https://nginx.org
 src-url: https://nginx.org/download/nginx-1.27.0.tar.gz
 src-sha: b7230e3cf87eaa2d4b0bc56aadc920a960c7873b9991a1b66ffcc08fc650129c
 license: BSD-2-Clause
-dep-pkg: openssl-dev libz libpcre2 libcrypt libglob
+dep-pkg: libopenssl libz libpcre2 libcrypt libglob
 bsystem: gmake
 
 dopatch: |

@@ -10,7 +10,7 @@ parallel: 0
 
 install: |
     configure \
-        --with-ssl=$openssl_dev_INSTALL_DIR \
+        --with-ssl=$libopenssl_INSTALL_DIR \
         --without-drill \
         --without-pyldns \
         --without-examples \

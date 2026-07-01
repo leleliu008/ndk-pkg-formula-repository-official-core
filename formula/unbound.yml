@@ -15,7 +15,7 @@ install: |
         --disable-systemd \
         --enable-event-api \
         --with-pthreads \
-        --with-ssl="$openssl_dev_INSTALL_DIR" \
+        --with-ssl="$libopenssl_INSTALL_DIR" \
         --with-libmnl="$libmnl_INSTALL_DIR" \
         --with-libexpat="$libexpat_INSTALL_DIR" \
         --with-libevent="$libevent_INSTALL_DIR" \

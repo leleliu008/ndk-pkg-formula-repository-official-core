@@ -4,7 +4,7 @@ web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.18.0.tar.bz2
 src-sha: ffd671a3dad424fb68e113a5b9894c5d1b5e13a88c6bdf0d4af6645123b31faf
 license: curl
-dep-pkg: libnghttp2 libcares libzstd libz libbrotli openssl-dev
+dep-pkg: libnghttp2 libcares libzstd libz libbrotli libopenssl
 dep-upp: perl
 
 install: |
@@ -13,7 +13,7 @@ install: |
         --enable-pthreads \
         --enable-ares \
         --with-default-ssl-backend=openssl \
-        --with-ssl="$openssl_dev_INSTALL_DIR" \
+        --with-ssl="$libopenssl_INSTALL_DIR" \
         --with-nghttp2 \
         --without-nghttp3 \
         --without-ngtcp2 \

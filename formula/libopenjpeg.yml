@@ -1,7 +1,7 @@
 summary: Library for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
-src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
-src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
+src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.4.tar.gz
+src-sha: a695fbe19c0165f295a8531b1e4e855cd94d0875d2f88ec4b61080677e27188a
 license: BSD-2-Clause
 
 dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h

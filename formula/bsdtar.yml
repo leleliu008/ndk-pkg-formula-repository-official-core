@@ -1,10 +1,10 @@
 summary: BSD tar
 git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
-src-url: https://www.libarchive.org/downloads/libarchive-3.8.2.tar.xz
-src-sha: db0dee91561cbd957689036a3a71281efefd131d35d1d98ebbc32720e4da58e2
+src-url: https://www.libarchive.org/downloads/libarchive-3.8.7.tar.xz
+src-sha: d3a8ba457ae25c27c84fd2830a2efdcc5b1d40bf585d4eb0d35f47e99e5d4774
 license: BSD-2-Clause
-dep-pkg: liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat openssl-dev
+dep-pkg: liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat libopenssl
 ldflags: -ldl
 
 dopatch: |

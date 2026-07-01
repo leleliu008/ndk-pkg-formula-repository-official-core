@@ -2,7 +2,7 @@ summary: Savoury implementation of the QUIC transport protocol and HTTP/3
 src-url: https://github.com/cloudflare/quiche/archive/refs/tags/0.24.5.tar.gz
 src-sha: 7d2dff9ac5b9a53eb32d98af9b5fae944dcc7176a9fcfe1877f682b1ec935663
 license: BSD-2-Clause
-dep-pkg: openssl-dev
+dep-pkg: libopenssl
 bsystem: cargo cmake
 
 install: |
