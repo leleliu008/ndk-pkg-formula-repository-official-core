@@ -1,13 +1,11 @@
 summary: Convert text between DOS, UNIX, and Mac formats
-web-url: https://waterlan.home.xs4all.nl/dos2unix.html
-src-url: https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.5.2.tar.gz
-src-sha: 264742446608442eb48f96c20af6da303cb3a92b364e72cb7e24f88239c4bf3a
+web-url: https://waterlander.net/dos2unix/
+src-url: https://waterlander.net/dos2unix/files/dos2unix-7.5.6.tar.gz
+src-sha: 63650acbd0c7fa8623429bcbf93a888e3351a1cad0f556cf41876f5673dd7d0b
 license: BSD-2-Clause
 dep-pkg: liblanginfo
 
-dopatch: gsed -i '/^ENABLE_NLS/d' Makefile
-
 install: |
     gmakew clean
-    gmakew CC="$CC" CPP="'$CPP'" STRIP="$STRIP" CFLAGS_USER="'$CFLAGS'" LDFLAGS_USER="'$LDFLAGS'" D2U_OS=android
-    gmakew install prefix="$PACKAGE_INSTALL_DIR"
+    gmakew CC="$CC" CPP="'$CPP'" STRIP="$STRIP" CFLAGS_USER="'$CFLAGS'" LDFLAGS_USER="'$LDFLAGS'" D2U_OS=android ENABLE_NLS=
+    gmakew install prefix="$PACKAGE_INSTALL_DIR" ENABLE_NLS=

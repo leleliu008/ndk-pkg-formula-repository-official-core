@@ -1,7 +1,7 @@
 summary: CLI for managing and maintaining data graphs with Apollo Studio
 web-url: https://www.apollographql.com/docs/rover/
-src-url: https://github.com/apollographql/rover/archive/refs/tags/v0.26.3.tar.gz
-src-sha: accf6257f030e109d8626d2acf2885d2512d1a8918f88ea4e392712d879768c6
+src-url: https://github.com/apollographql/rover/archive/refs/tags/v0.40.0.tar.gz
+src-sha: 0710306b55bcc8408835040b611f337432702b17b59460a957f6d7aef640d07d
 license: MIT
 dep-pkg: libz libopenssl
 install: cargow install --locked

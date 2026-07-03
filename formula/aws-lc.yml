@@ -1,0 +1,7 @@
+pkgtype: lib
+summary: General-purpose cryptographic library
+src-url: https://github.com/aws/aws-lc/archive/refs/tags/v5.1.0.tar.gz
+src-sha: a6bf6adfc5f9bba559d28554b7d3581b15f2813f03bc9f2ae19f0d915e97dadf
+license: Apache-2.0 ISC OpenSSL MIT BSD-3-Clause
+dep-upp: perl golang
+install: cmakew 2

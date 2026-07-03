@@ -19,3 +19,5 @@ install: |
         -DBUILD_UNIT_TESTS=OFF \
         -DBUILD_LUTS_GENERATOR=OFF \
         -DBUILD_PKGCONFIG_FILES=ON
+
+dotweak: gsed -i '/^Libs.private:/s| -l-lpthread||' lib/pkgconfig/libopenjp2.pc
