@@ -1,17 +1,16 @@
 summary: Perl compatible regular expressions library with a new API
 web-url: https://www.pcre.org/
-src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.43/pcre2-10.43.tar.bz2
-src-sha: e2a53984ff0b07dfdb5ae4486bbb9b21cca8e7df2434096cc9bf1b728c350bcb
+src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2
+src-sha: 47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7
 license: BSD-3-Clause
 
-dopatch: gsed -i 's|DESTINATION cmake|DESTINATION lib/cmake|' CMakeLists.txt
+# https://github.com/termux/termux-packages/blob/master/packages/pcre2/0001-version-script-remove-local-symbols.patch
+dopatch: gsed -i '/local:/,/_init;/d' src/libpcre2-*.sym
 
 install: |
     cmakew \
         -DCMAKE_C_STANDARD=99 \
         -DCMAKE_C_STANDARD_REQUIRED=ON \
-        -DBUILD_SHARED_LIBS=ON \
-        -DBUILD_STATIC_LIBS=ON \
         -DPCRE2_BUILD_PCRE2_8=ON \
         -DPCRE2_BUILD_PCRE2_16=ON \
         -DPCRE2_BUILD_PCRE2_32=ON \
@@ -19,4 +18,6 @@ install: |
         -DPCRE2_BUILD_TESTS=OFF \
         -DPCRE2_DEBUG=OFF \
         -DPCRE2_SUPPORT_VALGRIND=OFF \
-        -DPCRE2_SUPPORT_UNICODE=ON
+        -DPCRE2_SUPPORT_UNICODE=ON \
+        -DBUILD_STATIC_LIBS=ON \
+        -DBUILD_SHARED_LIBS=ON

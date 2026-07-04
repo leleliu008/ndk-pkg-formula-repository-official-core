@@ -7,10 +7,8 @@ dep-pkg: libpng
 dep-upp: libtool
 bsystem: autogen
 
-dopatch: gsed -i '$d' autogen.sh
+dopatch: |
+    gsed -i -e 's|^lib_LTLIBRARIES = |noinst_LTLIBRARIES = |' -e 's|^include_HEADERS = |noinst_HEADERS = |' -e '/^pkgconfig_DATA/d' Makefile.am
+    gsed -i '$d' autogen.sh && ./autogen.sh
 
-install: |
-    configure only --with-libpng="$libpng_INSTALL_DIR"
-    gmakew
-    gmakew install-man1
-    install_bins jbig2dec
+install: configure --enable-static --disable-shared --with-libpng="$libpng_INSTALL_DIR"

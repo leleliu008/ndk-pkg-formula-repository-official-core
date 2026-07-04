@@ -31,4 +31,5 @@ install: |
         --without-r \
         --without-d \
         --without-go \
+        ccache_cv_HAVE_C99_VSNPRINTF=yes \
         PCRE2_CONFIG="$libpcre2_INSTALL_DIR/bin/pcre2-config"

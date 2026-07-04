@@ -1,7 +1,7 @@
 summary: Double-Array Trie Library
 web-url: https://linux.thai.net/~thep/datrie/datrie.html
-src-url: https://github.com/tlwg/libdatrie/releases/download/v0.2.13/libdatrie-0.2.13.tar.xz
-src-sha: 12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be
+src-url: https://github.com/tlwg/libdatrie/releases/download/v0.2.14/libdatrie-0.2.14.tar.xz
+src-sha: f04095010518635b51c2313efa4f290b7db828d6273e39b2b8858f859dfe81d5
 license: LGPL-2.1-or-later
 dep-pkg: libiconv
 bsystem: configure

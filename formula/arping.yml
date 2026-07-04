@@ -1,8 +1,10 @@
 summary: Utility to check whether MAC addresses are already taken on a LAN
-src-url: https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.24.tar.gz
-src-sha: e443f65a44e247b27da8177decac31aa84336d5de87eab44fc02e33e7ba0b251
+src-url: https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.29.tar.gz
+src-sha: 387955d6ba8eedcf242bb3784bebf8e40fad39703117e21e02cec12820990a5c
 license: GPL-2.0-or-later
 dep-pkg: libnet libpcap
-dep-lib: -lssl -lcrypto -ldl
+dep-lib: openssl
 bsystem: autotools
 api-min: 24
+
+dopatch: gsed -i 's|mock_libpcap.c mock_libnet.c||g' src/Makefile.am
