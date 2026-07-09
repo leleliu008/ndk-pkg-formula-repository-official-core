@@ -1,8 +1,8 @@
 summary: Hybrid lossless audio compression
 git-url: https://github.com/dbry/WavPack
 web-url: https://www.wavpack.com/
-src-url: https://www.wavpack.com/wavpack-5.9.0.tar.bz2
-src-sha: b0038f515d322042aaa6bd352d437729c6f5f904363cc85bbc9b0d8bd4a81927
+src-url: https://www.wavpack.com/wavpack-5.9.0.tar.xz
+src-sha: b5291bc4e6d69ebbd3da3800c5bf4a70f19bb92679b23e09b3b612c1e648d1ff
 license: BSD-3-Clause
 
 dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h

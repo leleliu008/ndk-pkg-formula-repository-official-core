@@ -8,6 +8,7 @@ dep-upp: libtool
 bsystem: autogen
 
 dopatch: |
+    gsed -i '/^memcmp/s|^|__attribute__((weak)) |' memcmp.c
     gsed -i -e 's|^lib_LTLIBRARIES = |noinst_LTLIBRARIES = |' -e 's|^include_HEADERS = |noinst_HEADERS = |' -e '/^pkgconfig_DATA/d' Makefile.am
     gsed -i '$d' autogen.sh && ./autogen.sh
 
