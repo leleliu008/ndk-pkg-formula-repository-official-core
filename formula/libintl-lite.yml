@@ -1,4 +1,7 @@
 summary: A simple (but less powerful) GNU gettext libintl replacement
-git-url: https://github.com/j-jorge/libintl-lite
+src-url: https://github.com/j-jorge/libintl-lite/archive/refs/tags/v1.1.tar.gz
+src-sha: 3b97e4032c86600461e7fca1b7068961f7f82faed8f3746f6e9a7cfde84c6203
 license: BSL-1.0
-bsystem: cmake
+install: cmakew 2
+
+dopatch: gsed -i '/cmake_minimum_required/c cmake_minimum_required(VERSION 3.15)' CMakeLists.txt
