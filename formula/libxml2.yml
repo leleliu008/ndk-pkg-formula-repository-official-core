@@ -1,6 +1,4 @@
 summary: GNOME XML library
-web-url: http://xmlsoft.org
-git-url: https://gitlab.gnome.org/GNOME/libxml2
 src-url: https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.3.tar.xz
 src-sha: 78262a6e7ac170d6528ebfe2efccdf220191a5af6a6cd61ea4a9a9a5042c7a07
 license: MIT

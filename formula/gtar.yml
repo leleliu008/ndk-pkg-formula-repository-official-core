@@ -1,6 +1,4 @@
 summary: GNU version of the tar archiving utility
-git-url: https://git.savannah.gnu.org/git/tar.git
-web-url: https://www.gnu.org/software/tar
 src-url: https://ftp.gnu.org/gnu/tar/tar-1.35.tar.gz
 src-sha: 14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e
 license: GPL-3.0-or-later

@@ -1,6 +1,6 @@
 summary: C99 library for parsing HTML5
-src-url: https://github.com/google/gumbo-parser/archive/v0.10.1.tar.gz
-src-sha: 28463053d44a5dfbc4b77bcf49c8cee119338ffa636cc17fc3378421d714efad
+src-url: https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.13.2.tar.gz
+src-sha: 90bea83283760339da194fb90112a532854c13cd1eabdabc7ef7a4dede1dbc9d
 license: Apache-2.0
 dep-upp: libtool
 bsystem: autotools

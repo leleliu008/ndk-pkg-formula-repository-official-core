@@ -1,5 +1,4 @@
-pkgtype: lib
-summary: A collection of a high-performance multi-threaded malloc() implementation, plus some pretty nifty performance analysis tools
+summary: A high-performance multi-threaded malloc() implementation
 src-url: https://github.com/gperftools/gperftools/releases/download/gperftools-2.18.1/gperftools-2.18.1.tar.gz
 src-sha: d18d919175f9e4d740ace6b52f0f4f91284160c454e91b36ffd6456282a02206
 license: BSD-3-Clause

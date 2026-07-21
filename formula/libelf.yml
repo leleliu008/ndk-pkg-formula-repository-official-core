@@ -1,0 +1,26 @@
+summary: C library to read, create and modify ELF binary files
+git-url: git://sourceware.org/git/elfutils.git
+web-url: https://sourceware.org/elfutils
+src-url: https://sourceware.org/elfutils/ftp/0.195/elfutils-0.195.tar.bz2
+src-sha: 37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026
+license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
+dep-pkg: libz libargp libobstack libstrchrnul
+dep-upp: gm4
+    #ccflags: -Wno-error
+
+dopatch: |
+    gsed -i -e '/libintl\.h/d' -e '/dgettext/d' -e '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+
+install: |
+    configure only \
+        --disable-libdebuginfod \
+        --disable-debuginfod \
+        --enable-install-elfh \
+        --with-zlib="$libz_INSTALL_DIR" \
+        --without-zstd \
+        --without-lzma \
+        --without-bzlib
+    gmake -C lib
+    gmake -C libelf
+    gmake -C libelf install
+    install_pcfs config/libelf.pc

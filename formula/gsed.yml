@@ -1,6 +1,4 @@
 summary: GNU implementation of the famous stream editor
-git-url: https://git.savannah.gnu.org/git/sed.git
-web-url: https://www.gnu.org/software/sed
 src-url: https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz
 src-sha: 6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
 license: GPL-3.0-or-later

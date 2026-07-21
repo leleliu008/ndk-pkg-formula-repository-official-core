@@ -1,6 +1,4 @@
 summary: Library for command-line editing
-git-url: https://git.savannah.gnu.org/git/readline.git
-web-url: https://www.gnu.org/software/readline
 src-url: https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz
 src-sha: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
 version: 8.3.3
