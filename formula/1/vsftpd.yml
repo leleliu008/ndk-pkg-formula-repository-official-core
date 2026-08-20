@@ -5,9 +5,8 @@ src-sha: 26b602ae454b0ba6d99ef44a09b6b9e0dfa7f67228106736df1f278c70bc91d3
 license: GPL-2.0-only
 dep-pkg: libopenssl libcap libcrypt
 
-dopatch: |
-    # https://linux.die.net/man/3/getusershell
-    gsed -i '/#define VSF_SYSDEP_HAVE_USERSHELL/d' sysdeputil.c
+# https://man7.org/linux/man-pages/man3/getusershell.3.html
+dopatch: gsed -i '/#define VSF_SYSDEP_HAVE_USERSHELL/d' sysdeputil.c
 
 install: |
     gmakew clean

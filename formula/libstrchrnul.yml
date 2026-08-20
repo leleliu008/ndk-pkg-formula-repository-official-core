@@ -1,5 +1,5 @@
 summary: returns a pointer to the first occurrence of the character c in the string s
-web-url: https://linux.die.net/man/3/strchrnul
+web-url: https://man7.org/linux/man-pages/man3/strchrnul.3.html
 version: 1
 install: |
     cat > strchrnul.h <<EOF
@@ -7,7 +7,7 @@ install: |
         extern "C" {
     #endif
 
-            char* strchrnul(const char *s, int c);
+    char* strchrnul(const char * s, int c);
 
     #ifdef __cplusplus
         }   
@@ -16,7 +16,7 @@ install: |
 
     # https://android.googlesource.com/platform/bionic/+/master/libc/bionic/strchrnul.cpp
     cat > strchrnul.c <<EOF
-    char* strchrnul(const char* s, int c) {
+    char* strchrnul(const char * s, int c) {
         while (*s && *s != c) {
             ++s;
         }

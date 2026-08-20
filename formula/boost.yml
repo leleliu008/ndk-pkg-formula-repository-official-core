@@ -19,7 +19,8 @@ do12345: |
 
 dopatch: |
     # https://stackoverflow.com/questions/32826175/ftello-and-fseeko-android-build-errors
-    # https://linux.die.net/man/3/ftello
+    # https://pubs.opengroup.org/onlinepubs/9799919799/functions/fseeko.html
+    # https://pubs.opengroup.org/onlinepubs/9799919799/functions/ftello.html
     # int   fseeko(FILE* __fp, off_t __offset, int __whence) __RENAME(fseeko64) __INTRODUCED_IN(24);
     # off_t ftello(FILE* __fp) __RENAME(ftello64) __INTRODUCED_IN(24);
     if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then

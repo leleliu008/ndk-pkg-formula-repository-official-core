@@ -1,5 +1,5 @@
 summary: parse suboption arguments from a string
-web-url: https://linux.die.net/man/3/getsubopt
+web-url: https://man7.org/linux/man-pages/man3/getsubopt.3.html
 version: 1
 binbstd: 1
 install: |

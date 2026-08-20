@@ -1,5 +1,5 @@
 summary: A package of several programs related to finding differences between files
-src-url: https://ftp.gnu.org/gnu/diffutils/diffutils-3.12.tar.xz
-src-sha: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+src-url: https://ftp.gnu.org/gnu/diffutils/diffutils-3.10.tar.xz
+src-sha: 90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e
 license: GPL-3.0-or-later
 install: configure --with-included-regex --disable-gcc-warnings

@@ -1,5 +1,5 @@
 summary: get descriptor table size
-web-url: https://linux.die.net/man/2/getdtablesize
+web-url: https://man7.org/linux/man-pages/man3/getdtablesize.3.html
 version: 1
 install: |
     cat > getdtablesize.h <<EOF
@@ -7,7 +7,7 @@ install: |
         extern "C" {
     #endif
 
-            int getdtablesize();
+    int getdtablesize(void);
 
     #ifdef __cplusplus
         }   
@@ -19,7 +19,7 @@ install: |
     #include <sys/resource.h>
     #include <sys/sysconf.h>
 
-    int getdtablesize() {
+    int getdtablesize(void) {
         struct rlimit r;
         if (getrlimit(RLIMIT_NOFILE, &r) < 0) {
             return sysconf(_SC_OPEN_MAX);
