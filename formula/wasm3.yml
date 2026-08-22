@@ -2,4 +2,10 @@ summary: High performance WebAssembly interpreter
 src-url: https://github.com/wasm3/wasm3/archive/v0.5.0.tar.gz
 src-sha: b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c
 license: MIT
+dep-pkg: libuvwasi
+
 install: cmakew -DBUILD_NATIVE=OFF && install_bins wasm3
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/wasm3-0.5.0.diff
+fix-sha: 520483cb3bb5ff2b2ae3d084b3168e29a316a492947aa04fa27ac6ef71785a47
+fix-opt: -p0

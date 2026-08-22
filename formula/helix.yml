@@ -8,7 +8,7 @@ dep-upp: git
 # https://docs.helix-editor.com/building-from-source.html
 install: |
     unset HELIX_DEFAULT_RUNTIME
-    export RUSTUP_TOOLCHAIN=1.81
+    export RUSTUP_TOOLCHAIN=1.96
     cargow install --path helix-term
     rm -rf runtime/grammars/sources/
     cp -v -r runtime "$PACKAGE_INSTALL_DIR/bin/"
