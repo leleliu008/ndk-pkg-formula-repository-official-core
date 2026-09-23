@@ -1,5 +1,5 @@
 summary: A small utility to modify ELF files
-src-url: https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0.tar.bz2
-src-sha: 1952b2a782ba576279c211ee942e341748fdb44997f704dd53def46cd055470b
+src-url: https://github.com/NixOS/patchelf/releases/download/0.19.1/patchelf-0.19.1.tar.bz2
+src-sha: 2cce01de93653829f6ab68a20c2ec275e1c00a946110704a27e928d2e6e88716
 license: GPL-3.0-or-later
 bsystem: configure

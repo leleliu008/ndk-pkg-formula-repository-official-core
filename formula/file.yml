@@ -1,8 +1,8 @@
 summary: A command-line tool to determine file types
 web-url: https://www.darwinsys.com/file
 git-url: https://github.com/file/file
-src-url: https://astron.com/pub/file/file-5.46.tar.gz
-src-sha: c9cc77c7c560c543135edc555af609d5619dbef011997e988ce40a3d75d86088
+src-url: https://astron.com/pub/file/file-5.48.tar.gz
+src-sha: ed14656883b23a364b4057c05595d93252da9bc473d30106519519d0da141283
 license: BSD-2-Clause
 dep-pkg: libz
 

@@ -1,7 +1,7 @@
 summary: A free, general-purpose data compression with a high compression ratio
 web-url: https://tukaani.org/xz
-src-url: https://github.com/tukaani-project/xz/releases/download/v5.6.3/xz-5.6.3.tar.gz
-src-sha: b1d45295d3f71f25a4c9101bd7c8d16cb56348bbef3bbc738da0351e17c73317
+src-url: https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz
+src-sha: 3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0
 license: LGPL-2.1-or-later
 
 install: |
@@ -14,4 +14,4 @@ install: |
         --enable-assembler \
         --enable-threads=posix
 
-dotweak: run rm -rf include/ lib/
+dotweak: rm -rf include/ lib/
