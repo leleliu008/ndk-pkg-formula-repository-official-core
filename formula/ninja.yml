@@ -1,7 +1,9 @@
 summary: A small build system with a focus on speed
-web-url: https://ninja-build.org
-src-url: https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz
-src-sha: 821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a
+web-url: https://ninja-build.org/
+src-url: https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz
+src-sha: 974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17
 license: Apache-2.0
-dep-pkg: libposix_spawn
 bsystem: cmake
+
+api-min: 28
+# spawn.h:57:int posix_spawn(pid_t* _Nullable __pid, const char* _Nonnull __path, const posix_spawn_file_actions_t _Nullable * _Nullable __actions, const posix_spawnattr_t _Nullable * _Nullable __attr, char* const _Nonnull __argv[_Nonnull], char* const _Nullable __env[_Nullable]) __INTRODUCED_IN(28);

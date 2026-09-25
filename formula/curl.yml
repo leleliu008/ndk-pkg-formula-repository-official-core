@@ -1,10 +1,10 @@
 summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
-web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.18.0.tar.bz2
-src-sha: ffd671a3dad424fb68e113a5b9894c5d1b5e13a88c6bdf0d4af6645123b31faf
+web-url: https://curl.se/
+src-url: https://curl.se/download/curl-8.22.0.tar.bz2
+src-sha: 5d956a6a22b3c279f50c421ee5d3c9e9d660cb6f115dcf881b579e952130549c
 license: curl
-dep-pkg: libnghttp2 libcares libzstd libz libbrotli libopenssl
+dep-pkg: libnghttp3 libnghttp2 libngtcp2 libcares libpsl libbrotli libzstd libz
 dep-upp: perl
 
 dopatch: gsed -i 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
@@ -16,15 +16,16 @@ install: |
         --enable-ares \
         --with-default-ssl-backend=openssl \
         --with-ssl="$libopenssl_INSTALL_DIR" \
+        --with-nghttp3 \
         --with-nghttp2 \
-        --without-nghttp3 \
-        --without-ngtcp2 \
-        --without-quiche \
-        --without-libpsl \
+        --with-ngtcp2 \
+        --with-libpsl \
+        --with-libidn2 \
+        --without-libssh2 \
         --without-librtmp \
-        --without-libidn2
+        --without-quiche
 
-dotweak: run rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
+dotweak: rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
 
 caveats: |
     If curl is a fully statically linked executable, to get it working on Android 8 and later, you need to pass --dns-servers <DNS-SERVERS> argument to curl like below

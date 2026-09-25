@@ -1,13 +1,12 @@
 summary: Integer Set Library for the polyhedral model
 web-url: https://isl.gforge.inria.fr
 git-url: https://github.com/Meinersbur/isl
-src-url: https://libisl.sourceforge.io/isl-0.27.tar.xz
-src-uri: https://deb.debian.org/debian/pool/main/i/isl/isl_0.27.orig.tar.xz
-src-sha: 6d8babb59e7b672e8cb7870e874f3f7b813b6e00e6af3f8b04f7579965643d5c
+src-url: https://libisl.sourceforge.io/isl-0.28.tar.xz
+src-sha: 3dc31b8e1b18329e42d5dfbf84dd55e15c59b61569a2ab246f61497d9592f727
 license: MIT
 dep-pkg: libgmp
 
-ppflags: -D_GNU_SOURCE
+    #ppflags: -D_GNU_SOURCE
 install: |
     configure \
         --with-int=gmp \

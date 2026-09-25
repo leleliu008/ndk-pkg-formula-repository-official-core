@@ -1,12 +1,10 @@
 summary: Modernized, complete, self-contained TeX/LaTeX engine
 web-url: https://tectonic-typesetting.github.io/
-src-url: https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.16.9.tar.gz
-src-sha: 9861d4d4230b987d8560f1b84fe6c8a550738401be65b9425b0c7d0466178f2b
+src-url: https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.17.0.tar.gz
+src-sha: 30adda98f67dd5389844f6023adeeb54b5475c17a54b777900644468fbc9765d
 license: MIT
 dep-pkg: libicu libfontconfig libharfbuzz libopenssl
 install: cargow install --locked --features external-harfbuzz
 
-prepare: |
-    # https://docs.rs/cc/latest/cc/
-    export CXXSTDLIB='c++_static'
-    #export RUSTUP_TOOLCHAIN=1.88
+# https://docs.rs/cc/latest/cc/
+prepare: export CXXSTDLIB='c++_static'

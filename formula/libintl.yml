@@ -1,10 +1,11 @@
 summary: GNU internationalization (i18n) and localization (l10n) library
-src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz
-src-sha: 39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f
+src-url: https://ftp.gnu.org/gnu/gettext/gettext-1.0.tar.gz
+src-sha: 85d99b79c981a404874c02e0342176cf75c7698e2b51fe41031cf6526d974f1a
 license: GPL-3.0-or-later
 dep-pkg: libiconv
 bscript: gettext-runtime
 
+dopatch: gsed -i '262d' gnulib-lib/progreloc.c
 
 install: |
     configure \

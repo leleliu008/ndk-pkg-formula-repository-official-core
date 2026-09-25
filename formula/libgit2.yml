@@ -1,15 +1,9 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
-src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.4.tar.gz
-src-sha: 824b73bd13647800fe4b566a1008ae77fea0e3e3424edab632fcfd8c0b14ba8b
-dep-pkg: libssh2 libpcre2 libiconv
+src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.7.tar.gz
+src-sha: 1a4fbe7589e814777ae76b64734ad80f4ecad22cd33a22682a2aaea4ae5375e7
+dep-pkg: libssh2 libpcre2 libiconv libllhttp
 license: GPL-2.0-only
-
-prepare: |
-    # https://github.com/leleliu008/ndk-pkg-formula-repository-official-core/issues/18
-    if [ "$TARGET_PLATFORM_ARCH" = i686 ] ; then
-        gsed -i '/find_library/i if(LIBRARY STREQUAL "atomic")\nlist(APPEND RESOLVED_LIBRARIES -latomic)\ncontinue()\nendif()' cmake/FindPkgLibraries.cmake
-    fi
 
 install: |
     cmakew 2 \
@@ -17,13 +11,13 @@ install: |
         -DBUILD_TESTS=OFF \
         -DBUILD_FUZZERS=OFF \
         -DBUILD_EXAMPLES=OFF \
-        -DBUILD_SHARED_LIBS=OFF \
         -DENABLE_WERROR=OFF \
         -DDEPRECATE_HARD=OFF \
         -DUSE_SSH=ON \
         -DUSE_ICONV=ON \
         -DUSE_HTTPS=OpenSSL \
+        -DUSE_HTTP_PARSER=llhttp \
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
 
-dotweak: gsed -i -e '/Libs.private:/d' -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc
+dotweak: gsed -i -e '/^Libs.private:/d' -e 's|openssl|libllhttp|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc

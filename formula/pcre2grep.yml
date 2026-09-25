@@ -1,9 +1,11 @@
-summary: Perl compatible regular expressions library with a new API
+summary: grep with Perl-compatible regular expressions
 web-url: https://www.pcre.org/
-src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2
-src-sha: 47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7
+src-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.48/pcre2-10.48.tar.bz2
+src-sha: b6c68fdf6f3ac31388b50aa89ff0fc49c00c987c16e7b5146491d12003f2c8ed
 license: BSD-3-Clause
 dep-pkg: libz libbz2 libreadline
+
+dopatch: gsed -i 's/ DESTINATION / EXCLUDE_FROM_ALL DESTINATION /' CMakeLists.txt
 
 install: |
     cmakew \
@@ -20,3 +22,5 @@ install: |
         -DPCRE2_SUPPORT_LIBZ=ON \
         -DPCRE2_SUPPORT_LIBBZ2=ON \
         -DPCRE2_SUPPORT_LIBREADLINE=ON
+    install_bins pcre2grep
+    install_mans ../doc/pcre2grep.1

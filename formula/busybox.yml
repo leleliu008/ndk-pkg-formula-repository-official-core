@@ -1,7 +1,7 @@
 summary: tiny versions of many common UNIX utilities into a single small executable
 web-url: https://busybox.net/
-src-url: https://busybox.net/downloads/busybox-1.37.0.tar.bz2
-src-sha: 3311dff32e746499f4df0d5df04d7eb396382d7e108bb9250e7b519b837043a4
+src-url: https://busybox.net/downloads/busybox-1.38.0.tar.bz2
+src-sha: 34f9ea6ff8636f2c9241153b9114eefa9e65674a45318ae1ef95bb5f31c53bb2
 license: GPL-2.0
 dep-upp: bzip2
 bsystem: gmake
@@ -33,22 +33,24 @@ install: |
     install_bins busybox
  
 res-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/busybox.config
-res-sha: d86be2c4b5353cd4ede349e2a13bb3feb8b03bfd4ec8cefa157c64e8ee3d4d1d
+res-sha: 72beb12fc383a4ac0e62f54b2fe797f789463464579de82cfde9ebd0a6917408
 
 fix-opt: -p0
 patches: |
     5c3d7e399fbf0f61213a7b3212048c084b4d7dbabf518c9f9c5867a78a84432a|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0000-use-clang.patch
     2e08685522c2668d3b54e509771d094c83e247ad669bb0e6d6c524564b3614de|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0001-clang-fix.patch
-    a48a68f5d1cc9f6dfec38b87a2684fda085461cf4ed1b1bef97628bde4109032|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0002-hardcoded-paths-fix.patch
+    e81ae61c9ae441404277e4b4f009b673ccb71c9f84f1fd98aa8561c1efa6b5bc|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0002-hardcoded-paths-fix.patch
     8acc8052d77a774b79b7ceaf245380dc8d3b603cde4e8165fa984f812d057e65|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0003-strchrnul-fix.patch
-    96dca9372627559de2e186d48d2b76f2934ad09fcfa046cecaf16b9e7587ace7|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0005-no-change-identity.patch
-    a30e288aeeb4d0c138760ea811822dea78ca98cd511d1a5a83a5920d3518ee09|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0006-miscutils-crond.patch
-    e2493a6c02ab313f166327d3d98603ea261005f204b5d783d876ad502471ebe6|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0007-miscutils-crontab.patch
-    44e09da8d71dcc67a889c295bdb5d50cdfa0f90b6ab114c4c06181c9eba23137|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0008-networking-ftpd-no-chroot.patch
-    587b67493840871f67375ef3b21aa8b9b6a23c15cafff8724358d719a71bf959|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0009-networking-httpd-default-port.patch
-    102627807d6571d2ff2a1eb6fe9c5dc76a84b182b5bbee537def6f00f0297ff4|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0011-networking-tftp-no-chroot.patch
-    37902a94f75c3e17fa4dc76b88ca4eba359cca6280fec2006f201d8ccce72087|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0012-util-linux-mount-no-addmntent.patch
-    fb4014b02bfb12c8791f402dbd0e3abb57a494361e0f8cd7e010258cc5eda319|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0013-busybox-1.36.1-kernel-6.8.patch
-    11fea0ed7efe00bd611465cff56ff7bc784fc92fd51af76a83853e033632c23c|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0014-fix-segfault.patch
-    1b6f60fb8c949c7914fe119c810f3c6be14daabb08eabb0fa2a84775f626ae42|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0015-fix-ipv6.patch
-    38de1b3e7a8b58169edc7625738fffb93140cdcd8ef8d58c1b261e360aafadee|https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/busybox/0016-fix-ipv6-2.patch
+    96dca9372627559de2e186d48d2b76f2934ad09fcfa046cecaf16b9e7587ace7|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0004-no-change-identity.patch
+    a30e288aeeb4d0c138760ea811822dea78ca98cd511d1a5a83a5920d3518ee09|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0005-miscutils-crond.patch
+    e2493a6c02ab313f166327d3d98603ea261005f204b5d783d876ad502471ebe6|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0006-miscutils-crontab.patch
+    44e09da8d71dcc67a889c295bdb5d50cdfa0f90b6ab114c4c06181c9eba23137|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0007-networking-ftpd-no-chroot.patch
+    587b67493840871f67375ef3b21aa8b9b6a23c15cafff8724358d719a71bf959|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0008-networking-httpd-default-port.patch
+    102627807d6571d2ff2a1eb6fe9c5dc76a84b182b5bbee537def6f00f0297ff4|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0009-networking-tftp-no-chroot.patch
+    37902a94f75c3e17fa4dc76b88ca4eba359cca6280fec2006f201d8ccce72087|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0010-util-linux-mount-no-addmntent.patch
+    fb4014b02bfb12c8791f402dbd0e3abb57a494361e0f8cd7e010258cc5eda319|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0011-busybox-1.36.1-kernel-6.8.patch
+    11fea0ed7efe00bd611465cff56ff7bc784fc92fd51af76a83853e033632c23c|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0012-fix-segfault.patch
+    1b6f60fb8c949c7914fe119c810f3c6be14daabb08eabb0fa2a84775f626ae42|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0013-fix-ipv6.patch
+    38de1b3e7a8b58169edc7625738fffb93140cdcd8ef8d58c1b261e360aafadee|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0014-fix-ipv6-2.patch
+    899bedeb55aaf53fd9c2bda4ea27effae1e08682933da07659a38362b5fd5c05|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0015-selinux.patch
+    84e26a3fe3e2614b2b60d3726d3e0e82833b214538f77d9a20ac7d1026e3b970|https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/0016-explicit_bzero.patch

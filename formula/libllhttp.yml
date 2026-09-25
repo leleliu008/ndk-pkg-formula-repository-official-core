@@ -1,0 +1,6 @@
+summary: http_parser replacement
+web-url: https://llhttp.org/
+src-url: https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.4.3.tar.gz
+src-sha: 1eb813c7437b31a87496a1cd3ed79f00746720f5e7e29c79b42c02cb69f36c39
+license: MIT
+install: cmakew -DLLHTTP_BUILD_SHARED_LIBS=ON -DLLHTTP_BUILD_STATIC_LIBS=ON

@@ -1,0 +1,6 @@
+summary: Fast, disk space efficient package manager
+web-url: https://pnpm.io/
+src-url: https://github.com/pnpm/pnpm/archive/refs/tags/v12.6.0.tar.gz
+src-sha: 6c347d76658e36de554848799e0725547781a5b5b040477d6e2d62a09c5efbaa
+license: MIT
+install: cargow install --path pnpm/crates/cli

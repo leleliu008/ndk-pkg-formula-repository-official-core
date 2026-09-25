@@ -1,5 +1,5 @@
 summary: A simple hex viewer for the terminal
-src-url: https://github.com/sharkdp/hexyl/archive/refs/tags/v0.16.0.tar.gz
-src-sha: 52853b4edede889b40fd6ff132e1354d957d1f26ee0c26ebdea380f8ce82cb0b
+src-url: https://github.com/sharkdp/hexyl/archive/refs/tags/v0.17.0.tar.gz
+src-sha: 72fa17397ad187eec6b295d02c7caabbb209a6e0d5706187b8a599bd5df8615e
 license: MIT
 bsystem: cargo

@@ -1,5 +1,6 @@
 summary: Sass reimplemented in rust with nom
-src-url: https://github.com/kaj/rsass/archive/refs/tags/v0.23.0.tar.gz
-src-sha: 30a1e7c0561a463dce95f93f3faaac4eedee079f10ece08a210fba708704e8c3
+src-url: https://github.com/kaj/rsass/archive/refs/tags/v0.29.2.tar.gz
+src-sha: 4aa7a4d3ca117673e3e6c868bd2214076bb5da2118f4ecfd4860e0b96a7ec0c2
 license: MIT
-install: cargow install --features=commandline
+bscript: rsass-cli
+bsystem: cargo
