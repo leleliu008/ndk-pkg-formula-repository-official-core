@@ -1,7 +1,9 @@
 summary: Ncurses BitTorrent client based on libtorrent-rakshasa
-src-url: https://github.com/rakshasa/rtorrent/releases/download/v0.9.8/rtorrent-0.9.8.tar.gz
-src-sha: 9edf0304bf142215d3bc85a0771446b6a72d0ad8218efbe184b41e4c9c7542af
+src-url: https://github.com/rakshasa/rtorrent/releases/download/v0.16.24/rtorrent-0.16.24.tar.gz
+src-sha: 269d82054bdf3862194722c5e27bddc12abb51d45045bf6df1bd7ee3a2837bab
 license: GPL-2.0-or-later
-dep-pkg: libncurses libcurl libtorrent-rakshasa
+dep-pkg: libncurses libtorrent-rakshasa
 install: configure --enable-ipv6
-xxflags: -std=c++11
+
+# keep sync with libtorrent-rakshasa
+api-min: 28

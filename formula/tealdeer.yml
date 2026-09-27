@@ -1,5 +1,5 @@
 summary: A very fast implementation of tldr in Rust
-src-url: https://github.com/dbrgn/tealdeer/archive/refs/tags/v1.7.1.tar.gz
-src-sha: 2b10e141774d2a50d25a1d3ca3d911dedc0e1313366ce0a364068c7a686300d8
+src-url: https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.9.0.tar.gz
+src-sha: 1387a04ddba714668ff0925377a2de0d0ab14533d44dd0766d673fbbd71e3119
 license: Apache-2.0
 bsystem: cargo

@@ -25,4 +25,4 @@ install: |
 dotweak: |
     run rm -f bin/curl share/man/man1/curl.1
 
-    gsed -i '/Libs.private:/d' lib/pkgconfig/libcurl.pc
+    gsed -i -e '/Libs.private:/d' -e 's|libbrotlicommon|libz|' lib/pkgconfig/libcurl.pc

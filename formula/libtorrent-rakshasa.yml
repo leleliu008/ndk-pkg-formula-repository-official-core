@@ -1,17 +1,10 @@
 summary: BitTorrent library with a focus on high performance
-src-url: https://github.com/rakshasa/libtorrent/archive/v0.13.8.tar.gz
-src-sha: 0f6c2e7ffd3a1723ab47fdac785ec40f85c0a5b5a42c1d002272205b988be722
+src-url: https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.24.tar.gz
+src-sha: 626cb6e7272296e7f52fd2310744e080104cf00fe4562a1c253fe327dcfc401c
 license: GPL-2.0-or-later
-dep-pkg: libz libopenssl libexecinfo
+dep-pkg: libcurl
 dep-upp: libtool
-bsystem: autogen
-xxflags: -std=c++11
+bsystem: autotools
 
-install: |
-    configure \
-        --disable-largefile \
-        --enable-aligned=true \
-        --without-fastcgi \
-        --with-zlib="$libz_INSTALL_DIR"
-
-dotweak: gsed -i '/-ltorrent/s|$| -lexecinfo|' lib/pkgconfig/libtorrent.pc
+# spawn.h:61:int posix_spawnattr_destroy(posix_spawnattr_t _Nonnull * _Nonnull __attr) __INTRODUCED_IN(28);
+api-min: 28

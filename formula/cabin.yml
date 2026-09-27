@@ -1,0 +1,7 @@
+summary: A package manager to build C/C++ packages with a Cargo-style workflow
+web-url: https://cabinpkg.com
+src-url: https://github.com/cabinpkg/cabin/archive/refs/tags/0.17.0.tar.gz
+src-sha: 226a228cadc3f5451492751db766d8e999de5f73c9e2a90226037741056b594c
+license: Apache-2.0
+bscript: crates/cabin
+bsystem: cargo
