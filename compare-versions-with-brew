@@ -2,12 +2,12 @@
 
 set -e
 
-COLOR_RED='\033[0;31m'          # Red
-COLOR_GREEN='\033[0;32m'        # Green
-COLOR_YELLOW='\033[0;33m'       # Yellow
-COLOR_BLUE='\033[0;94m'         # Blue
-COLOR_PURPLE='\033[0;35m'       # Purple
-COLOR_OFF='\033[0m'             # Reset
+COLOR_RED='\033[0;31m'
+COLOR_GREEN='\033[0;32m'
+COLOR_YELLOW='\033[0;33m'
+COLOR_BLUE='\033[0;94m'
+COLOR_PURPLE='\033[0;35m'
+COLOR_OFF='\033[0m'
 
 printf_package_info_red() {
     printf "${COLOR_RED}%-20s %-15s %s${COLOR_OFF}\n" "$1" "$2" "$3"
@@ -122,6 +122,7 @@ case $1 in
             libuuid)  printf '%s\n' 'util-linux';;
             libargp)  printf '%s\n' 'argp-standalone';;
             liburcu)  printf '%s\n' 'userspace-rcu' ;;
+            libonig)  printf '%s\n' 'oniguruma' ;;
             liblcms2) printf '%s\n' 'little-cms2' ;;
             libfftw3) printf '%s\n' 'fftw'      ;;
             libcares) printf '%s\n' 'c-ares'    ;;

@@ -7,4 +7,4 @@ dopatch: gsed -i 's|src tools|src|' Makefile.in
 
 install: configure --enable-libgdbm-compat --without-readline
 
-dotweak: run rm -rf share/info/ share/man/man1/
+dotweak: rm -rf share/info/ share/man/man1/

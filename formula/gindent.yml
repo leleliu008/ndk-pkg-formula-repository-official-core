@@ -9,4 +9,4 @@ binbstd: 1
 
 install: configure --program-prefix=g
 
-dotweak: run ln -s gindent bin/indent
+dotweak: ln -s gindent bin/indent

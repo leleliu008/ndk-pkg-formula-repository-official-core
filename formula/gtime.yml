@@ -1,10 +1,10 @@
 summary: GNU implementation of time utility
-src-url: https://ftp.gnu.org/gnu/time/time-1.9.tar.gz
-src-sha: fbacf0c81e62429df3e33bda4cee38756604f18e01d977338e23306a3e3b521e
+src-url: https://ftp.gnu.org/gnu/time/time-1.10.tar.gz
+src-sha: e8c29fb4ab599d8478e41e8618f50db8aede9c90af27d0d2ef28ae50d5de09c3
 license: GPL-3.0-or-later
 
-dopatch: gsed -i '/config\.h/a \#include<string.h>' src/resuse.c
+    #dopatch: gsed -i '/config\.h/a \#include<string.h>' src/resuse.c
 
 install: configure --program-prefix=g
 
-dotweak: run ln -s gtime bin/time
+dotweak: ln -s gtime bin/time

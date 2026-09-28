@@ -6,7 +6,7 @@ license: Zlib
 
 install: cmakew -DZLIB_BUILD_TESTING=OFF -DZLIB_BUILD_STATIC=ON -DZLIB_BUILD_SHARED=ON
 
-dotweak: run ln -s zlib.pc lib/pkgconfig/libz.pc
+dotweak: ln -s zlib.pc lib/pkgconfig/libz.pc
 
 developer: |
     Jean-loup Gailly <jloup@gailly.net>

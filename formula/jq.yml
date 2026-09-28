@@ -1,8 +1,8 @@
 summary: A lightweight and flexible command-line JSON processor
-web-url: https://stedolan.github.io/jq
-src-url: https://github.com/stedolan/jq/releases/download/jq-1.7.1/jq-1.7.1.tar.gz
-src-sha: 478c9ca129fd2e3443fe27314b455e211e0d8c60bc8ff7df703873deeee580c2
+web-url: https://jqlang.github.io/jq/
+src-url: https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-1.8.2.tar.gz
+src-sha: 71b8d6e8f5fe81f6c6d0d110e3892251f6ce76ed095abd315e26e6e1193af3af
 license: MIT
 dep-upp: bison
-dep-pkg: oniguruma
-install: configure --with-oniguruma="$oniguruma_INSTALL_DIR"
+dep-pkg: libonig
+bsystem: configure

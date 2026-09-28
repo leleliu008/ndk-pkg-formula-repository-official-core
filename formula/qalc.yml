@@ -7,7 +7,7 @@ dep-upp: gettext-tools perl intltool
 dep-pkg: libintl libreadline libicu libxml2 libcurl libgmp libmpfr
 bsystem: configure
 
-dotweak: run rm -rf include/ lib/
+dotweak: rm -rf include/ lib/
 
 fix-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/qalc/libqalculate-util.cc.patch
 fix-sha: 869ca7507a7b33523dfa59d63ce15e363e9a330f86198866bcf440c64e6a1f86

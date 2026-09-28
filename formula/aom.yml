@@ -17,4 +17,4 @@ install: |
         -DCONFIG_RUNTIME_CPU_DETECT=0 \
         -DBUILD_SHARED_LIBS=OFF
 
-dotweak: run rm -rf include/ lib/
+dotweak: rm -rf include/ lib/

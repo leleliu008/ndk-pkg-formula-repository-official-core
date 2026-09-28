@@ -25,4 +25,4 @@ install: |
         --enable-relocatable \
         gl_cv_header_working_fcntl_h=yes
 
-dotweak: run rm -rf include/ lib/
+dotweak: rm -rf include/ lib/
