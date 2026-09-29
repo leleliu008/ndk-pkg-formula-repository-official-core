@@ -3,8 +3,13 @@ name: build changed packages
 on:
   push:
     branches: [ master,dev ]
+    paths:
+      - 'formula/*.yml'
+
   pull_request:
     branches: [ master,dev ]
+    paths:
+      - 'formula/*.yml'
 
 jobs:
 
@@ -18,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - id: changed-files
-        uses: tj-actions/changed-files@v45
+        uses: tj-actions/changed-files@v47
         with:
           files: 'formula/*.yml'
           json: true
@@ -41,16 +46,14 @@ jobs:
 
     needs: find-changed-packages
 
-    if: needs.find-changed-packages.outputs.names != '[]'
-
     strategy:
 
       fail-fast: false
 
       matrix:
         abi: [arm64-v8a]
-        opt: ['--static', '']
         pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+        opt: ['--static', '']
 
     runs-on: ubuntu-latest
 
@@ -77,16 +80,14 @@ jobs:
 
     needs: find-changed-packages
 
-    if: needs.find-changed-packages.outputs.names != '[]'
-
     strategy:
 
       fail-fast: false
 
       matrix:
         abi: [arm64-v8a]
-        opt: ['--static', '']
         pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+        opt: ['--static', '']
 
     runs-on: ubuntu-latest
 
@@ -110,19 +111,17 @@ jobs:
 
     needs: find-changed-packages
 
-    if: needs.find-changed-packages.outputs.names != '[]'
-
     strategy:
 
       fail-fast: false
 
       matrix:
-        os:  [macos-26, macos-15]
+        os:  ['26', '15']
         abi: [arm64-v8a]
-        opt: ['--static', '']
         pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+        opt: ['--static', '']
 
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v5
