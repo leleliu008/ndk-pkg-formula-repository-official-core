@@ -1,10 +1,10 @@
 summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell
-web-url: https://starship.rs
-src-url: https://github.com/starship/starship/archive/refs/tags/v1.20.1.tar.gz
-src-sha: 851d84be69f9171f10890e3b58b8c5ec6057dd873dc83bfe0bdf965f9844b5dc
+web-url: https://starship.rs/
+src-url: https://github.com/starship/starship/archive/refs/tags/v1.26.0.tar.gz
+src-sha: 8c95e8a6c596b29ac192104eae00dd991e8c8fd66083fd2b34d6b223a5803a59
 license: ISC
-dep-pkg: libopenssl libgetloadavg
-install: cargow install --locked --no-default-features
+dep-pkg: libz
+bsystem: cargo
 
-# sys/resource.h: int prlimit(pid_t __pid, int __resource, const struct rlimit* __new_limit, struct rlimit* __old_limit) __INTRODUCED_IN_32(24) __INTRODUCED_IN_64(21);
-api-min: 24
+fix-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/starship/0001-Cargo.toml.patch
+fix-sha: c439406e5c6cdeb5ca1a4a25c5551866b94e16933d451859232e3f550b731b93
