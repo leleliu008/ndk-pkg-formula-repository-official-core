@@ -1,10 +1,6 @@
 name: check if formula urls alive
 
 on:
-  push:
-    branches: [ master,dev ]
-  pull_request:
-    branches: [ master,dev ]
   schedule:
     - cron: '0 22 * * *'
 
@@ -42,5 +38,6 @@ jobs:
       - run: |
           for item in $(./ndk-pkg ls-available)
           do
+              printf '\n%b\n' "\033[0;31m==> $item\033[0m"
               ./ndk-pkg fetch "$item"
           done

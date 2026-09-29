@@ -1,15 +1,11 @@
 name: compare-versions
 
 on:
-  push:
-    branches: [ master, dev ]
-  pull_request:
-    branches: [ master, dev ]
   schedule:
     - cron: '0 20 * * *'
 
 jobs:
-  schedule:
+  compare:
 
     runs-on: macos-15
 
