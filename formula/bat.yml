@@ -1,13 +1,11 @@
 summary: Clone of cat(1) with syntax highlighting and Git integration
-src-url: https://github.com/sharkdp/bat/archive/refs/tags/v0.25.0.tar.gz
-src-sha: 4433403785ebb61d1e5d4940a8196d020019ce11a6f7d4553ea1d324331d8924
+src-url: https://github.com/sharkdp/bat/archive/refs/tags/v0.26.1.tar.gz
+src-sha: 4474de87e084953eefc1120cf905a79f72bbbf85091e30cf37c9214eafcaa9c9
 license: Apache-2.0
 dep-pkg: libz
 
-dopatch: printf '#define index(a,b) strchr((a),(b))\n' > ../include/ndk-pkg-common.h
-
 install: |
-    cargow install --locked
+    cargow install
     install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
     install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash
     install_completion fish bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.fish
