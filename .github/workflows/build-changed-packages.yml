@@ -62,6 +62,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: |
+            cat > .ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
+
       - run: install -d ~/.ndk-pkg/repos.d/
       - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
 
@@ -97,6 +106,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: |
+            cat > .ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
+
       - run: install -d ~/.ndk-pkg/repos.d/
       - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
 
@@ -127,6 +145,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+
+      - run: |
+            cat > .ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
 
       - run: install -d ~/.ndk-pkg/repos.d/
       - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
