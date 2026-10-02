@@ -1,0 +1,6 @@
+summary: ISO AAC audio encoder
+web-url: https://sourceforge.net/projects/faac
+src-url: https://github.com/knik0/faac/archive/refs/tags/faac-2.2.tar.gz
+src-sha: a93963573907c83e26e8cfabbf80d3a9c360f06ea4ecf1ea6cb74a202494d8d9
+license: LGPL-2.1-or-later
+install: mesonw -Dfrontend=false
