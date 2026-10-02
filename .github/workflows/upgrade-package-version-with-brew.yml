@@ -107,7 +107,7 @@ jobs:
       - run: git push origin master
 
 
-  upgrade:
+  push:
 
     needs: find-upgradable-packages
 
