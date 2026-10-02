@@ -1,0 +1,19 @@
+name: check yaml files
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: pip install --user yamllint
+
+      - run: yamllint formula

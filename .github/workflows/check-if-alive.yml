@@ -1,6 +1,8 @@
-name: check if formula urls alive
+name: check if urls are alive
 
 on:
+  workflow_dispatch:
+
   schedule:
     - cron: '0 22 * * *'
 
@@ -14,6 +16,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: |
+            cat > .ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
+
+      - run: install -d ~/.ndk-pkg/repos.d/
+      - run: ln -s .    ~/.ndk-pkg/repos.d/
+
       - run: apt -y update
       - run: apt -y install curl
 
@@ -24,20 +38,12 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
 
-      - run: install -d ~/.ndk-pkg/repos.d/official-core/
-      - run: mv formula ~/.ndk-pkg/repos.d/official-core/
       - run: |
-            cat >       ~/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
+          cd formula
 
-      - run: |
-          for item in $(./ndk-pkg ls-available)
+          for f in *.yml
           do
-              printf '\n%b\n' "\033[0;31m==> $item\033[0m"
-              ./ndk-pkg fetch "$item"
+              PACKAGE_NAME="${f%.yml}"
+              printf '\n%b\n' "\033[0;31m==> $$PACKAGE_NAME\033[0m"
+              ./ndk-pkg fetch "$$PACKAGE_NAME"
           done

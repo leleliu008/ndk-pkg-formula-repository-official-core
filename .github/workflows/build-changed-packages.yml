@@ -62,6 +62,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: install -d ~/.ndk-pkg/repos.d/
+      - run: ln -s .    ~/.ndk-pkg/repos.d/
+
       - run: apt -y update
       - run: apt -y install curl
 
@@ -71,8 +74,6 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
-      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
@@ -96,14 +97,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: install -d ~/.ndk-pkg/repos.d/
+      - run: ln -s .    ~/.ndk-pkg/repos.d/
+
       - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
-      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
@@ -126,12 +128,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - run: install -d ~/.ndk-pkg/repos.d/
+      - run: ln -s .    ~/.ndk-pkg/repos.d/
+
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
-      - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}

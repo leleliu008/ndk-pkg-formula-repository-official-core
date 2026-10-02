@@ -5,4 +5,3 @@ src-sha: 74bf7f30b00eb857df27f5c4c93ceaaaf183089f5eff956778ea21deae3c34b4
 license: MIT
 dep-pkg: libz libopenssl
 bsystem: cargo
-    #install: cargow install --locked

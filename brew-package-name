@@ -1,0 +1,134 @@
+#!/bin/sh
+
+[ -z "$1" ] && {
+    printf "usage: $0 <NAME>, <NAME> is unspecified or empty."
+    exit 1
+}
+
+case $1 in
+    g)        printf '%s\n' 'g-ls'      ;;
+
+    gm4)      printf '%s\n' 'm4'        ;;
+    gmake)    printf '%s\n' 'make'      ;;
+
+    gtar)     printf '%s\n' 'gnu-tar'   ;;
+    gtime)    printf '%s\n' 'gnu-time'  ;;
+    gindent)  printf '%s\n' 'gnu-indent';;
+
+    d8)       printf '%s\n' 'v8'        ;;
+    bit)      printf '%s\n' 'bit-git'   ;;
+    xxd)      printf '%s\n' 'vim'       ;;
+    tcl)      printf '%s\n' 'tcl-tk'    ;;
+    dua)      printf '%s\n' 'dua-cli'   ;;
+    tic)      printf '%s\n' 'ncurses'   ;;
+    gif)      printf '%s\n' 'giflib'    ;;
+    file)     printf '%s\n' 'file-formula' ;;
+    adig)     printf '%s\n' 'c-ares'    ;;
+    orcc)     printf '%s\n' 'orc'       ;;
+    qalc)     printf '%s\n' 'libqalculate' ;;
+    pjsip)    printf '%s\n' 'pjproject' ;;
+    xattr)    printf '%s\n' 'attr'      ;;
+    patch)    printf '%s\n' 'gpatch'    ;;
+    delta)    printf '%s\n' 'git-delta' ;;
+    xmlwf)    printf '%s\n' 'expat'     ;;
+    typos)    printf '%s\n' 'typos-cli' ;;
+    proj7)    printf '%s\n' 'proj@7'    ;;
+    stack)    printf '%s\n' 'haskell-stack';;
+    flatc)    printf '%s\n' 'flatbuffers' ;;
+    getopt)   printf '%s\n' 'util-linux';;
+    bsdtar)   printf '%s\n' 'libarchive';;
+    choose)   printf '%s\n' 'choose-rust';;
+    eigen3)   printf '%s\n' 'eigen'     ;;
+    utfcpp)   printf '%s\n' 'utf8cpp'   ;;
+    toml++)   printf '%s\n' 'tomlplusplus'  ;;
+    pngsplit) printf '%s\n' 'pngcheck'  ;;
+    xmlutils) printf '%s\n' 'libxml2'   ;;
+    stwolame) printf '%s\n' 'two-lame'  ;;
+    openpmix) printf '%s\n' 'pmix'      ;;
+    xsltproc) printf '%s\n' 'libxslt'   ;;
+    trietool) printf '%s\n' 'libdatrie' ;;
+    msgpack-c)printf '%s\n' 'msgpack'   ;;
+    jackaudio)printf '%s\n' 'jack'      ;;
+    proto-cli)printf '%s\n' 'proto'     ;;
+    mediainfo)printf '%s\n' 'media-info';;
+
+    golang)   printf '%s\n' 'go'        ;;
+    golang@1.21)
+              printf '%s\n' 'go@1.21'   ;;
+    dot_static)
+              printf '%s\n' 'graphviz'  ;;
+
+    rustup-init)
+              printf '%s\n' 'rustup'    ;;
+
+    grpc-plugins)
+              printf '%s\n' 'grpc'      ;;
+    zlog-chk-conf)
+              printf '%s\n' 'zlog'      ;;
+    tensorflow-lite)
+              printf '%s\n' 'libtensorflow' ;;
+    update-mime-database)
+              printf '%s\n' 'shared-mime-info' ;;
+
+    glib-tools)
+              printf '%s\n' 'glib'      ;;
+    gettext-tools)
+              printf '%s\n' 'gettext'   ;;
+
+    png)      printf '%s\n' 'libpng'    ;;
+    tiff)     printf '%s\n' 'libtiff'   ;;
+    sndfile)  printf '%s\n' 'libsndfile' ;;
+    nghttp3)  printf '%s\n' 'libnghttp3' ;;
+    ngtcp2)   printf '%s\n' 'libngtcp2'  ;;
+
+    llvm+*@18)printf '%s\n' 'llvm@18'    ;;
+    llvm+*@19)printf '%s\n' 'llvm@19'    ;;
+    llvm+*@20)printf '%s\n' 'llvm@20'    ;;
+    llvm+*@21)printf '%s\n' 'llvm@21'    ;;
+
+    lib*)
+        case $1 in
+            libz)     printf '%s\n' 'zlib'      ;;
+            libfl)    printf '%s\n' 'flex'      ;;
+            libdb)    printf '%s\n' 'berkeley-db' ;;
+            libfdt)   printf '%s\n' 'dtc'       ;;
+            libgif)   printf '%s\n' 'giflib'    ;;
+            libbz2)   printf '%s\n' 'bzip2'     ;;
+            libzmq)   printf '%s\n' 'zeromq'    ;;
+            libjxl)   printf '%s\n' 'jpeg-xl'   ;;
+            libicu)   printf '%s\n' 'icu4c'     ;;
+            libhwy)   printf '%s\n' 'highway'   ;;
+            librtmp)  printf '%s\n' 'rtmpdump'  ;;
+            liblzma)  printf '%s\n' 'xz'        ;;
+            libjpeg)  printf '%s\n' 'jpeg'      ;;
+            libltdl)  printf '%s\n' 'libtool'   ;;
+            libuuid)  printf '%s\n' 'util-linux';;
+            libargp)  printf '%s\n' 'argp-standalone';;
+            liburcu)  printf '%s\n' 'userspace-rcu' ;;
+            liblcms2) printf '%s\n' 'little-cms2' ;;
+            libfftw3) printf '%s\n' 'fftw'      ;;
+            libcares) printf '%s\n' 'c-ares'    ;;
+            libgumbo) printf '%s\n' 'gumbo-parser' ;;
+
+            libasync++)
+                      printf '%s\n' 'asyncplusplus' ;;
+            libsqlite3)
+                      printf '%s\n' 'sqlite'    ;;
+            libmp3lame)
+                      printf '%s\n' 'lame'      ;;
+            libtwolame)
+                      printf '%s\n' 'two-lame'  ;;
+            libblake3)
+                      printf '%s\n' 'b3sum'     ;;
+            libSvtAv1)
+                      printf '%s\n' 'svt-av1'   ;;
+            libxml2-python3)
+                      printf '%s\n' 'libxml2'   ;;
+            libtextstyle|libasprintf|libintl)
+                      printf '%s\n' 'gettext'   ;;
+            libprotobuf.a)
+                      printf '%s\n' 'protobuf'  ;;
+            libtiff.a)
+                      printf '%s\n' 'libtiff'   ;;
+        esac
+esac

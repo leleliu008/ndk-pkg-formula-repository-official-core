@@ -1,0 +1,250 @@
+#!/bin/sh
+
+set -e
+
+COLOR_RED='\033[0;31m'
+COLOR_GREEN='\033[0;32m'
+COLOR_YELLOW='\033[0;33m'
+COLOR_BLUE='\033[0;94m'
+COLOR_PURPLE='\033[0;35m'
+COLOR_OFF='\033[0m'
+
+printf_package_info_red() {
+    printf "${COLOR_RED}%-15s %-30s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_purple() {
+    printf "${COLOR_PURPLE}%-15s %-30s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_blue() {
+    printf "${COLOR_BLUE}%-15s %-30s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+printf_package_info_green() {
+    printf "${COLOR_GREEN}%-15s %-30s %s${COLOR_OFF}\n" "$1" "$2" "$3"
+}
+
+version_sort() {
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sort.html
+    # https://man.netbsd.org/NetBSD-8.1/i386/sort.1
+    #
+    # sort: unrecognized option: V
+    # BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+    # Usage: sort [-nrugMcszbdfiokt] [-o FILE] [-k start[.offset][opts][,end[.offset][opts]] [-t CHAR] [FILE]...
+    if  printf '\n' | (sort -V > /dev/null 2>&1) ; then
+        printf '%s\n' "$@" | sort -V
+    else
+        printf '%s\n' "$@" | sort -t. -n -k1,1 -k2,2 -k3,3 -k4,4
+    fi
+}
+
+# check if match the condition
+#
+# condition:
+# eq  equal
+# ne  not equal
+# gt  greater than
+# lt  less than
+# ge  greater than or equal
+# le  less than or equal
+#
+# examples:
+# version_match 1.15.3 eq 1.16.0
+# version_match 1.15.3 lt 1.16.0
+# version_match 1.15.3 gt 1.16.0
+# version_match 1.15.3 le 1.16.0
+# version_match 1.15.3 ge 1.16.0
+version_match() {
+    case $2 in
+        eq)  [ "$1"  = "$3" ] ;;
+        ne)  [ "$1" != "$3" ] ;;
+        le)
+            if [ "$1" = "$3" ] ; then
+                return 0
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | head -n 1)" ]
+            ;;
+        ge)
+            if [ "$1" = "$3" ] ; then
+                return 0
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | tail -n 1)" ]
+            ;;
+        lt)
+            if [ "$1" = "$3" ] ; then
+                return 1
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | head -n 1)" ]
+            ;;
+        gt)
+            if [ "$1" = "$3" ] ; then
+                return 1
+            fi
+            [ "$1" = "$(version_sort "$1" "$3" | tail -n 1)" ]
+            ;;
+        *)  printf '%s\n' "version_compare: $2: not supported operator." >&2
+            return 1
+    esac
+}
+
+#########################################################################
+
+unset I
+unset UPGRADE
+
+[ "$1" = '--upgrade' ] && UPGRADE=1
+
+#########################################################################
+
+cd formula
+
+install -d upgrade/
+
+I=0
+
+for FORMULA_FILENAME in *.yml
+do
+    PACKAGE_NAME="${FORMULA_FILENAME%.yml}"
+
+    PACKAGE_VERSION="$(../xcpkg formula-parse "$FORMULA_FILENAME" version)"
+    PACKAGE_WEB_URL="$(../xcpkg formula-parse "$FORMULA_FILENAME" web-url)"
+
+    ################################################
+
+    S1="$(../brew-package-name "$PACKAGE_NAME")"
+    S2=
+
+    case $PACKAGE_NAME in
+        lib*)  S2="${PACKAGE_NAME#lib}"  ;;
+        *-dev) S2="${PACKAGE_NAME%-dev}" ;;
+    esac
+
+    BREW_PACKAGE_NAME=
+    BREW_PACKAGE_VERS=
+
+    for item in $S1 "$PACKAGE_NAME" $S2
+    do
+        if brew info "$item" --json > /dev/null 2>&1 ; then
+            BREW_PACKAGE_NAME="$item"
+            BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].versions.stable')
+            break
+        fi
+    done
+
+    ################################################
+
+    if [ -n "$BREW_PACKAGE_NAME" ] ; then
+        if [ "$BREW_PACKAGE_VERS" = "$PACKAGE_VERSION" ] ; then
+            continue
+        fi
+
+        if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
+            case $BREW_PACKAGE_NAME in
+                lib*) X=lib ;;
+                   *) X="$(printf '%.1s' "$BREW_PACKAGE_NAME")"
+            esac
+
+            printf_package_info_red "$PACKAGE_NAME" "$PACKAGE_VERSION -> $BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/main/Formula/$X/$BREW_PACKAGE_NAME.rb"
+
+            if [ "$UPGRADE" = 1 ] ; then
+                case $PACKAGE_NAME in
+                    atuin|bear|chisel|chicken|d8|dot_static|fbthrift) continue
+                esac
+            else
+                continue
+            fi
+
+            SRC_URL_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-url)"
+            SRC_SHA_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-sha)"
+
+            SRC_URL_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.url')
+            SRC_SHA_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.checksum')
+
+            if [ -z "$SRC_URL_OLD" ] || [ -z "$SRC_SHA_OLD" ] || [ -z "$SRC_URL_NEW" ] || [ -z "$SRC_SHA_NEW" ] || [ "$SRC_SHA_NEW" = null ] ; then
+                continue
+            fi
+
+            A="$(printf '%s\n' "$SRC_URL_OLD" | sed -E 's|^https?://([^/]+)/.*|\1|')"
+            B="$(printf '%s\n' "$SRC_URL_NEW" | sed -E 's|^https?://([^/]+)/.*|\1|')"
+
+            if [ "$B" = 'ftpmirror.gnu.org' ] ; then
+                B='ftp.gnu.org'
+                SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_NEW" | sed 's|ftpmirror\.gnu\.org|ftp.gnu.org/gnu|')"
+            fi
+
+            # may need to apply patches, don't handle this at the moment
+            if [ "$SRC_URL_OLD" = "$SRC_URL_NEW" ] && [ "$SRC_SHA_OLD" = "$SRC_SHA_NEW" ] ; then
+                continue
+            fi
+
+            cat <<EOF
+-src-url: $SRC_URL_OLD
+-src-sha: $SRC_SHA_OLD
++src-url: $SRC_URL_NEW
++src-sha: $SRC_SHA_NEW
+EOF
+            if [ "$A" != "$B" ] ; then
+                continue
+            fi
+
+            tee "upgrade/$PACKAGE_NAME" <<EOF
+VERSION_OLD=$PACKAGE_VERSION
+VERSION_NEW=$BREW_PACKAGE_VERS
+SRC_URL_NEW=$SRC_URL_NEW
+SRC_SHA_NEW=$SRC_SHA_NEW
+BREWPKGNAME=$BREW_PACKAGE_NAME
+EOF
+            I="$(($I + 1))"
+
+            echo "I=$I"
+
+            if [ "$I" -eq 10 ] ; then
+                exit
+            fi
+        else
+            printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION -> $BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/main/Formula/$X/$BREW_PACKAGE_NAME.rb"
+        fi
+
+        continue
+    fi
+
+    if [ "$UPGRADE" = 1 ] ; then
+        continue
+    fi
+
+    PACKAGE_GIT_URL="$(../xcpkg formula-parse "$FORMULA_FILENAME" git-url)"
+
+    case $PACKAGE_GIT_URL in
+        https://github.com/*)
+            X="${PACKAGE_GIT_URL#'https://github.com/'}"
+            X="${X%/}"
+            Y="${X%/*}"
+            Z="${X#*/}"
+
+            cat > QUERY <<EOF
+            {
+                repository(owner: "$Y", name: "$Z") {
+                    latestRelease {
+                      tagName
+                    }
+                }
+            }
+EOF
+
+            LATEST_RELEASE_TAGNAME="$(gh api graphql -f "query=$(cat QUERY)" --jq .data.repository.latestRelease.tagName)"
+
+            LATEST_RELEASE_VERSION="${LATEST_RELEASE_TAGNAME#v}"
+            LATEST_RELEASE_VERSION="${LATEST_RELEASE_VERSION%-stable}"
+
+            if version_match "$LATEST_RELEASE_VERSION" gt "$PACKAGE_VERSION" ; then
+                printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION -> $LATEST_RELEASE_VERSION" "$PACKAGE_GIT_URL/releases/tag/$LATEST_RELEASE_TAGNAME"
+            else
+                printf_package_info_green  "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+            fi
+
+            continue
+    esac
+
+    printf_package_info_blue "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_WEB_URL"
+done

@@ -2,12 +2,13 @@ summary: Text processing scripting language
 web-url: https://www.cs.princeton.edu/~bwk/btl.mirror/
 src-url: https://github.com/onetrueawk/awk/archive/refs/tags/20260426.tar.gz
 src-sha: 7ae5b9fc6a8149bc45ea0ba3ba434a69a16d1460d19f6d01b6f04cc885b8e02b
-license: MIT
+license: SMLNJ
 dep-upp: gm4 bison
 
 dopatch: |
-    gsed -i 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' makefile
-    gsed -i 's|-lm|$(LDFLAGS) -lm|' makefile
+    gsed -i \
+         -e 's|$(HOSTCC) $(CFLAGS)|$(HOSTCC) $(HOSTCFLAGS)|' \
+         -e 's|-lm|$(LDFLAGS) -lm|' makefile
 
 install: |
     gmakew clean
