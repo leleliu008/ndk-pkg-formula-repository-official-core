@@ -26,7 +26,8 @@ jobs:
             EOF
 
       - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s .    ~/.ndk-pkg/repos.d/
+      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
+      - run: ls ~/.ndk-pkg/repos.d/
 
       - run: apt -y update
       - run: apt -y install curl
@@ -45,5 +46,5 @@ jobs:
           do
               PACKAGE_NAME="${f%.yml}"
               printf '\n%b\n' "\033[0;31m==> $$PACKAGE_NAME\033[0m"
-              ./ndk-pkg fetch "$$PACKAGE_NAME"
+              ../ndk-pkg fetch "$$PACKAGE_NAME"
           done
