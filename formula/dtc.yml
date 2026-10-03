@@ -1,0 +1,8 @@
+summary: Device tree compiler
+git-url: https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+src-url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.8.1.tar.xz
+src-sha: 23526015a6f1550e0541a53fe7acea1b5a11e3697cdf3a3bdc076abc38f6045d
+license: GPL-2.0-or-later BSD-2-Clause
+dep-upp: gm4 flex bison
+dep-pkg: libyaml
+install: mesonw -Dtests=false -Dtools=true -Dvalgrind=disabled -Dpython=disabled -Dyaml=enabled
