@@ -83,6 +83,7 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-list
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
@@ -124,6 +125,7 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-list
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
@@ -164,4 +166,5 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-list
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
