@@ -10,7 +10,7 @@ install: |
     int getdomainname(char * name, size_t len);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
