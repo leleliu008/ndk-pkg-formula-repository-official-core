@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Computational Geometry Algorithms Library
 web-url: https://www.cgal.org/
-src-url: https://github.com/CGAL/cgal/releases/download/v5.6.1/CGAL-5.6.1.tar.xz
-src-sha: cdb15e7ee31e0663589d3107a79988a37b7b1719df3d24f2058545d1bcdd5837
+src-url: https://github.com/CGAL/cgal/releases/download/v6.2.1/CGAL-6.2.1.tar.xz
+src-sha: b6be77c60765a8456335de991eeaf6ffec55256984e4a9ecc6a97c37bbfe85bf
 license: GPL-3.0-or-later
 dep-pkg: libgmp libmpfr libeigen boost
 
