@@ -1,6 +1,6 @@
 summary: Perfect hash function generator
-src-url: https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz
-src-sha: 588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2
+src-url: https://ftp.gnu.org/gnu/gperf/gperf-3.3.tar.gz
+src-sha: fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8
 license: GPL-3.0-or-later
 bsystem: configure
 ppflags: -Dregister=
