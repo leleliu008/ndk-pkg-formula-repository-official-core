@@ -13,7 +13,7 @@ dopatch: |
     gsed -i 's/-lpthreads//g'       lib/sqlite/config.mk &&
     gsed -i 's/-lpthread//g'        gtests/google_test/gtest/m4/acx_pthread.m4 &&
     unset XCFLAGS &&
-    prepare_includes "$PWD/lib" 
+    prepare_includes "$PWD/lib"
 
     prepare_includes() {
     for item in $1/*
@@ -61,28 +61,28 @@ install: |
         install_files &&
         install_pc_files
 
-install_files() {
-    mkdir -p $PACKAGE_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}              || return 1
-    
-    install -v -m755 Linux*/lib/*.so                $PACKAGE_INSTALL_DIR/lib   || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $PACKAGE_INSTALL_DIR/lib   || return 1
-    
-    cp -v -RL {public,private}/nss/*                $PACKAGE_INSTALL_DIR/include/nss   || return 1
-    chmod -v 644                                    $PACKAGE_INSTALL_DIR/include/nss/* || return 1
-    
-    install -v -m755 Linux*/bin/{certutil,pk12util} $PACKAGE_INSTALL_DIR/bin   || return 1
+    install_files() {
+        mkdir -p $PACKAGE_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}              || return 1
 
-install_pc_files() {
-    install_pc_file 'nss' <<EOF
-prefix=$PACKAGE_INSTALL_DIR
-exec_prefix=\${prefix}
-libdir=\${exec_prefix}/lib
-includedir=\${prefix}/include/nss
+        install -v -m755 Linux*/lib/*.so                $PACKAGE_INSTALL_DIR/lib   || return 1
+        install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $PACKAGE_INSTALL_DIR/lib   || return 1
 
-Name: NSS
-Description: ${PACKAGE_SUMMARY}
-Version: ${PACKAGE_VERSION}
-Requires: nspr >= 4.12
-Libs: -L\${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3
-Cflags: -I\${includedir}
-EOF
+        cp -v -RL {public,private}/nss/*                $PACKAGE_INSTALL_DIR/include/nss   || return 1
+        chmod -v 644                                    $PACKAGE_INSTALL_DIR/include/nss/* || return 1
+
+        install -v -m755 Linux*/bin/{certutil,pk12util} $PACKAGE_INSTALL_DIR/bin   || return 1
+
+    install_pc_files() {
+        install_pc_file 'nss' <<EOF
+    prefix=$PACKAGE_INSTALL_DIR
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include/nss
+
+    Name: NSS
+    Description: ${PACKAGE_SUMMARY}
+    Version: ${PACKAGE_VERSION}
+    Requires: nspr >= 4.12
+    Libs: -L\${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3
+    Cflags: -I\${includedir}
+    EOF

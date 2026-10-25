@@ -11,6 +11,6 @@ install: |
     export CONFIG_RMTDEBUG=true
     export CONFIG_RMTCALL=""
     export CONFIG_RMTHOST=NONE
-    
-     gmakew ARCH="$TARGET_PLATFORM_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
-     gmakew install INS_BASE="$PACKAGE_INSTALL_DIR"
+
+    gmakew ARCH="$TARGET_PLATFORM_ARCH" OSNAME=linux CCOM=clang CC="$CC" &&
+    gmakew install INS_BASE="$PACKAGE_INSTALL_DIR"
