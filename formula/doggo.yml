@@ -1,7 +1,7 @@
 summary: A command-line DNS client for humans
 web-url: https://doggo.mrkaran.dev/
-src-url: https://github.com/mr-karan/doggo/archive/refs/tags/v0.5.7.tar.gz
-src-sha: 3f70c40ccc9ffba539fd37c0ed8c5a1a0ab89f29815994826bfeb8e0b60e2eff
+src-url: https://github.com/mr-karan/doggo/archive/refs/tags/v1.4.2.tar.gz
+src-sha: 9c5d1d0d800f72e80d35f6731fa3a80435f5a1af08af900a6b77142600e19395
 license: GPL-3.0-or-later
 install: |
     gow \
