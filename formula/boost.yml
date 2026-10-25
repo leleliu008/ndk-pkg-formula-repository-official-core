@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: A collection of portable C++ source libraries
 web-url: https://www.boost.org
-src-url: https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
-src-sha: 2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
+src-url: https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz
+src-sha: ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411
 license: BSL-1.0
 dep-pkg: libz libbz2 liblzma libzstd libiconv libicu
 bssytem: b2
