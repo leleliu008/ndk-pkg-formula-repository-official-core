@@ -4,7 +4,7 @@ git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
 src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.3/gnuplot-6.0.3.tar.gz
 src-sha: ec52e3af8c4083d4538152b3f13db47f6d29929a3f6ecec5365c834e77f251ab
 license: gnuplot
-dep-pkg: libgd libcerf libpango libreadline 
+dep-pkg: libgd libcerf libpango libreadline
 bsystem: autotools
 
 dopatch: |
