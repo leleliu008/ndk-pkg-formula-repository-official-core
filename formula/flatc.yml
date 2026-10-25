@@ -1,7 +1,7 @@
 summary: An efficient cross platform serialization library for C++
 web-url: https://google.github.io/flatbuffers
-src-url: https://github.com/google/flatbuffers/archive/refs/tags/v25.1.24.tar.gz
-src-sha: 0b9f8d2bb1d22d553c93cd7e3ecf3eb725469980a58a98db6e21574341b4ed63
+src-url: https://github.com/google/flatbuffers/archive/refs/tags/v25.12.19.tar.gz
+src-sha: f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a
 license: Apache-2.0
 
 do12345: |
