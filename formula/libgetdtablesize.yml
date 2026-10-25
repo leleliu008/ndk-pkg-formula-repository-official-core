@@ -10,7 +10,7 @@ install: |
     int getdtablesize(void);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
