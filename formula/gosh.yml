@@ -1,6 +1,6 @@
 summary: A shell parser, formatter, and interpreter with bash support written in golang
-src-url: https://github.com/mvdan/sh/archive/refs/tags/v3.12.0.tar.gz
-src-sha: ac15f42feeba55af29bd07698a881deebed1cd07e937effe140d9300e79d5ceb
+src-url: https://github.com/mvdan/sh/archive/refs/tags/v3.14.1.tar.gz
+src-sha: ec4bdb88ab6c95686be3a4eeb4ad77d2b49d33d2ed7b0a65035cd52d2d87c443
 license: BSD-3-Clause
 
 install: |
