@@ -1,6 +1,6 @@
 pkgtype: lib
 summary: Modern, C++-native, header-only, test framework
-src-url: https://github.com/catchorg/Catch2/archive/refs/tags/v3.12.0.tar.gz
-src-sha: e077079f214afc99fee940d91c14cf1a8c1d378212226bb9f50efff75fe07b23
+src-url: https://github.com/catchorg/Catch2/archive/refs/tags/v3.16.1.tar.gz
+src-sha: d16bd1b8b2364918bd472cb216394acb93bde6784890df0d91bccfb3f28d777d
 license: BSL-1.0
 install: cmakew -DCMAKE_CXX_STANDARD=17
