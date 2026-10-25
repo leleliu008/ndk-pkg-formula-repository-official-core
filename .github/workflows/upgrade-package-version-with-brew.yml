@@ -96,8 +96,7 @@ jobs:
         run: cat upgrade/${{ matrix.pkg }} >> "$GITHUB_OUTPUT"
 
       - run: |
-          bin/gsed \
-              -i \
+          sed -i \
               -e '/^version: /c version: ${{ steps.upgrade-info.outputs.VERSION_NEW }}' \
               -e '/^src-url: /c src-url: ${{ steps.upgrade-info.outputs.SRC_URL_NEW }}' \
               -e '/^src-sha: /c src-sha: ${{ steps.upgrade-info.outputs.SRC_SHA_NEW }}' \
