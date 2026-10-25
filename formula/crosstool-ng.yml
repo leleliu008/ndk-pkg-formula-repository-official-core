@@ -1,8 +1,8 @@
 summary: A toolchain generator
 web-url: https://crosstool-ng.github.io
-src-url: https://github.com/crosstool-ng/crosstool-ng/releases/download/crosstool-ng-1.26.0/crosstool-ng-1.26.0.tar.xz
+src-url: https://github.com/crosstool-ng/crosstool-ng/releases/download/crosstool-ng-1.29.0/crosstool-ng-1.29.0.tar.xz
 src-uri: http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.xz
-src-sha: e8ce69c5c8ca8d904e6923ccf86c53576761b9cf219e2e69235b139c8e1b74fc
+src-sha: 1e0c5efcf2af674993b74a1783fe78727c8d34b500ebab07eb1bb0a45c8fcc87
 license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison patch libtool help2man texinfo file gawk gtar gzip bzip2 xz unzip
 dep-pkg: libncurses libintl
