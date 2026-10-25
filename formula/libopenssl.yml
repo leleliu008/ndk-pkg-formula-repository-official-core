@@ -41,4 +41,4 @@ install: |
         "$TARGET"
     gmakew clean
     gmakew build_libs  CROSS_COMPILE=
-    gmakew install_dev CROSS_COMPILE= 
+    gmakew install_dev CROSS_COMPILE=
