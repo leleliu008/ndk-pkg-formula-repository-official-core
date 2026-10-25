@@ -72,7 +72,7 @@ jobs:
             EOF
 
       - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
+      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
       - run: ls ~/.ndk-pkg/repos.d/
 
       - run: apt -y update
@@ -120,7 +120,7 @@ jobs:
             EOF
 
       - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
+      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
       - run: ls ~/.ndk-pkg/repos.d/
 
       - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
