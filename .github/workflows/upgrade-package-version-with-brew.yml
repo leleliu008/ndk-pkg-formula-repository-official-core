@@ -74,6 +74,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - run: |
+            cat > .ndk-pkg-formula-repo.yml <<EOF
+            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            branch: master
+            pinned: 0
+            enabled: 1
+            created: 1673684639
+            EOF
+
+      - run: install -d ~/.ndk-pkg/repos.d/
+      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
+      - run: ls ~/.ndk-pkg/repos.d/
+
       - uses: actions/download-artifact@v8
         with:
           name: upgradable-packages-${{ github.sha }}
@@ -96,7 +109,7 @@ jobs:
 
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg install ${{ matrix.pkg }} -I formula
+      - run: ./ndk-pkg install ${{ matrix.pkg }}
       - run: ./ndk-pkg bundle  ${{ matrix.pkg }} .tar.xz
 
       - id: bundle-filename
