@@ -15,7 +15,7 @@ dopatch: |
     unset XCFLAGS &&
     prepare_includes "$PWD/lib" 
 
-prepare_includes() {
+    prepare_includes() {
     for item in $1/*
     do
         if [ -d "$item" ] ; then

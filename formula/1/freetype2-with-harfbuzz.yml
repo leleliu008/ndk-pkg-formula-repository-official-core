@@ -34,9 +34,9 @@ dopatch: |
 
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(
-        BrotliDec 
-        REQUIRED_VARS BROTLIDEC_LIBRARIES BROTLIDEC_INCLUDE_DIRS 
-        FOUND_VAR BROTLIDEC_FOUND 
+        BrotliDec
+        REQUIRED_VARS BROTLIDEC_LIBRARIES BROTLIDEC_INCLUDE_DIRS
+        FOUND_VAR BROTLIDEC_FOUND
         VERSION_VAR BROTLIDEC_VERSION
     )
 
@@ -88,9 +88,9 @@ dopatch: |
 
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(
-        HarfBuzz 
-        REQUIRED_VARS HarfBuzz_LIBRARIES HarfBuzz_INCLUDE_DIRS 
-        FOUND_VAR HarfBuzz_FOUND 
+        HarfBuzz
+        REQUIRED_VARS HarfBuzz_LIBRARIES HarfBuzz_INCLUDE_DIRS
+        FOUND_VAR HarfBuzz_FOUND
         VERSION_VAR HarfBuzz_VERSION
     )
 

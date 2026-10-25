@@ -8,9 +8,6 @@ dep-upp: python3
 bscript: llvm
 bsystem: cmake
 
-build02() {
-    cmakew -DLLVM_ENABLE_PROJECTS=clang
-
 dopatch: |
     printf '%s\n' 'INPUT(-lc)' > ../libgcc_s.a
 
