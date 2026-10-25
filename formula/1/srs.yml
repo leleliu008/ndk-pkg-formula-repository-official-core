@@ -16,7 +16,7 @@ install: |
         i686)    CONFIGURE_EXTRA_FLAGS=--x86-64  ;;
         x86_64)  CONFIGURE_EXTRA_FLAGS=--x86-x64 ;;
     esac
-    
+
     run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --static \

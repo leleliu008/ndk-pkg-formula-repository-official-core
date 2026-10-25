@@ -17,7 +17,7 @@ dopatch: |
 install: |
     build_with_configure
 
-build_with_configure() {
+    build_with_configure() {
     export LDFLAGS="$LDFLAGS -lexecinfo -ljsoncpp -lbz2 -lzstd -llzma"
     configure \
         --with-boost="$boost_INSTALL_DIR" \
@@ -30,7 +30,7 @@ build_with_configure() {
         ac_cv_lib_z_adler32=yes \
         ac_cv_lib_jsoncpp_main=yes
 
-build_with_cmake() {
+    build_with_cmake() {
     export LDFLAGS="$LDFLAGS -lexecinfo"
     cmakew \
         -DBUILD_TYPE=Static \
