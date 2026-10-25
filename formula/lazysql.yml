@@ -1,5 +1,5 @@
 summary: A cross-platform TUI database management tool written in Go
-src-url: https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.4.6.tar.gz
-src-sha: e8a06583d19f1053be13be800db5a3b6d273b992fcc335f539c40e39a6485e4c
+src-url: https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.7.0.tar.gz
+src-sha: 735b5a987c8a84a699d34d0cba1a3bcce6d65a46cf608d96758df6257ca353f7
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION
