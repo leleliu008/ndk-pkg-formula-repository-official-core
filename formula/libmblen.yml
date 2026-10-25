@@ -10,7 +10,7 @@ install: |
             int mblen(const char* s, size_t n);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
