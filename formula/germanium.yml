@@ -1,5 +1,5 @@
 summary: Generate image from source code
-src-url: https://github.com/matsuyoshi30/germanium/archive/refs/tags/v1.2.2.tar.gz
-src-sha: 859fed54957f46e25b4577b561a810186cc21c1f0dfd99d5226e99764df195d9
+src-url: https://github.com/matsuyoshi30/germanium/archive/refs/tags/v1.2.3.tar.gz
+src-sha: 69c818f06bbd7ea562afb5ed38b24fc2e9e9a447d5668d995314da5203e72de3
 license: MIT
 install: gow ./cmd/germanium
