@@ -1,5 +1,5 @@
 summary: Monitor a directory for changes and run a shell command
-src-url: https://github.com/emcrisostomo/fswatch/releases/download/1.18.3/fswatch-1.18.3.tar.gz
-src-sha: 08b13c0e0f92bd5eee5a310bb58fc373f0cda8304f9decc34cfabc42adf8e9ca
+src-url: https://github.com/emcrisostomo/fswatch/releases/download/1.22.0/fswatch-1.22.0.tar.gz
+src-sha: fa6e2becba0a629964b466b39c5997e72d8a6da40d82b88190aae7359065c758
 license: GPL-3.0-or-later
 bsystem: configure
