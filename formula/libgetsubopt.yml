@@ -11,7 +11,7 @@ install: |
             int getsubopt(char **optionp, char * const *tokens, char **valuep);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
