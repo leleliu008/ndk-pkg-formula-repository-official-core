@@ -25,7 +25,7 @@ install: |
     run rm -rf src/runtime/race/race_linux*.syso
     run rm -rf src/runtime/race/internal/amd64v1/race_*.syso
     run rm -rf src/runtime/race/internal/amd64v3/race_*.syso
-    run rm -rf pkg/obj 
+    run rm -rf pkg/obj
 
     for item in $(ls pkg/tool)
     do
