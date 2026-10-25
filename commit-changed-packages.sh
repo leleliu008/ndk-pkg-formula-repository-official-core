@@ -51,16 +51,48 @@ addnew() {
 update() {
     unset VERSION
 
-    if  git diff -U0 "$1" | grep -q '^-src-url: ' &&
-        git diff -U0 "$1" | grep -q '^+src-url: ' &&
-        git diff -U0 "$1" | grep -q '^-src-sha: ' &&
-        git diff -U0 "$1" | grep -q '^+src-sha: ' ; then
+    if  git diff -U0 "$1" | grep -q '^-version: ' &&
+        git diff -U0 "$1" | grep -q '^+version: ' ; then
+        VOLD="$(git diff -U0 "$1" | grep '^-version: ' | cut -c11-)"
+        VNEW="$(git diff -U0 "$1" | grep '^+version: ' | cut -c11-)"
+
+        if [ "$VOLD" != "$VNEW" ] ; then
+            VERSION=" $VOLD -> $VNEW"
+        fi
+
+    elif git diff -U0 "$1" | grep -q '^-src-url: ' &&
+         git diff -U0 "$1" | grep -q '^+src-url: ' &&
+         git diff -U0 "$1" | grep -q '^-src-sha: ' &&
+         git diff -U0 "$1" | grep -q '^+src-sha: ' ; then
 
         SRC_URL_OLD="$(git diff -U0 "$1" | grep '^-src-url: ' | cut -c11-)"
         SRC_URL_NEW="$(git diff -U0 "$1" | grep '^+src-url: ' | cut -c11-)"
 
         VOLD="$(extract-version "$SRC_URL_OLD")"
         VNEW="$(extract-version "$SRC_URL_NEW")"
+
+        if [ "$VOLD" != "$VNEW" ] ; then
+            VERSION=" $VOLD -> $VNEW"
+        fi
+    elif git diff -U0 "$1" | grep -q '^-git-tag: ' &&
+         git diff -U0 "$1" | grep -q '^+git-tag: ' ; then
+        GIT_TAG_OLD="$(git diff -U0 "$1" | grep '^-git-tag: ' | cut -c11-)"
+        GIT_TAG_NEW="$(git diff -U0 "$1" | grep '^+git-tag: ' | cut -c11-)"
+
+        VOLD="$(extract-version "$GIT_TAG_OLD")"
+        VNEW="$(extract-version "$GIT_TAG_NEW")"
+
+        if [ "$VOLD" != "$VNEW" ] ; then
+            VERSION=" $VOLD -> $VNEW"
+        fi
+
+    elif git diff -U0 "$1" | grep -q '^-git-ref: ' &&
+         git diff -U0 "$1" | grep -q '^+git-ref: ' ; then
+        GIT_REF_OLD="$(git diff -U0 "$1" | grep '^-git-ref: ' | cut -c11-)"
+        GIT_REF_NEW="$(git diff -U0 "$1" | grep '^+git-ref: ' | cut -c11-)"
+
+        VOLD="$(extract-version "$GIT_REF_OLD")"
+        VNEW="$(extract-version "$GIT_REF_NEW")"
 
         if [ "$VOLD" != "$VNEW" ] ; then
             VERSION=" $VOLD -> $VNEW"
