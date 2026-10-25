@@ -85,6 +85,8 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
+        env:
+          NDKPKG_XTRACE: 1
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
@@ -128,6 +130,8 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
+        env:
+          NDKPKG_XTRACE: 1
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
 
