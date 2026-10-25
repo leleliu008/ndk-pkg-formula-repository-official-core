@@ -32,6 +32,6 @@ dotweak: |
     Description: National Language Support library
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lintl 
+    Libs: -L\${libdir} -lintl
     Requires: libiconv
     EOF
