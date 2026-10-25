@@ -10,7 +10,7 @@ install: |
     char* strchrnul(const char * s, int c);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
