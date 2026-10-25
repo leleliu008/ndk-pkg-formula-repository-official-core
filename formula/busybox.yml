@@ -31,7 +31,7 @@ install: |
     run gmake oldconfig
     run gmake CC="$CC" AS="$CC" AR="$AR" NM="$NM" STRIP="$STRIP" OBJCOPY="$OBJCOPY" OBJDUMP="$OBJDUMP" PKG_CONFIG="$PKG_CONFIG" HOSTCC="$CC_FOR_BUILD" HOSTCXX="$CXX_FOR_BUILD" HOSTCFLAGS="'$CFLAGS_FOR_BUILD'" HOSTCXXFLAGS="'$CXXFLAGS_FOR_BUILD'"
     install_bins busybox
- 
+
 res-url: https://raw.githubusercontent.com/termux/termux-packages/master/packages/busybox/busybox.config
 res-sha: 72beb12fc383a4ac0e62f54b2fe797f789463464579de82cfde9ebd0a6917408
 
