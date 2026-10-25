@@ -45,6 +45,6 @@ jobs:
           for f in *.yml
           do
               PACKAGE_NAME="${f%.yml}"
-              printf '\n%b\n' "\033[0;31m==> $$PACKAGE_NAME\033[0m"
-              ../ndk-pkg fetch "$$PACKAGE_NAME"
+              printf '\n%b\n' "\033[0;31m==> $PACKAGE_NAME\033[0m"
+              ../ndk-pkg fetch "$PACKAGE_NAME"
           done
