@@ -14,6 +14,17 @@ jobs:
     container: ubuntu:24.04
 
     steps:
+      - run: apt -y update
+      - run: apt -y install curl
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-list
+
       - uses: actions/checkout@v5
         with:
           path: core
@@ -28,22 +39,8 @@ jobs:
             EOF
 
       - run: install -d ~/.ndk-pkg/repos.d/
+      - run: mv ndk-pkg core/
       - run: mv core ~/.ndk-pkg/repos.d/
-
-      - run: apt -y update
-      - run: apt -y install curl
-
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
-      - run: chmod +x ndk-pkg
-
-      - run: ./ndk-pkg about
-      - run: ./ndk-pkg setup
-      - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
-
-      - run: pwd
-      - run: ls
-      - run: ls ${{ github.workspace }}
 
       - run: |
           cd ~/.ndk-pkg/repos.d/core/formula
@@ -52,5 +49,5 @@ jobs:
           do
               PACKAGE_NAME="${f%.yml}"
               printf '\n%b\n' "\033[0;31m==> $PACKAGE_NAME\033[0m"
-              ${{ github.workspace }}/ndk-pkg fetch "$PACKAGE_NAME"
+              ../ndk-pkg fetch "$PACKAGE_NAME"
           done
