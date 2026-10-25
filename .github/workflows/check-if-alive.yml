@@ -31,6 +31,7 @@ jobs:
       - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/core
       - run: ls -l ~/.ndk-pkg/repos.d/
       - run: ls -l ~/.ndk-pkg/repos.d/core
+      - run: ls -a ~/.ndk-pkg/repos.d/core
       - run: ls -l ~/.ndk-pkg/repos.d/core/formula
 
       - run: apt -y update
