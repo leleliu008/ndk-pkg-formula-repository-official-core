@@ -14,7 +14,7 @@ install: |
             char* crypt(char* key, char* salt);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
