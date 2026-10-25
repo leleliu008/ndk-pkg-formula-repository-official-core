@@ -1,7 +1,7 @@
 summary: Draw boxes around text
 web-url: https://boxes.thomasjensen.com/
-src-url: https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.0.tar.gz
-src-sha: e226b4ff91e1260fc80e8312b39cde5a783b96e9f248530eae941b7f1bf6342a
+src-url: https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.2.tar.gz
+src-sha: 9318ef65f555ee3d893176349a4219f1f1260ce24d4100aeb667a546f61fc183
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
 dep-pkg: libpcre2 libunistring libncurses
