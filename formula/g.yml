@@ -1,6 +1,6 @@
 summary: Powerful and cross-platform ls
 web-url: https://g.equationzhao.space
-src-url: https://github.com/Equationzhao/g/archive/refs/tags/v0.28.2.tar.gz
-src-sha: 05df40665ea8c402c9d76b29269edb721758e9913bc03d173e7e84fa7a0a2ab6
+src-url: https://github.com/Equationzhao/g/archive/refs/tags/v0.31.2.tar.gz
+src-sha: a1ef8a6872fa80625287c19167152081b833abc4db88910ab145b35b3bbc6da3
 license: MIT
 bsystem: go
