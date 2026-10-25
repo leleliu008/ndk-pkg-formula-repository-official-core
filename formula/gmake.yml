@@ -11,7 +11,7 @@ dopatch: |
     @@ -2427,18 +2427,6 @@
                break;
              }
-     
+
     -    /* execvp() will use a default PATH if none is set; emulate that.  */
     -    if (p == NULL)
     -      {
@@ -26,7 +26,7 @@ dopatch: |
     -
          cmd = (char *)find_in_given_path (argv[0], p, NULL, 0);
        }
-     
+
     EOF
 
 install: configure --program-prefix=g --without-guile --without-dmalloc
