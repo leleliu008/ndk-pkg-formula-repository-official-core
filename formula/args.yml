@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: A simple header-only C++ argument parser library
-src-url: https://github.com/Taywee/args/archive/refs/tags/6.4.16.tar.gz
-src-sha: 13fd2c21c4941672f02d67ac666fe6507fe2c2e0f17f95a0c2f17fddb4023000
+src-url: https://github.com/Taywee/args/archive/refs/tags/6.6.1.tar.gz
+src-sha: 61cdbb13f55493e6ffe07018c86b17f9ff68a5c1059eb15f4f079e04429915ff
 license: MIT
 install: |
     cmakew \
