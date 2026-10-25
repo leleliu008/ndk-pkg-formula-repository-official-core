@@ -1,7 +1,7 @@
 summary: Image processing tools collection
 web-url: http://www.graphicsmagick.org/
-src-url: https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.43/GraphicsMagick-1.3.43.tar.xz
-src-sha: 2b88580732cd7e409d9e22c6116238bef4ae06fcda11451bf33d259f9cbf399f
+src-url: https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.49/GraphicsMagick-1.3.49.tar.xz
+src-sha: 7efa070dc31116b4315061b39f84bc7181e8b060bf61214ec9af851131af9c81
 license: MIT
 dep-pkg: libltdl libfreetype libxml2 libjasper libjxl
 dep-upp: libtool
