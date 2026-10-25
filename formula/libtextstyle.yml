@@ -25,6 +25,6 @@ dotweak: |
     Description: $PACKAGE_SUMMARY
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -ltextstyle 
+    Libs: -L\${libdir} -ltextstyle
     Requires: libiconv
     EOF
