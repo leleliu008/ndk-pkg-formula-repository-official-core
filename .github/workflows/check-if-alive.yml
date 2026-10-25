@@ -25,9 +25,13 @@ jobs:
             created: 1673684639
             EOF
 
+      - run: ls
+
       - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
+      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/core
       - run: ls ~/.ndk-pkg/repos.d/
+      - run: ls ~/.ndk-pkg/repos.d/core
+      - run: ls ~/.ndk-pkg/repos.d/core/formula
 
       - run: apt -y update
       - run: apt -y install curl
@@ -38,6 +42,9 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
+      - run: ./ndk-pkg formula-repo-list
+        env:
+          NDKPKG_XTRACE: 1
 
       - run: |
           cd formula
