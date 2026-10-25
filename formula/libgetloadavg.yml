@@ -10,7 +10,7 @@ install: |
             int getloadavg(double loadavg[], int nelem);
 
     #ifdef __cplusplus
-        }   
+        }
     #endif
     EOF
 
