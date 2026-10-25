@@ -1,5 +1,5 @@
 summary: CPU feature identification for Go
-src-url: https://github.com/klauspost/cpuid/archive/refs/tags/v2.3.0.tar.gz
-src-sha: 467c058227b86d527bff7e2e1504748f99ca27cb69f3908189ceb18b1df8428a
+src-url: https://github.com/klauspost/cpuid/archive/refs/tags/v2.4.1.tar.gz
+src-sha: 2ebe64c72afbcdfc761efc16c8ad625a142131465f58921f567f2e93c9f72e13
 license: MIT
 install: gow ./cmd/cpuid
