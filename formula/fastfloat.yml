@@ -1,6 +1,6 @@
 pkgtype: lib
 summary: Fast and exact implementation of the C++ from_chars functions for number types
-src-url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.3.tar.gz
-src-sha: fa811076bad7b7151ce826005a7213971c879b192ee4505a7016c8413038c2d0
+src-url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.3.2.tar.gz
+src-sha: 71bb9e865b888df01351558db5a39586d13ea97ada162156b3a07784d8c1b26b
 license: Apache-2.0
 bsystem: cmake
