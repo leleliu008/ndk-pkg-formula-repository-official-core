@@ -1,5 +1,5 @@
 summary: Create and view interactive cheat sheets for *nix commands
-src-url: https://github.com/cheat/cheat/archive/refs/tags/4.4.2.tar.gz
-src-sha: 6968ffdebb7c2a8390dea45f97884af3c623cda6c2d36c4c04443ed2454da431
+src-url: https://github.com/cheat/cheat/archive/refs/tags/5.1.0.tar.gz
+src-sha: 5ef8864dacb5b37268d7d26cd01f74b99a33b2e5eb5b290e4221358410c99db4
 license: MIT
 install: gow -mod vendor ./cmd/cheat
