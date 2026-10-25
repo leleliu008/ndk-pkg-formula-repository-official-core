@@ -1,6 +1,6 @@
 summary: A fast, simple fuzzy text selector with an advanced scoring algorithm
-src-url: https://github.com/jhawthorn/fzy/releases/download/1.0/fzy-1.0.tar.gz
-src-sha: 80257fd74579e13438b05edf50dcdc8cf0cdb1870b4a2bc5967bd1fdbed1facf
+src-url: https://github.com/jhawthorn/fzy/archive/refs/tags/1.1.tar.gz
+src-sha: 93d300d9c6c7063b2c6bda4e08a9704a029ec33f609718cd95443d1a890aff4e
 license: MIT
 
 install: |
