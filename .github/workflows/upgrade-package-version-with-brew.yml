@@ -106,6 +106,10 @@ jobs:
 
       - run: git diff
 
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg install ${{ matrix.pkg }}
