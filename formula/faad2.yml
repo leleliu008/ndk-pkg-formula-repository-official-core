@@ -1,7 +1,7 @@
 pkgtype: exe+lib
 summary: ISO AAC audio decoder
 web-url: https://sourceforge.net/projects/faac/
-src-url: https://github.com/knik0/faad2/archive/refs/tags/2.11.1.tar.gz
-src-sha: 72dbc0494de9ee38d240f670eccf2b10ef715fd0508c305532ca3def3225bb06
+src-url: https://github.com/FreewareAdvancedAudio/faad2/archive/refs/tags/2.11.4.tar.gz
+src-sha: ee479ccbae4a8387ab696e6f21a481bd83fe3881471cafa81b4ae59d7d3aed43
 license: GPL-2.0-or-later
 bsystem: cmake
