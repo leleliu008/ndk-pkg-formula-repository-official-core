@@ -1,5 +1,5 @@
 summary: Pure Go web server with Lua, Markdown, HTTP/2 and template support
-src-url: https://github.com/xyproto/algernon/archive/refs/tags/v1.17.5.tar.gz
-src-sha: 5636b87961a456454ca646b1057d12eb59fed31785d12aefd1ff8d2cef2ee712
+src-url: https://github.com/xyproto/algernon/archive/refs/tags/v1.17.12.tar.gz
+src-sha: 028bdfbb066698b5fe5c2a283eea0caca3058ee44c4961d37789445530702c36
 license: MIT
 install: gow -mod vendor
