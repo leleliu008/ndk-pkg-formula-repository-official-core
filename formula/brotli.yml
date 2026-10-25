@@ -1,6 +1,6 @@
 summary: A generic-purpose lossless compression algorithm by Google
-src-url: https://github.com/google/brotli/archive/refs/tags/v1.2.0.tar.gz
-src-sha: 816c96e8e8f193b40151dad7e8ff37b1221d019dbcb9c35cd3fadbfe6477dfec
+src-url: https://github.com/google/brotli/archive/refs/tags/v1.2.1.tar.gz
+src-sha: 98d35d11a78dc453aebb7d10c3748f3f73ff78c8267c0dc697b8631f67bf7e8f
 license: MIT
 
 dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME COMPONENT bin DESTINATION/' CMakeLists.txt
