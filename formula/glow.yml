@@ -1,5 +1,5 @@
 summary: A terminal based markdown reader
-src-url: https://github.com/charmbracelet/glow/archive/refs/tags/v2.1.2.tar.gz
-src-sha: 1b933139da1d08647bf5b3f112cab9548fdc2b40c056c7fa3d84d8706de5265a
+src-url: https://github.com/charmbracelet/glow/archive/refs/tags/v3.0.0.tar.gz
+src-sha: 18df6f3c09157021366b8c702b5badba405d37dbb42f132353eb50c1b0d3f464
 license: MIT
 install: gow -X main.Version=$PACKAGE_VERSION
