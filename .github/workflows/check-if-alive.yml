@@ -41,6 +41,10 @@ jobs:
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
 
+      - run: pwd
+      - run: ls
+      - run: ls ${{ github.workspace }}
+
       - run: |
           cd ~/.ndk-pkg/repos.d/core/formula
 
