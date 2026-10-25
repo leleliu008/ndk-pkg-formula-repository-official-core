@@ -23,6 +23,7 @@ case $1 in
     tic)      printf '%s\n' 'ncurses'   ;;
     gif)      printf '%s\n' 'giflib'    ;;
     file)     printf '%s\n' 'file-formula' ;;
+    dash)     printf '%s\n' 'dash-shell';;
     adig)     printf '%s\n' 'c-ares'    ;;
     orcc)     printf '%s\n' 'orc'       ;;
     qalc)     printf '%s\n' 'libqalculate' ;;
@@ -41,7 +42,6 @@ case $1 in
     eigen3)   printf '%s\n' 'eigen'     ;;
     utfcpp)   printf '%s\n' 'utf8cpp'   ;;
     toml++)   printf '%s\n' 'tomlplusplus'  ;;
-    pngsplit) printf '%s\n' 'pngcheck'  ;;
     xmlutils) printf '%s\n' 'libxml2'   ;;
     stwolame) printf '%s\n' 'two-lame'  ;;
     openpmix) printf '%s\n' 'pmix'      ;;
@@ -51,6 +51,8 @@ case $1 in
     jackaudio)printf '%s\n' 'jack'      ;;
     proto-cli)printf '%s\n' 'proto'     ;;
     mediainfo)printf '%s\n' 'media-info';;
+    anchor-cli)
+              printf '%s\n' 'anchor'    ;;
 
     golang)   printf '%s\n' 'go'        ;;
     golang@1.21)
@@ -80,11 +82,16 @@ case $1 in
     sndfile)  printf '%s\n' 'libsndfile' ;;
     nghttp3)  printf '%s\n' 'libnghttp3' ;;
     ngtcp2)   printf '%s\n' 'libngtcp2'  ;;
+    pcre2grep)printf '%s\n' 'pcre2'     ;;
 
     llvm+*@18)printf '%s\n' 'llvm@18'    ;;
     llvm+*@19)printf '%s\n' 'llvm@19'    ;;
     llvm+*@20)printf '%s\n' 'llvm@20'    ;;
     llvm+*@21)printf '%s\n' 'llvm@21'    ;;
+
+    nodejs@20)printf '%s\n' 'node@20'    ;;
+    nodejs@22)printf '%s\n' 'node@22'    ;;
+    nodejs@24)printf '%s\n' 'node@24'    ;;
 
     lib*)
         case $1 in
@@ -103,6 +110,7 @@ case $1 in
             libjpeg)  printf '%s\n' 'jpeg'      ;;
             libltdl)  printf '%s\n' 'libtool'   ;;
             libuuid)  printf '%s\n' 'util-linux';;
+            libonig)  printf '%s\n' 'oniguruma' ;;
             libargp)  printf '%s\n' 'argp-standalone';;
             liburcu)  printf '%s\n' 'userspace-rcu' ;;
             liblcms2) printf '%s\n' 'little-cms2' ;;
@@ -110,6 +118,8 @@ case $1 in
             libcares) printf '%s\n' 'c-ares'    ;;
             libgumbo) printf '%s\n' 'gumbo-parser' ;;
 
+            libquiche)
+                      printf '%s\n' 'cloudflare-quiche' ;;
             libasync++)
                       printf '%s\n' 'asyncplusplus' ;;
             libsqlite3)
@@ -128,7 +138,14 @@ case $1 in
                       printf '%s\n' 'gettext'   ;;
             libprotobuf.a)
                       printf '%s\n' 'protobuf'  ;;
+            libicu@75)
+                      printf '%s\n' 'icu4c@75'  ;;
             libtiff.a)
                       printf '%s\n' 'libtiff'   ;;
+            libmill|libsdl2)
+                      printf '%s\n' 'null' ;;
         esac
+        ;;
+    base64|fortune|tre|lolcat|pkg-config|supervisord)
+        printf '%s\n' 'null' ;;
 esac

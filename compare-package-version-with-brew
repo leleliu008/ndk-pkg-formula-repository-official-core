@@ -105,6 +105,10 @@ I=0
 
 for FORMULA_FILENAME in *.yml
 do
+    if [ -L "$FORMULA_FILENAME" ] ; then
+        continue
+    fi
+
     PACKAGE_NAME="${FORMULA_FILENAME%.yml}"
 
     PACKAGE_VERSION="$(../xcpkg formula-parse "$FORMULA_FILENAME" version)"
@@ -112,71 +116,204 @@ do
 
     ################################################
 
-    S1="$(../brew-package-name "$PACKAGE_NAME")"
-    S2=
-
-    case $PACKAGE_NAME in
-        lib*)  S2="${PACKAGE_NAME#lib}"  ;;
-        *-dev) S2="${PACKAGE_NAME%-dev}" ;;
-    esac
-
     BREW_PACKAGE_NAME=
     BREW_PACKAGE_VERS=
 
-    for item in $S1 "$PACKAGE_NAME" $S2
-    do
-        if brew info "$item" --json > /dev/null 2>&1 ; then
-            BREW_PACKAGE_NAME="$item"
-            BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].versions.stable')
-            break
+    BREW_PACKAGE_NAME="$(../brew-package-name "$PACKAGE_NAME")"
+
+    if [ "$BREW_PACKAGE_NAME" = null ] ; then
+        BREW_PACKAGE_NAME=
+    else
+        if [ -z "$BREW_PACKAGE_NAME" ] ; then
+            BREW_PACKAGE_NAME="$PACKAGE_NAME"
         fi
-    done
+
+        if brew info "$BREW_PACKAGE_NAME" --json > /dev/null 2>&1 ; then
+            BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].versions.stable')
+        else
+            case $PACKAGE_NAME in
+                lib*)  BREW_PACKAGE_NAME="${PACKAGE_NAME#lib}"  ;;
+                *-dev) BREW_PACKAGE_NAME="${PACKAGE_NAME%-dev}" ;;
+                *)     BREW_PACKAGE_NAME=
+            esac
+
+            if [ -n "$BREW_PACKAGE_NAME" ] ; then
+                if brew info "$BREW_PACKAGE_NAME" --json > /dev/null 2>&1 ; then
+                    BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].versions.stable')
+                else
+                    BREW_PACKAGE_NAME=
+                fi
+            fi
+        fi
+    fi
 
     ################################################
 
     if [ -n "$BREW_PACKAGE_NAME" ] ; then
+        # zigmod  105 -> r105
+        BREW_PACKAGE_VERS="${BREW_PACKAGE_VERS#r}"
+
+        # 2.1.3 -> 2.1-3
+        # 7.1.2.29 -> 7.1.2-34
+        # 1.3.4.20260302 -> 1.3.4-20260302
+        # 20260512.3.1 -> 20260512-3.1
+        # 2025.11.05 -> 2025-11-05
+        # 2025.09.16 -> 2025_09_16
+        BREW_PACKAGE_VERS="$(printf '%s\n' "$BREW_PACKAGE_VERS" | tr _- .)"
+
+        case $BREW_PACKAGE_NAME in
+            aalib)
+                BREW_PACKAGE_VERS="$(printf '%s\n' "$BREW_PACKAGE_VERS" | sed 's|rc|.|')"
+                ;;
+            libftgl)
+                BREW_PACKAGE_VERS="$(printf '%s\n' "$BREW_PACKAGE_VERS" | sed 's|rc||')"
+                ;;
+            libcaca|librasterlite2)
+                BREW_PACKAGE_VERS="$(printf '%s\n' "$BREW_PACKAGE_VERS" | sed 's|beta||')"
+                ;;
+        esac
+
         if [ "$BREW_PACKAGE_VERS" = "$PACKAGE_VERSION" ] ; then
             continue
         fi
 
-        if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
-            case $BREW_PACKAGE_NAME in
-                lib*) X=lib ;;
-                   *) X="$(printf '%.1s' "$BREW_PACKAGE_NAME")"
-            esac
+        case $BREW_PACKAGE_NAME in
+            lib*) X=lib ;;
+               *) X="$(printf '%.1s' "$BREW_PACKAGE_NAME")"
+        esac
 
+        if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
             printf_package_info_red "$PACKAGE_NAME" "$PACKAGE_VERSION -> $BREW_PACKAGE_VERS" "https://github.com/Homebrew/homebrew-core/blob/main/Formula/$X/$BREW_PACKAGE_NAME.rb"
 
             if [ "$UPGRADE" = 1 ] ; then
                 case $PACKAGE_NAME in
-                    atuin|bear|chisel|chicken|d8|dot_static|fbthrift) continue
+                    chisel|d8|dot_static) continue
                 esac
             else
                 continue
             fi
 
+            ###################################################################
+
             SRC_URL_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-url)"
+
+            if [ -z "$SRC_URL_OLD" ] ; then
+                GIT_URL_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" git-url)"
+
+                if [ -z "$GIT_URL_OLD" ] ; then
+                    continue
+                fi
+
+                GIT_TAG_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" git-tag)"
+                GIT_SHA_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" git-sha)"
+
+                if [ -z "$GIT_TAG_OLD" ] && [ -z "$GIT_SHA_OLD" ] ; then
+                    continue
+                fi
+
+                GIT_TAG_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.tag')
+                GIT_SHA_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.revision')
+
+                if [ -z "$GIT_TAG_NEW" ] && [ -z "$GIT_SHA_NEW" ] ; then
+                    continue
+                fi
+
+                if [ "$GIT_TAG_NEW" = null ] && [ "$GIT_SHA_NEW" = null ] ; then
+                    continue
+                fi
+
+                if [ -n "$GIT_TAG_OLD" ] && [ -n "$GIT_TAG_NEW" ] && [ "$GIT_TAG_NEW" != null ] ; then
+                    cat <<EOF
+-git-tag: $GIT_TAG_OLD
++git-tag: $GIT_TAG_NEW
+EOF
+                fi
+
+                if [ -n "$GIT_SHA_OLD" ] && [ -n "$GIT_SHA_NEW" ] && [ "$GIT_SHA_NEW" != null ] ; then
+                    cat <<EOF
+-git-sha: $GIT_SHA_OLD
++git-sha: $GIT_SHA_NEW
+EOF
+                fi
+
+                tee "upgrade/$PACKAGE_NAME" <<EOF
+BREWPKGNAME=$BREW_PACKAGE_NAME
+VERSION_OLD=$PACKAGE_VERSION
+VERSION_NEW=$BREW_PACKAGE_VERS
+GIT_TAG_NEW=$GIT_TAG_NEW
+GIT_SHA_NEW=$GIT_SHA_NEW
+EOF
+
+                I="$(($I + 1))"
+
+                echo "I=$I"
+
+                if [ "$I" -eq 100 ] ; then
+                    exit
+                fi
+
+                continue
+            fi
+
+            ###################################################################
+
             SRC_SHA_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-sha)"
 
-            SRC_URL_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.url')
+            if [ -z "$SRC_SHA_OLD" ] ; then
+                continue
+            fi
+
+            ###################################################################
+
             SRC_SHA_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.checksum')
 
-            if [ -z "$SRC_URL_OLD" ] || [ -z "$SRC_SHA_OLD" ] || [ -z "$SRC_URL_NEW" ] || [ -z "$SRC_SHA_NEW" ] || [ "$SRC_SHA_NEW" = null ] ; then
-                continue
+            if [ -z "$SRC_SHA_NEW" ] || [ "$SRC_SHA_NEW" = null ] ; then
+                SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_OLD" | sed "s|$PACKAGE_VERSION|$BREW_PACKAGE_VERS|g")"
+
+                curl -s -L -o src.zip "$SRC_URL_NEW" || continue
+
+                SRC_SHA_NEW="$(sha256sum src.zip | cut -d ' ' -f1)"
+            else
+                SRC_URL_NEW=$(brew info "$BREW_PACKAGE_NAME" --json | yq '.[0].urls.stable.url')
+
+                if [ -z "$SRC_URL_NEW" ] ; then
+                    continue
+                fi
+
+                A="$(printf '%s\n' "$SRC_URL_OLD" | sed -E 's|^https?://([^/]+)/.*|\1|')"
+                B="$(printf '%s\n' "$SRC_URL_NEW" | sed -E 's|^https?://([^/]+)/.*|\1|')"
+
+                case $B in
+                    ftpmirror.gnu.org)
+                        B='ftp.gnu.org'
+                        SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_NEW" | sed 's|ftpmirror\.gnu\.org|ftp.gnu.org/gnu|')"
+                        ;;
+                    gnupg.org)
+                        B='www.gnupg.org'
+                        SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_NEW" | sed 's|gnupg\.org|www.gnupg.org|')"
+                        ;;
+                esac
+
+                # may need to apply patches, don't handle this at the moment
+                if [ "$SRC_URL_OLD" = "$SRC_URL_NEW" ] && [ "$SRC_SHA_OLD" = "$SRC_SHA_NEW" ] ; then
+                    continue
+                fi
+
+                if [ "$A" != "$B" ] ; then
+                    cat <<EOF
+-src-url: $SRC_URL_OLD
++src-url: $SRC_URL_NEW
+EOF
+
+                    SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_OLD" | sed "s|$PACKAGE_VERSION|$BREW_PACKAGE_VERS|g")"
+
+                    curl -s -L -o src.zip "$SRC_URL_NEW" || continue
+
+                    SRC_SHA_NEW="$(sha256sum src.zip | cut -d ' ' -f1)"
+                fi
             fi
 
-            A="$(printf '%s\n' "$SRC_URL_OLD" | sed -E 's|^https?://([^/]+)/.*|\1|')"
-            B="$(printf '%s\n' "$SRC_URL_NEW" | sed -E 's|^https?://([^/]+)/.*|\1|')"
-
-            if [ "$B" = 'ftpmirror.gnu.org' ] ; then
-                B='ftp.gnu.org'
-                SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_NEW" | sed 's|ftpmirror\.gnu\.org|ftp.gnu.org/gnu|')"
-            fi
-
-            # may need to apply patches, don't handle this at the moment
-            if [ "$SRC_URL_OLD" = "$SRC_URL_NEW" ] && [ "$SRC_SHA_OLD" = "$SRC_SHA_NEW" ] ; then
-                continue
-            fi
+            ###################################################################
 
             cat <<EOF
 -src-url: $SRC_URL_OLD
@@ -184,22 +321,20 @@ do
 +src-url: $SRC_URL_NEW
 +src-sha: $SRC_SHA_NEW
 EOF
-            if [ "$A" != "$B" ] ; then
-                continue
-            fi
 
             tee "upgrade/$PACKAGE_NAME" <<EOF
+BREWPKGNAME=$BREW_PACKAGE_NAME
 VERSION_OLD=$PACKAGE_VERSION
 VERSION_NEW=$BREW_PACKAGE_VERS
 SRC_URL_NEW=$SRC_URL_NEW
 SRC_SHA_NEW=$SRC_SHA_NEW
-BREWPKGNAME=$BREW_PACKAGE_NAME
 EOF
+
             I="$(($I + 1))"
 
             echo "I=$I"
 
-            if [ "$I" -eq 10 ] ; then
+            if [ "$I" -eq 100 ] ; then
                 exit
             fi
         else
@@ -209,9 +344,9 @@ EOF
         continue
     fi
 
-    if [ "$UPGRADE" = 1 ] ; then
-        continue
-    fi
+    #if [ "$UPGRADE" = 1 ] ; then
+    #    continue
+    #fi
 
     PACKAGE_GIT_URL="$(../xcpkg formula-parse "$FORMULA_FILENAME" git-url)"
 
@@ -237,13 +372,131 @@ EOF
             LATEST_RELEASE_VERSION="${LATEST_RELEASE_TAGNAME#v}"
             LATEST_RELEASE_VERSION="${LATEST_RELEASE_VERSION%-stable}"
 
-            if version_match "$LATEST_RELEASE_VERSION" gt "$PACKAGE_VERSION" ; then
-                printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION -> $LATEST_RELEASE_VERSION" "$PACKAGE_GIT_URL/releases/tag/$LATEST_RELEASE_TAGNAME"
-            else
-                printf_package_info_green  "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+            case $PACKAGE_NAME in
+                fortune)
+                    LATEST_RELEASE_VERSION="${LATEST_RELEASE_VERSION#fortune-mod-}"
+                    ;;
+                libmpir)
+                    LATEST_RELEASE_VERSION="${LATEST_RELEASE_VERSION#mpir-}"
+                    ;;
+            esac
+
+            version_match "$LATEST_RELEASE_VERSION" gt "$PACKAGE_VERSION" || {
+                #printf_package_info_green  "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+                continue
+            }
+
+            printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION -> $LATEST_RELEASE_VERSION" "$PACKAGE_GIT_URL/releases/tag/$LATEST_RELEASE_TAGNAME"
+
+            [ "$UPGRADE" = 1 ] || continue
+
+            M="${PACKAGE_VERSION%%.*}"
+            N="${LATEST_RELEASE_VERSION%%.*}"
+
+            if [ "$M" != "$N" ] ; then
+                continue
+            fi
+
+            SRC_URL_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-url)"
+            SRC_SHA_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-sha)"
+
+            if [ -z "$SRC_URL_OLD" ] || [ -z "$SRC_SHA_OLD" ] ; then
+                continue
+            fi
+
+            SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_OLD" | sed "s|$PACKAGE_VERSION|$LATEST_RELEASE_VERSION|g")"
+
+            curl -s -L -o src.zip "$SRC_URL_NEW" || continue
+
+            SRC_SHA_NEW="$(sha256sum src.zip | cut -d ' ' -f1)"
+
+            cat <<EOF
+-src-url: $SRC_URL_OLD
+-src-sha: $SRC_SHA_OLD
++src-url: $SRC_URL_NEW
++src-sha: $SRC_SHA_NEW
+EOF
+
+            tee "upgrade/$PACKAGE_NAME" <<EOF
+VERSION_OLD=$PACKAGE_VERSION
+VERSION_NEW=$LATEST_RELEASE_VERSION
+SRC_URL_NEW=$SRC_URL_NEW
+SRC_SHA_NEW=$SRC_SHA_NEW
+EOF
+            I="$(($I + 1))"
+
+            echo "I=$I"
+
+            if [ "$I" -eq 100 ] ; then
+                exit
             fi
 
             continue
+            ;;
+        https://gitlab.com/*)
+            X="${PACKAGE_GIT_URL#'https://gitlab.com/'}"
+            X="${X%/}"
+            Y="${X%/*}"
+            Z="${X#*/}"
+
+            curl -s -L -o gitlab.json "https://gitlab.com/api/v4/projects/$Y%2F$Z/releases/permalink/latest"
+
+            LATEST_RELEASE_TAGNAME="$(jq -r '.tag_name' gitlab.json)"
+
+            LATEST_RELEASE_VERSION="${LATEST_RELEASE_TAGNAME#v}"
+
+            version_match "$LATEST_RELEASE_VERSION" gt "$PACKAGE_VERSION" || {
+                #printf_package_info_green  "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_GIT_URL"
+                continue
+            }
+
+            printf_package_info_purple "$PACKAGE_NAME" "$PACKAGE_VERSION -> $LATEST_RELEASE_VERSION" "$PACKAGE_GIT_URL/-/releases/permalink/latest"
+
+            [ "$UPGRADE" = 1 ] || continue
+
+            M="${PACKAGE_VERSION%%.*}"
+            N="${LATEST_RELEASE_VERSION%%.*}"
+
+            if [ "$M" != "$N" ] ; then
+                continue
+            fi
+
+            SRC_URL_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-url)"
+            SRC_SHA_OLD="$(../xcpkg formula-parse "$FORMULA_FILENAME" src-sha)"
+
+            if [ -z "$SRC_URL_OLD" ] || [ -z "$SRC_SHA_OLD" ] ; then
+                continue
+            fi
+
+            SRC_URL_NEW="$(printf '%s\n' "$SRC_URL_OLD" | sed "s|$PACKAGE_VERSION|$LATEST_RELEASE_VERSION|g")"
+
+            curl -s -L -o src.zip "$SRC_URL_NEW" || continue
+
+            SRC_SHA_NEW="$(sha256sum src.zip | cut -d ' ' -f1)"
+
+            cat <<EOF
+-src-url: $SRC_URL_OLD
+-src-sha: $SRC_SHA_OLD
++src-url: $SRC_URL_NEW
++src-sha: $SRC_SHA_NEW
+EOF
+
+            tee "upgrade/$PACKAGE_NAME" <<EOF
+VERSION_OLD=$PACKAGE_VERSION
+VERSION_NEW=$LATEST_RELEASE_VERSION
+SRC_URL_NEW=$SRC_URL_NEW
+SRC_SHA_NEW=$SRC_SHA_NEW
+EOF
+            I="$(($I + 1))"
+
+            echo "I=$I"
+
+            if [ "$I" -eq 100 ] ; then
+                exit
+            fi
+
+            continue
+            ;;
     esac
 
     printf_package_info_blue "$PACKAGE_NAME" "$PACKAGE_VERSION" "$PACKAGE_WEB_URL"

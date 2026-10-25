@@ -3,10 +3,13 @@ name: update package version with brew
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '0 23 * * *'
+
 jobs:
   find-upgradable-packages:
 
-    runs-on: macos-15
+    runs-on: macos-latest
 
     env:
       GH_TOKEN: ${{ github.token }}
@@ -58,7 +61,7 @@ jobs:
       matrix:
         pkg: ${{ fromJson(needs.find-upgradable-packages.outputs.names) }}
 
-    runs-on: macos-26
+    runs-on: ubuntu-latest
 
     permissions:
       contents: write
@@ -76,18 +79,25 @@ jobs:
           name: upgradable-packages-${{ github.sha }}
           path: upgrade
 
-      - id: version
+      - id: upgrade-info
         run: cat upgrade/${{ matrix.pkg }} >> "$GITHUB_OUTPUT"
 
       - run: |
-          gsed -i -e '/^src-url: /c src-url: ${{ steps.version.outputs.SRC_URL_NEW }}' -e '/^src-sha: /c src-sha: ${{ steps.version.outputs.SRC_SHA_NEW }}' formula/${{ matrix.pkg }}.yml
+          bin/gsed \
+              -i \
+              -e '/^version: /c version: ${{ steps.upgrade-info.outputs.VERSION_NEW }}' \
+              -e '/^src-url: /c src-url: ${{ steps.upgrade-info.outputs.SRC_URL_NEW }}' \
+              -e '/^src-sha: /c src-sha: ${{ steps.upgrade-info.outputs.SRC_SHA_NEW }}' \
+              -e '/^git-sha: /c git-sha: ${{ steps.upgrade-info.outputs.GIT_SHA_NEW }}' \
+              -e '/^git-tag: /c git-tag: ${{ steps.upgrade-info.outputs.GIT_TAG_NEW }}' \
+              formula/${{ matrix.pkg }}.yml
 
       - run: git diff
 
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg install ${{ matrix.pkg }} -I formula
-      - run: ./ndk-pkg bundle  ${{ matrix.pkg }} .tar.xz 
+      - run: ./ndk-pkg bundle  ${{ matrix.pkg }} .tar.xz
 
       - id: bundle-filename
         run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
@@ -102,53 +112,6 @@ jobs:
       - run: git config --global user.email leleliu008@gmail.com
 
       - run: git add formula/${{ matrix.pkg }}.yml
-      - run: git commit -m 'update package ${{ matrix.pkg }} ${{ steps.version.outputs.VERSION_OLD }} -> ${{ steps.version.outputs.VERSION_NEW }}'
-      - run: git pull --rebase=true
-      - run: git push origin master
-
-
-  push:
-
-    needs: find-upgradable-packages
-
-    strategy:
-
-      fail-fast: false
-
-      matrix:
-        pkg: ${{ fromJson(needs.find-upgradable-packages.outputs.names) }}
-
-    runs-on: macos-26
-
-    permissions:
-      contents: write
-
-    env:
-      GH_TOKEN: ${{ github.token }}
-
-    steps:
-      - uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-
-      - uses: actions/download-artifact@v8
-        with:
-          name: upgradable-packages-${{ github.sha }}
-          path: upgrade
-
-      - id: version
-        run: cat upgrade/${{ matrix.pkg }} >> "$GITHUB_OUTPUT"
-
-      - run: |
-          gsed -i -e '/^src-url: /c src-url: ${{ steps.version.outputs.SRC_URL_NEW }}' -e '/^src-sha: /c src-sha: ${{ steps.version.outputs.SRC_SHA_NEW }}' formula/${{ matrix.pkg }}.yml
-
-      - run: git diff
-
-      - run: git config --global user.name  leleliu008
-      - run: git config --global user.email leleliu008@gmail.com
-
-      - run: git add formula/${{ matrix.pkg }}.yml
-
-      - run: git commit -m 'update package ${{ matrix.pkg }} ${{ steps.version.outputs.VERSION_OLD }} -> ${{ steps.version.outputs.VERSION_NEW }}'
+      - run: git commit -m 'update package ${{ matrix.pkg }} ${{ steps.upgrade-info.outputs.VERSION_OLD }} -> ${{ steps.upgrade-info.outputs.VERSION_NEW }}'
       - run: git pull --rebase=true
       - run: git push origin master
