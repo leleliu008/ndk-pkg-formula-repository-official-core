@@ -1,6 +1,6 @@
 summary: Library for JSON, based on GLib
-src-url: https://download.gnome.org/sources/json-glib/1.8/json-glib-1.8.0.tar.xz
-src-sha: 97ef5eb92ca811039ad50a65f06633f1aae64792789307be7170795d8b319454
+src-url: https://download.gnome.org/sources/json-glib/1.10/json-glib-1.10.8.tar.xz
+src-sha: 55c5c141a564245b8f8fbe7698663c87a45a7333c2a2c56f06f811ab73b212dd
 license: LGPL-2.1-or-later
 dep-upp: glib-tools
 dep-pkg: glib
