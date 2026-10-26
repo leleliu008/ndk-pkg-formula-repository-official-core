@@ -1,8 +1,8 @@
 pkgtype: exe+lib
 summary: Cryptographic and SSL/TLS library
 web-url: https://tls.mbed.org
-src-url: https://github.com/Mbed-TLS/mbedtls/releases/download/v3.6.0/mbedtls-3.6.0.tar.bz2
-src-sha: 3ecf94fcfdaacafb757786a01b7538a61750ebd85c4b024f56ff8ba1490fcd38
+src-url: https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.2.0/mbedtls-4.2.0.tar.bz2
+src-sha: 2bed9d713b4668f76553b097e72b8aa30bc8f112a940d7ae228d524bbde6ffea
 license: Apache-2.0
 dep-pkg: libz
 
