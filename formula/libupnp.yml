@@ -1,7 +1,7 @@
 summary: Portable UPnP development kit
 web-url: https://pupnp.sourceforge.io/
-src-url: https://github.com/pupnp/pupnp/releases/download/release-1.14.18/libupnp-1.14.18.tar.bz2
-src-sha: 16a7cee93ce2868ae63ab1a8164dc7de43577c59983b9f61293a310d6888dceb
+src-url: https://github.com/pupnp/pupnp/releases/download/release-22.1.8/libupnp-22.1.8.tar.bz2
+src-sha: 4c50d3f3364021f6a6c70ab84d04bcd6f440654321a353cf644dc0cd89e5fad5
 license: BSD-3-Clause
 dep-pkg: libopenssl
 install: cmakew -Dopen_ssl=ON
