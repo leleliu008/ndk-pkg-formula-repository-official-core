@@ -1,6 +1,6 @@
 summary: A popular data compression program developed by GNU
-src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.13.tar.gz
-src-sha: 20fc818aeebae87cdbf209d35141ad9d3cf312b35a5e6be61bfcfbf9eddd212a
+src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.15.tar.gz
+src-sha: 545886cf57fa88a65e967fbf705903d7fcb2567c82c7342493e82e8d7b1a210b
 license: GPL-3.0-or-later
 bsystem: configure
 
