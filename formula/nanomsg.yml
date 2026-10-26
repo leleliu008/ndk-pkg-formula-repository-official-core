@@ -1,7 +1,7 @@
 pkgtype: exe+lib
 summary: Socket library in C
 web-url: https://nanomsg.org/
-src-url: https://github.com/nanomsg/nanomsg/archive/1.2.tar.gz
-src-sha: 6ef7282e833df6a364f3617692ef21e59d5c4878acea4f2d7d36e21c8858de67
+src-url: https://github.com/nanomsg/nanomsg/archive/refs/tags/1.3.0.tar.gz
+src-sha: acf65c0ef312f431aa3c4cb114326781c999ec0c977067f3a1f0c81b5ec8710f
 license: MIT
 install: cmakew -DNN_TESTS=OFF
