@@ -1,6 +1,6 @@
 summary: Upload multiple artifacts to GitHub Release in parallel
 web-url: https://tcnksm.github.io/ghr
-src-url: https://github.com/tcnksm/ghr/archive/refs/tags/v0.17.0.tar.gz
-src-sha: 3880f783dc9bded96d67bd3138a283eea8da767559ca8ae904b316965315199a
+src-url: https://github.com/tcnksm/ghr/archive/refs/tags/v0.18.5.tar.gz
+src-sha: b176fb747a3316999883cdbbc3f48a7512ef4b31b622ca378b64f015dc95a439
 license: MIT
 bsystem: go
