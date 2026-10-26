@@ -1,7 +1,7 @@
 summary: Linux Capability Library
 git-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git
-src-url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.70.tar.xz
-src-sha: 23a6ef8aadaf1e3e875f633bb2d116cfef8952dba7bc7c569b13458e1952b30f
+src-url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.78.tar.xz
+src-sha: 0d621e562fd932ccf67b9660fb018e468a683d7b827541df27813228c996bb11
 license: BSD-3-Clause
 dep-upp: gperf
 
