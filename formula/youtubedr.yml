@@ -1,5 +1,5 @@
 summary: A command-line tool to download videos from youtube.com
-src-url: https://github.com/kkdai/youtube/archive/refs/tags/v2.10.2.tar.gz
-src-sha: 7c8f8875fbf47110782e4ebd24dd70e3bb277cf25a7802d89fe4ca00d684e1d1
+src-url: https://github.com/kkdai/youtube/archive/refs/tags/v2.10.6.tar.gz
+src-sha: c334c04c07c3576e911d78b65b068b574e81e33e385f63a86b4862022391240d
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') ./cmd/youtubedr
