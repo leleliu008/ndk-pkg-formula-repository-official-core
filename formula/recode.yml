@@ -1,6 +1,6 @@
 summary: Convert character set (charsets)
-src-url: https://github.com/rrthomas/recode/releases/download/v3.7.14/recode-3.7.14.tar.gz
-src-sha: 786aafd544851a2b13b0a377eac1500f820ce62615ccc2e630b501e7743b9f33
+src-url: https://github.com/rrthomas/recode/releases/download/v3.7.17/recode-3.7.17.tar.gz
+src-sha: 1b0aebe7283b79ff46bc0a06ee21faf65b4d0b304632cbc855721c25583d8ea3
 license: GPL-3.0-or-later
 dep-pkg: libiconv
 dep-upp: python3
