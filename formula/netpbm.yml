@@ -1,7 +1,7 @@
 summary: A toolkit for manipulation of graphic images, including conversion of images between a variety of different formats
 web-url: http://netpbm.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.41/netpbm-10.86.41.tgz
-src-sha: 045f7796224a801512efb5e7d6150a321674cbfb566128b21abf8d4ba65b4513
+src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.51/netpbm-10.86.51.tgz
+src-sha: 17d41387e7343da10925690b813ba91c6bd901b417e51500ba4272556a4e5302
 license: GPL-3.0-or-later
 dep-pkg: libjasper libtiff libpng libjpeg-turbo libxml2
 dep-upp: gm4 flex perl
