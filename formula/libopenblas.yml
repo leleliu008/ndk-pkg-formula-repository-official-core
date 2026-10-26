@@ -1,7 +1,7 @@
 summary: Optimized BLAS library
 web-url: https://www.openblas.net
-src-url: https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.27.tar.gz
-src-sha: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
+src-url: https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.34.tar.gz
+src-sha: cd7e129868320cc2d033afa920e31202dfe0b8066a5b66661900ccc0f197dfed
 license: BSD-3-Clause
 
 prepare: |
