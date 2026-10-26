@@ -1,6 +1,6 @@
 summary: Lookup tool for domain names and other internet resources
-src-url: https://github.com/rfc1036/whois/archive/refs/tags/v5.5.23.tar.gz
-src-sha: dcfc08f3362c74ec8ae30691941909ebccf0cb3d27da04236f7e2790dbc7757c
+src-url: https://github.com/rfc1036/whois/archive/refs/tags/v5.6.6.tar.gz
+src-sha: 43d3b3cc64c75e8bd10aee6feff3906e9488ed335076d206e70f3b25bf644969
 license: GPL-2.0-or-later
 dep-pkg: libidn2 liblanginfo
 dep-upp: perl
