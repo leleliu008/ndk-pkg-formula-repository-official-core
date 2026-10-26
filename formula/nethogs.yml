@@ -1,7 +1,7 @@
 summary: Net top tool grouping bandwidth per process
 web-url: https://raboof.github.io/nethogs/
-src-url: https://github.com/raboof/nethogs/archive/refs/tags/v0.8.7.tar.gz
-src-sha: 957d6afcc220dfbba44c819162f44818051c5b4fb793c47ba98294393986617d
+src-url: https://github.com/raboof/nethogs/archive/refs/tags/v0.9.0.tar.gz
+src-sha: 5961bef2155c05695d2fe7e79aa11194981b5afd1cad9bf1f259c7f30d5487c3
 license: GPL-2.0
 dep-pkg: libpcap libncurses
 dep-lib: openssl
