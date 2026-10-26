@@ -1,5 +1,5 @@
 summary: A HTTP server to execute shell commands
-src-url: https://github.com/msoap/shell2http/archive/refs/tags/v1.17.0.tar.gz
-src-sha: 17fab67e34e767accfbc59ab504971c704f54d79b57a023e6b5efa5556994624
+src-url: https://github.com/msoap/shell2http/archive/refs/tags/v1.18.0.tar.gz
+src-sha: 0182c5d5a4574f7c932172001378132d99ed9b41432d159d70e3a19ef3c29145
 license: MIT
 install: gow && run install_mans shell2http.1
