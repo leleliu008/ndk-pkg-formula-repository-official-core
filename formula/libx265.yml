@@ -1,9 +1,9 @@
 summary: An open-source H.265/HEVC encoder
-web-url: http://x265.org
-git-url: https://bitbucket.org/multicoreware/x265_git
-src-url: https://bitbucket.org/multicoreware/x265_git/get/4.1.tar.gz
-src-sha: 7d23cdcdbd510728202c0dfbf7c51eda26a395de2096c504c2b10d6035711102
+web-url: http://x265.org/
+src-url: https://github.com/Multicorewareinc/x265/releases/download/4.3/x265_4.3.tar.gz
+src-sha: 83c53e4c8bbb8f1e33ed59e10a7d621d1d7801ca853910c3eb41f038b8ffb121
 license: GPL-2.0-or-later
+dep-upp: nasm
 bscript: source
 
 install: |
@@ -11,6 +11,6 @@ install: |
         -DENABLE_CLI=OFF \
         -DENABLE_PIC=ON \
         -DENABLE_SHARED=ON \
-        -DENABLE_ASSEMBLY=OFF
+        -DENABLE_ASSEMBLY=ON
 
 dotweak: gsed -i '/^Libs/s|-l-l:libunwind\.a||g' lib/pkgconfig/x265.pc
