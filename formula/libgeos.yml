@@ -1,7 +1,7 @@
 summary: Geometry Engine
 web-url: https://trac.osgeo.org/geos
 git-url: https://github.com/libgeos/geos
-src-url: https://download.osgeo.org/geos/geos-3.12.2.tar.bz2
-src-sha: 34c7770bf0090ee88488af98767d08e779f124fa33437e0aabec8abd4609fec6
+src-url: https://download.osgeo.org/geos/geos-3.15.0.tar.bz2
+src-sha: d5e5192a686d065eaed082de14dd26244c5c8e02bff16b2c6cce3265f648e00e
 license: LGPL-2.1-or-later
 install: cmakew 2 -DBUILD_GEOSOP=OFF
