@@ -1,7 +1,7 @@
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
-src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.33/openldap-LMDB_0.9.33.tar.bz2
-src-sha: d19d52725800177b89d235161c0af8ae8b2932207e3c9eb87e95b61f1925206d
+src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_1.0.3/openldap-LMDB_1.0.3.tar.bz2
+src-sha: 015f482ba647e926fbddc9cea49ed59281229c12896cd18675484c36712b98bd
 license: OLDAP-2.8
 
 bscript: libraries/liblmdb
