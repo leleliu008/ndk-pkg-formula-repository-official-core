@@ -1,6 +1,6 @@
 pkgtype: lib
 summary: A high performance JSON library written in ANSI C
-src-url: https://github.com/ibireme/yyjson/archive/refs/tags/0.9.0.tar.gz
-src-sha: 59902bea55585d870fd7681eabe6091fbfd1a8776d1950f859d2dbbd510c74bd
+src-url: https://github.com/ibireme/yyjson/archive/refs/tags/0.13.0.tar.gz
+src-sha: 34e0f62a2bc11ab20d601e8ca1cc2b2079503aa45119a19133d89d19b94a0fae
 license: MIT
 install: cmakew 2
