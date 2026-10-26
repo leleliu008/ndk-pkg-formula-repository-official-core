@@ -1,7 +1,7 @@
 summary: Secure Reliable Transport
 web-url: https://www.srtalliance.org/
-src-url: https://github.com/Haivision/srt/archive/refs/tags/v1.5.3.tar.gz
-src-sha: befaeb16f628c46387b898df02bc6fba84868e86a6f6d8294755375b9932d777
+src-url: https://github.com/Haivision/srt/archive/refs/tags/v1.5.7.tar.gz
+src-sha: 017cd1e437ef2073a4dd10ddf7b55e86bc3d6ebac0393d13bd22f6a57055d32b
 license: MPL-2.0
 dep-pkg: libopenssl
 
