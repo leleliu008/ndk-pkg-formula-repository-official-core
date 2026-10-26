@@ -1,7 +1,7 @@
 summary: C++ library to read, write, delete and modify Exif, IPTC, XMP and ICC image metadata
 web-url: https://exiv2.org/
-src-url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.7.tar.gz
-src-sha: 5e292b02614dbc0cee40fe1116db2f42f63ef6b2ba430c77b614e17b8d61a638
+src-url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.9.tar.gz
+src-sha: 700b76b97695b2fab4ef8c79619c68ae57d09e0c130724791cafbd39e0eb4aef
 license: GPL-2.0-or-later
 dep-pkg: libexpat libcurl libssh inih
 
