@@ -1,5 +1,5 @@
 summary: A HTTP server to execute shell commands
-src-url: https://github.com/adnanh/webhook/archive/refs/tags/2.8.2.tar.gz
-src-sha: c233a810effc24b5ed5653f4fa82152f288ec937d5744a339f7066a6cbccc565
+src-url: https://github.com/adnanh/webhook/archive/refs/tags/2.8.3.tar.gz
+src-sha: 5bfb3d9efd75d33bfee81fb8dae935178f42689fe0165fc1f5c5a312a0162541
 license: MIT
 bsystem: go
