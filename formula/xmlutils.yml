@@ -1,6 +1,6 @@
 summary: A collections of command-line utilities provided by libxml2
-src-url: https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.3.tar.xz
-src-sha: 78262a6e7ac170d6528ebfe2efccdf220191a5af6a6cd61ea4a9a9a5042c7a07
+src-url: https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.4.tar.xz
+src-sha: 98087fd181d9070724f3fbc65c7377db03038eb92bd882374daff44940138821
 license: MIT
 dep-pkg: libiconv libz
 
