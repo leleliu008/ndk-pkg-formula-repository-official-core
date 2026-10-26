@@ -1,5 +1,5 @@
 summary: Unified tool to manage your Rancher server
-src-url: https://github.com/rancher/cli/archive/refs/tags/v2.8.4.tar.gz
-src-sha: f576cb8210544db15f8e7e1a05d2b1ebd5a8d8f76add4067f66169aca86ffd78
+src-url: https://github.com/rancher/cli/archive/refs/tags/v2.15.2.tar.gz
+src-sha: 77ed5b7cc5ba86962c241ec6e96efc48871c115ee04ec180e43f3b8a44c59973
 license: Apache-2.0
 install: gow -X main.VERSION="$PACKAGE_VERSION" -o rancher
