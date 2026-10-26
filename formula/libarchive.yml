@@ -1,8 +1,8 @@
 summary: Multi-format archive and compression library
 git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
-src-url: https://www.libarchive.org/downloads/libarchive-3.8.7.tar.xz
-src-sha: d3a8ba457ae25c27c84fd2830a2efdcc5b1d40bf585d4eb0d35f47e99e5d4774
+src-url: https://www.libarchive.org/downloads/libarchive-3.8.10.tar.xz
+src-sha: 56cad765459d5ee25a3b761f90c47d99379d28297fbfb72d908880d6b875fb96
 license: BSD-2-Clause
 dep-pkg: liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat libopenssl
 
