@@ -1,6 +1,6 @@
 summary: Utility to optimize JPEG files
-src-url: https://github.com/tjko/jpegoptim/archive/refs/tags/v1.5.5.tar.gz
-src-sha: 90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38
+src-url: https://github.com/tjko/jpegoptim/releases/download/v1.5.6/jpegoptim-1.5.6.zip
+src-sha: 96cc4c6f6961235db41c8fc7b7b5baebc3179ddb24e96e87a03355beaf6014e2
 license: GPL-3.0-or-later
 dep-pkg: libjpeg-turbo
 binbstd: 1
