@@ -1,6 +1,6 @@
 summary: A fast, async, resource-friendly link checker
-src-url: https://github.com/lycheeverse/lychee/archive/refs/tags/v0.15.1.tar.gz
-src-sha: 21c52aab5eefb0fda578f8192dffc5b776954e585f5692b87079cbb52ac1d89c
+src-url: https://github.com/lycheeverse/lychee/archive/refs/tags/lychee-v0.24.2.tar.gz
+src-sha: 62687c0a84ceec76d17e30e494dcf8e65c7099a2e24a6a521a41854b8eb3759d
 license: MIT
 dep-pkg: libopenssl
 bscript: lychee-bin
