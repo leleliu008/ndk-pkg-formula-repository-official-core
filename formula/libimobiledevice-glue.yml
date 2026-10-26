@@ -1,7 +1,7 @@
 summary: Library with common system API code for libimobiledevice projects
 web-url: https://libimobiledevice.org/
-src-url: https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.2.0/libimobiledevice-glue-1.2.0.tar.bz2
-src-sha: ff9cbc240c9780edfa43914a057b86362054053721b65fb04f54a25023b92b62
+src-url: https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.3.3/libimobiledevice-glue-1.3.3.tar.bz2
+src-sha: 920ce01382a32695f49b23292b4979a03f0afd16c58e8755d8b7f41804acc1a9
 license: LGPL-2.1-or-later
 dep-pkg: libplist
 bsystem: configure
