@@ -3,18 +3,41 @@
 set -ex
 
 unset PKGTYPE
+unset BSYSTEM
+unset LINKAGE
 unset API_LEVEL
 
 PKGTYPE=$(./ndk-pkg info "$1" pkgtype)
 
 if [ "$PKGTYPE" = exe ] && [ "$2" = '--static' ] ; then
-    API_LEVEL=35
-else
-    API_LEVEL=$(./ndk-pkg info "$1" api-min)
+    BSYSTEM=$(./ndk-pkg info "$1" bsystem)
 
-    if [ -z "$API_LEVEL" ] ; then
-        API_LEVEL=21
+    USE_GO=
+
+    for item in $BSYSTEM
+    do
+        case $item in
+            go) USE_GO=1; break
+        esac
+    done
+
+    if [ "$USE_GO" != 1 ] ; then
+        LINKAGE=$(./ndk-pkg info "$1" linkage)
+
+        if [ "$LINKAGE" == shared ] || [ "$LINKAGE" == shared/most ] ; then
+            :
+        else
+            API_LEVEL=35
+            printf '%s\n' "$API_LEVEL"
+            exit
+        fi
     fi
+fi
+
+API_LEVEL=$(./ndk-pkg info "$1" api-min)
+
+if [ -z "$API_LEVEL" ] ; then
+    API_LEVEL=21
 fi
 
 printf '%s\n' "$API_LEVEL"
