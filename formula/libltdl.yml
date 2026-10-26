@@ -1,6 +1,6 @@
 summary: A small library aims at hiding the various difficulties of dlopening libraries from programmers
-src-url: https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz
-src-sha: f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675
+src-url: https://ftp.gnu.org/gnu/libtool/libtool-2.6.2.tar.xz
+src-sha: 2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e
 license: GPL-2.0-or-later
 dep-upp: gm4
 bscript: libltdl
