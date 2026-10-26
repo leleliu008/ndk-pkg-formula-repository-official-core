@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: A header-only C++11 (or later) library for parsing TOML
 web-url: https://github.com/ToruNiina/toml11
-src-url: https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
-src-sha: 6a3d20080ecca5ea42102c078d3415bef80920f6c4ea2258e87572876af77849
+src-url: https://github.com/ToruNiina/toml11/archive/refs/tags/v4.4.0.tar.gz
+src-sha: 815bfe6792aa11a13a133b86e7f0f45edc5d71eb78f5fb6686c49c7f792b9049
 license: MIT
 install: cmakew -DCMAKE_CXX_STANDARD=11
