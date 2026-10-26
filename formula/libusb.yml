@@ -1,7 +1,7 @@
 summary: C library that provides generic access to USB devices
 web-url: https://libusb.info
-src-url: https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.tar.bz2
-src-sha: ffaa41d741a8a3bee244ac8e54a72ea05bf2879663c098c82fc5757853441575
+src-url: https://github.com/libusb/libusb/releases/download/v1.0.30/libusb-1.0.30.tar.bz2
+src-sha: fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf
 license: LGPL-2.1-or-later
 install: |
     configure \
