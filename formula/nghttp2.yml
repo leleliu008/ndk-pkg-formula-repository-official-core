@@ -1,8 +1,8 @@
 pkgtype: exe+lib
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
-src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz
-src-sha: c866b7477cbb7512ab6863a685027adbb1bb8da8fc3bab7429ed43d3281d5aa9
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.70.0/nghttp2-1.70.0.tar.gz
+src-sha: aa317e2cf9dca6afa0aed68f8fad6ff303ec6982e25a78c75c0b65e2b9b3ded5
 dep-pkg: libevent libev libcares libjansson libxml2 cunit
 license: MIT
 
