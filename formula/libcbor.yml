@@ -1,5 +1,5 @@
 summary: CBOR protocol implementation for C and others
-src-url: https://github.com/PJK/libcbor/archive/refs/tags/v0.11.0.tar.gz
-src-sha: 89e0a83d16993ce50651a7501355453f5250e8729dfc8d4a251a78ea23bb26d7
+src-url: https://github.com/PJK/libcbor/archive/refs/tags/v0.14.0.tar.gz
+src-sha: a8c1516e741562cf95aa4479c64916c3d4d2623e24fdc35e414e2320e7300aae
 license: MIT
 install: cmakew 2 -DWITH_EXAMPLES=OFF
