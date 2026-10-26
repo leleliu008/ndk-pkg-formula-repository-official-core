@@ -248,7 +248,7 @@ EOF
 
                 echo "I=$I"
 
-                if [ "$I" -eq 100 ] ; then
+                if [ "$I" -eq 200 ] ; then
                     exit
                 fi
 
@@ -334,7 +334,7 @@ EOF
 
             echo "I=$I"
 
-            if [ "$I" -eq 100 ] ; then
+            if [ "$I" -eq 200 ] ; then
                 exit
             fi
         else
@@ -427,7 +427,7 @@ EOF
 
             echo "I=$I"
 
-            if [ "$I" -eq 100 ] ; then
+            if [ "$I" -eq 200 ] ; then
                 exit
             fi
 
@@ -491,7 +491,7 @@ EOF
 
             echo "I=$I"
 
-            if [ "$I" -eq 100 ] ; then
+            if [ "$I" -eq 200 ] ; then
                 exit
             fi
 
