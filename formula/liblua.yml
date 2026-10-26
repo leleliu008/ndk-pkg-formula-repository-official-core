@@ -1,8 +1,8 @@
 summary: Powerful, lightweight programming language
 git-url: https://github.com/lua/lua
 web-url: https://www.lua.org/
-src-url: https://www.lua.org/ftp/lua-5.4.6.tar.gz
-src-sha: 7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88
+src-url: https://www.lua.org/ftp/lua-5.5.1.tar.gz
+src-sha: 1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce
 license: MIT
 bscript: src
 install: |
