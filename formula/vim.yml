@@ -1,7 +1,7 @@
 summary: Vi IMproved - enhanced vi editor
 web-url: https://www.vim.org/
-src-url: https://github.com/vim/vim/archive/refs/tags/v9.2.0750.tar.gz
-src-sha: 7d460830e12082b541c34b0b96942ebface1ad9fa0b77245930717c0ccf8b664
+src-url: https://github.com/vim/vim/archive/refs/tags/v9.2.1200.tar.gz
+src-sha: bfa90e670961958499d28e2d1b5d8b396d5dceb38d30b48f4e241a43086f5927
 license: Vim
 dep-pkg: libncurses libintl python3 lua
 binbstd: 1
