@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -ex
+
+unset PKGTYPE
+unset API_LEVEL
+
+PKGTYPE=$(./ndk-pkg info "$1" pkgtype)
+
+if [ "$PKGTYPE" = exe ] && [ "$2" = '--static' ] ; then
+    API_LEVEL=35
+else
+    API_LEVEL=$(./ndk-pkg info "$1" api-min)
+
+    if [ -z "$API_LEVEL" ] ; then
+        API_LEVEL=21
+    fi
+fi
+
+printf '%s\n' "$API_LEVEL"

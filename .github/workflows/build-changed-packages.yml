@@ -85,7 +85,11 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+      - id:  api-level
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} ${{ matrix.opt }})" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
 
 
   alpine:
@@ -128,7 +132,12 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+      - id:  api-level
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} ${{ matrix.opt }})" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
+
 
 
   macos:
@@ -170,4 +179,8 @@ jobs:
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
       - run: ./ndk-pkg formula-repo-list
-      - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
+
+      - id:  api-level
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} ${{ matrix.opt }})" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} ${{ matrix.opt }}
