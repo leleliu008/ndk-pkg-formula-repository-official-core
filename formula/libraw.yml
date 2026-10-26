@@ -1,8 +1,8 @@
 summary: Library for reading RAW files from digital photo cameras
 git-url: https://github.com/LibRaw/LibRaw
 web-url: https://www.libraw.org/
-src-url: https://www.libraw.org/data/LibRaw-0.21.2.tar.gz
-src-sha: fe7288013206854baf6e4417d0fb63ba4ed7227bf36fff021992671c2dd34b03
+src-url: https://www.libraw.org/data/LibRaw-0.22.2.tar.gz
+src-sha: de86b035655accff8d4010f1a221fdf50d353cb7b1422ba26f14a0db92612cfa
 license: LGPL-2.1-only
 dep-pkg: libjasper liblcms2 libz
 dep-upp: libtool
