@@ -1,7 +1,7 @@
 summary: C++ library for processing command-line flags
 web-url: https://gflags.github.io/gflags
-src-url: https://github.com/gflags/gflags/archive/v2.2.2.tar.gz
-src-sha: 34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf
+src-url: https://github.com/gflags/gflags/archive/refs/tags/v2.3.1.tar.gz
+src-sha: 1b5e0648d7b94021895086e65479b4eaca7935eecfffd7dd9512eb576181c53d
 license: BSD-3-Clause
 
 install: |
