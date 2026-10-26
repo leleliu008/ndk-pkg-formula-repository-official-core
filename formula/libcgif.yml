@@ -1,5 +1,5 @@
 summary: A fast and lightweight GIF encoder written in C
-src-url: https://github.com/dloebl/cgif/archive/refs/tags/v0.5.1.tar.gz
-src-sha: 211e3dfba7138e4cbc1272999aa735be52fc14cab8cb000d9d6aa9d294423034
+src-url: https://github.com/dloebl/cgif/archive/refs/tags/v0.5.4.tar.gz
+src-sha: 83a70a15bc2da41f081a44ebc58ee48e2e1d524a6d3fdb4a24064afa08d5ad4d
 license: MIT
 install: mesonw -Dtests=false
