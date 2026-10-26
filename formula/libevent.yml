@@ -1,7 +1,7 @@
 summary: Asynchronous event library
 web-url: https://libevent.org/
-src-url: https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
-src-sha: 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb
+src-url: https://github.com/libevent/libevent/releases/download/release-2.1.13-stable/libevent-2.1.13-stable.tar.gz
+src-sha: f7e9383b8c0baa81b687e5b5eecc01beefaf1b19b64151d95ed61647fe7a315c
 license: BSD-3-Clause
 dep-pkg: libopenssl
 
