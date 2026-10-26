@@ -1,6 +1,6 @@
 summary: BitTorrent library with a focus on high performance
-src-url: https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.24.tar.gz
-src-sha: 626cb6e7272296e7f52fd2310744e080104cf00fe4562a1c253fe327dcfc401c
+src-url: https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.26.tar.gz
+src-sha: f3674a26c8398c38583f62e235a69056cf4142745af11cf9f7c2a6006c23a30a
 license: GPL-2.0-or-later
 dep-pkg: libcurl
 dep-upp: libtool
