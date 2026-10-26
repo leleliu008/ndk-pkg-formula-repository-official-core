@@ -1,5 +1,5 @@
 summary: An open source implementation of the H.265 video codec
-src-url: https://github.com/strukturag/libde265/releases/download/v1.0.15/libde265-1.0.15.tar.gz
-src-sha: 00251986c29d34d3af7117ed05874950c875dd9292d016be29d3b3762666511d
+src-url: https://github.com/strukturag/libde265/releases/download/v1.1.3/libde265-1.1.3.tar.gz
+src-sha: 554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905
 license: LGPL-3.0-or-later
 install: cmakew 2 -DENABLE_SDL=OFF -DDISABLE_SSE=ON -DENABLE_ENCODER=OFF -DENABLE_DECODER=OFF
