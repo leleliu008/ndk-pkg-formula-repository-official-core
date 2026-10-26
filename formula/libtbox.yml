@@ -1,6 +1,6 @@
 summary: A glib-like multi-platform c library
 web-url: https://tboox.org/
-src-url: https://github.com/tboox/tbox/archive/refs/tags/v1.7.9.tar.gz
-src-sha: 8d4bba88bb279c4ff71677d15f8bfc20dfbdc3b4eee27b540fb979fe5af65e56
+src-url: https://github.com/tboox/tbox/archive/refs/tags/v1.8.2.tar.gz
+src-sha: 8601bd1443ad3e3eb998406a71c3896f8563ed1aeb94a9ccf8c17543742d508e
 license: Apache-2.0
 install: xmakew --charset=y --small=y --xml=y --demo=n
