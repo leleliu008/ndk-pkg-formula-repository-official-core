@@ -1,7 +1,7 @@
 summary: library for laying out and rendering of text, with an emphasis on internationalization
 web-url: https://www.pango.org/
-src-url: https://download.gnome.org/sources/pango/1.55/pango-1.55.5.tar.xz
-src-sha: e396126ea08203cbd8ef12638e6222e2e1fd8aa9cac6743072fedc5f2d820dd8
+src-url: https://download.gnome.org/sources/pango/1.58/pango-1.58.2.tar.xz
+src-sha: 342385b6ca3b7c73455d7c80a13b7dbe4489e00bc3bd4c5bd6ed4dce421e374a
 license: LGPL-2.0-or-later
 dep-pkg: libcairo libfribidi libharfbuzz
 dep-upp: glib-tools
