@@ -1,6 +1,6 @@
 summary: C client library for NFS
-src-url: https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-5.0.3.tar.gz
-src-sha: d945cb4f4c8f82ee1f3640893a168810f794a28e1010bb007ec5add345e9df3e
+src-url: https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-8.0.0.tar.gz
+src-sha: bc91216e927a85142b5de611c7f711558e02119a7daad67620ea631634038350
 license: LGPL-2.1-or-later
 
 dopatch: gsed -i '/stdio\.h/a \#include<sys/uio.h>' lib/pdu.c lib/socket.c
