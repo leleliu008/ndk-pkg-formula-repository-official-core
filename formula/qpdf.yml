@@ -1,6 +1,6 @@
 summary: A command-line tool that performs content-preserving transformations on PDF files
-src-url: https://github.com/qpdf/qpdf/releases/download/v11.9.1/qpdf-11.9.1.tar.gz
-src-sha: 2ba4d248f9567a27c146b9772ef5dc93bd9622317978455ffe91b259340d13d1
+src-url: https://github.com/qpdf/qpdf/releases/download/v12.4.2/qpdf-12.4.2.tar.gz
+src-sha: 8a58af5b6141319287c1883bec8bd1bd545b7567b7fc5e6ce5d25a1c85f36397
 license: Apache-2.0
 dep-pkg: libjpeg-turbo libopenssl libz
 
