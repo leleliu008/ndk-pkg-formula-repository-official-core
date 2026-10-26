@@ -1,8 +1,8 @@
 summary: Low-level cryptographic library
 web-url: https://www.lysator.liu.se/~nisse/nettle
 git-url: https://git.lysator.liu.se/nettle/nettle
-src-url: https://ftp.gnu.org/gnu/nettle/nettle-3.10.tar.gz
-src-sha: b4c518adb174e484cb4acea54118f02380c7133771e7e9beb98a0787194ee47c
+src-url: https://ftp.gnu.org/gnu/nettle/nettle-4.0.tar.gz
+src-sha: 3addbc00da01846b232fb3bc453538ea5468da43033f21bb345cb1e9073f5094
 license: GPL-2.0-or-later
 dep-upp: gm4
 dep-pkg: libgmp
