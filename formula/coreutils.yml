@@ -1,7 +1,7 @@
 summary: GNU File, Shell, and Text utilities
 git-url: https://github.com/coreutils/coreutils
-src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz
-src-sha: e6d4fd2d852c9141a1c2a18a13d146a0cd7e45195f72293a4e4c044ec6ccca15
+src-url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.12.tar.xz
+src-sha: a480198559733e9b3da999e90543ac6f888a2caa544d8d664c5a1f17e528e210
 license: GPL-3.0-or-later
 
 prepare: |
