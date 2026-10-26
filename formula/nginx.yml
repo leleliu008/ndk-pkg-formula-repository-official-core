@@ -1,8 +1,8 @@
 summary: HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 git-url: https://github.com/nginx/nginx
 web-url: https://nginx.org
-src-url: https://nginx.org/download/nginx-1.27.0.tar.gz
-src-sha: b7230e3cf87eaa2d4b0bc56aadc920a960c7873b9991a1b66ffcc08fc650129c
+src-url: https://nginx.org/download/nginx-1.31.8.tar.gz
+src-sha: 0652b760b3b772d2ec17b47c2fc15d9a95e6fe35cd5b877eadc1a62d9bc75af1
 license: BSD-2-Clause
 dep-pkg: libopenssl libz libpcre2 libcrypt libglob
 bsystem: gmake
