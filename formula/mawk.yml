@@ -1,7 +1,15 @@
 summary: Interpreter for the AWK Programming Language
 web-url: https://invisible-island.net/mawk/
-src-url: https://invisible-island.net/archives/mawk/mawk-1.3.4-20200120.tgz
-src-sha: 7fd4cd1e1fae9290fe089171181bbc6291dfd9bca939ca804f0ddb851c8b8237
-version: 1.3.4
+src-url: https://invisible-island.net/archives/mawk/mawk-1.3.4-20260302.tgz
+src-sha: e2c08a77d0a84a01f9be454d1ca3872d4f103f9ada683d075198b0c6e965633d
 license: GPL-2.0-only
-bsystem: configure
+binbstd: 1
+
+dopatch: gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+
+install: |
+    configure \
+        --with-build-cc="$CC_FOR_BUILD" \
+        --with-build-cflags="'$CFLAGS_FOR_BUILD'" \
+        --with-build-cppflags="'$CPPFLAGS_FOR_BUILD'" \
+        --with-build-ldflags="'$LDFLAGS_FOR_BUILD'"
