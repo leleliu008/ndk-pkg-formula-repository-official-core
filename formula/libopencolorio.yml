@@ -1,7 +1,7 @@
 summary: Color management solution geared towards motion picture production
 web-url: https://opencolorio.org/
-src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v2.3.2.tar.gz
-src-sha: 6bbf4e7fa4ea2f743a238cb22aff44890425771a2f57f62cece1574e46ceec2f
+src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.6.0.tar.gz
+src-sha: 784ac37bde5b9c6e5dc15f23d1235bd1452d376cdc03627d6d6dd310f375a735
 license: BSD-3-Clause
 dep-pkg: libImath libexpat libyaml-cpp libpystring libminizip-ng
 dep-upp: git
