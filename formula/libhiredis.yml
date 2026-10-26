@@ -1,5 +1,5 @@
 summary: Minimalistic client for Redis
-src-url: https://github.com/redis/hiredis/archive/refs/tags/v1.3.0.tar.gz
-src-sha: 25cee4500f359cf5cad3b51ed62059aadfc0939b05150c1f19c7e2829123631c
+src-url: https://github.com/redis/hiredis/archive/refs/tags/v1.5.0.tar.gz
+src-sha: eec7ef8641d221e144a58d5ef8d733c8c75c7fd487097a233aacb4fa33981cfb
 license: BSD-3-Clause
 install: cmakew 2 -DDISABLE_TESTS=ON
