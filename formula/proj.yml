@@ -1,7 +1,7 @@
 summary: Cartographic Projections Library
 web-url: https://proj.org/
-src-url: https://github.com/OSGeo/PROJ/releases/download/9.5.1/proj-9.5.1.tar.gz
-src-sha: a8395f9696338ffd46b0feb603edbb730fad6746fba77753c77f7f997345e3d3
+src-url: https://github.com/OSGeo/PROJ/releases/download/9.9.0/proj-9.9.0.tar.gz
+src-sha: 791a0610547eeabb17006cfd49cdbd2034f3240f47ed5e88a1031811f4e2bcf3
 license: MIT
 dep-upp: sqlite3
 dep-pkg: libsqlite3 libtiff libcurl
