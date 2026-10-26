@@ -1,9 +1,9 @@
 summary: C/C++ libraries for Unicode and globalization
 web-url: http://site.icu-project.org/home
-src-url: https://github.com/unicode-org/icu/releases/download/release-74-2/icu4c-74_2-src.tgz
-src-sha: 68db082212a96d6f53e35d60f47d38b962e9f9d207a74cfac78029ae8ff5e08c
+src-url: https://github.com/unicode-org/icu/releases/download/release-79.1/icu4c-79.1-sources.tgz
+src-sha: 06fa63ecb521048f8082f12ad988f6b678d90cbd88aafce24cbc94902b191d99
 license: ICU
-version: 74.2
+version: 79.1
 bscript: source
 
 do12345: |
