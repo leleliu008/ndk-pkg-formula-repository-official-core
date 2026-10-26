@@ -1,7 +1,7 @@
 summary: Utility for computing and verifying hash sums of files
 web-url: http://rhash.sourceforge.net
-src-url: https://github.com/rhash/RHash/archive/v1.4.4.tar.gz
-src-sha: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
+src-url: https://github.com/rhash/RHash/archive/v1.4.6.tar.gz
+src-sha: 9f6019cfeeae8ace7067ad22da4e4f857bb2cfa6c2deaa2258f55b2227ec937a
 license: 0BSD
 bsystem: gmake
 
