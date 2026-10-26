@@ -1,5 +1,5 @@
 summary: TOTP/HOTP authenticator app with import functionality
-src-url: https://github.com/replydev/cotp/archive/refs/tags/v1.11.0.tar.gz
-src-sha: 8ef923c82397e1ce82b07cb1ac901a82c680d20cfd211d2f79b68a338006da08
+src-url: https://github.com/replydev/cotp/archive/refs/tags/v1.11.1.tar.gz
+src-sha: 649119c3d49a16a1fd439949485763f242614ec05dc6d9f84df0d22120988d2e
 license: GPL-3.0-only
 bsystem: cargo
