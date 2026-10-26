@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Library for a binary-based efficient data interchange format
 web-url: https://msgpack.org/
-src-url: https://github.com/msgpack/msgpack-c/releases/download/c-6.0.1/msgpack-c-6.0.1.tar.gz
-src-sha: a349cd9af28add2334c7009e331335af4a5b97d8558b2e9804d05f3b33d97925
+src-url: https://github.com/msgpack/msgpack-c/releases/download/c-7.0.2/msgpack-c-7.0.2.tar.gz
+src-sha: 6ae50f69612871aa01de76bec904165cd2a2fc30ff9f653f2f60a663c5c1a86c
 license: BSL-1.0
 install: |
     cmakew \
