@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: UTF-8 with C++ in a Portable Way
-src-url: https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
-src-sha: ffc668a310e77607d393f3c18b32715f223da1eac4c4d6e0579a11df8e6b59cf
+src-url: https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.2.1.tar.gz
+src-sha: 6d6a5493a111884cc085ee31babfe6d9960c8fb08fc80a64852eaeea8323dbc1
 license: BSL-1.0
 install: |
     cmakew \
