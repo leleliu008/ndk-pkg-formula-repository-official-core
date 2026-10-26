@@ -1,7 +1,7 @@
 summary: C library for encoding, decoding, and manipulating JSON
 web-url: https://digip.org/jansson
-src-url: https://github.com/akheron/jansson/releases/download/v2.15.0/jansson-2.15.0.tar.gz
-src-sha: 070a629590723228dc3b744ae90e965a569efb9c535b3309b52e80e75d8eb3be
+src-url: https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
+src-sha: 0c7114dc0b2d22a670724a1f95922029d7077c19dbf79a584cb8084d2f267f2f
 license: MIT
 
 install: |
