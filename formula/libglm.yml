@@ -1,7 +1,7 @@
 summary: C++ mathematics library for graphics software
 web-url: https://glm.g-truc.net/
-src-url: https://github.com/g-truc/glm/archive/refs/tags/1.0.1.tar.gz
-src-sha: 9f3174561fd26904b23f0db5e560971cbf9b3cbda0b280f04d5c379d03bf234c
+src-url: https://github.com/g-truc/glm/archive/refs/tags/1.0.3.tar.gz
+src-sha: 6775e47231a446fd086d660ecc18bcd076531cfedd912fbd66e576b118607001
 license: MIT
 
 install: cmakew 2 -DGLM_BUILD_TESTS=OFF
