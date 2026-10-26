@@ -1,6 +1,6 @@
 summary: GNU database manager
-src-url: https://ftp.gnu.org/gnu/gdbm/gdbm-1.23.tar.gz
-src-sha: 74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd
+src-url: https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz
+src-sha: 6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e
 license: GPL-3.0-or-later
 
 dopatch: gsed -i 's|src tools|src|' Makefile.in
