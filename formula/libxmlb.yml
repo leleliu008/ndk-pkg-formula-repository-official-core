@@ -1,6 +1,6 @@
 summary: Library for querying compressed XML metadata
-src-url: https://github.com/hughsie/libxmlb/releases/download/0.3.27/libxmlb-0.3.27.tar.xz
-src-sha: 63fa0275f7454d77c10e0af37f79dfdb071821caf429a57dbd9598ea3a9defd6
+src-url: https://github.com/hughsie/libxmlb/releases/download/0.3.29/libxmlb-0.3.29.tar.xz
+src-sha: 448294be33bfae62f00fa66e506f1cae80237ce71b7ab6530aefa75005eeb08a
 license: LGPL-2.1-or-later
 dep-pkg: liblzma libzstd glib
 install: mesonw -Dlzma=enabled -Dzstd=enabled -Dstemmer=false -Dcli=false -Dtests=false -Dgtkdoc=false -Dintrospection=false
