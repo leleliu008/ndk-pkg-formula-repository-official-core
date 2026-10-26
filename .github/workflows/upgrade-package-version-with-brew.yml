@@ -115,7 +115,7 @@ jobs:
       - run: ./ndk-pkg formula-repo-list
 
       - id:  api-level
-        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} ${{ matrix.opt }})" >> "$GITHUB_OUTPUT"
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
 
       - run: ./ndk-pkg install android-${{ steps.api-level.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} --static
       - run: ./ndk-pkg bundle  android-${{ steps.api-level.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
