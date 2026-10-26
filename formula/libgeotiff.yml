@@ -1,6 +1,6 @@
 summary: Library and tools for dealing with GeoTIFF
-src-url: https://github.com/OSGeo/libgeotiff/releases/download/1.7.3/libgeotiff-1.7.3.tar.gz
-src-sha: ba23a3a35980ed3de916e125c739251f8e3266be07540200125a307d7cf5a704
+src-url: https://github.com/OSGeo/libgeotiff/releases/download/1.7.4/libgeotiff-1.7.4.tar.gz
+src-sha: c598d04fdf2ba25c4352844dafa81dde3f7fd968daa7ad131228cd91e9d3dc47
 license: MIT
 dep-pkg: libjpeg-turbo libproj
 install: configure --with-jpeg
