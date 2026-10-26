@@ -1,6 +1,6 @@
 summary: A rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options, etc
-src-url: https://github.com/lsd-rs/lsd/archive/refs/tags/v1.1.2.tar.gz
-src-sha: cd80dae9a8f6c4c2061f79084468ea6e04c372e932e3712a165119417960e14e
+src-url: https://github.com/lsd-rs/lsd/archive/refs/tags/v1.2.0.tar.gz
+src-sha: dae8d43087686a4a1de0584922608e9cbab00727d0f72e4aa487860a9cbfeefa
 license: Apache-2.0
 dep-pkg: libz
 bsystem: cargo
