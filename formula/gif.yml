@@ -1,20 +1,17 @@
 summary: Library and utilities for processing GIFs
-web-url: https://giflib.sourceforge.io
+web-url: https://giflib.sourceforge.net/
 git-url: https://git.code.sf.net/p/giflib/code
-src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.2.tar.gz
-src-uri: https://mirrors.omnios.org/libgif/giflib-5.2.2.tar.gz
-src-sha: be7ffbd057cadebe2aa144542fd90c6838c6a083b5e8a9048b8ee3b66b29d5fb
-
-parallel: 0
+src-url: https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-6.1.3.tar.gz
+src-sha: b65b66b99f0424b93525f987386f22fc5efb9da2bfc92ad4a532249aaffbab0e
 
 dopatch: |
-    gsed -i 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
+    gsed -i \
+         -e '/^USOURCES = /s|$| gif_err.c|' \
+         -e '/^CC /d' \
+         -e '/^CFLAGS /d' Makefile
 
 install: |
-    gmakew clean   UNAME=Linux
-    gmakew install UNAME=Linux PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" AR="$AR" CFLAGS="'$CFLAGS'"
-
-developer: |
-    Gershon Elber <gershon@cs.technion.sc.il>
-    Toshio Kuratomi <toshio@tiki-lounge.com>
-    Eric Raymond <esr@snark.thyrsus.com>
+    gmakew clean
+    gmakew libgif.a
+    gmakew libutil.a
+    gmakew install-bin PREFIX="$PACKAGE_INSTALL_DIR"
