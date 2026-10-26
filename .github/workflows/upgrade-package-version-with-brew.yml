@@ -153,7 +153,8 @@ jobs:
       - id: bundle-2
         run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/upload-artifact@v6
+      - if: steps.api-level-1.outputs.API_LEVEL != steps.api-level-2.outputs.API_LEVEL
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.bundle-2.outputs.BUNDLE_FILENAME }}
           path: ${{ steps.bundle-2.outputs.BUNDLE_FILENAME }}
