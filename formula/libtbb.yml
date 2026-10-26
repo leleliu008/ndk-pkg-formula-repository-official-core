@@ -1,6 +1,6 @@
 summary: A portable C++ library for parallel programming developed by Intel
-src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.12.0.tar.gz
-src-sha: c7bb7aa69c254d91b8f0041a71c5bcc3936acb64408a1719aec0b2b7639dd84f
+src-url: https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2023.1.0.tar.gz
+src-sha: 191288b52e1e6b17198000b64d77d194bb65e791be46ebc606e9b091781e2070
 license: Apache-2.0
 ldflags: -Wl,--undefined-version
 install: |
