@@ -1,5 +1,5 @@
 summary: A fast, SAX-like Markdown parser for C
-src-url: https://github.com/mity/md4c/archive/refs/tags/release-0.5.2.tar.gz
-src-sha: 55d0111d48fb11883aaee91465e642b8b640775a4d6993c2d0e7a8092758ef21
+src-url: https://github.com/mity/md4c/archive/refs/tags/v0.6.0.tar.gz
+src-sha: 4d151298125a81da3b2efa2e0eed8bdb7a9318569804e4fa4d7a2375ab83ef70
 license: MIT
 install: cmakew -DBUILD_SHARED_LIBS=OFF
