@@ -1,6 +1,6 @@
 summary: Terminal file manager
-src-url: https://github.com/gokcehan/lf/archive/refs/tags/r40.tar.gz
-src-sha: 43a78f66728dbbbd6848a074dd3d70e8ce7ef22e428de81a89bf2da174226a26
+src-url: https://github.com/gokcehan/lf/archive/refs/tags/r42.tar.gz
+src-sha: 7a8f7c2c86419270b713b6235dced7b9d0e68732e74a1e0f375f774fff4023ca
 license: MIT
 install: |
     gow -X main.gVersion=$PACKAGE_VERSION
