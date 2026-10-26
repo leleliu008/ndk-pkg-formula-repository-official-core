@@ -1,5 +1,5 @@
 summary: A shell extension to navigate your filesystem faster
-src-url: https://github.com/ajeetdsouza/zoxide/archive/refs/tags/v0.9.8.tar.gz
-src-sha: 1b276edbf328aafc86afe1ebce41f45ccba3a3125412e89c8c5d8e825b0c7407
+src-url: https://github.com/ajeetdsouza/zoxide/archive/refs/tags/v0.10.0.tar.gz
+src-sha: 4fcd4272b013a10b637dbcc299c58a9924b94470a9042677ca1a204cc2e9150e
 license: MIT
 bsystem: cargo
