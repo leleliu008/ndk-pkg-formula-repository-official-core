@@ -1,7 +1,8 @@
 summary: A static analysis tool for C/C++ code
 web-url: https://sourceforge.net/projects/cppcheck
-src-url: https://github.com/danmar/cppcheck/archive/refs/tags/2.16.0.tar.gz
-src-sha: f1a97c8cef5ee9d0abb57e9244549d4fe18d4ecac80cf82e250d1fc5f38b1501
+src-url: https://github.com/cppcheck-opensource/cppcheck/archive/refs/tags/2.22.0.tar.gz
+src-sha: d74945deb2d50393430e07596b766f8a779512c7f60dac2a30ea64e059ece57b
 license: GPL-3.0-or-later
-dep-pkg: libpcre libxml2 libgetloadavg
+dep-pkg: libpcre libxml2 libexecinfo libgetloadavg
+dep-upp: python3
 install: cmakew -DUSE_MATCHCOMPILER=On -DDISABLE_DMAKE=ON
