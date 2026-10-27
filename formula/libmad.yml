@@ -1,25 +1,5 @@
 summary: MPEG audio decoder
-web-url: https://www.underbit.com/products/mad/
-src-url: https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz
-src-sha: bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690
+src-url: https://codeberg.org/tenacityteam/libmad/releases/download/0.16.5/libmad-0.16.5.tar.gz
+src-sha: f401b2ccf49c26ad0c3a6ef0179b1cbbff2406338b0603bb2033e6dcaf706114
 license: GPL-2.0-or-later
-dep-upp: libtool
-bsystem: autotools
-
-dopatch: run touch NEWS AUTHORS ChangeLog
-
-install: configure --disable-debugging --enable-fpm=64bit
-
-dotweak: |
-    writepc libmad <<EOF
-    prefix=\${pcfiledir}/../..
-    exec_prefix=\${prefix}
-    libdir=\${exec_prefix}/lib
-    includedir=\${prefix}/include
-
-    Name: libmad
-    Description: MPEG audio decoder
-    Version: $PACKAGE_VERSION
-    Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lmad
-    EOF
+install: cmakew -DEXAMPLE=OFF
