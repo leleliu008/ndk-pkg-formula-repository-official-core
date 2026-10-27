@@ -1,26 +1,34 @@
-summary: The ultimate library for managing PDF documents
-git-url: https://github.com/ArtifexSoftware/mupdf
-src-url: https://mupdf.com/downloads/archive/mupdf-1.26.0-source.tar.gz
-src-sha: d896f89eabfc5aaaabcdddc30f4592f6df33075640759292dd338d8e69e59c63
+summary: Lightweight PDF and XPS viewer
+git-url: git://git.ghostscript.com/mupdf.git
+web-url: https://mupdf.com/
+src-url: https://github.com/ArtifexSoftware/mupdf-downloads/releases/download/1.28.5/mupdf-1.28.5-source.tar.gz
+src-sha: 98a5c10cda20c3992cdf76ff6b2a1149c32bd79cc796d3f703230b1185b7e934
 license: AGPL-3.0-or-later
 dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs
+
+res-url: https://mujs.com/downloads/mujs-1.3.10.tar.gz
+res-sha: 6e36c15dbb84ff859320297c900852f241b131a7b6ddaea669ac9a65bd75571c
+res-dir: src/thirdparty/mujs
+
+xxflags: -std=c++14
 
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
-        [ "$item" = thirdparty/extract ] && continue
-        [ "$item" = thirdparty/lcms2 ]   && continue
+        [ "$item" = thirdparty/cmark-gfm ] && continue
+        [ "$item" = thirdparty/extract ]   && continue
+        [ "$item" = thirdparty/lcms2 ]     && continue
+        [ "$item" = thirdparty/mujs ]      && continue
         run rm -rf "$item"
     done
 
-    rm pyproject.toml
-    rm setup.py
-    gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
+    gsed -i 's|HAVE_OBJCOPY := yes|HAVE_OBJCOPY := no|g' Makerules
+    gsed -i 's|USE_ARGUMENT_FILE=yes|USE_ARGUMENT_FILE=no|' Makefile
 
 prepare: |
     unset GMAKE_EXTRA_ARGS
 
-    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
+    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz TESSERACT:tesseract LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
     do
         K="${KV%:*}"
         V="${KV#*:}"
@@ -28,7 +36,7 @@ prepare: |
         A="$(pkg-config --cflags "$V")"
         B="$(pkg-config --libs   "$V")"
 
-        GMAKE_EXTRA_ARGS="$GMAKE_EXTRA_ARGS SYS_${K}_CFLAGS='$A' SYS_${K}_LIBS='$B'"
+        GMAKE_EXTRA_ARGS="$GMAKE_EXTRA_ARGS HAVE_SYS_${K}=yes SYS_${K}_CFLAGS='$A' SYS_${K}_LIBS='$B'"
     done
 
 install: |
@@ -45,6 +53,9 @@ install: |
         AR=$AR \
         RANLIB=$RANLIB \
         XCFLAGS="'$CFLAGS $CPPFLAGS'" \
+        XCXXFLAGS="'$CXXFLAGS $CPPFLAGS'" \
         USE_SYSTEM_LIBS=yes \
-        USE_SYSTEM_MUJS=yes \
+        USE_SYSTEM_MUJS=no \
+        USE_SYSTEM_LEPTONICA=yes \
+        USE_SYSTEM_TESSERACT=yes \
         $GMAKE_EXTRA_ARGS
