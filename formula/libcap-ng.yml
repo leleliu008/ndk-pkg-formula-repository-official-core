@@ -1,7 +1,7 @@
 summary: Library making programming with POSIX capabilities easier than traditional libcap
 web-url: https://people.redhat.com/sgrubb/libcap-ng
-src-url: https://github.com/stevegrubb/libcap-ng/archive/refs/tags/v0.8.5.tar.gz
-src-sha: e4be07fdd234f10b866433f224d183626003c65634ed0552b02e654a380244c2
+src-url: https://github.com/stevegrubb/libcap-ng/archive/refs/tags/v0.9.6.tar.gz
+src-sha: 399040138e0ca62fa2bcabd63da9af4431a246ef7a654561a0ca3cb00010a539
 license: LGPL-2.1-or-later
 dep-upp: libtool
 bsystem: autogen
@@ -13,5 +13,6 @@ install: |
         --without-python \
         --without-python3
 
-# stdio_ext.h: int __fsetlocking(FILE* __fp, int __type) __INTRODUCED_IN(23);
-api-min: 23
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24
