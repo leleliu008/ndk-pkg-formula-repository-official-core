@@ -88,7 +88,7 @@ jobs:
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
 
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
 
       - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
@@ -141,7 +141,7 @@ jobs:
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
 
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
 
       - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
@@ -192,7 +192,7 @@ jobs:
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
 
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
 
       - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
