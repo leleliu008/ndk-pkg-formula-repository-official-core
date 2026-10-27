@@ -23,3 +23,6 @@ install: |
         -DCMAKE_USE_SYSTEM_LIBRHASH=ON \
         -DCMAKE_USE_SYSTEM_LIBUV=ON \
         -DCMAKE_USE_SYSTEM_ZLIB=ON
+
+# keep in sync with libuv
+api-min: 24
