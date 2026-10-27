@@ -7,4 +7,4 @@ dep-pkg: libmad libpcre libltdl libflac libvorbis libid3tag
 
 install: configure --disable-cutter
 
-dotweak: gsed -i '/^Requires/s|$| libmad libpcre libltdl flac vorbis id3tag|' lib/pkgconfig/libmp3splt.pc
+dotweak: gsed -i '/^Requires/s|$| libpcre libltdl mad flac vorbis id3tag|' lib/pkgconfig/libmp3splt.pc
