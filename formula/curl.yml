@@ -1,6 +1,5 @@
 summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
-web-url: https://curl.se/
 src-url: https://curl.se/download/curl-8.23.0.tar.bz2
 src-sha: 95b22eb32bf6d1fa6e3e9463bdb61cece3efc56d86576a9b3cbd428246a6d854
 license: curl

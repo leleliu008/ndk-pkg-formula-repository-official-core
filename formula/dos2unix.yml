@@ -1,5 +1,4 @@
 summary: Convert text between DOS, UNIX, and Mac formats
-web-url: https://waterlander.net/dos2unix/
 src-url: https://waterlander.net/dos2unix/files/dos2unix-7.5.7.tar.gz
 src-sha: 669ee27120ae71589f638fe3a167d6ea54f8633f5ab1b282551bd7a7c9510dfa
 license: BSD-2-Clause

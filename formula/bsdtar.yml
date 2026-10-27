@@ -1,6 +1,5 @@
 summary: BSD tar
 git-url: https://github.com/libarchive/libarchive
-web-url: https://www.libarchive.org/
 src-url: https://www.libarchive.org/downloads/libarchive-3.8.10.tar.xz
 src-sha: 56cad765459d5ee25a3b761f90c47d99379d28297fbfb72d908880d6b875fb96
 license: BSD-2-Clause

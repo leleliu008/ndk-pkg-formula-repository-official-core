@@ -1,6 +1,5 @@
 summary: A command-line tool to analyze packet(TCP/IP)
 git-url: https://github.com/the-tcpdump-group/tcpdump
-web-url: https://www.tcpdump.org/
 src-url: https://www.tcpdump.org/release/tcpdump-4.99.7.tar.gz
 src-sha: 8be364e28d3b745ef1459b385cd2f4bc0e1ebad7a5d2ebdf70071d6c9b5b9a54
 license: BSD-3-Clause

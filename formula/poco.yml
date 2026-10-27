@@ -1,7 +1,6 @@
 pkgtype: exe+lib
 summary: C++ class libraries for building network and internet-based applications
 git-url: https://github.com/pocoproject/poco
-web-url: https://pocoproject.org/
 src-url: https://pocoproject.org/releases/poco-1.15.4/poco-1.15.4-all.tar.bz2
 src-sha: d92e9e6711957a6b4415d4ffe0df5470b229bfa123334865c3b6a065030cd3a8
 license: BSL-1.0

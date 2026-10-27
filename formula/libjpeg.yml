@@ -1,7 +1,6 @@
 summary: Image manipulation library
-web-url: https://www.ijg.org/
-version: 10
 src-url: https://www.ijg.org/files/jpegsrc.v10.tar.gz
 src-sha: 8b9eaa13242690ebd03e1728ab1edf97a81a78ed6e83624d493655f31ac95ab5
+version: 10
 license: IJG
 bsystem: configure

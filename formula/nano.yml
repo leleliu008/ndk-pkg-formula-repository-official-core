@@ -1,6 +1,5 @@
 summary: Free (GNU) replacement for the Pico text editor
 git-url: https://git.savannah.gnu.org/git/nano.git
-web-url: https://www.nano-editor.org/
 src-url: https://www.nano-editor.org/dist/v9/nano-9.3.tar.xz
 src-sha: a9affc52c9596ee0682bcdd4ceb3c0b235eb221d83d733dfd9b0dff45897cb0d
 license: GPL-3.0-or-later
