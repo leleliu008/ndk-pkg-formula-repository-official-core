@@ -1,18 +1,12 @@
 summary: Modern Linker
-src-url: https://github.com/rui314/mold/archive/refs/tags/v2.32.0.tar.gz
-src-sha: 4b7e4146ea0f52be9adae8b417399f3676a041e65b55e3f25f088120d30a320b
-license: AGPL-3.0-only
+src-url: https://github.com/rui314/mold/archive/refs/tags/v3.0.0.tar.gz
+src-sha: 1dee837e227b0c3f2661def602ef8ddc0b889ae5b1d28c1ddec5f29e08e5ceb5
+license: MIT
 dep-pkg: libz
 
 install: |
-    cmakew \
-        -DMOLD_LTO=OFF \
-        -DMOLD_USE_ASAN=OFF \
-        -DMOLD_USE_TSAN=OFF \
-        -DMOLD_USE_MIMALLOC=ON \
-        -DMOLD_MOSTLY_STATIC=OFF \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DCMAKE_SKIP_INSTALL_RULES=OFF
+    cargow install --path cli
+    install_mans docs/mold.1
 
 #bits/lockf.h:61:int lockf(int __fd, int __cmd, off_t __length) __RENAME_IF_FILE_OFFSET64(lockf64) __INTRODUCED_IN(24);
 api-min: 24
