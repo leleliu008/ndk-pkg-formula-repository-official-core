@@ -1,6 +1,6 @@
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
-web-uri: https://chromium.googlesource.com/v8/v8
+git-url: https://chromium.googlesource.com/v8/v8
 git-uri: https://github.com/v8/v8
 git-tag: 12.7.224.16
 license: BSD-3-Clause
