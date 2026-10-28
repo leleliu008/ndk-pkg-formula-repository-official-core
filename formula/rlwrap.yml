@@ -1,7 +1,10 @@
 summary: Readline wrapper, adds readline support to tools that lack it
-src-url: https://github.com/hanslub42/rlwrap/archive/refs/tags/0.46.1.tar.gz
-src-sha: c537e8a53df36f1f996601d776203478ad56fab1d67b3c1a63057badb0851cec
+src-url: https://github.com/hanslub42/rlwrap/archive/refs/tags/v0.48.tar.gz
+src-sha: b2721b1c0147aaafc98e6a31d875316ba032ad336bec7f2a8bc538f9e3c6db60
 license: GPL-2.0-or-later
 dep-pkg: libreadline
 bsystem: autotools
+install: configure --without-libptytty
 binbstd: 1
+
+dopatch: gsed -i '/sys\/stropts.h/d' src/ptytty.c
