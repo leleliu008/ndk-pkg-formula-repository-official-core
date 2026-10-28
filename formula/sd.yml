@@ -1,5 +1,5 @@
 summary: Intuitive find & replace CLI
-src-url: https://github.com/chmln/sd/archive/v1.0.0.tar.gz
-src-sha: 2adc1dec0d2c63cbffa94204b212926f2735a59753494fca72c3cfe4001d472f
+src-url: https://github.com/chmln/sd/archive/refs/tags/v1.1.0.tar.gz
+src-sha: defdce484f8c92f265e1282490572575028967c2c55d356111d1e49a3ea9a88e
 license: MIT
-bsystem: cargo
+install: cargow install --path sd-cli
