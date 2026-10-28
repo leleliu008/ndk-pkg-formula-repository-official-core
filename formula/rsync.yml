@@ -1,11 +1,8 @@
-summary: Utility that provides fast incremental file transfer
-git-url: https://github.com/RsyncProject/rsync
-src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.1.tar.gz
-src-sha: 2924bcb3a1ed8b551fc101f740b9f0fe0a202b115027647cf69850d65fd88c52
+summary: A command-line tool for synchronizing files
+web-url: https://rsync.samba.org/
+src-url: https://github.com/RsyncProject/rsync/releases/download/v3.5.1/rsync-3.5.1.tar.gz
+src-sha: c55f9c9dc10fb8bec397b399a0fdded53cc9a2d8e30891bb0d63724d25c37bef
 license: GPL-3.0-or-later
-dep-pkg: libopenssl libpopt libz liblz4 libzstd libxxhash libiconv libglob
-install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no LIBS=-ldl
-
-fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.4.1.tar.gz
-fix-sha: f56566e74cfa0f68337f7957d8681929f9ac4c55d3fb92aec0d743db590c9a88
-dopatch: patch -p1 < ../fix/patches/fileflags.diff
+dep-pkg: libopenssl libidn2 libpopt libz liblz4 libzstd libxxhash libglob
+dep-lib: libidn2
+install: configure --disable-simd --enable-ipv6 --with-rrsync=yes --with-included-popt=no --with-included-zlib=no LIBS=-ldl
