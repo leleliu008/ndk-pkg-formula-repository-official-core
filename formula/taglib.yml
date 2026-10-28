@@ -1,7 +1,7 @@
 summary: A library for reading and editing the metadata of several popular audio formats
 web-url: https://taglib.org/
-src-url: https://github.com/taglib/taglib/archive/refs/tags/v1.13.1.tar.gz
-src-sha: c8da2b10f1bfec2cd7dbfcd33f4a2338db0765d851a50583d410bacf055cfd0b
+src-url: https://github.com/taglib/taglib/archive/refs/tags/v2.3.2.tar.gz
+src-sha: cda2d6dac7f12a84e46fbb0907bb1a1ec0679e4722b5237576be5563e295244e
 license: LGPL-2.1-or-later
-dep-pkg: libz
+dep-pkg: libz utf8cpp
 install: cmakew 2 -DWITH_MP4=ON -DWITH_ASF=ON
