@@ -1,21 +1,20 @@
 summary: A free library for encoding video streams into the H.264/MPEG-4 AVC compression format
 web-url: https://www.videolan.org/developers/x264.html
 git-url: https://code.videolan.org/videolan/x264
-git-sha: 31e19f92f00c7003fa115047ce50978bc98c3a0d
-version: r3108
+git-sha: b35605ace3ddf7c1a5d67a2eb553f034aef41d55
+version: 3222
 license: GPL-2.0-or-later
 
 dopatch: |
     gsed -i '1c #!/usr/bin/env bash' configure
 
-    if [ "$TARGET_PLATFORM_VERS" -lt 24 ] ; then
-        gsed -i 's|fseeko|fseekoxxxxxxxxxx|g' configure
-    fi
+prepare: |
+    export AS="$CC"
 
 install: |
     configure \
-        --disable-asm \
         --disable-cli \
         --enable-pic \
         --enable-lto \
+        --enable-asm \
         --enable-strip
