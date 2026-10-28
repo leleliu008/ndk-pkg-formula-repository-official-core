@@ -1,6 +1,11 @@
 summary: Monitor data progress through a pipe
 web-url: https://www.ivarch.com/programs/pv.shtml
-src-url: https://www.ivarch.com/programs/sources/pv-1.8.10.tar.gz
-src-sha: d4c90c17cfcd44aa96b98237731e4f811e071d4c2052a689d2d81e6671f571b1
+src-url: https://www.ivarch.com/programs/sources/pv-1.12.0.tar.gz
+src-sha: 31fdbdb449c7143cd2968567bef7599e9f031950e6158ee7bb76e40aebf6ffb8
 license: Artistic-2.0
-install: configure --disable-nls
+dep-pkg: libncurses
+install: configure --disable-nls --disable-static
+
+# sys/shm.h : int shmctl(int __shm_id, int __op, struct shmid_ds* _Nullable __buf) __INTRODUCED_IN(26);
+# unistd.h : ssize_t copy_file_range(int __fd_in, off64_t* _Nullable __off_in, int __fd_out, off64_t* _Nullable __off_out, size_t __length, unsigned int __flags) __INTRODUCED_IN(34);
+api-min: 34
