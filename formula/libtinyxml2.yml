@@ -1,6 +1,8 @@
 summary: A simple, small, efficient, C++ XML parser library
-web-url: http://grinninglizard.com/tinyxml2
+web-url: https://leethomason.github.io/tinyxml2/
 src-url: https://github.com/leethomason/tinyxml2/archive/refs/tags/11.0.0.tar.gz
 src-sha: 5556deb5081fb246ee92afae73efd943c889cef0cafea92b0b82422d6a18f289
 license: Zlib
-bsystem: cmake
+install: |
+    cmakew -Dtinyxml2_SHARED_LIBS=OFF
+    cmakew -Dtinyxml2_SHARED_LIBS=ON
