@@ -1,25 +1,11 @@
 summary: A set of command line tools to transform, query, validate, and edit XML documents and files
-web-url: https://xmlstar.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
-src-sha: 15d838c4f3375332fd95554619179b69e4ec91418a3a5296e7c631b7ed19e7ca
+web-url: https://xmlstarlet.github.io/
+src-url: https://github.com/xmlstarlet/xmlstarlet/releases/download/1.7.0/xmlstarlet-1.7.0.tar.gz
+src-sha: df4c93458fc6b2ad144d65dccf3ef251349871e0578c5bc59edbfeecf9bf3454
 license: MIT
+dep-upp: xsltproc
 dep-pkg: libxslt
 dep-lib: libxml-2.0
-binbstd: 1
-ccflags: -Wno-incompatible-function-pointer-types
-
-fix-url: https://raw.githubusercontent.com/gentoo/gentoo/ea0797e1f96c7a0e17fc1af24131a0e0c923d08a/app-text/xmlstarlet/files/xmlstarlet-1.6.1-libxml2-2.14.0-compile.patch
-fix-sha: 5d2f35d16447e5d4258110a6e83f788ae52c9dc6b3b20eee84977626105dce1e
-
-dopatch: |
-    gsed -i 's|xmlErrorPtr error|const xmlError * error|'  src/xml.c src/xmlstar.h
-    gsed -i 's|xmlChar \*\*array;|const xmlChar **array;|' src/xml_elem.c
-    gsed -i 's|xmlChar \*name)|const xmlChar *name)|'      src/xml_elem.c
-    gsed -i '/AM_LDFLAGS=/d' configure
-
-install: |
-    configure \
-        --with-libxml-prefix="$libxml2_INSTALL_DIR" \
-        --with-libxslt-prefix="$libxslt_INSTALL_DIR"
+bsystem: configure
 
 dotweak: ln -s xml bin/xmlstarlet
