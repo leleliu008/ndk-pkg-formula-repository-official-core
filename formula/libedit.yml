@@ -1,8 +1,12 @@
 summary: BSD-style licensed readline alternative
 web-url: https://thrysoee.dk/editline
-src-url: https://thrysoee.dk/editline/libedit-20210910-3.1.tar.gz
-src-sha: 6792a6a992050762edcca28ff3318cdb7de37dccf7bc30db59fcd7017eed13c5
+src-url: https://thrysoee.dk/editline/libedit-20260512-3.1.tar.gz
+src-sha: 432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0
 license: BSD-3-Clause
 dep-pkg: libncurses
 ppflags: -D__STDC_ISO_10646__=201103L -DNBBY=CHAR_BIT
+
 install: configure --disable-examples
+
+# void endpwent(void) __INTRODUCED_IN(26);
+api-min: 26
