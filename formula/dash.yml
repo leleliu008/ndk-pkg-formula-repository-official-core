@@ -1,11 +1,13 @@
 summary: A POSIX-compliant implementation of /bin/sh that aims to be as small as possible
 git-url: https://git.kernel.org/pub/scm/utils/dash/dash
 web-url: http://gondor.apana.org.au/~herbert/dash
-src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz
-src-uri: https://ftp.openbsd.org/pub/OpenBSD/distfiles/dash-0.5.12.tar.gz
-src-sha: 6a474ac46e8b0b32916c4c60df694c82058d3297d8b385b74508030ca4a8f28a
+src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.5.tar.gz
+src-uri: https://ftp.openbsd.org/pub/OpenBSD/distfiles/dash-0.5.13.5.tar.gz
+src-sha: 40090101a2a491f13e901d3d48e90414f26634628b9bfff35ff540363c227a7d
 license: BSD-3-Clause
 dep-pkg: libedit libglob libstrchrnul
+
+dopatch: gsed -i '/waitpid/s|, NULL||' src/jobs.c
 
 install: |
     configure \
@@ -13,6 +15,7 @@ install: |
         --enable-test-workaround=no \
         --enable-fnmatch \
         --enable-lineno \
-        --enable-glob
+        --enable-glob \
+        --disable-static
 
 api-min: 26
