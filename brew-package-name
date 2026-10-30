@@ -51,6 +51,7 @@ case $1 in
     jackaudio)printf '%s\n' 'jack'      ;;
     proto-cli)printf '%s\n' 'proto'     ;;
     mediainfo)printf '%s\n' 'media-info';;
+    pcre2grep)printf '%s\n' 'pcre2'     ;;
     anchor-cli)
               printf '%s\n' 'anchor'    ;;
 
@@ -79,10 +80,10 @@ case $1 in
 
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
+    iconv)    printf '%s\n' 'libiconv'  ;;
     sndfile)  printf '%s\n' 'libsndfile' ;;
     nghttp3)  printf '%s\n' 'libnghttp3' ;;
     ngtcp2)   printf '%s\n' 'libngtcp2'  ;;
-    pcre2grep)printf '%s\n' 'pcre2'     ;;
 
     llvm+*@18)printf '%s\n' 'llvm@18'    ;;
     llvm+*@19)printf '%s\n' 'llvm@19'    ;;
