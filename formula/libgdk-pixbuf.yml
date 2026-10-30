@@ -1,24 +1,33 @@
 summary: library for image loading and pixel buffer manipulation
 web-url: https://gtk.org/
-src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz
-src-sha: b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
+src-url: https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.8.tar.xz
+src-sha: 919f529512961a12e81cd4b4b466a48c3933469e7f9a310c6513cd4fb252ba3c
 license: LGPL-2.1-or-later
 dep-pkg: glib libjpeg-turbo libpng libgif libtiff
 dep-upp: glib-tools
 
+prepare: |
+    if [ "$TARGET_PLATFORM_VERS" -ge 31 ] ; then
+        ANDROID_XXABLED=en
+    else
+        ANDROID_XXABLED=dis
+    fi
+
 install: |
     mesonw \
+        -Dandroid=${ANDROID_XXABLED}abled \
         -Drelocatable=false \
         -Dnative_windows_loaders=false \
+        -Dgio_sniffing=false \
         -Dinstalled_tests=false \
-        -Dgtk_doc=false \
-        -Dman=false \
         -Dtests=false \
+        -Ddocumentation=false \
+        -Dman=false \
         -Dgif=enabled \
         -Dpng=enabled \
         -Djpeg=enabled \
         -Dtiff=enabled \
-        -Dothers=disabled \
+        -Dothers=enabled \
         -Dintrospection=disabled \
         -Dbuiltin_loaders=all
 
