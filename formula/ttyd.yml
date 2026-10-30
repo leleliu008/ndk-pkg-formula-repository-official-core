@@ -7,5 +7,5 @@ dep-pkg: libjson-c libwebsockets
 bsystem: cmake
 dopatch: gsed -i '/LINK_LIBS util/d' CMakeLists.txt
 
-# int forkpty(int* _Nonnull __master_fd, char* _Nullable __slave_name, const struct termios* _Nullable __termios_ptr, const struct winsize* _Nullable __winsize_ptr) __INTRODUCED_IN(23);
-api-min: 23
+# keep sync in with libwebsockets
+api-min: 24
