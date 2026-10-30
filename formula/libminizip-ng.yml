@@ -13,4 +13,5 @@ install: |
         -DMZ_ZSTD=ON \
         -DMZ_LZMA=ON \
         -DMZ_ZLIB=ON \
+        -DMZ_PPMD=OFF \
         -DMZ_OPENSSL=OFF
