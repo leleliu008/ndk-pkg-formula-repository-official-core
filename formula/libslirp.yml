@@ -1,7 +1,7 @@
 summary: A general purpose TCP-IP emulator used by virtual machine hypervisors to provide virtual networking services
 git-url: https://gitlab.freedesktop.org/slirp/libslirp
-src-url: https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.6/libslirp-v4.9.6.tar.gz
-src-sha: 5bb4d30fd74042c23b4a0475f44d974a8e41dfdcf005476f03754bebc756b760
+src-url: https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.7/libslirp-v4.9.7.tar.gz
+src-sha: d2567fa06a6357c7755d61c67293b2c0bf069b3f2173bde6b76cf768529a1938
 license: BSD-3-Clause
 dep-pkg: glib
 bsystem: meson
