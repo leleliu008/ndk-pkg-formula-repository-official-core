@@ -1,21 +1,24 @@
 summary: A flexible, lightweight pure C library for implementing modern network protocols easily with a tiny footprint, using a nonblocking event loop
-web-url: https://libwebsockets.org
-src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.3.tar.gz
-src-sha: 6fd33527b410a37ebc91bb64ca51bdabab12b076bc99d153d7c5dd405e4bdf90
+web-url: https://libwebsockets.org/
+src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v5.0.0.tar.gz
+src-sha: f853c6582101cfcee3a5a9e28ae92ab19d9735c5f31f0bb2e9794b5106123962
 license: MIT
 dep-pkg: libz libuv libevent
-ccflags: -Wno-unused-but-set-variable
-dopatch: gsed -i 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
+
 install: |
     cmakew \
-        -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \
+        -DDISABLE_WERROR=ON \
         -DLWS_IPV6=ON \
         -DLWS_UNIX_SOCK=ON \
         -DLWS_WITH_HTTP2=ON \
+        -DLWS_WITH_HTTP3=OFF \
         -DLWS_WITH_LIBUV=ON \
-        -DLWS_WITH_MBEDTLS=OFF \
         -DLWS_WITH_LIBEVENT=ON \
-        -DLWS_WITH_PLUGINS=ON \
+        -DLWS_WITH_MBEDTLS=OFF \
+        -DLWS_WITH_PLUGINS=OFF \
         -DLWS_WITHOUT_TESTAPPS=ON \
         -DLWS_OPENSSL_SUPPORT=ON \
         -DLWS_BUILD_HASH=no_hash
+
+# keep in sync with libuv
+api-min: 24
