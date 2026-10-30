@@ -5,7 +5,6 @@ src-url: https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.4.tar.bz2
 src-sha: d77f68f48879510e79a2f65977ccc68981781ea0923e5bdffac2a193ea3d660e
 license: LGPL-2.1-or-later
 dep-pkg: libgpg-error
-ldflags: -Wl,--undefined-version
 
 prepare: |
     case $TARGET_PLATFORM_ARCH in
