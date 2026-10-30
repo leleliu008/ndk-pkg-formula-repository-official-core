@@ -1,10 +1,10 @@
 pkgtype: lib
 summary: A modern, open source, high-performance remote procedure call (RPC) framework
-web-url: https://grpc.io
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.78.1.tar.gz
-src-sha: 961a44a2a5a50670e58f5e887c17fe70529253da23802245326d681f6d8d1ba6
+web-url: https://grpc.io/
+git-url: https://github.com/grpc/grpc
+git-tag: v1.85.1
 license: Apache-2.0
-dep-pkg: abseil libopenssl re2 libprotobuf libcares
+dep-pkg: abseil libprotobuf libopenssl libcares libre2
 dep-upp: grpc-plugins
 
 install: |
@@ -17,8 +17,6 @@ install: |
         -DgRPC_SSL_PROVIDER=package \
         -DgRPC_ZLIB_PROVIDER=package \
         -DgRPC_RE2_PROVIDER=package \
-        -DgRPC_INSTALL=ON \
-        -DgRPC_BUILD_TESTS=OFF \
         -DgRPC_BUILD_GRPC_CPP_PLUGIN=ON \
         -DgRPC_BUILD_GRPC_PHP_PLUGIN=OFF \
         -DgRPC_BUILD_GRPC_NODE_PLUGIN=OFF \
@@ -26,4 +24,6 @@ install: |
         -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=OFF \
         -DgRPC_BUILD_GRPC_CSHARP_PLUGIN=OFF \
         -DgRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN=OFF \
+        -DgRPC_BUILD_TESTS=OFF \
+        -DgRPC_INSTALL=ON \
         -DBUILD_SHARED_LIBS=OFF
