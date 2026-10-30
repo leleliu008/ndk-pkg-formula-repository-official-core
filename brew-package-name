@@ -109,6 +109,7 @@ case $1 in
             librtmp)  printf '%s\n' 'rtmpdump'  ;;
             liblzma)  printf '%s\n' 'xz'        ;;
             libjpeg)  printf '%s\n' 'jpeg'      ;;
+            libwget)  printf '%s\n' 'wget2'     ;;
             libltdl)  printf '%s\n' 'libtool'   ;;
             libuuid)  printf '%s\n' 'util-linux';;
             libonig)  printf '%s\n' 'oniguruma' ;;
