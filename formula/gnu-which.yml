@@ -1,8 +1,13 @@
 summary: GNU implementation of which utility
-src-url: https://ftp.gnu.org/gnu/which/which-2.21.tar.gz
-src-sha: f4a245b94124b377d8b49646bf421f9155d36aa7614b6ebf83705d3ffc76eaad
+src-url: https://ftp.gnu.org/gnu/which/which-2.25.tar.gz
+src-sha: 1cb83e4f702e60b8211ab5ec4c2afbab1b1dec80209456a7d2faf7584ed225ea
 license: GPL-3.0-or-later
-install: configure --disable-iberty
+
+dopatch: gsed -i 's|ifdef __GNU_LIBRARY__|if 1|' getopt.h
+
+install: configure --program-prefix=g
+
+dotweak: ln -s gwhich bin/which
 
 # void endgrent(void) __INTRODUCED_IN(26);
 api-min: 26
