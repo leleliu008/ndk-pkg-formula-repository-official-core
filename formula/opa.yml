@@ -1,6 +1,6 @@
 summary: Open source, general-purpose policy engine
 web-url: https://www.openpolicyagent.org
-src-url: https://github.com/open-policy-agent/opa/archive/refs/tags/v1.21.4.tar.gz
-src-sha: 3cd7c22a0295a463dbef376c50a952e5b5d6c1d50b36535c6bcafd73167a2082
+src-url: https://github.com/open-policy-agent/opa/archive/refs/tags/v1.22.0.tar.gz
+src-sha: dff7a0948e650a9ff6425e7be123437c666dda6c8090e4829602e2d002d966b0
 license: Apache-2.0
 install: gow -X github.com/open-policy-agent/opa/version.Version="$PACKAGE_VERSION"
