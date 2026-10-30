@@ -142,6 +142,8 @@ case $1 in
                       printf '%s\n' 'icu4c@75'  ;;
             libtiff.a)
                       printf '%s\n' 'libtiff'   ;;
+            libtcmalloc)
+                      printf '%s\n' 'gperftools' ;;
             libmill|libsdl2)
                       printf '%s\n' 'null' ;;
         esac
