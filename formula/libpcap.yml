@@ -1,21 +1,18 @@
 summary: Packet(TCP/IP) Capture library
 git-url: https://github.com/the-tcpdump-group/libpcap
-src-url: https://www.tcpdump.org/release/libpcap-1.10.4.tar.gz
-src-sha: ed19a0383fad72e3ad435fd239d7cd80d64916b87269550159d20e47160ebe5f
+src-url: https://www.tcpdump.org/release/libpcap-1.11.0.tar.gz
+src-sha: 596389bc8560ea027dff9db8aaf6c173d992366d9aef4baf5d7c6d180b4d49ad
 license: BSD-3-Clause
 dep-upp: gm4 flex bison
 dep-pkg: libopenssl
 
 install: |
     cmakew \
-        -DINET6=ON \
-        -DENABLE_REMOTE=ON \
+        -DPCAP_TYPE=linux \
+        -DENABLE_REMOTE=OFF \
         -DBDEBUG=OFF \
-        -DDISABLE_USB=OFF \
-        -DDISABLE_SEPTEL=OFF \
         -DDISABLE_NETMAP=OFF \
         -DDISABLE_DBUS=OFF \
         -DDISABLE_BLUETOOTH=OFF \
         -DDISABLE_DAG=ON \
-        -DDISABLE_TC=ON \
         -DDISABLE_SNF=ON
