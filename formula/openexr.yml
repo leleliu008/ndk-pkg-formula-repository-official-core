@@ -1,16 +1,24 @@
 summary: High dynamic-range image file format
 web-url: https://www.openexr.com/
-src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.4.tar.gz
-src-sha: 81e6518f2c4656fdeaf18a018f135e96a96e7f66dbe1c1f05860dd94772176cc
+src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.2.tar.gz
+src-sha: 85a291b9b8563fabef1aa3f6e912d744ce1d4b9fd5a8f978eda194cd51b15ae9
 license: BSD-3-Clause
-dep-pkg: libImath libz libdeflate
+dep-pkg: libImath libz libzstd libdeflate libopenjph
 
-dopatch: gsed -i '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
+dopatch: |
+    # stdlib.h void* _Nullable aligned_alloc(size_t __alignment, size_t __size) __INTRODUCED_IN(28);
+    if [ "$TARGET_PLATFORM_VERS" -lt 28 ] ; then
+        gsed -i '/aligned_alloc/c void * p = NULL; posix_memalign (&p, 64, aligned_size); tls->shuffle_buf = (uint8_t*) p;' src/lib/OpenEXRCore/internal_zstd.c
+    fi
+
+    gsed -i '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
 
 install: |
     cmakew \
         -DDOCS=OFF \
         -DOPENEXR_INSTALL=ON \
+        -DOPENEXR_BUILD_TOOLS=ON \
+        -DOPENEXR_BUILD_EXAMPLES=ON \
         -DOPENEXR_INSTALL_TOOLS=ON \
         -DOPENEXR_INSTALL_EXAMPLES=ON \
         -DBUILD_SHARED_LIBS=OFF
