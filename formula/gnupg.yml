@@ -1,21 +1,16 @@
 summary: GNU Pretty Good Privacy (PGP) package
 git-url: https://dev.gnupg.org/source/gnupg
-src-url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.5.tar.bz2
-src-sha: f68f7d75d06cb1635c336d34d844af97436c3f64ea14bcb7c869782f96f44277
+src-url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.24.tar.bz2
+src-sha: bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039
 license: GPL-3.0-or-later
 dep-pkg: libreadline libgcrypt libassuan libksba libnpth libiconv libbz2 libz
 
+prepare: export ac_cv_path_GPGRT_CONFIG="$libgpg_error_INSTALL_DIR/bin/gpgrt-config"
+
 install: |
     configure \
+        --disable-doc \
         --disable-assert \
         --disable-gcc-warnings \
         --enable-threads=posix \
-        --with-included-regex \
-        --with-gpg-error-prefix=$libgpg_error_INSTALL_DIR \
-        --with-libgcrypt-prefix=$libgcrypt_INSTALL_DIR \
-        --with-libassuan-prefix=$libassuan_INSTALL_DIR \
-        --with-ksba-prefix=$libksba_INSTALL_DIR \
-        --with-npth-prefix=$libnpth_INSTALL_DIR \
-        --with-bzip2=$libbz2_INSTALL_DIR \
-        --with-readline=$libreadline_INSTALL_DIR \
-        --with-libiconv-prefix=$libincov_INSTALL_DIR LIBS=-lm
+        --with-included-regex
