@@ -1,5 +1,5 @@
 summary: A command-line tool that allows you to easily and securely send files from one computer to another
-src-url: https://github.com/schollz/croc/archive/refs/tags/v11.5.5.tar.gz
-src-sha: 1263e430cd62654438c9724072b7d5587e9930ca0e687d65b3dd8917ec0141df
+src-url: https://github.com/schollz/croc/archive/refs/tags/v11.6.0.tar.gz
+src-sha: dfb0101c1ca656b3ddc4d0fce922f5feb0b9395b301515d771f496f3e8e514fb
 license: MIT
 bsystem: go
