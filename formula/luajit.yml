@@ -1,8 +1,8 @@
 summary: Just-In-Time Compiler (JIT) for the Lua programming language
 web-url: https://luajit.org/
-src-url: https://github.com/LuaJIT/LuaJIT/archive/a4c064539ea931274d407e1249b4bb575424a0f4.tar.gz
-src-sha: 15625df3ebfbd1f76371005bffae39b84c65e718e57acc9a9c57863c7c101541
-version: 2.1.1792588164
+src-url: https://github.com/LuaJIT/LuaJIT/archive/ea9eb7edb5eac4a9d175d74523db34fac0fa5180.tar.gz
+src-sha: 338a5640be00b89fd0a2a027a7433fcbbb4d006be840d216d84151386b5bcdf7
+version: 2.1.1793383622
 license: MIT
 
 prepare: |
