@@ -3,6 +3,7 @@ src-url: https://github.com/protocolbuffers/protobuf/releases/download/v36.2/pro
 src-sha: 3d9642a662d10e68ebae5e53f14dcce5105684212d5078f8e0d47d1ab3ae6b64
 license: BSD-3-Clause
 dep-pkg: libz libjsoncpp abseil
+linkage: shared
 
 # used by other package. make sure protoc and libprotoc have the same version
 do12345: |
@@ -17,10 +18,10 @@ do12345: |
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
+        -DBUILD_SHARED_LIBS=OFF \
         -Dprotobuf_WITH_ZLIB=ON \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF \
-        -Dprotobuf_BUILD_SHARED_LIBS=OFF \
         -Dprotobuf_BUILD_PROTOC_BINARIES=ON \
         -Dprotobuf_BUILD_LIBPROTOC=ON \
         -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=ON \
