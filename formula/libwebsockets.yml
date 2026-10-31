@@ -1,7 +1,7 @@
 summary: A flexible, lightweight pure C library for implementing modern network protocols easily with a tiny footprint, using a nonblocking event loop
 web-url: https://libwebsockets.org/
-src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v5.0.0.tar.gz
-src-sha: f853c6582101cfcee3a5a9e28ae92ab19d9735c5f31f0bb2e9794b5106123962
+src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v5.1.0.tar.gz
+src-sha: 9acbba00aaa9e6178ae09c6f920d95449b527c1417e81d2cdd4103bc6d64d13f
 license: MIT
 dep-pkg: libz libuv libevent
 
