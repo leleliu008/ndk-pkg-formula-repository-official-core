@@ -7,6 +7,8 @@ dep-pkg: libprotobuf libopenssl libcares libre2
 dep-upp: grpc-plugins
 linkage: shared
 
+dopatch: gsed -i '/issuer = X509_CRL_get_issuer(crl)/c const auto * issuer = X509_CRL_get_issuer(crl)' src/core/credentials/transport/tls/grpc_tls_crl_provider.cc
+
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
