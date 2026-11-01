@@ -1,8 +1,6 @@
 summary: Fast port scanner
-src-url: https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.1.tar.gz
-src-sha: 48d69813363c0236cd3ee24ec71f96bd404e6f11ed09264d37172d9000d5ebb8
+src-url: https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.7.0.tar.gz
+src-sha: 6eee1b4b4c9b4b5eb19f175c2ac67e04babc6290f937b9c72fca0b1183e3fe47
 license: MIT
 dep-pkg: libpcap
-dep-lib: -lssl -lcrypto -ldl
-bscript: v2
 install: gow ./cmd/naabu
