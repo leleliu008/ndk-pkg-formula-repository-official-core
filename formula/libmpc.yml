@@ -1,8 +1,8 @@
 summary: C library for the arithmetic of high precision complex numbers
-web-url: http://www.multiprecision.org/mpc
+web-url: http://www.multiprecision.org/
 git-url: https://gitlab.inria.fr/mpc/mpc
-src-url: https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz
-src-sha: ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8
+src-url: https://ftp.gnu.org/gnu/mpc/mpc-1.4.1.tar.xz
+src-sha: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
 license: LGPL-3.0-or-later
 dep-pkg: libmpfr
 
@@ -12,3 +12,9 @@ install: |
         --with-mpfr="$libmpfr_INSTALL_DIR" \
         --disable-valgrind-tests \
         --disable-logging
+
+# complex.h :      double creal(double complex __z) __INTRODUCED_IN(23);
+# complex.h :      double cimag(double complex __z) __INTRODUCED_IN(23);
+# complex.h : long double creall(long double complex __z) __INTRODUCED_IN(23);
+# complex.h : long double cimagl(long double complex __z) __INTRODUCED_IN(23);
+api-min: 23
