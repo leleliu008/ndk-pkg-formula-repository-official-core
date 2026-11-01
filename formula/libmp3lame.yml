@@ -1,12 +1,11 @@
 summary: A high quality MPEG Audio Layer III (MP3) encoder
 web-url: https://lame.sourceforge.io
-src-url: https://downloads.sourceforge.net/sourceforge/lame/lame-3.100.tar.gz
-src-sha: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+src-url: https://downloads.sourceforge.net/project/lame/lame/4.0/lame-4.0.tar.gz
+src-sha: 3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb
 license: LGPL-2.0-or-later
+dep-pkg: libmpg123
 
-dopatch: |
-    gsed -i '/lame_init_old/d' include/libmp3lame.sym
-    gsed -i 's|-mtune=native||g' configure
+prepare: export ac_cv_prog_cc_c23=no
 
 install: |
     configure \
