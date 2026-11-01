@@ -1,7 +1,7 @@
 summary: Implementation of iCalendar protocols and data formats
 web-url: https://libical.github.io/libical
-src-url: https://github.com/libical/libical/releases/download/v3.0.19/libical-3.0.19.tar.gz
-src-sha: 6a1e7f0f50a399cbad826bcc286ce10d7151f3df7cc103f641de15160523c73f
+src-url: https://github.com/libical/libical/releases/download/v4.0.7/libical-4.0.7.tar.gz
+src-sha: 47c05bc96e41416578cf1803bb2ba3f8d292cb17d5ac2fca539dee922bae8a94
 license: LGPL-2.1-or-later
 dep-pkg: libicu libxml2
 dep-upp: perl
@@ -11,18 +11,14 @@ prepare: export ICU_ROOT="$libicu_INSTALL_DIR"
 # https://github.com/libical/libical/wiki/For-the-Users:-Cross-compiling
 install: |
     cmakew \
-        -DTARGET_DUMPER=OFF \
-        -DADDRESS_SANITIZER=OFF \
-        -DENABLE_GTK_DOC=OFF \
-        -DGOBJECT_INTROSPECTION=OFF \
-        -DICAL_ALLOW_EMPTY_PROPERTIES=OFF \
-        -DICAL_BUILD_DOCS=OFF \
-        -DICAL_ERRORS_ARE_FATAL=OFF \
-        -DICAL_GLIB=OFF \
-        -DICAL_GLIB_VAPI=OFF \
+        -DLIBICAL_STATIC=ON \
+        -DLIBICAL_GLIB=OFF \
+        -DLIBICAL_GLIB_VAPI=OFF \
+        -DLIBICAL_GLIB_BUILD_DOCS=OFF \
+        -DLIBICAL_CXX_BINDINGS=ON \
+        -DLIBICAL_JAVA_BINDINGS=OFF \
+        -DLIBICAL_BUILD_DOCS=OFF \
         -DLIBICAL_BUILD_TESTING=OFF \
-        -DSHARED_ONLY=OFF \
-        -DSTATIC_ONLY=OFF \
-        -DTHREAD_SANITIZER=OFF \
-        -DUSE_BUILTIN_TZDATA=OFF \
-        -DWITH_CXX_BINDINGS=ON
+        -DLIBICAL_BUILD_EXAMPLES=OFF \
+        -DLIBICAL_ENABLE_BUILTIN_TZDATA=OFF \
+        -DLIBICAL_GOBJECT_INTROSPECTION=OFF
