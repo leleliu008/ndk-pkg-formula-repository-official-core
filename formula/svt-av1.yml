@@ -4,6 +4,6 @@ src-sha: 512f2ea5649e3e76c2dddcc25c2556fb67a9582baaab207c9c96161c94659dad
 license: BSD-3-Clause
 dep-upp: yasm
 
-prepare: export PATH="$ANDROID_NDK_TOOLCHAIN_BIND:$PATH"
+dopatch: gsed -i '/ AND UNIX AND NOT APPLE/s|APPLE|ANDROID|' CMakeLists.txt
 
 install: cmakew -DBUILD_APPS=ON -DBUILD_SHARED_LIBS=OFF --components=Runtime
