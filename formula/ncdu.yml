@@ -1,7 +1,7 @@
 summary: A disk usage analyzer with an ncurses interface
 web-url: https://dev.yorhel.nl/ncdu
-src-url: https://dev.yorhel.nl/download/ncdu-1.16.tar.gz
-src-sha: 2b915752a183fae014b5e5b1f0a135b4b408de7488c716e325217c2513980fd4
+src-url: https://github.com/BratishkaErik/ncdu/releases/download/v1.23.0/ncdu-1.23.0-src.tar.gz
+src-sha: 2eccb4ce6c4e08d9539155789ff7341fdbde67bd746e9f523d5d3095cd872804
 license: MIT
 dep-pkg: libncurses
-bsystem: configure
+bsystem: autotools
