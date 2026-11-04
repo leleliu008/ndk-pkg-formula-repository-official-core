@@ -1,5 +1,5 @@
 summary: A GitLab CLI tool bringing GitLab to your command line
-src-url: https://gitlab.com/gitlab-org/cli/-/archive/v1.127.0/cli-v1.127.0.tar.gz
-src-sha: ef260f93139007aeea017a7059c76b96d4963cc702ce344315d3a2d46c540874
+src-url: https://gitlab.com/gitlab-org/cli/-/archive/v1.128.0/cli-v1.128.0.tar.gz
+src-sha: d6cfdecd3e85add205fa6dea20fb61956aecab9dd1bc68b62994c0f54b127399
 license: MIT
 install: gow -X main.debugMode=false ./cmd/glab
