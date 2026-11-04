@@ -1,21 +1,6 @@
 summary: A reliable, high-performance, thread-safe, flexible, clear-model logging library written in pure C
-src-url: https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.17.tar.gz
-src-sha: 7fe412130abbb75a0779df89ae407db5d8f594435cc4ff6b068d924e13fd5c68
-license: LGPL-2.1-or-later
+src-url: https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.20.tar.gz
+src-sha: 432723ccd9a5b07ec1e4b8cc985d9011d768633b1e4c4facfc0e3e9a7ad5fcf7
+license: Apache-2.0
 dep-pkg: libglob
-bscript: src
-
-dopatch: gsed -i '/cp -f/d' makefile
-
-install: |
-    gmakew clean
-    gmakew all \
-        CC="$CC" \
-        REAL_CFLAGS="'$CPPFLAGS $CFLAGS'" \
-        REAL_LDFLAGS="'$LDFLAGS'" \
-        DYLIB_MINOR_NAME=libzlog.so \
-        DYLIB_MAJOR_NAME=libzlog.so \
-        STLIB_MAKE_CMD="'$AR rcs libzlog.a'"
-    install_libs libzlog.a libzlog.so
-    install_incs zlog.h
-    install_bins zlog-chk-conf
+install: cmakew -DZLOG_WERROR=OFF
