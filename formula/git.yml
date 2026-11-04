@@ -1,8 +1,8 @@
 summary: A free and open source distributed version control system with speed and efficiency
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
-src-sha: 7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4
+src-url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz
+src-sha: 26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3
 license: GPL-2.0-only
 dep-pkg: libpcre2 libiconv libexpat libcurl libz
 dep-lib: libcurl
@@ -23,8 +23,14 @@ dopatch: |
     ZWxsYXRpb24iKTsKIAlDSEVDS19CVUcocHRocmVhZF9zaWdtYXNrKFNJR19TRVRNQVNLLCAmYXMt
     Pm9sZCwgTlVMTCksCiAJCSJyZXN0b3Jpbmcgc2lnbmFsIG1hc2siKTsKICNlbmRpZgo=' | base64 -d | patch -p0
 
-    gsed -i '/uname_S := /c uname_S := Linux' config.mak.uname
-    gsed -i "/uname_N := /c uname_M := $TARGET_PLATFORM_ARCH" config.mak.uname
+    gsed -i \
+         -e '/uname_S := /c uname_S := Linux' \
+         -e "/uname_N := /c uname_M := $TARGET_PLATFORM_ARCH" config.mak.uname
+
+    # sys/random.h ssize_t getrandom(void* _Nonnull __buffer, size_t __buffer_size, unsigned int __flags) __wur __INTRODUCED_IN(28);
+    if [ "$TARGET_PLATFORM_VERS" -lt 28 ] ; then
+        gsed -i 's|getrandom|arc4random|' config.mak.uname
+    fi
 
 prepare: |
     # to bypass git error: cannot run test program while cross compiling
@@ -33,13 +39,13 @@ prepare: |
     export ac_cv_iconv_omits_bom=no
     export ac_cv_snprintf_returns_bogus=no
 
-    export ac_cv_lib_curl_curl_global_init=yes
-
-    export ac_cv_prog_CURL_CONFIG="$libcurl_INSTALL_DIR/bin/curl-config"
-
+    export NO_RUST=1
     export NO_NSEC=1
+    export NO_TCLTK=1
     export NO_GETTEXT=1
     export NO_INSTALL_HARDLINKS=1
+    export NO_FINK=1
+    export NO_DARWIN_PORTS=1
 
 install: |
     configure \
