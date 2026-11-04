@@ -25,7 +25,7 @@ addnew() {
     unset VERSION
 
     if [ -n "$SRC_URL" ] ; then
-        VERSION="$(extract-version "$SRC_URL")"
+        VERSION="$(../extract-version "$SRC_URL")"
 
         VERSION=" $VERSION"
     fi
@@ -68,8 +68,8 @@ update() {
         SRC_URL_OLD="$(git diff -U0 "$1" | grep '^-src-url: ' | cut -c11-)"
         SRC_URL_NEW="$(git diff -U0 "$1" | grep '^+src-url: ' | cut -c11-)"
 
-        VOLD="$(extract-version "$SRC_URL_OLD")"
-        VNEW="$(extract-version "$SRC_URL_NEW")"
+        VOLD="$(../extract-version "$SRC_URL_OLD")"
+        VNEW="$(../extract-version "$SRC_URL_NEW")"
 
         if [ "$VOLD" != "$VNEW" ] ; then
             VERSION=" $VOLD -> $VNEW"
@@ -79,8 +79,8 @@ update() {
         GIT_TAG_OLD="$(git diff -U0 "$1" | grep '^-git-tag: ' | cut -c11-)"
         GIT_TAG_NEW="$(git diff -U0 "$1" | grep '^+git-tag: ' | cut -c11-)"
 
-        VOLD="$(extract-version "$GIT_TAG_OLD")"
-        VNEW="$(extract-version "$GIT_TAG_NEW")"
+        VOLD="$(../extract-version "$GIT_TAG_OLD")"
+        VNEW="$(../extract-version "$GIT_TAG_NEW")"
 
         if [ "$VOLD" != "$VNEW" ] ; then
             VERSION=" $VOLD -> $VNEW"
@@ -91,8 +91,8 @@ update() {
         GIT_REF_OLD="$(git diff -U0 "$1" | grep '^-git-ref: ' | cut -c11-)"
         GIT_REF_NEW="$(git diff -U0 "$1" | grep '^+git-ref: ' | cut -c11-)"
 
-        VOLD="$(extract-version "$GIT_REF_OLD")"
-        VNEW="$(extract-version "$GIT_REF_NEW")"
+        VOLD="$(../extract-version "$GIT_REF_OLD")"
+        VNEW="$(../extract-version "$GIT_REF_NEW")"
 
         if [ "$VOLD" != "$VNEW" ] ; then
             VERSION=" $VOLD -> $VNEW"
@@ -158,6 +158,7 @@ do
                     ;;
                 *.yml)
                     addnew "$f"
+                    exit
             esac
             ;;
     esac
