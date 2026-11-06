@@ -1,7 +1,7 @@
 pkgtype: exe+lib
 summary: A fork of OpenSSL that is designed to meet the needs of Google
 web-url: https://boringssl.googlesource.com/boringssl/
-src-url: https://github.com/google/boringssl/archive/refs/tags/0.20261020.0.tar.gz
-src-sha: fb43aac7fbd323c9dfa1f45fe92a1c01142433c05b23fe34f61d6ba8b13b642e
+src-url: https://github.com/google/boringssl/archive/refs/tags/0.20261105.0.tar.gz
+src-sha: 2df2b287f3406a3d2f7f51dccb82cffbddf6cf981811e8edcfffe8fbf02c3ac4
 dep-upp: perl golang
 install: cmakew 2
