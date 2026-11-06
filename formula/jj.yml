@@ -1,6 +1,6 @@
 summary: A git-compatible distributed version control system
-src-url: https://github.com/jj-vcs/jj/archive/refs/tags/v0.47.0.tar.gz
-src-sha: ae9a52956955f7dc72cc0f37dcc16f461a267b938e4fb4e14bf7cb9e7f16fc97
+src-url: https://github.com/jj-vcs/jj/archive/refs/tags/v0.47.1.tar.gz
+src-sha: 838fb5ddbf474ccee6639ce68835cedf88c8285b5c812599c56688286fb0b7a6
 license: Apache-2.0
 dep-pkg: libopenssl libz
 install: cargow install --path cli
