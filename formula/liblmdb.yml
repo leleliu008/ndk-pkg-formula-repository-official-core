@@ -1,13 +1,15 @@
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
-src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_1.0.3/openldap-LMDB_1.0.3.tar.bz2
-src-sha: 015f482ba647e926fbddc9cea49ed59281229c12896cd18675484c36712b98bd
+src-url: https://github.com/openldap/openldap/archive/refs/tags/LMDB_1.0.3.tar.gz
+src-sha: e2d6d9985a16d7ce6bbf5e97c7099c50e38950ee98a7dd8e30c82b74eb9ee382
 license: OLDAP-2.8
 
 bscript: libraries/liblmdb
 
+dopatch: gsed -i '/ln -s /d' Makefile
+
 install: |
     gmakew clean
-    gmakew CC="$CC" CFLAGS="'$CFLAGS -pthread $CPPFLAGS -DMDB_USE_ROBUST=0'" LDFLAGS="'$LDFLAGS'" AR="$AR"
+    gmakew liblmdb.a liblmdb.so CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" SOFULL=.so VERSION_OPT=
     install_incs lmdb.h
-    install_libs liblmdb.*
+    install_libs liblmdb.a liblmdb.so
