@@ -36,9 +36,10 @@ case $1 in
     proj7)    printf '%s\n' 'proj@7'    ;;
     stack)    printf '%s\n' 'haskell-stack';;
     flatc)    printf '%s\n' 'flatbuffers' ;;
-    getopt)   printf '%s\n' 'util-linux';;
-    bsdtar)   printf '%s\n' 'libarchive';;
-    choose)   printf '%s\n' 'choose-rust';;
+    getopt)   printf '%s\n' 'util-linux' ;;
+    bsdtar)   printf '%s\n' 'libarchive' ;;
+    choose)   printf '%s\n' 'choose-rust' ;;
+    chisel)   printf '%s\n' 'chisel-tunnel' ;;
     eigen3)   printf '%s\n' 'eigen'     ;;
     utfcpp)   printf '%s\n' 'utf8cpp'   ;;
     toml++)   printf '%s\n' 'tomlplusplus'  ;;

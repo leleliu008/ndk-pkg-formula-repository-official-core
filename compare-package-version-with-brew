@@ -187,7 +187,7 @@ do
 
             if [ "$UPGRADE" = 1 ] ; then
                 case $PACKAGE_NAME in
-                    chisel|d8|dot_static) continue
+                    d8) continue
                 esac
             else
                 continue
