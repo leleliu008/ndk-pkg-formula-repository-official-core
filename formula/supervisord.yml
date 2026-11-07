@@ -1,9 +1,8 @@
 summary: A go-lang supervisor implementation
-src-url: https://github.com/ochinchina/supervisord/archive/refs/tags/v0.7.3.tar.gz
-src-sha: 8ee6f3eb288149fc8b66fea6831149c50ac36a38c8742c28ffbacdd54d10e970
+src-url: https://github.com/ochinchina/supervisord/archive/refs/tags/v0.7.6.tar.gz
+src-sha: 0fa60af5a650a3fb6d5e1acf00c6074edc5ac113f0e523a1de1a06c9e119bbed
 license: MIT
 
-# https://github.com/ochinchina/supervisord/issues/269
-dopatch: gsed -i '1d' assets_dev.go
+prepare: run go generate
 
 install: gow -tags release
