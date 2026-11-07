@@ -1,5 +1,5 @@
 summary: A fast TCP/UDP tunnel over HTTP
-src-url: https://github.com/jpillora/chisel/archive/refs/tags/v1.9.1.tar.gz
-src-sha: 7323fb3510a36f14949337cd03efd078f4a5d6159259c20539e3a8e1960a7c7e
+src-url: https://github.com/jpillora/chisel/archive/refs/tags/v1.12.1.tar.gz
+src-sha: 262f568e1a10ad185b0cf5025cd549b636dd2938cc4d59b24bf89f3269ae7e33
 license: MIT
 install: gow -X github.com/jpillora/chisel/share.BuildVersion=$PACKAGE_VERSION
