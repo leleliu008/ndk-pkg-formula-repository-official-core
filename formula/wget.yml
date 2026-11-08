@@ -4,7 +4,9 @@ src-sha: 766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784
 dep-pkg: libopenssl libcares libidn2 libz
 license: GPL-3.0-or-later
 
-dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: |
+    gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
+    gsed -i 's/SSLv3_client_method/TLS_client_method/' src/openssl.c
 
 install: |
     configure \
