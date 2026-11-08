@@ -5,3 +5,6 @@ src-sha: 3dcad09a63b6f1f634e64168dd398e9feb9925560f9b671ce52283a79604d13e
 dep-upp: libtool
 bsystem: autotools
 binbstd: 1
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/mhash-0.9.9.9.diff
+fix-sha: 023523b33dc573fbbc56fda2aa58a53c9e1f9ffe8b7614207857a8d46c8a2745
