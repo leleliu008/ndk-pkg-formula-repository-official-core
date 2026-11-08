@@ -27,3 +27,6 @@ caveats: |
     If aria2c is a fully statically linked executable, to get it working on Android 8 and later, you need to run aria2c like below
 
     aria2c --async-dns=true --async-dns-server=8.8.8.8 https://example.com
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/aria2-1.37.0-support-for-openssl-4.patch
+fix-sha: 97c7784eeba35e24bfc309d15b1dc6dfab1655dcd67fc2d03be439d06ad371cf
