@@ -4,9 +4,7 @@ web-url: https://nlnetlabs.nl/projects/ldns/
 src-url: https://nlnetlabs.nl/downloads/ldns/ldns-1.9.2.tar.gz
 src-sha: b524fa21994b6e834200ceb8c27f1b84bda5982fe35706f058196c079db94d5d
 license: BSD-3-Clause
-dep-pkg: libpcap
-
-parallel: 0
+dep-pkg: libopenssl
 
 install: |
     configure \
@@ -14,4 +12,5 @@ install: |
         --without-drill \
         --without-pyldns \
         --without-examples \
+        --disable-gost \
         --disable-dane-verify
