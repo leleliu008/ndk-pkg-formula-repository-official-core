@@ -4,23 +4,9 @@ src-sha: d8862955c6d74e5846b3f580b1605d2428b11d97a410d86e2fb13e857cd3a744
 license: MIT
 dep-pkg: libfmt
 
-dopatch: |
-    gsed -i 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
-    gsed -i '/define SPDLOG_FMT_EXTERNAL/c
-    #ifndef SPDLOG_FMT_EXTERNAL
-    #define SPDLOG_FMT_EXTERNAL
-    #endif' include/spdlog/tweakme.h
-
 install: |
-    cmakew \
+    cmakew 2 \
         -DSPDLOG_FMT_EXTERNAL=ON \
         -DSPDLOG_BUILD_BENCH=OFF \
         -DSPDLOG_BUILD_TESTS=OFF \
-        -DSPDLOG_BUILD_EXAMPLE=OFF \
-        -DSPDLOG_BUILD_SHARED=ON
-    cmakew \
-        -DSPDLOG_FMT_EXTERNAL=ON \
-        -DSPDLOG_BUILD_BENCH=OFF \
-        -DSPDLOG_BUILD_TESTS=OFF \
-        -DSPDLOG_BUILD_EXAMPLE=OFF \
-        -DSPDLOG_BUILD_SHARED=OFF
+        -DSPDLOG_BUILD_EXAMPLE=OFF
