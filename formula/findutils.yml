@@ -10,6 +10,17 @@ dopatch: |
     gsed -i 's/find.texi\ //' doc/Makefile.am
     gsed -i 's/find.texi\ //' doc/Makefile.in
 
+    { "$CC" -x c - <<EOF
+    int main() {
+        struct ArrayList {
+            int size;
+            int * p __attribute__((counted_by(size)));
+        };
+        return 0;
+    }
+    EOF
+    } || gsed -i 's|_GL_ATTRIBUTE_COUNTED_BY [^;]*||' gl/lib/hash.c
+
 install: |
     configure \
         --without-selinux \
