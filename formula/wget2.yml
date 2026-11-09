@@ -6,6 +6,18 @@ license: GPL-3.0-or-later
 dep-pkg: libz libbz2 liblzma libzstd lzlib libbrotli libnghttp2 libopenssl libpcre2 libpsl
 dep-upp: texinfo doxygen
 
-dopatch: gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
+dopatch: |
+    gsed -i -e '/ftello/d' -e '/fseeko/d' ../include/ndk-pkg-common.h
+
+    { "$CC" -x c - <<EOF
+    int main() {
+        struct ArrayList {
+            int size;
+            int * p __attribute__((counted_by(size)));
+        };
+        return 0;
+    }
+    EOF
+    } || gsed -i 's|_GL_ATTRIBUTE_COUNTED_BY [^;]*||' lib/hash.c
 
 install: configure --with-ssl=openssl --with-bzip2 --with-lzma --without-gpgme --enable-static --disable-shared
