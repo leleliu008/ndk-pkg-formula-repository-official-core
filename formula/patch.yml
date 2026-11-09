@@ -3,3 +3,15 @@ src-url: https://ftp.gnu.org/gnu/patch/patch-2.8.1.tar.xz
 src-sha: 3240c7959c5347c8ed347e3c4201c0337bf4240d5cf09d68889e58eeaba30e17
 license: GPL-3.0-or-later
 install: configure --enable-xattr --disable-gcc-warnings
+
+dopatch: |
+    { "$CC" -x c - <<EOF
+    int main() {
+        struct ArrayList {
+            int size;
+            int * p __attribute__((counted_by(size)));
+        };
+        return 0;
+    }
+    EOF
+    } || gsed -i 's|_GL_ATTRIBUTE_COUNTED_BY [^;]*||' lib/hash.c
