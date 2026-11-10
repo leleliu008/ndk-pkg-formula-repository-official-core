@@ -1,6 +1,6 @@
 summary: A fast image processing library with low memory needs
-src-url: https://github.com/libvips/libvips/releases/download/v8.15.2/vips-8.15.2.tar.xz
-src-sha: a2ab15946776ca7721d11cae3215f20f1f097b370ff580cd44fc0f19387aee84
+src-url: https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz
+src-sha: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 license: LGPL-2.1-or-later
 dep-pkg: imagemagick libfftw3 libexif
 dep-upp: glib-tools
