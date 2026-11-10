@@ -5,6 +5,9 @@ src-sha: 8fd13eaaa266f7ee91f85c1ea97c86d9c9cc985969db9059cdebcb1e1b7bdbe6
 license: bzip2-1.0.6
 dep-pkg: libbz2 libgetloadavg
 
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/pbzip2-1.1.13-c++20-char8_t.patch
+fix-sha: 69ee3d2831dc4ac6a06f9f34608ea6ab0d480e67735937ce9023af92405f7e1f
+
 install: |
     gmakew clean
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CXX="$CXX" CXXFLAGS="'$CXXFLAGS $CPPFLAGS -Wno-error=reserved-user-defined-literal'" LDFLAGS="'$LDFLAGS'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CXX="$CXX" CXXFLAGS="'$CXXFLAGS $CPPFLAGS -std=c++20 -Wno-error=reserved-user-defined-literal'" LDFLAGS="'$LDFLAGS'"
