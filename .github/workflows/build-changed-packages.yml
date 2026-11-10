@@ -56,23 +56,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container: ubuntu:24.04
+    container: ubuntu:26.04
 
     steps:
       - uses: actions/checkout@v5
-
-      - run: |
-            cat > .ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
-
-      - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
-      - run: ls ~/.ndk-pkg/repos.d/
 
       - run: apt -y update
       - run: apt -y install curl
@@ -83,7 +70,8 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
+
+      - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
@@ -117,26 +105,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - run: |
-            cat > .ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
-
-      - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
-      - run: ls ~/.ndk-pkg/repos.d/
-
       - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
+
+      - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
@@ -168,26 +144,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - run: |
-            cat > .ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
-
-      - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s ${{ github.workspace }} ~/.ndk-pkg/repos.d/
-      - run: ls ~/.ndk-pkg/repos.d/
-
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
+
+      - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
       - id:  api-level-1
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
