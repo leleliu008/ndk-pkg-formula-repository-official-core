@@ -24,7 +24,7 @@ if [ "$PKGTYPE" = exe ] && [ "$2" = '--static' ] ; then
     if [ "$USE_GO" != 1 ] ; then
         LINKAGE=$(./ndk-pkg info "$1" linkage)
 
-        if [ "$LINKAGE" == shared ] || [ "$LINKAGE" == shared/most ] ; then
+        if [ "$LINKAGE" = shared ] || [ "$LINKAGE" = shared/most ] ; then
             :
         else
             API_LEVEL=37
