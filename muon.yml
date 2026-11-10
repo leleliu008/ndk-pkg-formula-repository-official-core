@@ -1,0 +1,16 @@
+summary: A meson-compatible build system
+web-url: https://muon.build
+src-url: https://git.sr.ht/~lattis/muon/archive/0.7.0.tar.gz
+src-sha: e7095741dc11338f5ed8e0aa02e993fc34df4295dad4296127bbb212bcf56e07
+license: GPL-3.0-only
+dep-pkg: libcurl libarchive pkgconf
+install: |
+    mesonw \
+        -Dman-pages=enabled \
+        -Dmeson-docs=disabled \
+        -Dmeson-tests=disabled \
+        -Dlibcurl=enabled \
+        -Dlibarchive=enabled \
+        -Dlibpkgconf=enabled \
+        -Dsamurai=disabled \
+        -Dtracy=disabled

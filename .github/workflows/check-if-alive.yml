@@ -11,11 +11,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container: ubuntu:24.04
-
     steps:
-      - run: apt -y update
-      - run: apt -y install curl
+      - uses: actions/checkout@v5
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
@@ -23,31 +20,15 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
-
-      - uses: actions/checkout@v5
-        with:
-          path: core
 
       - run: |
-            cat > core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
+          export NDKPKG_FORMULA_DIRS="$PWD/formula"
 
-      - run: install -d ~/.ndk-pkg/repos.d/
-      - run: mv ndk-pkg core/
-      - run: mv core ~/.ndk-pkg/repos.d/
-
-      - run: |
-          cd ~/.ndk-pkg/repos.d/core/formula
+          cd formula
 
           for f in *.yml
           do
-              PACKAGE_NAME="${f%.yml}"
-              printf '\n%b\n' "\033[0;31m==> $PACKAGE_NAME\033[0m"
-              ../ndk-pkg fetch "$PACKAGE_NAME"
+              PKGNAME="${f%.yml}"
+              printf '\n%b\n' "\033[0;31m==> $PKGNAME\033[0m"
+              ../ndk-pkg fetch "$PKGNAME"
           done
