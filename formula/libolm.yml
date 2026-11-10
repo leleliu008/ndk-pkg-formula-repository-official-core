@@ -4,3 +4,6 @@ src-url: https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.16/olm-3.2.16.ta
 src-sha: 1e90f9891009965fd064be747616da46b232086fe270b77605ec9bda34272a68
 license: Apache-2.0
 bsystem: cmake
+
+fix-url: https://raw.githubusercontent.com/chimera-linux/cports/2cf50ccb2185c772de927fb3daf5e1dc1787ce0a/main/olm/patches/build.patch
+fix-sha: 5a2af251dc6cca88b6a9746b3b09ff3aba8e49fdc4bbaf7f8bc00e1ea1c830ff
