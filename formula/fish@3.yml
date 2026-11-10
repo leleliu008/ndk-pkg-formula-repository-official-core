@@ -6,9 +6,18 @@ license: GPL-2.0-or-later
 dep-pkg: libpcre2 libreadline libposix_spawn
 linkage: shared
 
-dopatch: gsed -i 's|FATAL_ERROR|WARNING|' CMakeLists.txt
+dopatch: |
+    gsed -i 's|FATAL_ERROR|WARNING|' CMakeLists.txt
+
+    if [ "$ANDROID_NDK_VERSION_MAJOR" -ge 30 ] ; then
+        gsed -i 's|__has_attribute(fallthrough)|0|' config_cmake.h.in
+    fi
+
+    # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
+    if [ "$TARGET_PLATFORM_VERS" -lt 26 ] ; then
+        gsed -i '/ctermid(nullptr)/c const char * tty = "/dev/tty";' src/reader.cpp
+    fi
 
 install: cmakew -DWITH_GETTEXT=OFF
 
-# stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
-api-min: 26
+api-min: 24
