@@ -1,9 +1,9 @@
 pkgtype: exe+lib
 summary: Tools and libraries to manipulate images in many formats
 web-url: https://imagemagick.org/
-src-url: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-26/ImageMagick-7.1.2-26.7z
-src-sha: 87aceeed7448836b0f729eddca6d7c5bad8b8e95c043cb6b1b2f72247189edcf
-version: 7.1.2.26
+src-url: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-35/ImageMagick-7.1.2-35.7z
+src-sha: 1d95f7d0ed11e91a3ee9e3042a8e248cb88c666dd9256ab14cc871b1f73138fd
+version: 7.1.2.35
 license: ImageMagick
 dep-pkg: ghostscript libheif liblqr libltdl
 
