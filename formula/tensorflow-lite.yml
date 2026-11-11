@@ -1,11 +1,12 @@
 pkgtype: lib
 summary: C interface for Machine Intelligence
 web-url: https://www.tensorflow.org/
-src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.19.0.tar.gz
-src-sha: 4691b18e8c914cdf6759b80f1b3b7f3e17be41099607ed0143134f38836d058e
+src-url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.21.0.tar.gz
+src-sha: ef3568bb4865d6c1b2564fb5689c19b6b9a5311572cd1f2ff9198636a8520921
 license: Apache-2.0
-dep-pip: numpy
 dep-pkg: abseil ruy libxnnpack libflatbuffers libeigen ARM_NEON_2_x86_SSE
+dep-upp: xxd getopt
+dep-pip: numpy
 bscript: tensorflow/lite
 
 dopatch: |
@@ -43,4 +44,5 @@ install: |
         -DEigen3_DIR=$libeigen_INSTALL_DIR/lib/cmake/eigen3 \
         -Dcpuinfo_DIR=$libcpuinfo_INSTALL_DIR/lib/cmake/cpuinfo \
         -DNEON_2_SSE_DIR=$ARM_NEON_2_x86_SSE/lib/cmake/NEON_2_SSE \
-        -DFlatbuffers_DIR=$libflatbuffers_INSTALL_DIR/lib/cmake/flatbuffers
+        -DFlatbuffers_DIR=$libflatbuffers_INSTALL_DIR/lib/cmake/flatbuffers \
+        -DTFLITE_HOST_TOOLS_DIR="$NATIVE_PACKAGE_INSTALLED_ROOT/libflatbuffers"
