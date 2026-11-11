@@ -2,15 +2,24 @@ summary: Tiny, lightning fast, feature-packed file manager
 src-url: https://github.com/jarun/nnn/archive/refs/tags/v5.3.tar.gz
 src-sha: 79ee69f3ced7c0778d207df76b4d4d680636975ccda002eeb19d0917fcba3d36
 license: BSD-2-Clause
-dep-pkg: libreadline
+dep-pkg: libreadline libmblen
+dep-upp: patch
+
+dopatch: |
+    # pthread.h int pthread_setaffinity_np(pthread_t __pthread, size_t __cpu_set_size, const cpu_set_t* __cpu_set) __INTRODUCED_IN(36);
+    if [ "$TARGET_PLATFORM_VERS" -lt 36 ] ; then
+        run patch -p1 -i ../res/$PACKAGE_RES_SHA.patch
+    fi
+
+    # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
+    if [ "$TARGET_PLATFORM_VERS" -lt 26 ] ; then
+        gsed -i 's|ctermid(NULL)|"/dev/tty"|' src/nnn.c
+    fi
 
 install: |
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
     install_mans nnn.1
 
-fix-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/nnn/pthread_setaffinity_np.patch
-fix-sha: 539d20ee44a7aa1062afc5c054d0c760472b524a4a77fc2d7935c1b0731a756a
-
-# stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
-api-min: 26
+res-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/nnn/pthread_setaffinity_np.patch
+res-sha: 539d20ee44a7aa1062afc5c054d0c760472b524a4a77fc2d7935c1b0731a756a
