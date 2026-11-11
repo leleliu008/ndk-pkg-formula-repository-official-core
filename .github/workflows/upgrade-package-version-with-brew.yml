@@ -74,21 +74,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: |
-            cat > .ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
-            branch: master
-            pinned: 0
-            enabled: 1
-            created: 1673684639
-            EOF
-
-      - run: install -d ~/.ndk-pkg/repos.d/
-      - run: ln -s "$GITHUB_WORKSPACE" ~/.ndk-pkg/repos.d/
-      - run: ls ~/.ndk-pkg/repos.d/
-
-      ############################################################
-
       - uses: actions/download-artifact@v8
         with:
           name: upgradable-packages-${{ github.sha }}
@@ -106,6 +91,7 @@ jobs:
               -e '/^src-sha: /c src-sha: ${{ steps.upgrade-info.outputs.SRC_SHA_NEW }}' \
               -e '/^git-sha: /c git-sha: ${{ steps.upgrade-info.outputs.GIT_SHA_NEW }}' \
               -e '/^git-tag: /c git-tag: ${{ steps.upgrade-info.outputs.GIT_TAG_NEW }}' \
+              -e '/^src-uri: /s|${{ steps.upgrade-info.outputs.VERSION_OLD }}|${{ steps.upgrade-info.outputs.VERSION_NEW }}|' \
               formula/${{ matrix.pkg }}.yml
 
       ############################################################
@@ -120,7 +106,8 @@ jobs:
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-list
+
+      - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
       ############################################################
 
