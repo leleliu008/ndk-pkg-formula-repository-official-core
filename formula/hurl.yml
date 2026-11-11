@@ -5,6 +5,35 @@ src-sha: d5ea72ed489b9de319d0306d7b23728c4d284ac505adeb06c297ff5da1cf0de8
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 
+prepare: |
+    # https://github.com/KWARC/rust-libxml
+    # https://rust-lang.github.io/rust-bindgen/requirements.html
+
+    if [ "$GITHUB_ACTIONS" = true ] ; then
+        if [ -x /usr/bin/apt ] ; then
+            run $sudo /usr/bin/apt -y update
+            run $sudo /usr/bin/apt -y install libclang-dev
+        elif [ -x /sbin/apk ] ; then
+            run $sudo /sbin/apk update
+            run $sudo /sbin/apk add clang-dev
+        fi
+    fi
+
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        RUSTFLAGS="$RUSTFLAGS -Clink-arg=-Wl,--allow-multiple-definition"
+    fi
+
+    export BINDGEN_EXTRA_CLANG_ARGS="$ANDROID_NDK_COMPILER_ARGS"
+
+    if [ "$NATIVE_PLATFORM_TYPE" = linux ] && [ "$NATIVE_PLATFORM_LIBC" = glibc ] ; then
+        export LIBCLANG_PATH="$ANDROID_NDK_TOOLCHAIN_ROOT/lib/libclang.so"
+        CLANG_INTERNAL_INCLUDE_DIR="$(ls -d $ANDROID_NDK_TOOLCHAIN_ROOT/lib/clang/[12][0-9]/include)"
+        BINDGEN_EXTRA_CLANG_ARGS="$BINDGEN_EXTRA_CLANG_ARGS -isystem $CLANG_INTERNAL_INCLUDE_DIR -v"
+    fi
+
+    echo "BINDGEN_EXTRA_CLANG_ARGS=$BINDGEN_EXTRA_CLANG_ARGS"
+    echo "LIBCLANG_PATH=$LIBCLANG_PATH"
+
 install: |
     cargow install --locked --path packages/hurl
     cargow install --locked --path packages/hurlfmt
