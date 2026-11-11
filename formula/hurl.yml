@@ -5,20 +5,9 @@ src-sha: d5ea72ed489b9de319d0306d7b23728c4d284ac505adeb06c297ff5da1cf0de8
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 
+# https://github.com/KWARC/rust-libxml
+# https://rust-lang.github.io/rust-bindgen/requirements.html
 prepare: |
-    # https://github.com/KWARC/rust-libxml
-    # https://rust-lang.github.io/rust-bindgen/requirements.html
-
-    if [ "$GITHUB_ACTIONS" = true ] ; then
-        if [ -x /usr/bin/apt ] ; then
-            run $sudo /usr/bin/apt -y update
-            run $sudo /usr/bin/apt -y install libclang-dev
-        elif [ -x /sbin/apk ] ; then
-            run $sudo /sbin/apk update
-            run $sudo /sbin/apk add clang-dev
-        fi
-    fi
-
     if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
         RUSTFLAGS="$RUSTFLAGS -Clink-arg=-Wl,--allow-multiple-definition"
     fi
