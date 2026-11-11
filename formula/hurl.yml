@@ -6,6 +6,8 @@ license: Apache-2.0
 dep-pkg: libcurl libxml2
 
 # https://github.com/KWARC/rust-libxml
+# https://github.com/rust-lang/rust-bindgen
+# https://github.com/KyleMayes/clang-sys
 # https://rust-lang.github.io/rust-bindgen/requirements.html
 prepare: |
     if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
@@ -15,6 +17,7 @@ prepare: |
     export BINDGEN_EXTRA_CLANG_ARGS="$ANDROID_NDK_COMPILER_ARGS"
 
     if [ "$NATIVE_PLATFORM_TYPE" = linux ] && [ "$NATIVE_PLATFORM_LIBC" = glibc ] ; then
+        export    CLANG_PATH="$ANDROID_NDK_CC"
         export LIBCLANG_PATH="$ANDROID_NDK_TOOLCHAIN_ROOT/lib/libclang.so"
         CLANG_INTERNAL_INCLUDE_DIR="$(ls -d $ANDROID_NDK_TOOLCHAIN_ROOT/lib/clang/[12][0-9]/include)"
         BINDGEN_EXTRA_CLANG_ARGS="$BINDGEN_EXTRA_CLANG_ARGS -isystem $CLANG_INTERNAL_INCLUDE_DIR -v"
@@ -22,6 +25,7 @@ prepare: |
 
     echo "BINDGEN_EXTRA_CLANG_ARGS=$BINDGEN_EXTRA_CLANG_ARGS"
     echo "LIBCLANG_PATH=$LIBCLANG_PATH"
+    echo "CLANG_PATH=$CLANG_PATH"
 
 install: |
     cargow install --locked --path packages/hurl
