@@ -12,7 +12,7 @@ install: |
         -Ddocumentation=false \
         -Dman-pages=disabled \
         -Dnls=disabled \
-        -Ddtrace=false \
+        -Ddtrace=disabled \
         -Dglib_debug=disabled \
         -Dglib_assert=false \
         -Dtests=false \
