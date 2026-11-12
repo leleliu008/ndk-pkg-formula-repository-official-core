@@ -1,0 +1,11 @@
+summary: MirBSD Korn Shell
+git-url: https://github.com/MirBSD/mksh
+web-url: https://mbsd.evolvis.org/mksh.htm
+src-url: https://mbsd.evolvis.org/MirOS/dist/mir/mksh/mksh-R59c.tgz
+src-sha: 77ae1665a337f1c48c61d6b961db3e52119b38e58884d1c89684af31f87bc506
+version: 59c
+binbstd: 1
+install: |
+    sh ./Build.sh -r
+    install_bins mksh
+    install_mans mksh.1
