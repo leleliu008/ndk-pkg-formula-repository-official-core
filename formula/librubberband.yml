@@ -1,0 +1,10 @@
+summary: Audio time stretcher tool and library
+web-url: https://breakfastquay.com/rubberband/
+src-url: https://breakfastquay.com/files/releases/rubberband-4.0.0.tar.bz2
+src-sha: af050313ee63bc18b35b2e064e5dce05b276aaf6d1aa2b8a82ced1fe2f8028e9
+license: GPL-2.0-or-later
+dep-pkg: libsamplerate libfftw3
+
+dopatch: gsed -i '/sysutils\.h/a \#include<stddef.h>' src/common/mathmisc.h
+
+install: mesonw -Dfft=fftw -Dresampler=libsamplerate
