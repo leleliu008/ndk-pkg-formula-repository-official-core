@@ -1,0 +1,5 @@
+summary: Library providing read access on ZIP-archives
+src-url: https://github.com/gdraheim/zziplib/archive/refs/tags/v0.13.80.tar.gz
+src-sha: 21f40d111c0f7a398cfee3b0a30b20c5d92124b08ea4290055fbfe7bdd53a22c
+license: LGPL-2.0-or-later MPL-1.1
+install: cmakew -DZZIPTEST=OFF -DZZIPSDL=OFF
