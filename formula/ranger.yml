@@ -1,0 +1,8 @@
+summary: A VIM-inspired file manager for the console
+git-url: https://github.com/ranger/ranger
+src-url: https://ranger.github.io/ranger-1.9.4.tar.gz
+src-sha: 7ad75e0d1b29087335fbb1691b05a800f777f4ec9cba84faa19355075d7f0f89
+license: GPL-3.0-or-later
+dep-pip: setuptools
+install: python3 setup.py install --prefix=$PACKAGE_INSTALL_DIR
+binbstd: 1
