@@ -1,0 +1,9 @@
+summary: Terminal bandwidth utilization tool
+src-url: https://github.com/imsnif/bandwhich/archive/refs/tags/v0.23.1.tar.gz
+src-sha: aafb96d059cf9734da915dca4f5940c319d2e6b54e2ffb884332e9f5e820e6d7
+license: MIT
+bsystem: cargo
+
+# int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
+# void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
+api-min: 24
