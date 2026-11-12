@@ -1,0 +1,18 @@
+summary: Simple markdown translator
+git-url: https://github.com/kristapsdz/lowdown
+src-url: https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.2.1.tar.gz
+src-sha: 664afc7c00aadbaf16cdcf7dc464e64b529f432eba9dffc950acb0d55d1be90d
+license: ISC
+dep-upp: bmake gmake
+binbstd: 1
+install: |
+    cat > configure.local <<EOF
+    HAVE_SANDBOX_INIT=0
+    EOF
+
+    BMAKE="$(command -v bmake)"
+    export MAKESYSPATH=${BMAKE%/bmake}/../share/mk
+
+    run ./configure LINKER_SONAME=-soname PREFIX="$PACKAGE_INSTALL_DIR"
+    run "$BMAKE"
+    run "$BMAKE" install_libs
