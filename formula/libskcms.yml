@@ -1,0 +1,11 @@
+summary: Skia Color Management System
+web-url: https://skia.googlesource.com/skcms
+src-url: https://github.com/google/skcms/archive/refs/tags/2025_09_16.tar.gz
+src-sha: 08c45dff8ede1b56a6e7d1e9fdaf113dd91ab28ddcbcf696229b683e5e9af45a
+license: BSD-3-Clause
+
+install: |
+    run $CXX -c $CXXFLAGS $CPPFLAGS -std=c++17 ../skcms.cc
+    run $AR crs libskcms.a skcms.o
+    install_libs libskcms.a
+    install_incs ../skcms.h
