@@ -1,0 +1,5 @@
+summary: A modern alternative to the tree(1)
+src-url: https://github.com/dduan/tre/archive/refs/tags/v0.4.0.tar.gz
+src-sha: 280243cfa837661f0c3fff41e4a63c6768631073c9f6ce9982d9ed08e038788a
+license: MIT
+install: cargow install && install_mans manual/tre.1
