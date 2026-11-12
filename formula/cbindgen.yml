@@ -1,0 +1,5 @@
+summary: Project for generating C bindings from Rust code
+src-url: https://github.com/mozilla/cbindgen/archive/refs/tags/v0.29.4.tar.gz
+src-sha: 9b5757e915cf8be523d3aca282b9b5651bafa112e14bf1ba488562ba282807d6
+license: MPL-2.0
+bsystem: cargo
