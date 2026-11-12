@@ -1,0 +1,10 @@
+summary: C library to convert SVG to PNG
+web-url: https://github.com/RazrFalcon/resvg
+src-url: https://github.com/linebender/resvg/archive/refs/tags/v0.50.0.tar.gz
+src-sha: ea6629ecaf8ae523aaa42b23217db7fdbed5d4bb070a2574af0d01040195beb1
+license: MPL-2.0
+install: |
+    cargow build --locked --lib --manifest-path crates/c-api/Cargo.toml
+    install_incs crates/c-api/resvg.h crates/c-api/ResvgQt.h
+    install_libs target/$RUST_TARGET/$PROFILE/libresvg.a
+    install_libs target/$RUST_TARGET/$PROFILE/libresvg.so
