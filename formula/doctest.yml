@@ -1,0 +1,6 @@
+pkgtype: lib
+summary: Feature-rich C++11/14/17/20/23 single-header testing framework
+src-url: https://github.com/doctest/doctest/archive/refs/tags/v2.5.3.tar.gz
+src-sha: 174ebc4e769928959614789c5b4e9c3d0a0f81a62bb608756b127bfebfb21331
+license: MIT
+install: cmakew -DDOCTEST_WITH_TESTS=OFF
