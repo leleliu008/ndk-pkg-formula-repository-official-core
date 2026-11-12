@@ -1,0 +1,11 @@
+summary: API for decoding and seeking in .opus files
+web-url: https://www.opus-codec.org/
+src-url: https://github.com/xiph/opusfile/releases/download/v0.12/opusfile-0.12.tar.gz
+src-uri: https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz
+src-sha: 118d8601c12dd6a44f52423e68ca9083cc9f2bfe72da7a8c1acb22a80ae3550b
+license: BSD-3-Clause
+dep-pkg: libogg libopus libopenssl
+dep-upp: libtool
+bsystem: autotools
+
+dopatch: gsed -i 's|-std=c89||' configure.ac
