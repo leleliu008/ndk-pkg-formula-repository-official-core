@@ -5,11 +5,6 @@ src-sha: 2e45678806a8a1c7307d4b4298b11aab6d947799bdce986c67fd9c693dac98a5
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 
-prepare: |
-    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
-        RUSTFLAGS="$RUSTFLAGS -Clink-arg=-Wl,--allow-multiple-definition"
-    fi
-
 install: |
     cargow install --locked --path packages/hurl
     cargow install --locked --path packages/hurlfmt
