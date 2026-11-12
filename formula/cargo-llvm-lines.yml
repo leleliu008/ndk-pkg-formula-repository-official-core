@@ -1,0 +1,5 @@
+summary: Count lines of LLVM IR per generic function
+src-url: https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.48.tar.gz
+src-sha: 7eb44a0296047711a9c2c301296ba2c4968203c8fde65f8405de577dfd7c5107
+license: Apache-2.0 MIT
+bsystem: cargo
