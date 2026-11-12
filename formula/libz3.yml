@@ -1,6 +1,6 @@
 summary: A high-performance theorem prover
-src-url: https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.3.3.tar.gz
-src-sha: f8373e6a753da6e336f0955fca65c7a56346f3de68a56fd353acb4abf33d4823
+src-url: https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.4.1.tar.gz
+src-sha: 6a9196fb64e0460640beee08b8e823f0d51371bd3c4db78d161af275463846ef
 license: MIT
 dep-upp: python3
 
