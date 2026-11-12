@@ -1,0 +1,8 @@
+summary: Tool for generating GNU Standards-compliant Makefiles
+src-url: https://ftp.gnu.org/gnu/automake/automake-1.20.tar.xz
+src-sha: f6f34dad4cbe395715762b0710f7c511e39bd5cf777e6b95818ccbecf7714248
+license: GPL-2.0-or-later
+dep-pkg: autoconf
+dep-upp: gm4 perl
+bsystem: configure
+movable: 0
