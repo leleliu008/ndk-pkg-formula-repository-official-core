@@ -1,0 +1,5 @@
+summary: C++20-like span for C++98, C++11 and later in a single-file header-only library
+src-url: https://github.com/martinmoene/span-lite/archive/refs/tags/v0.11.0.tar.gz
+src-sha: ef4e028e18ff21044da4b4641ca1bc8a2e2d656e2028322876c0e1b9b6904f9d
+license: BSL-1.0
+install: cmakew -DSPAN_LITE_OPT_BUILD_TESTS=OFF
