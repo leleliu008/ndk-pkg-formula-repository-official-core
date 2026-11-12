@@ -1,0 +1,10 @@
+summary: An open source library to store and retrieve huge raster coverages
+web-url: https://www.gaia-gis.it/fossil/librasterlite/index
+src-url: https://www.gaia-gis.it/gaia-sins/librasterlite2-sources/librasterlite2-1.1.0-beta1.tar.gz
+src-sha: f7284cdfc07ad343a314e4878df0300874b0145d9d331b063b096b482e7e44f4
+version: 1.1.0.1
+license: MPL-1.1
+dep-pkg: libspatialite libgeotiff liblz4 libwebp libgif libopenjpeg libcairo
+bsystem: configure
+
+dopatch: gsed -i '/config\.h/a \#include<time.h>' headers/rasterlite2_private.h
