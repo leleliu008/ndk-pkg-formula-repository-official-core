@@ -1,0 +1,8 @@
+summary: Git for Data
+src-url: https://github.com/dolthub/dolt/archive/refs/tags/v2.7.3.tar.gz
+src-sha: 079d04427cb3df75ad40826d5402e7b4847187c4286844e0d6ee28d97446b87d
+license: Apache-2.0
+dep-pkg: libicu
+bscript: go
+install: gow ./cmd/dolt
+prepare: export CGO_ENABLED=1
