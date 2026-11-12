@@ -1,0 +1,9 @@
+summary: Kubernetes CLI To Manage Your Clusters In Style!
+web-url: https://k9scli.io/
+src-url: https://github.com/derailed/k9s/archive/refs/tags/v0.51.0.tar.gz
+src-sha: e2c3851c909b87f9cfafa262e426f4a89023ca4e745cba5cab6d0153f76e7dcd
+license: Apache-2.0
+install: |
+    gow \
+        -X github.com/derailed/k9s/cmd.version=$PACKAGE_VERSION \
+        -X github.com/derailed/k9s/cmd.commit=$PACKAGE_GIT_SHA
