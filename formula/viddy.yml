@@ -1,0 +1,5 @@
+summary: Modern watch command
+src-url: https://github.com/sachaos/viddy/archive/refs/tags/v1.3.1.tar.gz
+src-sha: c5de99390846029aacb23789ce20267142dc89f647c519a0a0bb4821334cc6e5
+license: MIT
+bsystem: cargo
