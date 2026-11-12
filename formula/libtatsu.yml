@@ -1,7 +1,7 @@
 summary: Library handling the communication with Apple's Tatsu Signing Server (TSS)
 web-url: https://libimobiledevice.org/
-src-url: https://github.com/libimobiledevice/libtatsu/releases/download/1.1.0/libtatsu-1.1.0.tar.bz2
-src-sha: 96c8abd97552a4a0c487c701aba9a65d590c338dd331058ffb38304290b696c7
+src-url: https://github.com/libimobiledevice/libtatsu/releases/download/1.1.1/libtatsu-1.1.1.tar.bz2
+src-sha: 18f471f131c1d55ccc02fa09565d870030c6ce92f737b89fe1b3849941ebb303
 license: LGPL-2.1-or-later
 dep-pkg: libplist libcurl
 dep-upp: libtool
