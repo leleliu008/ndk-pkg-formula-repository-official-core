@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Standalone library of the Fraunhofer FDK AAC code from Android
 web-url: https://sourceforge.net/projects/opencore-amr
 git-url: https://git.code.sf.net/p/opencore-amr/fdk-aac
