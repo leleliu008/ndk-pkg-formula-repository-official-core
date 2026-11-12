@@ -1,0 +1,19 @@
+summary: A library to render SVG files using Cairo
+src-url: https://download.gnome.org/sources/librsvg/2.63/librsvg-2.63.4.tar.xz
+src-sha: 31f07d9350dad3f8964fd613c31309ac160fdef13dfac59df6fd082de78d6e8f
+license: LGPL-2.1-or-later
+dep-pkg: libgdk-pixbuf libpango libxml2
+dep-upp: gdk-pixbuf cargo-c
+bsystem: meson cargo
+
+install: |
+    mesonw \
+        -Dtests=false \
+        -Ddocs=disabled \
+        -Dvala=disabled \
+        -Davif=disabled \
+        -Dpixbuf=enabled \
+        -Dpixbuf-loader=enabled \
+        -Dintrospection=disabled \
+        -Drsvg-convert=enabled \
+        -Dtriplet="$RUST_TARGET"
