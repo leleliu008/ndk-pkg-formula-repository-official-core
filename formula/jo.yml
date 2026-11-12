@@ -1,0 +1,5 @@
+summary: JSON output from a shell
+src-url: https://github.com/jpmens/jo/releases/download/1.9/jo-1.9.tar.gz
+src-sha: 0195cd6f2a41103c21544e99cd9517b0bce2d2dc8cde31a34867977f8a19c79f
+license: GPL-2.0-or-later MIT
+bsystem: autotools
