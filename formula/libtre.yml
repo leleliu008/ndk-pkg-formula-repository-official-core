@@ -1,0 +1,5 @@
+summary: Lightweight, POSIX-compliant regular expression (regex) library
+src-url: https://github.com/laurikari/tre/releases/download/v0.9.0/tre-0.9.0.tar.gz
+src-sha: f57f5698cafdfe516d11fb0b71705916fe1162f14b08cf69d7cf86923b5a2477
+license: BSD-2-Clause
+bsystem: configure
