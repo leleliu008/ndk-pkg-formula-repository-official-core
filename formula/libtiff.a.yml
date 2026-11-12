@@ -1,0 +1,25 @@
+summary: TIFF library
+web-url: https://libtiff.gitlab.io/libtiff
+git-url: https://gitlab.com/libtiff/libtiff
+src-url: https://download.osgeo.org/libtiff/tiff-4.7.2.tar.gz
+src-sha: 672bd7d10aee4606171afb864f3570b83340f6a33e2c186dc0512f7145ffdf6a
+dep-pkg: libzstd liblzma libz
+
+install: |
+    cmakew \
+        -Dlzw=ON \
+        -Dzlib=ON \
+        -Dzstd=ON \
+        -Dlzma=ON \
+        -Dwebp=OFF \
+        -Djpeg=OFF \
+        -Djbig=OFF \
+        -Dlerc=OFF \
+        -Dlibdeflate=OFF \
+        -Dtiff-docs=OFF \
+        -Dtiff-tools=OFF \
+        -Dtiff-tests=OFF \
+        -Dtiff-contrib=OFF \
+        -DBUILD_SHARED_LIBS=OFF
+
+dotweak: gsed -i '/INTERFACE_LINK_LIBRARIES /c INTERFACE_LINK_LIBRARIES "-lzstd;-llzma;-lz;-lm"' lib/cmake/tiff/tiff-targets.cmake
