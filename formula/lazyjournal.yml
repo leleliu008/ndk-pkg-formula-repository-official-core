@@ -6,4 +6,4 @@ install: |
     gow \
         -X main.version="$PACKAGE_VERSION" \
         -X main.date="$TIMESTAMP_ISO8601" \
-        -X main.buildSource=xcpkg
+        -X main.buildSource=ndk-pkg
