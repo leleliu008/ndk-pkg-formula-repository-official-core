@@ -1,0 +1,7 @@
+summary: A multi-language version manager, a unified toolchain
+web-url: https://moonrepo.dev/proto
+src-url: https://github.com/moonrepo/proto/archive/refs/tags/v0.63.2.tar.gz
+src-sha: 7907070b4f6a8660943f346448c538a1b2dbdf76991e0c4a517fb2154f4d4e74
+license: MIT
+prepare: export AWS_LC_SYS_NO_JITTER_ENTROPY=1
+install: cargow install --locked --path crates/cli
