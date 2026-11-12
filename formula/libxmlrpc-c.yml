@@ -1,0 +1,14 @@
+summary: A lightweight RPC library for C/C++ based on XML and HTTP
+web-url: https://xmlrpc-c.sourceforge.io/
+src-url: https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.64.04/xmlrpc-c-1.64.04.tgz
+src-sha: 509c3a3bffb77c81e2c364175ac70b95b799e5b695cc37d4bf833ec28fdfe0b6
+license: BSD-3-Clause
+dep-pkg: libcurl libxml2
+binbstd: 1
+
+prepare: |
+    if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
+        export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+    fi
+
+install: configure --enable-libxml2-backend
