@@ -14,8 +14,8 @@ install: |
 
     run "$AR" crs libscrypt.a *.o
 
-    run "$CC" -shared $LDFLAGS -o libscrypt.dylib *.o
+    run "$CC" -shared $LDFLAGS -o libscrypt.so *.o
 
-    install_libs libscrypt.a libscrypt.dylib
+    install_libs libscrypt.a libscrypt.so
 
     install_incs libscrypt.h
