@@ -1,0 +1,31 @@
+summary: A SIXEL encoder/decoder
+src-url: https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.5.tar.gz
+src-sha: b6654928bd423f92e6da39eb1f40f10000ae2cc6247247fc1882dcff6acbdfc8
+license: MIT
+dep-pkg: libgdk-pixbuf libcurl
+
+dopatch: |
+    gsed -i '/sys\/unistd\.h/d' meson.build
+    gsed -i '/sys\/unistd\.h/d' src/tty.c
+    gsed -i '/sys\/unistd\.h/d' src/encoder.c
+    gsed -i '/sys\/unistd\.h/d' src/decoder.c
+    gsed -i '/sys\/unistd\.h/d' converters/img2sixel.c
+
+    gsed -i 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/loader.c
+    gsed -i 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/status.c
+
+    gsed -i 's|and jpeg_found|and jpeg_found.found()|' meson.build
+    gsed -i 's|and png_found|and png_found.found()|' meson.build
+
+    gsed -i 's|link_with: libsixel|link_with: libsixel.get_static_lib()|' converters/meson.build
+
+install: |
+    mesonw \
+        -Dtests=disabled \
+        -Dgd=disabled \
+        -Dgdk-pixbuf2=enabled \
+        -Dpng=enabled \
+        -Djpeg=enabled \
+        -Dlibcurl=enabled \
+        -Dimg2sixel=enabled \
+        -Dsixel2png=enabled
