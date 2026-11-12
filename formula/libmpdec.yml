@@ -1,0 +1,16 @@
+summary: Library for decimal floating point arithmetic
+web-url: https://www.bytereef.org/mpdecimal/
+src-url: https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.1.tar.gz
+src-sha: 96d33abb4bb0070c7be0fed4246cd38416188325f820468214471938545b1ac8
+license: BSD-2-Clause
+xxflags: -std=c++11
+bsystem: configure
+binbstd: 1
+
+prepare: |
+    export LD="$CC"
+
+    case $TARGET_PLATFORM_ARCH in
+        x86_64) export MACHINE='x64' ;;
+        arm64)  export MACHINE='uint128' ;;
+    esac
