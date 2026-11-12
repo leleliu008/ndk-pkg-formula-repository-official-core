@@ -12,10 +12,6 @@ dopatch: |
     gsed -i "/RUST_TARGET = --target/c RUST_TARGET = --target $RUST_TARGET" rust/Makefile.am
     gsed -i "/RUST_SURICATA_LIB_XC_DIR=/c RUST_SURICATA_LIB_XC_DIR=$RUST_TARGET/" configure.ac
 
-prepare: |
-    export CARGO_BUILD_TARGET="$RUST_TARGET"
-    run rustup target add "$CARGO_BUILD_TARGET"
-
 install: |
     configure \
         --enable-pie \
