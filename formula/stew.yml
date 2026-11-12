@@ -1,0 +1,5 @@
+summary: An independent package manager for compiled binaries
+src-url: https://github.com/marwanhawari/stew/archive/refs/tags/v0.6.0.tar.gz
+src-sha: 2db80b84a91026d64e32e99e66c595c81dbe1cedbecb1648ef889036a742ecab
+license: MIT
+bsystem: go
