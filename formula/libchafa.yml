@@ -1,0 +1,13 @@
+summary: library to convert all kinds of images to ANSI/Unicode characters
+git-url: https://github.com/hpjansson/chafa
+src-url: https://hpjansson.org/chafa/releases/chafa-1.18.3.tar.xz
+src-sha: fb995ef21dce6c73dd0dd454ba3e0f7fac08e053ea16060a2e5ce69a3746ee27
+license: LGPL-3.0-or-later
+dep-pkg: libavif librsvg
+bsystem: configure
+
+dopatch: |
+    # stdio.h: char* ctermid(char* __buf) __INTRODUCED_IN(26);
+    if [ "$TARGET_PLATFORM_VERS" -lt 26 ] ; then
+        gsed -i '/chafa\.h/a static inline char* ctermid(char* __buf) { return (__buf == NULL) ? "/dev/tty" : strcpy(__buf, "/dev/tty"); }' tools/chafa/chicle-options.c
+    fi
