@@ -1,0 +1,6 @@
+summary: Cargo subcommand to easily use LLVM source-based code coverage
+git-url: https://github.com/taiki-e/cargo-llvm-cov
+src-url: https://static.crates.io/crates/cargo-llvm-cov/cargo-llvm-cov-0.9.1.crate
+src-sha: 5e00647cc92940c4dd82249c480fe08fd3809767e89f056bcec46d8a7962ea5b
+license: Apache-2.0 MIT
+bsystem: cargo
