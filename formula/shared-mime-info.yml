@@ -1,0 +1,9 @@
+summary: Database of common MIME types
+web-url: https://wiki.freedesktop.org/www/Software/shared-mime-info
+git-url: https://gitlab.freedesktop.org/xdg/shared-mime-info
+src-url: https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.5.1/shared-mime-info-2.5.1.tar.bz2
+src-sha: b75b420da9b0be9a3d99b1bee6ed87957b56ab54583ac1a97fbd0dc98ddddb25
+license: GPL-2.0-only
+dep-upp: gettext-tools
+dep-pkg: glib libxml2
+install: mesonw -Dbuild-tools=false -Dbuild-tests=false -Dbuild-spec=false -Dbuild-translations=false -Dupdate-mimedb=false
