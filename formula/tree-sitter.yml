@@ -1,0 +1,6 @@
+summary: A parser generator tool
+web-url: https://tree-sitter.github.io/
+src-url: https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.27.2.tar.gz
+src-sha: 356528363bf7fbad12a2cfeb5a2678c0118ef886a4d69ad9a379db5fdef0735f
+license: MIT
+install: cargow install --path crates/cli
