@@ -1,0 +1,10 @@
+summary: A command-line tool for converting Commonmark Markdown to Gemtext
+web-url: https://sr.ht/~kota/gemgen/
+src-url: https://gitlab.com/kotajacob/gemgen/-/archive/v0.6.0/gemgen-v0.6.0.tar.gz
+src-sha: ea0ab8fb45d8b2aa89bb3d5fd4e3ccf559dc509be6bf4c2a2cbaa95d1f69dc22
+license: GPL-3.0-or-later
+dep-upp: scdoc
+install: |
+    gow -X main.Version=$PACKAGE_VERSION
+    scdoc < gemgen.1.scd | sed "s/VERSION/$PACKAGE_VERSION/g" > gemgen.1
+    install_mans gemgen.1
