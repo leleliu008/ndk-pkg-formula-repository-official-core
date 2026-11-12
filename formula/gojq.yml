@@ -1,0 +1,5 @@
+summary: An implementation of jq in pure golang
+src-url: https://github.com/itchyny/gojq/archive/refs/tags/v0.12.20.tar.gz
+src-sha: 7a52db203c779c88eea3ad70d6e7f10daac804e0def4198a5766a41bf6f00141
+license: MIT
+install: gow -X github.com/itchyny/gojq/cli.revision=fa534a1318dedcd136563575e4a5b40fa8d47643 ./cmd/gojq
