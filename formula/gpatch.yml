@@ -1,0 +1,8 @@
+summary: Apply a diff file to an original
+src-url: https://ftp.gnu.org/gnu/patch/patch-2.8.1.tar.xz
+src-sha: 3240c7959c5347c8ed347e3c4201c0337bf4240d5cf09d68889e58eeaba30e17
+license: GPL-3.0-or-later
+
+install: configure --program-prefix=g --enable-xattr --disable-gcc-warnings
+
+dotweak: ln -s gpatch bin/patch
