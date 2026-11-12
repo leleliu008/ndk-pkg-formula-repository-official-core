@@ -1,0 +1,5 @@
+summary: A cargo subcommand that generates Debian packages from information in Cargo.toml
+src-url: https://github.com/kornelski/cargo-deb/archive/refs/tags/v3.8.0.tar.gz
+src-sha: 30e73f94b32fe6ba06fe5338e6095f0dfc22d7bb9daa16aea9c8af6fdca8b618
+license: MIT
+bsystem: cargo
