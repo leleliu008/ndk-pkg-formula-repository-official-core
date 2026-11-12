@@ -1,0 +1,21 @@
+summary: A shared library that implements scrypt() functionality - a replacement for bcrypt()
+git-url: https://github.com/technion/libscrypt
+git-sha: 69a6f21d7648e18e4e5711d22d0db1af4620b3e9
+version: 1.22
+license: BSD-2-Clause
+binbstd: 1
+install: |
+    run rm main.c
+
+    for f in *.c
+    do
+        run "$CC" -c "$CPPFLAGS" "$CFLAGS" -O2 "$f"
+    done
+
+    run "$AR" crs libscrypt.a *.o
+
+    run "$CC" -shared $LDFLAGS -o libscrypt.dylib *.o
+
+    install_libs libscrypt.a libscrypt.dylib
+
+    install_incs libscrypt.h
