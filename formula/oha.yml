@@ -1,0 +1,9 @@
+summary: HTTP load generator, inspired by rakyll/hey with tui animation
+src-url: https://github.com/hatoo/oha/archive/refs/tags/v1.16.0.tar.gz
+src-sha: 8d856e2850efb521c0a1f8efed530eeaeebea34d09c6edc19a42dc5e13b14287
+license: MIT
+dep-pkg: libopenssl
+bsystem: cargo cmake+gmake
+
+# https://github.com/aws/aws-lc-rs/issues/899
+prepare: export AWS_LC_SYS_NO_JITTER_ENTROPY=1
