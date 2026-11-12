@@ -1,0 +1,6 @@
+summary: Multi-platform, multi-architecture disassembly framework
+web-url: https://www.capstone-engine.org/
+src-url: https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.9.tar.gz
+src-sha: 0619da31af08152600af95c481527ef6d756c0a8404fca7544a4fdf6dfc2c0f9
+license: BSD-3-Clause
+install: cmakew -DCAPSTONE_BUILD_TESTS=OFF -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON
