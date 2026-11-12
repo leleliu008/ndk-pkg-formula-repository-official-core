@@ -1,0 +1,22 @@
+pkgtype: exe+lib
+summary: Use SOCKS-friendly applications with Tor
+git-url: https://gitlab.torproject.org/tpo/core/torsocks
+src-uri: https://gitlab.torproject.org/tpo/core/torsocks/-/archive/v2.5.0/torsocks-v2.5.0.tar.bz2
+src-url: https://deb.debian.org/debian/pool/main/t/torsocks/torsocks_2.5.0.orig.tar.bz2
+src-sha: 31a917328b221e955230b7663abfbc50d3a9b445a68cb0313c11cf884f8cb41f
+license: GPL-2.0-only
+dep-upp: libtool
+bsystem: autogen
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/torsocks-v2.5.0-0001-Fix-macros-for-accept4-2.patch
+fix-sha: 97881f0b59b3512acc4acb58a0d6dfc840d7633ead2f400fad70dda9b2ba30b0
+
+dopatch: |
+    gsed -i -e '/noinst_PROGRAMS = /s|test_dns||' -e '/test_dns/d' tests/Makefile.am
+
+prepare: |
+    if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
+        export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+    fi
+
+dotweak: gsed -i '/^prefix=/c prefix="$(dirname "$0")"\ncd "$prefix"\nprefix="${PWD%/*}"\ncd - > /dev/null' bin/torsocks
