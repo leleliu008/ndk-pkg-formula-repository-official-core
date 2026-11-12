@@ -1,0 +1,9 @@
+summary: TUI for logs from journalctl, file system, Docker, Podman and Kubernetes pods
+src-url: https://github.com/Lifailon/lazyjournal/archive/refs/tags/0.8.7.tar.gz
+src-sha: 9db27ffb8f6f407bbb618ca598e876998a3f3b50b6ca18bc12b8adcfa46821e4
+license: MIT
+install: |
+    gow \
+        -X main.version="$PACKAGE_VERSION" \
+        -X main.date="$TIMESTAMP_ISO8601" \
+        -X main.buildSource=xcpkg
