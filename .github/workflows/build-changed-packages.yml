@@ -61,8 +61,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      ############################################################
+
       - run: apt -y update
       - run: apt -y install curl
+
+      ############################################################
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
@@ -73,16 +77,42 @@ jobs:
 
       - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
+      ############################################################
+
       - id:  api-level-1
-        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
-
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
-
-      - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
 
-      - if:  steps.api-level-1.outputs.API_LEVEL != steps.api-level-2.outputs.API_LEVEL
-        run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }}
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-1
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-1.outputs.FILENAME }}
+          path: ${{ steps.bundle-1.outputs.FILENAME }}
+
+      ############################################################
+
+      - run: rm *.tar.xz
+
+      ############################################################
+
+      - id:  api-level-2
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} --static
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-2
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - if: steps.bundle-1.outputs.FILENAME != steps.bundle-2.outputs.FILENAME
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-2.outputs.FILENAME }}
+          path: ${{ steps.bundle-2.outputs.FILENAME }}
 
 
 
@@ -105,6 +135,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      ############################################################
+
       - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
@@ -114,16 +146,42 @@ jobs:
 
       - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
+      ############################################################
+
       - id:  api-level-1
-        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
-
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
-
-      - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
 
-      - if:  steps.api-level-1.outputs.API_LEVEL != steps.api-level-2.outputs.API_LEVEL
-        run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }}
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-1
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-1.outputs.FILENAME }}
+          path: ${{ steps.bundle-1.outputs.FILENAME }}
+
+      ############################################################
+
+      - run: rm *.tar.xz
+
+      ############################################################
+
+      - id:  api-level-2
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} --static
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-2
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - if: steps.bundle-1.outputs.FILENAME != steps.bundle-2.outputs.FILENAME
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-2.outputs.FILENAME }}
+          path: ${{ steps.bundle-2.outputs.FILENAME }}
 
 
   macos:
@@ -144,6 +202,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      ############################################################
+
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
@@ -153,13 +213,39 @@ jobs:
 
       - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
 
+      ############################################################
+
       - id:  api-level-1
-        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
-
-      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }} --static
-
-      - id:  api-level-2
         run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
 
-      - if:  steps.api-level-1.outputs.API_LEVEL != steps.api-level-2.outputs.API_LEVEL
-        run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-${{ matrix.abi }}/${{ matrix.pkg }}
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }}
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-1
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-1.outputs.FILENAME }}
+          path: ${{ steps.bundle-1.outputs.FILENAME }}
+
+      ############################################################
+
+      - run: rm *.tar.xz
+
+      ############################################################
+
+      - id:  api-level-2
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} --static
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-2
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - if: steps.bundle-1.outputs.FILENAME != steps.bundle-2.outputs.FILENAME
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-2.outputs.FILENAME }}
+          path: ${{ steps.bundle-2.outputs.FILENAME }}

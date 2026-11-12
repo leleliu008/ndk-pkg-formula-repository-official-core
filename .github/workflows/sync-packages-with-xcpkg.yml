@@ -1,0 +1,150 @@
+name: sync packages with xcpkg
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 23 * * *'
+
+jobs:
+  find-new-packages:
+
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - run: git clone --depth=1 https://github.com/leleliu008/xcpkg-formula-repository-official-core   a
+      - run: git clone --depth=1 https://github.com/leleliu008/ndk-pkg-formula-repository-official-core b
+
+      - run: |
+          I=0
+
+          for f in a/formula/*.yml
+          do
+              [ -L "$f" ] && continue
+              [ -f "b${f#a}" ] && continue
+
+              mv "$f" .
+
+              I="$(($I + 1))"
+
+              if [ "$I" -eq 256 ] ; then
+                  exit
+              fi
+          done
+
+      - run: rm -rf a/ b/
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: new-packages-${{ github.sha }}
+          path: .
+
+      - id: new-packages
+        run: |
+          set -ex
+          NAMES="$(ls | sed 's|\.yml$||' | jq -Rnc '[inputs]')"
+          printf 'names=%s\n' "$NAMES" >> "$GITHUB_OUTPUT"
+
+    outputs:
+      names: ${{ steps.new-packages.outputs.names }}
+
+
+  sync:
+
+    needs: find-new-packages
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        pkg: ${{ fromJson(needs.find-new-packages.outputs.names) }}
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: new-packages-${{ github.sha }}
+          path: new
+
+      ############################################################
+
+      - run: cat new/${{ matrix.pkg }}.yml
+      - run: mv  new/${{ matrix.pkg }}.yml formula/
+
+      ############################################################
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: chmod +x ndk-pkg
+
+      - run: ./ndk-pkg about
+      - run: ./ndk-pkg setup
+      - run: ./ndk-pkg sysinfo
+
+      - run: printf 'NDKPKG_FORMULA_DIRS=%s\n' "$GITHUB_WORKSPACE/formula" >> "$GITHUB_ENV"
+
+      ############################################################
+
+      - id:  api-level-1
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }})" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }}
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-1
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-1.outputs.FILENAME }}
+          path: ${{ steps.bundle-1.outputs.FILENAME }}
+
+      ############################################################
+
+      - run: rm *.tar.xz
+
+      ############################################################
+
+      - id:  api-level-2
+        run: printf 'API_LEVEL=%s\n' "$(./api-level ${{ matrix.pkg }} --static)" >> "$GITHUB_OUTPUT"
+
+      - run: ./ndk-pkg install android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} --static
+      - run: ./ndk-pkg bundle  android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
+
+      - id: bundle-2
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - if: steps.bundle-1.outputs.FILENAME != steps.bundle-2.outputs.FILENAME
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-2.outputs.FILENAME }}
+          path: ${{ steps.bundle-2.outputs.FILENAME }}
+
+      ############################################################
+
+      - id: package-info
+        run: printf 'VERSION=%s\n' "$(./ndk-pkg info ${{ matrix.pkg }} version)" >> "$GITHUB_OUTPUT"
+
+      ############################################################
+
+      - run: git config --global user.name  leleliu008
+      - run: git config --global user.email leleliu008@gmail.com
+
+      - run: git add formula/${{ matrix.pkg }}.yml
+      - run: git commit -m 'addnew package ${{ matrix.pkg }} ${{ steps.package-info.outputs.VERSION }}'
+      - run: git pull --rebase=true
+      - run: git push origin master

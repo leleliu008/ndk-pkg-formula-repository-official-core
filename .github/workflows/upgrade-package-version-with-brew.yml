@@ -118,12 +118,12 @@ jobs:
       - run: ./ndk-pkg bundle  android-${{ steps.api-level-1.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
 
       - id: bundle-1
-        run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v6
         with:
-          name: ${{ steps.bundle-1.outputs.BUNDLE_FILENAME }}
-          path: ${{ steps.bundle-1.outputs.BUNDLE_FILENAME }}
+          name: ${{ steps.bundle-1.outputs.FILENAME }}
+          path: ${{ steps.bundle-1.outputs.FILENAME }}
 
       ############################################################
 
@@ -138,13 +138,13 @@ jobs:
       - run: ./ndk-pkg bundle  android-${{ steps.api-level-2.outputs.API_LEVEL }}-arm64-v8a/${{ matrix.pkg }} .tar.xz
 
       - id: bundle-2
-        run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
 
-      - if: steps.api-level-1.outputs.API_LEVEL != steps.api-level-2.outputs.API_LEVEL
+      - if: steps.bundle-1.outputs.FILENAME != steps.bundle-2.outputs.FILENAME
         uses: actions/upload-artifact@v6
         with:
-          name: ${{ steps.bundle-2.outputs.BUNDLE_FILENAME }}
-          path: ${{ steps.bundle-2.outputs.BUNDLE_FILENAME }}
+          name: ${{ steps.bundle-2.outputs.FILENAME }}
+          path: ${{ steps.bundle-2.outputs.FILENAME }}
 
       ############################################################
 
