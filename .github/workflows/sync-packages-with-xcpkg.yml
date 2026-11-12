@@ -26,6 +26,8 @@ jobs:
               [ -L "$f" ] && continue
               [ -f "b${f#a}" ] && continue
 
+              sed -i -e 's|-install_name|-soname|' -e 's|\.dylib|.so|g' -e 's|xcpkg|ndk-pkg|' "$f"
+
               mv "$f" .
 
               I="$(($I + 1))"
