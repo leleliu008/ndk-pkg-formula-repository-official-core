@@ -1,0 +1,8 @@
+summary: A small, fast, portable SSH implementation, including support for SCP and SFTP
+src-url: https://github.com/wolfSSL/wolfssh/archive/refs/tags/v1.6.0-stable.tar.gz
+src-sha: e345b580643af6715a4293ed7bab4e99ea562bb379adb8898eeae55c38b12f56
+license: GPL-3.0-only
+dep-pkg: libwolfssl
+dep-upp: libtool
+bsystem: autotools
+install: configure --disable-examples --disable-sshclient --disable-sshd
