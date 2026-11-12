@@ -1,0 +1,13 @@
+summary: Audio encoder which generates ATSC A/52 compressed audio streams
+web-url: https://aften.sourceforge.net/
+src-url: https://downloads.sourceforge.net/project/aften/aften/0.0.8/aften-0.0.8.tar.bz2
+src-sha: 87cc847233bb92fbd5bed49e2cdd6932bb58504aeaefbfd20ecfbeb9532f0c0a
+license: LGPL-2.1-or-later
+
+dopatch: |
+    gsed -i 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
+    gsed -i '/static inline void cpu_caps_detect/a static inline void apply_simd_restrictions(AftenSimdInstructions *simd_instructions){}' libaften/cpu_caps.h
+
+install: cmakew -DSHARED=ON -DINSTALL_TARGETS=aften_static
+
+dotweak: cd lib && mv libaften_static.a libaften.a
