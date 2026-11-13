@@ -1,0 +1,7 @@
+summary: A command-line tool for converting XML files to various formats
+src-url: https://codeberg.org/xmlto/xmlto/archive/0.0.29.tar.gz
+src-sha: ccf0657f71f874d01a28729e7c08ea468ae705e087a4e12d1dcacb6b54a5d25d
+license: GPL-2.0-or-later
+dep-upp: getopt xmlutils xsltproc docbook-xsl
+bsystem: autotools
+prepare: export GETOPT="$(command -v getopt)"
