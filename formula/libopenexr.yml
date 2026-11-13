@@ -1,7 +1,7 @@
 summary: High dynamic-range image file format
 web-url: https://www.openexr.com/
-src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.3.tar.gz
-src-sha: ff1de95f4031c1c57c633e647dc97c15282d3aa3bc7fb90745f00f74de4a054f
+src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.4.tar.gz
+src-sha: cedafe3171176d20baea4e887ceacc74cbe3a5a06fbb30d9f0a394a4416e5f7b
 license: BSD-3-Clause
 dep-pkg: libImath libz libzstd libdeflate libopenjph
 
