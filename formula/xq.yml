@@ -1,0 +1,5 @@
+summary: Command-line XML and HTML beautifier and content extractor
+src-url: https://github.com/sibprogrammer/xq/archive/refs/tags/v1.5.1.tar.gz
+src-sha: d57579a6c2009f3bd0f6b6f66f12744eb895575b767e7a02a099003c6bdcda3d
+license: MIT
+install: gow -X main.version="$PACKAGE_VERSION" -X main.date="$TIMESTAMP_ISO8601"
