@@ -1,0 +1,5 @@
+summary: Fast CSV toolkit written in Rust
+src-url: https://github.com/BurntSushi/xsv/archive/refs/tags/0.13.0.tar.gz
+src-sha: 2b75309b764c9f2f3fdc1dd31eeea5a74498f7da21ae757b3ffd6fd537ec5345
+license: MIT
+bsystem: cargo
