@@ -1,7 +1,7 @@
 summary: Linux virtual machines
 web-url: https://lima-vm.io/
-src-url: https://github.com/lima-vm/lima/archive/refs/tags/v2.2.1.tar.gz
-src-sha: d551efb52115ba006c1052d5c929e4d3afac363c78c9cfca6975af1f85c1426a
+src-url: https://github.com/lima-vm/lima/archive/refs/tags/v2.3.0.tar.gz
+src-sha: 436ace830cb3e8fa512e0157a220bd8d6f826aef789c3f26d2984f0ea1e3c2ea
 license: Apache-2.0
 bsystem: gmake go
 install: |
