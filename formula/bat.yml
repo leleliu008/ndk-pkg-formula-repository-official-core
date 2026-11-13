@@ -6,11 +6,18 @@ dep-pkg: libz
 
 install: |
     cargow install
-    find . -name 'bat.1'
-    install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
-    install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash
-    install_completion fish bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.fish
-    install_completion  zsh bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.zsh
+
+    run cd "target/$RUST_TARGET/$PROFILE/build"
+
+    MAN1PATH="$(find . -name 'bat.1')"
+
+    install_mans "$MAN1PATH"
+
+    run cd "${MAN1PATH%'/manual/bat.1'}/completions"
+
+    install_completion bash bat bat.bash
+    install_completion fish bat bat.fish
+    install_completion  zsh bat bat.zsh
 
 
 # sys/sysinfo.h:68:int get_nprocs(void) __INTRODUCED_IN(23);
