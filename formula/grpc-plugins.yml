@@ -1,7 +1,7 @@
 summary: grpc plugins
 web-url: https://grpc.io/
 git-url: https://github.com/grpc/grpc
-git-tag: v1.85.1
+git-tag: v1.85.2
 license: Apache-2.0
 dep-pkg: libprotobuf libopenssl@3 libcares libre2
 dep-lib: -llog
