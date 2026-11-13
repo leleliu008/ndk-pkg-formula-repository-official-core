@@ -1,0 +1,6 @@
+summary: X.Org Protocol Headers
+src-url: https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2026.1.tar.gz
+src-sha: 7fa90e48cbaca6bc4c99d176e88c5c147ab0ed42358e14a0869ee9c8a610ae7e
+license: MIT
+dep-pkg: util-macros
+bsystem: configure
