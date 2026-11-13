@@ -7,6 +7,8 @@ license: Apache-2.0
 
 install: |
     cargow build --locked --lib -p wasmtime-c-api
-    install_libs target/$RUST_TARGET/$PROFILE/libwasmtime.a
-    install_libs target/$RUST_TARGET/$PROFILE/libwasmtime.so
+    run cd "target/$RUST_TARGET/$PROFILE"
+    run ls
+    install_libs libwasmtime.a libwasmtime.so
+    run cd -
     run mv crates/c-api/include "$PACKAGE_INSTALL_DIR/"
