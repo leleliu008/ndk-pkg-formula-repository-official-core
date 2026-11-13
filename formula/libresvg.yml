@@ -6,5 +6,5 @@ license: MPL-2.0
 install: |
     cargow build --locked --lib --manifest-path crates/c-api/Cargo.toml
     install_incs crates/c-api/resvg.h crates/c-api/ResvgQt.h
-    install_libs target/$RUST_TARGET/$PROFILE/libresvg.a
-    install_libs target/$RUST_TARGET/$PROFILE/libresvg.so
+    run cd "target/$RUST_TARGET/$PROFILE"
+    install_libs libresvg.a libresvg.so
