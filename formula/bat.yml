@@ -6,6 +6,7 @@ dep-pkg: libz
 
 install: |
     cargow install
+    find . -name 'bat.1'
     install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
     install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash
     install_completion fish bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.fish
