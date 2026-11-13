@@ -1,0 +1,5 @@
+summary: CLI to convert between YAML, TOML, JSON and HCL
+src-url: https://github.com/sclevine/yj/archive/refs/tags/v5.1.0.tar.gz
+src-sha: 9a3e9895181d1cbd436a1b02ccf47579afacd181c73f341e697a8fe74f74f99d
+license: Apache-2.0
+install: gow -X main.Version=$PACKAGE_VERSION
