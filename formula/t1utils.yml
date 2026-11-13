@@ -1,0 +1,7 @@
+summary: Command-line tools for dealing with Type 1 fonts
+git-url: https://github.com/kohler/t1utils
+web-url: https://www.lcdf.org/type/
+src-url: https://www.lcdf.org/type/t1utils-1.42.tar.gz
+src-sha: 61877935b1987044ddff4bb90a05200ca7164678a355e170bf5f1a5556cc9f29
+license: MIT
+bsystem: configure
