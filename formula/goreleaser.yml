@@ -1,6 +1,6 @@
 summary: Deliver Go binaries as fast and easily as possible
 web-url: https://goreleaser.com/
-src-url: https://github.com/goreleaser/goreleaser/archive/refs/tags/v2.20.1.tar.gz
-src-sha: ae67dc2c731946a45cffa650899552c326ef5239375a6896f90812a4e51cf5be
+src-url: https://github.com/goreleaser/goreleaser/archive/refs/tags/v2.20.2.tar.gz
+src-sha: 04c2bd59e77630c1a570d371d1bfe1849688df8686576eec7248322d1fa022a8
 license: MIT
 install: gow -X main.version=$PACKAGE_VERSION -X main.commit=$PACKAGE_GIT_SHA -X main.builtBy=ndk-pkg
