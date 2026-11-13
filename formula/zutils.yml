@@ -1,0 +1,7 @@
+summary: A collection of utilities able to process any combination of compressed and uncompressed files transparently
+web-url: https://www.nongnu.org/zutils/zutils.html
+src-url: https://download.savannah.nongnu.org/releases/zutils/zutils-1.15.tar.lz
+src-sha: 05e6b03f333eabd78a1055139557e8ada6b634f1a58e8501f3b8f111a705cb87
+license: GPL-2.0-or-later
+dep-upp: bzip2 gzip grep
+bsystem: configure
