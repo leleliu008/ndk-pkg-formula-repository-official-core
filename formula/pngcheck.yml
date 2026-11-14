@@ -4,8 +4,6 @@ src-url: https://github.com/pnggroup/pngcheck/archive/refs/tags/v4.0.1.tar.gz
 src-sha: a24ac2348efca5895e9d6f53fd316f3d5c409ab92a74b2b8106541759304da53
 license: MIT GPL-2.0-or-later
 dep-pkg: libz
-binbstd: 1
-install: |
-    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -lz -o pngcheck pngcheck.c
-    install_bins pngcheck
-    install_mans pngcheck.1
+ldflags: -lz
+ccflags: -DUSE_ZLIB
+install: compile --install pngcheck.c pngcheck.1
