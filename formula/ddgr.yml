@@ -4,6 +4,7 @@ src-sha: a858e0477ea339b64ae0427743ebe798a577c4d942737d8b3460bce52ac52524
 license: GPL-3.0-or-later
 install: |
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
-    install_completion bash ddgr auto-completion/bash/ddgr-completion.bash
-    install_completion fish ddgr auto-completion/fish/ddgr.fish
-    install_completion  zsh ddgr auto-completion/zsh/_ddgr
+    mv auto-completion/bash/ddgr-completion.bash ddgr.bash
+    mv auto-completion/zsh/_ddgr ddgr.zsh
+    mv auto-completion/fish/ddgr.fish .
+    install_files ddgr.*sh
