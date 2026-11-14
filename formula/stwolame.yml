@@ -5,4 +5,4 @@ src-sha: cc35424f6019a88c6f52570b63e1baf50f62963a3eac52a03a800bb070d7c87d
 license: LGPL-2.1
 install: |
     configure
-    install_bins simplefrontend/stwolame
+    install_files simplefrontend/stwolame
