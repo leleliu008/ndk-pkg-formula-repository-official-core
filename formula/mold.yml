@@ -6,7 +6,7 @@ dep-pkg: libz
 
 install: |
     cargow install --path cli
-    install_mans docs/mold.1
+    install_files docs/mold.1
 
 #bits/lockf.h:61:int lockf(int __fd, int __cmd, off_t __length) __RENAME_IF_FILE_OFFSET64(lockf64) __INTRODUCED_IN(24);
 api-min: 24
