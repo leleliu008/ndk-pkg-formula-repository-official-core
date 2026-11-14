@@ -63,5 +63,5 @@ install: |
         use_lld=true
     run ninja --version
     run ninja --verbose d8
-    run install_files d8 obj/*.a
+    install_files d8 obj/*.a
     run cp -r "$PACKAGE_BSCRIPT_DIR"/include "$PACKAGE_INSTALL_DIR/"
