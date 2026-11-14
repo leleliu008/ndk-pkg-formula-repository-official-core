@@ -13,4 +13,4 @@ dopatch: |
 
 install: |
     configure --enable-static --disable-shared
-    install_mans ../docs/chafa.1
+    install_files ../docs/chafa.1
