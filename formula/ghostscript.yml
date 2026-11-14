@@ -42,7 +42,7 @@ install: |
     install_libs  *.a
 
 dotweak: |
-    writepc libgs <<EOF
+    install_pcfile libgs <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
