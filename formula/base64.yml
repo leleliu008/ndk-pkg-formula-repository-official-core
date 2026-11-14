@@ -5,7 +5,9 @@ src-sha: 2416578ba7a7197bddd1ee578a6d8872707c831d2419bdc2c1b4317a7e3c8a2a
 license: Unlicense
 binbstd: 1
 
+dopatch: |
+    gsed -i 's|install: install-bin install-man|install: base64 base64.1|' Makefile.in
+
 install: |
-    run install -d "$PACKAGE_INSTALL_DIR/bin"
-    run install -d "$PACKAGE_INSTALL_DIR/man/man1"
     configure
+    install_files base64 base64.1
