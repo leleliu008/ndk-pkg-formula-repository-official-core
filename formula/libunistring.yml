@@ -12,7 +12,7 @@ install: |
         --enable-namespacing
 
 dotweak: |
-    writepc libunistring <<EOF
+    install_pcfile libunistring <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
