@@ -8,8 +8,7 @@ license: BSD-3-Clause
 install: |
     gmakew clean
     gmakew lib OS=Android CC="$CC" CXX="$CXX" CFLAGS="'$CFLAGS'" LIBEXT=.so
-    install_incs linear.h
-    install_libs liblinear.*
+    install_files linear.h liblinear.*
 
 fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/bac35ae9140405dec00f1f700d2ecc27cf82526b/liblinear/patch-Makefile.diff
 fix-sha: 11a47747918f665d219b108fac073c626779555b5022903c9b240a4c29bbc2a0
