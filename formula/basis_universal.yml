@@ -4,8 +4,6 @@ src-sha: 216e49e1f4213d4bfa4afaa07527e16bac28533dddd444197d3aa19230ac130c
 version: 2.50
 license: Apache-2.0
 
-dopatch: |
-    gsed -i '/strip/c message("--")' CMakeLists.txt
-    #gsed -i '/set(CMAKE_CXX_FLAGS/c set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")' CMakeLists.txt
+dopatch: gsed -i '/strip/c message("--")' CMakeLists.txt
 
-install: cmakew && install_bins ../bin/basisu
+install: cmakew && install_files ../bin/basisu
