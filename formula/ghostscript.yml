@@ -39,7 +39,7 @@ install: |
     gmakew libgpcl6
     cd bin
     find . -name '*.a' -printf '%P\n' | xargs -I {} mv {} lib{}
-    install_libs  *.a
+    install_files *.a
 
 dotweak: |
     install_pcfile libgs <<EOF
