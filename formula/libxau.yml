@@ -1,0 +1,6 @@
+summary: A Sample Authorization Protocol for X
+src-url: https://xorg.freedesktop.org/archive/individual/lib/libXau-1.0.12.tar.xz
+src-sha: 74d0e4dfa3d39ad8939e99bda37f5967aba528211076828464d2777d477fc0fb
+license: MIT
+dep-pkg: xorgproto
+bsystem: configure
