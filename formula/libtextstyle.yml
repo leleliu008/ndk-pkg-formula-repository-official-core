@@ -15,7 +15,7 @@ install: |
         --with-libncurses-prefix="$libncurses_INSTALL_DIR"
 
 dotweak: |
-    writepc libtextstyle <<EOF
+    install_pcfile libtextstyle <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
