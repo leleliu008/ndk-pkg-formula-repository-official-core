@@ -39,7 +39,6 @@ install: |
         DYNAMIC_CC="'$CC -fPIC'" \
         Q=
     cd src
-    install_incs lua.h lualib.h lauxlib.h luaconf.h lua.hpp luajit.h
-    install_libs libluajit.a libluajit.so
+    install_files lua.h lualib.h lauxlib.h luaconf.h lua.hpp luajit.h libluajit.a libluajit.so
 
 developer: Mike Pall <luajit@freelists.org>
