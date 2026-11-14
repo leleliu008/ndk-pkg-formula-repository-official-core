@@ -62,4 +62,4 @@ install: |
     run ninja --version
     run ninja --verbose
 
-    run install_files *.so
+    install_files *.so
