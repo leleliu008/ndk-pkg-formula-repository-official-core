@@ -10,5 +10,4 @@ ccflags: -Wno-implicit-function-declaration
 install: |
     gmakew clean
     gmakew whois HAVE_ICONV=1 CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS=-liconv
-    install_bins whois
-    install_mans whois.1
+    install_files whois whois.1
