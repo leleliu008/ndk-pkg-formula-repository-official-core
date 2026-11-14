@@ -38,6 +38,6 @@ install: |
         STATIC_CC="$CC" \
         DYNAMIC_CC="'$CC -fPIC'" \
         Q=
-    install_bins src/luajit
+    install_files src/luajit
 
 developer: Mike Pall <luajit@freelists.org>
