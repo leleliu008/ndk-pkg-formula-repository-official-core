@@ -65,5 +65,5 @@ install: |
 
     run ls
     run tree
-    run install_files pdfium_diff pdfium_test obj/*.a
+    install_files pdfium_diff pdfium_test obj/*.a
     run mv "$PACKAGE_BSCRIPT_DIR/public" "$PACKAGE_INSTALL_DIR/include"
