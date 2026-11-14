@@ -7,7 +7,4 @@ bsystem: cargo cmake
 
 install: |
     cargow build --features ffi,pkg-config-meta
-    install_incs quiche/include/quiche.h
-    run cd "target/$RUST_TARGET/$PROFILE"
-    install_libs libquiche.a libquiche.so
-    install_pcfs quiche.pc
+    install_files quiche/include/quiche.h --cargo libquiche.a libquiche.so quiche.pc
