@@ -7,5 +7,5 @@ bsystem: gmake go
 install: |
     export CGO_ENABLED=1
     gmakew clean native VERSION="$PACKAGE_VERSION"
-    install_bins _output/bin/*
-    run cp -r _output/libexec _output/share "$PACKAGE_INSTALL_DIR"
+    install_files _output/bin/*
+    run mv _output/libexec _output/share "$PACKAGE_INSTALL_DIR/"
