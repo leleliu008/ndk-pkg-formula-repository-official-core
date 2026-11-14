@@ -18,5 +18,4 @@ install: |
     gmakew clean
     gmakew $BINs AR=$AR CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
 
-    install_bins $BINs
-    install_mans *.1
+    install_files $BINs *.1
