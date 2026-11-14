@@ -4,4 +4,4 @@ src-sha: 7a8f7c2c86419270b713b6235dced7b9d0e68732e74a1e0f375f774fff4023ca
 license: MIT
 install: |
     gow -X main.gVersion=$PACKAGE_VERSION
-    run install_mans lf.1
+    run install_files lf.1
