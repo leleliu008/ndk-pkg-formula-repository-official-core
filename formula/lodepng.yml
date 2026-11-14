@@ -8,4 +8,4 @@ install: |
     run $CXX -c $CXXFLAGS $CPPFLAGS -o lodepng_util.o lodepng_util.cpp
     run $AR crs liblodepng.a lodepng.o
     run $AR crs liblodepng_util.a lodepng_util.o
-    run install_files liblodepng.a liblodepng_util.a
+    install_files liblodepng.a liblodepng_util.a
