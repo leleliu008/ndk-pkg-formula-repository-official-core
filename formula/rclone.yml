@@ -3,4 +3,4 @@ web-url: https://rclone.org/
 src-url: https://github.com/rclone/rclone/archive/refs/tags/v1.76.0.tar.gz
 src-sha: 8cb7e5d576fe9a3aef8b1a0785e2ffc6c1953f8ed109f42000b0b86718f6628b
 license: MIT
-install: gow -X github.com/rclone/rclone/fs.Version=v$PACKAGE_VERSION && run install_mans rclone.1
+install: gow -X github.com/rclone/rclone/fs.Version=v$PACKAGE_VERSION && install_files rclone.1
