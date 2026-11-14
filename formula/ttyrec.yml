@@ -8,4 +8,4 @@ dopatch: gsed -i 's|union wait status|int status|' ttyrec.c
 install: |
     gmakew clean
     gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS -Dset_progname=setprogname $LDFLAGS'"
-    install_bins ttyrec ttyplay ttytime
+    install_files ttyrec ttyplay ttytime
