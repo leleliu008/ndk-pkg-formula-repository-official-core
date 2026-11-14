@@ -147,7 +147,7 @@ dopatch: |
 install: cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_TESTING=OFF
 
 dotweak: |
-    writepc proj <<EOF
+    install_pcfile proj <<EOF
     prefix=\${pcfiledir}/../..
     libdir=\${prefix}/lib
     includedir=\${prefix}/include
