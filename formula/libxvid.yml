@@ -16,7 +16,7 @@ install: |
         ac_cv_prog_ac_yasm=yasm
 
 dotweak: |
-    writepc xvidcore <<EOF
+    install_pcfile xvidcore <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
