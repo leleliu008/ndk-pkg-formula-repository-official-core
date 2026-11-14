@@ -7,7 +7,7 @@ bscript: libltdl
 install: configure --enable-ltdl-install
 
 dotweak: |
-    writepc libltdl <<EOF
+    install_pcfile libltdl <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
