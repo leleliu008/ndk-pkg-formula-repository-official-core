@@ -4,4 +4,4 @@ src-sha: 861496cd1e7d8546f770551893077e9b898fef1a6623d5e2207cf28c932e7738
 license: Apache-2.0
 install: |
     cargow install --path crates/cli
-    install_mans doc/watchexec.1
+    install_files doc/watchexec.1
