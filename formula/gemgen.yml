@@ -7,4 +7,4 @@ dep-upp: scdoc
 install: |
     gow -X main.Version=$PACKAGE_VERSION
     scdoc < gemgen.1.scd | sed "s/VERSION/$PACKAGE_VERSION/g" > gemgen.1
-    install_mans gemgen.1
+    install_files gemgen.1
