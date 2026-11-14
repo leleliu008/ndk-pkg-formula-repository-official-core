@@ -20,4 +20,4 @@ install: |
         --without-x
     gmakew
     gmakew -C cmd/dot dot_static
-    install_bins cmd/dot/dot_static
+    install_files cmd/dot/dot_static
