@@ -8,7 +8,7 @@ install: configure --enable-extra-encodings
 dotweak: |
     for item in iconv charset
     do
-        writepc "lib$item" <<EOF
+        install_pcfile "lib$item" <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
