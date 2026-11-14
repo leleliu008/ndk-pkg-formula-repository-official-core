@@ -11,7 +11,7 @@ install: |
     install_libs build/release/libmujs.*
 
 dotweak: |
-    writepc mujs <<EOF
+    install_pcfile mujs <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
