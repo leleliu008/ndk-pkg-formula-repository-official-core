@@ -4,6 +4,10 @@ git-url: https://github.com/bytecodealliance/wasmtime
 git-sha: c307ec81de02852d815e9849f7c89d955c03c30d
 version: 50.0.1
 license: Apache-2.0
-bsystem: cmake cargo
-install: cmakew -DWASMTIME_FASTEST_RUNTIME=ON
-bscript: crates/c-api
+bsystem: cargo cmake
+
+install: |
+    cargow build --locked --lib -p wasmtime-c-api
+    install_files --cargo libwasmtime.a libwasmtime.so
+    run cd crates/c-api/
+    install_files --dir=include
