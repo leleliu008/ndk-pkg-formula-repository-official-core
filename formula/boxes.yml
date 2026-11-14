@@ -12,6 +12,4 @@ dopatch: gsed -i 's|STRIP=true||' src/Makefile
 install: |
     gmakew clean
     gmakew CC="$CC" CFLAGS="'$CPPFLAGS -I. -I../src $CFLAGS'" LDFLAGS="'$LDFLAGS'"
-    run install_bins out/boxes
-    run install_mans doc/boxes.1
-    run install_etcs boxes-config
+    install_files out/boxes doc/boxes.1 --etc=boxes-config
