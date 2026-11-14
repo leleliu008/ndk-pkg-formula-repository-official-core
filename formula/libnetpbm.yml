@@ -35,7 +35,7 @@ dotweak: |
     run rm -rf staticlink
     run rm -rf sharedlink
 
-    writepc netpbm <<EOF
+    install_pcfile netpbm <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
