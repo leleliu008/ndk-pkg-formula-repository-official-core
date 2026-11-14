@@ -6,5 +6,4 @@ license: BSD-3-Clause
 xxflags: -std=c++11
 install: |
     cmakew
-    run install_libs libwebm.*
-    run install_bins mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
+    run install_files libwebm.* mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
