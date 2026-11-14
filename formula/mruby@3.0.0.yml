@@ -125,8 +125,7 @@ install: |
     export MRUBY_CONFIG=android
 
     run rm -rf build/android
-    run rake || return 1
+    run rake
 
-    run install_bins build/android/bin/*   || return 1
-    run install_libs build/android/lib/*.a || return 1
-    run cp -r build/android/include "$PACKAGE_INSTALL_DIR" || return 1
+    run install_files build/android/bin/* build/android/lib/*.a
+    run mv build/android/include "$PACKAGE_INSTALL_DIR/"
