@@ -4,4 +4,4 @@ src-sha: 1256ad3907bceb4fcee7ed40d17c5726f8b602eea900e94500ba3352e96febbc
 license: MPL-2.0
 install: |
     gow -X oss.terrastruct.com/d2/lib/version.Version=$PACKAGE_VERSION
-    install_mans ci/release/template/man/d2.1
+    install_files ci/release/template/man/d2.1
