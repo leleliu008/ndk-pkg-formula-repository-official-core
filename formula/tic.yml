@@ -37,4 +37,4 @@ install: |
         --disable-echo
     gmakew -C include
     gmakew -C progs tic
-    install_bins progs/tic
+    install_files progs/tic
