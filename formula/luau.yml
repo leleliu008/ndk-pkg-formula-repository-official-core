@@ -7,5 +7,5 @@ install: |
     cmakew \
         -DLUAU_BUILD_CLI=ON \
         -DLUAU_BUILD_TESTS=OFF
-    install_bins luau luau-analyze luau-ast luau-compile luau-reduce
+    install_files luau luau-analyze luau-ast luau-compile luau-reduce
     #install_libs libLuau.Analysis.a libLuau.Ast.a libLuau.Compiler.a libLuau.VM.a
