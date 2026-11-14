@@ -22,7 +22,7 @@ install: |
         gl_cv_header_working_fcntl_h=yes
 
 dotweak: |
-    writepc libintl <<EOF
+    install_pcfile libintl <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
