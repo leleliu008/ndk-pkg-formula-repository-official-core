@@ -12,5 +12,4 @@ install: |
         -DEXPAT_BUILD_EXAMPLES=OFF \
         -DEXPAT_SHARED_LIBS=OFF \
         -DEXPAT_ENABLE_INSTALL=OFF
-    install_bins xmlwf/xmlwf
-    install_mans "$PACKAGE_WORKING_DIR/src/doc/xmlwf.1"
+    install_files xmlwf/xmlwf ../doc/xmlwf.1
