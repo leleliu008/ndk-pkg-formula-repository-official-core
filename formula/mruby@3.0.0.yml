@@ -127,5 +127,5 @@ install: |
     run rm -rf build/android
     run rake
 
-    run install_files build/android/bin/* build/android/lib/*.a
+    install_files build/android/bin/* build/android/lib/*.a
     run mv build/android/include "$PACKAGE_INSTALL_DIR/"
