@@ -66,4 +66,4 @@ install: |
     run ninja --version
     run ninja --verbose d8
 
-    run install_files d8
+    install_files d8
