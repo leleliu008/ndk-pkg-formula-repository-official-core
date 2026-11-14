@@ -8,5 +8,4 @@ install: |
     gow -X main.Version=v$PACKAGE_VERSION ./cmd/age
     gow -X main.Version=v$PACKAGE_VERSION ./cmd/age-keygen
 
-    run install_mans doc/age.1
-    run install_mans doc/age-keygen.1
+    install_files doc/age.1 doc/age-keygen.1
