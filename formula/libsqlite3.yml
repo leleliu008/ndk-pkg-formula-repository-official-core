@@ -14,7 +14,7 @@ install: |
     install_incs ../*.h
 
 dotweak: |
-    writepc sqlite3 <<EOF
+    install_pcfile sqlite3 <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
