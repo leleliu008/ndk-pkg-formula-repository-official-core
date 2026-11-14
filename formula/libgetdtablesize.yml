@@ -1,7 +1,9 @@
 summary: get descriptor table size
 web-url: https://man7.org/linux/man-pages/man3/getdtablesize.3.html
 version: 1
-install: |
+bsystem: compile
+
+prepare: |
     cat > getdtablesize.h <<EOF
     #ifdef __cplusplus
         extern "C" {
@@ -27,8 +29,3 @@ install: |
         return r.rlim_cur;
     }
     EOF
-
-    run $CC -c $CFLAGS $CPPFLAGS -o getdtablesize.o getdtablesize.c
-    run $AR rsc libgetdtablesize.a  getdtablesize.o
-    run install_incs getdtablesize.h
-    run install_libs libgetdtablesize.a
