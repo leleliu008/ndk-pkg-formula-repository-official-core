@@ -7,4 +7,4 @@ install: |
     export CGO_ENABLED=1
     gow -X main.version=PACKAGE_VERSION -X main.commit= -X main.builtBy=ndk-pkg
     run install -d "$PACKAGE_INSTALL_DIR/share/"
-    run cp -r contrib/themes "$PACKAGE_INSTALL_DIR/share/"
+    run mv contrib/themes "$PACKAGE_INSTALL_DIR/share/"
