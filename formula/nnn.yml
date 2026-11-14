@@ -19,7 +19,7 @@ dopatch: |
 install: |
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
-    install_mans nnn.1
+    install_files nnn.1
 
 res-url: https://raw.githubusercontent.com/termux/termux-packages/refs/heads/master/packages/nnn/pthread_setaffinity_np.patch
 res-sha: 539d20ee44a7aa1062afc5c054d0c760472b524a4a77fc2d7935c1b0731a756a
