@@ -3,7 +3,6 @@ summary: PNG encoder and decoder in C and C++
 git-url: https://github.com/lvandeve/lodepng
 license: Zlib
 
-binbstd: 1
 install: |
     run $CXX -c $CXXFLAGS $CPPFLAGS -o lodepng.o      lodepng.cpp
     run $CXX -c $CXXFLAGS $CPPFLAGS -o lodepng_util.o lodepng_util.cpp
