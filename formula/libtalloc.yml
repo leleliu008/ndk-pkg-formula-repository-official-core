@@ -51,4 +51,4 @@ install: |
         --cross-compile \
         --cross-answers=cross-answers.txt -v
     $AR rcu libtalloc.a bin/default/talloc*.o
-    install_libs libtalloc.a
+    install_files libtalloc.a
