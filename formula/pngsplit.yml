@@ -4,9 +4,7 @@ src-url: http://www.libpng.org/pub/png/src/pngcheck-3.0.3.tar.gz
 src-sha: c36a4491634af751f7798ea421321642f9590faa032eccb0dd5fb4533609dee6
 license: GPL-2.0-or-later
 dep-pkg: libz
+ldflags: -lz
+ccflags: -DUSE_ZLIB
 bscript: gpl
-binbstd: 1
-install: |
-    run $CC $CFLAGS $CPPFLAGS -DUSE_ZLIB $LDFLAGS -lz -o pngsplit pngsplit.c
-    install_bins pngsplit
-    install_mans pngsplit.1
+install: compile --install pngsplit.c pngsplit.1
