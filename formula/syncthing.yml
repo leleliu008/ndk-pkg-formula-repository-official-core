@@ -22,5 +22,4 @@ install: |
     run rm -f syncthing
     run ./build -cc "$TARGET_CC" -goos android -goarch "$TARGET_GOARCH" -version "v$PACKAGE_VERSION" -no-upgrade build
     ls
-    run install_bins syncthing
-    run install_mans man/*.1 man/*.5 man/*.7
+    install_files syncthing man/*.1 man/*.5 man/*.7
