@@ -10,7 +10,7 @@ ldflags: -Wl,--allow-multiple-definition
 install: |
     run python3 build/gen.py --platform=linux
     run ninja -C out/
-    run install_bins out/gn
+    install_files out/gn
 
 # int futimes(int __fd, const struct timeval __times[2]) __INTRODUCED_IN(26);
 api-min: 26
