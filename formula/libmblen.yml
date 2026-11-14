@@ -1,7 +1,8 @@
 summary: get number of bytes in a character
 web-url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mblen.html
 version: 1
-install: |
+bsystem: compile
+prepare: |
     cat > mblen.h <<EOF
     #include <stddef.h>
 
@@ -25,8 +26,3 @@ install: |
         return mbrlen(s, n, &state);
     }
     EOF
-
-    run $CC -c $CFLAGS $CPPFLAGS -o mblen.o mblen.c
-    run $AR rsc libmblen.a  mblen.o
-    run install_incs mblen.h
-    run install_libs libmblen.a
