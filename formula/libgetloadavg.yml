@@ -1,6 +1,7 @@
 summary: get system load averages
 web-url: https://man7.org/linux/man-pages/man3/getloadavg.3.html
 version: 1
+bsystem: compile
 install: |
     cat > getloadavg.h <<EOF
     #ifdef __cplusplus
@@ -31,8 +32,3 @@ install: |
         return n;
     }
     EOF
-
-    run $CC -c $CFLAGS $CPPFLAGS -o getloadavg.o getloadavg.c
-    run $AR rsc libgetloadavg.a  getloadavg.o
-    run install_incs getloadavg.h
-    run install_libs libgetloadavg.a
