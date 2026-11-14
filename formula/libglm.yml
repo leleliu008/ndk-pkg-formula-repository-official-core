@@ -7,7 +7,7 @@ license: MIT
 install: cmakew 2 -DGLM_BUILD_TESTS=OFF
 
 dotweak: |
-    writepc glm <<EOF
+    install_pcfile glm <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     includedir=\${prefix}/include
 
