@@ -7,4 +7,4 @@ bscript: src/xxd
 install: |
     gmakew clean
     gmakew
-    install_bins xxd
+    install_files xxd
