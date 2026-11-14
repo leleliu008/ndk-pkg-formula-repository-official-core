@@ -1,7 +1,8 @@
 summary: returns a pointer to the first occurrence of the character c in the string s
 web-url: https://man7.org/linux/man-pages/man3/strchrnul.3.html
 version: 1
-install: |
+bsystem: compile
+prepare: |
     cat > strchrnul.h <<EOF
     #ifdef __cplusplus
         extern "C" {
@@ -23,8 +24,3 @@ install: |
         return s;
     }
     EOF
-
-    run $CC -c $CFLAGS $CPPFLAGS -o strchrnul.o strchrnul.c
-    run $AR rsc libstrchrnul.a  strchrnul.o
-    run install_incs strchrnul.h
-    run install_libs libstrchrnul.a
