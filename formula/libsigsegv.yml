@@ -1,5 +1,5 @@
 summary: A library for handling page faults in user mode
-src-url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.15.tar.gz
-src-sha: 036855660225cb3817a190fc00e6764ce7836051bacb48d35e26444b8c1729d9
+src-url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.16.tar.gz
+src-sha: f8b2fac06c091fc29d6474733d118dc163ed7cd6be4783240d31ad7af11efa30
 license: GPL-2.0-or-later
 bsystem: configure
