@@ -2,7 +2,4 @@ summary: Like grep but for binary strings
 src-url: https://github.com/tmbinc/bgrep/archive/refs/tags/bgrep-0.3.tar.gz
 src-sha: a54ad3101150d750c180718b487406bef630f062a5ef30fde59be10a7caaaf1e
 license: BSD-2-Clause
-
-install: |
-    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -o bgrep ../bgrep.c
-    install_bins bgrep
+install: compile --install bgrep.c
