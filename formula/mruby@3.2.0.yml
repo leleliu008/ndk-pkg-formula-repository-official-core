@@ -105,6 +105,5 @@ install: |
 
     run rake
 
-    run install_bins build/android/bin/*
-    run install_libs build/android/lib/*.a
-    run cp -r build/android/include "$PACKAGE_INSTALL_DIR"
+    run install_files build/android/bin/* build/android/lib/*.a
+    run mv build/android/include "$PACKAGE_INSTALL_DIR/"
