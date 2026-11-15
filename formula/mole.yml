@@ -6,4 +6,5 @@ license: MIT
 install: |
     gow -X main.Version=$PACKAGE_VERSION -X main.BuildTime=$TIMESTAMP_ISO8601 ./cmd/analyze
     gow -X main.Version=$PACKAGE_VERSION -X main.BuildTime=$TIMESTAMP_ISO8601 ./cmd/status
-    install_files mole
+
+cpfiles: mole
