@@ -14,4 +14,5 @@ install: |
     gmakew clean
     gmakew CC="$CC" CFLAGS="'$CFLAGS'" HOSTCC="$CC_FOR_BUILD" HOSTCFLAGS="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'"
     mv a.out awk
-    install_files awk awk.1
+
+cpfiles: awk awk.1
