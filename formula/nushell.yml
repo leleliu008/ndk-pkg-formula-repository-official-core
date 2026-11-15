@@ -4,7 +4,14 @@ src-url: https://github.com/nushell/nushell/archive/refs/tags/0.117.0.tar.gz
 src-sha: ccb5640f8f88b48787c946daf87a349972b939c2edbc5a3b4ca6fc0921bddd6b
 dep-pkg: libz libopenssl
 license: MIT
-bsystem: cargo
+install: cargow install --locked
+
+# https://github.com/andrewdavidmackenzie/libproc-rs/blob/master/build.rs#L29
+# libproc-rs build script use bindgen
+prepare: |
+    if [ "$NATIVE_PLATFORM_NAME" = macos ] ; then
+        export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+    fi
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 
