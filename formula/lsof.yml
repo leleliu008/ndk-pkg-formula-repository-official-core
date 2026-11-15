@@ -28,6 +28,7 @@ install: |
     run ./Configure -clean
     run ./Configure -n linux
     gmakew
-    install_files lsof Lsof.8
+
+cpfiles: lsof Lsof.8
 
 api-min: 26
