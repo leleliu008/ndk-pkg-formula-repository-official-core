@@ -7,16 +7,9 @@ license: LGPL-2.1-or-later
 dep-pkg: glib libjpeg-turbo libpng libtiff
 dep-upp: glib-tools
 
-prepare: |
-    if [ "$TARGET_PLATFORM_VERS" -ge 31 ] ; then
-        ANDROID_XXABLED=en
-    else
-        ANDROID_XXABLED=dis
-    fi
-
+# Don't pass -Dandroid=enabled , because it uses libjnigraphics.so , which cause packages (chafa) who depend on this library can not do a fully statically build.
 install: |
     mesonw \
-        -Dandroid=${ANDROID_XXABLED}abled \
         -Drelocatable=false \
         -Dnative_windows_loaders=false \
         -Dgio_sniffing=false \
