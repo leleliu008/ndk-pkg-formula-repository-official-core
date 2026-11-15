@@ -22,4 +22,5 @@ install: |
         -DPCRE2_SUPPORT_LIBZ=ON \
         -DPCRE2_SUPPORT_LIBBZ2=ON \
         -DPCRE2_SUPPORT_LIBREADLINE=ON
-    install_files pcre2grep ../doc/pcre2grep.1
+
+cpfiles: pcre2grep ../doc/pcre2grep.1
