@@ -2,4 +2,7 @@ summary: Watch a file or folder and automatically commit changes to a git repo e
 src-url: https://github.com/gitwatch/gitwatch/archive/refs/tags/v0.6.tar.gz
 src-sha: 0c49fb357377479710578d82b51a71a9d306bab00adf9c6ab9dae18ee7541489
 license: GPL-3.0-or-later
-install: run mv gitwatch.sh gitwatch && install_files gitwatch
+
+prepare: mv -v gitwatch.sh gitwatch
+
+cpfiles: gitwatch
