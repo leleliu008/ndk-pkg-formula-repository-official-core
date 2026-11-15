@@ -8,4 +8,5 @@ dep-pkg: libcurl libxml2
 install: |
     cargow install --locked --path packages/hurl
     cargow install --locked --path packages/hurlfmt
-    install_files docs/manual/hurl.1 docs/manual/hurlfmt.1
+
+cpfiles: docs/manual/hurl.1 docs/manual/hurlfmt.1
