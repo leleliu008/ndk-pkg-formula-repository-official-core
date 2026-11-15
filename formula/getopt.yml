@@ -7,7 +7,8 @@ license: GPL-2.0-or-later
 install: |
     configure only --disable-liblastlog2
     gmakew getopt
-    install_files getopt ../misc-utils/getopt.1
+
+cpfiles: getopt ../misc-utils/getopt.1
 
 # int getgrgid_r(gid_t __gid, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);
 api-min: 24
