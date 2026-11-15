@@ -1,0 +1,16 @@
+summary: X.Org Interface to the X Window System protocol
+src-url: https://xorg.freedesktop.org/archive/individual/lib/libxcb-1.17.0.tar.xz
+src-sha: 599ebf9996710fea71622e6e184f3a8ad5b43d0e5fa8c4e407123c88a59a6d55
+license: MIT
+dep-pkg: xcb-proto libpthread-stubs libxau libxdmcp
+dep-upp: python3
+
+install: |
+    configure \
+        --enable-ge \
+        --enable-dri3 \
+        --enable-xevie \
+        --enable-xprint \
+        --enable-selinux \
+        --enable-devel-docs=no \
+        --with-doxygen=no
