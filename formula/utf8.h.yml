@@ -2,4 +2,4 @@ pkgtype: lib
 summary: single header utf8 string functions for C and C++
 git-url: https://github.com/sheredom/utf8.h
 license: Unlicense
-install: install_files utf8.h
+cpfiles: utf8.h
