@@ -10,6 +10,7 @@ dep-upp: glib-tools
 # Don't pass -Dandroid=enabled , because it uses libjnigraphics.so , which cause packages (chafa) who depend on this library can not do a fully statically build.
 install: |
     mesonw \
+        -Dandroid=disabled \
         -Drelocatable=false \
         -Dnative_windows_loaders=false \
         -Dgio_sniffing=false \
