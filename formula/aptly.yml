@@ -4,7 +4,8 @@ src-url: https://github.com/aptly-dev/aptly/archive/refs/tags/v1.6.3.tar.gz
 src-sha: 689a0b4f110ab2528ae271c3884b92304e0fdf7a3bf4ee93f60705f4a27d4952
 license: MIT
 
-install: |
-    run go generate
-    gow -X main.Version=$PACKAGE_VERSION
-    install_files man/aptly.1
+prepare: run go generate
+
+install: gow -X main.Version=$PACKAGE_VERSION
+
+cpfiles: man/aptly.1
