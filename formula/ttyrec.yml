@@ -6,7 +6,8 @@ license: BSD-3-Clause
 install: |
     gmakew clean
     gmakew
-    install_files ttyrec ttyplay ttytime
+
+cpfiles: ttyrec ttyplay ttytime
 
 fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/ttyrec-1.0.8.patch
 fix-sha: ada997e580aba39938d611960f1959b465a966e46977de7ab2c539b7c220f391
