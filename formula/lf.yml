@@ -2,6 +2,7 @@ summary: Terminal file manager
 src-url: https://github.com/gokcehan/lf/archive/refs/tags/r42.tar.gz
 src-sha: 7a8f7c2c86419270b713b6235dced7b9d0e68732e74a1e0f375f774fff4023ca
 license: MIT
-install: |
-    gow -X main.gVersion=$PACKAGE_VERSION
-    install_files lf.1
+
+install: gow -X main.gVersion=$PACKAGE_VERSION
+
+cpfiles: lf.1
