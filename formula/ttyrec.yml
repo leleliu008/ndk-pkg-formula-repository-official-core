@@ -3,9 +3,10 @@ src-url: http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz
 src-sha: ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec
 license: BSD-3-Clause
 
-dopatch: gsed -i 's|union wait status|int status|' ttyrec.c
-
 install: |
     gmakew clean
-    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS -Dset_progname=setprogname $LDFLAGS'"
+    gmakew
     install_files ttyrec ttyplay ttytime
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/ttyrec-1.0.8.patch
+fix-sha: ada997e580aba39938d611960f1959b465a966e46977de7ab2c539b7c220f391
