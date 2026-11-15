@@ -2,7 +2,10 @@ summary: High performance WebAssembly interpreter
 src-url: https://github.com/wasm3/wasm3/archive/refs/tags/v0.9.0.tar.gz
 src-sha: cab79ce74bcac25bbf80b5ebe14af9795b9bac30b05ee8f620a3bc8002f3b8e6
 license: MIT
-install: cmakew -DBUILD_NATIVE=OFF && install_files wasm3
+
+install: cmakew -DBUILD_NATIVE=OFF
+
+cpfiles: wasm3
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
