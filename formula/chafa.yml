@@ -11,6 +11,6 @@ dopatch: |
         gsed -i '/chafa\.h/a static inline char* ctermid(char* __buf) { return (__buf == NULL) ? "/dev/tty" : strcpy(__buf, "/dev/tty"); }' tools/chafa/chicle-options.c
     fi
 
-install: |
-    configure --enable-static --disable-shared
-    install_files ../docs/chafa.1
+install: configure --enable-static --disable-shared
+
+cpfiles: ../docs/chafa.1
