@@ -7,7 +7,8 @@ license: ISC
 install: |
     gmakew clean SO=so
     gmakew build/release/libmujs.a build/release/libmujs.so SO=so CFLAGS="'-std=c99 $CFLAGS $CPPFLAGS'" OPTIM=
-    install_files mujs.h build/release/libmujs.*
+
+cpfiles: mujs.h build/release/libmujs.*
 
 dotweak: |
     install_pcfile mujs <<EOF
