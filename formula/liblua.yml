@@ -3,8 +3,10 @@ git-url: https://github.com/lua/lua
 src-url: https://www.lua.org/ftp/lua-5.5.1.tar.gz
 src-sha: 1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce
 license: MIT
+
 bscript: src
 install: |
     gmakew clean
     gmakew liblua.a PLAT=generic CC="$CC" AR="'$AR crs'" RANLIB="$RANLIB" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'"
-    install_files liblua.a lua.h luaconf.h lualib.h lauxlib.h lua.hpp
+
+cpfiles: liblua.a lua.h luaconf.h lualib.h lauxlib.h lua.hpp
