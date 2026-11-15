@@ -6,8 +6,6 @@ version: 50.0.1
 license: Apache-2.0
 bsystem: cargo cmake
 
-install: |
-    cargow build --locked --lib -p wasmtime-c-api
-    install_files --cargo libwasmtime.a libwasmtime.so
-    run cd crates/c-api/
-    install_files --dir=include
+install: cargow build --locked --lib -p wasmtime-c-api
+
+cpfiles: crates/c-api/include --cargo libwasmtime.a libwasmtime.so
