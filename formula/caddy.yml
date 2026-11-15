@@ -12,4 +12,6 @@ do12345: |
     run go build -v ./cmd/xcaddy
     run mv xcaddy ../src/
 
-install: run ./xcaddy build "v$PACKAGE_VERSION" --output caddy && install_files caddy
+install: run ./xcaddy build "v$PACKAGE_VERSION" --output caddy
+
+cpfiles: caddy
