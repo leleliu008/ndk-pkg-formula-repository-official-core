@@ -3,8 +3,8 @@ web-url: ddddd
 dep-pkg: libcurl
 dep-lib: libcurl
 version: 1
-binbstd: 1
-install: |
+bsystem: compile
+prepare: |
     cat > conftest.c <<EOF
     #include <stdlib.h>
     #include <curl/curl.h>
@@ -48,6 +48,3 @@ install: |
         return ret;
     }
     EOF
-
-    run $CC $CPPFLAGS $LDFLAGS -o conftest conftest.c
-    install_bins conftest

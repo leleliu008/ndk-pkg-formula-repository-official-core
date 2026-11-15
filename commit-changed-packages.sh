@@ -126,40 +126,26 @@ cd formula
 
 for item in $(git status -s | sed -e 's|^ ||' -e 's| |:|g')
 do
-    case $item in
-        M:*)
-            f="${item#M:}"
+    s="${item%%:*}"
+    f="${item#"$s:"}"
 
-            case $f in
-                ../*)
-                    continue
-                    ;;
-                *.yml)
-                    update "$f"
-            esac
+    case $f in
+        */*)
+            continue
             ;;
-        A::*)
-            f="${item#A::}"
-
-            case $f in
-                ../*)
-                    continue
+        *.yml)
+            case $s in
+                M)  update "$f"
                     ;;
-                *.yml)
+                A)  addnew "$f"
+                    ;;
+                D)
+                    run git add "$f"
+                    run git commit -m "'delete package ${f%.yml}'"
+                    run git push origin master
+                    ;;
+                \?\?)
                     addnew "$f"
             esac
-            ;;
-        \?\?:*)
-            f="${item#??:}"
-
-            case $f in
-                ../*)
-                    continue
-                    ;;
-                *.yml)
-                    addnew "$f"
-                    exit
-            esac
-            ;;
     esac
 done

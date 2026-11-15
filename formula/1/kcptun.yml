@@ -6,4 +6,4 @@ license: MIT
 install: |
     gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_server ./server
     gow -X main.VERSION=$PACKAGE_VERSION -o kcptun_client ./client
-    run install_etcs examples/local.json
+    install_files --etc=examples/local.json

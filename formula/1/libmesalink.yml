@@ -6,7 +6,5 @@ license: BSD-3-Clause
 install: |
     export RUSTUP_TOOLCHAIN=1.74
     cargow build --locked
-    run install_incs mesalink/*.h
-    run install_incs mesalink/openssl/*.h:openssl
-    run install_libs target/$RUST_TARGET/$PROFILE/libmesalink.a
-    run install_libs target/$RUST_TARGET/$PROFILE/libmesalink.so
+    mv mesalink include
+    install_files include/*.h --dir=include/openssl --cargo libmesalink.a libmesalink.so
