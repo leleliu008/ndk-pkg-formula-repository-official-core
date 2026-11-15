@@ -11,4 +11,5 @@ dopatch: gsed -i '/ln -s /d' Makefile
 install: |
     gmakew clean
     gmakew liblmdb.a liblmdb.so CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" SOFULL=.so VERSION_OPT=
-    install_files lmdb.h liblmdb.a liblmdb.so
+
+cpfiles: lmdb.h liblmdb.a liblmdb.so
