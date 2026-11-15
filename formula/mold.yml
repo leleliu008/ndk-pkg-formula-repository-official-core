@@ -4,9 +4,9 @@ src-sha: 1dee837e227b0c3f2661def602ef8ddc0b889ae5b1d28c1ddec5f29e08e5ceb5
 license: MIT
 dep-pkg: libz
 
-install: |
-    cargow install --path cli
-    install_files docs/mold.1
+install: cargow install --path cli
 
-#bits/lockf.h:61:int lockf(int __fd, int __cmd, off_t __length) __RENAME_IF_FILE_OFFSET64(lockf64) __INTRODUCED_IN(24);
+cpfiles: docs/mold.1
+
+# bits/lockf.h int lockf(int __fd, int __cmd, off_t __length) __RENAME_IF_FILE_OFFSET64(lockf64) __INTRODUCED_IN(24);
 api-min: 24
