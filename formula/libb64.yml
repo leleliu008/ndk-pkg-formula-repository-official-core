@@ -8,4 +8,4 @@ install: |
     gmakew clean
     gmakew all_src
 
-cpfiles: src/libb64.a --dir=include
+cpfiles: src/libb64.a include
