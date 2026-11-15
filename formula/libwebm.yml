@@ -4,6 +4,5 @@ src-url: https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.
 src-sha: 7fd5e085bda9f8031cf2ad2a1e52d9b7b29cba9c0b96ad2ce794ce89e4249eb8
 license: BSD-3-Clause
 xxflags: -std=c++11
-install: |
-    cmakew
-    install_files libwebm.* mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
+bsystem: cmake
+cpfiles: libwebm.* mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
