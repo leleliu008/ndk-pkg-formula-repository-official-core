@@ -3,8 +3,10 @@ web-url: https://www.vim.org/
 src-url: https://github.com/vim/vim/archive/refs/tags/v9.2.1342.tar.gz
 src-sha: 321d6b7832b9c6def7fb7f533d28266a4a4f80e46506cedeea177e26096b2957
 license: Vim
+
 bscript: src/xxd
 install: |
     gmakew clean
     gmakew
-    install_files xxd
+
+cpfiles: xxd
