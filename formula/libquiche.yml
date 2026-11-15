@@ -5,6 +5,6 @@ license: BSD-2-Clause
 dep-pkg: libfontconfig
 bsystem: cargo cmake
 
-install: |
-    cargow build --features ffi,pkg-config-meta
-    install_files quiche/include/quiche.h --cargo libquiche.a libquiche.so quiche.pc
+install: cargow build --features ffi,pkg-config-meta
+
+cpfiles: quiche/include/quiche.h --cargo libquiche.a libquiche.so quiche.pc
