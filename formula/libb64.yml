@@ -7,4 +7,5 @@ license: CC-PDDC
 install: |
     gmakew clean
     gmakew all_src
-    install_files src/libb64.a --dir=include
+
+cpfiles: src/libb64.a --dir=include
