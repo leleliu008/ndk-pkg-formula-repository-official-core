@@ -10,7 +10,8 @@ dopatch: gsed -i 's|ln -f|ln -sf|' Makefile
 install: |
     gmakew clean
     gmakew CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
-    install_files pigz pigz.1
+
+cpfiles: pigz pigz.1
 
 dotweak: |
     ln -sf pigz bin/unpigz
