@@ -1,0 +1,6 @@
+summary: X.Org Session Management Library
+src-url: https://xorg.freedesktop.org/archive/individual/lib/libSM-1.2.6.tar.xz
+src-sha: be7c0abdb15cbfd29ac62573c1c82e877f9d4047ad15321e7ea97d1e43d835be
+license: MIT
+dep-pkg: libice
+install: configure --enable-docs=no
