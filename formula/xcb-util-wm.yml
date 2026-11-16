@@ -1,0 +1,8 @@
+pkgtype: lib
+summary: Client and window-manager helpers for EWMH and ICCCM
+src-url: https://xcb.freedesktop.org/dist/xcb-util-wm-0.4.2.tar.gz
+src-sha: dcecaaa535802fd57c84cceeff50c64efe7f2326bf752e16d2b77945649c8cd7
+license: X11
+dep-pkg: libxcb
+dep-upp: gm4
+bsystem: configure
