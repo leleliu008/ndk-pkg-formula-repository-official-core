@@ -18,3 +18,6 @@ install: |
         -DENABLE_TESTING=OFF \
         -DWARNINGS_AS_ERRORS=OFF \
         -DZSTD_FROM_INTERNET=OFF
+
+# libposix_spawn
+api-min: 24
