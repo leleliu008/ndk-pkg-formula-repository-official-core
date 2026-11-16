@@ -4,17 +4,12 @@ src-url: https://www.samba.org/ftp/talloc/talloc-2.5.0.tar.gz
 src-sha: 912afa237510ae542a7733998eb18a12bcda35ab6729c8e2ddb43e8d0ebab007
 license: GPL-3.0-or-later
 dep-upp: python3
-binbstd: 1
 
 # void seekdir(DIR* __dir, long __location) __INTRODUCED_IN(23);
 # long telldir(DIR* __dir) __INTRODUCED_IN(23);
 api-min: 23
 
-dopatch: |
-    gsed -i 's|defined(HAVE_MEMSET_EXPLICIT)|0|' lib/replace/replace.c
-
-    gsed -i 's|echo -n|printf|' buildtools/wafsamba/samba_cross.py
-
+prepare: |
     cat > cross-answers.txt <<EOF
     Checking uname sysname type: "Linux"
     Checking uname machine type: "dontcare"
@@ -50,5 +45,5 @@ install: |
         --disable-python \
         --cross-compile \
         --cross-answers=cross-answers.txt -v
-    $AR rcu libtalloc.a bin/default/talloc*.o
+    run "$AR" crs libtalloc.a bin/default/talloc.c.[0-9].o bin/default/lib/replace/replace.c.[0-9].o
     install_files libtalloc.a
