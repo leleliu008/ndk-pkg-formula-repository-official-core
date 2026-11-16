@@ -7,4 +7,5 @@ install: |
     export RUSTUP_TOOLCHAIN=1.74
     cargow build --locked
     mv mesalink include
-    install_files include/*.h --dir=include/openssl --cargo libmesalink.a libmesalink.so
+
+cpfiles: include --cargo libmesalink.a libmesalink.so

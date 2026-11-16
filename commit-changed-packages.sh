@@ -128,6 +128,7 @@ for item in $(git status -s | sed -e 's|^ ||' -e 's| |:|g')
 do
     s="${item%%:*}"
     f="${item#"$s:"}"
+    f="${f#:}"
 
     case $f in
         */*)
