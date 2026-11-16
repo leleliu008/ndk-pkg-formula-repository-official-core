@@ -5,6 +5,18 @@ src-sha: 2e45678806a8a1c7307d4b4298b11aab6d947799bdce986c67fd9c693dac98a5
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 
+# https://github.com/KWARC/rust-libxml
+dopatch: |
+    if [ "$NATIVE_PLATFORM_TYPE" = linux ] && [ "$NATIVE_PLATFORM_LIBC" = musl ] ; then
+        run $sudo /sbin/apk update
+        run $sudo /sbin/apk add llvm21-dev clang21-static
+
+        export     LLVM_CONFIG_PATH=/usr/lib/llvm21/bin/llvm-config
+        export LIBCLANG_STATIC_PATH=/usr/lib/llvm21/lib/libclang.a
+
+        gsed -i '/^libxml = /c libxml = { version = "0.3.22", default-features = false, features = ["static"] }' packages/hurl/Cargo.toml packages/hurl_core/Cargo.toml
+    fi
+
 install: |
     cargow install --locked --path packages/hurl
     cargow install --locked --path packages/hurlfmt
