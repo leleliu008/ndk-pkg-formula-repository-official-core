@@ -1,8 +1,8 @@
 summary: XML-based font configuration tools
 web-url: https://wiki.freedesktop.org/www/Software/fontconfig
 git-url: https://gitlab.freedesktop.org/fontconfig/fontconfig
-src-url: https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.3/fontconfig-2.18.3.tar.gz
-src-sha: 9ae01e1d53acdef56010c5451cd34aa41d325b2faccd8606448d8fa01b2496b3
+src-url: https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.4/fontconfig-2.18.4.tar.gz
+src-sha: cecf4125622ed674d5630b6deaeff43e3695afe197bdcc560363a1820d858112
 license: MIT
 dep-pkg: libfreetype libjson-c libexpat libuuid libintl
 dep-lib: libintl
