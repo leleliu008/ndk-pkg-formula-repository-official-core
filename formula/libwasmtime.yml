@@ -1,8 +1,8 @@
 summary: Standalone JIT-style runtime for WebAssembly, using Cranelift
 web-url: https://wasmtime.dev/
 git-url: https://github.com/bytecodealliance/wasmtime
-git-sha: c307ec81de02852d815e9849f7c89d955c03c30d
-version: 50.0.1
+git-sha: f9a93b049a23bef9a33cfa3888f32af33a178749
+version: 50.0.2
 license: Apache-2.0
 bsystem: cargo cmake
 
