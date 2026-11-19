@@ -1,6 +1,6 @@
 summary: Command-line client for WebSockets
-src-url: https://github.com/vi/websocat/archive/refs/tags/v1.14.1.tar.gz
-src-sha: 5c976c535800ca635b72839fe49d0fe4ad2479db8744c5a00f0cf911e4832e2d
+src-url: https://github.com/vi/websocat/archive/refs/tags/v1.14.2.tar.gz
+src-sha: cb49afdb6c108c5be9ae2e78d72f4c31cd2e464d4e3a9faa1e9f958b61e53e3d
 license: MIT
 dep-pkg: libopenssl
 install: cargow install --features ssl
