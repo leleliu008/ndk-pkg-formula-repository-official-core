@@ -1,7 +1,7 @@
 summary: Portable UPnP development kit
 web-url: https://pupnp.sourceforge.io/
-src-url: https://github.com/pupnp/pupnp/releases/download/release-22.2.2/libupnp-22.2.2.tar.bz2
-src-sha: fdcc16f0167d822a8ba97857eb40edd7991c5aeb97d4e528ce47ba7a62fb517c
+src-url: https://github.com/pupnp/pupnp/releases/download/release-22.2.4/libupnp-22.2.4.tar.bz2
+src-sha: 3beac41548eac76d22633724d13324a391cc656c6bcf070ed9957abb87efd2de
 license: BSD-3-Clause
 dep-pkg: libopenssl
 install: cmakew -Dopen_ssl=ON
