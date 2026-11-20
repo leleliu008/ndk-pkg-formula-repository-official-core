@@ -1,7 +1,7 @@
 summary: Syntax-aware linter for prose
 web-url: https://vale.sh/
-src-url: https://github.com/vale-cli/vale/archive/refs/tags/v3.27.0.tar.gz
-src-sha: 66636c2528aac28c173f9449e3f4f1429b84d5be8d7877bf52fa6c5fd50ce5a0
+src-url: https://github.com/vale-cli/vale/archive/refs/tags/v3.28.1.tar.gz
+src-sha: 8ccc68482a36a9123c078267ccbaca6e0be678ef2a1991ef935191cbe9bed8cd
 license: MIT
 prepare: export CGO_ENABLED=1
 install: gow -X main.version=$PACKAGE_VERSION ./cmd/vale
