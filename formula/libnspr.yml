@@ -1,0 +1,22 @@
+summary: Platform-neutral API for system-level and libc-like functions
+web-url: https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
+src-url: https://archive.mozilla.org/pub/nspr/releases/v4.41/src/nspr-4.41.tar.gz
+src-sha: c562b8ddfe93704b7dc077be013f01448fdc6c124b1821c0f10471a71cb2e9e6
+license: MPL-2.0
+bscript: nspr
+
+dopatch: gsed -i 's|@executable_path|@rpath|g' configure
+
+install: |
+    configure \
+        --enable-macos-target="$TARGET_PLATFORM_VERS" \
+        --enable-64bit \
+        --enable-strip \
+        --enable-ipv6 \
+        --disable-cplus \
+        --with-pthreads \
+        HOST_CC='/usr/bin/cc' \
+        HOST_CXX='/usr/bin/c++' \
+        HOST_CFLAGS='-O0' \
+        HOST_CXXFLAGS='-O0' \
+        HOST_LDFLAGS=''
