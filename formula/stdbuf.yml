@@ -1,7 +1,7 @@
 summary: A command-line tool to modify the buffering operations for standard input, output and error streams of another command
 web-url: https://uutils.github.io/coreutils/
-src-url: https://github.com/uutils/coreutils/archive/refs/tags/0.12.0.tar.gz
-src-sha: 4fb327655cb4ffcbf2f16550cf9234079ffe839692f7aa1a6eda104af684e122
+src-url: https://github.com/uutils/coreutils/archive/refs/tags/0.13.0.tar.gz
+src-sha: 5830c023555ea8e98505e8cfb09524d3097f427c5e58ef197a943e6cb73af9b0
 license: MIT
 install: cargow install --path src/uu/stdbuf
 linkage: shared
