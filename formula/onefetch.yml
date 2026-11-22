@@ -1,5 +1,5 @@
 summary: Command-line Git information tool
-src-url: https://github.com/o2sh/onefetch/archive/refs/tags/3.2.0.tar.gz
-src-sha: 6cd2822a8f118dc2799cefd4afe04f98933687695f1ffa39284d30cb58c909f2
+src-url: https://github.com/o2sh/onefetch/archive/refs/tags/3.3.0.tar.gz
+src-sha: bf9122e9e28a6d645092b20b8b931fe3eba08a94fe21679169ef39f016afe892
 license: MIT
 bsystem: cargo cmake
