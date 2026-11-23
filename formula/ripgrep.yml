@@ -1,5 +1,5 @@
 summary: A command-line tool for searching files for a regex pattern
-src-url: https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.2.0.tar.gz
-src-sha: 7605249d3eb0d5f170e3414498e3344e26b1e7a147aec518b57090b80036a562
+src-url: https://github.com/BurntSushi/ripgrep/archive/refs/tags/16.0.0.tar.gz
+src-sha: 17e7a1a0db80ed9618a0963c7ae4aecb8fce25c70cf7ebed514daf2b38a0d153
 license: Unlicense
 bsystem: cargo
