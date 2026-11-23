@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: A header-only C++17 (or later) library for parsing TOML
 web-url: https://marzer.github.io/tomlplusplus/
-src-url: https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz
-src-sha: 8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155
+src-url: https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.5.1.tar.gz
+src-sha: 4821c769370a6489b6a37814f16f3769eee0f2e733a5c129d5d99e2515a95c2b
 license: MIT
 bsystem: cmake
