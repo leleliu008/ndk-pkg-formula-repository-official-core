@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: An easy-to-use, high-performance audio library for Android
-src-url: https://github.com/google/oboe/archive/refs/tags/1.11.0.tar.gz
-src-sha: 0ccf2110640a2b4489f1c93a404f2978656b434d8c5dc9cb6258f9cc95c79b15
+src-url: https://github.com/google/oboe/archive/refs/tags/1.11.2.tar.gz
+src-sha: fcd94c23221770dd720c458c0f49794c4adbb94568ccdf5aaa05a3bcb1e46bf6
 license: Apache-2.0
 
 dopatch: gsed -i 's|/${ANDROID_ABI}||' CMakeLists.txt
