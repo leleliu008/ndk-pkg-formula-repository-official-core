@@ -6,8 +6,8 @@ license: BSD-3-Clause
 dep-pkg: libarchive libcurl libuv libjsoncpp librhash libncurses liblanginfo
 dep-lib: libarchive libcurl
 
-# https://github.com/termux/termux-packages/blob/master/packages/cmake/Source-CmakeLists.txt.patch
-dopatch: gsed -i '1328c if (ANDROID)' Source/CMakeLists.txt
+fix-url: https://raw.githubusercontent.com/leleliu008/ndk-pkg-formula-repository-official-core/refs/heads/master/patches/cmake-4.4.5-enable-cmCPackAppImageGenerator.patch
+fix-sha: 71a796e67daddc2dd6cc851d538b5d37593ede0a51ae98eceba19fae1c030fa1
 
 install: |
     cmakew \
