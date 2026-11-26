@@ -1,9 +1,9 @@
-summary: Syntax-highlighting pager for git and diff output
-src-url: https://github.com/dandavison/delta/archive/refs/tags/0.20.1.tar.gz
-src-sha: d9d502396e3595ee8fd926f1ed2e54ac9935baabd3569a3753efab36304f90fa
+summary: A syntax-highlighting pager for git and diff output
+src-url: https://github.com/dandavison/delta/archive/refs/tags/0.22.0.tar.gz
+src-sha: 71fb0ba85058a8f206f11ea227d2f940f6051c9c81dcb238935e10b0dc82c09c
 license: MIT
 dep-pkg: libz
-bsystem: cargo
+install: cargow install --no-default-features
 
 # int getifaddrs(struct ifaddrs** __list_ptr) __INTRODUCED_IN(24);
 # void freeifaddrs(struct ifaddrs* __ptr) __INTRODUCED_IN(24);
