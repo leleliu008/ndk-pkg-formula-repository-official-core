@@ -1,6 +1,6 @@
 summary: Pre-commit re-implemented in Rust
-src-url: https://github.com/j178/prek/archive/refs/tags/v0.5.11.tar.gz
-src-sha: 1dbafca264151131170d86f1b36e642797469dbf0ec98d77f1110c65f1aa0eed
+src-url: https://github.com/j178/prek/archive/refs/tags/v0.5.12.tar.gz
+src-sha: 679d6708c56991e41943395afd4c5b536beac7fda7b8bb648e238136a19b4af4
 license: MIT
 prepare: export AWS_LC_SYS_NO_JITTER_ENTROPY=1
 install: cargow install --path crates/prek
