@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: Static reflection for enums (to string, from string, iteration) for modern C++
-src-url: https://github.com/Neargye/magic_enum/archive/refs/tags/v0.9.8.tar.gz
-src-sha: 1e54959a3f3cb675938d858603ad69d0f3f7c82439fc2bf86d7232daec2bd10e
+src-url: https://github.com/Neargye/magic_enum/archive/refs/tags/v0.10.0.tar.gz
+src-sha: 931ff9bc24e6e0712d524692dc95943b2679048be7e1732b9637134f6f2a58c1
 license: MIT
 install: |
     cmakew \
