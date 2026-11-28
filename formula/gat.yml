@@ -1,5 +1,5 @@
 summary: Cat alternative written in Go
-src-url: https://github.com/koki-develop/gat/archive/refs/tags/v0.31.0.tar.gz
-src-sha: 424ad788c91081fe5db432f99d108802bb96ef5688b0ccb263cc4ca673efb155
+src-url: https://github.com/koki-develop/gat/archive/refs/tags/v0.32.0.tar.gz
+src-sha: be95ce5d07d23b036b48a600467aa4d1f67894bcbde414fb720daae749609f46
 license: MIT
 install: gow -X github.com/koki-develop/gat/cmd.version=v$PACKAGE_NAME
